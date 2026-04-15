@@ -1,0 +1,1 @@
+Use these Tailwind CSS sidebar navigation components to create responsive side menus with features like icons and badges, expandable submenus, and footer sections. These sidebars are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

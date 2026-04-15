@@ -1,0 +1,1 @@
+Use these Tailwind CSS category page examples to organize your products into different categories, making it easier for customers to find what they are looking for. These page examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

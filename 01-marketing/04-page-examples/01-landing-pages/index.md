@@ -1,0 +1,1 @@
+Use these Tailwind CSS landing page examples as a starting point for your product website. These landing pages are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

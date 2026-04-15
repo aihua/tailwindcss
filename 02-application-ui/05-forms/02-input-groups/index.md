@@ -1,0 +1,1 @@
+Use these Tailwind CSS input group components to create things like search bars with buttons, credit card forms, and other form inputs with combined input and label elements. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

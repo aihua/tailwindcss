@@ -1,0 +1,1 @@
+Use these Tailwind CSS flyout menu examples to add beautiful dropdown menus to your website's navigation, featuring icons, multiple sections, and content previews. These menu examples are designed and built by the Tailwind CSS team, and include a variety of different styles, such as simple text-based, multiple sections with icons, and full-width menus.

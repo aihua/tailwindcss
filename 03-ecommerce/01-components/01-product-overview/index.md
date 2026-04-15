@@ -1,0 +1,1 @@
+Use these Tailwind CSS product overview components to build beautiful pages for your products with information such as pricing, images, customization options, and detailed product descriptions. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

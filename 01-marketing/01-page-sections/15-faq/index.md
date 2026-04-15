@@ -1,0 +1,1 @@
+Use these Tailwind CSS FAQ examples to share answers to common questions that visitors might have after browsing your website. These FAQ examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

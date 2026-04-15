@@ -1,0 +1,1 @@
+Use these Tailwind CSS divider components to separate content sections with horizontal lines, featuring buttons, toolbars, titles, labels, and icons. These dividers are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

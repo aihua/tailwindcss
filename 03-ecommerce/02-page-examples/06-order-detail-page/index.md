@@ -1,0 +1,1 @@
+Use these Tailwind CSS order detail page examples to provide customers with a detailed summary of their completed orders, including product details, pricing, and shipping status. These page examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

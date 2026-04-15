@@ -1,0 +1,1 @@
+Use these Tailwind CSS alert components to keep users informed about important events like billing issues, form validation errors, or confirmation messages. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and functionality, such as dismiss buttons and links to possible actions.

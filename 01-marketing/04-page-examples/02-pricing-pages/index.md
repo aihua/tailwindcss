@@ -1,0 +1,1 @@
+Use these Tailwind CSS pricing page and pricing table examples as a starting point to build a high-converting pricing page for your product. These page examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

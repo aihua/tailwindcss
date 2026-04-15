@@ -1,0 +1,1 @@
+Use these Tailwind CSS card heading components to add things like titles, buttons, profile pictures, and useful information to the top of your cards. These component examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

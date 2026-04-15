@@ -1,0 +1,254 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="preconnect" href="https://rsms.me/"><link rel="stylesheet" href="https://rsms.me/inter/inter.css"><script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script><style>/*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-space-x-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-duration:initial;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-ease:initial}}}@layer theme{:root,:host{--font-sans:InterVariable,system-ui,sans-serif;--font-sans--font-feature-settings:"cv02","cv03","cv04","cv11"}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--font-sans,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji");font-feature-settings:var(--font-sans--font-feature-settings);font-variation-settings:initial;-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-feature-settings:initial;font-variation-settings:initial;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring{outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab,currentcolor 50%,transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.aqgd{pointer-events:none}.aqge{clip-path:inset(50%);white-space:nowrap;border-width:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}.aqgf{position:absolute}.aqgg{position:fixed}.aqgh{position:relative}.aqgi{inset:-.125rem}.aqgj{inset:-.375rem}.aqgk{inset:0}.aqgl{inset-inline:0}.aqgm{top:0}.aqgn{right:0}.aqgo{left:0}.aqgp{grid-column:span 2/span 2}.aqgq{grid-column-start:1}.aqgr{grid-row-start:1}.aqgs{margin-inline:auto}.aqgt{margin-top:-6rem}.aqgu{margin-top:.75rem}.aqgv{margin-right:-.5rem}.aqgw{margin-left:.5rem}.aqgx{margin-left:.75rem}.aqgy{margin-left:1rem}.aqgz{margin-left:auto}.aqha{display:block}.aqhb{display:flex}.aqhc{display:grid}.aqhd{display:none}.aqhe{display:inline-flex}.aqhf{width:1.25rem;height:1.25rem}.aqhg{width:1.5rem;height:1.5rem}.aqhh{width:2rem;height:2rem}.aqhi{width:2.5rem;height:2.5rem}.aqhj{width:100%;height:100%}.aqhk{height:2rem}.aqhl{height:24rem}.aqhm{height:100%}.aqhn{min-height:712px}.aqho{min-height:100%}.aqhp{width:12rem}.aqhq{width:auto}.aqhr{width:100%}.aqhs{max-width:48rem}.aqht{max-width:28rem}.aqhu{max-width:20rem}.aqhv{min-width:0}.aqhw{flex:1}.aqhx{flex-shrink:0}.aqhy{transform-origin:top}.aqhz{transform-origin:100% 0}.aqia{transform:var(--tw-rotate-x,)var(--tw-rotate-y,)var(--tw-rotate-z,)var(--tw-skew-x,)var(--tw-skew-y,)}.aqib{grid-template-columns:repeat(1,minmax(0,1fr))}.aqic{grid-template-columns:repeat(3,minmax(0,1fr))}.aqid{align-items:center}.aqie{align-items:flex-start}.aqif{justify-content:space-between}.aqig{justify-content:center}.aqih{gap:1rem}.aqii{gap:2rem}:where(.aqij>:not(:last-child)){--tw-space-y-reverse:0;margin-block-start:calc(calc(.25rem*1)*var(--tw-space-y-reverse));margin-block-end:calc(calc(.25rem*1)*calc(1 - var(--tw-space-y-reverse)))}:where(.aqik>:not(:last-child)){--tw-space-x-reverse:0;margin-inline-start:calc(calc(.25rem*4)*var(--tw-space-x-reverse));margin-inline-end:calc(calc(.25rem*4)*calc(1 - var(--tw-space-x-reverse)))}:where(.aqil>:not(:last-child)){--tw-divide-y-reverse:0;border-bottom-style:var(--tw-border-style);border-top-style:var(--tw-border-style);border-top-width:calc(1px*var(--tw-divide-y-reverse));border-bottom-width:calc(1px*calc(1 - var(--tw-divide-y-reverse)))}:where(.aqim>:not(:last-child)){border-color:oklch(92.8% .006 264.531)}:where(.aqin>:not(:last-child)){border-color:oklab(100% 0 5.96046e-8/.1)}.aqio{align-self:center}.aqip{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.aqiq{overflow:hidden}.aqir{border-radius:3.40282e38px}.aqis{border-radius:.5rem}.aqit{border-radius:.375rem}.aqiu{border-radius:.25rem}.aqiv{border-style:var(--tw-border-style);border-width:1px}.aqiw{border-top-style:var(--tw-border-style);border-top-width:1px}.aqix{--tw-border-style:dashed;border-style:dashed}.aqiy{border-color:oklch(92.8% .006 264.531)}.aqiz{border-color:oklch(70.7% .022 261.325)}.aqja{border-color:oklch(44.6% .03 256.802)}.aqjb{border-color:oklch(37.3% .034 259.733)}.aqjc{border-color:oklab(100% 0 5.96046e-8/.1)}.aqjd{border-color:oklab(100% 0 5.96046e-8/.2)}.aqje{background-color:oklab(0% none none/.25)}.aqjf{background-color:oklch(96.7% .003 264.542)}.aqjg{background-color:oklch(27.8% .033 256.848)}.aqjh{background-color:oklch(21% .034 264.665)}.aqji{background-color:oklab(58.5% .0288678 -.231205/.75)}.aqjj{background-color:oklch(51.1% .262 276.966)}.aqjk{background-color:oklab(45.7% .0293443 -.238199/.5)}.aqjl{background-color:oklch(39.8% .195 277.366)}.aqjm{background-color:#0000}.aqjn{background-color:#fff}.aqjo{stroke:oklab(21% -.00316127 -.0338527/.1)}.aqjp{stroke:oklab(100% 0 5.96046e-8/.1)}.aqjq{padding:.25rem}.aqjr{padding:.5rem}.aqjs{padding:1.5rem}.aqjt{padding-inline:.5rem}.aqju{padding-inline:.75rem}.aqjv{padding-inline:1rem}.aqjw{padding-inline:1.25rem}.aqjx{padding-inline:3rem}.aqjy{padding-block:.25rem}.aqjz{padding-block:.375rem}.aqka{padding-block:.5rem}.aqkb{padding-block:1.25rem}.aqkc{padding-block:2rem}.aqkd{padding-top:.75rem}.aqke{padding-top:1rem}.aqkf{padding-right:.75rem}.aqkg{padding-bottom:.5rem}.aqkh{padding-bottom:2rem}.aqki{padding-bottom:6rem}.aqkj{padding-left:2.5rem}.aqkk{text-align:center}.aqkl{font-size:1rem;line-height:var(--tw-leading,calc(1.5/1))}.aqkm{font-size:.875rem;line-height:var(--tw-leading,calc(1.25/.875))}.aqkn{--tw-font-weight:500;font-weight:500}.aqko{color:oklch(96.7% .003 264.542)}.aqkp{color:oklch(92.8% .006 264.531)}.aqkq{color:oklch(87.2% .01 258.338)}.aqkr{color:oklch(70.7% .022 261.325)}.aqks{color:oklch(55.1% .027 264.364)}.aqkt{color:oklch(37.3% .034 259.733)}.aqku{color:oklch(27.8% .033 256.848)}.aqkv{color:oklch(21% .034 264.665)}.aqkw{color:oklch(93% .034 272.788)}.aqkx{color:oklch(87% .065 274.039)}.aqky{color:#fff}.aqkz{color:oklab(100% 0 5.96046e-8/.5)}.aqla{color:oklab(100% 0 5.96046e-8/.75)}.aqlb{color-scheme:dark}.aqlc{opacity:.75}.aqld{--tw-shadow:0 10px 15px -3px var(--tw-shadow-color,#0000001a),0 4px 6px -4px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.aqle{--tw-shadow:0 1px 3px 0 var(--tw-shadow-color,#0000001a),0 1px 2px -1px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.aqlf{--tw-inset-ring-shadow:inset 0 0 0 1px var(--tw-inset-ring-color,currentcolor);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.aqlg{--tw-inset-ring-color:oklab(100% 0 5.96046e-8/.1)}.aqlh,.aqli{outline-style:var(--tw-outline-style);outline-width:1px}.aqlj{outline-offset:calc(1px*-1)}.aqlk{outline-color:oklab(0% none none/.05)}.aqll{outline-color:oklab(67.3% .0219752 -.180668/.25)}.aqlm{outline-color:oklab(100% 0 5.96046e-8/.1)}.aqln{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,opacity,box-shadow,transform,translate,scale,rotate,filter,-webkit-backdrop-filter,backdrop-filter,display,content-visibility,overlay,pointer-events;transition-timing-function:var(--tw-ease,cubic-bezier(.4,0,.2,1));transition-duration:var(--tw-duration,.15s)}.aqlo{--tw-duration:.15s;transition-duration:.15s}.aqlp{--anchor-gap:calc(.25rem*2)}@media not all and (prefers-color-scheme:dark){.aqlq{display:none}}.aqlr::placeholder{color:oklab(100% 0 5.96046e-8/.5)}.aqls::placeholder{color:oklab(100% 0 5.96046e-8/.75)}.aqlt::backdrop{background-color:#0000}@media (hover:hover){.aqlu:hover{background-color:oklch(96.7% .003 264.542)}.aqlv:hover{background-color:oklab(58.5% .0288678 -.231205/.75)}.aqlw:hover{background-color:oklab(45.7% .0293443 -.238199/.75)}.aqlx:hover{background-color:oklab(100% 0 5.96046e-8/.05)}.aqly:hover{color:oklch(55.1% .027 264.364)}.aqlz:hover{color:oklch(27.8% .033 256.848)}.aqma:hover{color:#fff}}.aqmb:focus{background-color:oklch(96.7% .003 264.542)}.aqmc:focus{background-color:oklab(100% 0 5.96046e-8/.05)}.aqmd:focus{--tw-outline-style:none;outline-style:none}@media (forced-colors:active){.aqmd:focus{outline-offset:2px;outline:2px solid #0000}}.aqme:focus{outline-style:var(--tw-outline-style);outline-width:2px}.aqmf:focus{outline-offset:calc(2px*-1)}.aqmg:focus{outline-offset:2px}.aqmh:focus{outline-color:oklch(58.5% .233 277.117)}.aqmi:focus{outline-color:#fff}.aqmj:focus{--tw-outline-style:none;outline-style:none}.aqmk:focus-visible{outline-style:var(--tw-outline-style);outline-width:2px}.aqml:focus-visible{outline-offset:calc(1px*-1)}.aqmm:focus-visible{outline-offset:2px}.aqmn:focus-visible{outline-color:#fff}.aqmo[data-closed]{--tw-scale-x:95%;--tw-scale-y:95%;--tw-scale-z:95%;scale:var(--tw-scale-x)var(--tw-scale-y)}.aqmp[data-closed]{opacity:0}.aqmq[data-enter]{--tw-ease:cubic-bezier(0,0,.2,1);transition-timing-function:cubic-bezier(0,0,.2,1)}.aqmr[data-leave]{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,opacity,box-shadow,transform,translate,scale,rotate,filter,-webkit-backdrop-filter,backdrop-filter,display,content-visibility,overlay,pointer-events;transition-timing-function:var(--tw-ease,cubic-bezier(.4,0,.2,1));transition-duration:var(--tw-duration,.15s)}.aqms[data-leave]{--tw-duration:75ms;transition-duration:75ms}.aqmt[data-leave]{--tw-ease:cubic-bezier(.4,0,1,1);transition-timing-function:cubic-bezier(.4,0,1,1)}.aqmu[data-closed][data-leave]{--tw-scale-x:95%;--tw-scale-y:95%;--tw-scale-z:95%;scale:var(--tw-scale-x)var(--tw-scale-y)}.aqmv[data-closed][data-leave]{transform:var(--tw-rotate-x,)var(--tw-rotate-y,)var(--tw-rotate-z,)var(--tw-skew-x,)var(--tw-skew-y,)}.aqmw[data-closed][data-leave]{opacity:0}@media (min-width:40rem){.aqmx{display:inline}.aqmy{padding-inline:1.5rem}.aqmz{text-align:left}.aqna{font-size:.875rem;line-height:1.5rem}}@media (min-width:64rem){.aqnb{position:static}.aqnc{grid-column:span 2/span 2}.aqnd{margin-left:1rem}.aqne{display:block}.aqnf{display:flex}.aqng{display:none}.aqnh{max-width:80rem}.aqni{grid-template-columns:repeat(3,minmax(0,1fr))}.aqnj{align-items:center}.aqnk{justify-content:space-between}.aqnl{gap:2rem}.aqnm{padding-inline:2rem}.aqnn{padding-right:.125rem}}@media (prefers-color-scheme:dark){.aqno{display:none}:where(.aqnp>:not(:last-child)){border-color:oklab(100% 0 5.96046e-8/.1)}.aqnq{border-color:oklch(44.6% .03 256.802)}.aqnr{border-color:oklch(37.3% .034 259.733)}.aqns{border-color:oklab(100% 0 5.96046e-8/.1)}.aqnt{border-color:oklab(100% 0 5.96046e-8/.2)}.aqnu{background-color:oklch(27.8% .033 256.848)}.aqnv{background-color:oklch(21% .034 264.665)}.aqnw{background-color:oklab(45.7% .0293443 -.238199/.5)}.aqnx{background-color:oklch(39.8% .195 277.366)}.aqny{stroke:oklab(100% 0 5.96046e-8/.1)}.aqnz{color:oklch(96.7% .003 264.542)}.aqoa{color:oklch(92.8% .006 264.531)}.aqob{color:oklch(87.2% .01 258.338)}.aqoc{color:oklch(70.7% .022 261.325)}.aqod{color:oklab(100% 0 5.96046e-8/.5)}.aqoe{color-scheme:dark}.aqof{--tw-shadow:0 0 #0000;box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.aqog{--tw-inset-ring-shadow:inset 0 0 0 1px var(--tw-inset-ring-color,currentcolor);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.aqoh{--tw-inset-ring-color:oklab(100% 0 5.96046e-8/.1)}.aqoi{outline-style:var(--tw-outline-style);outline-width:1px}.aqoj{outline-offset:calc(1px*-1)}.aqok{outline-color:oklab(67.3% .0219752 -.180668/.25)}.aqol{outline-color:oklab(100% 0 5.96046e-8/.1)}.aqom::placeholder{color:oklab(100% 0 5.96046e-8/.5)}@media (hover:hover){.aqon:hover{background-color:oklab(45.7% .0293443 -.238199/.75)}.aqoo:hover{background-color:oklab(100% 0 5.96046e-8/.05)}.aqop:hover{color:#fff}}.aqoq:focus{background-color:oklab(100% 0 5.96046e-8/.05)}.aqor:focus,.aqos:focus-visible{outline-color:#fff}}}@property --tw-rotate-x{syntax:"*";inherits:false}@property --tw-rotate-y{syntax:"*";inherits:false}@property --tw-rotate-z{syntax:"*";inherits:false}@property --tw-skew-x{syntax:"*";inherits:false}@property --tw-skew-y{syntax:"*";inherits:false}@property --tw-space-y-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-space-x-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-divide-y-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-border-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-font-weight{syntax:"*";inherits:false}@property --tw-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-shadow-color{syntax:"*";inherits:false}@property --tw-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-inset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-shadow-color{syntax:"*";inherits:false}@property --tw-inset-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-ring-color{syntax:"*";inherits:false}@property --tw-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-ring-color{syntax:"*";inherits:false}@property --tw-inset-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-ring-inset{syntax:"*";inherits:false}@property --tw-ring-offset-width{syntax:"<length>";inherits:false;initial-value:0}@property --tw-ring-offset-color{syntax:"*";inherits:false;initial-value:#fff}@property --tw-ring-offset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-outline-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-duration{syntax:"*";inherits:false}@property --tw-scale-x{syntax:"*";inherits:false;initial-value:1}@property --tw-scale-y{syntax:"*";inherits:false;initial-value:1}@property --tw-scale-z{syntax:"*";inherits:false;initial-value:1}@property --tw-ease{syntax:"*";inherits:false}</style><script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script><link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" /><script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
+<script>
+     window.addEventListener('load', () => window.setTimeout(() => {
+        const makeLink = (asset) => {
+            const link = document.createElement('link')
+
+            Object.keys(asset).forEach((attribute) => {
+                link.setAttribute(attribute, asset[attribute])
+            })
+
+            return link
+        }
+
+        const loadNext = (assets, count) => window.setTimeout(() => {
+            if (count > assets.length) {
+                count = assets.length
+
+                if (count === 0) {
+                    return
+                }
+            }
+
+            const fragment = new DocumentFragment
+
+            while (count > 0) {
+                const link = makeLink(assets.shift())
+                fragment.append(link)
+                count--
+
+                if (assets.length) {
+                    link.onload = () => loadNext(assets, 1)
+                    link.onerror = () => loadNext(assets, 1)
+                }
+            }
+
+            document.head.append(fragment)
+        })
+
+        loadNext([], 3)
+    }))
+</script><style>body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background-color: oklch(21% 0.034 264.665); }</style><body><div class="aqhn aqjh aqlb">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="aqhm aqjh">
+    <body class="aqhm">
+    ```
+  -->
+  <div class="aqho">
+    <header class="aqjl aqki">
+      <div class="aqgs aqhs aqjv aqmy aqnh aqnm">
+        <div class="aqgh aqhb aqid aqig aqkb aqnk">
+          <!-- Logo -->
+          <div class="aqgf aqgo aqhx aqnb">
+            <a href="#">
+              <span class="aqge">Your Company</span>
+              <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=300" alt="Your Company" class="aqhk aqhq" />
+            </a>
+          </div>
+
+          <!-- Right section on desktop -->
+          <div class="aqhd aqnd aqnf aqnj aqnn">
+            <button type="button" class="aqgh aqhx aqir aqjq aqkx aqma aqme aqmi">
+              <span class="aqgf aqgj"></span>
+              <span class="aqge">View notifications</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="aqhg">
+                <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <!-- Profile dropdown -->
+            <el-dropdown class="aqgh aqgy aqhx">
+              <button class="aqgh aqhb aqhu aqid aqir aqjj aqmk aqmm aqmn">
+                <span class="aqgf aqgj"></span>
+                <span class="aqge">Open user menu</span>
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="aqhh aqir aqlh aqlj aqlm" />
+              </button>
+
+              <el-menu anchor="bottom end" popover class="aqgw aqhp aqhz aqit aqjg aqjy aqld aqlh aqlj aqlm aqlp aqmr aqms aqmt aqmu aqmv aqmw">
+                <a href="#" class="aqha aqjv aqka aqkm aqkq aqmc aqmd">Your profile</a>
+                <a href="#" class="aqha aqjv aqka aqkm aqkq aqmc aqmd">Settings</a>
+                <a href="#" class="aqha aqjv aqka aqkm aqkq aqmc aqmd">Sign out</a>
+              </el-menu>
+            </el-dropdown>
+          </div>
+
+          <!-- Search -->
+          <div class="aqhv aqhw aqjx aqng">
+            <div class="aqgs aqhc aqhr aqhu aqib">
+              <input name="search" placeholder="Search" aria-label="Search" class="aqgq aqgr aqha aqhr aqit aqjk aqjz aqkf aqkj aqkl aqky aqli aqlj aqll aqlr aqme aqmf aqmi aqna" />
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="aqgd aqgq aqgr aqgx aqhf aqio aqkz">
+                <path d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Menu button -->
+          <div class="aqgf aqgn aqhx aqng">
+            <!-- Mobile menu button -->
+            <button command="show-modal" commandfor="mobile-menu" class="aqgh aqhe aqid aqig aqit aqjm aqjr aqkx aqlx aqma aqmk aqmn">
+              <span class="aqgf aqgi"></span>
+              <span class="aqge">Open main menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="aqhg">
+                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="aqhd aqiw aqjc aqkb aqne">
+          <div class="aqhc aqic aqid aqii">
+            <div class="aqgp">
+              <nav class="aqhb aqik">
+                <!-- Current: "text-white", Default: "text-indigo-100" -->
+                <a href="#" aria-current="page" class="aqit aqju aqka aqkm aqkn aqky aqlw">Home</a>
+                <a href="#" class="aqit aqju aqka aqkm aqkn aqkw aqlw">Profile</a>
+                <a href="#" class="aqit aqju aqka aqkm aqkn aqkw aqlw">Resources</a>
+                <a href="#" class="aqit aqju aqka aqkm aqkn aqkw aqlw">Company Directory</a>
+                <a href="#" class="aqit aqju aqka aqkm aqkn aqkw aqlw">Openings</a>
+              </nav>
+            </div>
+            <div class="aqgs aqhc aqhr aqht aqib">
+              <input name="search" placeholder="Search" aria-label="Search" class="aqgq aqgr aqha aqhr aqit aqjk aqjz aqkf aqkj aqkl aqky aqli aqlj aqll aqlr aqme aqmf aqmi aqna" />
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="aqgd aqgq aqgr aqgx aqhf aqio aqkz">
+                <path d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <el-dialog>
+        <dialog id="mobile-menu" class="aqlt aqng">
+          <el-dialog-backdrop class="aqgg aqgk aqje aqlo aqmp aqmq aqmt"></el-dialog-backdrop>
+
+          <div tabindex="0" class="aqgg aqgk aqmj">
+            <!-- Mobile menu, show/hide based on mobile menu state. -->
+            <el-dialog-panel class="aqgf aqgl aqgm aqgs aqhr aqhs aqhy aqia aqjr aqln aqlo aqmo aqmp aqmq aqmt">
+              <div class="aqil aqin aqis aqjg aqlh aqlj aqlm">
+                <div class="aqkd aqkg">
+                  <div class="aqhb aqid aqif aqjv">
+                    <div>
+                      <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" class="aqhk aqhq" />
+                    </div>
+                    <div class="aqgv">
+                      <button command="close" commandfor="mobile-menu" class="aqgh aqhe aqid aqig aqit aqjg aqjr aqkr aqlx aqma aqmk aqml aqmn">
+                        <span class="aqgf aqgi"></span>
+                        <span class="aqge">Close menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="aqhg">
+                          <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="aqgu aqij aqjt">
+                    <a href="#" class="aqha aqit aqju aqka aqkl aqkn aqko aqlx aqma">Home</a>
+                    <a href="#" class="aqha aqit aqju aqka aqkl aqkn aqko aqlx aqma">Profile</a>
+                    <a href="#" class="aqha aqit aqju aqka aqkl aqkn aqko aqlx aqma">Resources</a>
+                    <a href="#" class="aqha aqit aqju aqka aqkl aqkn aqko aqlx aqma">Company Directory</a>
+                    <a href="#" class="aqha aqit aqju aqka aqkl aqkn aqko aqlx aqma">Openings</a>
+                  </div>
+                </div>
+                <div class="aqke aqkg">
+                  <div class="aqhb aqid aqjw">
+                    <div class="aqhx">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="aqhi aqir aqlh aqlj aqlm" />
+                    </div>
+                    <div class="aqgx aqhv aqhw">
+                      <div class="aqip aqkl aqkn aqkp">Tom Cook</div>
+                      <div class="aqip aqkm aqkn aqkr">tom@example.com</div>
+                    </div>
+                    <button type="button" class="aqgh aqgz aqhx aqir aqjq aqkr aqma aqme aqmg aqmi">
+                      <span class="aqgf aqgj"></span>
+                      <span class="aqge">View notifications</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="aqhg">
+                        <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="aqgu aqij aqjt">
+                    <a href="#" class="aqha aqit aqju aqka aqkl aqkn aqko aqlx aqma">Your profile</a>
+                    <a href="#" class="aqha aqit aqju aqka aqkl aqkn aqko aqlx aqma">Settings</a>
+                    <a href="#" class="aqha aqit aqju aqka aqkl aqkn aqko aqlx aqma">Sign out</a>
+                  </div>
+                </div>
+              </div>
+            </el-dialog-panel>
+          </div>
+        </dialog>
+      </el-dialog>
+    </header>
+    <main class="aqgt aqkh">
+      <div class="aqgs aqhs aqjv aqmy aqnh aqnm">
+        <h1 class="aqge">Page title</h1>
+        <!-- Main 3 column grid -->
+        <div class="aqhc aqib aqie aqih aqni aqnl">
+          <!-- Left column -->
+          <div class="aqhc aqib aqih aqnc">
+            <section aria-labelledby="section-1-title">
+              <h2 id="section-1-title" class="aqge">Section title</h2>
+              <div class="aqiq aqis aqjg aqlh aqlj aqlm">
+                <div class="aqjs">
+                  <x-placeholder>
+                    <div class="aqgh aqhl aqiq aqiu aqiv aqix aqja aqlc">
+                      <svg fill="none" class="aqgf aqgk aqhj aqjp">
+                        <defs>
+                          <pattern id="pattern-dffd644b-149f-44eb-be54-4f3872820ee7" width="10" height="10" x="0" y="0" patternUnits="userSpaceOnUse">
+                            <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3" />
+                          </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#pattern-dffd644b-149f-44eb-be54-4f3872820ee7)" stroke="none" />
+                      </svg>
+                    </div>
+                  </x-placeholder>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right column -->
+          <div class="aqhc aqib aqih">
+            <section aria-labelledby="section-2-title">
+              <h2 id="section-2-title" class="aqge">Section title</h2>
+              <div class="aqiq aqis aqjg aqlf aqlg">
+                <div class="aqjs">
+                  <x-placeholder>
+                    <div class="aqgh aqhl aqiq aqiu aqiv aqix aqjd aqlc">
+                      <svg fill="none" class="aqgf aqgk aqhj aqjp">
+                        <defs>
+                          <pattern id="pattern-7a429f7f-112e-4ecd-bb4c-a0ab3ae94252" width="10" height="10" x="0" y="0" patternUnits="userSpaceOnUse">
+                            <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3" />
+                          </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#pattern-7a429f7f-112e-4ecd-bb4c-a0ab3ae94252)" stroke="none" />
+                      </svg>
+                    </div>
+                  </x-placeholder>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="aqgs aqhs aqjv aqmy aqnh aqnm">
+        <div class="aqiw aqjb aqkc aqkk aqkm aqkr aqmz"><span class="aqha aqmx">&copy; 2021 Your Company, Inc.</span> <span class="aqha aqmx">All rights reserved.</span></div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script></script>
+</body>

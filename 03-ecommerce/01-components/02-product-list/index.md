@@ -1,0 +1,1 @@
+Use these Tailwind CSS product list components to build storefront and category pages for your online store with images, prices, and links to more details or purchase options. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

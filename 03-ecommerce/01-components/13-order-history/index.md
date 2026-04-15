@@ -1,0 +1,1 @@
+Use these Tailwind CSS order history components to enable customers to view their past purchases, track shipment statuses, and access details of previous orders by themselves. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

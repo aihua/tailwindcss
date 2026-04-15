@@ -1,0 +1,1 @@
+Use these Tailwind CSS product quickview components to let customers preview product details in a modal window without leaving the current page. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

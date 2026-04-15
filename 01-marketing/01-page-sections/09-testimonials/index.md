@@ -1,0 +1,1 @@
+Use these Tailwind CSS testimonial examples to add social proof to your website and build trust with your visitors. These testimonial examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

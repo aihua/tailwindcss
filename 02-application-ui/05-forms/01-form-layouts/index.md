@@ -1,0 +1,1 @@
+Use these Tailwind CSS form and form layout components to build things like settings screens in your application. These form components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

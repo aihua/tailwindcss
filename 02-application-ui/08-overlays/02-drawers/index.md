@@ -1,0 +1,1 @@
+Use these Tailwind CSS drawer components to add panels that slide in from the side for things like mobile menus, notifications, or forms. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

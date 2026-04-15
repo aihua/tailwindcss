@@ -1,0 +1,1 @@
+Use these Tailwind CSS checkbox components to add multi-option selection to your lists and setting screens. These checkbox components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.

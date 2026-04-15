@@ -43,5 +43,6 @@ module.exports = {
 ## Dark mode support
 
 If you're using dark mode components, add the `dark:scheme-dark` class to your `<html>` element to ensure that the browser renders scrollbars and other native UIs correctly in dark mode. Also include the `dark:bg-gray-950` class to provide a dark background for the entire page:
-
+```
 <html class="bg-white dark:bg-gray-950 scheme-light dark:scheme-dark">
+```

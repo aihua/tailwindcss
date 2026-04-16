@@ -1,1 +1,3 @@
-Use these Tailwind CSS detail screen examples to create pages focused on specific items, such as user profiles, reports, or individual resources in your application. These page examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS detail screen examples to create pages focused on specific items, such as user profiles, reports,
+or individual resources in your application. These page examples are designed and built by the Tailwind CSS team, and
+include a variety of different styles and layouts.

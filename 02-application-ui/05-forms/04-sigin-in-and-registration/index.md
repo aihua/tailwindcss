@@ -1,1 +1,3 @@
-Use these Tailwind CSS sign-in and registration components as the foundation for your application's login and sign-up pages. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS sign-in and registration components as the foundation for your application's login and sign-up
+pages. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and
+layouts.

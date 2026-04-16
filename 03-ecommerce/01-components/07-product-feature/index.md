@@ -1,1 +1,3 @@
-Use these Tailwind CSS product feature components to create more focused landing pages for your store with detailed descriptions and high-quality images, perfect for direct-to-consumer brands. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS product feature components to create more focused landing pages for your store with detailed
+descriptions and high-quality images, perfect for direct-to-consumer brands. These components are designed and built by
+the Tailwind CSS team, and include a variety of different styles and layouts.

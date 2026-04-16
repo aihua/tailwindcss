@@ -33,6 +33,5 @@ export default function Example() {
         </figure>
       </div>
     </section>
-  )
+  );
 }
-

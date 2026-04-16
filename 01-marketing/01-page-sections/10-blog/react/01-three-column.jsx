@@ -7,7 +7,7 @@ const posts = [
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
+    category: {title: 'Marketing', href: '#'},
     author: {
       name: 'Michael Foster',
       role: 'Co-Founder / CTO',
@@ -23,7 +23,7 @@ const posts = [
     description: 'Optio cum necessitatibus dolor voluptatum provident commodi et. Qui aperiam fugiat nemo cumque.',
     date: 'Mar 10, 2020',
     datetime: '2020-03-10',
-    category: { title: 'Sales', href: '#' },
+    category: {title: 'Sales', href: '#'},
     author: {
       name: 'Lindsay Walton',
       role: 'Front-end Developer',
@@ -40,7 +40,7 @@ const posts = [
       'Cupiditate maiores ullam eveniet adipisci in doloribus nulla minus. Voluptas iusto libero adipisci rem et corporis. Nostrud sint anim sunt aliqua. Nulla eu labore irure incididunt velit cillum quis magna dolore.',
     date: 'Feb 12, 2020',
     datetime: '2020-02-12',
-    category: { title: 'Business', href: '#' },
+    category: {title: 'Business', href: '#'},
     author: {
       name: 'Tom Cook',
       role: 'Director of Product',
@@ -49,7 +49,7 @@ const posts = [
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
   },
-]
+];
 
 export default function Example() {
   return (
@@ -60,7 +60,7 @@ export default function Example() {
           <p className="mt-2 text-lg/8 text-gray-300">Learn how to grow your business with our expert advice.</p>
         </div>
         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {posts.map((post) => (
+          {posts.map(post => (
             <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
               <div className="flex items-center gap-x-4 text-xs">
                 <time dateTime={post.datetime} className="text-gray-400">
@@ -68,8 +68,7 @@ export default function Example() {
                 </time>
                 <a
                   href={post.category.href}
-                  className="relative z-10 rounded-full bg-gray-800/60 px-3 py-1.5 font-medium text-gray-300 hover:bg-gray-800"
-                >
+                  className="relative z-10 rounded-full bg-gray-800/60 px-3 py-1.5 font-medium text-gray-300 hover:bg-gray-800">
                   {post.category.title}
                 </a>
               </div>
@@ -99,6 +98,5 @@ export default function Example() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

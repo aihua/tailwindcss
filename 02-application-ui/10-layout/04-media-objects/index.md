@@ -1,1 +1,3 @@
-Use these Tailwind CSS media object components to align images or icons with text, for things like user comments, blog posts, and author bios. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS media object components to align images or icons with text, for things like user comments, blog
+posts, and author bios. These components are designed and built by the Tailwind CSS team, and include a variety of
+different styles and layouts.

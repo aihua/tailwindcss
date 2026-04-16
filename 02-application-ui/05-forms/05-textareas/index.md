@@ -1,1 +1,3 @@
-Use these Tailwind CSS textarea components to add text input areas for things like user comments, feedback forms, and message boxes. These textarea components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS textarea components to add text input areas for things like user comments, feedback forms, and
+message boxes. These textarea components are designed and built by the Tailwind CSS team, and include a variety of
+different styles and layouts.

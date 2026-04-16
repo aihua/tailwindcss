@@ -1,227 +1,964 @@
-<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="preconnect" href="https://rsms.me/"><link rel="stylesheet" href="https://rsms.me/inter/inter.css"><script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script><style>/*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-font-weight:initial;--tw-tracking:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-space-x-reverse:0}}}@layer theme{:root,:host{--font-sans:InterVariable,system-ui,sans-serif;--font-sans--font-feature-settings:"cv02","cv03","cv04","cv11"}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--font-sans,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji");font-feature-settings:var(--font-sans--font-feature-settings);font-variation-settings:initial;-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-feature-settings:initial;font-variation-settings:initial;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring{outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab,currentcolor 50%,transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.uvx{clip-path:inset(50%);white-space:nowrap;border-width:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}.uvy{margin-inline:auto}.uvz{margin-top:-.25rem}.uwa{margin-top:.5rem}.uwb{margin-top:.75rem}.uwc{margin-top:1rem}.uwd{margin-top:1.5rem}.uwe{margin-top:2rem}.uwf{margin-top:4rem}.uwg{margin-left:-1rem}.uwh{margin-left:1rem}.uwi{display:block}.uwj{display:flex}.uwk{display:grid}.uwl{display:none}.uwm{aspect-ratio:1}.uwn{height:.5rem}.uwo{height:1.5rem}.uwp{width:auto}.uwq{width:100%}.uwr{max-width:42rem}.uws{flex-shrink:0}.uwt{grid-template-columns:repeat(2,minmax(0,1fr))}.uwu{grid-template-columns:repeat(4,minmax(0,1fr))}.uwv{flex-wrap:wrap}.uww{align-items:center}.uwx{justify-content:space-between}.uwy{gap:1.5rem}:where(.uwz>:not(:last-child)){--tw-space-y-reverse:0;margin-block-start:calc(calc(.25rem*2)*var(--tw-space-y-reverse));margin-block-end:calc(calc(.25rem*2)*calc(1 - var(--tw-space-y-reverse)))}:where(.uxa>:not(:last-child)){--tw-space-y-reverse:0;margin-block-start:calc(calc(.25rem*3)*var(--tw-space-y-reverse));margin-block-end:calc(calc(.25rem*3)*calc(1 - var(--tw-space-y-reverse)))}:where(.uxb>:not(:last-child)){--tw-space-y-reverse:0;margin-block-start:calc(calc(.25rem*8)*var(--tw-space-y-reverse));margin-block-end:calc(calc(.25rem*8)*calc(1 - var(--tw-space-y-reverse)))}.uxc{column-gap:1.5rem}:where(.uxd>:not(:last-child)){--tw-divide-y-reverse:0;border-bottom-style:var(--tw-border-style);border-top-style:var(--tw-border-style);border-top-width:calc(1px*var(--tw-divide-y-reverse));border-bottom-width:calc(1px*calc(1 - var(--tw-divide-y-reverse)))}:where(.uxe>:not(:last-child)){border-color:oklch(92.8% .006 264.531)}.uxf{overflow:hidden}.uxg{border-radius:3.40282e38px}.uxh{border-radius:.5rem}.uxi{border-top-style:var(--tw-border-style);border-top-width:1px}.uxj{border-bottom-style:var(--tw-border-style);border-bottom-width:1px}.uxk{border-color:oklch(92.8% .006 264.531)}.uxl{background-color:oklch(98.5% .002 247.839)}.uxm{background-color:oklch(96.7% .003 264.542)}.uxn{background-color:oklch(92.8% .006 264.531)}.uxo{background-color:oklch(51.1% .262 276.966)}.uxp{background-color:#fff}.uxq{object-fit:cover}.uxr{padding-inline:1rem}.uxs{padding-block:1rem}.uxt{padding-block:1.5rem}.uxu{padding-top:1rem}.uxv{padding-top:4rem}.uxw{padding-bottom:1rem}.uxx{text-align:center}.uxy{text-align:right}.uxz{font-size:1.5rem;line-height:var(--tw-leading,calc(2/1.5))}.uya{font-size:1rem;line-height:var(--tw-leading,calc(1.5/1))}.uyb{font-size:.875rem;line-height:var(--tw-leading,calc(1.25/.875))}.uyc{--tw-font-weight:700;font-weight:700}.uyd{--tw-font-weight:500;font-weight:500}.uye{--tw-tracking:-.025em;letter-spacing:-.025em}.uyf{color:oklch(55.1% .027 264.364)}.uyg{color:oklch(44.6% .03 256.802)}.uyh{color:oklch(21% .034 264.665)}.uyi{color:oklch(51.1% .262 276.966)}.uyj{--tw-shadow:0 1px 2px 0 var(--tw-shadow-color,#0000000d);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}@media (hover:hover){.uyk:hover{color:oklch(58.5% .233 277.117)}}@media (min-width:40rem){.uyl{margin-top:0}.uym{margin-left:1.5rem}.uyn{display:block}.uyo{display:flex}.uyp{display:grid}.uyq{display:none}.uyr{width:10rem;height:10rem}.uys{align-items:baseline}.uyt{justify-content:space-between}:where(.uyu>:not(:last-child)){--tw-space-y-reverse:0;margin-block-start:calc(calc(.25rem*0)*var(--tw-space-y-reverse));margin-block-end:calc(calc(.25rem*0)*calc(1 - var(--tw-space-y-reverse)))}:where(.uyv>:not(:last-child)){--tw-space-x-reverse:0;margin-inline-start:calc(calc(.25rem*4)*var(--tw-space-x-reverse));margin-inline-end:calc(calc(.25rem*4)*calc(1 - var(--tw-space-x-reverse)))}.uyw{border-radius:.5rem}.uyx{border-style:var(--tw-border-style);border-width:1px}.uyy{padding-inline:0}.uyz{padding-inline:1.5rem}.uza{padding-block:6rem}.uzb{font-size:1.875rem;line-height:var(--tw-leading,calc(2.25/1.875))}}@media (min-width:48rem){.uzc{column-gap:2rem}}@media (min-width:64rem){.uzd{grid-column:span 5/span 5}.uze{grid-column:span 7/span 7}.uzf{margin-top:0}.uzg{display:grid}.uzh{max-width:80rem}.uzi{grid-template-columns:repeat(12,minmax(0,1fr))}.uzj{column-gap:2rem}.uzk{padding:2rem}.uzl{padding-inline:2rem}.uzm{padding-block:2rem}}}@property --tw-space-y-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-divide-y-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-border-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-font-weight{syntax:"*";inherits:false}@property --tw-tracking{syntax:"*";inherits:false}@property --tw-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-shadow-color{syntax:"*";inherits:false}@property --tw-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-inset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-shadow-color{syntax:"*";inherits:false}@property --tw-inset-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-ring-color{syntax:"*";inherits:false}@property --tw-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-ring-color{syntax:"*";inherits:false}@property --tw-inset-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-ring-inset{syntax:"*";inherits:false}@property --tw-ring-offset-width{syntax:"<length>";inherits:false;initial-value:0}@property --tw-ring-offset-color{syntax:"*";inherits:false;initial-value:#fff}@property --tw-ring-offset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-space-x-reverse{syntax:"*";inherits:false;initial-value:0}</style><script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script><link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" /><script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-     window.addEventListener('load', () => window.setTimeout(() => {
-        const makeLink = (asset) => {
-            const link = document.createElement('link')
-
-            Object.keys(asset).forEach((attribute) => {
-                link.setAttribute(attribute, asset[attribute])
-            })
-
-            return link
+<!doctype html><meta charset="utf-8" /><meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
+  rel="preconnect"
+  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+<style>
+  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
+  @layer properties {
+    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
+      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+      *,
+      :before,
+      :after,
+      ::backdrop {
+        --tw-space-y-reverse: 0;
+        --tw-divide-y-reverse: 0;
+        --tw-border-style: solid;
+        --tw-font-weight: initial;
+        --tw-tracking: initial;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-color: initial;
+        --tw-shadow-alpha: 100%;
+        --tw-inset-shadow: 0 0 #0000;
+        --tw-inset-shadow-color: initial;
+        --tw-inset-shadow-alpha: 100%;
+        --tw-ring-color: initial;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-inset-ring-color: initial;
+        --tw-inset-ring-shadow: 0 0 #0000;
+        --tw-ring-inset: initial;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-space-x-reverse: 0;
+      }
+    }
+  }
+  @layer theme {
+    :root,
+    :host {
+      --font-sans: InterVariable, system-ui, sans-serif;
+      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+  }
+  @layer base {
+    *,
+    :after,
+    :before,
+    ::backdrop {
+      box-sizing: border-box;
+      border: 0 solid;
+      margin: 0;
+      padding: 0;
+    }
+    ::file-selector-button {
+      box-sizing: border-box;
+      border: 0 solid;
+      margin: 0;
+      padding: 0;
+    }
+    html,
+    :host {
+      -webkit-text-size-adjust: 100%;
+      tab-size: 4;
+      line-height: 1.5;
+      font-family: var(
+        --font-sans,
+        ui-sans-serif,
+        system-ui,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji'
+      );
+      font-feature-settings: var(--font-sans--font-feature-settings);
+      font-variation-settings: initial;
+      -webkit-tap-highlight-color: transparent;
+    }
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px;
+    }
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+    a {
+      color: inherit;
+      -webkit-text-decoration: inherit;
+      -webkit-text-decoration: inherit;
+      -webkit-text-decoration: inherit;
+      text-decoration: inherit;
+    }
+    b,
+    strong {
+      font-weight: bolder;
+    }
+    code,
+    kbd,
+    samp,
+    pre {
+      font-feature-settings: initial;
+      font-variation-settings: initial;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        Liberation Mono,
+        Courier New,
+        monospace;
+      font-size: 1em;
+    }
+    small {
+      font-size: 80%;
+    }
+    sub,
+    sup {
+      vertical-align: baseline;
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+    }
+    sub {
+      bottom: -0.25em;
+    }
+    sup {
+      top: -0.5em;
+    }
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse;
+    }
+    :-moz-focusring {
+      outline: auto;
+    }
+    progress {
+      vertical-align: baseline;
+    }
+    summary {
+      display: list-item;
+    }
+    ol,
+    ul,
+    menu {
+      list-style: none;
+    }
+    img,
+    svg,
+    video,
+    canvas,
+    audio,
+    iframe,
+    embed,
+    object {
+      vertical-align: middle;
+      display: block;
+    }
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+      font: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+      opacity: 1;
+      background-color: #0000;
+      border-radius: 0;
+    }
+    ::file-selector-button {
+      font: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+      opacity: 1;
+      background-color: #0000;
+      border-radius: 0;
+    }
+    :where(select:is([multiple], [size])) optgroup {
+      font-weight: bolder;
+    }
+    :where(select:is([multiple], [size])) optgroup option {
+      padding-inline-start: 20px;
+    }
+    ::file-selector-button {
+      margin-inline-end: 4px;
+    }
+    ::placeholder {
+      opacity: 1;
+    }
+    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
+      ::placeholder {
+        color: currentColor;
+      }
+      @supports (color: color-mix(in lab, red, red)) {
+        ::placeholder {
+          color: color-mix(in oklab, currentcolor 50%, transparent);
         }
+      }
+    }
+    textarea {
+      resize: vertical;
+    }
+    ::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+    ::-webkit-date-and-time-value {
+      min-height: 1lh;
+      text-align: inherit;
+    }
+    ::-webkit-datetime-edit {
+      display: inline-flex;
+    }
+    ::-webkit-datetime-edit-fields-wrapper {
+      padding: 0;
+    }
+    ::-webkit-datetime-edit {
+      padding-block: 0;
+    }
+    ::-webkit-datetime-edit-year-field {
+      padding-block: 0;
+    }
+    ::-webkit-datetime-edit-month-field {
+      padding-block: 0;
+    }
+    ::-webkit-datetime-edit-day-field {
+      padding-block: 0;
+    }
+    ::-webkit-datetime-edit-hour-field {
+      padding-block: 0;
+    }
+    ::-webkit-datetime-edit-minute-field {
+      padding-block: 0;
+    }
+    ::-webkit-datetime-edit-second-field {
+      padding-block: 0;
+    }
+    ::-webkit-datetime-edit-millisecond-field {
+      padding-block: 0;
+    }
+    ::-webkit-datetime-edit-meridiem-field {
+      padding-block: 0;
+    }
+    ::-webkit-calendar-picker-indicator {
+      line-height: 1;
+    }
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+    button,
+    input:where([type='button'], [type='reset'], [type='submit']) {
+      appearance: button;
+    }
+    ::file-selector-button {
+      appearance: button;
+    }
+    ::-webkit-inner-spin-button {
+      height: auto;
+    }
+    ::-webkit-outer-spin-button {
+      height: auto;
+    }
+    [hidden]:where(:not([hidden='until-found'])) {
+      display: none !important;
+    }
+  }
+  @layer components;
+  @layer utilities {
+    .uvx {
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border-width: 0;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      position: absolute;
+      overflow: hidden;
+    }
+    .uvy {
+      margin-inline: auto;
+    }
+    .uvz {
+      margin-top: -0.25rem;
+    }
+    .uwa {
+      margin-top: 0.5rem;
+    }
+    .uwb {
+      margin-top: 0.75rem;
+    }
+    .uwc {
+      margin-top: 1rem;
+    }
+    .uwd {
+      margin-top: 1.5rem;
+    }
+    .uwe {
+      margin-top: 2rem;
+    }
+    .uwf {
+      margin-top: 4rem;
+    }
+    .uwg {
+      margin-left: -1rem;
+    }
+    .uwh {
+      margin-left: 1rem;
+    }
+    .uwi {
+      display: block;
+    }
+    .uwj {
+      display: flex;
+    }
+    .uwk {
+      display: grid;
+    }
+    .uwl {
+      display: none;
+    }
+    .uwm {
+      aspect-ratio: 1;
+    }
+    .uwn {
+      height: 0.5rem;
+    }
+    .uwo {
+      height: 1.5rem;
+    }
+    .uwp {
+      width: auto;
+    }
+    .uwq {
+      width: 100%;
+    }
+    .uwr {
+      max-width: 42rem;
+    }
+    .uws {
+      flex-shrink: 0;
+    }
+    .uwt {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .uwu {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .uwv {
+      flex-wrap: wrap;
+    }
+    .uww {
+      align-items: center;
+    }
+    .uwx {
+      justify-content: space-between;
+    }
+    .uwy {
+      gap: 1.5rem;
+    }
+    :where(.uwz > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(0.25rem * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(0.25rem * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+    :where(.uxa > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(0.25rem * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(0.25rem * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+    :where(.uxb > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(0.25rem * 8) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-y-reverse)));
+    }
+    .uxc {
+      column-gap: 1.5rem;
+    }
+    :where(.uxd > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-bottom-style: var(--tw-border-style);
+      border-top-style: var(--tw-border-style);
+      border-top-width: calc(1px * var(--tw-divide-y-reverse));
+      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+    }
+    :where(.uxe > :not(:last-child)) {
+      border-color: oklch(92.8% 0.006 264.531);
+    }
+    .uxf {
+      overflow: hidden;
+    }
+    .uxg {
+      border-radius: 3.40282e38px;
+    }
+    .uxh {
+      border-radius: 0.5rem;
+    }
+    .uxi {
+      border-top-style: var(--tw-border-style);
+      border-top-width: 1px;
+    }
+    .uxj {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 1px;
+    }
+    .uxk {
+      border-color: oklch(92.8% 0.006 264.531);
+    }
+    .uxl {
+      background-color: oklch(98.5% 0.002 247.839);
+    }
+    .uxm {
+      background-color: oklch(96.7% 0.003 264.542);
+    }
+    .uxn {
+      background-color: oklch(92.8% 0.006 264.531);
+    }
+    .uxo {
+      background-color: oklch(51.1% 0.262 276.966);
+    }
+    .uxp {
+      background-color: #fff;
+    }
+    .uxq {
+      object-fit: cover;
+    }
+    .uxr {
+      padding-inline: 1rem;
+    }
+    .uxs {
+      padding-block: 1rem;
+    }
+    .uxt {
+      padding-block: 1.5rem;
+    }
+    .uxu {
+      padding-top: 1rem;
+    }
+    .uxv {
+      padding-top: 4rem;
+    }
+    .uxw {
+      padding-bottom: 1rem;
+    }
+    .uxx {
+      text-align: center;
+    }
+    .uxy {
+      text-align: right;
+    }
+    .uxz {
+      font-size: 1.5rem;
+      line-height: var(--tw-leading, calc(2 / 1.5));
+    }
+    .uya {
+      font-size: 1rem;
+      line-height: var(--tw-leading, calc(1.5 / 1));
+    }
+    .uyb {
+      font-size: 0.875rem;
+      line-height: var(--tw-leading, calc(1.25 / 0.875));
+    }
+    .uyc {
+      --tw-font-weight: 700;
+      font-weight: 700;
+    }
+    .uyd {
+      --tw-font-weight: 500;
+      font-weight: 500;
+    }
+    .uye {
+      --tw-tracking: -0.025em;
+      letter-spacing: -0.025em;
+    }
+    .uyf {
+      color: oklch(55.1% 0.027 264.364);
+    }
+    .uyg {
+      color: oklch(44.6% 0.03 256.802);
+    }
+    .uyh {
+      color: oklch(21% 0.034 264.665);
+    }
+    .uyi {
+      color: oklch(51.1% 0.262 276.966);
+    }
+    .uyj {
+      --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+        var(--tw-shadow);
+    }
+    @media (hover: hover) {
+      .uyk:hover {
+        color: oklch(58.5% 0.233 277.117);
+      }
+    }
+    @media (min-width: 40rem) {
+      .uyl {
+        margin-top: 0;
+      }
+      .uym {
+        margin-left: 1.5rem;
+      }
+      .uyn {
+        display: block;
+      }
+      .uyo {
+        display: flex;
+      }
+      .uyp {
+        display: grid;
+      }
+      .uyq {
+        display: none;
+      }
+      .uyr {
+        width: 10rem;
+        height: 10rem;
+      }
+      .uys {
+        align-items: baseline;
+      }
+      .uyt {
+        justify-content: space-between;
+      }
+      :where(.uyu > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(0.25rem * 0) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(0.25rem * 0) * calc(1 - var(--tw-space-y-reverse)));
+      }
+      :where(.uyv > :not(:last-child)) {
+        --tw-space-x-reverse: 0;
+        margin-inline-start: calc(calc(0.25rem * 4) * var(--tw-space-x-reverse));
+        margin-inline-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-x-reverse)));
+      }
+      .uyw {
+        border-radius: 0.5rem;
+      }
+      .uyx {
+        border-style: var(--tw-border-style);
+        border-width: 1px;
+      }
+      .uyy {
+        padding-inline: 0;
+      }
+      .uyz {
+        padding-inline: 1.5rem;
+      }
+      .uza {
+        padding-block: 6rem;
+      }
+      .uzb {
+        font-size: 1.875rem;
+        line-height: var(--tw-leading, calc(2.25 / 1.875));
+      }
+    }
+    @media (min-width: 48rem) {
+      .uzc {
+        column-gap: 2rem;
+      }
+    }
+    @media (min-width: 64rem) {
+      .uzd {
+        grid-column: span 5 / span 5;
+      }
+      .uze {
+        grid-column: span 7 / span 7;
+      }
+      .uzf {
+        margin-top: 0;
+      }
+      .uzg {
+        display: grid;
+      }
+      .uzh {
+        max-width: 80rem;
+      }
+      .uzi {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+      }
+      .uzj {
+        column-gap: 2rem;
+      }
+      .uzk {
+        padding: 2rem;
+      }
+      .uzl {
+        padding-inline: 2rem;
+      }
+      .uzm {
+        padding-block: 2rem;
+      }
+    }
+  }
+  @property --tw-space-y-reverse {
+    syntax: '*';
+    inherits: false;
+    initial-value: 0;
+  }
+  @property --tw-divide-y-reverse {
+    syntax: '*';
+    inherits: false;
+    initial-value: 0;
+  }
+  @property --tw-border-style {
+    syntax: '*';
+    inherits: false;
+    initial-value: solid;
+  }
+  @property --tw-font-weight {
+    syntax: '*';
+    inherits: false;
+  }
+  @property --tw-tracking {
+    syntax: '*';
+    inherits: false;
+  }
+  @property --tw-shadow {
+    syntax: '*';
+    inherits: false;
+    initial-value: 0 0 #0000;
+  }
+  @property --tw-shadow-color {
+    syntax: '*';
+    inherits: false;
+  }
+  @property --tw-shadow-alpha {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+  }
+  @property --tw-inset-shadow {
+    syntax: '*';
+    inherits: false;
+    initial-value: 0 0 #0000;
+  }
+  @property --tw-inset-shadow-color {
+    syntax: '*';
+    inherits: false;
+  }
+  @property --tw-inset-shadow-alpha {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+  }
+  @property --tw-ring-color {
+    syntax: '*';
+    inherits: false;
+  }
+  @property --tw-ring-shadow {
+    syntax: '*';
+    inherits: false;
+    initial-value: 0 0 #0000;
+  }
+  @property --tw-inset-ring-color {
+    syntax: '*';
+    inherits: false;
+  }
+  @property --tw-inset-ring-shadow {
+    syntax: '*';
+    inherits: false;
+    initial-value: 0 0 #0000;
+  }
+  @property --tw-ring-inset {
+    syntax: '*';
+    inherits: false;
+  }
+  @property --tw-ring-offset-width {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0;
+  }
+  @property --tw-ring-offset-color {
+    syntax: '*';
+    inherits: false;
+    initial-value: #fff;
+  }
+  @property --tw-ring-offset-shadow {
+    syntax: '*';
+    inherits: false;
+    initial-value: 0 0 #0000;
+  }
+  @property --tw-space-x-reverse {
+    syntax: '*';
+    inherits: false;
+    initial-value: 0;
+  }
+</style>
+<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
+<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
+<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
+<script>
+  window.addEventListener('load', () =>
+    window.setTimeout(() => {
+      const makeLink = asset => {
+        const link = document.createElement('link');
 
-        const loadNext = (assets, count) => window.setTimeout(() => {
-            if (count > assets.length) {
-                count = assets.length
+        Object.keys(asset).forEach(attribute => {
+          link.setAttribute(attribute, asset[attribute]);
+        });
 
-                if (count === 0) {
-                    return
-                }
+        return link;
+      };
+
+      const loadNext = (assets, count) =>
+        window.setTimeout(() => {
+          if (count > assets.length) {
+            count = assets.length;
+
+            if (count === 0) {
+              return;
             }
+          }
 
-            const fragment = new DocumentFragment
+          const fragment = new DocumentFragment();
 
-            while (count > 0) {
-                const link = makeLink(assets.shift())
-                fragment.append(link)
-                count--
+          while (count > 0) {
+            const link = makeLink(assets.shift());
+            fragment.append(link);
+            count--;
 
-                if (assets.length) {
-                    link.onload = () => loadNext(assets, 1)
-                    link.onerror = () => loadNext(assets, 1)
-                }
+            if (assets.length) {
+              link.onload = () => loadNext(assets, 1);
+              link.onerror = () => loadNext(assets, 1);
             }
+          }
 
-            document.head.append(fragment)
-        })
+          document.head.append(fragment);
+        });
 
-        loadNext([], 3)
-    }))
-</script><style>body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;  }</style><body><div class="uxl">
-  <div class="uvy uwr uxv uyz uza uzh uzl">
-    <div class="uwz uxr uyo uys uyt uyu uyy">
-      <div class="uwj uys uyv">
-        <h1 class="uxz uyc uye uyh uzb">Order #54879</h1>
-        <a href="#" class="uwl uyb uyd uyi uyk uyn">
+      loadNext([], 3);
+    })
+  );
+</script>
+<style>
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+</style>
+<body>
+  <div class="uxl">
+    <div class="uvy uwr uxv uyz uza uzh uzl">
+      <div class="uwz uxr uyo uys uyt uyu uyy">
+        <div class="uwj uys uyv">
+          <h1 class="uxz uyc uye uyh uzb">Order #54879</h1>
+          <a href="#" class="uwl uyb uyd uyi uyk uyn">
+            View invoice
+            <span aria-hidden="true"> &rarr;</span>
+          </a>
+        </div>
+        <p class="uyb uyg">Order placed <time datetime="2021-03-22" class="uyd uyh">March 22, 2021</time></p>
+        <a href="#" class="uyb uyd uyi uyk uyq">
           View invoice
           <span aria-hidden="true"> &rarr;</span>
         </a>
       </div>
-      <p class="uyb uyg">Order placed <time datetime="2021-03-22" class="uyd uyh">March 22, 2021</time></p>
-      <a href="#" class="uyb uyd uyi uyk uyq">
-        View invoice
-        <span aria-hidden="true"> &rarr;</span>
-      </a>
-    </div>
 
-    <!-- Products -->
-    <div class="uwd">
-      <h2 class="uvx">Products purchased</h2>
+      <!-- Products -->
+      <div class="uwd">
+        <h2 class="uvx">Products purchased</h2>
 
-      <div class="uxb">
-        <div class="uxi uxj uxk uxp uyj uyw uyx">
-          <div class="uxr uxt uyz uzg uzi uzj uzk">
-            <div class="uyo uze">
-              <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/confirmation-page-03-product-01.jpg" alt="Insulated bottle with white base and black snap lid." class="uwm uwq uws uxh uxq uyr" />
+        <div class="uxb">
+          <div class="uxi uxj uxk uxp uyj uyw uyx">
+            <div class="uxr uxt uyz uzg uzi uzj uzk">
+              <div class="uyo uze">
+                <img
+                  src="https://tailwindcss.com/plus-assets/img/ecommerce-images/confirmation-page-03-product-01.jpg"
+                  alt="Insulated bottle with white base and black snap lid."
+                  class="uwm uwq uws uxh uxq uyr" />
 
-              <div class="uwd uyl uym">
-                <h3 class="uya uyd uyh">
-                  <a href="#">Nomad Tumbler</a>
-                </h3>
-                <p class="uwa uyb uyd uyh">$35.00</p>
-                <p class="uwb uyb uyf">This durable and portable insulated tumbler will keep your beverage at the perfect temperature during your next adventure.</p>
+                <div class="uwd uyl uym">
+                  <h3 class="uya uyd uyh">
+                    <a href="#">Nomad Tumbler</a>
+                  </h3>
+                  <p class="uwa uyb uyd uyh">$35.00</p>
+                  <p class="uwb uyb uyf">
+                    This durable and portable insulated tumbler will keep your beverage at the perfect temperature
+                    during your next adventure.
+                  </p>
+                </div>
+              </div>
+
+              <div class="uwd uzd uzf">
+                <dl class="uwk uwt uxc uyb">
+                  <div>
+                    <dt class="uyd uyh">Delivery address</dt>
+                    <dd class="uwb uyf">
+                      <span class="uwi">Floyd Miles</span>
+                      <span class="uwi">7363 Cynthia Pass</span>
+                      <span class="uwi">Toronto, ON N3Y 4H8</span>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt class="uyd uyh">Shipping updates</dt>
+                    <dd class="uwb uxa uyf">
+                      <p>f•••@example.com</p>
+                      <p>1•••••••••40</p>
+                      <button type="button" class="uyd uyi uyk">Edit</button>
+                    </dd>
+                  </div>
+                </dl>
               </div>
             </div>
 
-            <div class="uwd uzd uzf">
-              <dl class="uwk uwt uxc uyb">
-                <div>
-                  <dt class="uyd uyh">Delivery address</dt>
-                  <dd class="uwb uyf">
-                    <span class="uwi">Floyd Miles</span>
-                    <span class="uwi">7363 Cynthia Pass</span>
-                    <span class="uwi">Toronto, ON N3Y 4H8</span>
-                  </dd>
+            <div class="uxi uxk uxr uxt uyz uzk">
+              <h4 class="uvx">Status</h4>
+              <p class="uyb uyd uyh">Preparing to ship on <time datetime="2021-03-24">March 24, 2021</time></p>
+              <div aria-hidden="true" class="uwd">
+                <div class="uxf uxg uxn">
+                  <div style="width: calc((1 * 2 + 1) / 8 * 100%)" class="uwn uxg uxo"></div>
                 </div>
-                <div>
-                  <dt class="uyd uyh">Shipping updates</dt>
-                  <dd class="uwb uxa uyf">
-                    <p>f•••@example.com</p>
-                    <p>1•••••••••40</p>
-                    <button type="button" class="uyd uyi uyk">Edit</button>
-                  </dd>
+                <div class="uwd uwl uwu uyb uyd uyg uyp">
+                  <div class="uyi">Order placed</div>
+                  <div class="uxx uyi">Processing</div>
+                  <div class="uxx">Shipped</div>
+                  <div class="uxy">Delivered</div>
                 </div>
-              </dl>
+              </div>
             </div>
           </div>
+          <div class="uxi uxj uxk uxp uyj uyw uyx">
+            <div class="uxr uxt uyz uzg uzi uzj uzk">
+              <div class="uyo uze">
+                <img
+                  src="https://tailwindcss.com/plus-assets/img/ecommerce-images/confirmation-page-03-product-02.jpg"
+                  alt="Arm modeling wristwatch with black leather band, white watch face, thin watch hands, and fine time markings."
+                  class="uwm uwq uws uxh uxq uyr" />
 
-          <div class="uxi uxk uxr uxt uyz uzk">
-            <h4 class="uvx">Status</h4>
-            <p class="uyb uyd uyh">Preparing to ship on <time datetime="2021-03-24">March 24, 2021</time></p>
-            <div aria-hidden="true" class="uwd">
-              <div class="uxf uxg uxn">
-                <div style="width: calc((1 * 2 + 1) / 8 * 100%)" class="uwn uxg uxo"></div>
-              </div>
-              <div class="uwd uwl uwu uyb uyd uyg uyp">
-                <div class="uyi">Order placed</div>
-                <div class="uxx uyi">Processing</div>
-                <div class="uxx">Shipped</div>
-                <div class="uxy">Delivered</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="uxi uxj uxk uxp uyj uyw uyx">
-          <div class="uxr uxt uyz uzg uzi uzj uzk">
-            <div class="uyo uze">
-              <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/confirmation-page-03-product-02.jpg" alt="Arm modeling wristwatch with black leather band, white watch face, thin watch hands, and fine time markings." class="uwm uwq uws uxh uxq uyr" />
-
-              <div class="uwd uyl uym">
-                <h3 class="uya uyd uyh">
-                  <a href="#">Minimalist Wristwatch</a>
-                </h3>
-                <p class="uwa uyb uyd uyh">$149.00</p>
-                <p class="uwb uyb uyf">This contemporary wristwatch has a clean, minimalist look and high quality components.</p>
-              </div>
-            </div>
-
-            <div class="uwd uzd uzf">
-              <dl class="uwk uwt uxc uyb">
-                <div>
-                  <dt class="uyd uyh">Delivery address</dt>
-                  <dd class="uwb uyf">
-                    <span class="uwi">Floyd Miles</span>
-                    <span class="uwi">7363 Cynthia Pass</span>
-                    <span class="uwi">Toronto, ON N3Y 4H8</span>
-                  </dd>
+                <div class="uwd uyl uym">
+                  <h3 class="uya uyd uyh">
+                    <a href="#">Minimalist Wristwatch</a>
+                  </h3>
+                  <p class="uwa uyb uyd uyh">$149.00</p>
+                  <p class="uwb uyb uyf">
+                    This contemporary wristwatch has a clean, minimalist look and high quality components.
+                  </p>
                 </div>
-                <div>
-                  <dt class="uyd uyh">Shipping updates</dt>
-                  <dd class="uwb uxa uyf">
-                    <p>f•••@example.com</p>
-                    <p>1•••••••••40</p>
-                    <button type="button" class="uyd uyi uyk">Edit</button>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-
-          <div class="uxi uxk uxr uxt uyz uzk">
-            <h4 class="uvx">Status</h4>
-            <p class="uyb uyd uyh">Shipped on <time datetime="2021-03-23">March 23, 2021</time></p>
-            <div aria-hidden="true" class="uwd">
-              <div class="uxf uxg uxn">
-                <div style="width: calc((0 * 2 + 1) / 8 * 100%)" class="uwn uxg uxo"></div>
               </div>
-              <div class="uwd uwl uwu uyb uyd uyg uyp">
-                <div class="uyi">Order placed</div>
-                <div class="uxx">Processing</div>
-                <div class="uxx">Shipped</div>
-                <div class="uxy">Delivered</div>
+
+              <div class="uwd uzd uzf">
+                <dl class="uwk uwt uxc uyb">
+                  <div>
+                    <dt class="uyd uyh">Delivery address</dt>
+                    <dd class="uwb uyf">
+                      <span class="uwi">Floyd Miles</span>
+                      <span class="uwi">7363 Cynthia Pass</span>
+                      <span class="uwi">Toronto, ON N3Y 4H8</span>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt class="uyd uyh">Shipping updates</dt>
+                    <dd class="uwb uxa uyf">
+                      <p>f•••@example.com</p>
+                      <p>1•••••••••40</p>
+                      <button type="button" class="uyd uyi uyk">Edit</button>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            <div class="uxi uxk uxr uxt uyz uzk">
+              <h4 class="uvx">Status</h4>
+              <p class="uyb uyd uyh">Shipped on <time datetime="2021-03-23">March 23, 2021</time></p>
+              <div aria-hidden="true" class="uwd">
+                <div class="uxf uxg uxn">
+                  <div style="width: calc((0 * 2 + 1) / 8 * 100%)" class="uwn uxg uxo"></div>
+                </div>
+                <div class="uwd uwl uwu uyb uyd uyg uyp">
+                  <div class="uyi">Order placed</div>
+                  <div class="uxx">Processing</div>
+                  <div class="uxx">Shipped</div>
+                  <div class="uxy">Delivered</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Billing -->
-    <div class="uwf">
-      <h2 class="uvx">Billing Summary</h2>
+      <!-- Billing -->
+      <div class="uwf">
+        <h2 class="uvx">Billing Summary</h2>
 
-      <div class="uxm uxr uxt uyw uyz uzg uzi uzj uzl uzm">
-        <dl class="uwk uwt uwy uyb uzc uze">
-          <div>
-            <dt class="uyd uyh">Billing address</dt>
-            <dd class="uwb uyf">
-              <span class="uwi">Floyd Miles</span>
-              <span class="uwi">7363 Cynthia Pass</span>
-              <span class="uwi">Toronto, ON N3Y 4H8</span>
-            </dd>
-          </div>
-          <div>
-            <dt class="uyd uyh">Payment information</dt>
-            <dd class="uvz uwg uwj uwv">
-              <div class="uwc uwh uws">
-                <svg viewBox="0 0 36 24" width="36" height="24" aria-hidden="true" class="uwo uwp">
-                  <rect width="36" height="24" rx="4" fill="#224DBA" />
-                  <path d="M10.925 15.673H8.874l-1.538-6c-.073-.276-.228-.52-.456-.635A6.575 6.575 0 005 8.403v-.231h3.304c.456 0 .798.347.855.75l.798 4.328 2.05-5.078h1.994l-3.076 7.5zm4.216 0h-1.937L14.8 8.172h1.937l-1.595 7.5zm4.101-5.422c.057-.404.399-.635.798-.635a3.54 3.54 0 011.88.346l.342-1.615A4.808 4.808 0 0020.496 8c-1.88 0-3.248 1.039-3.248 2.481 0 1.097.969 1.673 1.653 2.02.74.346 1.025.577.968.923 0 .519-.57.75-1.139.75a4.795 4.795 0 01-1.994-.462l-.342 1.616a5.48 5.48 0 002.108.404c2.108.057 3.418-.981 3.418-2.539 0-1.962-2.678-2.077-2.678-2.942zm9.457 5.422L27.16 8.172h-1.652a.858.858 0 00-.798.577l-2.848 6.924h1.994l.398-1.096h2.45l.228 1.096h1.766zm-2.905-5.482l.57 2.827h-1.596l1.026-2.827z" fill="#fff" />
-                </svg>
-                <p class="uvx">Visa</p>
-              </div>
-              <div class="uwc uwh">
-                <p class="uyh">Ending with 4242</p>
-                <p class="uyg">Expires 02 / 24</p>
-              </div>
-            </dd>
-          </div>
-        </dl>
+        <div class="uxm uxr uxt uyw uyz uzg uzi uzj uzl uzm">
+          <dl class="uwk uwt uwy uyb uzc uze">
+            <div>
+              <dt class="uyd uyh">Billing address</dt>
+              <dd class="uwb uyf">
+                <span class="uwi">Floyd Miles</span>
+                <span class="uwi">7363 Cynthia Pass</span>
+                <span class="uwi">Toronto, ON N3Y 4H8</span>
+              </dd>
+            </div>
+            <div>
+              <dt class="uyd uyh">Payment information</dt>
+              <dd class="uvz uwg uwj uwv">
+                <div class="uwc uwh uws">
+                  <svg viewBox="0 0 36 24" width="36" height="24" aria-hidden="true" class="uwo uwp">
+                    <rect width="36" height="24" rx="4" fill="#224DBA" />
+                    <path
+                      d="M10.925 15.673H8.874l-1.538-6c-.073-.276-.228-.52-.456-.635A6.575 6.575 0 005 8.403v-.231h3.304c.456 0 .798.347.855.75l.798 4.328 2.05-5.078h1.994l-3.076 7.5zm4.216 0h-1.937L14.8 8.172h1.937l-1.595 7.5zm4.101-5.422c.057-.404.399-.635.798-.635a3.54 3.54 0 011.88.346l.342-1.615A4.808 4.808 0 0020.496 8c-1.88 0-3.248 1.039-3.248 2.481 0 1.097.969 1.673 1.653 2.02.74.346 1.025.577.968.923 0 .519-.57.75-1.139.75a4.795 4.795 0 01-1.994-.462l-.342 1.616a5.48 5.48 0 002.108.404c2.108.057 3.418-.981 3.418-2.539 0-1.962-2.678-2.077-2.678-2.942zm9.457 5.422L27.16 8.172h-1.652a.858.858 0 00-.798.577l-2.848 6.924h1.994l.398-1.096h2.45l.228 1.096h1.766zm-2.905-5.482l.57 2.827h-1.596l1.026-2.827z"
+                      fill="#fff" />
+                  </svg>
+                  <p class="uvx">Visa</p>
+                </div>
+                <div class="uwc uwh">
+                  <p class="uyh">Ending with 4242</p>
+                  <p class="uyg">Expires 02 / 24</p>
+                </div>
+              </dd>
+            </div>
+          </dl>
 
-        <dl class="uwe uxd uxe uyb uzd uzf">
-          <div class="uwj uww uwx uxw">
-            <dt class="uyg">Subtotal</dt>
-            <dd class="uyd uyh">$72</dd>
-          </div>
-          <div class="uwj uww uwx uxs">
-            <dt class="uyg">Shipping</dt>
-            <dd class="uyd uyh">$5</dd>
-          </div>
-          <div class="uwj uww uwx uxs">
-            <dt class="uyg">Tax</dt>
-            <dd class="uyd uyh">$6.16</dd>
-          </div>
-          <div class="uwj uww uwx uxu">
-            <dt class="uyd uyh">Order total</dt>
-            <dd class="uyd uyi">$83.16</dd>
-          </div>
-        </dl>
+          <dl class="uwe uxd uxe uyb uzd uzf">
+            <div class="uwj uww uwx uxw">
+              <dt class="uyg">Subtotal</dt>
+              <dd class="uyd uyh">$72</dd>
+            </div>
+            <div class="uwj uww uwx uxs">
+              <dt class="uyg">Shipping</dt>
+              <dd class="uyd uyh">$5</dd>
+            </div>
+            <div class="uwj uww uwx uxs">
+              <dt class="uyg">Tax</dt>
+              <dd class="uyd uyh">$6.16</dd>
+            </div>
+            <div class="uwj uww uwx uxu">
+              <dt class="uyd uyh">Order total</dt>
+              <dd class="uyd uyi">$83.16</dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script></script>
+  <script></script>
 </body>

@@ -1,1 +1,3 @@
-Use these Tailwind CSS navbar components to help users get around your application with responsive navigation bars featuring search bars, menus, and quick action buttons. These navbars are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS navbar components to help users get around your application with responsive navigation bars
+featuring search bars, menus, and quick action buttons. These navbars are designed and built by the Tailwind CSS team,
+and include a variety of different styles and layouts.

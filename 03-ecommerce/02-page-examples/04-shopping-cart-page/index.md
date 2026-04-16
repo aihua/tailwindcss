@@ -1,1 +1,3 @@
-Use these Tailwind CSS shopping cart page examples to offer customers a full view of the items in their cart, with options to update quantities, remove products, and proceed to checkout. These page examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS shopping cart page examples to offer customers a full view of the items in their cart, with
+options to update quantities, remove products, and proceed to checkout. These page examples are designed and built by
+the Tailwind CSS team, and include a variety of different styles and layouts.

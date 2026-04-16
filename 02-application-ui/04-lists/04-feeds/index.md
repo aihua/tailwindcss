@@ -1,1 +1,3 @@
-Use these Tailwind CSS feed components to display things like updates, notifications, and activity logs in a chronological format. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS feed components to display things like updates, notifications, and activity logs in a
+chronological format. These components are designed and built by the Tailwind CSS team, and include a variety of
+different styles and layouts.

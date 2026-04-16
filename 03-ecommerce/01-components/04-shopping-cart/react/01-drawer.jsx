@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import {useState} from 'react';
+import {Dialog, DialogBackdrop, DialogPanel, DialogTitle} from '@headlessui/react';
+import {XMarkIcon} from '@heroicons/react/24/outline';
 
 const products = [
   {
@@ -36,17 +36,16 @@ const products = [
     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/shopping-cart-page-04-product-03.jpg',
     imageAlt: 'Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.',
   },
-]
+];
 
 export default function Example() {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(true);
 
   return (
     <div>
       <button
         onClick={() => setOpen(true)}
-        className="rounded-md bg-gray-950/5 px-2.5 py-1.5 text-sm font-semibold text-gray-900 hover:bg-gray-950/10"
-      >
+        className="rounded-md bg-gray-950/5 px-2.5 py-1.5 text-sm font-semibold text-gray-900 hover:bg-gray-950/10">
         Open drawer
       </button>
       <Dialog open={open} onClose={setOpen} className="relative z-10">
@@ -60,8 +59,7 @@ export default function Example() {
             <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
               <DialogPanel
                 transition
-                className="pointer-events-auto w-screen max-w-md transform transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700"
-              >
+                className="pointer-events-auto w-screen max-w-md transform transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700">
                 <div className="flex h-full flex-col overflow-y-auto bg-white shadow-xl">
                   <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                     <div className="flex items-start justify-between">
@@ -70,8 +68,7 @@ export default function Example() {
                         <button
                           type="button"
                           onClick={() => setOpen(false)}
-                          className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
-                        >
+                          className="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
                           <span className="absolute -inset-0.5" />
                           <span className="sr-only">Close panel</span>
                           <XMarkIcon aria-hidden="true" className="size-6" />
@@ -82,7 +79,7 @@ export default function Example() {
                     <div className="mt-8">
                       <div className="flow-root">
                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                          {products.map((product) => (
+                          {products.map(product => (
                             <li key={product.id} className="flex py-6">
                               <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
                                 <img alt={product.imageAlt} src={product.imageSrc} className="size-full object-cover" />
@@ -124,8 +121,7 @@ export default function Example() {
                     <div className="mt-6">
                       <a
                         href="#"
-                        className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700"
-                      >
+                        className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700">
                         Checkout
                       </a>
                     </div>
@@ -135,8 +131,7 @@ export default function Example() {
                         <button
                           type="button"
                           onClick={() => setOpen(false)}
-                          className="font-medium text-indigo-600 hover:text-indigo-500"
-                        >
+                          className="font-medium text-indigo-600 hover:text-indigo-500">
                           Continue Shopping
                           <span aria-hidden="true"> &rarr;</span>
                         </button>
@@ -150,6 +145,5 @@ export default function Example() {
         </div>
       </Dialog>
     </div>
-  )
+  );
 }
-

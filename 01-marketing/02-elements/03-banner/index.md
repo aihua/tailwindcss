@@ -1,1 +1,3 @@
-Use these Tailwind CSS announcement and banner examples to add important information and call-to-actions to your website, such as announcements, cookie banners, and privacy notices. These CSS banner examples are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS announcement and banner examples to add important information and call-to-actions to your
+website, such as announcements, cookie banners, and privacy notices. These CSS banner examples are designed and built by
+the Tailwind CSS team, and include a variety of different styles and layouts.

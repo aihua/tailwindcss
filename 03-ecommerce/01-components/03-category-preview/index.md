@@ -1,1 +1,3 @@
-Use these Tailwind CSS category preview components to highlight various product categories, and help customers find out what products are available in your store. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS category preview components to highlight various product categories, and help customers find out
+what products are available in your store. These components are designed and built by the Tailwind CSS team, and include
+a variety of different styles and layouts.

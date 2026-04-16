@@ -1,1 +1,3 @@
-Use these Tailwind CSS store navigation components to help customers find their way around your online store with mobile-friendly navbars and menus. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS store navigation components to help customers find their way around your online store with
+mobile-friendly navbars and menus. These components are designed and built by the Tailwind CSS team, and include a
+variety of different styles and layouts.

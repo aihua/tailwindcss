@@ -1,1 +1,3 @@
-Use these Tailwind CSS empty state components to gracefully handle scenarios where no data is available, guiding users towards the next steps or actions to take. These components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS empty state components to gracefully handle scenarios where no data is available, guiding users
+towards the next steps or actions to take. These components are designed and built by the Tailwind CSS team, and include
+a variety of different styles and layouts.

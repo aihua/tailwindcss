@@ -51,12 +51,12 @@ const people = [
       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     lastSeen: null,
   },
-]
+];
 
 export default function Example() {
   return (
     <ul role="list" className="divide-y divide-white/5">
-      {people.map((person) => (
+      {people.map(person => (
         <li key={person.email} className="flex justify-between gap-x-6 py-5">
           <div className="flex min-w-0 gap-x-4">
             <img
@@ -87,6 +87,5 @@ export default function Example() {
         </li>
       ))}
     </ul>
-  )
+  );
 }
-

@@ -1,1 +1,3 @@
-Use these Tailwind CSS stacked list components to organize things like user profiles, tasks, or other resources vertically with available user actions. These list components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS stacked list components to organize things like user profiles, tasks, or other resources
+vertically with available user actions. These list components are designed and built by the Tailwind CSS team, and
+include a variety of different styles and layouts.

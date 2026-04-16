@@ -1,1 +1,3 @@
-Use these Tailwind CSS progress bar and multi-step navigation examples to visually represent progress and indicate next steps in your interface. These components are designed and built by the Tailwind CSS team, and include a variety of different styles.
+Use these Tailwind CSS progress bar and multi-step navigation examples to visually represent progress and indicate next
+steps in your interface. These components are designed and built by the Tailwind CSS team, and include a variety of
+different styles.

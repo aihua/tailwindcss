@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
-import { ChevronUpDownIcon } from '@heroicons/react/16/solid'
-import { CheckIcon } from '@heroicons/react/20/solid'
+import {useState} from 'react';
+import {Label, Listbox, ListboxButton, ListboxOption, ListboxOptions} from '@headlessui/react';
+import {ChevronUpDownIcon} from '@heroicons/react/16/solid';
+import {CheckIcon} from '@heroicons/react/20/solid';
 
 const people = [
   {
@@ -66,10 +66,10 @@ const people = [
     avatar:
       'https://images.unsplash.com/photo-1561505457-3bcad021f8ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
-]
+];
 
 export default function Example() {
-  const [selected, setSelected] = useState(people[3])
+  const [selected, setSelected] = useState(people[3]);
 
   return (
     <Listbox value={selected} onChange={setSelected}>
@@ -92,14 +92,12 @@ export default function Example() {
 
         <ListboxOptions
           transition
-          className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-gray-800 py-1 text-base outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm"
-        >
-          {people.map((person) => (
+          className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-gray-800 py-1 text-base outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm">
+          {people.map(person => (
             <ListboxOption
               key={person.id}
               value={person}
-              className="group relative cursor-default py-2 pr-9 pl-3 text-white select-none data-focus:bg-indigo-500 data-focus:outline-hidden"
-            >
+              className="group relative cursor-default py-2 pr-9 pl-3 text-white select-none data-focus:bg-indigo-500 data-focus:outline-hidden">
               <div className="flex items-center">
                 <img
                   alt=""
@@ -117,6 +115,5 @@ export default function Example() {
         </ListboxOptions>
       </div>
     </Listbox>
-  )
+  );
 }
-

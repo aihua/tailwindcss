@@ -1,12 +1,11 @@
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import {ChevronDownIcon} from '@heroicons/react/16/solid';
 
 export default function Example() {
   return (
     <div className="isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-      >
+        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
         <div
           style={{
             clipPath:
@@ -89,8 +88,7 @@ export default function Example() {
                     name="country"
                     autoComplete="country"
                     aria-label="Country"
-                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-transparent py-2 pr-7 pl-3.5 text-base text-gray-400 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-                  >
+                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-transparent py-2 pr-7 pl-3.5 text-base text-gray-400 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
                     <option>US</option>
                     <option>CA</option>
                     <option>EU</option>
@@ -149,13 +147,11 @@ export default function Example() {
         <div className="mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-          >
+            className="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
             Let's talk
           </button>
         </div>
       </form>
     </div>
-  )
+  );
 }
-

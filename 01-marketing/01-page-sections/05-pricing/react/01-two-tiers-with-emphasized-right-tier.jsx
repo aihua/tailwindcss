@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/20/solid'
+import {CheckIcon} from '@heroicons/react/20/solid';
 
 const tiers = [
   {
@@ -26,10 +26,10 @@ const tiers = [
     ],
     featured: true,
   },
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Example() {
@@ -65,22 +65,22 @@ export default function Example() {
                 : tierIdx === 0
                   ? 'rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl'
                   : 'sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none',
-              'rounded-3xl p-8 ring-1 ring-white/10 sm:p-10',
-            )}
-          >
+              'rounded-3xl p-8 ring-1 ring-white/10 sm:p-10'
+            )}>
             <h3
               id={tier.id}
-              className={classNames(tier.featured ? 'text-indigo-400' : 'text-indigo-400', 'text-base/7 font-semibold')}
-            >
+              className={classNames(
+                tier.featured ? 'text-indigo-400' : 'text-indigo-400',
+                'text-base/7 font-semibold'
+              )}>
               {tier.name}
             </h3>
             <p className="mt-4 flex items-baseline gap-x-2">
               <span
                 className={classNames(
                   tier.featured ? 'text-white' : 'text-white',
-                  'text-5xl font-semibold tracking-tight',
-                )}
-              >
+                  'text-5xl font-semibold tracking-tight'
+                )}>
                 {tier.priceMonthly}
               </span>
               <span className={classNames(tier.featured ? 'text-gray-400' : 'text-gray-400', 'text-base')}>/month</span>
@@ -92,10 +92,9 @@ export default function Example() {
               role="list"
               className={classNames(
                 tier.featured ? 'text-gray-300' : 'text-gray-300',
-                'mt-8 space-y-3 text-sm/6 sm:mt-10',
-              )}
-            >
-              {tier.features.map((feature) => (
+                'mt-8 space-y-3 text-sm/6 sm:mt-10'
+              )}>
+              {tier.features.map(feature => (
                 <li key={feature} className="flex gap-x-3">
                   <CheckIcon
                     aria-hidden="true"
@@ -112,14 +111,13 @@ export default function Example() {
                 tier.featured
                   ? 'bg-indigo-500 text-white hover:bg-indigo-400 focus-visible:outline-indigo-500'
                   : 'bg-white/10 text-white inset-ring inset-ring-white/5 hover:bg-white/20 focus-visible:outline-white/75',
-                'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10',
-              )}
-            >
+                'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10'
+              )}>
               Get started today
             </a>
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }

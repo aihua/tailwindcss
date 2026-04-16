@@ -1,4 +1,4 @@
-import { PaperClipIcon } from '@heroicons/react/20/solid'
+import {PaperClipIcon} from '@heroicons/react/20/solid';
 
 export default function Example() {
   return (
@@ -71,6 +71,5 @@ export default function Example() {
         </dl>
       </div>
     </div>
-  )
+  );
 }
-

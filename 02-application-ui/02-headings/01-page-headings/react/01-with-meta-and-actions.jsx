@@ -7,8 +7,8 @@ import {
   LinkIcon,
   MapPinIcon,
   PencilIcon,
-} from '@heroicons/react/20/solid'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+} from '@heroicons/react/20/solid';
+import {Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/react';
 
 export default function Example() {
   return (
@@ -40,8 +40,7 @@ export default function Example() {
         <span className="hidden sm:block">
           <button
             type="button"
-            className="inline-flex items-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20"
-          >
+            className="inline-flex items-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20">
             <PencilIcon aria-hidden="true" className="mr-1.5 -ml-0.5 size-5 text-white" />
             Edit
           </button>
@@ -50,8 +49,7 @@ export default function Example() {
         <span className="ml-3 hidden sm:block">
           <button
             type="button"
-            className="inline-flex items-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20"
-          >
+            className="inline-flex items-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20">
             <LinkIcon aria-hidden="true" className="mr-1.5 -ml-0.5 size-5 text-white" />
             View
           </button>
@@ -60,8 +58,7 @@ export default function Example() {
         <span className="sm:ml-3">
           <button
             type="button"
-            className="inline-flex items-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-          >
+            className="inline-flex items-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
             <CheckIcon aria-hidden="true" className="mr-1.5 -ml-0.5 size-5" />
             Publish
           </button>
@@ -76,21 +73,18 @@ export default function Example() {
 
           <MenuItems
             transition
-            className="absolute left-0 z-10 mt-2 -mr-1 w-24 origin-top-right rounded-md bg-gray-800 py-1 outline -outline-offset-1 outline-white/10 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-          >
+            className="absolute left-0 z-10 mt-2 -mr-1 w-24 origin-top-right rounded-md bg-gray-800 py-1 outline -outline-offset-1 outline-white/10 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
             <MenuItem>
               <a
                 href="#"
-                className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:outline-hidden"
-              >
+                className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:outline-hidden">
                 Edit
               </a>
             </MenuItem>
             <MenuItem>
               <a
                 href="#"
-                className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:outline-hidden"
-              >
+                className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:outline-hidden">
                 View
               </a>
             </MenuItem>
@@ -98,6 +92,5 @@ export default function Example() {
         </Menu>
       </div>
     </div>
-  )
+  );
 }
-

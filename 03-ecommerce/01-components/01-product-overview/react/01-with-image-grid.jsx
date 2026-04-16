@@ -1,12 +1,12 @@
-import { StarIcon } from '@heroicons/react/20/solid'
+import {StarIcon} from '@heroicons/react/20/solid';
 
 const product = {
   name: 'Basic Tee 6-Pack',
   price: '$192',
   href: '#',
   breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
+    {id: 1, name: 'Men', href: '#'},
+    {id: 2, name: 'Clothing', href: '#'},
   ],
   images: [
     {
@@ -27,19 +27,19 @@ const product = {
     },
   ],
   colors: [
-    { id: 'white', name: 'White', classes: 'bg-white checked:outline-gray-400' },
-    { id: 'gray', name: 'Gray', classes: 'bg-gray-200 checked:outline-gray-400' },
-    { id: 'black', name: 'Black', classes: 'bg-gray-900 checked:outline-gray-900' },
+    {id: 'white', name: 'White', classes: 'bg-white checked:outline-gray-400'},
+    {id: 'gray', name: 'Gray', classes: 'bg-gray-200 checked:outline-gray-400'},
+    {id: 'black', name: 'Black', classes: 'bg-gray-900 checked:outline-gray-900'},
   ],
   sizes: [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
+    {name: 'XXS', inStock: false},
+    {name: 'XS', inStock: true},
+    {name: 'S', inStock: true},
+    {name: 'M', inStock: true},
+    {name: 'L', inStock: true},
+    {name: 'XL', inStock: true},
+    {name: '2XL', inStock: true},
+    {name: '3XL', inStock: true},
   ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
@@ -51,11 +51,11 @@ const product = {
   ],
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-}
-const reviews = { href: '#', average: 4, totalCount: 117 }
+};
+const reviews = {href: '#', average: 4, totalCount: 117};
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Example() {
@@ -64,7 +64,7 @@ export default function Example() {
       <div className="pt-6">
         <nav aria-label="Breadcrumb">
           <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            {product.breadcrumbs.map((breadcrumb) => (
+            {product.breadcrumbs.map(breadcrumb => (
               <li key={breadcrumb.id}>
                 <div className="flex items-center">
                   <a href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
@@ -76,8 +76,7 @@ export default function Example() {
                     height={20}
                     viewBox="0 0 16 20"
                     aria-hidden="true"
-                    className="h-5 w-4 text-gray-300"
-                  >
+                    className="h-5 w-4 text-gray-300">
                     <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                   </svg>
                 </div>
@@ -131,13 +130,13 @@ export default function Example() {
               <h3 className="sr-only">Reviews</h3>
               <div className="flex items-center">
                 <div className="flex items-center">
-                  {[0, 1, 2, 3, 4].map((rating) => (
+                  {[0, 1, 2, 3, 4].map(rating => (
                     <StarIcon
                       key={rating}
                       aria-hidden="true"
                       className={classNames(
                         reviews.average > rating ? 'text-gray-900' : 'text-gray-200',
-                        'size-5 shrink-0',
+                        'size-5 shrink-0'
                       )}
                     />
                   ))}
@@ -156,7 +155,7 @@ export default function Example() {
 
                 <fieldset aria-label="Choose a color" className="mt-4">
                   <div className="flex items-center gap-x-3">
-                    {product.colors.map((color) => (
+                    {product.colors.map(color => (
                       <div key={color.id} className="flex rounded-full outline -outline-offset-1 outline-black/10">
                         <input
                           defaultValue={color.id}
@@ -166,7 +165,7 @@ export default function Example() {
                           aria-label={color.name}
                           className={classNames(
                             color.classes,
-                            'size-8 appearance-none rounded-full forced-color-adjust-none checked:outline-2 checked:outline-offset-2 focus-visible:outline-3 focus-visible:outline-offset-3',
+                            'size-8 appearance-none rounded-full forced-color-adjust-none checked:outline-2 checked:outline-offset-2 focus-visible:outline-3 focus-visible:outline-offset-3'
                           )}
                         />
                       </div>
@@ -186,12 +185,11 @@ export default function Example() {
 
                 <fieldset aria-label="Choose a size" className="mt-4">
                   <div className="grid grid-cols-4 gap-3">
-                    {product.sizes.map((size) => (
+                    {product.sizes.map(size => (
                       <label
                         key={size.id}
                         aria-label={size.name}
-                        className="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-checked:border-indigo-600 has-checked:bg-indigo-600 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-indigo-600 has-disabled:border-gray-400 has-disabled:bg-gray-200 has-disabled:opacity-25"
-                      >
+                        className="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-checked:border-indigo-600 has-checked:bg-indigo-600 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-indigo-600 has-disabled:border-gray-400 has-disabled:bg-gray-200 has-disabled:opacity-25">
                         <input
                           defaultValue={size.id}
                           defaultChecked={size === product.sizes[2]}
@@ -211,8 +209,7 @@ export default function Example() {
 
               <button
                 type="submit"
-                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
-              >
+                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden">
                 Add to bag
               </button>
             </form>
@@ -233,7 +230,7 @@ export default function Example() {
 
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  {product.highlights.map((highlight) => (
+                  {product.highlights.map(highlight => (
                     <li key={highlight} className="text-gray-400">
                       <span className="text-gray-600">{highlight}</span>
                     </li>
@@ -253,6 +250,5 @@ export default function Example() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

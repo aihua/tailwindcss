@@ -1,4 +1,4 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import {CloudArrowUpIcon, LockClosedIcon, ServerIcon} from '@heroicons/react/20/solid';
 
 const features = [
   {
@@ -17,7 +17,7 @@ const features = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: ServerIcon,
   },
-]
+];
 
 export default function Example() {
   return (
@@ -35,7 +35,7 @@ export default function Example() {
                 iste dolor cupiditate blanditiis ratione.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-400 lg:max-w-none">
-                {features.map((feature) => (
+                {features.map(feature => (
                   <div key={feature.name} className="relative pl-9">
                     <dt className="inline font-semibold text-white">
                       <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-400" />
@@ -57,6 +57,5 @@ export default function Example() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

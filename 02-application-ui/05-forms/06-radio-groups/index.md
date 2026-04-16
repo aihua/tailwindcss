@@ -1,1 +1,3 @@
-Use these Tailwind CSS radio group components to create options for things like settings, product variants, and plan comparisons. These radio components are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS radio group components to create options for things like settings, product variants, and plan
+comparisons. These radio components are designed and built by the Tailwind CSS team, and include a variety of different
+styles and layouts.

@@ -1,1 +1,3 @@
-Use these Tailwind CSS about page examples to introduce your organization to new and existing customers and clients. These about pages are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS about page examples to introduce your organization to new and existing customers and clients.
+These about pages are designed and built by the Tailwind CSS team, and include a variety of different styles and
+layouts.

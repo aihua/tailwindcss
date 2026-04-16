@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
+import {useState} from 'react';
 import {
   Dialog,
   DialogBackdrop,
@@ -12,68 +12,68 @@ import {
   MenuButton,
   MenuItem,
   MenuItems,
-} from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+} from '@headlessui/react';
+import {XMarkIcon} from '@heroicons/react/24/outline';
+import {ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon} from '@heroicons/react/20/solid';
 
 const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
-]
+  {name: 'Most Popular', href: '#', current: true},
+  {name: 'Best Rating', href: '#', current: false},
+  {name: 'Newest', href: '#', current: false},
+  {name: 'Price: Low to High', href: '#', current: false},
+  {name: 'Price: High to Low', href: '#', current: false},
+];
 const subCategories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
-  { name: 'Laptop Sleeves', href: '#' },
-]
+  {name: 'Totes', href: '#'},
+  {name: 'Backpacks', href: '#'},
+  {name: 'Travel Bags', href: '#'},
+  {name: 'Hip Bags', href: '#'},
+  {name: 'Laptop Sleeves', href: '#'},
+];
 const filters = [
   {
     id: 'color',
     name: 'Color',
     options: [
-      { value: 'white', label: 'White', checked: false },
-      { value: 'beige', label: 'Beige', checked: false },
-      { value: 'blue', label: 'Blue', checked: true },
-      { value: 'brown', label: 'Brown', checked: false },
-      { value: 'green', label: 'Green', checked: false },
-      { value: 'purple', label: 'Purple', checked: false },
+      {value: 'white', label: 'White', checked: false},
+      {value: 'beige', label: 'Beige', checked: false},
+      {value: 'blue', label: 'Blue', checked: true},
+      {value: 'brown', label: 'Brown', checked: false},
+      {value: 'green', label: 'Green', checked: false},
+      {value: 'purple', label: 'Purple', checked: false},
     ],
   },
   {
     id: 'category',
     name: 'Category',
     options: [
-      { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-      { value: 'sale', label: 'Sale', checked: false },
-      { value: 'travel', label: 'Travel', checked: true },
-      { value: 'organization', label: 'Organization', checked: false },
-      { value: 'accessories', label: 'Accessories', checked: false },
+      {value: 'new-arrivals', label: 'New Arrivals', checked: false},
+      {value: 'sale', label: 'Sale', checked: false},
+      {value: 'travel', label: 'Travel', checked: true},
+      {value: 'organization', label: 'Organization', checked: false},
+      {value: 'accessories', label: 'Accessories', checked: false},
     ],
   },
   {
     id: 'size',
     name: 'Size',
     options: [
-      { value: '2l', label: '2L', checked: false },
-      { value: '6l', label: '6L', checked: false },
-      { value: '12l', label: '12L', checked: false },
-      { value: '18l', label: '18L', checked: false },
-      { value: '20l', label: '20L', checked: false },
-      { value: '40l', label: '40L', checked: true },
+      {value: '2l', label: '2L', checked: false},
+      {value: '6l', label: '6L', checked: false},
+      {value: '12l', label: '12L', checked: false},
+      {value: '18l', label: '18L', checked: false},
+      {value: '20l', label: '20L', checked: false},
+      {value: '40l', label: '40L', checked: true},
     ],
   },
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Example() {
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
     <div className="bg-white">
@@ -88,15 +88,13 @@ export default function Example() {
           <div className="fixed inset-0 z-40 flex">
             <DialogPanel
               transition
-              className="relative ml-auto flex size-full max-w-xs transform flex-col overflow-y-auto bg-white pt-4 pb-6 shadow-xl transition duration-300 ease-in-out data-closed:translate-x-full"
-            >
+              className="relative ml-auto flex size-full max-w-xs transform flex-col overflow-y-auto bg-white pt-4 pb-6 shadow-xl transition duration-300 ease-in-out data-closed:translate-x-full">
               <div className="flex items-center justify-between px-4">
                 <h2 className="text-lg font-medium text-gray-900">Filters</h2>
                 <button
                   type="button"
                   onClick={() => setMobileFiltersOpen(false)}
-                  className="relative -mr-2 flex size-10 items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-hidden"
-                >
+                  className="relative -mr-2 flex size-10 items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-hidden">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon aria-hidden="true" className="size-6" />
@@ -107,7 +105,7 @@ export default function Example() {
               <form className="mt-4 border-t border-gray-200">
                 <h3 className="sr-only">Categories</h3>
                 <ul role="list" className="px-2 py-3 font-medium text-gray-900">
-                  {subCategories.map((category) => (
+                  {subCategories.map(category => (
                     <li key={category.name}>
                       <a href={category.href} className="block px-2 py-3">
                         {category.name}
@@ -116,7 +114,7 @@ export default function Example() {
                   ))}
                 </ul>
 
-                {filters.map((section) => (
+                {filters.map(section => (
                   <Disclosure key={section.id} as="div" className="border-t border-gray-200 px-4 py-6">
                     <h3 className="-mx-2 -my-3 flow-root">
                       <DisclosureButton className="group flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
@@ -143,8 +141,7 @@ export default function Example() {
                                 <svg
                                   fill="none"
                                   viewBox="0 0 14 14"
-                                  className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25"
-                                >
+                                  className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25">
                                   <path
                                     d="M3 8L6 11L11 3.5"
                                     strokeWidth={2}
@@ -164,8 +161,7 @@ export default function Example() {
                             </div>
                             <label
                               htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                              className="min-w-0 flex-1 text-gray-500"
-                            >
+                              className="min-w-0 flex-1 text-gray-500">
                               {option.label}
                             </label>
                           </div>
@@ -195,18 +191,16 @@ export default function Example() {
 
                 <MenuItems
                   transition
-                  className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-                >
+                  className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
                   <div className="py-1">
-                    {sortOptions.map((option) => (
+                    {sortOptions.map(option => (
                       <MenuItem key={option.name}>
                         <a
                           href={option.href}
                           className={classNames(
                             option.current ? 'font-medium text-gray-900' : 'text-gray-500',
-                            'block px-4 py-2 text-sm data-focus:bg-gray-100 data-focus:outline-hidden',
-                          )}
-                        >
+                            'block px-4 py-2 text-sm data-focus:bg-gray-100 data-focus:outline-hidden'
+                          )}>
                           {option.name}
                         </a>
                       </MenuItem>
@@ -222,8 +216,7 @@ export default function Example() {
               <button
                 type="button"
                 onClick={() => setMobileFiltersOpen(true)}
-                className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-              >
+                className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden">
                 <span className="sr-only">Filters</span>
                 <FunnelIcon aria-hidden="true" className="size-5" />
               </button>
@@ -240,14 +233,14 @@ export default function Example() {
               <form className="hidden lg:block">
                 <h3 className="sr-only">Categories</h3>
                 <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
-                  {subCategories.map((category) => (
+                  {subCategories.map(category => (
                     <li key={category.name}>
                       <a href={category.href}>{category.name}</a>
                     </li>
                   ))}
                 </ul>
 
-                {filters.map((section) => (
+                {filters.map(section => (
                   <Disclosure key={section.id} as="div" className="border-b border-gray-200 py-6">
                     <h3 className="-my-3 flow-root">
                       <DisclosureButton className="group flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
@@ -275,8 +268,7 @@ export default function Example() {
                                 <svg
                                   fill="none"
                                   viewBox="0 0 14 14"
-                                  className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25"
-                                >
+                                  className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25">
                                   <path
                                     d="M3 8L6 11L11 3.5"
                                     strokeWidth={2}
@@ -312,6 +304,5 @@ export default function Example() {
         </main>
       </div>
     </div>
-  )
+  );
 }
-

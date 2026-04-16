@@ -20,7 +20,7 @@ const callouts = [
     imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
     href: '#',
   },
-]
+];
 
 export default function Example() {
   return (
@@ -30,7 +30,7 @@ export default function Example() {
           <h2 className="text-2xl font-bold text-gray-900">Collections</h2>
 
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-6">
-            {callouts.map((callout) => (
+            {callouts.map(callout => (
               <div key={callout.name} className="group relative">
                 <img
                   alt={callout.imageAlt}
@@ -50,6 +50,5 @@ export default function Example() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

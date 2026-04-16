@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import {ChevronDownIcon} from '@heroicons/react/16/solid';
 
 export default function Example() {
   return (
@@ -21,8 +21,7 @@ export default function Example() {
               id="currency"
               name="currency"
               aria-label="Currency"
-              className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-800 py-1.5 pr-7 pl-3 text-base text-gray-400 *:bg-gray-800 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-            >
+              className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-800 py-1.5 pr-7 pl-3 text-base text-gray-400 *:bg-gray-800 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
               <option>USD</option>
               <option>CAD</option>
               <option>EUR</option>
@@ -35,6 +34,5 @@ export default function Example() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

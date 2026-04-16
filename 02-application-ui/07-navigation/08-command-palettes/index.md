@@ -1,1 +1,3 @@
-Use these Tailwind CSS command palette components to implement power-user search and command functionality in your application or website. These command palettes are designed and built by the Tailwind CSS team, and include a variety of different styles and layouts.
+Use these Tailwind CSS command palette components to implement power-user search and command functionality in your
+application or website. These command palettes are designed and built by the Tailwind CSS team, and include a variety of
+different styles and layouts.

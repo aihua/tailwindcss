@@ -1,1338 +1,192 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-border-spacing-x: 0;
-        --tw-border-spacing-y: 0;
-        --tw-translate-x: 0;
-        --tw-translate-y: 0;
-        --tw-translate-z: 0;
-        --tw-space-y-reverse: 0;
-        --tw-divide-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-        --tw-outline-style: solid;
-        --tw-content: '';
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .awis {
-      pointer-events: none;
-    }
-    .awit {
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border-width: 0;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-    .awiu {
-      position: absolute;
-    }
-    .awiv {
-      position: relative;
-    }
-    .awiw {
-      inset: 0;
-    }
-    .awix {
-      inset-inline: 2rem;
-    }
-    .awiy {
-      inset-block: 0;
-    }
-    .awiz {
-      right: 0;
-    }
-    .awja {
-      bottom: -12rem;
-    }
-    .awjb {
-      left: 50%;
-    }
-    .awjc {
-      isolation: isolate;
-    }
-    .awjd {
-      z-index: 10;
-    }
-    .awje {
-      margin-inline: -2rem;
-    }
-    .awjf {
-      margin-inline: auto;
-    }
-    .awjg {
-      margin-block: -0.5rem;
-    }
-    .awjh {
-      margin-top: -1.5rem;
-    }
-    .awji {
-      margin-top: -1px;
-    }
-    .awjj {
-      margin-top: 0.25rem;
-    }
-    .awjk {
-      margin-top: 0.5rem;
-    }
-    .awjl {
-      margin-top: 0.75rem;
-    }
-    .awjm {
-      margin-top: 1.5rem;
-    }
-    .awjn {
-      margin-top: 2rem;
-    }
-    .awjo {
-      margin-top: 2.5rem;
-    }
-    .awjp {
-      margin-top: 4rem;
-    }
-    .awjq {
-      display: flex;
-    }
-    .awjr {
-      display: flow-root;
-    }
-    .awjs {
-      display: grid;
-    }
-    .awjt {
+  </style>
+  <style>
+    /* Toggle visibility for monthly/annually pricing */
+    .toggle-annually:is(:where(.pricing-form):not(:has([name='frequency'][value='annually']:checked)) *),
+    .toggle-monthly:is(:where(.pricing-form):not(:has([name='frequency'][value='monthly']:checked)) *) {
       display: none;
     }
-    .awju {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-    .awjv {
-      width: 100%;
-      height: 100%;
-    }
-    .awjw {
-      height: 1.5rem;
-    }
-    .awjx {
-      height: 64rem;
-    }
-    .awjy {
-      height: 1px;
-    }
-    .awjz {
-      width: 50%;
-    }
-    .awka {
-      width: 25%;
-    }
-    .awkb {
-      width: 1.25rem;
-    }
-    .awkc {
-      width: 18rem;
-    }
-    .awkd {
-      width: 100%;
-    }
-    .awke {
-      max-width: 42rem;
-    }
-    .awkf {
-      max-width: 56rem;
-    }
-    .awkg {
-      max-width: 80rem;
-    }
-    .awkh {
-      max-width: 28rem;
-    }
-    .awki {
-      flex: none;
-    }
-    .awkj {
-      border-collapse: separate;
-    }
-    .awkk {
-      --tw-border-spacing-x: calc(0.25rem * 8);
-      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
-    }
-    .awkl {
-      --tw-translate-x: calc(calc(1/2 * 100%) * -1);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    .awkm {
-      --tw-translate-y: calc(1/2 * 100%);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    .awkn {
-      appearance: none;
-    }
-    .awko {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .awkp {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .awkq {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-    .awkr {
-      flex-direction: column;
-    }
-    .awks {
-      align-items: center;
-    }
-    .awkt {
-      justify-content: space-between;
-    }
-    .awku {
-      justify-content: center;
-    }
-    .awkv {
-      justify-content: flex-end;
-    }
-    .awkw {
-      gap: 1.5rem;
-    }
-    :where(.awkx > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 10) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 10) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.awky > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 16) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 16) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .awkz {
-      column-gap: 0.25rem;
-    }
-    .awla {
-      column-gap: 0.75rem;
-    }
-    .awlb {
-      column-gap: 1rem;
-    }
-    .awlc {
-      column-gap: 2rem;
-    }
-    .awld {
-      row-gap: 2rem;
-    }
-    :where(.awle > :not(:last-child)) {
-      --tw-divide-y-reverse: 0;
-      border-bottom-style: var(--tw-border-style);
-      border-top-style: var(--tw-border-style);
-      border-top-width: calc(1px * var(--tw-divide-y-reverse));
-      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    }
-    :where(.awlf > :not(:last-child)) {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    :where(.awlg > :not(:last-child)) {
-      border-color: oklab(100% 0 5.96046e-8/0.05);
-    }
-    :where(.awlh > :not(:last-child)) {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .awli {
-      overflow: hidden;
-    }
-    .awlj {
-      border-radius: 1rem;
-    }
-    .awlk {
-      border-radius: 3.40282e38px;
-    }
-    .awll {
-      border-radius: 0.5rem;
-    }
-    .awlm {
-      border-radius: 0.375rem;
-    }
-    .awln {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-    .awlo {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .awlp {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 2px;
-    }
-    .awlq {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 1px;
-    }
-    .awlr {
-      border-color: oklab(21% -0.00316127 -0.0338527/.1);
-    }
-    .awls {
-      border-color: oklch(58.5% 0.233 277.117);
-    }
-    .awlt {
-      border-color: oklch(51.1% 0.262 276.966);
-    }
-    .awlu {
-      border-color: #0000;
-    }
-    .awlv {
-      border-color: oklab(100% 0 5.96046e-8/0.05);
-    }
-    .awlw {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .awlx {
-      border-bottom-color: #0000;
-    }
-    .awly {
-      border-bottom-color: oklab(100% 0 5.96046e-8/0.05);
-    }
-    .awlz {
-      background-color: oklch(98.5% 0.002 247.839);
-    }
-    .awma {
-      background-color: oklch(92.8% 0.006 264.531);
-    }
-    .awmb {
-      background-color: oklch(27.8% 0.033 256.848);
-    }
-    .awmc {
-      background-color: oklab(27.8% -0.00750866 -0.0321344/.25);
-    }
-    .awmd {
-      background-color: oklab(27.8% -0.00750866 -0.0321344/.5);
-    }
-    .awme {
-      background-color: oklab(27.8% -0.00750866 -0.0321344/.8);
-    }
-    .awmf {
-      background-color: oklch(21% 0.034 264.665);
-    }
-    .awmg {
-      background-color: #fff;
-    }
-    .awmh {
-      background-color: oklab(100% 0 5.96046e-8/0.05);
-    }
-    .awmi {
-      background-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .awmj {
-      -webkit-mask-image: radial-gradient(closest-side, #fff, #0000);
-      mask-image: radial-gradient(closest-side, #fff, #0000);
-    }
-    .awmk {
-      padding: 0.25rem;
-    }
-    .awml {
-      padding: 2rem;
-    }
-    .awmm {
-      padding-inline: 0.625rem;
-    }
-    .awmn {
-      padding-inline: 0.75rem;
-    }
-    .awmo {
-      padding-inline: 1rem;
-    }
-    .awmp {
-      padding-inline: 1.5rem;
-    }
-    .awmq {
-      padding-block: 0;
-    }
-    .awmr {
-      padding-block: 0.25rem;
-    }
-    .awms {
-      padding-block: 0.5rem;
-    }
-    .awmt {
-      padding-block: 0.75rem;
-    }
-    .awmu {
-      padding-block: 6rem;
-    }
-    .awmv {
-      padding-top: 2.5rem;
-    }
-    .awmw {
-      padding-top: 6rem;
-    }
-    .awmx {
-      padding-right: 1rem;
-    }
-    .awmy {
-      padding-bottom: 4rem;
-    }
-    .awmz {
-      text-align: center;
-    }
-    .awna {
-      text-align: left;
-    }
-    .awnb {
-      font-size: 2.25rem;
-      line-height: var(--tw-leading, calc(2.5 / 2.25));
-    }
-    .awnc {
-      font-size: 3rem;
-      line-height: var(--tw-leading, 1);
-    }
-    .awnd {
-      font-size: 1.125rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.125));
-    }
-    .awne {
-      font-size: 0.875rem;
-      line-height: var(--tw-leading, calc(1.25 / 0.875));
-    }
-    .awnf {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .awng {
-      font-size: 0.75rem;
-      line-height: 1.25rem;
-    }
-    .awnh {
-      --tw-font-weight: 500;
-      font-weight: 500;
-    }
-    .awni {
-      --tw-font-weight: 400;
-      font-weight: 400;
-    }
-    .awnj {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .awnk {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .awnl {
-      text-wrap: balance;
-    }
-    .awnm {
-      text-wrap: pretty;
-    }
-    .awnn {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .awno {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .awnp {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .awnq {
-      color: oklch(21% 0.034 264.665);
-    }
-    .awnr {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .awns {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .awnt {
-      color: #fff;
-    }
-    .awnu {
-      --tw-shadow:
-        0 20px 25px -5px var(--tw-shadow-color, #0000001a), 0 8px 10px -6px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .awnv {
-      --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .awnw {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .awnx {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .awny {
-      --tw-ring-color: oklab(21% -0.00316127 -0.0338527/.1);
-    }
-    .awnz {
-      --tw-ring-color: oklch(58.5% 0.233 277.117);
-    }
-    .awoa {
-      --tw-ring-color: oklch(51.1% 0.262 276.966);
-    }
-    .awob {
-      --tw-ring-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .awoc {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-    .awod {
-      outline-offset: calc(1px * -1);
-    }
-    .awoe {
-      outline-color: oklab(21% -0.00316127 -0.0338527/.1);
-    }
-    .awof {
-      outline-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .awog:not(:is(:where(.awoh)[data-featured] *)) {
+
+    /* Button inset ring (non-featured cards) */
+    .btn-card:not(:is(:where(.tier-card)[data-featured] *)) {
       --tw-inset-ring-shadow: inset 0 0 0 1px var(--tw-inset-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
-    .awoi:not(:is(:where(.awoh)[data-featured] *)) {
+    .btn-card-ring:not(:is(:where(.tier-card)[data-featured] *)) {
       --tw-inset-ring-color: oklab(100% 0 5.96046e-8/0.05);
     }
-    .awoj:is(:where(.awok):not(:has([name='frequency'][value='annually']:checked)) *),
-    .awol:is(:where(.awok):not(:has([name='frequency'][value='monthly']:checked)) *) {
-      display: none;
-    }
-    :where(.awom:is(:where(.awon)[data-featured] *) > :not(:last-child)) {
+
+    /* Featured card conditional styles */
+    :where(.featured-divide:is(:where(.tier-card)[data-featured] *) > :not(:last-child)) {
       border-color: oklab(21% -0.00316127 -0.0338527/.05);
     }
-    :where(.awoo:is(:where(.awon)[data-featured] *) > :not(:last-child)) {
+    :where(.featured-divide-light:is(:where(.tier-card)[data-featured] *) > :not(:last-child)) {
       border-color: oklab(100% 0 5.96046e-8/0.1);
     }
-    .awop:is(:where(.awon)[data-featured] *) {
+    .featured-border:is(:where(.tier-card)[data-featured] *) {
       border-color: oklab(21% -0.00316127 -0.0338527/.05);
     }
-    .awoq:is(:where(.awon)[data-featured] *) {
+    .featured-border-bottom:is(:where(.tier-card)[data-featured] *) {
       border-color: oklab(100% 0 5.96046e-8/0.1);
     }
-    .awor:is(:where(.awon)[data-featured] *) {
+    .featured-bg-violet:is(:where(.tier-card)[data-featured] *) {
       background-color: oklch(58.5% 0.233 277.117);
     }
-    .awos:is(:where(.awon)[data-featured] *) {
+    .featured-bg-indigo:is(:where(.tier-card)[data-featured] *) {
       background-color: oklch(51.1% 0.262 276.966);
     }
-    .awot:is(:where(.awon)[data-featured] *) {
+    .featured-text-blue:is(:where(.tier-card)[data-featured] *) {
       color: oklch(55.1% 0.027 264.364);
     }
-    .awou:is(:where(.awon)[data-featured] *) {
+    .featured-text-blue-dark:is(:where(.tier-card)[data-featured] *) {
       color: oklch(44.6% 0.03 256.802);
     }
-    .awov:is(:where(.awon)[data-featured] *) {
+    .featured-text-dark:is(:where(.tier-card)[data-featured] *) {
       color: oklch(21% 0.034 264.665);
     }
-    .awow:is(:where(.awon)[data-featured] *) {
+    .featured-text-violet:is(:where(.tier-card)[data-featured] *) {
       color: oklch(67.3% 0.182 276.935);
     }
-    .awox:is(:where(.awon)[data-featured] *) {
+    .featured-text-indigo:is(:where(.tier-card)[data-featured] *) {
       color: oklch(51.1% 0.262 276.966);
     }
-    .awoy:is(:where(.awon)[data-featured] *) {
+    .featured-shadow-sm:is(:where(.tier-card)[data-featured] *) {
       --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
-    .awoz:before {
+
+    /* Before pseudo-element */
+    .before-content:before {
       content: var(--tw-content);
       display: block;
     }
+
+    /* Hover states */
     @media (hover: hover) {
-      .awpa:hover {
+      .btn-hover:hover {
         background-color: oklab(100% 0 5.96046e-8/0.2);
       }
-      .awpb:is(:where(.awon)[data-featured] *):hover {
+      .featured-btn-hover:is(:where(.tier-card)[data-featured] *):hover {
         background-color: oklch(67.3% 0.182 276.935);
       }
-      .awpc:is(:where(.awon)[data-featured] *):hover {
+      .featured-btn-hover-violet:is(:where(.tier-card)[data-featured] *):hover {
         background-color: oklch(58.5% 0.233 277.117);
       }
     }
-    .awpd:focus-visible {
+
+    /* Focus-visible states */
+    .focus-ring:focus-visible {
       outline-style: var(--tw-outline-style);
       outline-width: 2px;
     }
-    .awpe:focus-visible {
+    .focus-offset:focus-visible {
       outline-offset: 2px;
     }
-    .awpf:focus-visible {
+    .focus-color:focus-visible {
       outline-color: oklab(100% 0 5.96046e-8/0.75);
     }
-    .awpg:is(:where(.awon)[data-featured] *):focus-visible {
+    .featured-focus-color:is(:where(.tier-card)[data-featured] *):focus-visible {
       outline-color: oklch(58.5% 0.233 277.117);
     }
-    .awph:is(:where(.awon)[data-featured] *):focus-visible {
+    .featured-focus-color-indigo:is(:where(.tier-card)[data-featured] *):focus-visible {
       outline-color: oklch(51.1% 0.262 276.966);
     }
-    .awpi:has(:checked) {
+
+    /* Radio checked state */
+    .radio-checked:has(:checked) {
       background-color: oklch(58.5% 0.233 277.117);
     }
-    @media (min-width: 40rem) {
-      .awpj {
-        margin-top: 2.5rem;
-      }
-      .awpk {
-        display: block;
-      }
-      .awpl {
-        display: grid;
-      }
-      .awpm {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .awpn {
-        flex-direction: row;
-      }
-      .awpo {
-        align-items: flex-end;
-      }
-      .awpp {
-        justify-content: space-between;
-      }
-      .awpq {
-        justify-content: center;
-      }
-      .awpr {
-        border-radius: 0;
-      }
-      .awps {
-        background-color: #0000;
-      }
-      .awpt {
-        padding-inline: 0;
-      }
-      .awpu {
-        padding-inline: 1rem;
-      }
-      .awpv {
-        padding-block: 8rem;
-      }
-      .awpw {
-        padding-top: 8rem;
-      }
-      .awpx {
-        font-size: 3.75rem;
-        line-height: var(--tw-leading, 1);
-      }
-      .awpy {
-        font-size: 1.25rem;
-        line-height: 2rem;
-      }
-      .awpz {
-        --tw-shadow: 0 0 #0000;
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-      .awqa {
-        --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(0px + var(--tw-ring-offset-width))
-          var(--tw-ring-color, currentcolor);
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-    }
-    @media (min-width: 48rem) {
-      .awqb {
-        width: 20rem;
-      }
-    }
-    @media (min-width: 64rem) {
-      .awqc {
-        position: absolute;
-      }
-      .awqd {
-        inset-inline: 1px;
-      }
-      .awqe {
-        top: -12rem;
-      }
-      .awqf {
-        top: 1rem;
-      }
-      .awqg {
-        bottom: 0;
-      }
-      .awqh {
-        bottom: auto;
-      }
-      .awqi {
-        margin-inline: 0;
-      }
-      .awqj {
-        margin-bottom: -3.5rem;
-      }
-      .awqk {
-        display: block;
-      }
-      .awql {
-        display: none;
-      }
-      .awqm {
-        max-width: none;
-      }
-      .awqn {
-        --tw-translate-y: calc(0.25rem * 0);
-        translate: var(--tw-translate-x) var(--tw-translate-y);
-      }
-      .awqo {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .awqp {
-        flex-direction: column;
-      }
-      .awqq {
-        align-items: stretch;
-      }
-      .awqr {
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
-      }
-      .awqs {
-        border-top-style: var(--tw-border-style);
-        border-top-width: 0;
-      }
-      .awqt {
-        background-color: oklab(27.8% -0.00750866 -0.0321344/.8);
-      }
-      .awqu {
-        background-color: #0000;
-      }
-      .awqv {
-        padding-inline: 2rem;
-      }
-      .awqw {
-        padding-top: 3rem;
-      }
-      .awqx {
-        padding-top: 3.5rem;
-      }
-      .awqy {
-        padding-bottom: 0;
-      }
-      .awqz {
-        padding-bottom: 3.5rem;
-      }
-      .awra {
-        --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width))
-          var(--tw-ring-color, currentcolor);
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-      .awrb {
-        --tw-ring-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .awrc {
-        outline-style: var(--tw-outline-style);
-        outline-width: 0;
-      }
-    }
-    @media (min-width: 80rem) {
-      .awrd {
-        padding: 2.5rem;
-      }
-      .awre {
-        padding-top: 3.5rem;
-      }
-    }
+
+    /* Dark mode featured card overrides */
     @media (prefers-color-scheme: dark) {
-      :where(.awrf > :not(:last-child)) {
+      :where(.featured-divide:is(:where(.tier-card)[data-featured] *) > :not(:last-child)),
+      .featured-border-bottom:is(:where(.tier-card)[data-featured] *) {
         border-color: oklab(100% 0 5.96046e-8/0.1);
       }
-      .awrg {
-        border-color: oklch(58.5% 0.233 277.117);
-      }
-      .awrh {
-        border-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .awri {
-        border-bottom-color: oklab(100% 0 5.96046e-8/0.05);
-      }
-      .awrj {
-        background-color: oklch(27.8% 0.033 256.848);
-      }
-      .awrk {
-        background-color: oklab(27.8% -0.00750866 -0.0321344/.25);
-      }
-      .awrl {
-        background-color: oklab(27.8% -0.00750866 -0.0321344/.5);
-      }
-      .awrm {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .awrn {
-        background-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .awro {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .awrp {
-        color: oklch(44.6% 0.03 256.802);
-      }
-      .awrq {
-        color: oklch(67.3% 0.182 276.935);
-      }
-      .awrr {
-        color: #fff;
-      }
-      .awrs {
-        --tw-shadow: 0 0 #0000;
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-      .awrt {
-        --tw-ring-color: oklch(58.5% 0.233 277.117);
-      }
-      .awru {
-        --tw-ring-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .awrv {
-        outline-offset: calc(1px * -1);
-      }
-      .awrw {
-        outline-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      :where(.awrx:is(:where(.awon)[data-featured] *) > :not(:last-child)),
-      .awry:is(:where(.awon)[data-featured] *) {
-        border-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .awrz:is(:where(.awon)[data-featured] *) {
+      .featured-bg-violet:is(:where(.tier-card)[data-featured] *) {
         background-color: oklch(58.5% 0.233 277.117);
       }
-      .awsa:is(:where(.awon)[data-featured] *) {
+      .featured-bg-indigo:is(:where(.tier-card)[data-featured] *) {
+        background-color: oklch(51.1% 0.262 276.966);
+      }
+      .featured-text-blue:is(:where(.tier-card)[data-featured] *) {
         color: oklch(70.7% 0.022 261.325);
       }
-      .awsb:is(:where(.awon)[data-featured] *) {
+      .featured-text-blue-dark:is(:where(.tier-card)[data-featured] *) {
+        color: oklch(44.6% 0.03 256.802);
+      }
+      .featured-text-violet:is(:where(.tier-card)[data-featured] *) {
         color: oklch(67.3% 0.182 276.935);
       }
-      .awsc:is(:where(.awon)[data-featured] *) {
+      .featured-text-indigo:is(:where(.tier-card)[data-featured] *) {
+        color: oklch(51.1% 0.262 276.966);
+      }
+      .featured-text-dark:is(:where(.tier-card)[data-featured] *) {
         color: #fff;
       }
-      .awsd:is(:where(.awon)[data-featured] *) {
+      .featured-shadow-sm:is(:where(.tier-card)[data-featured] *) {
         --tw-shadow: 0 0 #0000;
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
       }
       @media (hover: hover) {
-        .awse:is(:where(.awon)[data-featured] *):hover {
+        .featured-btn-hover:is(:where(.tier-card)[data-featured] *):hover {
           background-color: oklch(67.3% 0.182 276.935);
         }
       }
-      .awsf:is(:where(.awon)[data-featured] *):focus-visible {
+      .featured-focus-color:is(:where(.tier-card)[data-featured] *):focus-visible {
         outline-color: oklch(58.5% 0.233 277.117);
       }
-      @media (min-width: 40rem) {
-        .awsg {
-          background-color: #0000;
-        }
-      }
     }
-  }
-  @property --tw-border-spacing-x {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-spacing-y {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-x {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-y {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-z {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-divide-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-outline-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-content {
-    syntax: '*';
-    inherits: false;
-    initial-value: '';
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
 
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
+    /* Body styles */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: oklch(21% 0.034 264.665);
+    }
+  </style>
+</head>
 <body>
-  <form class="awok awjc awli awmf">
-    <div class="awjr awlq awly awmc awmw awmy awpw awqy">
-      <div class="awjf awkg awmp awqv">
-        <div class="awiv awjd">
-          <h2 class="awjf awkf awmz awnc awnj awnk awnl awnt awpx">Pricing that grows with you</h2>
-          <p class="awjf awjm awke awmz awnd awnh awnm awnn awpy">
+
+  <form class="pricing-form isolate overflow-hidden bg-[oklch(21%_0.034_264.665)]">
+    <div class="flow-root border-b border-b-white/5 bg-[oklab(27.8%_-0.00750866_-0.0321344/.25)] pt-24 pb-16 md:py-32 lg:pb-0">
+      <div class="mx-auto max-w-[80rem] px-6 lg:px-8">
+        <div class="relative z-10">
+          <h2 class="mx-auto max-w-[56rem] text-center text-5xl font-semibold tracking-tight text-balance text-white md:text-6xl">Pricing that grows with you</h2>
+          <p class="mx-auto mt-6 max-w-[42rem] text-center text-lg font-medium text-pretty text-[oklch(70.7%_0.022_261.325)] md:text-xl md:leading-8">
             Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
             loyalty, and driving sales.
           </p>
-          <div class="awjp awjq awku">
+          <div class="mt-16 flex justify-center">
             <fieldset aria-label="Payment frequency">
-              <div class="awjs awkp awkz awlk awmh awmk awmz awng awnj awnt">
-                <label class="awoh awiv awlk awmm awmr awpi">
-                  <input type="radio" name="frequency" value="monthly" checked class="awiu awiw awkn awlk" />
-                  <span class="awnt">Monthly</span>
+              <div class="grid grid-cols-2 gap-1 rounded-full bg-white/5 p-1 text-center text-xs leading-5 font-semibold text-white">
+                <label class="radio-group relative rounded-full px-2.5 py-1 radio-checked">
+                  <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
+                  <span class="text-white">Monthly</span>
                 </label>
-                <label class="awoh awiv awlk awmm awmr awpi">
-                  <input type="radio" name="frequency" value="annually" class="awiu awiw awkn awlk" />
-                  <span class="awnt">Annually</span>
+                <label class="radio-group relative rounded-full px-2.5 py-1 radio-checked">
+                  <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
+                  <span class="text-white">Annually</span>
                 </label>
               </div>
             </fieldset>
           </div>
         </div>
-        <div class="awiv awjf awjo awjs awkh awko awld awqi awqj awqm awqo">
-          <svg viewBox="0 0 1208 1024" aria-hidden="true" class="awiu awja awjb awjx awkl awkm awmj awqe awqh awqn">
+        <div class="relative mx-auto mt-10 grid max-w-[28rem] grid-cols-1 gap-y-8 lg:mx-0 lg:-mb-14 lg:max-w-none lg:grid-cols-3">
+          <svg viewBox="0 0 1208 1024" aria-hidden="true" class="absolute -bottom-48 left-1/2 h-[64rem] -translate-x-1/2 translate-y-1/2 [mask-image:radial-gradient(closest-side,#fff,#0000)] lg:-top-48 lg:bottom-auto lg:translate-y-0">
             <ellipse cx="604" cy="512" rx="604" ry="512" fill="url(#d25c25d4-6d43-4bf9-b9ac-1842a30a4867)" />
             <defs>
               <radialGradient id="d25c25d4-6d43-4bf9-b9ac-1842a30a4867">
@@ -1341,18 +195,18 @@
               </radialGradient>
             </defs>
           </svg>
-          <div aria-hidden="true" class="awjt awqc awqd awqf awqg awqk awqr awqt awra awrb"></div>
-          <div class="awon awiv awlj awme awoc awod awof awqu awqz awrc">
-            <div class="awml awqw awrd awre">
-              <h3 id="tier-tier-starter" class="awnf awnj awnt">Starter</h3>
-              <div class="awjq awkr awkw awpn awpo awpp awqp awqq">
-                <div class="awjk awjq awks awlb">
-                  <p class="awnb awnj awnk awnt awol">$19</p>
-                  <p class="awnb awnj awnk awnt awoj">$199</p>
-                  <div class="awne">
-                    <p class="awnt">USD</p>
-                    <p class="awnn awol">Billed monthly</p>
-                    <p class="awnn awoj">Billed annually</p>
+          <div aria-hidden="true" class="hidden lg:absolute lg:inset-x-px lg:top-1 lg:bottom-0 lg:block lg:rounded-t-2xl lg:bg-[oklab(27.8%_-0.00750866_-0.0321344/.8)] lg:ring-1 lg:ring-white/10"></div>
+          <div class="tier-card relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.8)] outline -outline-offset-1 outline-white/10 lg:bg-transparent lg:pb-14 lg:outline-0">
+            <div class="p-8 lg:pt-12 2xl:p-10 2xl:pt-14">
+              <h3 id="tier-tier-starter" class="text-sm leading-6 font-semibold text-white">Starter</h3>
+              <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:flex-col lg:items-stretch">
+                <div class="mt-2 flex items-center gap-4">
+                  <p class="text-4xl font-semibold tracking-tight text-white toggle-monthly">$19</p>
+                  <p class="text-4xl font-semibold tracking-tight text-white toggle-annually">$199</p>
+                  <div class="text-sm">
+                    <p class="text-white">USD</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)] toggle-monthly">Billed monthly</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)] toggle-annually">Billed annually</p>
                   </div>
                 </div>
                 <button
@@ -1360,19 +214,19 @@
                   name="tier"
                   value="tier-starter"
                   aria-describedby="tier-tier-starter"
-                  class="awkd awlm awmi awmn awms awmz awnf awnj awnt awog awoi awor awpa awpb awpd awpe awpf awpg">
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white btn-card btn-card-ring featured-bg-violet btn-hover featured-btn-hover focus-ring focus-offset focus-color featured-focus-color">
                   Buy this plan
                 </button>
               </div>
-              <div class="awjn awjr awpj">
-                <ul role="list" class="awjg awle awlg awlo awlv awnf awnt awoo awoq awqs">
-                  <li class="awjq awla awms">
+              <div class="mt-8 flow-root md:mt-10">
+                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white featured-divide-light featured-border-bottom lg:border-t-0">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1380,13 +234,13 @@
                     </svg>
                     Custom domains
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1394,13 +248,13 @@
                     </svg>
                     Edge content delivery
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1412,17 +266,17 @@
               </div>
             </div>
           </div>
-          <div data-featured="true" class="awon awiv awjd awlj awmb awoc awod awof">
-            <div class="awml awqw awrd awre">
-              <h3 id="tier-tier-scale" class="awnf awnj awnt">Scale</h3>
-              <div class="awjq awkr awkw awpn awpo awpp awqp awqq">
-                <div class="awjk awjq awks awlb">
-                  <p class="awnb awnj awnk awnt awol">$99</p>
-                  <p class="awnb awnj awnk awnt awoj">$999</p>
-                  <div class="awne">
-                    <p class="awnt">USD</p>
-                    <p class="awnn awol">Billed monthly</p>
-                    <p class="awnn awoj">Billed annually</p>
+          <div data-featured="true" class="tier-card relative z-10 rounded-2xl bg-[oklch(27.8%_0.033_256.848)] outline -outline-offset-1 outline-white/10">
+            <div class="p-8 lg:pt-12 2xl:p-10 2xl:pt-14">
+              <h3 id="tier-tier-scale" class="text-sm leading-6 font-semibold text-white">Scale</h3>
+              <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:flex-col lg:items-stretch">
+                <div class="mt-2 flex items-center gap-4">
+                  <p class="text-4xl font-semibold tracking-tight text-white toggle-monthly">$99</p>
+                  <p class="text-4xl font-semibold tracking-tight text-white toggle-annually">$999</p>
+                  <div class="text-sm">
+                    <p class="text-white">USD</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)] toggle-monthly">Billed monthly</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)] toggle-annually">Billed annually</p>
                   </div>
                 </div>
                 <button
@@ -1430,19 +284,19 @@
                   name="tier"
                   value="tier-scale"
                   aria-describedby="tier-tier-scale"
-                  class="awkd awlm awmi awmn awms awmz awnf awnj awnt awog awoi awor awpa awpb awpd awpe awpf awpg">
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white btn-card btn-card-ring featured-bg-violet btn-hover featured-btn-hover focus-ring focus-offset focus-color featured-focus-color">
                   Buy this plan
                 </button>
               </div>
-              <div class="awjn awjr awpj">
-                <ul role="list" class="awjg awle awlg awlo awlv awnf awnt awoo awoq awqs">
-                  <li class="awjq awla awms">
+              <div class="mt-8 flow-root md:mt-10">
+                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white featured-divide-light featured-border-bottom lg:border-t-0">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1450,13 +304,13 @@
                     </svg>
                     Custom domains
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1464,13 +318,13 @@
                     </svg>
                     Edge content delivery
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1478,13 +332,13 @@
                     </svg>
                     Advanced analytics
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1492,13 +346,13 @@
                     </svg>
                     Quarterly workshops
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1506,13 +360,13 @@
                     </svg>
                     Single sign-on (SSO)
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1524,17 +378,17 @@
               </div>
             </div>
           </div>
-          <div class="awon awiv awlj awme awoc awod awof awqu awqz awrc">
-            <div class="awml awqw awrd awre">
-              <h3 id="tier-tier-growth" class="awnf awnj awnt">Growth</h3>
-              <div class="awjq awkr awkw awpn awpo awpp awqp awqq">
-                <div class="awjk awjq awks awlb">
-                  <p class="awnb awnj awnk awnt awol">$49</p>
-                  <p class="awnb awnj awnk awnt awoj">$499</p>
-                  <div class="awne">
-                    <p class="awnt">USD</p>
-                    <p class="awnn awol">Billed monthly</p>
-                    <p class="awnn awoj">Billed annually</p>
+          <div class="tier-card relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.8)] outline -outline-offset-1 outline-white/10 lg:bg-transparent lg:pb-14 lg:outline-0">
+            <div class="p-8 lg:pt-12 2xl:p-10 2xl:pt-14">
+              <h3 id="tier-tier-growth" class="text-sm leading-6 font-semibold text-white">Growth</h3>
+              <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:flex-col lg:items-stretch">
+                <div class="mt-2 flex items-center gap-4">
+                  <p class="text-4xl font-semibold tracking-tight text-white toggle-monthly">$49</p>
+                  <p class="text-4xl font-semibold tracking-tight text-white toggle-annually">$499</p>
+                  <div class="text-sm">
+                    <p class="text-white">USD</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)] toggle-monthly">Billed monthly</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)] toggle-annually">Billed annually</p>
                   </div>
                 </div>
                 <button
@@ -1542,19 +396,19 @@
                   name="tier"
                   value="tier-growth"
                   aria-describedby="tier-tier-growth"
-                  class="awkd awlm awmi awmn awms awmz awnf awnj awnt awog awoi awor awpa awpb awpd awpe awpf awpg">
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white btn-card btn-card-ring featured-bg-violet btn-hover featured-btn-hover focus-ring focus-offset focus-color featured-focus-color">
                   Buy this plan
                 </button>
               </div>
-              <div class="awjn awjr awpj">
-                <ul role="list" class="awjg awle awlg awlo awlv awnf awnt awoo awoq awqs">
-                  <li class="awjq awla awms">
+              <div class="mt-8 flow-root md:mt-10">
+                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white featured-divide-light featured-border-bottom lg:border-t-0">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1562,13 +416,13 @@
                     </svg>
                     Custom domains
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1576,13 +430,13 @@
                     </svg>
                     Edge content delivery
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1590,13 +444,13 @@
                     </svg>
                     Advanced analytics
                   </li>
-                  <li class="awjq awla awms">
+                  <li class="flex gap-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="awjw awkb awki awno awow">
+                      class="h-6 w-5 shrink-0 text-[oklch(55.1%_0.027_264.364)] featured-text-violet">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -1611,693 +465,693 @@
         </div>
       </div>
     </div>
-    <div class="awiv awmf awqx">
-      <div class="awjf awkg awmp awmu awpv awqv">
+    <div class="relative bg-[oklch(21%_0.034_264.665)] lg:pt-14">
+      <div class="mx-auto max-w-[80rem] px-6 py-24 lg:px-8">
         <!-- Feature comparison (up to lg) -->
-        <section aria-labelledby="mobile-comparison-heading" class="awql">
-          <h2 id="mobile-comparison-heading" class="awit">Feature comparison</h2>
+        <section aria-labelledby="mobile-comparison-heading" class="lg:hidden">
+          <h2 id="mobile-comparison-heading" class="sr-only">Feature comparison</h2>
 
-          <div class="awjf awke awky">
-            <div class="awlo awlw">
-              <div class="awji awkc awlp awlu awmv awqb">
-                <h3 class="awnf awnj awnt">Starter</h3>
-                <p class="awjj awnf awnn">Everything you need to get started.</p>
+          <div class="mx-auto max-w-[42rem] space-y-16">
+            <div class="border-t border-white/10">
+              <div class="-mt-px w-72 border-t-2 border-transparent pt-10 md:w-80">
+                <h3 class="text-sm leading-6 font-semibold text-white">Starter</h3>
+                <p class="mt-1 text-sm leading-6 text-[oklch(70.7%_0.022_261.325)]">Everything you need to get started.</p>
               </div>
 
-              <div class="awjo awkx">
+              <div class="mt-10 space-y-10">
                 <div>
-                  <h4 class="awnf awnj awnt">Features</h4>
-                  <div class="awiv awjm">
+                  <h4 class="text-sm leading-6 font-semibold text-white">Features</h4>
+                  <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
 
-                    <div class="awiv awll awmd awnw awob awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Edge content delivery</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-1 ring-white/10 md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Edge content delivery</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnr">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
                                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                                 clip-rule="evenodd"
                                 fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">Yes</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Custom domains</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <span class="awnt">1</span>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Custom domains</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <span class="text-white">1</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Team members</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <span class="awnt">3</span>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Team members</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <span class="text-white">3</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Single sign-on (SSO)</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Single sign-on (SSO)</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                               <path
                                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">No</span>
                           </dd>
                         </div>
                       </dl>
                     </div>
 
                     <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnw awob awpk"></div>
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-1 ring-white/10 md:block"></div>
                   </div>
                 </div>
                 <div>
-                  <h4 class="awnf awnj awnt">Reporting</h4>
-                  <div class="awiv awjm">
+                  <h4 class="text-sm leading-6 font-semibold text-white">Reporting</h4>
+                  <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
 
-                    <div class="awiv awll awmd awnw awob awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Advanced analytics</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-1 ring-white/10 md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Advanced analytics</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnr">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
                                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                                 clip-rule="evenodd"
                                 fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">Yes</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Basic reports</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Basic reports</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                               <path
                                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">No</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Professional reports</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Professional reports</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                               <path
                                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">No</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Custom report builder</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Custom report builder</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                               <path
                                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">No</span>
                           </dd>
                         </div>
                       </dl>
                     </div>
 
                     <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnw awob awpk"></div>
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-1 ring-white/10 md:block"></div>
                   </div>
                 </div>
                 <div>
-                  <h4 class="awnf awnj awnt">Support</h4>
-                  <div class="awiv awjm">
+                  <h4 class="text-sm leading-6 font-semibold text-white">Support</h4>
+                  <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
 
-                    <div class="awiv awll awmd awnw awob awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">24/7 online support</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-1 ring-white/10 md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">24/7 online support</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnr">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
                                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                                 clip-rule="evenodd"
                                 fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">Yes</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Quarterly workshops</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Quarterly workshops</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                               <path
                                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">No</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Priority phone support</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Priority phone support</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                               <path
                                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">No</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">1:1 onboarding tour</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">1:1 onboarding tour</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                               <path
                                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">No</span>
                           </dd>
                         </div>
                       </dl>
                     </div>
 
                     <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnw awob awpk"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="awlo awlw">
-              <div class="awji awkc awlp awls awmv awqb">
-                <h3 class="awnf awnj awnr">Scale</h3>
-                <p class="awjj awnf awnn">Added flexibility at scale.</p>
-              </div>
-
-              <div class="awjo awkx">
-                <div>
-                  <h4 class="awnf awnj awnt">Features</h4>
-                  <div class="awiv awjm">
-                    <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
-
-                    <div class="awiv awll awmd awnx awnz awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Edge content delivery</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Custom domains</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <span class="awnj awnr">Unlimited</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Team members</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <span class="awnj awnr">Unlimited</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Single sign-on (SSO)</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                      </dl>
-                    </div>
-
-                    <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnx awnz awpk"></div>
-                  </div>
-                </div>
-                <div>
-                  <h4 class="awnf awnj awnt">Reporting</h4>
-                  <div class="awiv awjm">
-                    <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
-
-                    <div class="awiv awll awmd awnx awnz awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Advanced analytics</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Basic reports</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Professional reports</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Custom report builder</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                      </dl>
-                    </div>
-
-                    <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnx awnz awpk"></div>
-                  </div>
-                </div>
-                <div>
-                  <h4 class="awnf awnj awnt">Support</h4>
-                  <div class="awiv awjm">
-                    <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
-
-                    <div class="awiv awll awmd awnx awnz awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">24/7 online support</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Quarterly workshops</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Priority phone support</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">1:1 onboarding tour</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <svg
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              data-slot="icon"
-                              aria-hidden="true"
-                              class="awjf awju awnr">
-                              <path
-                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd" />
-                            </svg>
-                            <span class="awit">Yes</span>
-                          </dd>
-                        </div>
-                      </dl>
-                    </div>
-
-                    <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnx awnz awpk"></div>
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-1 ring-white/10 md:block"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="awlo awlw">
-              <div class="awji awkc awlp awlu awmv awqb">
-                <h3 class="awnf awnj awnt">Growth</h3>
-                <p class="awjj awnf awnn">All the extras for your growing team.</p>
+            <div class="border-t border-white/10">
+              <div class="-mt-px w-72 border-t-2 border-[oklch(58.5%_0.233_277.117)] pt-10 md:w-80">
+                <h3 class="text-sm leading-6 font-semibold text-[oklch(67.3%_0.182_276.935)]">Scale</h3>
+                <p class="mt-1 text-sm leading-6 text-[oklch(70.7%_0.022_261.325)]">Added flexibility at scale.</p>
               </div>
 
-              <div class="awjo awkx">
+              <div class="mt-10 space-y-10">
                 <div>
-                  <h4 class="awnf awnj awnt">Features</h4>
-                  <div class="awiv awjm">
+                  <h4 class="text-sm leading-6 font-semibold text-white">Features</h4>
+                  <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
 
-                    <div class="awiv awll awmd awnw awob awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Edge content delivery</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-2 ring-[oklch(58.5%_0.233_277.117)] md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Edge content delivery</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnr">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
                                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                                 clip-rule="evenodd"
                                 fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">Yes</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Custom domains</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <span class="awnt">3</span>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Custom domains</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <span class="font-semibold text-[oklch(67.3%_0.182_276.935)]">Unlimited</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Team members</dt>
-                          <dd class="awjq awks awkv awpq awpu">
-                            <span class="awnt">20</span>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Team members</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <span class="font-semibold text-[oklch(67.3%_0.182_276.935)]">Unlimited</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Single sign-on (SSO)</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Single sign-on (SSO)</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
-                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
                       </dl>
                     </div>
 
                     <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnw awob awpk"></div>
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-2 ring-[oklch(58.5%_0.233_277.117)] md:block"></div>
                   </div>
                 </div>
                 <div>
-                  <h4 class="awnf awnj awnt">Reporting</h4>
-                  <div class="awiv awjm">
+                  <h4 class="text-sm leading-6 font-semibold text-white">Reporting</h4>
+                  <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
 
-                    <div class="awiv awll awmd awnw awob awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Advanced analytics</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-2 ring-[oklch(58.5%_0.233_277.117)] md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Advanced analytics</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnr">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
                                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                                 clip-rule="evenodd"
                                 fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">Yes</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Basic reports</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Basic reports</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnr">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
                                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                                 clip-rule="evenodd"
                                 fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">Yes</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Professional reports</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Professional reports</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
-                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Custom report builder</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Custom report builder</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
-                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
                       </dl>
                     </div>
 
                     <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnw awob awpk"></div>
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-2 ring-[oklch(58.5%_0.233_277.117)] md:block"></div>
                   </div>
                 </div>
                 <div>
-                  <h4 class="awnf awnj awnt">Support</h4>
-                  <div class="awiv awjm">
+                  <h4 class="text-sm leading-6 font-semibold text-white">Support</h4>
+                  <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="awiu awiy awiz awjt awjz awll awmd awpk"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
 
-                    <div class="awiv awll awmd awnw awob awpr awps awqa">
-                      <dl class="awle awlh awnf">
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">24/7 online support</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-2 ring-[oklch(58.5%_0.233_277.117)] md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">24/7 online support</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnr">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
                                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                                 clip-rule="evenodd"
                                 fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">Yes</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Quarterly workshops</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Quarterly workshops</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnr">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
                                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                                 clip-rule="evenodd"
                                 fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">Yes</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">Priority phone support</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Priority phone support</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
-                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
-                        <div class="awjq awks awkt awmo awmt awpl awpm awpt">
-                          <dt class="awmx awnn">1:1 onboarding tour</dt>
-                          <dd class="awjq awks awkv awpq awpu">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">1:1 onboarding tour</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
                             <svg
                               viewBox="0 0 20 20"
                               fill="currentColor"
                               data-slot="icon"
                               aria-hidden="true"
-                              class="awjf awju awnp">
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                               <path
-                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
                             </svg>
-                            <span class="awit">No</span>
+                            <span class="sr-only">Yes</span>
                           </dd>
                         </div>
                       </dl>
                     </div>
 
                     <!-- Fake card border -->
-                    <div aria-hidden="true" class="awis awiu awiy awiz awjt awjz awll awnw awob awpk"></div>
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-2 ring-[oklch(58.5%_0.233_277.117)] md:block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-white/10">
+              <div class="-mt-px w-72 border-t-2 border-transparent pt-10 md:w-80">
+                <h3 class="text-sm leading-6 font-semibold text-white">Growth</h3>
+                <p class="mt-1 text-sm leading-6 text-[oklch(70.7%_0.022_261.325)]">All the extras for your growing team.</p>
+              </div>
+
+              <div class="mt-10 space-y-10">
+                <div>
+                  <h4 class="text-sm leading-6 font-semibold text-white">Features</h4>
+                  <div class="relative mt-6">
+                    <!-- Fake card background -->
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
+
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-1 ring-white/10 md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Edge content delivery</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
+                              <path
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Yes</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Custom domains</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <span class="text-white">3</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Team members</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <span class="text-white">20</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Single sign-on (SSO)</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
+                              <path
+                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                            </svg>
+                            <span class="sr-only">No</span>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+
+                    <!-- Fake card border -->
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-1 ring-white/10 md:block"></div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-sm leading-6 font-semibold text-white">Reporting</h4>
+                  <div class="relative mt-6">
+                    <!-- Fake card background -->
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
+
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-1 ring-white/10 md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Advanced analytics</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
+                              <path
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Yes</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Basic reports</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
+                              <path
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Yes</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Professional reports</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
+                              <path
+                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                            </svg>
+                            <span class="sr-only">No</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Custom report builder</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
+                              <path
+                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                            </svg>
+                            <span class="sr-only">No</span>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+
+                    <!-- Fake card border -->
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-1 ring-white/10 md:block"></div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-sm leading-6 font-semibold text-white">Support</h4>
+                  <div class="relative mt-6">
+                    <!-- Fake card background -->
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] md:block"></div>
+
+                    <div class="relative rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] ring-1 ring-white/10 md:rounded-none md:bg-transparent md:ring-0">
+                      <dl class="divide-y divide-white/10 text-sm leading-6">
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">24/7 online support</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
+                              <path
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Yes</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Quarterly workshops</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
+                              <path
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Yes</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">Priority phone support</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
+                              <path
+                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                            </svg>
+                            <span class="sr-only">No</span>
+                          </dd>
+                        </div>
+                        <div class="flex items-center justify-between px-4 py-3 md:grid md:grid-cols-2 md:px-0">
+                          <dt class="pr-4 text-[oklch(70.7%_0.022_261.325)]">1:1 onboarding tour</dt>
+                          <dd class="flex items-center justify-end md:justify-center md:px-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
+                              <path
+                                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                            </svg>
+                            <span class="sr-only">No</span>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+
+                    <!-- Fake card border -->
+                    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-2xl ring-1 ring-white/10 md:block"></div>
                   </div>
                 </div>
               </div>
@@ -2306,199 +1160,199 @@
         </section>
 
         <!-- Feature comparison (lg+) -->
-        <section aria-labelledby="comparison-heading" class="awjt awqk">
-          <h2 id="comparison-heading" class="awit">Feature comparison</h2>
+        <section aria-labelledby="comparison-heading" class="hidden lg:block">
+          <h2 id="comparison-heading" class="sr-only">Feature comparison</h2>
 
-          <div class="awjs awkq awlc awlo awlw awoz">
-            <div aria-hidden="true" class="awji">
-              <div class="awlp awlu awmv">
-                <p class="awnf awnj awnt">Starter</p>
-                <p class="awjj awnf awnn">Everything you need to get started.</p>
+          <div class="grid grid-cols-4 gap-8 border-t border-white/10 before-content">
+            <div aria-hidden="true" class="-mt-px">
+              <div class="border-t-2 border-transparent pt-10">
+                <p class="text-sm leading-6 font-semibold text-white">Starter</p>
+                <p class="mt-1 text-sm leading-6 text-[oklch(70.7%_0.022_261.325)]">Everything you need to get started.</p>
               </div>
             </div>
-            <div aria-hidden="true" class="awji">
-              <div class="awlp awls awmv">
-                <p class="awnf awnj awnr">Scale</p>
-                <p class="awjj awnf awnn">Added flexibility at scale.</p>
+            <div aria-hidden="true" class="-mt-px">
+              <div class="border-t-2 border-[oklch(58.5%_0.233_277.117)] pt-10">
+                <p class="text-sm leading-6 font-semibold text-[oklch(67.3%_0.182_276.935)]">Scale</p>
+                <p class="mt-1 text-sm leading-6 text-[oklch(70.7%_0.022_261.325)]">Added flexibility at scale.</p>
               </div>
             </div>
-            <div aria-hidden="true" class="awji">
-              <div class="awlp awlu awmv">
-                <p class="awnf awnj awnt">Growth</p>
-                <p class="awjj awnf awnn">All the extras for your growing team.</p>
+            <div aria-hidden="true" class="-mt-px">
+              <div class="border-t-2 border-transparent pt-10">
+                <p class="text-sm leading-6 font-semibold text-white">Growth</p>
+                <p class="mt-1 text-sm leading-6 text-[oklch(70.7%_0.022_261.325)]">All the extras for your growing team.</p>
               </div>
             </div>
           </div>
 
-          <div class="awjh awky">
+          <div class="-mt-6 space-y-16">
             <div>
-              <h3 class="awnf awnj awnt">Features</h3>
-              <div class="awiv awje awjo">
+              <h3 class="text-sm leading-6 font-semibold text-white">Features</h3>
+              <div class="relative -mx-8 mt-10">
                 <!-- Fake card backgrounds -->
-                <div aria-hidden="true" class="awiu awix awiy awjs awkq awlc awoz">
-                  <div class="awjv awll awmd"></div>
-                  <div class="awjv awll awmd"></div>
-                  <div class="awjv awll awmd"></div>
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-8 before-content">
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
                 </div>
 
-                <table class="awiv awkd awkj awkk">
+                <table class="relative w-full border-separate border-spacing-x-8">
                   <thead>
-                    <tr class="awna">
+                    <tr class="text-left">
                       <th scope="col">
-                        <span class="awit">Feature</span>
+                        <span class="sr-only">Feature</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Starter tier</span>
+                        <span class="sr-only">Starter tier</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Scale tier</span>
+                        <span class="sr-only">Scale tier</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Growth tier</span>
+                        <span class="sr-only">Growth tier</span>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         Edge content delivery
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         Custom domains
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
-                          <span class="awnf awnt">1</span>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
+                          <span class="text-sm leading-6 text-white">1</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
-                          <span class="awnf awnj awnr">Unlimited</span>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
+                          <span class="text-sm leading-6 font-semibold text-[oklch(67.3%_0.182_276.935)]">Unlimited</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
-                          <span class="awnf awnt">3</span>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
+                          <span class="text-sm leading-6 text-white">3</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         Team members
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
-                          <span class="awnf awnt">3</span>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
+                          <span class="text-sm leading-6 text-white">3</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
-                          <span class="awnf awnj awnr">Unlimited</span>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
+                          <span class="text-sm leading-6 font-semibold text-[oklch(67.3%_0.182_276.935)]">Unlimited</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
-                          <span class="awnf awnt">20</span>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
+                          <span class="text-sm leading-6 text-white">20</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">Single sign-on (SSO)</th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">Single sign-on (SSO)</th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
                     </tr>
@@ -2506,241 +1360,241 @@
                 </table>
 
                 <!-- Fake card borders -->
-                <div aria-hidden="true" class="awis awiu awix awiy awjs awkq awlc awoz">
-                  <div class="awll awnw awob"></div>
-                  <div class="awll awnx awnz"></div>
-                  <div class="awll awnw awob"></div>
+                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-8 before-content">
+                  <div class="rounded-2xl ring-1 ring-white/10"></div>
+                  <div class="rounded-2xl ring-2 ring-[oklch(58.5%_0.233_277.117)]"></div>
+                  <div class="rounded-2xl ring-1 ring-white/10"></div>
                 </div>
               </div>
             </div>
             <div>
-              <h3 class="awnf awnj awnt">Reporting</h3>
-              <div class="awiv awje awjo">
+              <h3 class="text-sm leading-6 font-semibold text-white">Reporting</h3>
+              <div class="relative -mx-8 mt-10">
                 <!-- Fake card backgrounds -->
-                <div aria-hidden="true" class="awiu awix awiy awjs awkq awlc awoz">
-                  <div class="awjv awll awmd"></div>
-                  <div class="awjv awll awmd"></div>
-                  <div class="awjv awll awmd"></div>
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-8 before-content">
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
                 </div>
 
-                <table class="awiv awkd awkj awkk">
+                <table class="relative w-full border-separate border-spacing-x-8">
                   <thead>
-                    <tr class="awna">
+                    <tr class="text-left">
                       <th scope="col">
-                        <span class="awit">Feature</span>
+                        <span class="sr-only">Feature</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Starter tier</span>
+                        <span class="sr-only">Starter tier</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Scale tier</span>
+                        <span class="sr-only">Scale tier</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Growth tier</span>
+                        <span class="sr-only">Growth tier</span>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         Advanced analytics
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         Basic reports
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         Professional reports
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">Custom report builder</th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">Custom report builder</th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
                     </tr>
@@ -2748,241 +1602,241 @@
                 </table>
 
                 <!-- Fake card borders -->
-                <div aria-hidden="true" class="awis awiu awix awiy awjs awkq awlc awoz">
-                  <div class="awll awnw awob"></div>
-                  <div class="awll awnx awnz"></div>
-                  <div class="awll awnw awob"></div>
+                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-8 before-content">
+                  <div class="rounded-2xl ring-1 ring-white/10"></div>
+                  <div class="rounded-2xl ring-2 ring-[oklch(58.5%_0.233_277.117)]"></div>
+                  <div class="rounded-2xl ring-1 ring-white/10"></div>
                 </div>
               </div>
             </div>
             <div>
-              <h3 class="awnf awnj awnt">Support</h3>
-              <div class="awiv awje awjo">
+              <h3 class="text-sm leading-6 font-semibold text-white">Support</h3>
+              <div class="relative -mx-8 mt-10">
                 <!-- Fake card backgrounds -->
-                <div aria-hidden="true" class="awiu awix awiy awjs awkq awlc awoz">
-                  <div class="awjv awll awmd"></div>
-                  <div class="awjv awll awmd"></div>
-                  <div class="awjv awll awmd"></div>
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-8 before-content">
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
+                  <div class="w-full h-full rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)]"></div>
                 </div>
 
-                <table class="awiv awkd awkj awkk">
+                <table class="relative w-full border-separate border-spacing-x-8">
                   <thead>
-                    <tr class="awna">
+                    <tr class="text-left">
                       <th scope="col">
-                        <span class="awit">Feature</span>
+                        <span class="sr-only">Feature</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Starter tier</span>
+                        <span class="sr-only">Starter tier</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Scale tier</span>
+                        <span class="sr-only">Scale tier</span>
                       </th>
                       <th scope="col">
-                        <span class="awit">Growth tier</span>
+                        <span class="sr-only">Growth tier</span>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         24/7 online support
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         Quarterly workshops
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">
                         Priority phone support
-                        <div class="awiu awix awjl awjy awmi"></div>
+                        <div class="absolute inset-x-8 rounded-2xl h-px bg-white/5"></div>
                       </th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row" class="awka awmt awmx awna awnf awni awnt">1:1 onboarding tour</th>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm leading-6 font-normal text-white">1:1 onboarding tour</th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnr">
+                            class="mx-auto w-5 h-5 text-[oklch(67.3%_0.182_276.935)]">
                             <path
                               d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                               clip-rule="evenodd"
                               fill-rule="evenodd" />
                           </svg>
-                          <span class="awit">Yes</span>
+                          <span class="sr-only">Yes</span>
                         </span>
                       </td>
-                      <td class="awiv awka awmo awmq awmz">
-                        <span class="awiv awjv awmt">
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative w-full h-full py-3">
                           <svg
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="awjf awju awnp">
+                            class="mx-auto w-5 h-5 text-[oklch(44.6%_0.03_256.802)]">
                             <path
                               d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
                           </svg>
-                          <span class="awit">No</span>
+                          <span class="sr-only">No</span>
                         </span>
                       </td>
                     </tr>
@@ -2990,10 +1844,10 @@
                 </table>
 
                 <!-- Fake card borders -->
-                <div aria-hidden="true" class="awis awiu awix awiy awjs awkq awlc awoz">
-                  <div class="awll awnw awob"></div>
-                  <div class="awll awnx awnz"></div>
-                  <div class="awll awnw awob"></div>
+                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-8 before-content">
+                  <div class="rounded-2xl ring-1 ring-white/10"></div>
+                  <div class="rounded-2xl ring-2 ring-[oklch(58.5%_0.233_277.117)]"></div>
+                  <div class="rounded-2xl ring-1 ring-white/10"></div>
                 </div>
               </div>
             </div>
@@ -3004,4 +1858,6 @@
   </form>
 
   <script></script>
+
 </body>
+</html>

@@ -1,630 +1,159 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-outline-style: solid;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .ktn {
-      margin-inline: auto;
-    }
-    .kto {
-      margin-top: 1.5rem;
-    }
-    .ktp {
-      margin-top: 5rem;
-    }
-    .ktq {
-      display: grid;
-    }
-    .ktr {
-      width: 6rem;
-      height: 6rem;
-    }
-    .kts {
-      max-width: 42rem;
-    }
-    .ktt {
-      max-width: 80rem;
-    }
-    .ktu {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .ktv {
-      column-gap: 2rem;
-    }
-    .ktw {
-      row-gap: 4rem;
-    }
-    .ktx {
-      border-radius: 3.40282e38px;
-    }
-    .kty {
+  </style>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       background-color: oklch(21% 0.034 264.665);
     }
-    .ktz {
-      background-color: #fff;
-    }
-    .kua {
-      padding-inline: 1.5rem;
-    }
-    .kub {
-      padding-block: 6rem;
-    }
-    .kuc {
-      text-align: center;
-    }
-    .kud {
-      font-size: 2.25rem;
-      line-height: var(--tw-leading, calc(2.5 / 2.25));
-    }
-    .kue {
-      font-size: 1rem;
-      line-height: 1.75rem;
-    }
-    .kuf {
-      font-size: 1.125rem;
-      line-height: 2rem;
-    }
-    .kug {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .kuh {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .kui {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .kuj {
-      text-wrap: pretty;
-    }
-    .kuk {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .kul {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .kum {
-      color: oklch(21% 0.034 264.665);
-    }
-    .kun {
-      color: #fff;
-    }
-    .kuo {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-    .kup {
-      outline-offset: calc(1px * -1);
-    }
-    .kuq {
-      outline-color: oklab(0% none none/.05);
-    }
-    .kur {
-      outline-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    @media (min-width: 40rem) {
-      .kus {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .kut {
-        padding-block: 8rem;
-      }
-      .kuu {
-        font-size: 3rem;
-        line-height: var(--tw-leading, 1);
-      }
-    }
-    @media (min-width: 48rem) {
-      .kuv {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-    }
-    @media (min-width: 64rem) {
-      .kuw {
-        margin-inline: 0;
-      }
-      .kux {
-        max-width: none;
-      }
-      .kuy {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-      }
-      .kuz {
-        padding-inline: 2rem;
-      }
-    }
-    @media (min-width: 80rem) {
-      .kva {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .kvb {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .kvc {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .kvd {
-        color: #fff;
-      }
-      .kve {
-        outline-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-    }
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-outline-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
+  </style>
+</head>
 <body>
-  <div class="kty kub kut">
-    <div class="ktn ktt kua kuz">
-      <div class="ktn kts kuw">
-        <h2 class="kud kuh kui kuj kun kuu">Our team</h2>
-        <p class="kto kuf kuk">
+  <div class="bg-[oklch(21%_0.034_264.665)] py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-[42rem] lg:mx-0">
+        <h2 class="text-4xl font-semibold tracking-tight [text-wrap:pretty] text-white sm:text-5xl">Our team</h2>
+        <p class="mt-6 text-lg/8 text-[oklch(70.7%_0.022_261.325)]">
           We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best
           results for our clients.
         </p>
       </div>
-      <ul role="list" class="ktn ktp ktq kts ktu ktv ktw kuc kus kuv kuw kux kuy kva">
+      <ul role="list" class="mx-auto mt-20 grid max-w-[42rem] grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6">
         <li>
           <img
             src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Michael Foster</h3>
-          <p class="kug kuk">Co-Founder / CTO</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Michael Foster</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Co-Founder / CTO</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Dries Vincent</h3>
-          <p class="kug kuk">Business Relations</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Dries Vincent</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Business Relations</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Lindsay Walton</h3>
-          <p class="kug kuk">Front-end Developer</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Lindsay Walton</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Front-end Developer</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Courtney Henry</h3>
-          <p class="kug kuk">Designer</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Courtney Henry</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Designer</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Tom Cook</h3>
-          <p class="kug kuk">Director of Product</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Tom Cook</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Director of Product</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Whitney Francis</h3>
-          <p class="kug kuk">Copywriter</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Whitney Francis</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Copywriter</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Leonard Krasner</h3>
-          <p class="kug kuk">Senior Designer</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Leonard Krasner</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Senior Designer</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Floyd Miles</h3>
-          <p class="kug kuk">Principal Designer</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Floyd Miles</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Principal Designer</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Emily Selman</h3>
-          <p class="kug kuk">VP, User Experience</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Emily Selman</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">VP, User Experience</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Kristin Watson</h3>
-          <p class="kug kuk">VP, Human Resources</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Kristin Watson</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">VP, Human Resources</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Emma Dorsey</h3>
-          <p class="kug kuk">Senior Developer</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Emma Dorsey</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Senior Developer</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Alicia Bell</h3>
-          <p class="kug kuk">Junior Copywriter</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Alicia Bell</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Junior Copywriter</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Jenny Wilson</h3>
-          <p class="kug kuk">Studio Artist</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Jenny Wilson</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Studio Artist</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Anna Roberts</h3>
-          <p class="kug kuk">Partner, Creative</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Anna Roberts</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Partner, Creative</p>
         </li>
         <li>
           <img
             src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="ktn ktr ktx kuo kup kur" />
-          <h3 class="kto kue kuh kui kun">Benjamin Russel</h3>
-          <p class="kug kuk">Director, Print Operations</p>
+            class="mx-auto size-24 rounded-full outline -outline-offset-1 outline-white/10" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Benjamin Russel</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Director, Print Operations</p>
         </li>
       </ul>
     </div>
   </div>
-
-  <script></script>
 </body>
+</html>

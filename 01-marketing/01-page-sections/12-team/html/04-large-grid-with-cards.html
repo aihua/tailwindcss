@@ -1,582 +1,58 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-outline-style: solid;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .mqn {
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border-width: 0;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-    .mqo {
-      margin-inline: auto;
-    }
-    .mqp {
-      margin-top: 1.5rem;
-    }
-    .mqq {
-      margin-top: 5rem;
-    }
-    .mqr {
-      display: flex;
-    }
-    .mqs {
-      display: grid;
-    }
-    .mqt {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-    .mqu {
-      width: 12rem;
-      height: 12rem;
-    }
-    .mqv {
-      max-width: 42rem;
-    }
-    .mqw {
-      max-width: 80rem;
-    }
-    .mqx {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .mqy {
-      justify-content: center;
-    }
-    .mqz {
-      gap: 1.5rem;
-    }
-    .mra {
-      column-gap: 1.5rem;
-    }
-    .mrb {
-      border-radius: 1rem;
-    }
-    .mrc {
-      border-radius: 3.40282e38px;
-    }
-    .mrd {
-      background-color: oklch(96.7% 0.003 264.542);
-    }
-    .mre {
-      background-color: oklch(27.8% 0.033 256.848);
-    }
-    .mrf {
+  </style>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       background-color: oklch(21% 0.034 264.665);
     }
-    .mrg {
-      background-color: #fff;
-    }
-    .mrh {
-      padding-inline: 1.5rem;
-    }
-    .mri {
-      padding-inline: 2rem;
-    }
-    .mrj {
-      padding-block: 2.5rem;
-    }
-    .mrk {
-      padding-block: 6rem;
-    }
-    .mrl {
-      text-align: center;
-    }
-    .mrm {
-      font-size: 2.25rem;
-      line-height: var(--tw-leading, calc(2.5 / 2.25));
-    }
-    .mrn {
-      font-size: 1rem;
-      line-height: 1.75rem;
-    }
-    .mro {
-      font-size: 1.125rem;
-      line-height: 2rem;
-    }
-    .mrp {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .mrq {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .mrr {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .mrs {
-      text-wrap: balance;
-    }
-    .mrt {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .mru {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .mrv {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .mrw {
-      color: oklch(21% 0.034 264.665);
-    }
-    .mrx {
-      color: #fff;
-    }
-    .mry {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-    .mrz {
-      outline-offset: calc(1px * -1);
-    }
-    .msa {
-      outline-color: oklab(0% none none/.05);
-    }
-    .msb {
-      outline-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    @media (hover: hover) {
-      .msc:hover {
-        color: oklch(87.2% 0.01 258.338);
-      }
-      .msd:hover {
-        color: oklch(37.3% 0.034 259.733);
-      }
-    }
-    @media (min-width: 40rem) {
-      .mse {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .msf {
-        padding-block: 8rem;
-      }
-      .msg {
-        font-size: 3rem;
-        line-height: var(--tw-leading, 1);
-      }
-    }
-    @media (min-width: 48rem) {
-      .msh {
-        width: 14rem;
-        height: 14rem;
-      }
-    }
-    @media (min-width: 64rem) {
-      .msi {
-        margin-inline: 0;
-      }
-      .msj {
-        max-width: none;
-      }
-      .msk {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .msl {
-        gap: 2rem;
-      }
-      .msm {
-        padding-inline: 2rem;
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .msn {
-        background-color: oklch(27.8% 0.033 256.848);
-      }
-      .mso {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .msp {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .msq {
-        color: #fff;
-      }
-      .msr {
-        outline-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      @media (hover: hover) {
-        .mss:hover {
-          color: oklch(87.2% 0.01 258.338);
-        }
-      }
-    }
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-outline-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
+  </style>
+</head>
 <body>
-  <div class="mrf mrk msf">
-    <div class="mqo mqw mrh mrl msm">
-      <div class="mqo mqv">
-        <h2 class="mrm mrq mrr mrs mrx msg">Meet our team</h2>
-        <p class="mqp mro mrt">
+  <div class="bg-[oklch(21%_0.034_264.665)] py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 text-center lg:px-8">
+      <div class="mx-auto max-w-[42rem]">
+        <h2 class="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">Meet our team</h2>
+        <p class="mt-6 text-lg/8 text-[oklch(70.7%_0.022_261.325)]">
           We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best
           results for our clients.
         </p>
       </div>
-      <ul role="list" class="mqo mqq mqs mqv mqx mqz mse msi msj msk msl">
-        <li class="mrb mre mri mrj">
+      <ul role="list" class="mx-auto mt-20 grid max-w-[42rem] grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8">
+        <li class="rounded-2xl bg-[oklch(27.8%_0.033_256.848)] px-8 py-10">
           <img
             src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="mqo mqu mrc mry mrz msb msh" />
-          <h3 class="mqp mrn mrq mrr mrx">Leonard Krasner</h3>
-          <p class="mrp mrt">Senior Designer</p>
-          <ul role="list" class="mqp mqr mqy mra">
+            class="mx-auto size-48 rounded-full outline -outline-offset-1 outline-white/10 md:size-56" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Leonard Krasner</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Senior Designer</p>
+          <ul role="list" class="mt-6 flex justify-center gap-x-6">
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">X</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">X</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M11.4678 8.77491L17.2961 2H15.915L10.8543 7.88256L6.81232 2H2.15039L8.26263 10.8955L2.15039 18H3.53159L8.87581 11.7878L13.1444 18H17.8063L11.4675 8.77491H11.4678ZM9.57608 10.9738L8.95678 10.0881L4.02925 3.03974H6.15068L10.1273 8.72795L10.7466 9.61374L15.9156 17.0075H13.7942L9.57608 10.9742V10.9738Z" />
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">LinkedIn</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">LinkedIn</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
                     clip-rule="evenodd"
@@ -586,27 +62,27 @@
             </li>
           </ul>
         </li>
-        <li class="mrb mre mri mrj">
+        <li class="rounded-2xl bg-[oklch(27.8%_0.033_256.848)] px-8 py-10">
           <img
             src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="mqo mqu mrc mry mrz msb msh" />
-          <h3 class="mqp mrn mrq mrr mrx">Floyd Miles</h3>
-          <p class="mrp mrt">Principal Designer</p>
-          <ul role="list" class="mqp mqr mqy mra">
+            class="mx-auto size-48 rounded-full outline -outline-offset-1 outline-white/10 md:size-56" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Floyd Miles</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Principal Designer</p>
+          <ul role="list" class="mt-6 flex justify-center gap-x-6">
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">X</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">X</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M11.4678 8.77491L17.2961 2H15.915L10.8543 7.88256L6.81232 2H2.15039L8.26263 10.8955L2.15039 18H3.53159L8.87581 11.7878L13.1444 18H17.8063L11.4675 8.77491H11.4678ZM9.57608 10.9738L8.95678 10.0881L4.02925 3.03974H6.15068L10.1273 8.72795L10.7466 9.61374L15.9156 17.0075H13.7942L9.57608 10.9742V10.9738Z" />
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">LinkedIn</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">LinkedIn</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
                     clip-rule="evenodd"
@@ -616,27 +92,27 @@
             </li>
           </ul>
         </li>
-        <li class="mrb mre mri mrj">
+        <li class="rounded-2xl bg-[oklch(27.8%_0.033_256.848)] px-8 py-10">
           <img
             src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="mqo mqu mrc mry mrz msb msh" />
-          <h3 class="mqp mrn mrq mrr mrx">Emily Selman</h3>
-          <p class="mrp mrt">VP, User Experience</p>
-          <ul role="list" class="mqp mqr mqy mra">
+            class="mx-auto size-48 rounded-full outline -outline-offset-1 outline-white/10 md:size-56" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Emily Selman</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">VP, User Experience</p>
+          <ul role="list" class="mt-6 flex justify-center gap-x-6">
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">X</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">X</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M11.4678 8.77491L17.2961 2H15.915L10.8543 7.88256L6.81232 2H2.15039L8.26263 10.8955L2.15039 18H3.53159L8.87581 11.7878L13.1444 18H17.8063L11.4675 8.77491H11.4678ZM9.57608 10.9738L8.95678 10.0881L4.02925 3.03974H6.15068L10.1273 8.72795L10.7466 9.61374L15.9156 17.0075H13.7942L9.57608 10.9742V10.9738Z" />
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">LinkedIn</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">LinkedIn</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
                     clip-rule="evenodd"
@@ -646,27 +122,27 @@
             </li>
           </ul>
         </li>
-        <li class="mrb mre mri mrj">
+        <li class="rounded-2xl bg-[oklch(27.8%_0.033_256.848)] px-8 py-10">
           <img
             src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="mqo mqu mrc mry mrz msb msh" />
-          <h3 class="mqp mrn mrq mrr mrx">Kristin Watson</h3>
-          <p class="mrp mrt">VP, Human Resources</p>
-          <ul role="list" class="mqp mqr mqy mra">
+            class="mx-auto size-48 rounded-full outline -outline-offset-1 outline-white/10 md:size-56" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Kristin Watson</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">VP, Human Resources</p>
+          <ul role="list" class="mt-6 flex justify-center gap-x-6">
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">X</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">X</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M11.4678 8.77491L17.2961 2H15.915L10.8543 7.88256L6.81232 2H2.15039L8.26263 10.8955L2.15039 18H3.53159L8.87581 11.7878L13.1444 18H17.8063L11.4675 8.77491H11.4678ZM9.57608 10.9738L8.95678 10.0881L4.02925 3.03974H6.15068L10.1273 8.72795L10.7466 9.61374L15.9156 17.0075H13.7942L9.57608 10.9742V10.9738Z" />
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">LinkedIn</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">LinkedIn</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
                     clip-rule="evenodd"
@@ -676,27 +152,27 @@
             </li>
           </ul>
         </li>
-        <li class="mrb mre mri mrj">
+        <li class="rounded-2xl bg-[oklch(27.8%_0.033_256.848)] px-8 py-10">
           <img
             src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="mqo mqu mrc mry mrz msb msh" />
-          <h3 class="mqp mrn mrq mrr mrx">Emma Dorsey</h3>
-          <p class="mrp mrt">Senior Developer</p>
-          <ul role="list" class="mqp mqr mqy mra">
+            class="mx-auto size-48 rounded-full outline -outline-offset-1 outline-white/10 md:size-56" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Emma Dorsey</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Senior Developer</p>
+          <ul role="list" class="mt-6 flex justify-center gap-x-6">
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">X</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">X</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M11.4678 8.77491L17.2961 2H15.915L10.8543 7.88256L6.81232 2H2.15039L8.26263 10.8955L2.15039 18H3.53159L8.87581 11.7878L13.1444 18H17.8063L11.4675 8.77491H11.4678ZM9.57608 10.9738L8.95678 10.0881L4.02925 3.03974H6.15068L10.1273 8.72795L10.7466 9.61374L15.9156 17.0075H13.7942L9.57608 10.9742V10.9738Z" />
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">LinkedIn</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">LinkedIn</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
                     clip-rule="evenodd"
@@ -706,27 +182,27 @@
             </li>
           </ul>
         </li>
-        <li class="mrb mre mri mrj">
+        <li class="rounded-2xl bg-[oklch(27.8%_0.033_256.848)] px-8 py-10">
           <img
             src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
             alt=""
-            class="mqo mqu mrc mry mrz msb msh" />
-          <h3 class="mqp mrn mrq mrr mrx">Alicia Bell</h3>
-          <p class="mrp mrt">Junior Copywriter</p>
-          <ul role="list" class="mqp mqr mqy mra">
+            class="mx-auto size-48 rounded-full outline -outline-offset-1 outline-white/10 md:size-56" />
+          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-white">Alicia Bell</h3>
+          <p class="text-sm/6 text-[oklch(70.7%_0.022_261.325)]">Junior Copywriter</p>
+          <ul role="list" class="mt-6 flex justify-center gap-x-6">
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">X</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">X</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M11.4678 8.77491L17.2961 2H15.915L10.8543 7.88256L6.81232 2H2.15039L8.26263 10.8955L2.15039 18H3.53159L8.87581 11.7878L13.1444 18H17.8063L11.4675 8.77491H11.4678ZM9.57608 10.9738L8.95678 10.0881L4.02925 3.03974H6.15068L10.1273 8.72795L10.7466 9.61374L15.9156 17.0075H13.7942L9.57608 10.9742V10.9738Z" />
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#" class="mrt msc">
-                <span class="mqn">LinkedIn</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mqt">
+              <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-[oklch(87.2%_0.01_258.338)]">
+                <span class="sr-only">LinkedIn</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
                   <path
                     d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
                     clip-rule="evenodd"
@@ -739,6 +215,5 @@
       </ul>
     </div>
   </div>
-
-  <script></script>
 </body>
+</html>

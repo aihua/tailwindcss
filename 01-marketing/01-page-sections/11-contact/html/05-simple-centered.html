@@ -1,582 +1,69 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-space-y-reverse: 0;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .kok {
-      isolation: isolate;
-    }
-    .kol {
-      margin-inline: auto;
-    }
-    .kom {
-      margin-top: 0.5rem;
-    }
-    .kon {
-      margin-top: 1rem;
-    }
-    .koo {
-      margin-top: 5rem;
-    }
-    .kop {
-      display: flex;
-    }
-    .koq {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .kor {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-    .kos {
-      max-width: 42rem;
-    }
-    .kot {
-      max-width: 32rem;
-    }
-    .kou {
-      flex-shrink: 0;
-    }
-    .kov {
-      align-items: center;
-    }
-    .kow {
-      justify-content: center;
-    }
-    :where(.kox > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 16) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 16) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .koy {
-      column-gap: 1.5rem;
-    }
-    .koz {
-      border-radius: 0.5rem;
-    }
-    .kpa {
+  </style>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       background-color: oklch(21% 0.034 264.665);
     }
-    .kpb {
-      background-color: oklch(58.5% 0.233 277.117);
-    }
-    .kpc {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .kpd {
-      background-color: #fff;
-    }
-    .kpe {
-      padding-inline: 1.5rem;
-    }
-    .kpf {
-      padding-block: 6rem;
-    }
-    .kpg {
-      font-size: 2.25rem;
-      line-height: var(--tw-leading, calc(2.5 / 2.25));
-    }
-    .kph {
-      font-size: 1rem;
-      line-height: 1.75rem;
-    }
-    .kpi {
-      font-size: 1.125rem;
-      line-height: 2rem;
-    }
-    .kpj {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .kpk {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .kpl {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .kpm {
-      text-wrap: balance;
-    }
-    .kpn {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .kpo {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .kpp {
-      color: oklch(21% 0.034 264.665);
-    }
-    .kpq {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .kpr {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .kps {
-      color: #fff;
-    }
-    @media (min-width: 40rem) {
-      .kpt {
-        padding-block: 8rem;
-      }
-      .kpu {
-        text-align: center;
-      }
-      .kpv {
-        font-size: 3rem;
-        line-height: var(--tw-leading, 1);
-      }
-    }
-    @media (min-width: 64rem) {
-      .kpw {
-        padding-inline: 2rem;
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .kpx {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .kpy {
-        background-color: oklch(58.5% 0.233 277.117);
-      }
-      .kpz {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .kqa {
-        color: oklch(67.3% 0.182 276.935);
-      }
-      .kqb {
-        color: #fff;
-      }
-    }
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
+  </style>
+</head>
 <body>
-  <div class="kok kpa kpe kpf kpt kpw">
-    <div class="kol kos kpu">
-      <h2 class="kpg kpk kpl kpm kps kpv">Contact sales</h2>
-      <p class="kom kpi kpn">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
+  <div class="isolate bg-[oklch(21%_0.034_264.665)] px-6 py-24 sm:py-32 lg:px-8">
+    <div class="mx-auto max-w-2xl sm:text-center">
+      <h2 class="text-4xl font-semibold tracking-tight text-wrap-balance text-white sm:text-5xl">Contact sales</h2>
+      <p class="mt-2 text-lg/8 text-[oklch(70.7%_0.022_261.325)]">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
     </div>
-    <div class="kol koo kot kox">
-      <div class="kop koy">
-        <div class="kop kor kou kov kow koz kpb">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            data-slot="icon"
-            aria-hidden="true"
-            class="koq kps">
-            <path
-              d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
-              stroke-linecap="round"
-              stroke-linejoin="round" />
+    <div class="mx-auto mt-20 max-w-lg space-y-16">
+      <div class="flex gap-x-6">
+        <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[oklch(58.5%_0.233_277.117)]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+            <path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
         <div>
-          <h3 class="kph kpk kps">Sales support</h3>
-          <p class="kom kph kpn">
-            Ut cursus est ut amet. Lobortis eget egestas leo vitae eget porttitor risus blandit. Nunc a in lorem vel
-            iaculis porttitor.
-          </p>
-          <p class="kon kpj kpk">
-            <a href="#" class="kpq">Contact us <span aria-hidden="true">&rarr;</span></a>
-          </p>
+          <h3 class="text-base/7 font-semibold text-white">Sales support</h3>
+          <p class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">Ut cursus est ut amet. Lobortis eget egestas leo vitae eget porttitor risus blandit. Nunc a in lorem vel iaculis porttitor.</p>
+          <p class="mt-4 text-sm/6 font-semibold"><a href="#" class="text-[oklch(67.3%_0.182_276.935)]">Contact us <span aria-hidden="true">&rarr;</span></a></p>
         </div>
       </div>
-      <div class="kop koy">
-        <div class="kop kor kou kov kow koz kpb">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            data-slot="icon"
-            aria-hidden="true"
-            class="koq kps">
-            <path
-              d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 0 1 .4-2.253M12 8.25a2.25 2.25 0 0 0-2.248 2.146M12 8.25a2.25 2.25 0 0 1 2.248 2.146M8.683 5a6.032 6.032 0 0 1-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0 1 15.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 0 0-.575-1.752M4.921 6a24.048 24.048 0 0 0-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 0 1-5.223 1.082"
-              stroke-linecap="round"
-              stroke-linejoin="round" />
+      <div class="flex gap-x-6">
+        <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[oklch(58.5%_0.233_277.117)]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+            <path d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 0 1 .4-2.253M12 8.25a2.25 2.25 0 0 0-2.248 2.146M12 8.25a2.25 2.25 0 0 1 2.248 2.146M8.683 5a6.032 6.032 0 0 1-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0 1 15.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 0 0-.575-1.752M4.921 6a24.048 24.048 0 0 0-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 0 1-5.223 1.082" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
         <div>
-          <h3 class="kph kpk kps">Bug reports</h3>
-          <p class="kom kph kpn">
-            Expedita qui non ut quia ipsum voluptatum ipsam pariatur. Culpa vitae ipsum minus eius vero quo quibusdam.
-          </p>
-          <p class="kon kpj kpk">
-            <a href="#" class="kpq">Report a bug <span aria-hidden="true">&rarr;</span></a>
-          </p>
+          <h3 class="text-base/7 font-semibold text-white">Bug reports</h3>
+          <p class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">Expedita qui non ut quia ipsum voluptatum ipsam pariatur. Culpa vitae ipsum minus eius vero quo quibusdam.</p>
+          <p class="mt-4 text-sm/6 font-semibold"><a href="#" class="text-[oklch(67.3%_0.182_276.935)]">Report a bug <span aria-hidden="true">&rarr;</span></a></p>
         </div>
       </div>
-      <div class="kop koy">
-        <div class="kop kor kou kov kow koz kpb">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            data-slot="icon"
-            aria-hidden="true"
-            class="koq kps">
-            <path
-              d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"
-              stroke-linecap="round"
-              stroke-linejoin="round" />
+      <div class="flex gap-x-6">
+        <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[oklch(58.5%_0.233_277.117)]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+            <path d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
         <div>
-          <h3 class="kph kpk kps">Technical support</h3>
-          <p class="kom kph kpn">
-            Sint aut modi porro consequatur architecto commodi qui consequatur. Dignissimos adipisci minima.
-          </p>
-          <p class="kon kpj kpk">
-            <a href="#" class="kpq">Join our Discord <span aria-hidden="true">&rarr;</span></a>
-          </p>
+          <h3 class="text-base/7 font-semibold text-white">Technical support</h3>
+          <p class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">Sint aut modi porro consequatur architecto commodi qui consequatur. Dignissimos adipisci minima.</p>
+          <p class="mt-4 text-sm/6 font-semibold"><a href="#" class="text-[oklch(67.3%_0.182_276.935)]">Join our Discord <span aria-hidden="true">&rarr;</span></a></p>
         </div>
       </div>
     </div>
   </div>
-
-  <script></script>
 </body>
+</html>

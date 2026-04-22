@@ -1,647 +1,113 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-space-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .mlg {
-      margin-inline: auto;
-    }
-    .mlh {
-      margin-top: 0.125rem;
-    }
-    .mli {
-      margin-top: 0.25rem;
-    }
-    .mlj {
-      margin-top: 0.5rem;
-    }
-    .mlk {
-      margin-top: 1rem;
-    }
-    .mll {
-      margin-top: 1.5rem;
-    }
-    .mlm {
-      margin-top: 2rem;
-    }
-    .mln {
-      margin-top: 2.5rem;
-    }
-    .mlo {
-      margin-top: 4rem;
-    }
-    .mlp {
-      display: flex;
-    }
-    .mlq {
-      aspect-ratio: 16/9;
-    }
-    .mlr {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-    .mls {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .mlt {
-      max-width: 42rem;
-    }
-    .mlu {
-      max-width: 48rem;
-    }
-    .mlv {
-      max-width: 36rem;
-    }
-    .mlw {
-      flex: none;
-    }
-    :where(.mlx > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 8) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .mly {
-      column-gap: 0.5rem;
-    }
-    .mlz {
-      column-gap: 0.75rem;
-    }
-    .mma {
-      column-gap: 1rem;
-    }
-    .mmb {
-      border-radius: 3.40282e38px;
-    }
-    .mmc {
-      border-radius: 0.75rem;
-    }
-    .mmd {
-      border-left-style: var(--tw-border-style);
-      border-left-width: 1px;
-    }
-    .mme {
-      border-color: oklch(67.3% 0.182 276.935);
-    }
-    .mmf {
-      border-color: oklch(51.1% 0.262 276.966);
-    }
-    .mmg {
-      background-color: oklch(98.5% 0.002 247.839);
-    }
-    .mmh {
-      background-color: oklch(27.8% 0.033 256.848);
-    }
-    .mmi {
-      background-color: oklch(21% 0.034 264.665);
-    }
-    .mmj {
-      background-color: #fff;
-    }
-    .mmk {
-      object-fit: cover;
-    }
-    .mml {
-      padding-inline: 1.5rem;
-    }
-    .mmm {
-      padding-block: 8rem;
-    }
-    .mmn {
-      padding-left: 2.25rem;
-    }
-    .mmo {
-      font-size: 1.875rem;
-      line-height: var(--tw-leading, calc(2.25 / 1.875));
-    }
-    .mmp {
-      font-size: 2.25rem;
-      line-height: var(--tw-leading, calc(2.5 / 2.25));
-    }
-    .mmq {
-      font-size: 1rem;
-      line-height: 1.75rem;
-    }
-    .mmr {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .mms {
-      font-size: 1.25rem;
-      line-height: 2rem;
-    }
-    .mmt {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .mmu {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .mmv {
-      text-wrap: pretty;
-    }
-    .mmw {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .mmx {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .mmy {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .mmz {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .mna {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    .mnb {
-      color: oklch(21% 0.034 264.665);
-    }
-    .mnc {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .mnd {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .mne {
-      color: #fff;
-    }
-    @media (min-width: 40rem) {
-      .mnf {
-        font-size: 3rem;
-        line-height: var(--tw-leading, 1);
-      }
-    }
-    @media (min-width: 64rem) {
-      .mng {
-        padding-inline: 2rem;
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .mnh {
-        border-color: oklch(67.3% 0.182 276.935);
-      }
-      .mni {
-        background-color: oklch(27.8% 0.033 256.848);
-      }
-      .mnj {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .mnk {
-        color: oklch(87.2% 0.01 258.338);
-      }
-      .mnl {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .mnm {
-        color: oklch(44.6% 0.03 256.802);
-      }
-      .mnn {
-        color: oklch(67.3% 0.182 276.935);
-      }
-      .mno {
-        color: #fff;
-      }
-    }
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
-<body>
-  <div class="mmi mml mmm mng">
-    <div class="mlg mlu mmq mmw">
-      <p class="mmq mmt mnc">Introducing</p>
-      <h1 class="mlj mmp mmt mmu mmv mne mnf">JavaScript for beginners</h1>
-      <p class="mll mms">
+  </style>
+</head>
+<body class="antialiased bg-[oklch(21%_0.034_264.665)]">
+  <div class="bg-[oklch(21%_0.034_264.665)] px-6 py-32 lg:px-8">
+    <div class="mx-auto max-w-3xl text-base/7 text-[oklch(87.2%_0.01_258.338)]">
+      <p class="text-base/7 font-semibold text-[oklch(67.3%_0.182_276.935)]">Introducing</p>
+      <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">JavaScript for beginners</h1>
+      <p class="mt-6 text-xl/8">
         Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget
         aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend
         egestas fringilla sapien.
       </p>
-      <div class="mln mlt mmx">
+      <div class="mt-10 max-w-2xl text-[oklch(70.7%_0.022_261.325)]">
         <p>
           Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
           sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
           Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
           sed turpis id.
         </p>
-        <ul role="list" class="mlm mlv mlx mmx">
-          <li class="mlp mlz">
-            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mli mlr mlw mnc">
+        <ul role="list" class="mt-8 max-w-xl space-y-8 text-pretty text-[oklch(70.7%_0.022_261.325)]">
+          <li class="flex gap-x-3">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mt-1 size-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
               <path
                 d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                 clip-rule="evenodd"
                 fill-rule="evenodd" />
             </svg>
             <span
-              ><strong class="mmt mne">Data types.</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              ><strong class="font-semibold text-white">Data types.</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</span
             >
           </li>
-          <li class="mlp mlz">
-            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mli mlr mlw mnc">
+          <li class="flex gap-x-3">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mt-1 size-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
               <path
                 d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                 clip-rule="evenodd"
                 fill-rule="evenodd" />
             </svg>
             <span
-              ><strong class="mmt mne">Loops.</strong> Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              ><strong class="font-semibold text-white">Loops.</strong> Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo.</span
             >
           </li>
-          <li class="mlp mlz">
-            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mli mlr mlw mnc">
+          <li class="flex gap-x-3">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mt-1 size-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
               <path
                 d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                 clip-rule="evenodd"
                 fill-rule="evenodd" />
             </svg>
             <span
-              ><strong class="mmt mne">Events.</strong> Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
+              ><strong class="font-semibold text-white">Events.</strong> Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
               Et magna sit morbi lobortis.</span
             >
           </li>
         </ul>
-        <p class="mlm">
+        <p class="mt-8">
           Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
           fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing
           egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
         </p>
-        <h2 class="mlo mmo mmt mmu mmv mne">From beginner to expert in 3 hours</h2>
-        <p class="mll">
+        <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-white">From beginner to expert in 3 hours</h2>
+        <p class="mt-6">
           Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu ipsum urna nibh.
           Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed tellus
           mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum
           eu a sed convallis diam.
         </p>
-        <figure class="mln mmd mme mmn">
-          <blockquote class="mmt mne">
+        <figure class="mt-10 border-l border-[oklch(67.3%_0.182_276.935)] pl-9">
+          <blockquote class="font-semibold text-white">
             <p>
               "Vel ultricies morbi odio facilisi ultrices accumsan donec lacus purus. Lectus nibh ullamcorper ac dictum
               justo in euismod. Risus aenean ut elit massa. In amet aliquet eget cras. Sem volutpat enim tristique."
             </p>
           </blockquote>
-          <figcaption class="mll mlp mma">
+          <figcaption class="mt-6 flex gap-x-4">
             <img
               src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
-              class="mls mlw mmb mmh" />
-            <div class="mmr"><strong class="mmt mne">Maria Hill</strong> – Marketing Manager</div>
+              class="size-6 flex-none rounded-full bg-[oklch(27.8%_0.033_256.848)]" />
+            <div class="text-sm/6"><strong class="font-semibold text-white">Maria Hill</strong> – Marketing Manager</div>
           </figcaption>
         </figure>
-        <p class="mln">
+        <p class="mt-10">
           Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
           sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
         </p>
       </div>
-      <figure class="mlo">
+      <figure class="mt-16">
         <img
           src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3"
           alt=""
-          class="mlq mmc mmh mmk" />
-        <figcaption class="mlk mlp mly mmr mmx">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mlh mlr mlw mmz">
+          class="aspect-[16/9] rounded-xl bg-[oklch(27.8%_0.033_256.848)] object-cover" />
+        <figcaption class="mt-4 flex gap-x-2 text-sm/6 text-[oklch(70.7%_0.022_261.325)]">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mt-0.5 size-5 flex-none text-[oklch(44.6%_0.03_256.802)]">
             <path
               d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z"
               clip-rule="evenodd"
@@ -650,21 +116,20 @@
           Faucibus commodo massa rhoncus, volutpat.
         </figcaption>
       </figure>
-      <div class="mlo mlt mmx">
-        <h2 class="mmo mmt mmu mmv mne">Everything you need to get up and running</h2>
-        <p class="mll">
+      <div class="mt-16 max-w-2xl text-[oklch(70.7%_0.022_261.325)]">
+        <h2 class="text-3xl font-semibold tracking-tight text-pretty text-white">Everything you need to get up and running</h2>
+        <p class="mt-6">
           Purus morbi dignissim senectus mattis adipiscing. Amet, massa quam varius orci dapibus volutpat cras. In amet
           eu ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut viverra ridiculus non molestie. Gravida
           quis fringilla amet eget dui tempor dignissim. Facilisis auctor venenatis varius nunc, congue erat ac. Cras
           fermentum convallis quam.
         </p>
-        <p class="mlm">
+        <p class="mt-8">
           Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
           sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
         </p>
       </div>
     </div>
   </div>
-
-  <script></script>
 </body>
+</html>

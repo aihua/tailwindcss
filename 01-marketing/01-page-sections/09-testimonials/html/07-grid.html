@@ -1,965 +1,28 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-translate-x: 0;
-        --tw-translate-y: 0;
-        --tw-translate-z: 0;
-        --tw-space-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-gradient-position: initial;
-        --tw-gradient-from: #0000;
-        --tw-gradient-via: #0000;
-        --tw-gradient-to: #0000;
-        --tw-gradient-stops: initial;
-        --tw-gradient-via-stops: initial;
-        --tw-gradient-from-position: 0%;
-        --tw-gradient-via-position: 50%;
-        --tw-gradient-to-position: 100%;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-        --tw-blur: initial;
-        --tw-brightness: initial;
-        --tw-contrast: initial;
-        --tw-grayscale: initial;
-        --tw-hue-rotate: initial;
-        --tw-invert: initial;
-        --tw-opacity: initial;
-        --tw-saturate: initial;
-        --tw-sepia: initial;
-        --tw-drop-shadow: initial;
-        --tw-drop-shadow-color: initial;
-        --tw-drop-shadow-alpha: 100%;
-        --tw-drop-shadow-size: initial;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .abpr {
-      position: absolute;
-    }
-    .abps {
-      position: relative;
-    }
-    .abpt {
-      inset-inline: 0;
-    }
-    .abpu {
-      top: 0;
-    }
-    .abpv {
-      top: 50%;
-    }
-    .abpw {
-      isolation: isolate;
-    }
-    .abpx {
-      z-index: calc(10 * -1);
-    }
-    .abpy {
-      margin-inline: auto;
-    }
-    .abpz {
-      margin-top: 0.5rem;
-    }
-    .abqa {
-      margin-top: 1.5rem;
-    }
-    .abqb {
-      margin-top: 4rem;
-    }
-    .abqc {
-      margin-left: -22rem;
-    }
-    .abqd {
-      margin-left: max(50%, 38rem);
-    }
-    .abqe {
-      display: flex;
-    }
-    .abqf {
-      display: grid;
-    }
-    .abqg {
-      aspect-ratio: 1313/771;
-    }
-    .abqh {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-    .abqi {
-      height: 2.5rem;
-    }
-    .abqj {
-      width: 82.0625rem;
-    }
-    .abqk {
-      width: auto;
-    }
-    .abql {
-      max-width: 42rem;
-    }
-    .abqm {
-      max-width: 80rem;
-    }
-    .abqn {
-      flex: auto;
-    }
-    .abqo {
-      flex: none;
-    }
-    .abqp {
-      transform-origin: 100% 0;
-    }
-    .abqq {
-      --tw-translate-y: calc(calc(1/2 * 100%) * -1);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    .abqr {
-      rotate: 30deg;
-    }
-    .abqs {
-      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,)
-        var(--tw-skew-y,);
-    }
-    .abqt {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .abqu {
-      grid-template-rows: repeat(1, minmax(0, 1fr));
-    }
-    .abqv {
-      flex-wrap: wrap;
-    }
-    .abqw {
-      align-items: center;
-    }
-    .abqx {
-      gap: 2rem;
-    }
-    :where(.abqy > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 8) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .abqz {
-      column-gap: 1rem;
-    }
-    .abra {
-      row-gap: 1rem;
-    }
-    .abrb {
-      overflow: hidden;
-    }
-    .abrc {
-      border-radius: 1rem;
-    }
-    .abrd {
-      border-radius: 3.40282e38px;
-    }
-    .abre {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .abrf {
-      border-color: oklab(21% -0.00316127 -0.0338527/.1);
-    }
-    .abrg {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .abrh {
-      background-color: oklch(98.5% 0.002 247.839);
-    }
-    .abri {
-      background-color: oklch(37.3% 0.034 259.733);
-    }
-    .abrj {
-      background-color: oklab(27.8% -0.00750866 -0.0321344/.75);
-    }
-    .abrk {
+  </style>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       background-color: oklch(21% 0.034 264.665);
     }
-    .abrl {
-      background-color: #fff;
-    }
-    .abrm {
-      --tw-gradient-position: to top right;
-    }
-    @supports (background-image: linear-gradient(in lab, red, red)) {
-      .abrm {
-        --tw-gradient-position: to top right in oklab;
-      }
-    }
-    .abrm {
-      background-image: linear-gradient(var(--tw-gradient-stops));
-    }
-    .abrn {
-      --tw-gradient-from: #ff80b5;
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .abro {
-      --tw-gradient-to: #9089fc;
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .abrp {
-      padding: 1.5rem;
-    }
-    .abrq {
-      padding-inline: 1.5rem;
-    }
-    .abrr {
-      padding-block: 1rem;
-    }
-    .abrs {
-      padding-top: 6rem;
-    }
-    .abrt {
-      padding-top: 8rem;
-    }
-    .abru {
-      padding-bottom: 8rem;
-    }
-    .abrv {
-      text-align: center;
-    }
-    .abrw {
-      font-size: 2.25rem;
-      line-height: var(--tw-leading, calc(2.5 / 2.25));
-    }
-    .abrx {
-      font-size: 1rem;
-      line-height: 1.75rem;
-    }
-    .abry {
-      font-size: 1.125rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.125));
-    }
-    .abrz {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .absa {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .absb {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .absc {
-      text-wrap: balance;
-    }
-    .absd {
-      color: oklch(96.7% 0.003 264.542);
-    }
-    .abse {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .absf {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .absg {
-      color: oklch(21% 0.034 264.665);
-    }
-    .absh {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .absi {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .absj {
-      color: #fff;
-    }
-    .absk {
-      opacity: 0.25;
-    }
-    .absl {
-      opacity: 0.3;
-    }
-    .absm {
-      --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, #0000001a), 0 4px 6px -4px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .absn {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .abso {
-      --tw-ring-color: oklab(21% -0.00316127 -0.0338527/.05);
-    }
-    .absp {
-      --tw-ring-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .absq {
-      --tw-blur: blur(64px);
-      filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,)
-        var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-    }
-    @media not all and (prefers-color-scheme: dark) {
-      .absr {
-        display: none;
-      }
-    }
-    @media (min-width: 40rem) {
-      .abss {
-        grid-column: span 2 / span 2;
-      }
-      .abst {
-        margin-top: 5rem;
-      }
-      .absu {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .absv {
-        flex-wrap: nowrap;
-      }
-      .absw {
-        padding: 3rem;
-      }
-      .absx {
-        padding-top: 8rem;
-      }
-      .absy {
-        padding-top: 10rem;
-      }
-      .absz {
-        font-size: 3rem;
-        line-height: var(--tw-leading, 1);
-      }
-      .abta {
-        font-size: 1.25rem;
-        line-height: 2rem;
-      }
-    }
-    @media (min-width: 64rem) {
-      .abtb {
-        padding-inline: 2rem;
-      }
-    }
-    @media (min-width: 80rem) {
-      .abtc {
-        grid-column-start: 2;
-      }
-      .abtd {
-        grid-row: span 2 / span 2;
-      }
-      .abte {
-        grid-row-start: 1;
-      }
-      .abtf {
-        grid-row-end: 1;
-      }
-      .abtg {
-        margin-inline: 0;
-      }
-      .abth {
-        margin-right: calc(50% - 12rem);
-      }
-      .abti {
-        margin-left: 0;
-      }
-      .abtj {
-        display: contents;
-      }
-      .abtk {
-        max-width: none;
-      }
-      .abtl {
-        grid-auto-flow: column;
-      }
-      .abtm {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .abtn {
-        justify-content: flex-end;
-      }
-      :where(.abto > :not(:last-child)) {
-        --tw-space-y-reverse: 0;
-        margin-block-start: calc(calc(0.25rem * 0) * var(--tw-space-y-reverse));
-        margin-block-end: calc(calc(0.25rem * 0) * calc(1 - var(--tw-space-y-reverse)));
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .abtp {
-        display: none;
-      }
-      .abtq {
-        border-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .abtr {
-        background-color: oklch(37.3% 0.034 259.733);
-      }
-      .abts {
-        background-color: oklab(27.8% -0.00750866 -0.0321344/.75);
-      }
-      .abtt {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .abtu {
-        color: oklch(96.7% 0.003 264.542);
-      }
-      .abtv {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .abtw {
-        color: oklch(67.3% 0.182 276.935);
-      }
-      .abtx {
-        color: #fff;
-      }
-      .abty {
-        --tw-shadow: 0 0 #0000;
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-      .abtz {
-        --tw-ring-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-    }
-  }
-  @property --tw-translate-x {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-y {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-z {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-gradient-position {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-from {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-via {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-to {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-stops {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-via-stops {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-from-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 0%;
-  }
-  @property --tw-gradient-via-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 50%;
-  }
-  @property --tw-gradient-to-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-blur {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-brightness {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-contrast {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-grayscale {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-hue-rotate {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-invert {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-opacity {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-saturate {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-sepia {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-drop-shadow {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-drop-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-drop-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-drop-shadow-size {
-    syntax: '*';
-    inherits: false;
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
+  </style>
+</head>
 <body>
-  <div class="abps abpw abrk abrs abru absx">
-    <div aria-hidden="true" class="abpr abpt abpv abpx abqq abqs abrb absl absq">
+  <div class="relative isolate bg-[oklch(21%_0.034_264.665)] pt-24 pb-32 sm:pt-32">
+    <div aria-hidden="true" class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 overflow-hidden opacity-30 blur-[64px]">
       <div
         style="
           clip-path: polygon(
@@ -981,9 +44,9 @@
             74.1% 44.1%
           );
         "
-        class="abqd abqg abqj abrm abrn abro"></div>
+        class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"></div>
     </div>
-    <div aria-hidden="true" class="abpr abpt abpu abpx abqe abqs abrb abrt absk absq absy abtn">
+    <div aria-hidden="true" class="absolute inset-x-0 top-0 -z-10 flex overflow-hidden pt-32 opacity-25 blur-[64px] sm:pt-40 xl:justify-end">
       <div
         style="
           clip-path: polygon(
@@ -1005,224 +68,224 @@
             74.1% 44.1%
           );
         "
-        class="abqc abqg abqj abqo abqp abqr abrm abrn abro abth abti"></div>
+        class="-ml-[22rem] aspect-[1313/771] w-[82.0625rem] bg-[oklch(37.3%_0.034_259.733)] origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:mr-[calc(50%-12rem)] xl:ml-0"></div>
     </div>
-    <div class="abpy abqm abrq abtb">
-      <div class="abpy abql abrv">
-        <h2 class="abrx absa absh">Testimonials</h2>
-        <p class="abpz abrw absa absb absc absj absz">We have worked with thousands of amazing people</p>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-[42rem] text-center">
+        <h2 class="text-base/7 font-semibold text-[oklch(67.3%_0.182_276.935)]">Testimonials</h2>
+        <p class="mt-2 text-sm/6 font-semibold tracking-tight text-balance text-white sm:text-[3rem]/[1]">We have worked with thousands of amazing people</p>
       </div>
-      <div class="abpy abqb abqf abql abqt abqu abqx abrz absd abst absu abtg abtk abtl abtm">
-        <figure class="abrc abrj absn absp abss abtc abtf">
-          <blockquote class="abrp abry absa absb absj absw abta">
+      <div class="mx-auto mt-16 grid max-w-[42rem] grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-[oklch(96.7%_0.003_264.542)] sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-cols-4 xl:grid-flow-col">
+        <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)] sm:col-span-2 xl:col-start-2 xl:row-end-1">
+          <blockquote class="p-6 text-lg/7 font-semibold tracking-tight text-white sm:p-12 sm:text-xl/8">
             <p>
               “Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac
               condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non
               hendrerit in vel ac diam.”
             </p>
           </blockquote>
-          <figcaption class="abqe abqv abqw abqz abra abre abrg abrq abrr absv">
+          <figcaption class="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-[oklab(100%_0_5.96046e-8/0.1)] px-6 py-4 sm:flex-nowrap">
             <img
               src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80"
               alt=""
-              class="abqh abqo abrd abri" />
-            <div class="abqn">
-              <div class="absa absj">Brenna Goyette</div>
-              <div class="abse">@brennagoyette</div>
+              class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
+            <div class="flex-auto">
+              <div class="font-semibold text-white">Brenna Goyette</div>
+              <div class="text-[oklch(70.7%_0.022_261.325)]">@brennagoyette</div>
             </div>
             <img
               src="https://tailwindcss.com/plus-assets/img/logos/savvycal-logo-gray-100.svg"
               alt=""
-              class="abqi abqk abqo" />
+              class="h-10 w-auto flex-none" />
           </figcaption>
         </figure>
-        <div class="abqy abtj abto">
-          <div class="abqy abtd">
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+        <div class="space-y-8 xl:contents xl:space-y-0">
+          <div class="space-y-8 xl:row-span-2">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et
                   ipsam.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Leslie Alexander</div>
-                  <div class="abse">@lesliealexander</div>
+                  <div class="font-semibold text-white">Leslie Alexander</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@lesliealexander</div>
                 </div>
               </figcaption>
             </figure>
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Quia dolorem qui et. Atque quo aliquid sit eos officia. Dolores similique laboriosam quaerat
                   cupiditate.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Michael Foster</div>
-                  <div class="abse">@michaelfoster</div>
+                  <div class="font-semibold text-white">Michael Foster</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@michaelfoster</div>
                 </div>
               </figcaption>
             </figure>
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Consequatur ut atque. Itaque nostrum molestiae id veniam eos cumque. Ut quia eum fugit laborum autem
                   inventore ut voluptate.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Dries Vincent</div>
-                  <div class="abse">@driesvincent</div>
+                  <div class="font-semibold text-white">Dries Vincent</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@driesvincent</div>
                 </div>
               </figcaption>
             </figure>
           </div>
-          <div class="abqy abte">
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+          <div class="space-y-8 xl:row-start-1">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Aut reprehenderit voluptatem eum asperiores beatae id. Iure molestiae ipsam ut officia rem nulla
                   blanditiis.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Lindsay Walton</div>
-                  <div class="abse">@lindsaywalton</div>
+                  <div class="font-semibold text-white">Lindsay Walton</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@lindsaywalton</div>
                 </div>
               </figcaption>
             </figure>
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Nam nesciunt dolorem dolor asperiores cum. Incidunt molestiae quis deleniti vitae ut in earum
                   delectus iusto.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Courtney Henry</div>
-                  <div class="abse">@courtneyhenry</div>
+                  <div class="font-semibold text-white">Courtney Henry</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@courtneyhenry</div>
                 </div>
               </figcaption>
             </figure>
           </div>
         </div>
-        <div class="abqy abtj abto">
-          <div class="abqy abte">
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+        <div class="space-y-8 xl:contents xl:space-y-0">
+          <div class="space-y-8 xl:row-start-1">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Voluptas quos itaque ipsam in voluptatem est. Iste eos blanditiis repudiandae. Earum deserunt enim
                   molestiae ipsum perferendis recusandae saepe corrupti.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Tom Cook</div>
-                  <div class="abse">@tomcook</div>
+                  <div class="font-semibold text-white">Tom Cook</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@tomcook</div>
                 </div>
               </figcaption>
             </figure>
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Aliquid dolore praesentium ratione. Cumque ea officia repellendus laboriosam. Vitae quod id explicabo
                   non sunt.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Whitney Francis</div>
-                  <div class="abse">@whitneyfrancis</div>
+                  <div class="font-semibold text-white">Whitney Francis</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@whitneyfrancis</div>
                 </div>
               </figcaption>
             </figure>
           </div>
-          <div class="abqy abtd">
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+          <div class="space-y-8 xl:row-span-2">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Molestias ea earum quos nostrum doloremque sed. Quaerat quasi aut velit incidunt excepturi rerum
                   voluptatem minus harum.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Leonard Krasner</div>
-                  <div class="abse">@leonardkrasner</div>
+                  <div class="font-semibold text-white">Leonard Krasner</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@leonardkrasner</div>
                 </div>
               </figcaption>
             </figure>
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Architecto libero natus est. Est quam debitis officia enim atque et ut non. Sunt reiciendis quasi
                   eaque. Itaque error ut et.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Floyd Miles</div>
-                  <div class="abse">@floydmiles</div>
+                  <div class="font-semibold text-white">Floyd Miles</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@floydmiles</div>
                 </div>
               </figcaption>
             </figure>
-            <figure class="abrc abrj abrp absn absp">
-              <blockquote class="absj">
+            <figure class="rounded-2xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.75)] p-6 ring-1 ring-[oklab(100%_0_5.96046e-8/0.1)]">
+              <blockquote class="text-white">
                 <p>
                   “Temporibus ea molestiae impedit adipisci perspiciatis illo aliquid. Quis ut ratione et voluptatem et.
                   Nostrum explicabo iste unde beatae.”
                 </p>
               </blockquote>
-              <figcaption class="abqa abqe abqw abqz">
+              <figcaption class="mt-6 flex items-center gap-x-4">
                 <img
                   src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="abqh abrd abri" />
+                  class="h-10 w-10 rounded-full bg-[oklch(37.3%_0.034_259.733)]" />
                 <div>
-                  <div class="absa absj">Emily Selman</div>
-                  <div class="abse">@emilyselman</div>
+                  <div class="font-semibold text-white">Emily Selman</div>
+                  <div class="text-[oklch(70.7%_0.022_261.325)]">@emilyselman</div>
                 </div>
               </figcaption>
             </figure>
@@ -1231,6 +294,5 @@
       </div>
     </div>
   </div>
-
-  <script></script>
 </body>
+</html>

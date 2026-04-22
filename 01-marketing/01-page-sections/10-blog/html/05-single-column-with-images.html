@@ -1,839 +1,161 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-space-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .sre {
-      position: absolute;
-    }
-    .srf {
-      position: relative;
-    }
-    .srg {
-      inset: 0;
-    }
-    .srh {
-      isolation: isolate;
-    }
-    .sri {
-      z-index: 10;
-    }
-    .srj {
-      margin-inline: auto;
-    }
-    .srk {
-      margin-top: 0.5rem;
-    }
-    .srl {
-      margin-top: 0.75rem;
-    }
-    .srm {
-      margin-top: 1.25rem;
-    }
-    .srn {
-      margin-top: 1.5rem;
-    }
-    .sro {
-      margin-top: 4rem;
-    }
-    .srp {
-      display: flex;
-    }
-    .srq {
-      aspect-ratio: 16/9;
-    }
-    .srr {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-    .srs {
-      width: 100%;
-      height: 100%;
-    }
-    .srt {
-      max-width: 42rem;
-    }
-    .sru {
-      max-width: 80rem;
-    }
-    .srv {
-      max-width: 36rem;
-    }
-    .srw {
-      flex-grow: 1;
-    }
-    .srx {
-      flex-direction: column;
-    }
-    .sry {
-      align-items: center;
-    }
-    .srz {
-      gap: 2rem;
-    }
-    :where(.ssa > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 20) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 20) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .ssb {
-      column-gap: 1rem;
-    }
-    .ssc {
-      border-radius: 1rem;
-    }
-    .ssd {
-      border-radius: 3.40282e38px;
-    }
-    .sse {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .ssf {
-      border-color: oklab(21% -0.00316127 -0.0338527/.05);
-    }
-    .ssg {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .ssh {
-      background-color: oklch(98.5% 0.002 247.839);
-    }
-    .ssi {
-      background-color: oklch(27.8% 0.033 256.848);
-    }
-    .ssj {
-      background-color: oklab(27.8% -0.00750866 -0.0321344/.6);
-    }
-    .ssk {
+  </style>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       background-color: oklch(21% 0.034 264.665);
     }
-    .ssl {
-      background-color: #fff;
-    }
-    .ssm {
-      object-fit: cover;
-    }
-    .ssn {
-      padding-inline: 0.75rem;
-    }
-    .sso {
-      padding-inline: 1.5rem;
-    }
-    .ssp {
-      padding-block: 0.375rem;
-    }
-    .ssq {
-      padding-block: 6rem;
-    }
-    .ssr {
-      padding-top: 1.5rem;
-    }
-    .sss {
-      font-size: 2.25rem;
-      line-height: var(--tw-leading, calc(2.5 / 2.25));
-    }
-    .sst {
-      font-size: 1.125rem;
-      line-height: 1.5rem;
-    }
-    .ssu {
-      font-size: 1.125rem;
-      line-height: 2rem;
-    }
-    .ssv {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .ssw {
-      font-size: 0.75rem;
-      line-height: var(--tw-leading, calc(1 / 0.75));
-    }
-    .ssx {
-      --tw-font-weight: 500;
-      font-weight: 500;
-    }
-    .ssy {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .ssz {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .sta {
-      text-wrap: pretty;
-    }
-    .stb {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .stc {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .std {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .ste {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .stf {
-      color: oklch(21% 0.034 264.665);
-    }
-    .stg {
-      color: #fff;
-    }
-    .sth {
-      --tw-inset-ring-shadow: inset 0 0 0 1px var(--tw-inset-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .sti {
-      --tw-inset-ring-color: oklab(21% -0.00316127 -0.0338527/.1);
-    }
-    .stj {
-      --tw-inset-ring-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    @media (hover: hover) {
-      .stk:is(:where(.stl):hover *) {
-        color: oklch(87.2% 0.01 258.338);
-      }
-      .stm:is(:where(.stl):hover *) {
-        color: oklch(44.6% 0.03 256.802);
-      }
-      .stn:hover {
-        background-color: oklch(96.7% 0.003 264.542);
-      }
-      .sto:hover {
-        background-color: oklch(27.8% 0.033 256.848);
-      }
-    }
-    @media (min-width: 40rem) {
-      .stp {
-        aspect-ratio: 2;
-      }
-      .stq {
-        padding-block: 8rem;
-      }
-      .str {
-        font-size: 3rem;
-        line-height: var(--tw-leading, 1);
-      }
-    }
-    @media (min-width: 64rem) {
-      .sts {
-        margin-top: 5rem;
-      }
-      .stt {
-        aspect-ratio: 1;
-      }
-      .stu {
-        width: 16rem;
-      }
-      .stv {
-        max-width: 56rem;
-      }
-      .stw {
-        flex-shrink: 0;
-      }
-      .stx {
-        flex-direction: row;
-      }
-      .sty {
-        padding-inline: 2rem;
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .stz {
-        border-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .sua {
-        background-color: oklch(27.8% 0.033 256.848);
-      }
-      .sub {
-        background-color: oklab(27.8% -0.00750866 -0.0321344/.6);
-      }
-      .suc {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .sud {
-        color: oklch(87.2% 0.01 258.338);
-      }
-      .sue {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .suf {
-        color: #fff;
-      }
-      .sug {
-        --tw-inset-ring-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      @media (hover: hover) {
-        .suh:is(:where(.stl):hover *) {
-          color: oklch(87.2% 0.01 258.338);
-        }
-        .sui:hover {
-          background-color: oklch(27.8% 0.033 256.848);
-        }
-      }
-    }
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
+  </style>
+</head>
 <body>
-  <div class="ssk ssq stq">
-    <div class="srj sru sso sty">
-      <div class="srj srt stv">
-        <h2 class="sss ssy ssz sta stg str">From the blog</h2>
-        <p class="srk ssu stc">Learn how to grow your business with our expert advice.</p>
-        <div class="sro ssa sts">
-          <article class="srf srh srp srx srz stx">
-            <div class="srf srq stp stt stu stw">
+  <div class="mx-auto py-24 sm:py-32 bg-[oklch(21%_0.034_264.665)]">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:max-w-4xl">
+        <h2 class="text-[2.25rem]/10 font-semibold tracking-tight text-wrap:pretty text-white sm:text-[3rem]/none">From the blog</h2>
+        <p class="mt-2 text-[1.125rem]/8 text-[oklch(70.7%_0.022_261.325)]">Learn how to grow your business with our expert advice.</p>
+        <div class="mt-16 space-y-20 lg:mt-20">
+          <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+            <div class="relative aspect-[16/9] sm:aspect-[2] lg:aspect-[1] lg:w-64 lg:shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
                 alt=""
-                class="sre srg srs ssc ssi ssm" />
-              <div class="sre srg ssc sth stj"></div>
+                class="absolute inset-0 w-full h-full rounded-2xl bg-[oklch(27.8%_0.033_256.848)] object-cover" />
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-[oklab(100%_0_5.96046e-8/0.1)]"></div>
             </div>
             <div>
-              <div class="srp sry ssb ssw">
-                <time datetime="2020-03-16" class="stc">Mar 16, 2020</time>
-                <a href="#" class="srf sri ssd ssj ssn ssp ssx stb sto">Marketing</a>
+              <div class="flex items-center gap-x-4 text-[0.75rem]/4">
+                <time datetime="2020-03-16" class="text-[oklch(70.7%_0.022_261.325)]">Mar 16, 2020</time>
+                <a href="#" class="relative z-10 rounded-full bg-[oklab(27.8%_-0.00750866_-0.0321344/.6)] px-3 py-1.5 font-medium text-[oklch(87.2%_0.01_258.338)] hover:bg-[oklch(27.8%_0.033_256.848)]">Marketing</a>
               </div>
-              <div class="stl srf srv">
-                <h3 class="srl sst ssy stg stk">
+              <div class="group relative max-w-xl">
+                <h3 class="mt-3 text-[1.125rem]/6 font-semibold text-white group-hover:text-[oklch(87.2%_0.01_258.338)]">
                   <a href="#">
-                    <span class="sre srg"></span>
+                    <span class="absolute inset-0"></span>
                     Boost your conversion rate
                   </a>
                 </h3>
-                <p class="srm ssv stc">
+                <p class="mt-5 text-[0.875rem]/6 text-[oklch(70.7%_0.022_261.325)]">
                   Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo
                   necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta
                   laboris incididunt.
                 </p>
               </div>
-              <div class="srn srp sse ssg ssr">
-                <div class="srf srp sry ssb">
+              <div class="mt-6 flex border-t border-[oklab(100%_0_5.96046e-8/0.1)] pt-6">
+                <div class="relative flex items-center gap-x-4">
                   <img
                     src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
-                    class="srr ssd ssi" />
-                  <div class="ssv">
-                    <p class="ssy stg">
+                    class="w-10 h-10 rounded-full bg-[oklch(27.8%_0.033_256.848)]" />
+                  <div class="text-[0.875rem]/6">
+                    <p class="font-semibold text-white">
                       <a href="#">
-                        <span class="sre srg"></span>
+                        <span class="absolute inset-0"></span>
                         Michael Foster
                       </a>
                     </p>
-                    <p class="stc">Co-Founder / CTO</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)]">Co-Founder / CTO</p>
                   </div>
                 </div>
               </div>
             </div>
           </article>
-          <article class="srf srh srp srx srz stx">
-            <div class="srf srq stp stt stu stw">
+          <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+            <div class="relative aspect-[16/9] sm:aspect-[2] lg:aspect-[1] lg:w-64 lg:shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80"
                 alt=""
-                class="sre srg srs ssc ssi ssm" />
-              <div class="sre srg ssc sth stj"></div>
+                class="absolute inset-0 w-full h-full rounded-2xl bg-[oklch(27.8%_0.033_256.848)] object-cover" />
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-[oklab(100%_0_5.96046e-8/0.1)]"></div>
             </div>
             <div>
-              <div class="srp sry ssb ssw">
-                <time datetime="2020-03-10" class="stc">Mar 10, 2020</time>
-                <a href="#" class="srf sri ssd ssj ssn ssp ssx stb sto">Sales</a>
+              <div class="flex items-center gap-x-4 text-[0.75rem]/4">
+                <time datetime="2020-03-10" class="text-[oklch(70.7%_0.022_261.325)]">Mar 10, 2020</time>
+                <a href="#" class="relative z-10 rounded-full bg-[oklab(27.8%_-0.00750866_-0.0321344/.6)] px-3 py-1.5 font-medium text-[oklch(87.2%_0.01_258.338)] hover:bg-[oklch(27.8%_0.033_256.848)]">Sales</a>
               </div>
-              <div class="stl srf srv">
-                <h3 class="srl sst ssy stg stk">
+              <div class="group relative max-w-xl">
+                <h3 class="mt-3 text-[1.125rem]/6 font-semibold text-white group-hover:text-[oklch(87.2%_0.01_258.338)]">
                   <a href="#">
-                    <span class="sre srg"></span>
+                    <span class="absolute inset-0"></span>
                     How to use search engine optimization to drive sales
                   </a>
                 </h3>
-                <p class="srm ssv stc">
+                <p class="mt-5 text-[0.875rem]/6 text-[oklch(70.7%_0.022_261.325)]">
                   Optio sit exercitation et ex ullamco aliquid explicabo. Dolore do ut officia anim non ad eu. Magna
                   laboris incididunt commodo elit ipsum.
                 </p>
               </div>
-              <div class="srn srp sse ssg ssr">
-                <div class="srf srp sry ssb">
+              <div class="mt-6 flex border-t border-[oklab(100%_0_5.96046e-8/0.1)] pt-6">
+                <div class="relative flex items-center gap-x-4">
                   <img
                     src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
-                    class="srr ssd ssi" />
-                  <div class="ssv">
-                    <p class="ssy stg">
+                    class="w-10 h-10 rounded-full bg-[oklch(27.8%_0.033_256.848)]" />
+                  <div class="text-[0.875rem]/6">
+                    <p class="font-semibold text-white">
                       <a href="#">
-                        <span class="sre srg"></span>
+                        <span class="absolute inset-0"></span>
                         Lindsay Walton
                       </a>
                     </p>
-                    <p class="stc">Front-end Developer</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)]">Front-end Developer</p>
                   </div>
                 </div>
               </div>
             </div>
           </article>
-          <article class="srf srh srp srx srz stx">
-            <div class="srf srq stp stt stu stw">
+          <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+            <div class="relative aspect-[16/9] sm:aspect-[2] lg:aspect-[1] lg:w-64 lg:shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80"
                 alt=""
-                class="sre srg srs ssc ssi ssm" />
-              <div class="sre srg ssc sth stj"></div>
+                class="absolute inset-0 w-full h-full rounded-2xl bg-[oklch(27.8%_0.033_256.848)] object-cover" />
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-[oklab(100%_0_5.96046e-8/0.1)]"></div>
             </div>
             <div>
-              <div class="srp sry ssb ssw">
-                <time datetime="2020-02-12" class="stc">Feb 12, 2020</time>
-                <a href="#" class="srf sri ssd ssj ssn ssp ssx stb sto">Business</a>
+              <div class="flex items-center gap-x-4 text-[0.75rem]/4">
+                <time datetime="2020-02-12" class="text-[oklch(70.7%_0.022_261.325)]">Feb 12, 2020</time>
+                <a href="#" class="relative z-10 rounded-full bg-[oklab(27.8%_-0.00750866_-0.0321344/.6)] px-3 py-1.5 font-medium text-[oklch(87.2%_0.01_258.338)] hover:bg-[oklch(27.8%_0.033_256.848)]">Business</a>
               </div>
-              <div class="stl srf srv">
-                <h3 class="srl sst ssy stg stk">
+              <div class="group relative max-w-xl">
+                <h3 class="mt-3 text-[1.125rem]/6 font-semibold text-white group-hover:text-[oklch(87.2%_0.01_258.338)]">
                   <a href="#">
-                    <span class="sre srg"></span>
+                    <span class="absolute inset-0"></span>
                     Improve your customer experience
                   </a>
                 </h3>
-                <p class="srm ssv stc">
+                <p class="mt-5 text-[0.875rem]/6 text-[oklch(70.7%_0.022_261.325)]">
                   Dolore commodo in nulla do nulla esse consectetur. Adipisicing voluptate velit sint adipisicing ex
                   duis elit deserunt sint ipsum. Culpa in exercitation magna adipisicing id reprehenderit consectetur
                   culpa eu cillum.
                 </p>
               </div>
-              <div class="srn srp sse ssg ssr">
-                <div class="srf srp sry ssb">
+              <div class="mt-6 flex border-t border-[oklab(100%_0_5.96046e-8/0.1)] pt-6">
+                <div class="relative flex items-center gap-x-4">
                   <img
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
-                    class="srr ssd ssi" />
-                  <div class="ssv">
-                    <p class="ssy stg">
+                    class="w-10 h-10 rounded-full bg-[oklch(27.8%_0.033_256.848)]" />
+                  <div class="text-[0.875rem]/6">
+                    <p class="font-semibold text-white">
                       <a href="#">
-                        <span class="sre srg"></span>
+                        <span class="absolute inset-0"></span>
                         Tom Cook
                       </a>
                     </p>
-                    <p class="stc">Director of Product</p>
+                    <p class="text-[oklch(70.7%_0.022_261.325)]">Director of Product</p>
                   </div>
                 </div>
               </div>
@@ -843,6 +165,5 @@
       </div>
     </div>
   </div>
-
-  <script></script>
 </body>
+</html>

@@ -1,843 +1,16 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-space-y-reverse: 0;
-        --tw-divide-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .ybo {
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border-width: 0;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-    .ybp {
-      position: fixed;
-    }
-    .ybq {
-      inset: 0;
-    }
-    .ybr {
-      inset-block: 0;
-    }
-    .ybs {
-      right: 0;
-    }
-    .ybt {
-      z-index: 50;
-    }
-    .ybu {
-      margin: -0.375rem;
-    }
-    .ybv {
-      margin: -0.625rem;
-    }
-    .ybw {
-      margin-inline: -0.75rem;
-    }
-    .ybx {
-      margin-inline: auto;
-    }
-    .yby {
-      margin-block: -1.5rem;
-    }
-    .ybz {
-      margin-top: 1rem;
-    }
-    .yca {
-      margin-top: 1.5rem;
-    }
-    .ycb {
-      margin-top: 2.5rem;
-    }
-    .ycc {
-      margin-top: 4rem;
-    }
-    .ycd {
-      display: block;
-    }
-    .yce {
-      display: flex;
-    }
-    .ycf {
-      display: flow-root;
-    }
-    .ycg {
-      display: grid;
-    }
-    .ych {
-      display: none;
-    }
-    .yci {
-      display: inline-flex;
-    }
-    .ycj {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .yck {
-      height: 1.75rem;
-    }
-    .ycl {
-      height: 2rem;
-    }
-    .ycm {
-      height: 100%;
-    }
-    .ycn {
-      min-height: 100%;
-    }
-    .yco {
-      width: 100%;
-    }
-    .ycp {
-      max-width: 80rem;
-    }
-    .ycq {
-      flex: auto;
-    }
-    .ycr {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .ycs {
-      flex-direction: column;
-    }
-    .yct {
-      align-items: center;
-    }
-    .ycu {
-      justify-content: space-between;
-    }
-    .ycv {
-      justify-content: center;
-    }
-    .ycw {
-      gap: 2rem;
-    }
-    :where(.ycx > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 2) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 2) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.ycy > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 4) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.ycz > :not(:last-child)) {
-      --tw-divide-y-reverse: 0;
-      border-bottom-style: var(--tw-border-style);
-      border-top-style: var(--tw-border-style);
-      border-top-width: calc(1px * var(--tw-divide-y-reverse));
-      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    }
-    :where(.yda > :not(:last-child)) {
-      border-color: oklab(55.1% -0.00265162 -0.0268695/.1);
-    }
-    :where(.ydb > :not(:last-child)) {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .ydc {
-      overflow-y: auto;
-    }
-    .ydd {
-      border-radius: 0.5rem;
-    }
-    .yde {
-      border-radius: 0.375rem;
-    }
-    .ydf {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .ydg {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .ydh {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .ydi {
-      background-color: oklch(21% 0.034 264.665);
-    }
-    .ydj {
-      background-color: #fff;
-    }
-    .ydk {
-      padding: 0.375rem;
-    }
-    .ydl {
-      padding: 0.625rem;
-    }
-    .ydm {
-      padding: 1.5rem;
-    }
-    .ydn {
-      padding-inline: 0.75rem;
-    }
-    .ydo {
-      padding-inline: 1.5rem;
-    }
-    .ydp {
-      padding-block: 0.5rem;
-    }
-    .ydq {
-      padding-block: 0.625rem;
-    }
-    .ydr {
-      padding-block: 1.5rem;
-    }
-    .yds {
-      padding-block: 4rem;
-    }
-    .ydt {
-      padding-block: 6rem;
-    }
-    .ydu {
-      padding-top: 1.5rem;
-    }
-    .ydv {
-      font-size: 3rem;
-      line-height: var(--tw-leading, 1);
-    }
-    .ydw {
-      font-size: 1rem;
-      line-height: var(--tw-leading, calc(1.5 / 1));
-    }
-    .ydx {
-      font-size: 1rem;
-      line-height: 1.75rem;
-    }
-    .ydy {
-      font-size: 1rem;
-      line-height: 2rem;
-    }
-    .ydz {
-      font-size: 1.125rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.125));
-    }
-    .yea {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .yeb {
-      font-size: 0.875rem;
-      line-height: 1.75rem;
-    }
-    .yec {
-      --tw-font-weight: 500;
-      font-weight: 500;
-    }
-    .yed {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .yee {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .yef {
-      text-wrap: pretty;
-    }
-    .yeg {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .yeh {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .yei {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .yej {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    .yek {
-      color: oklch(21% 0.034 264.665);
-    }
-    .yel {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .yem {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .yen {
-      color: #fff;
-    }
-    .yeo {
-      color-scheme: dark;
-    }
-    @media not all and (prefers-color-scheme: dark) {
-      .yep {
-        display: none;
-      }
-    }
-    .yeq::backdrop {
-      background-color: #0000;
-    }
-    @media (hover: hover) {
-      .yer:hover {
-        background-color: oklab(70.7% -0.00331825 -0.0217483/.1);
-      }
-      .yes:hover {
-        background-color: oklab(100% 0 5.96046e-8/0.05);
-      }
-      .yet:hover {
-        color: oklch(21% 0.034 264.665);
-      }
-      .yeu:hover {
-        color: #fff;
-      }
-    }
-    .yev:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    @media (min-width: 40rem) {
-      .yew {
-        max-width: 24rem;
-      }
-      .yex {
-        padding-block: 6rem;
-      }
-      .yey {
-        padding-block: 16rem;
-      }
-      .yez {
-        font-size: 3.75rem;
-        line-height: var(--tw-leading, 1);
-      }
-      .yfa {
-        font-size: 1.25rem;
-        line-height: 2rem;
-      }
-      .yfb {
-        --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width))
-          var(--tw-ring-color, currentcolor);
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-      .yfc {
-        --tw-ring-color: oklab(96.7% -0.000285348 -0.0029864/.1);
-      }
-      .yfd {
-        --tw-ring-color: oklab(21% -0.00316127 -0.0338527/.1);
-      }
-    }
-    @media (min-width: 48rem) {
-      .yfe {
-        margin-top: 0;
-      }
-      .yff {
-        display: grid;
-      }
-      .yfg {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .yfh {
-        gap: 2rem;
-      }
-    }
-    @media (min-width: 64rem) {
-      .yfi {
-        display: flex;
-      }
-      .yfj {
-        display: none;
-      }
-      .yfk {
-        flex: 1;
-      }
-      .yfl {
-        justify-content: flex-end;
-      }
-      .yfm {
-        column-gap: 3rem;
-      }
-      .yfn {
-        padding-inline: 2rem;
-      }
-      .yfo {
-        padding-block: 8rem;
-      }
-    }
-    @media (min-width: 80rem) {
-      .yfp {
-        grid-column: span 2 / span 2;
-      }
-      .yfq {
-        margin-top: 0;
-      }
-      .yfr {
-        display: grid;
-      }
-      .yfs {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .yft {
-        gap: 2rem;
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .yfu {
-        display: none;
-      }
-      :where(.yfv > :not(:last-child)),
-      .yfw {
-        border-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .yfx {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .yfy {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .yfz {
-        color: oklch(67.3% 0.182 276.935);
-      }
-      .yga {
-        color: #fff;
-      }
-      .ygb {
-        color-scheme: dark;
-      }
-      @media (hover: hover) {
-        .ygc:hover {
-          background-color: oklab(100% 0 5.96046e-8/0.05);
-        }
-        .ygd:hover {
-          color: #fff;
-        }
-      }
-      @media (min-width: 40rem) {
-        .yge {
-          --tw-ring-color: oklab(96.7% -0.000285348 -0.0029864/.1);
-        }
-      }
-    }
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-divide-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: InterVariable, system-ui, sans-serif;
+    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 </style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
 <style>
   body {
     -webkit-font-smoothing: antialiased;
@@ -846,30 +19,30 @@
   }
 </style>
 <body>
-  <div class="ydi yeo">
+  <div class="bg-[oklch(21%_0.034_264.665)] dark">
     <!--
     This example requires updating your template:
 
     ```
-    <html class="ycm">
-    <body class="ycm">
+    <html class="h-full">
+    <body class="h-full">
     ```
   -->
-    <div class="yce ycn ycs">
-      <header class="ybx yco ycp ydo ydu yfn">
-        <nav aria-label="Global" class="yce yct ycu">
-          <div class="yce yfk">
-            <a href="#" class="ybu ydk">
-              <span class="ybo">Your Company</span>
+    <div class="flex min-h-full flex-col">
+      <header class="mx-auto w-full max-w-7xl px-6 pt-6 lg:px-8">
+        <nav aria-label="Global" class="flex items-center justify-between">
+          <div class="flex lg:flex-1">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
               <img
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
                 alt=""
-                class="ycl" />
+                class="h-8" />
             </a>
           </div>
-          <div class="yce yfj">
-            <button type="button" command="show-modal" commandfor="mobile-menu" class="ybv yci yct ycv yde ydl yeg">
-              <span class="ybo">Open main menu</span>
+          <div class="flex lg:hidden">
+            <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[oklch(70.7%_0.022_261.325)]">
+              <span class="sr-only">Open main menu</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -877,35 +50,35 @@
                 stroke-width="1.5"
                 data-slot="icon"
                 aria-hidden="true"
-                class="ycj">
+                class="h-6 w-6">
                 <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </button>
           </div>
-          <div class="ych yfi yfm">
-            <a href="#" class="yea yed yen">Product</a>
-            <a href="#" class="yea yed yen">Features</a>
-            <a href="#" class="yea yed yen">Marketplace</a>
-            <a href="#" class="yea yed yen">Company</a>
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a href="#" class="text-sm/6 font-semibold text-white">Product</a>
+            <a href="#" class="text-sm/6 font-semibold text-white">Features</a>
+            <a href="#" class="text-sm/6 font-semibold text-white">Marketplace</a>
+            <a href="#" class="text-sm/6 font-semibold text-white">Company</a>
           </div>
-          <div class="ych yfi yfk yfl">
-            <a href="#" class="yea yed yen">Log in <span aria-hidden="true">&rarr;</span></a>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
           </div>
         </nav>
         <el-dialog>
-          <dialog id="mobile-menu" class="yeq yfj">
-            <div tabindex="0" class="ybp ybq yev">
-              <el-dialog-panel class="ybp ybr ybs ybt yco ydc ydi ydm yew yfb yfc">
-                <div class="yce yct ycu">
-                  <a href="#" class="ybu ydk">
-                    <span class="ybo">Your Company</span>
+          <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+            <div tabindex="0" class="fixed inset-0 focus:outline-none">
+              <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[oklch(21%_0.034_264.665)] p-6 sm:max-w-[24rem] sm:ring-1 sm:ring-[oklab(96.7%_-0.000285348_-0.0029864/.1)]">
+                <div class="flex items-center justify-between">
+                  <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Company</span>
                     <img
                       src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
                       alt=""
-                      class="ycl" />
+                      class="h-8" />
                   </a>
-                  <button type="button" command="close" commandfor="mobile-menu" class="ybv yde ydl yeg">
-                    <span class="ybo">Close menu</span>
+                  <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-[oklch(70.7%_0.022_261.325)]">
+                    <span class="sr-only">Close menu</span>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -913,21 +86,21 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="ycj">
+                      class="h-6 w-6">
                       <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </button>
                 </div>
-                <div class="yca ycf">
-                  <div class="yby ycz ydb">
-                    <div class="ycx ydr">
-                      <a href="#" class="ybw ycd ydd ydn ydp ydx yed yen yes">Product</a>
-                      <a href="#" class="ybw ycd ydd ydn ydp ydx yed yen yes">Features</a>
-                      <a href="#" class="ybw ycd ydd ydn ydp ydx yed yen yes">Marketplace</a>
-                      <a href="#" class="ybw ycd ydd ydn ydp ydx yed yen yes">Company</a>
+                <div class="mt-6 flow-root">
+                  <div class="-my-6 divide-y divide-white/10">
+                    <div class="space-y-2 py-6">
+                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Product</a>
+                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Features</a>
+                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Marketplace</a>
+                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Company</a>
                     </div>
-                    <div class="ydr">
-                      <a href="#" class="ybw ycd ydd ydn ydq ydw yed yen yes">Log in</a>
+                    <div class="py-6">
+                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-white hover:bg-white/5">Log in</a>
                     </div>
                   </div>
                 </div>
@@ -937,92 +110,92 @@
         </el-dialog>
       </header>
 
-      <main class="ybx yce yco ycp ycq ycs ycv ydo ydt yey yfn">
-        <p class="ydy yed yel">404</p>
-        <h1 class="ybz ydv yed yee yef yen yez">Page not found</h1>
-        <p class="yca ydz yec yef yeg yfa">Sorry, we couldn’t find the page you’re looking for.</p>
-        <div class="ycb">
-          <a href="#" class="yeb yed yel"><span aria-hidden="true">&larr;</span> Back to home</a>
+      <main class="mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-6 py-24 sm:py-64 lg:px-8">
+        <p class="text-base/8 font-semibold text-[oklch(67.3%_0.182_276.935)]">404</p>
+        <h1 class="mt-4 text-5xl font-semibold tracking-tight text-pretty text-white sm:text-6xl">Page not found</h1>
+        <p class="mt-6 text-lg font-medium text-pretty text-[oklch(70.7%_0.022_261.325)] sm:text-xl/8">Sorry, we couldn’t find the page you’re looking for.</p>
+        <div class="mt-10">
+          <a href="#" class="text-sm/7 font-semibold text-[oklch(67.3%_0.182_276.935)]"><span aria-hidden="true">&larr;</span> Back to home</a>
         </div>
       </main>
 
-      <footer aria-labelledby="footer-heading" class="ydf ydh">
-        <h2 id="footer-heading" class="ybo">Footer</h2>
-        <div class="ybx ycp ydo yds yex yfn yfo">
-          <div class="yfr yfs yft">
+      <footer aria-labelledby="footer-heading" class="border-t border-white/10">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+          <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <img
               src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
               alt="Company name"
-              class="yck" />
-            <div class="ycc ycg ycr ycw yfp yfq">
-              <div class="yff yfg yfh">
+              class="h-7" />
+            <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+              <div class="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 class="yea yed yen">Solutions</h3>
-                  <ul role="list" class="yca ycy">
+                  <h3 class="text-sm/6 font-semibold text-white">Solutions</h3>
+                  <ul role="list" class="mt-6 space-y-4">
                     <li>
-                      <a href="#" class="yea yeg yeu">Marketing</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Marketing</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Analytics</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Analytics</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Commerce</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Commerce</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Insights</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Insights</a>
                     </li>
                   </ul>
                 </div>
-                <div class="ycb yfe">
-                  <h3 class="yea yed yen">Support</h3>
-                  <ul role="list" class="yca ycy">
+                <div class="mt-6 md:mt-0">
+                  <h3 class="text-sm/6 font-semibold text-white">Support</h3>
+                  <ul role="list" class="mt-6 space-y-4">
                     <li>
-                      <a href="#" class="yea yeg yeu">Pricing</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Pricing</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Documentation</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Documentation</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Guides</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Guides</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">API Status</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">API Status</a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="yff yfg yfh">
+              <div class="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 class="yea yed yen">Company</h3>
-                  <ul role="list" class="yca ycy">
+                  <h3 class="text-sm/6 font-semibold text-white">Company</h3>
+                  <ul role="list" class="mt-6 space-y-4">
                     <li>
-                      <a href="#" class="yea yeg yeu">About</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">About</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Blog</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Blog</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Jobs</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Jobs</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Press</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Press</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Partners</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Partners</a>
                     </li>
                   </ul>
                 </div>
-                <div class="ycb yfe">
-                  <h3 class="yea yed yen">Legal</h3>
-                  <ul role="list" class="yca ycy">
+                <div class="mt-6 md:mt-0">
+                  <h3 class="text-sm/6 font-semibold text-white">Legal</h3>
+                  <ul role="list" class="mt-6 space-y-4">
                     <li>
-                      <a href="#" class="yea yeg yeu">Claim</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Claim</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Privacy</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Privacy</a>
                     </li>
                     <li>
-                      <a href="#" class="yea yeg yeu">Terms</a>
+                      <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Terms</a>
                     </li>
                   </ul>
                 </div>

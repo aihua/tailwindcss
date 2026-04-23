@@ -1,464 +1,59 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .ijx {
-      grid-column: span 2 / span 2;
-    }
-    .ijy {
-      grid-column-start: 2;
-    }
-    .ijz {
-      margin-inline: auto;
-    }
-    .ika {
-      display: grid;
-    }
-    .ikb {
-      max-height: 3rem;
-    }
-    .ikc {
-      width: 100%;
-    }
-    .ikd {
-      max-width: 80rem;
-    }
-    .ike {
-      max-width: 32rem;
-    }
-    .ikf {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-    .ikg {
-      align-items: center;
-    }
-    .ikh {
-      column-gap: 2rem;
-    }
-    .iki {
-      row-gap: 3rem;
-    }
-    .ikj {
-      background-color: oklch(21% 0.034 264.665);
-    }
-    .ikk {
-      background-color: #fff;
-    }
-    .ikl {
-      object-fit: contain;
-    }
-    .ikm {
-      padding-inline: 1.5rem;
-    }
-    .ikn {
-      padding-block: 6rem;
-    }
-    @media not all and (prefers-color-scheme: dark) {
-      .iko {
-        display: none;
-      }
-    }
-    @media (min-width: 40rem) {
-      .ikp {
-        grid-column-start: 2;
-      }
-      .ikq {
-        grid-column-start: auto;
-      }
-      .ikr {
-        max-width: 36rem;
-      }
-      .iks {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-      }
-      .ikt {
-        column-gap: 2.5rem;
-      }
-      .iku {
-        row-gap: 3.5rem;
-      }
-      .ikv {
-        padding-block: 8rem;
-      }
-    }
-    @media (min-width: 64rem) {
-      .ikw {
-        grid-column: span 1 / span 1;
-      }
-      .ikx {
-        margin-inline: 0;
-      }
-      .iky {
-        max-width: none;
-      }
-      .ikz {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-      }
-      .ila {
-        padding-inline: 2rem;
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .ilb {
-        display: none;
-      }
-      .ilc {
-        background-color: oklch(21% 0.034 264.665);
-      }
-    }
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
-<body>
-  <div class="ikj ikn ikv">
-    <div class="ijz ikd ikm ila">
-      <div class="ijz ika ike ikf ikg ikh iki ikr iks ikt iku ikx iky ikz">
+  </style>
+</head>
+<body class="antialiased bg-[oklch(21%_0.034_264.665)]">
+  <div class="bg-[oklch(21%_0.034_264.665)] py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto grid max-w-[32rem] grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
         <img
           width="158"
           height="48"
           src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-white.svg"
           alt="Transistor"
-          class="ijx ikb ikc ikl ikw" />
+          class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" />
 
         <img
           width="158"
           height="48"
           src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-white.svg"
           alt="Reform"
-          class="ijx ikb ikc ikl ikw" />
+          class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" />
 
         <img
           width="158"
           height="48"
           src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-white.svg"
           alt="Tuple"
-          class="ijx ikb ikc ikl ikw" />
+          class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" />
 
         <img
           width="158"
           height="48"
           src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
           alt="SavvyCal"
-          class="ijx ikb ikc ikl ikp ikw" />
+          class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1" />
 
         <img
           width="158"
           height="48"
           src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-white.svg"
           alt="Statamic"
-          class="ijx ijy ikb ikc ikl ikq ikw" />
+          class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1" />
       </div>
     </div>
   </div>
-
-  <script></script>
 </body>
+</html>

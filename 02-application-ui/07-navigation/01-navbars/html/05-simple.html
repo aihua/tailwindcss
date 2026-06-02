@@ -1,1064 +1,43 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-space-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-font-weight: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-        --tw-outline-style: solid;
-        --tw-content: '';
-        --tw-scale-x: 1;
-        --tw-scale-y: 1;
-        --tw-scale-z: 1;
-        --tw-rotate-x: initial;
-        --tw-rotate-y: initial;
-        --tw-rotate-z: initial;
-        --tw-skew-x: initial;
-        --tw-skew-y: initial;
-        --tw-duration: initial;
-        --tw-ease: initial;
-        --tw-space-x-reverse: 0;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .ahnx {
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border-width: 0;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-    .ahny {
-      position: absolute;
-    }
-    .ahnz {
-      position: relative;
-    }
-    .ahoa {
-      inset: -0.125rem;
-    }
-    .ahob {
-      inset: -0.375rem;
-    }
-    .ahoc {
-      margin-inline: auto;
-    }
-    .ahod {
-      margin-top: 0.75rem;
-    }
-    .ahoe {
-      margin-right: -0.5rem;
-    }
-    .ahof {
-      margin-left: 0.75rem;
-    }
-    .ahog {
-      margin-left: auto;
-    }
-    .ahoh {
-      display: block;
-    }
-    .ahoi {
-      display: flex;
-    }
-    .ahoj {
-      display: none;
-    }
-    .ahok {
-      display: inline-flex;
-    }
-    .ahol {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .ahom {
-      width: 2rem;
-      height: 2rem;
-    }
-    .ahon {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-    .ahoo {
-      height: 2rem;
-    }
-    .ahop {
-      height: 4rem;
-    }
-    .ahoq {
-      width: 12rem;
-    }
-    .ahor {
-      width: auto;
-    }
-    .ahos {
-      max-width: 80rem;
-    }
-    .ahot {
-      flex-shrink: 0;
-    }
-    .ahou {
-      transform-origin: 100% 0;
-    }
-    .ahov {
-      align-items: center;
-    }
-    .ahow {
-      justify-content: space-between;
-    }
-    .ahox {
-      justify-content: center;
-    }
-    :where(.ahoy > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 1) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 1) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .ahoz {
-      border-radius: 3.40282e38px;
-    }
-    .ahpa {
-      border-radius: 0.375rem;
-    }
-    .ahpb {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .ahpc {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 2px;
-    }
-    .ahpd {
-      border-left-style: var(--tw-border-style);
-      border-left-width: 4px;
-    }
-    .ahpe {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .ahpf {
-      border-color: oklch(58.5% 0.233 277.117);
-    }
-    .ahpg {
-      border-color: oklch(51.1% 0.262 276.966);
-    }
-    .ahph {
-      border-color: #0000;
-    }
-    .ahpi {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .ahpj {
-      background-color: oklch(96.7% 0.003 264.542);
-    }
-    .ahpk {
-      background-color: oklch(27.8% 0.033 256.848);
-    }
-    .ahpl {
-      background-color: oklab(27.8% -0.00750866 -0.0321344/.5);
-    }
-    .ahpm {
-      background-color: oklch(21% 0.034 264.665);
-    }
-    .ahpn {
-      background-color: oklch(96.2% 0.018 272.314);
-    }
-    .ahpo {
-      background-color: oklab(51.1% 0.0317755 -0.260066/.1);
-    }
-    .ahpp {
-      background-color: #fff;
-    }
-    .ahpq {
-      padding: 0.25rem;
-    }
-    .ahpr {
-      padding: 0.5rem;
-    }
-    .ahps {
-      padding-inline: 0.25rem;
-    }
-    .ahpt {
-      padding-inline: 1rem;
-    }
-    .ahpu {
-      padding-block: 0.25rem;
-    }
-    .ahpv {
-      padding-block: 0.5rem;
-    }
-    .ahpw {
-      padding-top: 0.25rem;
-    }
-    .ahpx {
-      padding-top: 0.5rem;
-    }
-    .ahpy {
-      padding-top: 1rem;
-    }
-    .ahpz {
-      padding-right: 1rem;
-    }
-    .ahqa {
-      padding-bottom: 0.75rem;
-    }
-    .ahqb {
-      padding-left: 0.75rem;
-    }
-    .ahqc {
-      font-size: 1rem;
-      line-height: var(--tw-leading, calc(1.5 / 1));
-    }
-    .ahqd {
-      font-size: 0.875rem;
-      line-height: var(--tw-leading, calc(1.25 / 0.875));
-    }
-    .ahqe {
-      --tw-font-weight: 500;
-      font-weight: 500;
-    }
-    .ahqf {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .ahqg {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .ahqh {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .ahqi {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    .ahqj {
-      color: oklch(27.8% 0.033 256.848);
-    }
-    .ahqk {
-      color: oklch(21% 0.034 264.665);
-    }
-    .ahql {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .ahqm {
-      color: oklch(45.7% 0.24 277.023);
-    }
-    .ahqn {
-      color: #fff;
-    }
-    .ahqo {
-      color-scheme: dark;
-    }
-    .ahqp {
-      --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, #0000001a), 0 4px 6px -4px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .ahqq {
-      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .ahqr {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-    .ahqs {
-      outline-offset: calc(1px * -1);
-    }
-    .ahqt {
-      outline-color: oklab(0% none none/.05);
-    }
-    .ahqu {
-      outline-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .ahqv {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .ahqw {
-      transition-behavior: allow-discrete;
-    }
-    .ahqx {
-      --anchor-gap: calc(0.25rem * 2);
-    }
-    .ahqy:not(:where([aria-expanded='true']) *) {
-      display: none;
-    }
-    @media not all and (prefers-color-scheme: dark) {
-      .ahqz {
-        display: none;
-      }
-    }
-    .ahra:after {
-      content: var(--tw-content);
-      pointer-events: none;
-    }
-    .ahrb:after {
-      content: var(--tw-content);
-      position: absolute;
-    }
-    .ahrc:after {
-      content: var(--tw-content);
-      inset-inline: 0;
-    }
-    .ahrd:after {
-      content: var(--tw-content);
-      bottom: 0;
-    }
-    .ahre:after {
-      content: var(--tw-content);
-      height: 1px;
-    }
-    .ahrf:after {
-      content: var(--tw-content);
-      background-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    @media (hover: hover) {
-      .ahrg:hover {
-        border-color: oklch(87.2% 0.01 258.338);
-      }
-      .ahrh:hover {
-        border-color: oklab(100% 0 5.96046e-8/0.2);
-      }
-      .ahri:hover {
-        background-color: oklch(98.5% 0.002 247.839);
-      }
-      .ahrj:hover {
-        background-color: oklch(96.7% 0.003 264.542);
-      }
-      .ahrk:hover {
-        background-color: oklab(100% 0 5.96046e-8/0.05);
-      }
-      .ahrl:hover {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .ahrm:hover {
-        color: oklch(37.3% 0.034 259.733);
-      }
-      .ahrn:hover {
-        color: oklch(27.8% 0.033 256.848);
-      }
-      .ahro:hover {
-        color: #fff;
-      }
-    }
-    .ahrp:focus {
-      background-color: oklch(96.7% 0.003 264.542);
-    }
-    .ahrq:focus {
-      background-color: oklab(100% 0 5.96046e-8/0.05);
-    }
-    .ahrr:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    @media (forced-colors: active) {
-      .ahrr:focus {
-        outline-offset: 2px;
-        outline: 2px solid #0000;
-      }
-    }
-    .ahrs:focus {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .ahrt:focus {
-      outline-offset: calc(1px * -1);
-    }
-    .ahru:focus {
-      outline-offset: 2px;
-    }
-    .ahrv:focus {
-      outline-color: oklch(58.5% 0.233 277.117);
-    }
-    .ahrw:focus {
-      outline-color: oklch(51.1% 0.262 276.966);
-    }
-    .ahrx:focus-visible {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .ahry:focus-visible {
-      outline-offset: 2px;
-    }
-    .ahrz:focus-visible {
-      outline-color: oklch(58.5% 0.233 277.117);
-    }
-    .ahsa:focus-visible {
-      outline-color: oklch(51.1% 0.262 276.966);
-    }
-    :where([aria-expanded='true']) .ahsb {
-      display: none;
-    }
-    .ahsc[data-closed] {
-      --tw-scale-x: 95%;
-      --tw-scale-y: 95%;
-      --tw-scale-z: 95%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-    .ahsd[data-closed] {
-      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-    }
-    .ahse[data-closed] {
-      opacity: 0;
-    }
-    .ahsf[data-enter] {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .ahsg[data-enter] {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .ahsh[data-leave] {
-      --tw-duration: 75ms;
-      transition-duration: 75ms;
-    }
-    .ahsi[data-leave] {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    @media (min-width: 40rem) {
-      .ahsj {
-        margin-left: 1.5rem;
-      }
-      .ahsk {
-        display: flex;
-      }
-      .ahsl {
-        display: none;
-      }
-      .ahsm {
-        align-items: center;
-      }
-      :where(.ahsn > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(0.25rem * 8) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-x-reverse)));
-      }
-      .ahso {
-        padding-inline: 1.5rem;
-      }
-    }
-    @media (min-width: 64rem) {
-      .ahsp {
-        padding-inline: 2rem;
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      .ahsq {
-        display: none;
-      }
-      .ahsr {
-        border-color: oklch(58.5% 0.233 277.117);
-      }
-      .ahss {
-        border-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .ahst {
-        background-color: oklch(27.8% 0.033 256.848);
-      }
-      .ahsu {
-        background-color: oklab(27.8% -0.00750866 -0.0321344/.5);
-      }
-      .ahsv {
-        background-color: oklch(21% 0.034 264.665);
-      }
-      .ahsw {
-        background-color: oklab(51.1% 0.0317755 -0.260066/.1);
-      }
-      .ahsx {
-        color: oklch(87.2% 0.01 258.338);
-      }
-      .ahsy {
-        color: oklch(70.7% 0.022 261.325);
-      }
-      .ahsz {
-        color: oklch(67.3% 0.182 276.935);
-      }
-      .ahta {
-        color: #fff;
-      }
-      .ahtb {
-        color-scheme: dark;
-      }
-      .ahtc {
-        --tw-shadow: 0 0 #0000;
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-      .ahtd {
-        outline-offset: calc(1px * -1);
-      }
-      .ahte {
-        outline-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      .ahtf:after {
-        content: var(--tw-content);
-        pointer-events: none;
-      }
-      .ahtg:after {
-        content: var(--tw-content);
-        position: absolute;
-      }
-      .ahth:after {
-        content: var(--tw-content);
-        inset-inline: 0;
-      }
-      .ahti:after {
-        content: var(--tw-content);
-        bottom: 0;
-      }
-      .ahtj:after {
-        content: var(--tw-content);
-        height: 1px;
-      }
-      .ahtk:after {
-        content: var(--tw-content);
-        background-color: oklab(100% 0 5.96046e-8/0.1);
-      }
-      @media (hover: hover) {
-        .ahtl:hover {
-          border-color: oklab(100% 0 5.96046e-8/0.2);
-        }
-        .ahtm:hover {
-          background-color: oklab(100% 0 5.96046e-8/0.05);
-        }
-        .ahtn:hover {
-          color: #fff;
-        }
-      }
-      .ahto:focus {
-        background-color: oklab(100% 0 5.96046e-8/0.05);
-      }
-      .ahtp:focus,
-      .ahtq:focus-visible {
-        outline-color: oklch(58.5% 0.233 277.117);
-      }
-    }
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-outline-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-content {
-    syntax: '*';
-    inherits: false;
-    initial-value: '';
-  }
-  @property --tw-scale-x {
-    syntax: '*';
-    inherits: false;
-    initial-value: 1;
-  }
-  @property --tw-scale-y {
-    syntax: '*';
-    inherits: false;
-    initial-value: 1;
-  }
-  @property --tw-scale-z {
-    syntax: '*';
-    inherits: false;
-    initial-value: 1;
-  }
-  @property --tw-rotate-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-z {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-duration {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ease {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-space-x-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-</style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
+  </style>
+</head>
+<body class="antialiased bg-gray-900">
 
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-</style>
-<body>
-  <div style="min-height: 192px" class="ahpm ahqo">
-    <nav class="ahnz ahpl ahra ahrb ahrc ahrd ahre ahrf">
-      <div class="ahoc ahos ahpt ahso ahsp">
-        <div class="ahoi ahop ahow">
-          <div class="ahoi">
-            <div class="ahoi ahot ahov">
+  <div class="min-h-[192px] bg-gray-900 dark">
+    <nav class="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[1px] after:bg-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 justify-between">
+          <div class="flex">
+            <div class="flex shrink-0 items-center">
               <img
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
                 alt="Your Company"
-                class="ahoo ahor" />
+                class="h-8 w-auto" />
             </div>
-            <div class="ahoj ahsj ahsk ahsn">
+            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
               <!-- Current: "border-indigo-500 text-white", Default: "border-transparent text-gray-300 hover:border-white/20 hover:text-white" -->
-              <a href="#" class="ahok ahov ahpc ahpf ahps ahpw ahqd ahqe ahqn">Dashboard</a>
-              <a href="#" class="ahok ahov ahpc ahph ahps ahpw ahqd ahqe ahqf ahrh ahro">Team</a>
-              <a href="#" class="ahok ahov ahpc ahph ahps ahpw ahqd ahqe ahqf ahrh ahro">Projects</a>
-              <a href="#" class="ahok ahov ahpc ahph ahps ahpw ahqd ahqe ahqf ahrh ahro">Calendar</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-white">Dashboard</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-white/20 hover:text-white">Team</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-white/20 hover:text-white">Projects</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-white/20 hover:text-white">Calendar</a>
             </div>
           </div>
-          <div class="ahoj ahsj ahsk ahsm">
-            <button type="button" class="ahnz ahoz ahpq ahqg ahro ahrs ahru ahrv">
-              <span class="ahny ahob"></span>
-              <span class="ahnx">View notifications</span>
+          <div class="hidden sm:ml-6 sm:flex sm:items-center">
+            <button type="button" class="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+              <span class="absolute inset-[-0.375rem]"></span>
+              <span class="sr-only">View notifications</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -1066,7 +45,7 @@
                 stroke-width="1.5"
                 data-slot="icon"
                 aria-hidden="true"
-                class="ahol">
+                class="w-6 h-6">
                 <path
                   d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
                   stroke-linecap="round"
@@ -1075,35 +54,32 @@
             </button>
 
             <!-- Profile dropdown -->
-            <el-dropdown class="ahnz ahof">
-              <button class="ahnz ahoi ahoz ahrx ahry ahrz">
-                <span class="ahny ahob"></span>
-                <span class="ahnx">Open user menu</span>
+            <div class="relative ml-3">
+              <button data-dropdown-toggle class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                <span class="absolute inset-[-0.375rem]"></span>
+                <span class="sr-only">Open user menu</span>
                 <img
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="ahom ahoz ahpk ahqr ahqs ahqu" />
+                  class="w-8 h-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10" />
               </button>
 
-              <el-menu
-                anchor="bottom end"
-                popover
-                class="ahoq ahou ahpa ahpk ahpu ahqr ahqs ahqu ahqv ahqw ahqx ahsc ahsd ahse ahsf ahsg ahsh ahsi">
-                <a href="#" class="ahoh ahpt ahpv ahqd ahqf ahrq ahrr">Your profile</a>
-                <a href="#" class="ahoh ahpt ahpv ahqd ahqf ahrq ahrr">Settings</a>
-                <a href="#" class="ahoh ahpt ahpv ahqd ahqf ahrq ahrr">Sign out</a>
-              </el-menu>
-            </el-dropdown>
+              <div
+                data-dropdown-menu
+                class="hidden absolute right-0 top-full z-50 mt-2 w-48 origin-top-right rounded-md bg-gray-800 py-1 outline -outline-offset-1 outline-white/10">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 focus:outline-none">Your profile</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 focus:outline-none">Settings</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 focus:outline-none">Sign out</a>
+              </div>
+            </div>
           </div>
-          <div class="ahoe ahoi ahov ahsl">
+          <div class="mr-[-0.5rem] flex items-center sm:hidden">
             <!-- Mobile menu button -->
             <button
               type="button"
-              command="--toggle"
-              commandfor="mobile-menu"
-              class="ahnz ahok ahov ahox ahpa ahpr ahqg ahrk ahro ahrs ahrt ahrv">
-              <span class="ahny ahoa"></span>
-              <span class="ahnx">Open main menu</span>
+              data-mobile-toggle aria-expanded="false" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+              <span class="absolute inset-[-0.125rem]"></span>
+              <span class="sr-only">Open main menu</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -1111,7 +87,7 @@
                 stroke-width="1.5"
                 data-slot="icon"
                 aria-hidden="true"
-                class="ahol ahsb">
+                class="w-6 h-6 aria-[expanded='true']:hidden">
                 <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <svg
@@ -1121,7 +97,7 @@
                 stroke-width="1.5"
                 data-slot="icon"
                 aria-hidden="true"
-                class="ahol ahqy">
+                class="w-6 h-6 hidden">
                 <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </button>
@@ -1129,29 +105,29 @@
         </div>
       </div>
 
-      <el-disclosure id="mobile-menu" hidden class="ahoh ahsl">
-        <div class="ahoy ahpx ahqa">
+      <div id="mobile-menu" hidden class="block sm:hidden">
+        <div class="space-y-1 pt-2 pb-3">
           <!-- Current: "border-indigo-500 bg-indigo-600/10 text-indigo-400", Default: "border-transparent text-gray-300 hover:border-white/20 hover:bg-white/5 hover:text-white" -->
-          <a href="#" class="ahoh ahpd ahpf ahpo ahpv ahpz ahqb ahqc ahqe ahql">Dashboard</a>
-          <a href="#" class="ahoh ahpd ahph ahpv ahpz ahqb ahqc ahqe ahqf ahrh ahrk ahro">Team</a>
-          <a href="#" class="ahoh ahpd ahph ahpv ahpz ahqb ahqc ahqe ahqf ahrh ahrk ahro">Projects</a>
-          <a href="#" class="ahoh ahpd ahph ahpv ahpz ahqb ahqc ahqe ahqf ahrh ahrk ahro">Calendar</a>
+          <a href="#" class="block border-l-4 border-indigo-500 bg-indigo-600/10 py-2 pr-4 pl-3 text-base font-medium text-indigo-400">Dashboard</a>
+          <a href="#" class="block border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium text-gray-300 hover:border-white/20 hover:bg-white/5 hover:text-white">Team</a>
+          <a href="#" class="block border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium text-gray-300 hover:border-white/20 hover:bg-white/5 hover:text-white">Projects</a>
+          <a href="#" class="block border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium text-gray-300 hover:border-white/20 hover:bg-white/5 hover:text-white">Calendar</a>
         </div>
-        <div class="ahpb ahpi ahpy ahqa">
-          <div class="ahoi ahov ahpt">
-            <div class="ahot">
+        <div class="border-t border-white/10 pt-4 pb-3">
+          <div class="flex items-center px-4">
+            <div class="shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                 alt=""
-                class="ahon ahoz ahpk ahqr ahqs ahqu" />
+                class="w-10 h-10 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10" />
             </div>
-            <div class="ahof">
-              <div class="ahqc ahqe ahqn">Tom Cook</div>
-              <div class="ahqd ahqe ahqg">tom@example.com</div>
+            <div class="ml-3">
+              <div class="text-base font-medium text-white">Tom Cook</div>
+              <div class="text-sm font-medium text-gray-400">tom@example.com</div>
             </div>
-            <button type="button" class="ahnz ahog ahot ahoz ahpq ahqg ahro ahrs ahru ahrv">
-              <span class="ahny ahob"></span>
-              <span class="ahnx">View notifications</span>
+            <button type="button" class="relative ml-auto shrink-0 rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
+              <span class="absolute inset-[-0.375rem]"></span>
+              <span class="sr-only">View notifications</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -1159,7 +135,7 @@
                 stroke-width="1.5"
                 data-slot="icon"
                 aria-hidden="true"
-                class="ahol">
+                class="w-6 h-6">
                 <path
                   d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
                   stroke-linecap="round"
@@ -1167,14 +143,44 @@
               </svg>
             </button>
           </div>
-          <div class="ahod ahoy">
-            <a href="#" class="ahoh ahpt ahpv ahqc ahqe ahqg ahrk ahro">Your profile</a>
-            <a href="#" class="ahoh ahpt ahpv ahqc ahqe ahqg ahrk ahro">Settings</a>
-            <a href="#" class="ahoh ahpt ahpv ahqc ahqe ahqg ahrk ahro">Sign out</a>
+          <div class="mt-3 space-y-1">
+            <a href="#" class="block px-4 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Your profile</a>
+            <a href="#" class="block px-4 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Settings</a>
+            <a href="#" class="block px-4 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Sign out</a>
           </div>
         </div>
-      </el-disclosure>
+      </div>
     </nav>
   </div>
-  <script></script>
+  <script>
+    document.querySelectorAll('[data-dropdown-toggle]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var menu = btn.nextElementSibling;
+        document.querySelectorAll('[data-dropdown-menu]:not(.hidden)').forEach(function(m) { if (m !== menu) m.classList.add('hidden'); });
+        menu.classList.toggle('hidden');
+      });
+    });
+    document.addEventListener('click', function() {
+      document.querySelectorAll('[data-dropdown-menu]').forEach(function(m) { m.classList.add('hidden'); });
+    });
+    // Mobile menu toggle
+    (function() {
+      var btn = document.querySelector('[data-mobile-toggle]');
+      if (!btn) return;
+      var svgs = btn.querySelectorAll('svg');
+      var menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', function() {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        svgs[0].classList.toggle('hidden');
+        svgs[1].classList.toggle('hidden');
+        if (menu) {
+          if (expanded) { menu.setAttribute('hidden', ''); } else { menu.removeAttribute('hidden'); }
+        }
+      });
+    })();
+  </script>
+
 </body>
+</html>

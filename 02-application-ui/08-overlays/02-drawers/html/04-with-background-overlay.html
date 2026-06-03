@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.14"></script>
   <style type="text/tailwindcss">
     @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
@@ -14,31 +15,30 @@
     :where(:has(:is([open], :popover-open, :open))) .hide-when-open {
       opacity: 0;
     }
-    dialog:not(:is([open], :popover-open, :open)) {
-      display: none;
+    dialog::backdrop {
+      background-color: transparent;
     }
   </style>
 </head>
 <body class="antialiased bg-gray-900">
-  <div class="grid min-h-[500px] place-content-center bg-gray-900 color-scheme-dark">
-    <button command="show-modal" commandfor="drawer" class="rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white inset-ring inset-ring-white/5 transition-all duration-300 hover:bg-white/20 hide-when-open">
+  <div class="grid min-h-125 place-content-center bg-gray-900 [color-scheme:dark]">
+    <button command="show-modal" commandfor="drawer" class="rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white ring-1 ring-white/5 transition-all duration-300 hover:bg-white/20 hide-when-open">
       Open drawer
     </button>
     <el-dialog>
-      <dialog id="drawer" aria-labelledby="drawer-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-hidden bg-transparent backdrop:bg-transparent">
-        <el-dialog-backdrop class="absolute inset-0 bg-gray-900/50 transition-opacity duration-500 ease data-closed:opacity-0"></el-dialog-backdrop>
-
+      <dialog id="drawer" aria-labelledby="drawer-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-hidden bg-transparent">
+        <el-dialog-backdrop class="absolute inset-0 transition-opacity duration-500 ease-in-out data-closed:opacity-0"></el-dialog-backdrop>
         <div tabindex="0" class="absolute inset-0 pl-10 focus:outline-none sm:pl-16">
-          <el-dialog-panel class="ml-auto block size-full max-w-[28rem] transform transition duration-500 ease data-closed:translate-x-full sm:duration-700">
-            <div class="relative flex h-full flex-col overflow-y-auto bg-gray-800 py-6 shadow-xl after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10 focus:outline-none">
+          <el-dialog-panel class="ml-auto block size-full max-w-112 transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700">
+            <div class="relative flex h-full flex-col overflow-y-auto bg-gray-800 shadow-xl py-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10 focus:outline-none">
               <div class="px-4 sm:px-6">
                 <div class="flex items-start justify-between">
                   <h2 id="drawer-title" class="text-base font-semibold text-white">Panel title</h2>
                   <div class="ml-3 flex h-7 items-center">
-                    <button type="button" command="close" commandfor="drawer" class="relative rounded-md text-indigo-500 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    <button type="button" command="close" commandfor="drawer" class="relative rounded-md text-indigo-300 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                       <span class="absolute -inset-2.5"></span>
                       <span class="sr-only">Close panel</span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6">
                         <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
@@ -51,11 +51,11 @@
                     <div class="relative h-full overflow-hidden rounded-xl border border-dashed border-white/20 opacity-75">
                       <svg fill="none" class="absolute inset-0 size-full stroke-white/10">
                         <defs>
-                          <pattern id="pattern-04" width="10" height="10" x="0" y="0" patternUnits="userSpaceOnUse">
+                          <pattern id="pattern-drawer-04" width="10" height="10" x="0" y="0" patternUnits="userSpaceOnUse">
                             <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3" />
                           </pattern>
                         </defs>
-                        <rect width="100%" height="100%" fill="url(#pattern-04)" stroke="none" />
+                        <rect width="100%" height="100%" fill="url(#pattern-drawer-04)" stroke="none" />
                       </svg>
                     </div>
                   </div>
@@ -67,66 +67,29 @@
       </dialog>
     </el-dialog>
   </div>
-  <script>
-    {
-      function openDialog(elDialog) {
-        let dialog = elDialog.querySelector('dialog');
-        let panel = elDialog.querySelector('el-dialog-panel');
-        let backdrop = elDialog.querySelector('el-dialog-backdrop');
-        panel.setAttribute('data-closed', '');
-        if (backdrop) backdrop.setAttribute('data-closed', '');
-        dialog.inert = true;
-        dialog.addEventListener('beforetoggle', evt => {
+<script type="module">
+  function onReady() {
+    for (let elDialog of document.querySelectorAll('el-dialog')) {
+      let dialog = elDialog.querySelector('dialog');
+      dialog.inert = true;
+      dialog.addEventListener(
+        'beforetoggle',
+        evt => {
           if (evt.newState !== 'open') return;
           for (let element of dialog.querySelectorAll('[data-initial-value-on-focus]')) {
             let value = element.getAttribute('data-initial-value-on-focus');
-            element.removeAttribute('data-initial-value-on-focus');
+ element.removeAttribute('data-initial-value-on-focus');
             element.value = value;
             element.dispatchEvent(new Event('input'));
           }
           setTimeout(() => { dialog.inert = false; }, 0);
-        }, {once: true});
-        dialog.showModal();
-        elDialog.setAttribute('open', '');
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            panel.removeAttribute('data-closed');
-            if (backdrop) backdrop.removeAttribute('data-closed');
-          });
-        });
-      }
-      function closeDialog(elDialog) {
-        let dialog = elDialog.querySelector('dialog');
-        if (!dialog.open) return;
-        let panel = elDialog.querySelector('el-dialog-panel');
-        let backdrop = elDialog.querySelector('el-dialog-backdrop');
-        panel.setAttribute('data-closed', '');
-        if (backdrop) backdrop.setAttribute('data-closed', '');
-        setTimeout(() => {
-          if (dialog.open) dialog.close();
-          elDialog.removeAttribute('open');
-        }, 700);
-      }
-      document.addEventListener('click', (e) => {
-        let button = e.target.closest('[command="close"]');
-        if (button) {
-          e.preventDefault();
-          let dialogId = button.getAttribute('commandfor');
-          let elDialog = document.querySelector(`dialog[id="${dialogId}"]`)?.closest('el-dialog');
-          if (elDialog) closeDialog(elDialog);
-        }
-      });
-      document.addEventListener('cancel', (e) => {
-        if (e.target.tagName === 'DIALOG') {
-          e.preventDefault();
-          let elDialog = e.target.closest('el-dialog');
-          if (elDialog) closeDialog(elDialog);
-        }
-      });
-      for (let elDialog of document.querySelectorAll('el-dialog')) {
-        openDialog(elDialog);
-      }
+        },
+        {once: true}
+      );
+      elDialog.open = true;
     }
-  </script>
+  }
+  customElements.whenDefined('el-dialog').then(onReady);
+</script>
 </body>
 </html>

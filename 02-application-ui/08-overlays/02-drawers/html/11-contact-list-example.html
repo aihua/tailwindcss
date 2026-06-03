@@ -6,12 +6,11 @@
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.14"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-      --color-gray-700: oklch(27.8% 0.033 256.848);
     }
     :where(:has(:is([open], :popover-open, :open))) .hide-when-open {
       opacity: 0;
@@ -47,8 +46,8 @@
     <el-dialog>
       <dialog id="drawer" aria-labelledby="drawer-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-hidden bg-transparent">
         <div tabindex="0" class="absolute inset-0 pl-10 focus:outline-none sm:pl-16">
-          <el-dialog-panel class="group/dialog-panel ml-auto block size-full max-w-[28rem] [transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700">
-            <div class="relative flex h-full flex-col overflow-y-auto bg-gray-700 shadow-xl after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10 focus:outline-none">
+          <el-dialog-panel class="group/dialog-panel ml-auto block size-full max-w-112 [transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700">
+            <div class="relative flex h-full flex-col overflow-y-auto bg-gray-800 shadow-xl after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10 focus:outline-none">
               <div class="p-6">
                 <div class="flex items-start justify-between">
                   <h2 id="drawer-title" class="text-base font-semibold text-white">Team</h2>
@@ -939,39 +938,5 @@
       </dialog>
     </el-dialog>
   </div>
-  <script>
-    {
-      function openDialog(elDialog) {
-        if (typeof elDialog.showModal === 'function') {
-          elDialog.showModal();
-        }
-      }
-      function closeDialog(elDialog) {
-        elDialog.close();
-      }
-      document.addEventListener('click', (e) => {
-        const target = e.target.closest('[command="show-modal"]');
-        if (target) {
-          const dialogId = target.getAttribute('commandfor');
-          const dialog = document.getElementById(dialogId);
-          if (dialog) openDialog(dialog);
-          return;
-        }
-        const closeTarget = e.target.closest('[command="close"]');
-        if (closeTarget) {
-          const dialogId = closeTarget.getAttribute('commandfor');
-          const dialog = document.getElementById(dialogId);
-          if (dialog) closeDialog(dialog);
-          return;
-        }
-      });
-      document.querySelectorAll('dialog').forEach((dialog) => {
-        dialog.addEventListener('cancel', (e) => {
-          e.preventDefault();
-          dialog.close();
-        });
-      });
-    }
-  </script>
 </body>
 </html>

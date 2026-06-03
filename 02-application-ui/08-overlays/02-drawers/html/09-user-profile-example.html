@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.14"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
   <style type="text/tailwindcss">
     @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
@@ -14,10 +15,34 @@
     :where(:has(:is([open], :popover-open, :open))) .hide-when-open {
       opacity: 0;
     }
+    dialog::backdrop {
+      background-color: transparent;
+    }
+    el-dialog-panel[data-closed] {
+      translate: 100% 0;
+    }
+    el-menu {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 0.15s;
+    }
+    el-menu[data-closed] {
+      scale: 95% 95%;
+      opacity: 0;
+      transform-origin: 100% 0;
+    }
+    el-menu[data-enter] {
+      transition-duration: 0.1s;
+      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    el-menu[data-leave] {
+      transition-duration: 75ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    }
   </style>
 </head>
 <body class="antialiased bg-gray-900">
-  <div class="grid min-h-[800px] place-content-center bg-gray-900 dark">
+  <div class="grid min-h-[800px] place-content-center bg-gray-900 [color-scheme:dark]">
     <button
       command="show-modal"
       commandfor="drawer"
@@ -25,9 +50,9 @@
       Open drawer
     </button>
     <el-dialog>
-      <dialog id="drawer" class="fixed inset-0 w-auto h-auto max-h-none max-w-none overflow-hidden bg-transparent backdrop:bg-transparent">
+      <dialog id="drawer" class="fixed inset-0 size-auto max-h-none max-w-none overflow-hidden bg-transparent">
         <div tabindex="0" class="absolute inset-0 pl-10 focus:outline-none sm:pl-16">
-          <el-dialog-panel class="group/dialog-panel ml-auto block size-full max-w-md transition duration-500 data-closed:translate-x-full sm:duration-700">
+          <el-dialog-panel class="ml-auto block size-full max-w-[28rem] transform transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700">
             <div class="relative flex h-full flex-col overflow-y-auto bg-gray-800 shadow-xl after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10 focus:outline-none">
               <div class="px-4 py-6 sm:px-6">
                 <div class="flex items-start justify-between">
@@ -37,7 +62,7 @@
                       type="button"
                       command="close"
                       commandfor="drawer"
-                      class="relative rounded-md text-gray-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      class="relative rounded-md text-gray-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-[2px] focus-visible:outline-indigo-500">
                       <span class="absolute -inset-2.5"></span>
                       <span class="sr-only">Close panel</span>
                       <svg
@@ -47,7 +72,7 @@
                         stroke-width="1.5"
                         data-slot="icon"
                         aria-hidden="true"
-                        class="w-6 h-6">
+                        class="size-6">
                         <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
@@ -62,14 +87,14 @@
                       <img
                         src="https://images.unsplash.com/photo-1501031170107-cfd33f0cbdcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=600&q=80"
                         alt=""
-                        class="absolute w-full h-full object-cover" />
+                        class="absolute size-full object-cover" />
                     </div>
-                    <div class="mt-6 px-4 sm:mt-8 sm:flex sm:items-end sm:px-6">
+                    <div class="mt-6 px-4 sm:flex sm:items-end sm:px-6">
                       <div class="sm:flex-1">
                         <div>
                           <div class="flex items-center">
                             <h3 class="text-xl font-bold text-white sm:text-2xl">Ashley Porter</h3>
-                            <span class="ml-2.5 inline-block w-2 h-2 shrink-0 rounded-full bg-emerald-400">
+                            <span class="ml-2.5 inline-block size-2 shrink-0 rounded-full bg-green-500">
                               <span class="sr-only">Online</span>
                             </span>
                           </div>
@@ -78,7 +103,7 @@
                         <div class="mt-5 flex flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
                           <button
                             type="button"
-                            class="inline-flex w-48 shrink-0 items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:flex-1">
+                            class="inline-flex w-48 shrink-0 items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-[2px] focus-visible:outline-indigo-500 sm:flex-1">
                             Message
                           </button>
                           <button
@@ -88,7 +113,7 @@
                           </button>
                           <div class="ml-3 inline-flex sm:ml-0">
                             <el-dropdown class="relative inline-block text-left">
-                              <button class="relative inline-flex items-center rounded-md bg-white/10 p-2 text-gray-100 ring-1 ring-white/5 hover:bg-white/20">
+                              <button class="relative inline-flex items-center justify-center rounded-md bg-white/10 p-2 text-gray-100 ring-1 ring-white/5 hover:bg-white/20">
                                 <span class="absolute -inset-1"></span>
                                 <span class="sr-only">Open options menu</span>
                                 <svg
@@ -96,7 +121,7 @@
                                   fill="currentColor"
                                   data-slot="icon"
                                   aria-hidden="true"
-                                  class="w-5 h-5">
+                                  class="size-5">
                                   <path
                                     d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
                                 </svg>
@@ -104,7 +129,7 @@
                               <el-menu
                                 anchor="bottom end"
                                 popover
-                                class="w-48 origin-top-right rounded-md bg-gray-800 shadow-lg outline -outline-offset-px outline-white/10 transition transition-discrete anchor-gap-2 data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+                                class="w-48 origin-top-right rounded-md bg-gray-700 shadow-lg outline outline-1 outline-offset-[-1px] outline-white/10 anchor-gap-2">
                                 <div class="py-1">
                                   <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
                                   <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Copy profile link</a>
@@ -151,36 +176,29 @@
       </dialog>
     </el-dialog>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const drawer = document.getElementById('drawer');
-      drawer.setAttribute('data-closed', '');
-
-      // Open drawer
-      document.querySelector('[commandfor="drawer"][command="show-modal"]')?.addEventListener('click', () => {
-        drawer.showModal();
-        requestAnimationFrame(() => {
-          drawer.removeAttribute('data-closed');
-        });
-      });
-
-      // Close drawer
-      function closeDrawer() {
-        drawer.setAttribute('data-closed', '');
-        setTimeout(() => {
-          try { drawer.close(); } catch(e) {}
-        }, 500);
-      }
-
-      document.querySelectorAll('[commandfor="drawer"][command="close"]').forEach(btn => {
-        btn.addEventListener('click', closeDrawer);
-      });
-
-      // Close on backdrop click
-      drawer.addEventListener('click', (e) => {
-        if (e.target === drawer) closeDrawer();
-      });
-    });
-  </script>
+  <script type="module">
+  function onReady() {
+    for (let elDialog of document.querySelectorAll('el-dialog')) {
+      let dialog = elDialog.querySelector('dialog');
+      dialog.inert = true;
+      dialog.addEventListener(
+        'beforetoggle',
+        evt => {
+          if (evt.newState !== 'open') return;
+          for (let element of dialog.querySelectorAll('[data-initial-value-on-focus]')) {
+            let value = element.getAttribute('data-initial-value-on-focus');
+ element.removeAttribute('data-initial-value-on-focus');
+            element.value = value;
+            element.dispatchEvent(new Event('input'));
+          }
+          setTimeout(() => { dialog.inert = false; }, 0);
+        },
+        {once: true}
+      );
+      elDialog.open = true;
+    }
+  }
+  customElements.whenDefined('el-dialog').then(onReady);
+</script>
 </body>
 </html>

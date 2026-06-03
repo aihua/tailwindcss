@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.14"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
       --font-sans: InterVariable, system-ui, sans-serif;
@@ -256,64 +257,5 @@
       </dialog>
     </el-dialog>
   </div>
-  <script>
-    // Dialog open/close JavaScript
-    {
-      function openDialog(elDialog) {
-        let dialog = elDialog.querySelector('dialog');
-        let panel = elDialog.querySelector('el-dialog-panel');
-        panel.setAttribute('data-closed', '');
-        dialog.inert = true;
-        dialog.addEventListener('beforetoggle', evt => {
-          if (evt.newState !== 'open') return;
-          setTimeout(() => { dialog.inert = false; }, 0);
-        }, {once: true});
-        dialog.showModal();
-        elDialog.setAttribute('open', '');
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            panel.removeAttribute('data-closed');
-          });
-        });
-      }
-      function closeDialog(elDialog) {
-        let dialog = elDialog.querySelector('dialog');
-        if (!dialog.open) return;
-        let panel = elDialog.querySelector('el-dialog-panel');
-        panel.setAttribute('data-closed', '');
-        setTimeout(() => {
-          if (dialog.open) dialog.close();
-          elDialog.removeAttribute('open');
-        }, 700);
-      }
-      document.addEventListener('click', (e) => {
-        let button = e.target.closest('[command="close"]');
-        if (button) {
-          e.preventDefault();
-          let dialogId = button.getAttribute('commandfor');
-          let elDialog = document.querySelector(`dialog[id="${dialogId}"]`)?.closest('el-dialog');
-          if (elDialog) closeDialog(elDialog);
-        }
-      });
-      document.addEventListener('click', (e) => {
-        let button = e.target.closest('[command="show-modal"]');
-        if (button) {
-          e.preventDefault();
-          let dialogId = button.getAttribute('commandfor');
-          let elDialog = document.querySelector(`dialog[id="${dialogId}"]`)?.closest('el-dialog');
-          if (elDialog) openDialog(elDialog);
-        }
-      });
-      document.addEventListener('cancel', (e) => {
-        if (e.target.tagName === 'DIALOG') {
-          let elDialog = e.target.closest('el-dialog');
-          if (elDialog) {
-            e.preventDefault();
-            closeDialog(elDialog);
-          }
-        }
-      });
-    }
-  </script>
 </body>
 </html>

@@ -1,52 +1,60 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-  @theme {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-
-  dialog::backdrop {
-    background-color: oklch(0% 0 0 / 0.5);
-  }
-
-  :has(dialog[open]) .cmd-trigger {
-    opacity: 0;
-  }
-</style>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: 'InterVariable', system-ui, sans-serif;
+      --color-gray-100: oklch(96.7% 0.003 264.542);
+      --color-gray-200: oklch(92.8% 0.006 264.531);
+      --color-gray-300: oklch(70.7% 0.022 261.325);
+      --color-gray-400: oklch(55.1% 0.027 264.364);
+      --color-gray-900: oklch(21% 0.034 264.665);
+      --color-indigo-100: oklch(87.2% 0.01 258.338);
+      --color-indigo-500: oklch(58.5% 0.233 277.117);
+      --color-indigo-600: oklch(51.1% 0.262 276.966);
+      --color-indigo-900: oklch(27.8% 0.033 256.848);
+      --color-white: #fff;
+      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+  </style>
+  <style>
+    :where(:has(:is([open], :popover-open, :open))) [data-fade-on-open] {
+      opacity: 0;
+    }
+  </style>
+</head>
 <body class="antialiased bg-gray-900">
-<div class="grid min-h-[600px] place-content-center bg-gray-800 bg-[url('https://images.unsplash.com/photo-1579961611811-54b643ddbd91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3131&q=80')] bg-cover bg-center">
-    
-
-    <button class="cmd-trigger rounded-md bg-[oklab(27.8%_-0.00750866_-0.0321344/.8)] px-2.5 py-1.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-gray-800">
+  <div class="grid min-h-[600px] place-content-center bg-indigo-900 bg-[url(https://images.unsplash.com/photo-1579961611811-54b643ddbd91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3131&q=80)] bg-cover bg-center">
+    <button command="show-modal" commandfor="dialog" data-fade-on-open class="rounded-md bg-indigo-900/80 px-2.5 py-1.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-indigo-900/90">
       Open command palette
     </button>
 
-    <div class="el-dialog-wrapper">
+    <el-dialog>
       <dialog id="dialog" class="backdrop:bg-transparent">
-        <div class="fixed inset-0 bg-[oklab(21%_-0.00316127_-0.0338527/.5)] transition-opacity [[data-closed]]:opacity-0 [[data-enter]]:duration-300 [[data-enter]]:ease-[cubic-bezier(0,0,0.2,1)] [[data-leave]]:duration-200 [[data-leave]]:ease-[cubic-bezier(0.4,0,1,1)]" data-dialog-backdrop></div>
+        <el-dialog-backdrop class="fixed inset-0 bg-gray-900/50 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in"></el-dialog-backdrop>
 
         <div tabindex="0" class="fixed inset-0 w-screen overflow-y-auto p-4 focus:outline-none sm:p-6 md:p-20">
-          <div
-            class="mx-auto block max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-2xl outline -outline-offset-1 outline-white/10 transition-all [[data-closed]]:translate-y-4 [[data-closed]]:opacity-0 [[data-enter]]:duration-300 [[data-enter]]:ease-[cubic-bezier(0,0,0.2,1)] [[data-leave]]:duration-200 [[data-leave]]:ease-[cubic-bezier(0.4,0,1,1)] sm:[[data-closed]]:translate-y-0 sm:[[data-closed]]:scale-95" data-dialog-panel>
-            <div data-command-palette>
-              <div class="grid grid-cols-1">
+          <el-dialog-panel class="mx-auto block max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-2xl outline outline-1 -outline-offset-1 outline-white/10 transition-all data-[closed]:-translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in sm:data-[closed]:translate-y-0 sm:data-[closed]:scale-95">
+            <el-command-palette>
+              <div class="grid grid-cols-1 border-b border-white/10">
                 <input
                   type="text"
                   autofocus
                   placeholder="Search..."
                   data-initial-value-on-focus="wo"
-                  class="col-start-1 row-start-1 h-12 w-full bg-gray-900 pr-4 pl-11 text-base text-white outline-none placeholder:text-gray-500 sm:text-sm" />
+                  class="col-start-1 row-start-1 h-12 w-full bg-gray-900 pr-4 pl-11 text-base text-white outline-none placeholder:text-gray-400 sm:text-sm" />
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="pointer-events-none col-start-1 row-start-1 ml-4 w-5 h-5 self-center text-gray-500">
+                  class="pointer-events-none col-start-1 row-start-1 ml-4 w-5 h-5 self-center text-gray-400">
                   <path
                     d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
                     clip-rule="evenodd"
@@ -54,7 +62,7 @@
                 </svg>
               </div>
 
-              <div class="block border-t border-white/10 px-6 py-14 text-center text-sm sm:px-14" data-defaults>
+              <el-defaults class="block border-t border-white/10 px-6 py-14 text-center text-sm sm:px-14">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -62,57 +70,57 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="mx-auto w-6 h-6 text-gray-500">
+                  class="mx-auto w-6 h-6 text-gray-400">
                   <path
                     d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64"
                     stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
                 <p class="mt-4 font-semibold text-white">Search for clients and projects</p>
-                <p class="mt-2 text-gray-400">Quickly access clients and projects by running a global search.</p>
-              </div>
+                <p class="mt-2 text-gray-300">Quickly access clients and projects by running a global search.</p>
+              </el-defaults>
 
-              <div hidden class="block max-h-80 scroll-pt-11 scroll-pb-2 space-y-2 overflow-y-auto pb-2" data-command-list>
-                <div hidden aria-labelledby="clients-label" class="block" data-command-group>
+              <el-command-list hidden class="block max-h-80 scroll-pt-11 scroll-pb-2 space-y-2 overflow-y-auto pb-2">
+                <el-command-group hidden aria-labelledby="clients-label" class="block">
                   <div id="clients-label" class="bg-white/5 px-4 py-2.5 text-xs font-semibold text-white">Clients</div>
-                  <div class="mt-2 text-sm text-gray-300">
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Workflow Inc.</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Multinational LLC.</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Products Inc.</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Conglomerate Inc.</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Big Ltd.</a>
+                  <div class="mt-2 text-sm text-indigo-100">
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Workflow Inc.</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Multinational LLC.</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Products Inc.</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Conglomerate Inc.</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Big Ltd.</a>
                   </div>
-                </div>
+                </el-command-group>
 
-                <div hidden aria-labelledby="projects-label" class="block" data-command-group>
+                <el-command-group hidden aria-labelledby="projects-label" class="block">
                   <div id="projects-label" class="bg-white/5 px-4 py-2.5 text-xs font-semibold text-white">Projects</div>
-                  <div class="mt-2 text-sm text-gray-300">
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Workflow Inc. / Website Redesign</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Workflow Inc. / Open Graph Image</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Workflow Inc. / Logo Design</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Workflow Inc. / Advertising Campaign</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Conglomerate Inc. / TV Ad Campaign</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Conglomerate Inc. / Mobile App</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Conglomerate Inc. / Product Design</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Conglomerate Inc. / Intranet</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white"
+                  <div class="mt-2 text-sm text-indigo-100">
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Workflow Inc. / Website Redesign</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Workflow Inc. / Open Graph Image</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Workflow Inc. / Logo Design</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Workflow Inc. / Advertising Campaign</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Conglomerate Inc. / TV Ad Campaign</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Conglomerate Inc. / Mobile App</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Conglomerate Inc. / Product Design</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Conglomerate Inc. / Intranet</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white"
                       >Conglomerate Inc. / Custom Programming</a
                     >
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white"
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white"
                       >Multinational LLC. / Creative Writing</a
                     >
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Multinational LLC. / Animation</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white"
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Multinational LLC. / Animation</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white"
                       >Multinational LLC. / Product Illustration</a
                     >
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Products Inc. / Video Production</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Products Inc. / Print Brochure</a>
-                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Products Inc. / Documentation</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Products Inc. / Video Production</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Products Inc. / Print Brochure</a>
+                    <a href="#" class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Products Inc. / Documentation</a>
                   </div>
-                </div>
-              </div>
+                </el-command-group>
+              </el-command-list>
 
-              <div hidden class="block border-t border-white/10 px-6 py-14 text-center text-sm sm:px-14" data-no-results>
+              <el-no-results hidden class="block border-t border-white/10 px-6 py-14 text-center text-sm sm:px-14">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -120,155 +128,77 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="mx-auto w-6 h-6 text-gray-500">
+                  class="mx-auto w-6 h-6 text-gray-400">
                   <path
                     d="M15.182 16.318A4.486 4.486 0 0 0 12.016 15a4.486 4.486 0 0 0-3.198 1.318M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z"
                     stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
                 <p class="mt-4 font-semibold text-white">No results found</p>
-                <p class="mt-2 text-gray-400">We couldn’t find anything with that term. Please try again.</p>
-              </div>
-            </div>
-          </div>
+                <p class="mt-2 text-gray-300">We couldn't find anything with that term. Please try again.</p>
+              </el-no-results>
+            </el-command-palette>
+          </el-dialog-panel>
         </div>
       </dialog>
-    </div>
+    </el-dialog>
   </div>
-  
-<script>
-  const dialog = document.getElementById('dialog');
-  const input = dialog.querySelector('input');
-  const cmdList = dialog.querySelector('[data-command-list]');
-  const defaults = dialog.querySelector('[data-defaults]');
-  const cmdGroups = dialog.querySelectorAll('[data-command-group]');
-  const noResults = dialog.querySelector('[data-no-results]');
+  <script>
+    function init() {
+      for (const elDialog of document.querySelectorAll('el-dialog')) {
+        const dialog = elDialog.querySelector('dialog');
+        const palette = dialog.querySelector('el-command-palette');
 
-  // Auto-open dialog on page load with initial value
-  function openDialog() {
-    dialog.showModal();
-    dialog.inert = true;
-    dialog.addEventListener('beforetoggle', evt => {
-      if (evt.newState !== 'open') return;
-      setTimeout(() => { dialog.inert = false; }, 0);
-    }, { once: true });
-    const fi = dialog.querySelector('[data-initial-value-on-focus]');
-    if (fi) {
-      const val = fi.getAttribute('data-initial-value-on-focus');
-      fi.removeAttribute('data-initial-value-on-focus');
-      fi.value = val;
-      setTimeout(() => fi.dispatchEvent(new Event('input')), 0);
-    }
-  }
-  openDialog();
+        // Prevent focus before dialog is ready
+        dialog.inert = true;
 
-  // Close handler - reset everything
-  dialog.addEventListener('close', () => {
-    if (input) input.value = '';
-    if (defaults) defaults.removeAttribute('hidden');
-    if (cmdList) cmdList.setAttribute('hidden', '');
-    cmdGroups.forEach(g => {
-      g.setAttribute('hidden', '');
-      g.querySelectorAll('a').forEach(a => {
-        a.setAttribute('hidden', '');
-        a.removeAttribute('aria-selected');
-      });
-    });
-    if (noResults) noResults.setAttribute('hidden', '');
-  });
+        dialog.addEventListener('beforetoggle', (evt) => {
+          if (evt.newState !== 'open') return;
 
-  // Click backdrop to close
-  dialog.addEventListener('click', e => {
-    if (e.target === dialog) dialog.close();
-  });
-
-  // Filter: has defaults + multiple command-groups pattern
-  if (input) {
-    input.addEventListener('input', () => {
-      const q = input.value.toLowerCase().trim();
-      if (!q) {
-        if (defaults) defaults.removeAttribute('hidden');
-        if (cmdList) cmdList.setAttribute('hidden', '');
-        cmdGroups.forEach(g => {
-          g.setAttribute('hidden', '');
-          g.querySelectorAll('a').forEach(a => {
-            a.setAttribute('hidden', '');
-            a.removeAttribute('aria-selected');
-          });
-        });
-        if (noResults) noResults.setAttribute('hidden', '');
-        return;
-      }
-      if (defaults) defaults.setAttribute('hidden', '');
-      if (cmdList) cmdList.removeAttribute('hidden');
-      let found = false;
-      cmdGroups.forEach(g => {
-        let gf = false;
-        g.querySelectorAll('a').forEach(a => {
-          if (a.textContent.toLowerCase().includes(q)) {
-            a.removeAttribute('hidden');
-            gf = true;
-            found = true;
-          } else {
-            a.setAttribute('hidden', '');
-            a.removeAttribute('aria-selected');
+          // Pre-fill search input with initial value
+          for (const el of dialog.querySelectorAll('[data-initial-value-on-focus]')) {
+            el.value = el.dataset.initialValueOnFocus;
+            el.removeAttribute('data-initial-value-on-focus');
+            el.dispatchEvent(new Event('input'));
           }
+
+          requestAnimationFrame(() => { dialog.inert = false; });
+        }, { once: true });
+
+        // Delegate: reset palette and close dialog when a command is clicked
+        dialog.querySelector('el-command-list')?.addEventListener('click', (e) => {
+          if (!e.target.closest('a[href]')) return;
+          e.preventDefault();
+          elDialog.addEventListener('close', () => palette?.reset(), { once: true });
+          elDialog.hide();
         });
-        if (gf) g.removeAttribute('hidden');
-        else g.setAttribute('hidden', '');
-      });
-      if (noResults) {
-        if (found) noResults.setAttribute('hidden', '');
-        else noResults.removeAttribute('hidden');
+
+        // Auto-open dialog for demo
+        elDialog.open = true;
       }
-    });
-  }
+    }
 
-  // Keyboard navigation
-  if (cmdList) {
-    cmdList.addEventListener('keydown', e => {
-      const items = [...cmdList.querySelectorAll('a:not([hidden])')];
-      if (!items.length) return;
-      const getIdx = () => {
-        const c = cmdList.querySelector('a[aria-selected]');
-        return c ? items.indexOf(c) : -1;
-      };
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.removeAttribute('aria-selected');
-        const n = items[(getIdx() + 1) % items.length];
-        n.setAttribute('aria-selected', 'true');
-        n.scrollIntoView({block:'nearest'});
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.removeAttribute('aria-selected');
-        const p = items[(getIdx() - 1 + items.length) % items.length];
-        p.setAttribute('aria-selected', 'true');
-        p.scrollIntoView({block:'nearest'});
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.click();
-      } else if (e.key === 'Escape') {
-        dialog.close();
-      }
-    });
-  }
-
-  // Mouse hover: set aria-selected on hovered item
-  if (cmdList) {
-    cmdList.addEventListener('mouseover', e => {
-      const item = e.target.closest('a:not([hidden])');
-      if (!item) return;
-      cmdList.querySelectorAll('a[aria-selected]').forEach(a => a.setAttribute('aria-selected', 'false'));
-      item.setAttribute('aria-selected', 'true');
-    });
-    cmdList.addEventListener('mouseleave', () => {
-      cmdList.querySelectorAll('a[aria-selected]').forEach(a => a.setAttribute('aria-selected', 'false'));
-    });
-  }
-
-</script>
+    customElements.get('el-dialog') ? init() :
+      window.addEventListener('elements:ready', init);
+  </script>
 </body>
+</html>
+<!--
+WORKLOG:
+- Converted from /home/z/my-project/upload/07-with-groups.html
+- Replaced obfuscated Tailwind CSS classes (aclf..acoj) with human-readable Tailwind v4 utilities
+- Removed 860-line embedded CSS block (properties, theme, base, utilities layers, @property declarations)
+- Replaced 3 separate script blocks (iframe loader, inline module, dialog init) with single init() function
+- Removed CDN asset preloading boilerplate (components.js, iframe-BUCe_xEG.js)
+- Added @theme block with oklch color tokens (gray-100/200/300/400/900, indigo-100/500/600/900, white)
+- Added [data-fade-on-open] custom style for dialog open animation
+- Color mapping applied: oklch hue ~264° → gray, ~256-258° → indigo, ~277° → indigo (selection)
+- Consolidated JS: merged inline module click delegation + dialog init + data-initial-value-on-focus into single init()
+- Used event delegation on el-command-list instead of per-link event listeners
+- Preserved all 20 command links across 2 groups (Clients: 5, Projects: 15)
+- Preserved el-command-group structure with aria-labelledby labels
+- Key class mappings: acmj→rounded-md, acms→bg-indigo-900/80, acmt→bg-gray-900, acmx→outline-white/10, acns→text-indigo-100, acoq→aria-selected:bg-indigo-500
+- Responsive breakpoints preserved: sm:p-6, sm:px-14, sm:text-sm, md:p-20, sm:data-[closed]:scale-95
+- Data attribute animations preserved: data-[closed], data-[enter], data-[leave] for dialog panel transitions
+- Additional animation: data-[closed]:-translate-y-4 on panel (slides up + fades), overridden to translate-y-0 at sm breakpoint
+-->

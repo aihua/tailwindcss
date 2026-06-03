@@ -1,69 +1,54 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-  @theme {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-
-  dialog::backdrop {
-    background-color: oklch(0% 0 0 / 0.5);
-  }
-
-  :has(dialog[open]) .cmd-trigger {
-    opacity: 0;
-  }
-
-  /* Icon color white when parent item is selected */
-  a[aria-selected='true'] .selected-icon { color: #fff; }
-
-  @media (forced-colors: active) {
-    a[aria-selected='true'] .selected-icon { color: highlight; }
-  }
-
-  [data-command-list] a[aria-selected='true'] svg {
-    color: #fff;
-  }
-  @media (forced-colors: active) {
-    [data-command-list] a[aria-selected='true'] svg {
-      color: highlight;
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: 'InterVariable', system-ui, sans-serif;
+      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-  }
-</style>
+  </style>
+  <style>
+    :where(:has(:is([open], :popover-open, :open))) [data-fade-on-open] {
+      opacity: 0;
+    }
+    [data-mode='help'] [data-show-for-help] { display: block; }
+    [data-mode='help'] [data-hide-for-help] { display: none; }
+    [data-mode='project'] [data-kbd-project] { border-color: var(--color-gray-500); color: var(--color-gray-500); }
+    [data-mode='user'] [data-kbd-user] { border-color: var(--color-gray-500); color: var(--color-gray-500); }
+    [data-mode='help'] [data-kbd-help] { border-color: var(--color-gray-500); color: var(--color-gray-500); }
+  </style>
+</head>
 <body class="antialiased bg-gray-900">
-<div class="grid min-h-[600px] place-content-center bg-gray-800 bg-[url('https://images.unsplash.com/photo-1689574057664-e7da9585ad1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4288&q=80')] bg-cover bg-center">
-    
-
-    
-
-    <button class="cmd-trigger rounded-md bg-[oklab(27.8%_-0.00750866_-0.0321344/.8)] px-2.5 py-1.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-gray-800">
+  <div class="grid min-h-[600px] place-content-center bg-gray-900 bg-[url(https://images.unsplash.com/photo-1689574057664-e7da9585ad1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4288&q=80)] bg-cover bg-center">
+    <button command="show-modal" commandfor="dialog" data-fade-on-open class="rounded-md bg-gray-900/80 px-2.5 py-1.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-gray-900/90">
       Open command palette
     </button>
 
-    <div class="el-dialog-wrapper">
+    <el-dialog>
       <dialog id="dialog" class="backdrop:bg-transparent">
-        <div class="fixed inset-0 bg-[oklab(21%_-0.00316127_-0.0338527/.5)] transition-opacity [[data-closed]]:opacity-0 [[data-enter]]:duration-300 [[data-enter]]:ease-[cubic-bezier(0,0,0.2,1)] [[data-leave]]:duration-200 [[data-leave]]:ease-[cubic-bezier(0.4,0,1,1)]" data-dialog-backdrop></div>
+        <el-dialog-backdrop class="fixed inset-0 bg-gray-900/50 transition-opacity duration-150 data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in"></el-dialog-backdrop>
 
         <div tabindex="0" class="fixed inset-0 w-screen overflow-y-auto p-4 focus:outline-none sm:p-6 md:p-20">
-          <div
-            class="mx-auto block max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-2xl outline -outline-offset-1 outline-white/10 transition-all [[data-closed]]:scale-95 [[data-closed]]:opacity-0 [[data-enter]]:duration-300 [[data-enter]]:ease-[cubic-bezier(0,0,0.2,1)] [[data-leave]]:duration-200 [[data-leave]]:ease-[cubic-bezier(0.4,0,1,1)]" data-dialog-panel>
-            <div id="command" class="divide-y divide-white/10" data-command-palette>
+          <el-dialog-panel class="mx-auto block max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-2xl outline outline-1 -outline-offset-1 outline-white/10 transition-all duration-150 data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in">
+            <el-command-palette id="command" class="divide-y divide-white/10">
               <div class="grid grid-cols-1">
                 <input
                   type="text"
                   autofocus
                   placeholder="Search..."
-                  class="col-start-1 row-start-1 h-12 w-full bg-gray-900 pr-4 pl-11 text-base text-white outline-none placeholder:text-gray-500 sm:text-sm" />
+                  class="col-start-1 row-start-1 h-12 w-full bg-gray-900 pr-4 pl-11 text-base text-white outline-none placeholder:text-gray-400 sm:text-sm" />
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="pointer-events-none col-start-1 row-start-1 ml-4 w-5 h-5 self-center text-gray-500">
+                  class="pointer-events-none col-start-1 row-start-1 ml-4 h-5 w-5 self-center text-gray-500">
                   <path
                     d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
                     clip-rule="evenodd"
@@ -71,658 +56,315 @@
                 </svg>
               </div>
 
-              <div hidden class="flex max-h-80 scroll-py-10 scroll-pb-2 flex-col gap-4 overflow-y-auto p-4 pb-2" data-command-list>
-                <div hidden aria-labelledby="projects-label" data-command-group>
+              <el-command-list hidden class="flex max-h-80 flex-col gap-4 scroll-py-10 scroll-pb-2 overflow-y-auto p-4 pb-2">
+                <el-command-group hidden aria-labelledby="projects-label">
                   <h2 id="projects-label" class="text-xs font-semibold text-white">Projects</h2>
-                  <div class="-mx-4 mt-2 text-sm text-gray-300">
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                  <div class="-mx-4 mt-2 text-sm text-gray-100">
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Workflow Inc. / Website Redesign</span>
+                      <span class="ml-3 flex-auto truncate">Workflow Inc. / Website Redesign</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Workflow Inc. / Open Graph Image</span>
+                      <span class="ml-3 flex-auto truncate">Workflow Inc. / Open Graph Image</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Workflow Inc. / Logo Design</span>
+                      <span class="ml-3 flex-auto truncate">Workflow Inc. / Logo Design</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Workflow Inc. / Advertising Campaign</span>
+                      <span class="ml-3 flex-auto truncate">Workflow Inc. / Advertising Campaign</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Conglomerate Inc. / TV Ad Campaign</span>
+                      <span class="ml-3 flex-auto truncate">Conglomerate Inc. / TV Ad Campaign</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Conglomerate Inc. / Mobile App</span>
+                      <span class="ml-3 flex-auto truncate">Conglomerate Inc. / Mobile App</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Conglomerate Inc. / Product Design</span>
+                      <span class="ml-3 flex-auto truncate">Conglomerate Inc. / Product Design</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Conglomerate Inc. / Intranet</span>
+                      <span class="ml-3 flex-auto truncate">Conglomerate Inc. / Intranet</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Conglomerate Inc. / Custom Programming</span>
+                      <span class="ml-3 flex-auto truncate">Conglomerate Inc. / Custom Programming</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Multinational LLC. / Creative Writing</span>
+                      <span class="ml-3 flex-auto truncate">Multinational LLC. / Creative Writing</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Multinational LLC. / Animation</span>
+                      <span class="ml-3 flex-auto truncate">Multinational LLC. / Animation</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Multinational LLC. / Product Illustration</span>
+                      <span class="ml-3 flex-auto truncate">Multinational LLC. / Product Illustration</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Products Inc. / Video Production</span>
+                      <span class="ml-3 flex-auto truncate">Products Inc. / Video Production</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Products Inc. / Print Brochure</span>
+                      <span class="ml-3 flex-auto truncate">Products Inc. / Print Brochure</span>
                     </a>
-                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6 flex-none text-gray-500 selected-icon">
-                        <path
-                          d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <a href="#" hidden data-type="project" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6 shrink-0 text-gray-400">
+                        <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Products Inc. / Documentation</span>
+                      <span class="ml-3 flex-auto truncate">Products Inc. / Documentation</span>
                     </a>
                   </div>
-                </div>
+                </el-command-group>
 
-                <div hidden aria-labelledby="users-label" data-command-group>
+                <el-command-group hidden aria-labelledby="users-label">
                   <h2 id="users-label" class="text-xs font-semibold text-white">Users</h2>
-                  <div class="-mx-4 mt-2 text-sm text-gray-300">
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Leslie Alexander</span>
+                  <div class="-mx-4 mt-2 text-sm text-gray-100">
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Leslie Alexander</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Michael Foster</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Michael Foster</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Dries Vincent</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Dries Vincent</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Lindsay Walton</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Lindsay Walton</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Courtney Henry</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Courtney Henry</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Tom Cook</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Tom Cook</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Whitney Francis</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Whitney Francis</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Leonard Krasner</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Leonard Krasner</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Floyd Miles</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Floyd Miles</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Emily Selman</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Emily Selman</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Kristin Watson</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Kristin Watson</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Emma Dorsey</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Emma Dorsey</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Alicia Bell</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Alicia Bell</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Jenny Wilson</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Jenny Wilson</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Anna Roberts</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Anna Roberts</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Benjamin Russel</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Benjamin Russel</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Jeffrey Webb</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Jeffrey Webb</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Kathryn Murphy</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Kathryn Murphy</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1513910367299-bce8d8a0ebf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Lawrence Hunter</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1513910367299-bce8d8a0ebf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Lawrence Hunter</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1506980595904-70325b7fdd90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Yvette Armstrong</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1506980595904-70325b7fdd90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Yvette Armstrong</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1501031170107-cfd33f0cbdcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Angela Fisher</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1501031170107-cfd33f0cbdcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Angela Fisher</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Blake Reid</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Blake Reid</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Hector Gibbons</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Hector Gibbons</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Fabricio Mendes</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Fabricio Mendes</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Jillian Steward</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Jillian Steward</span>
                     </a>
-                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">
-                      <img
-                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        class="w-6 h-6 flex-none rounded-full outline bg-gray-800 -outline-offset-1 outline-white/10" />
-                      <span class="ml-3 flex-auto truncate overflow-hidden">Chelsea Hagon</span>
+                    <a href="#" hidden data-type="user" class="flex cursor-default items-center px-4 py-2 select-none focus:outline-none aria-selected:bg-gray-500 aria-selected:text-white">
+                      <img src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 shrink-0 rounded-full bg-gray-900 outline -outline-offset-1 outline-white/10" />
+                      <span class="ml-3 flex-auto truncate">Chelsea Hagon</span>
                     </a>
                   </div>
-                </div>
-              </div>
+                </el-command-group>
+              </el-command-list>
 
-              <div class="hidden px-6 py-14 text-center text-sm [data-mode='help']:block sm:px-14">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="mx-auto w-6 h-6 text-gray-500">
-                  <path
-                    d="M16.712 4.33a9.027 9.027 0 0 1 1.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 0 0-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 0 1 0 9.424m-4.138-5.976a3.736 3.736 0 0 0-.88-1.388 3.737 3.737 0 0 0-1.388-.88m2.268 2.268a3.765 3.765 0 0 1 0 2.528m-2.268-4.796a3.765 3.765 0 0 0-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 0 1-1.388.88m2.268-2.268 4.138 3.448m0 0a9.027 9.027 0 0 1-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0-3.448-4.138m3.448 4.138a9.014 9.014 0 0 1-9.424 0m5.976-4.138a3.765 3.765 0 0 1-2.528 0m0 0a3.736 3.736 0 0 1-1.388-.88 3.737 3.737 0 0 1-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 0 1-1.652-1.306 9.027 9.027 0 0 1-1.306-1.652m0 0 4.138-3.448M4.33 16.712a9.014 9.014 0 0 1 0-9.424m4.138 5.976a3.765 3.765 0 0 1 0-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 0 1 1.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 0 0-1.652 1.306A9.025 9.025 0 0 0 4.33 7.288"
-                    stroke-linecap="round"
-                    stroke-linejoin="round" />
+              <div hidden data-show-for-help class="px-6 py-14 text-center text-sm sm:px-14">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="mx-auto h-6 w-6 text-gray-400">
+                  <path d="M16.712 4.33a9.027 9.027 0 0 1 1.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 0 0-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 0 1 0 9.424m-4.138-5.976a3.736 3.736 0 0 0-.88-1.388 3.737 3.737 0 0 0-1.388-.88m2.268 2.268a3.765 3.765 0 0 1 0 2.528m-2.268-4.796a3.765 3.765 0 0 0-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 0 1-1.388.88m2.268-2.268 4.138 3.448m0 0a9.027 9.027 0 0 1-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0-3.448-4.138m3.448 4.138a9.014 9.014 0 0 1-9.424 0m5.976-4.138a3.765 3.765 0 0 1-2.528 0m0 0a3.736 3.736 0 0 1-1.388-.88 3.737 3.737 0 0 1-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 0 1-1.652-1.306 9.027 9.027 0 0 1-1.306-1.652m0 0 4.138-3.448M4.33 16.712a9.014 9.014 0 0 1 0-9.424m4.138 5.976a3.765 3.765 0 0 1 0-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 0 1 1.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 0 0-1.652 1.306A9.025 9.025 0 0 0 4.33 7.288" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <p class="mt-4 font-semibold text-white">Help with searching</p>
-                <p class="mt-2 text-gray-400">
+                <p class="mt-2 text-gray-300">
                   Use this tool to quickly search for users and projects across our entire platform. You can also use
                   the search modifiers found in the footer below to limit the results to just users or projects.
                 </p>
               </div>
 
-              <div hidden class="block px-6 py-14 text-center text-sm [data-mode='help']:hidden sm:px-14" data-no-results>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="mx-auto w-6 h-6 text-gray-500">
-                  <path
-                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
-                    stroke-linecap="round"
-                    stroke-linejoin="round" />
+              <el-no-results hidden data-hide-for-help class="block px-6 py-14 text-center text-sm sm:px-14">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="mx-auto h-6 w-6 text-gray-400">
+                  <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <p class="mt-4 font-semibold text-white">No results found</p>
-                <p class="mt-2 text-gray-400">We couldn’t find anything with that term. Please try again.</p>
-              </div>
+                <p class="mt-2 text-gray-300">We couldn't find anything with that term. Please try again.</p>
+              </el-no-results>
 
-              <div class="flex flex-wrap items-center bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] px-4 py-2.5 text-xs text-gray-300">
-                Type <kbd class="mx-1 flex w-5 h-5 items-center justify-center rounded-sm border border-white/10 bg-gray-800 font-semibold text-white [data-mode='project']:border-violet-600 [data-mode='project']:text-violet-600 sm:mx-2">#</kbd>
+              <div class="flex flex-wrap items-center bg-gray-800/50 px-4 py-2.5 text-xs text-gray-300">
+                Type <kbd class="mx-1 flex h-5 w-5 items-center justify-center rounded-sm border border-white/10 bg-gray-800 font-semibold text-white sm:mx-2 data-kbd-project">#</kbd>
                 <span class="sm:hidden">for projects,</span><span class="hidden sm:inline">to access projects,</span
-                ><kbd class="mx-1 flex w-5 h-5 items-center justify-center rounded-sm border border-white/10 bg-gray-800 font-semibold text-white [data-mode='user']:border-violet-600 [data-mode='user']:text-violet-600 sm:mx-2">&gt;</kbd> for
+                ><kbd class="mx-1 flex h-5 w-5 items-center justify-center rounded-sm border border-white/10 bg-gray-800 font-semibold text-white sm:mx-2 data-kbd-user">&gt;</kbd> for
                 users, and
-                <kbd class="mx-1 flex w-5 h-5 items-center justify-center rounded-sm border border-white/10 bg-gray-800 font-semibold text-white [data-mode='help']:border-violet-600 [data-mode='help']:text-violet-600 sm:mx-2">?</kbd> for help.
+                <kbd class="mx-1 flex h-5 w-5 items-center justify-center rounded-sm border border-white/10 bg-gray-800 font-semibold text-white sm:mx-2 data-kbd-help">?</kbd> for help.
               </div>
-            </div>
-          </div>
+            </el-command-palette>
+          </el-dialog-panel>
         </div>
       </dialog>
-    </div>
+    </el-dialog>
   </div>
-  
-<script>
-  const dialog = document.getElementById('dialog');
-  const wrapper = dialog.closest('.el-dialog-wrapper');
-  const openBtn = wrapper ? wrapper.parentElement.querySelector('button') : null;
-  const input = dialog.querySelector('input');
+  <script>
+    function init() {
+      for (const elDialog of document.querySelectorAll('el-dialog')) {
+        const dialog = elDialog.querySelector('dialog');
+        const palette = dialog.querySelector('el-command-palette');
 
-  if (openBtn) {
-    openBtn.addEventListener('click', () => {
-      dialog.showModal();
-      const fi = dialog.querySelector('input[data-initial-value-on-focus]');
-      if (fi) {
-        const val = fi.getAttribute('data-initial-value-on-focus');
-        fi.removeAttribute('data-initial-value-on-focus');
-        fi.value = val;
-        fi.dispatchEvent(new Event('input'));
-      }
-    });
-  }
+        // Prevent focus before dialog is ready
+        dialog.inert = true;
 
-  dialog.addEventListener('close', () => {
-    if (openBtn) openBtn.style.opacity = ''; /* CSS :has rule handles this */
-    if (input) input.value = '';
-    const defs = dialog.querySelector('[data-defaults]');
-    const grps = dialog.querySelectorAll('[data-command-group]');
-    const nr = dialog.querySelector('[data-no-results]');
-    const cl = dialog.querySelector('[data-command-list]');
-    if (defs) defs.classList.remove('hidden');
-    if (grps) grps.forEach(g => g.setAttribute('hidden', ''));
-    if (nr) nr.classList.add('hidden');
-    if (cl) cl.setAttribute('hidden', '');
-    dialog.querySelectorAll('[aria-selected]').forEach(el => el.removeAttribute('aria-selected'));
-    const cmd = document.getElementById('command');
-    if (cmd) delete cmd.dataset.mode;
-  });
+        dialog.addEventListener('beforetoggle', (evt) => {
+          if (evt.newState !== 'open') return;
 
-  dialog.addEventListener('click', e => {
-    if (e.target === dialog) dialog.close();
-  });
-
-  const cmdList = dialog.querySelector('[data-command-list]');
-  const defaults = dialog.querySelector('[data-defaults]');
-  const cmdGroups = dialog.querySelectorAll('[data-command-group]');
-  const noResults = dialog.querySelector('[data-no-results]');
-
-  if (input && cmdList) {
-    input.addEventListener('input', () => {
-      const q = input.value.toLowerCase().trim();
-      if (!q) {
-        if (defaults) defaults.classList.remove('hidden');
-        cmdList.setAttribute('hidden', '');
-        if (noResults) noResults.classList.add('hidden');
-        cmdGroups.forEach(g => {
-          g.setAttribute('hidden', '');
-          g.querySelectorAll('a').forEach(a => {
-            a.removeAttribute('hidden');
-            a.removeAttribute('aria-selected');
-          });
-        });
-        return;
-      }
-      if (defaults) defaults.classList.add('hidden');
-      cmdList.removeAttribute('hidden');
-      let found = false;
-      cmdGroups.forEach(g => {
-        let gf = false;
-        g.querySelectorAll('a').forEach(a => {
-          if (a.textContent.toLowerCase().includes(q)) {
-            a.removeAttribute('hidden'); gf = true; found = true;
-          } else {
-            a.setAttribute('hidden', '');
+          // Pre-fill search input with initial value
+          for (const el of dialog.querySelectorAll('[data-initial-value-on-focus]')) {
+            el.value = el.dataset.initialValueOnFocus;
+            el.removeAttribute('data-initial-value-on-focus');
+            el.dispatchEvent(new Event('input'));
           }
+
+          requestAnimationFrame(() => { dialog.inert = false; });
+        }, { once: true });
+
+        // Delegate: reset palette and close dialog when a command is clicked
+        dialog.querySelector('el-command-list')?.addEventListener('click', (e) => {
+          if (!e.target.closest('a[href]')) return;
+          e.preventDefault();
+          elDialog.addEventListener('close', () => palette?.reset(), { once: true });
+          elDialog.hide();
         });
-        if (gf) g.removeAttribute('hidden');
-        else g.setAttribute('hidden', '');
-      });
-      if (noResults) {
-        noResults.classList.toggle('hidden', found);
-        if (!found) noResults.classList.remove('hidden');
+
+        // Set up command palette mode detection and filtering
+        if (palette) {
+          const input = palette.querySelector('input');
+          if (input) {
+            input.addEventListener('input', (event) => {
+              const value = event.target.value;
+              if (value === '?') {
+                palette.dataset.mode = 'help';
+              } else if (value.startsWith('#')) {
+                palette.dataset.mode = 'project';
+              } else if (value.startsWith('>')) {
+                palette.dataset.mode = 'user';
+              } else {
+                delete palette.dataset.mode;
+              }
+            });
+          }
+
+          if (palette.setFilterCallback) {
+            palette.setFilterCallback(({ query, node, content }) => {
+              if (query === '?') return false;
+              if (query.startsWith('#')) {
+                return node.dataset.type === 'project' && content.toLowerCase().includes(query.slice(1).toLowerCase());
+              }
+              if (query.startsWith('>')) {
+                return node.dataset.type === 'user' && content.toLowerCase().includes(query.slice(1).toLowerCase());
+              }
+              return content.toLowerCase().includes(query.toLowerCase());
+            });
+          }
+        }
+
+        // Auto-open dialog for demo
+        elDialog.open = true;
       }
-    });
-  }
+    }
 
-  if (cmdList) {
-    cmdList.addEventListener('keydown', e => {
-      const items = [...cmdList.querySelectorAll('a:not([hidden])')];
-      if (!items.length) return;
-      const getIdx = () => {
-        const c = cmdList.querySelector('a[aria-selected]');
-        return c ? items.indexOf(c) : -1;
-      };
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.removeAttribute('aria-selected');
-        const n = items[(getIdx() + 1) % items.length];
-        n.setAttribute('aria-selected', 'true');
-        n.scrollIntoView({block:'nearest'});
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.removeAttribute('aria-selected');
-        const p = items[(getIdx() - 1 + items.length) % items.length];
-        p.setAttribute('aria-selected', 'true');
-        p.scrollIntoView({block:'nearest'});
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.click();
-      } else if (e.key === 'Escape') {
-        dialog.close();
-      }
-    });
-  }
-
-  // Mouse hover: set aria-selected on hovered item
-  if (cmdList) {
-    cmdList.addEventListener('mouseover', e => {
-      const item = e.target.closest('a:not([hidden])');
-      if (!item) return;
-      cmdList.querySelectorAll('a[aria-selected]').forEach(a => a.setAttribute('aria-selected', 'false'));
-      item.setAttribute('aria-selected', 'true');
-    });
-    cmdList.addEventListener('mouseleave', () => {
-      cmdList.querySelectorAll('a[aria-selected]').forEach(a => a.setAttribute('aria-selected', 'false'));
-    });
-  }
-
-</script>
-<script>
-  const cmd = document.getElementById('command');
-  const inp = cmd ? cmd.querySelector('input') : null;
-  const modeBtns = cmd ? cmd.querySelectorAll('[data-set-mode]') : [];
-  if (cmd && inp) {
-    inp.addEventListener('input', () => {
-      const v = inp.value;
-      if (v === '?') cmd.dataset.mode = 'help';
-      else if (v.startsWith('#')) cmd.dataset.mode = 'project';
-      else if (v.startsWith('>')) cmd.dataset.mode = 'user';
-      else delete cmd.dataset.mode;
-    });
-    modeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const m = btn.getAttribute('data-set-mode');
-        inp.value = m === 'help' ? '?' : (m === 'project' ? '#' : '>');
-        cmd.dataset.mode = m;
-        inp.dispatchEvent(new Event('input'));
-        inp.focus();
-      });
-    });
-  }
-
-  // Mouse hover: set aria-selected on hovered item
-  if (cmdList) {
-    cmdList.addEventListener('mouseover', e => {
-      const item = e.target.closest('a:not([hidden])');
-      if (!item) return;
-      cmdList.querySelectorAll('a[aria-selected]').forEach(a => a.setAttribute('aria-selected', 'false'));
-      item.setAttribute('aria-selected', 'true');
-    });
-    cmdList.addEventListener('mouseleave', () => {
-      cmdList.querySelectorAll('a[aria-selected]').forEach(a => a.setAttribute('aria-selected', 'false'));
-    });
-  }
-
-</script>
+    customElements.get('el-dialog') ? init() :
+      window.addEventListener('elements:ready', init);
+  </script>
 </body>
+</html>

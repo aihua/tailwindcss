@@ -1,50 +1,50 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-  @theme {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-
-  dialog::backdrop {
-    background-color: transparent;
-  }
-</style>
-<style>
-  :has(dialog[open]) .cmd-trigger { opacity: 0; }
-</style>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: 'InterVariable', system-ui, sans-serif;
+      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+  </style>
+  <style>
+    :where(:has(:is([open], :popover-open, :open))) [data-fade-on-open] {
+      opacity: 0;
+    }
+  </style>
+</head>
 <body class="antialiased bg-gray-900">
-<div class="grid min-h-[600px] place-content-center bg-gray-800 bg-[url('https://images.unsplash.com/photo-1637928114342-05b15ee4034e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3276&q=80')] bg-cover bg-center">
-    
-
-    <button class="rounded-md bg-[oklab(27.8%_-0.00750866_-0.0321344/.8)] px-2.5 py-1.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[oklab(27.8%_-0.00750866_-0.0321344/.9)] cmd-trigger">
+  <div class="grid min-h-[600px] place-content-center bg-gray-900 bg-[url(https://images.unsplash.com/photo-1637928114342-05b15ee4034e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3276&q=80)] bg-cover bg-center">
+    <button command="show-modal" commandfor="dialog" data-fade-on-open class="rounded-md bg-gray-900/80 px-2.5 py-1.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-gray-900/90">
       Open command palette
     </button>
 
-    <div class="el-dialog-wrapper">
+    <el-dialog>
       <dialog id="dialog" class="backdrop:bg-transparent">
-        <div class="fixed inset-0 bg-[oklab(21%_-0.00316127_-0.0338527/.5)] transition-opacity [[data-closed]]:opacity-0 [[data-enter]]:duration-300 [[data-enter]]:ease-[cubic-bezier(0,0,0.2,1)] [[data-leave]]:duration-200 [[data-leave]]:ease-[cubic-bezier(0.4,0,1,1)]" data-dialog-backdrop></div>
+        <el-dialog-backdrop class="fixed inset-0 bg-gray-900/50 transition-opacity duration-150 data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in"></el-dialog-backdrop>
 
         <div tabindex="0" class="fixed inset-0 w-screen overflow-y-auto p-4 focus:outline-none sm:p-6 md:p-20">
-          <div class="mx-auto block max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-2xl outline -outline-offset-1 outline-white/10 transition-all [[data-closed]]:scale-95 [[data-closed]]:opacity-0 [[data-enter]]:duration-300 [[data-enter]]:ease-[cubic-bezier(0,0,0.2,1)] [[data-leave]]:duration-200 [[data-leave]]:ease-[cubic-bezier(0.4,0,1,1)]" data-dialog-panel>
-            <div data-command-palette>
+          <el-dialog-panel class="mx-auto block max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-2xl outline outline-1 -outline-offset-1 outline-white/10 transition-all duration-150 data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in">
+            <el-command-palette>
               <div class="grid grid-cols-1 border-b border-white/10">
                 <input
                   type="text"
                   autofocus
                   placeholder="Search..."
                   data-initial-value-on-focus="se"
-                  class="col-start-1 row-start-1 h-12 w-full bg-gray-900 pr-4 pl-11 text-base text-white outline-none placeholder:text-gray-500 sm:text-sm" />
+                  class="col-start-1 row-start-1 h-12 w-full bg-gray-900 pr-4 pl-11 text-base text-white outline-none placeholder:text-gray-400 sm:text-sm" />
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="pointer-events-none col-start-1 row-start-1 ml-4 w-5 h-5 self-center text-gray-500">
+                  class="pointer-events-none col-start-1 row-start-1 ml-4 h-5 w-5 self-center text-gray-400">
                   <path
                     d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
                     clip-rule="evenodd"
@@ -52,157 +52,79 @@
                 </svg>
               </div>
 
-              <div hidden class="block max-h-[18rem] scroll-py-2 overflow-y-auto py-2 text-sm text-gray-300" data-command-list>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Leslie Alexander</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Michael Foster</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Dries Vincent</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Lindsay Walton</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Courtney Henry</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Tom Cook</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Whitney Francis</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Leonard Krasner</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Floyd Miles</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Emily Selman</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Kristin Watson</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Emma Dorsey</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Alicia Bell</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Jenny Wilson</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Anna Roberts</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Benjamin Russel</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Jeffrey Webb</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Kathryn Murphy</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Lawrence Hunter</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Yvette Armstrong</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Angela Fisher</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Blake Reid</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Hector Gibbons</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Fabricio Mendes</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Jillian Steward</a>
-                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none [[aria-selected='true']]:bg-indigo-500 [[aria-selected='true']]:text-white">Chelsea Hagon</a>
-              </div>
+              <el-command-list hidden class="block max-h-72 scroll-py-2 overflow-y-auto py-2 text-sm text-gray-200">
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Leslie Alexander</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Michael Foster</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Dries Vincent</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Lindsay Walton</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Courtney Henry</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Tom Cook</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Whitney Francis</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Leonard Krasner</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Floyd Miles</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Emily Selman</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Kristin Watson</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Emma Dorsey</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Alicia Bell</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Jenny Wilson</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Anna Roberts</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Benjamin Russel</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Jeffrey Webb</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Kathryn Murphy</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Lawrence Hunter</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Yvette Armstrong</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Angela Fisher</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Blake Reid</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Hector Gibbons</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Fabricio Mendes</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Jillian Steward</a>
+                <a href="#" hidden class="block cursor-default px-4 py-2 select-none focus:outline-none aria-selected:bg-indigo-500 aria-selected:text-white">Chelsea Hagon</a>
+              </el-command-list>
 
-              <div hidden class="block p-4 text-sm text-gray-400" data-no-results>No people found.</div>
-            </div>
-          </div>
+              <el-no-results hidden class="block p-4 text-sm text-gray-300">No people found.</el-no-results>
+            </el-command-palette>
+          </el-dialog-panel>
         </div>
       </dialog>
-    </div>
+    </el-dialog>
   </div>
-  
-<script>
-  const dialog = document.getElementById('dialog');
-  const wrapper = dialog.closest('.el-dialog-wrapper');
-  const openBtn = wrapper ? wrapper.parentElement.querySelector('button') : null;
-  const input = dialog.querySelector('input');
+  <script>
+    function init() {
+      for (const elDialog of document.querySelectorAll('el-dialog')) {
+        const dialog = elDialog.querySelector('dialog');
+        const palette = dialog.querySelector('el-command-palette');
 
-  if (openBtn) {
-    openBtn.addEventListener('click', () => {
-      dialog.showModal();
-      openBtn.style.opacity = '0';
-      const fi = dialog.querySelector('input[data-initial-value-on-focus]');
-      if (fi) {
-        const val = fi.getAttribute('data-initial-value-on-focus');
-        fi.removeAttribute('data-initial-value-on-focus');
-        fi.value = val;
-        fi.dispatchEvent(new Event('input'));
-      }
-    });
-  }
+        // Prevent focus before dialog is ready
+        dialog.inert = true;
 
-  dialog.addEventListener('close', () => {
-    if (openBtn) openBtn.style.opacity = '';
-    if (input) input.value = '';
-    const nr = dialog.querySelector('[data-no-results]');
-    const cl = dialog.querySelector('[data-command-list]');
-    if (cl) cl.setAttribute('hidden', '');
-    if (nr) nr.setAttribute('hidden', '');
-    cl.querySelectorAll('a').forEach(a => {
-      a.setAttribute('hidden', '');
-      a.removeAttribute('aria-selected');
-    });
-  });
+        dialog.addEventListener('beforetoggle', (evt) => {
+          if (evt.newState !== 'open') return;
 
-  dialog.addEventListener('click', e => {
-    if (e.target === dialog) dialog.close();
-  });
+          // Pre-fill search input with initial value
+          for (const el of dialog.querySelectorAll('[data-initial-value-on-focus]')) {
+            el.value = el.dataset.initialValueOnFocus;
+            el.removeAttribute('data-initial-value-on-focus');
+            el.dispatchEvent(new Event('input'));
+          }
 
-  const cmdList = dialog.querySelector('[data-command-list]');
-  const noResults = dialog.querySelector('[data-no-results]');
+          requestAnimationFrame(() => { dialog.inert = false; });
+        }, { once: true });
 
-  if (input && cmdList) {
-    input.addEventListener('input', () => {
-      const q = input.value.toLowerCase().trim();
-      if (!q) {
-        cmdList.setAttribute('hidden', '');
-        if (noResults) noResults.setAttribute('hidden', '');
-        cmdList.querySelectorAll('a').forEach(a => {
-          a.setAttribute('hidden', '');
-          a.removeAttribute('aria-selected');
+        // Delegate: reset palette and close dialog when a command is clicked
+        dialog.querySelector('el-command-list')?.addEventListener('click', (e) => {
+          if (!e.target.closest('a[href]')) return;
+          e.preventDefault();
+          elDialog.addEventListener('close', () => palette?.reset(), { once: true });
+          elDialog.hide();
         });
-        return;
-      }
-      cmdList.removeAttribute('hidden');
-      let found = false;
-      cmdList.querySelectorAll('a').forEach(a => {
-        if (a.textContent.toLowerCase().includes(q)) {
-          a.removeAttribute('hidden');
-          found = true;
-        } else {
-          a.setAttribute('hidden', '');
-          a.removeAttribute('aria-selected');
-        }
-      });
-      if (noResults) {
-        if (found) noResults.setAttribute('hidden', '');
-        else noResults.removeAttribute('hidden');
-      }
-    });
-  }
 
-  if (cmdList) {
-    cmdList.addEventListener('keydown', e => {
-      const items = [...cmdList.querySelectorAll('a:not([hidden])')];
-      if (!items.length) return;
-      const getIdx = () => {
-        const c = cmdList.querySelector('a[aria-selected]');
-        return c ? items.indexOf(c) : -1;
-      };
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.removeAttribute('aria-selected');
-        const n = items[(getIdx() + 1) % items.length];
-        n.setAttribute('aria-selected', 'true');
-        n.scrollIntoView({block:'nearest'});
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.removeAttribute('aria-selected');
-        const p = items[(getIdx() - 1 + items.length) % items.length];
-        p.setAttribute('aria-selected', 'true');
-        p.scrollIntoView({block:'nearest'});
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        const c = cmdList.querySelector('a[aria-selected]');
-        if (c) c.click();
-      } else if (e.key === 'Escape') {
-        dialog.close();
+        // Auto-open dialog for demo
+        elDialog.open = true;
       }
-    });
-  }
+    }
 
-  // Mouse hover: set aria-selected on hovered item
-  if (cmdList) {
-    cmdList.addEventListener('mouseover', e => {
-      const item = e.target.closest('a:not([hidden])');
-      if (!item) return;
-      cmdList.querySelectorAll('a[aria-selected]').forEach(a => a.setAttribute('aria-selected', 'false'));
-      item.setAttribute('aria-selected', 'true');
-    });
-    cmdList.addEventListener('mouseleave', () => {
-      cmdList.querySelectorAll('a[aria-selected]').forEach(a => a.setAttribute('aria-selected', 'false'));
-    });
-  }
-
-</script>
+    customElements.get('el-dialog') ? init() :
+      window.addEventListener('elements:ready', init);
+  </script>
 </body>
+</html>

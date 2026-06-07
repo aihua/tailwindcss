@@ -13,28 +13,18 @@
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
   </style>
-  <style>
-    body {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background-color: oklch(21% 0.034 264.665);
-    }
-    el-popover:is([open], :popover-open, :open) {
-      display: flex;
-    }
-    el-popover::backdrop {
-      background-color: transparent;
-    }
-  </style>
 </head>
-<body>
-  <div class="min-h-[388px] bg-[oklch(21%_0.034_264.665)] dark">
+<body class="antialiased bg-gray-900">
+  <div class="bg-gray-900" style="color-scheme: dark">
     <div class="flex items-center justify-center p-8">
       <div class="relative">
         <button popovertarget="desktop-menu-solutions" class="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-white">
           <span>Solutions</span>
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-            <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+            <path
+              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+              clip-rule="evenodd"
+              fill-rule="evenodd" />
           </svg>
         </button>
 
@@ -42,15 +32,14 @@
           id="desktop-menu-solutions"
           anchor="bottom"
           popover
-          data-default-open
-          class="w-screen max-w-min overflow-visible bg-transparent px-4 transition-all [transition-behavior:allow-discrete] [--anchor-gap:1.25rem] data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in">
-          <div class="w-56 shrink rounded-xl bg-[oklch(27.8%_0.033_256.848)] p-4 text-sm/6 font-semibold text-white outline outline-1 [outline-offset:-1px] [outline-color:oklab(100%_0_5.96046e-8/0.1)]">
-            <a href="#" class="block p-2 hover:text-[oklch(67.3%_0.182_276.935)]">Analytics</a>
-            <a href="#" class="block p-2 hover:text-[oklch(67.3%_0.182_276.935)]">Engagement</a>
-            <a href="#" class="block p-2 hover:text-[oklch(67.3%_0.182_276.935)]">Security</a>
-            <a href="#" class="block p-2 hover:text-[oklch(67.3%_0.182_276.935)]">Integrations</a>
-            <a href="#" class="block p-2 hover:text-[oklch(67.3%_0.182_276.935)]">Automations</a>
-            <a href="#" class="block p-2 hover:text-[oklch(67.3%_0.182_276.935)]">Reports</a>
+          class="w-screen max-w-min overflow-visible bg-transparent px-4 transition transition-discrete [--anchor-gap:--spacing(5)] open:flex data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in">
+          <div class="w-56 shrink rounded-xl bg-gray-800 p-4 text-sm/6 font-semibold text-white outline outline-1 outline-white/10 -outline-offset-1">
+            <a href="#" class="block p-2 hover:text-indigo-400">Analytics</a>
+            <a href="#" class="block p-2 hover:text-indigo-400">Engagement</a>
+            <a href="#" class="block p-2 hover:text-indigo-400">Security</a>
+            <a href="#" class="block p-2 hover:text-indigo-400">Integrations</a>
+            <a href="#" class="block p-2 hover:text-indigo-400">Automations</a>
+            <a href="#" class="block p-2 hover:text-indigo-400">Reports</a>
           </div>
         </el-popover>
       </div>

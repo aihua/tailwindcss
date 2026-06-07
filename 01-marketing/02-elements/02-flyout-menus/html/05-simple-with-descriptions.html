@@ -13,28 +13,18 @@
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
   </style>
-  <style>
-    body {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background-color: oklch(21% 0.034 264.665);
-    }
-    el-popover:is([open], :popover-open, :open) {
-      display: flex;
-    }
-    el-popover::backdrop {
-      background-color: transparent;
-    }
-  </style>
 </head>
-<body>
-  <div class="min-h-[688px] bg-[oklch(21%_0.034_264.665)] dark">
+<body class="antialiased bg-gray-900">
+  <div class="bg-gray-900" style="color-scheme: dark">
     <div class="flex items-center justify-center p-8">
       <div class="relative">
         <button popovertarget="desktop-menu-solutions" class="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-white">
           <span>Solutions</span>
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-            <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+            <path
+              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+              clip-rule="evenodd"
+              fill-rule="evenodd" />
           </svg>
         </button>
 
@@ -42,43 +32,42 @@
           id="desktop-menu-solutions"
           anchor="bottom"
           popover
-          data-default-open
-          class="w-screen max-w-max overflow-visible bg-transparent px-4 transition-all [transition-behavior:allow-discrete] [--anchor-gap:1.25rem] data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in">
-          <div class="w-screen max-w-sm flex-auto rounded-3xl bg-[oklch(27.8%_0.033_256.848)] p-4 text-sm/6 outline outline-1 [outline-offset:-1px] [outline-color:oklab(100%_0_5.96046e-8/0.1)]">
-            <div class="relative rounded-lg p-4 hover:[background-color:oklab(100%_0_5.96046e-8/0.05)]">
+          class="w-screen max-w-max overflow-visible bg-transparent px-4 transition transition-discrete [--anchor-gap:--spacing(5)] open:flex data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in">
+          <div class="w-screen max-w-[24rem] flex-auto rounded-3xl bg-gray-800 p-4 text-sm/6 outline outline-1 outline-white/10 -outline-offset-1">
+            <div class="relative rounded-lg p-4 hover:bg-white/5">
               <a href="#" class="font-semibold text-white">
                 Blog
                 <span class="absolute inset-0"></span>
               </a>
-              <p class="mt-1 text-[oklch(70.7%_0.022_261.325)]">Learn about tips, product updates and company culture</p>
+              <p class="mt-1 text-gray-400">Learn about tips, product updates and company culture</p>
             </div>
-            <div class="relative rounded-lg p-4 hover:[background-color:oklab(100%_0_5.96046e-8/0.05)]">
+            <div class="relative rounded-lg p-4 hover:bg-white/5">
               <a href="#" class="font-semibold text-white">
                 Help center
                 <span class="absolute inset-0"></span>
               </a>
-              <p class="mt-1 text-[oklch(70.7%_0.022_261.325)]">Get all of your questions answered in our forums of contact support</p>
+              <p class="mt-1 text-gray-400">Get all of your questions answered in our forums of contact support</p>
             </div>
-            <div class="relative rounded-lg p-4 hover:[background-color:oklab(100%_0_5.96046e-8/0.05)]">
+            <div class="relative rounded-lg p-4 hover:bg-white/5">
               <a href="#" class="font-semibold text-white">
                 Guides
                 <span class="absolute inset-0"></span>
               </a>
-              <p class="mt-1 text-[oklch(70.7%_0.022_261.325)]">Learn how to maximize our platform to get the most out of it</p>
+              <p class="mt-1 text-gray-400">Learn how to maximize our platform to get the most out of it</p>
             </div>
-            <div class="relative rounded-lg p-4 hover:[background-color:oklab(100%_0_5.96046e-8/0.05)]">
+            <div class="relative rounded-lg p-4 hover:bg-white/5">
               <a href="#" class="font-semibold text-white">
                 Events
                 <span class="absolute inset-0"></span>
               </a>
-              <p class="mt-1 text-[oklch(70.7%_0.022_261.325)]">Check out webinars with experts and learn about our annual conference</p>
+              <p class="mt-1 text-gray-400">Check out webinars with experts and learn about our annual conference</p>
             </div>
-            <div class="relative rounded-lg p-4 hover:[background-color:oklab(100%_0_5.96046e-8/0.05)]">
+            <div class="relative rounded-lg p-4 hover:bg-white/5">
               <a href="#" class="font-semibold text-white">
                 Security
                 <span class="absolute inset-0"></span>
               </a>
-              <p class="mt-1 text-[oklch(70.7%_0.022_261.325)]">Understand how we take your privacy seriously</p>
+              <p class="mt-1 text-gray-400">Understand how we take your privacy seriously</p>
             </div>
           </div>
         </el-popover>

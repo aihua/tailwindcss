@@ -1,394 +1,337 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Three Tiers with Toggle</title>
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --font-sans: InterVariable, system-ui, sans-serif;
-        --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-      }
-    </style>
-    <style>
-      body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-color: oklch(21% 0.034 264.665);
-      }
-      /* Toggle: show monthly price when monthly is checked, hide annually */
-      .toggle-monthly:is(:where(.toggle-form):not(:has([name='frequency'][value='monthly']:checked)) *),
-      .toggle-annually:is(:where(.toggle-form):not(:has([name='frequency'][value='annually']:checked)) *),
-      .badge-featured:is(:where(.tier-card):not([data-featured]) *) {
-        display: none;
-      }
-      /* Radio checked label text */
-      .radio-checked:is(:where(.radio-group):has(:checked) *) {
-        color: #fff;
-      }
-      /* Featured tier styles */
-      .featured-badge:is(:where(.tier-card)[data-featured] *) {
-        background-color: oklch(58.5% 0.233 277.117);
-      }
-      .featured-title:is(:where(.tier-card)[data-featured] *) {
-        background-color: oklch(51.1% 0.262 276.966);
-      }
-      .featured-heading:is(:where(.tier-card)[data-featured] *) {
-        color: oklch(67.3% 0.182 276.935);
-      }
-      .featured-price-label:is(:where(.tier-card)[data-featured] *) {
-        color: oklch(51.1% 0.262 276.966);
-      }
-      .featured-price-value:is(:where(.tier-card)[data-featured] *) {
-        color: #fff;
-      }
-      .featured-shadow:is(:where(.tier-card)[data-featured] *) {
-        --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-      .featured-no-ring:is(:where(.tier-card)[data-featured] *) {
-        --tw-inset-ring-shadow: inset 0 0 0 0px var(--tw-inset-ring-color, currentcolor);
-        box-shadow:
-          var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-          var(--tw-shadow);
-      }
-      @media (hover: hover) {
-        .featured-btn-hover:is(:where(.tier-card)[data-featured] *):hover {
-          background-color: oklch(67.3% 0.182 276.935);
-        }
-        .featured-badge-hover:is(:where(.tier-card)[data-featured] *):hover {
-          background-color: oklch(58.5% 0.233 277.117);
-        }
-      }
-      .featured-focus:is(:where(.tier-card):not([data-featured]) *):focus-visible {
-        outline-color: oklab(100% 0 5.96046e-8/0.75);
-      }
-      /* Radio checked backgrounds */
-      .radio-checked-monthly:has(:checked) {
-        background-color: oklch(58.5% 0.233 277.117);
-      }
-      .radio-checked-annually:has(:checked) {
-        background-color: oklch(51.1% 0.262 276.966);
-      }
-
-    </style>
-  </head>
-  <body>
-    <form class="toggle-form bg-[oklch(21%_0.034_264.665)] py-24 md:py-32">
-      <div class="mx-auto max-w-[80rem] px-6 lg:px-8">
-        <div class="mx-auto max-w-[56rem] text-center">
-          <h2 class="text-base font-semibold text-[oklch(67.3%_0.182_276.935)]">Pricing</h2>
-          <p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-white md:text-6xl">Pricing that grows with you</p>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: 'InterVariable', system-ui, sans-serif;
+      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+    /* Pricing toggle - show annually prices when annually selected, hide monthly prices */
+    .pricing-form:not(:has([name='frequency'][value='annually']:checked)) .prices-annually { display: none; }
+    .pricing-form:not(:has([name='frequency'][value='monthly']:checked)) .prices-monthly { display: none; }
+    /* Hide "Most popular" badge on non-featured cards */
+    .pricing-card:not([data-featured]) .badge-popular { display: none; }
+    /* Radio button checked state */
+    .radio-group:has(:checked) .radio-label-text { color: white; }
+    .radio-option:has(:checked) { background-color: oklch(58.5% 0.233 277.117); }
+  </style>
+</head>
+<body class="antialiased bg-gray-900">
+  <form class="pricing-form bg-gray-900 py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="text-base leading-7 font-semibold text-indigo-400">Pricing</h2>
+        <p class="mt-2 text-5xl font-semibold tracking-tight text-wrap-balance text-white sm:text-6xl">Pricing that grows with you</p>
+      </div>
+      <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-wrap-pretty text-gray-400 sm:text-xl sm:leading-8">
+        Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
+        loyalty, and driving sales.
+      </p>
+      <div class="mt-16 flex justify-center">
+        <fieldset aria-label="Payment frequency">
+          <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs leading-5 font-semibold ring-1 ring-inset ring-white/10">
+            <label class="radio-group relative rounded-full px-2.5 py-1 radio-option">
+              <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
+              <span class="text-gray-400 radio-label-text">Monthly</span>
+            </label>
+            <label class="radio-group relative rounded-full px-2.5 py-1 radio-option">
+              <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
+              <span class="text-gray-400 radio-label-text">Annually</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <!-- Freelancer (non-featured) -->
+        <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 xl:p-10">
+          <div class="flex items-center justify-between gap-x-4">
+            <h3 id="tier-tier-freelancer" class="text-lg leading-8 font-semibold text-white">Freelancer</h3>
+            <p class="badge-popular rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
+          </div>
+          <p class="mt-4 text-sm leading-6 text-gray-300">The essentials to provide your best work for clients.</p>
+          <p class="prices-monthly mt-6 flex items-baseline gap-x-1">
+            <span class="text-4xl font-semibold tracking-tight text-white">$19</span>
+            <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
+          </p>
+          <p class="prices-annually mt-6 flex items-baseline gap-x-1">
+            <span class="text-4xl font-semibold tracking-tight text-white">$199</span>
+            <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
+          </p>
+          <a
+            href="#"
+            aria-describedby="tier-freelancer"
+            class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-1 ring-inset ring-white/5 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75"
+            >Buy plan</a
+          >
+          <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              5 products
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Up to 1,000 subscribers
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Basic analytics
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              48-hour support response time
+            </li>
+          </ul>
         </div>
-        <p class="mx-auto mt-6 max-w-[42rem] text-center text-lg font-medium text-pretty text-[oklch(70.7%_0.022_261.325)] md:text-xl md:leading-8">
-          Choose an affordable plan that's packed with the best features for engaging your audience, creating customer
-          loyalty, and driving sales.
-        </p>
-        <div class="mt-10 flex justify-center">
-          <fieldset aria-label="Payment frequency">
-            <div class="grid grid-cols-2 gap-1 rounded-full p-1 text-center text-xs font-semibold ring-1 ring-white/10">
-              <label class="radio-group relative rounded-full px-2.5 py-1 has-[:checked]:bg-[oklch(58.5%_0.233_277.117)]">
-                <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
-                <span class="text-[oklch(70.7%_0.022_261.325)] radio-checked">Monthly</span>
-              </label>
-              <label class="radio-group relative rounded-full px-2.5 py-1 has-[:checked]:bg-[oklch(51.1%_0.262_276.966)]">
-                <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
-                <span class="text-[oklch(70.7%_0.022_261.325)] radio-checked">Annually</span>
-              </label>
-            </div>
-          </fieldset>
+        <!-- Startup (featured) -->
+        <div data-featured="true" class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-2 ring-indigo-400 xl:p-10">
+          <div class="flex items-center justify-between gap-x-4">
+            <h3 id="tier-tier-startup" class="text-lg leading-8 font-semibold text-indigo-400">Startup</h3>
+            <p class="badge-popular rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
+          </div>
+          <p class="mt-4 text-sm leading-6 text-gray-300">A plan that scales with your rapidly growing business.</p>
+          <p class="prices-monthly mt-6 flex items-baseline gap-x-1">
+            <span class="text-4xl font-semibold tracking-tight text-white">$29</span>
+            <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
+          </p>
+          <p class="prices-annually mt-6 flex items-baseline gap-x-1">
+            <span class="text-4xl font-semibold tracking-tight text-white">$299</span>
+            <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
+          </p>
+          <a
+            href="#"
+            aria-describedby="tier-startup"
+            class="mt-6 block w-full rounded-md bg-indigo-500 px-3 py-2 text-center text-sm leading-6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            >Buy plan</a
+          >
+          <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              25 products
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Up to 10,000 subscribers
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Advanced analytics
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              24-hour support response time
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Marketing automations
+            </li>
+          </ul>
         </div>
-        <div class="isolate mx-auto mt-10 max-w-[28rem] grid grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          <!-- Freelancer -->
-          <div class="tier-card rounded-3xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] p-8 ring-1 ring-white/15 xl:p-10">
-            <div class="flex items-center justify-between gap-4">
-              <h3 id="tier-tier-freelancer" class="text-xl font-semibold leading-8 text-white featured-heading">Freelancer</h3>
-              <p class="rounded-full bg-[oklch(58.5%_0.233_277.117)] px-2.5 py-1 text-xs font-semibold text-white badge-featured">Most popular</p>
-            </div>
-            <p class="mt-4 text-sm leading-6 text-[oklch(87.2%_0.01_258.338)]">The essentials to provide your best work for clients.</p>
-            <p class="mt-6 flex items-baseline gap-1 toggle-monthly">
-              <span class="text-4xl font-semibold tracking-tight text-white">$19</span>
-              <span class="text-sm leading-6 font-semibold text-[oklch(70.7%_0.022_261.325)] featured-price-label">/month</span>
-            </p>
-            <p class="mt-6 flex items-baseline gap-1 toggle-annually">
-              <span class="text-4xl font-semibold tracking-tight text-white">$199</span>
-              <span class="text-sm leading-6 font-semibold text-[oklch(70.7%_0.022_261.325)] featured-price-label">/year</span>
-            </p>
-            <a
-              href="#"
-              aria-describedby="tier-freelancer"
-              class="mt-8 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm font-semibold text-white ring-1 ring-inset ring-white/10 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(58.5%_0.233_277.117)] featured-btn-hover featured-no-ring featured-focus"
-              >Buy plan</a
-            >
-            <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-[oklch(87.2%_0.01_258.338)] xl:mt-10">
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                5 products
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Up to 1,000 subscribers
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Basic analytics
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                48-hour support response time
-              </li>
-            </ul>
+        <!-- Enterprise (non-featured) -->
+        <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 xl:p-10">
+          <div class="flex items-center justify-between gap-x-4">
+            <h3 id="tier-tier-enterprise" class="text-lg leading-8 font-semibold text-white">Enterprise</h3>
+            <p class="badge-popular rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
           </div>
-          <!-- Startup (Featured) -->
-          <div data-featured="true" class="tier-card rounded-3xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] p-8 ring-2 ring-[oklch(67.3%_0.182_276.935)] xl:p-10">
-            <div class="flex items-center justify-between gap-4">
-              <h3 id="tier-tier-startup" class="text-xl font-semibold leading-8 text-white featured-heading">Startup</h3>
-              <p class="rounded-full bg-[oklch(58.5%_0.233_277.117)] px-2.5 py-1 text-xs font-semibold text-white featured-badge">Most popular</p>
-            </div>
-            <p class="mt-4 text-sm leading-6 text-[oklch(87.2%_0.01_258.338)]">A plan that scales with your rapidly growing business.</p>
-            <p class="mt-6 flex items-baseline gap-1 toggle-monthly">
-              <span class="text-4xl font-semibold tracking-tight text-white">$29</span>
-              <span class="text-sm leading-6 font-semibold text-[oklch(70.7%_0.022_261.325)] featured-price-label">/month</span>
-            </p>
-            <p class="mt-6 flex items-baseline gap-1 toggle-annually">
-              <span class="text-4xl font-semibold tracking-tight text-white">$299</span>
-              <span class="text-sm leading-6 font-semibold text-[oklch(70.7%_0.022_261.325)] featured-price-label">/year</span>
-            </p>
-            <a
-              href="#"
-              aria-describedby="tier-startup"
-              class="mt-8 block w-full rounded-md bg-[oklch(58.5%_0.233_277.117)] px-3 py-2 text-center text-sm font-semibold text-white ring-1 ring-inset ring-white/5 hover:bg-[oklch(67.3%_0.182_276.935)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(58.5%_0.233_277.117)] featured-btn-hover featured-no-ring featured-focus"
-              >Buy plan</a
-            >
-            <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-[oklch(87.2%_0.01_258.338)] xl:mt-10">
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                25 products
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Up to 10,000 subscribers
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Advanced analytics
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                24-hour support response time
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Marketing automations
-              </li>
-            </ul>
-          </div>
-          <!-- Enterprise -->
-          <div class="tier-card rounded-3xl bg-[oklab(27.8%_-0.00750866_-0.0321344/.5)] p-8 ring-1 ring-white/15 xl:p-10">
-            <div class="flex items-center justify-between gap-4">
-              <h3 id="tier-tier-enterprise" class="text-xl font-semibold leading-8 text-white featured-heading">Enterprise</h3>
-              <p class="rounded-full bg-[oklch(58.5%_0.233_277.117)] px-2.5 py-1 text-xs font-semibold text-white badge-featured">Most popular</p>
-            </div>
-            <p class="mt-4 text-sm leading-6 text-[oklch(87.2%_0.01_258.338)]">Dedicated support and infrastructure for your company.</p>
-            <p class="mt-6 flex items-baseline gap-1 toggle-monthly">
-              <span class="text-4xl font-semibold tracking-tight text-white">$59</span>
-              <span class="text-sm leading-6 font-semibold text-[oklch(70.7%_0.022_261.325)] featured-price-label">/month</span>
-            </p>
-            <p class="mt-6 flex items-baseline gap-1 toggle-annually">
-              <span class="text-4xl font-semibold tracking-tight text-white">$599</span>
-              <span class="text-sm leading-6 font-semibold text-[oklch(70.7%_0.022_261.325)] featured-price-label">/year</span>
-            </p>
-            <a
-              href="#"
-              aria-describedby="tier-enterprise"
-              class="mt-8 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm font-semibold text-white ring-1 ring-inset ring-white/10 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(58.5%_0.233_277.117)] featured-btn-hover featured-no-ring featured-focus"
-              >Buy plan</a
-            >
-            <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-[oklch(87.2%_0.01_258.338)] xl:mt-10">
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Unlimited products
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Unlimited subscribers
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Advanced analytics
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                1-hour, dedicated support response time
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Marketing automations
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  data-slot="icon"
-                  aria-hidden="true"
-                  class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
-                  <path
-                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd" />
-                </svg>
-                Custom reporting tools
-              </li>
-            </ul>
-          </div>
+          <p class="mt-4 text-sm leading-6 text-gray-300">Dedicated support and infrastructure for your company.</p>
+          <p class="prices-monthly mt-6 flex items-baseline gap-x-1">
+            <span class="text-4xl font-semibold tracking-tight text-white">$59</span>
+            <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
+          </p>
+          <p class="prices-annually mt-6 flex items-baseline gap-x-1">
+            <span class="text-4xl font-semibold tracking-tight text-white">$599</span>
+            <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
+          </p>
+          <a
+            href="#"
+            aria-describedby="tier-enterprise"
+            class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-1 ring-inset ring-white/5 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75"
+            >Buy plan</a
+          >
+          <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Unlimited products
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Unlimited subscribers
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Advanced analytics
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              1-hour, dedicated support response time
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Marketing automations
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="h-6 w-5 flex-none text-indigo-400">
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd" />
+              </svg>
+              Custom reporting tools
+            </li>
+          </ul>
         </div>
       </div>
-    </form>
-  </body>
+    </div>
+  </form>
+</body>
 </html>

@@ -1,34 +1,33 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
   <style type="text/tailwindcss">
-    @import "tailwindcss";
     @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
+      --font-sans: 'InterVariable', system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
   </style>
   <style>
-    [aria-expanded='true'] .icon-plus { display: none; }
+    :where([aria-expanded='true']) .icon-plus { display: none; }
     .icon-minus:not(:where([aria-expanded='true'] *)) { display: none; }
   </style>
 </head>
-<body class="antialiased bg-[oklch(21%_0.034_264.665)]">
-  <div class="bg-[oklch(21%_0.034_264.665)]">
-    <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+<body class="antialiased bg-gray-900">
+  <div class="bg-gray-900">
+    <div class="mx-auto max-w-[80rem] px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
       <div class="mx-auto max-w-4xl">
-        <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Frequently asked questions</h2>
+        <h2 class="text-4xl/10 font-semibold tracking-tight text-white sm:text-5xl sm:leading-none">Frequently asked questions</h2>
         <dl class="mt-16 divide-y divide-white/10">
           <div class="py-6 first:pt-0 last:pb-0">
             <dt>
               <button type="button" command="--toggle" commandfor="faq-0" class="flex w-full items-start justify-between text-left text-white">
-                <span class="text-base/7 font-semibold">What's the best thing about Switzerland?</span>
+                <span class="text-base/7 font-semibold">What&#039;s the best thing about Switzerland?</span>
                 <span class="ml-6 flex h-7 items-center">
                   <svg
                     viewBox="0 0 24 24"
@@ -55,8 +54,8 @@
             </dt>
             <el-disclosure id="faq-0" open class="contents">
               <dd class="mt-2 pr-12">
-                <p class="text-base/7 text-[oklch(70.7%_0.022_261.325)]">
-                  I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing
+                <p class="text-base/7 text-gray-400">
+                  I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing
                   elit. Quas cupiditate laboriosam fugiat.
                 </p>
               </dd>
@@ -92,7 +91,7 @@
             </dt>
             <el-disclosure id="faq-1" hidden class="contents">
               <dd class="mt-2 pr-12">
-                <p class="text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+                <p class="text-base/7 text-gray-400">
                   You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aut
                   tempora vitae odio inventore fuga aliquam nostrum quod porro. Delectus quia facere id sequi expedita
                   natus.
@@ -130,7 +129,7 @@
             </dt>
             <el-disclosure id="faq-2" hidden class="contents">
               <dd class="mt-2 pr-12">
-                <p class="text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+                <p class="text-base/7 text-gray-400">
                   Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, voluptas ipsa quia
                   excepturi, quibusdam natus exercitationem sapiente tempore labore voluptatem.
                 </p>
@@ -167,8 +166,8 @@
             </dt>
             <el-disclosure id="faq-3" hidden class="contents">
               <dd class="mt-2 pr-12">
-                <p class="text-base/7 text-[oklch(70.7%_0.022_261.325)]">
-                  Because they're so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                <p class="text-base/7 text-gray-400">
+                  Because they&#039;re so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
                   cupiditate laboriosam fugiat.
                 </p>
               </dd>
@@ -177,7 +176,7 @@
           <div class="py-6 first:pt-0 last:pb-0">
             <dt>
               <button type="button" command="--toggle" commandfor="faq-4" class="flex w-full items-start justify-between text-left text-white">
-                <span class="text-base/7 font-semibold">Why can't you hear a pterodactyl go to the bathroom?</span>
+                <span class="text-base/7 font-semibold">Why can&#039;t you hear a pterodactyl go to the bathroom?</span>
                 <span class="ml-6 flex h-7 items-center">
                   <svg
                     viewBox="0 0 24 24"
@@ -204,7 +203,7 @@
             </dt>
             <el-disclosure id="faq-4" hidden class="contents">
               <dd class="mt-2 pr-12">
-                <p class="text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+                <p class="text-base/7 text-gray-400">
                   Because the pee is silent. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quas
                   voluptatibus ex culpa ipsum, aspernatur blanditiis fugiat ullam magnam suscipit deserunt illum natus
                   facilis atque vero consequatur! Quisquam, debitis error.
@@ -242,8 +241,8 @@
             </dt>
             <el-disclosure id="faq-5" hidden class="contents">
               <dd class="mt-2 pr-12">
-                <p class="text-base/7 text-[oklch(70.7%_0.022_261.325)]">
-                  He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                <p class="text-base/7 text-gray-400">
+                  He couldn&#039;t see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum
                   deserunt eius.
                 </p>

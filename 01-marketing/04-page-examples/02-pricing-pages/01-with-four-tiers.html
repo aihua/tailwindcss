@@ -1,46 +1,94 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      fontFamily: {
-        sans: ['InterVariable', 'system-ui', 'sans-serif'],
-      },
-    },
-  }
-</script>
-<style>
-  :root,
-  :host {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-  html, body {
-    font-family: var(--font-sans, system-ui, sans-serif);
-    font-feature-settings: var(--font-sans--font-feature-settings);
-    font-variation-settings: initial;
-  }
-  /* Price toggle: hide monthly price when monthly is NOT selected */
-  form:not(:has(input[name="frequency"][value="monthly"]:checked)) .price-monthly {
-    display: none;
-  }
-  /* Price toggle: hide annual price when annually is NOT selected */
-  form:not(:has(input[name="frequency"][value="annually"]:checked)) .price-annually {
-    display: none;
-  }
-</style>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: 'InterVariable', system-ui, sans-serif;
+      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+  </style>
+  <style>
+    /* Pricing form: toggle monthly/annual pricing based on radio selection */
+    .pricing-form:not(:has([name='frequency'][value='annually']:checked)) .price-annually {
+      display: none;
+    }
+    .pricing-form:not(:has([name='frequency'][value='monthly']:checked)) .price-monthly {
+      display: none;
+    }
 
-<body>
+    /* Pricing card: featured card conditional styles */
+    .pricing-card:not([data-featured]) .badge-popular {
+      display: none;
+    }
+
+    /* Radio option: white text when checked */
+    .radio-option:has(:checked) .radio-checked-text {
+      color: #fff;
+    }
+
+    /* Pricing card [data-featured] child styles */
+    .pricing-card[data-featured] .featured-bg-500 {
+      background-color: oklch(58.5% 0.233 277.117);
+    }
+    .pricing-card[data-featured] .featured-bg-600 {
+      background-color: oklch(51.1% 0.262 276.966);
+    }
+    .pricing-card[data-featured] .featured-text-400 {
+      color: oklch(67.3% 0.182 276.935);
+    }
+    .pricing-card[data-featured] .featured-text-600 {
+      color: oklch(51.1% 0.262 276.966);
+    }
+    .pricing-card[data-featured] .featured-text-white {
+      color: #fff;
+    }
+    .pricing-card[data-featured] .featured-shadow-xs {
+      --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+    .pricing-card[data-featured] .featured-ring-none {
+      --tw-inset-ring-shadow: inset 0 0 0 0px transparent;
+      --tw-ring-shadow: 0 0 #0000;
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+
+    /* Pricing card featured hover states */
+    .pricing-card[data-featured]:hover .featured-hover-bg-400 {
+      background-color: oklch(67.3% 0.182 276.935);
+    }
+    .pricing-card[data-featured]:hover .featured-hover-bg-500 {
+      background-color: oklch(58.5% 0.233 277.117);
+    }
+
+    /* Non-featured card focus-visible outline */
+    .pricing-card:not([data-featured]) .focus-outline-white-75:focus-visible {
+      outline-color: oklab(100% 0 5.96046e-8 / 0.75);
+    }
+
+    /* Dialog backdrop */
+    .dialog-backdrop::backdrop {
+      background-color: transparent;
+    }
+
+    /* FAQ icon toggle: minus icon hidden when not expanded */
+    .icon-minus:not(:where([aria-expanded='true']) *) {
+      display: none;
+    }
+
+    /* FAQ icon toggle: plus icon hidden when expanded */
+    :where([aria-expanded='true']) .icon-plus {
+      display: none;
+    }
+  </style>
+</head>
+<body class="antialiased bg-gray-900">
+
   <div class="bg-gray-900">
     <header>
       <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
@@ -73,19 +121,19 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#" class="text-sm leading-6 font-semibold text-white">Product</a>
-          <a href="#" class="text-sm leading-6 font-semibold text-white">Features</a>
-          <a href="#" class="text-sm leading-6 font-semibold text-white">Marketplace</a>
-          <a href="#" class="text-sm leading-6 font-semibold text-white">Company</a>
+          <a href="#" class="text-sm/6 font-semibold text-white">Product</a>
+          <a href="#" class="text-sm/6 font-semibold text-white">Features</a>
+          <a href="#" class="text-sm/6 font-semibold text-white">Marketplace</a>
+          <a href="#" class="text-sm/6 font-semibold text-white">Company</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" class="text-sm leading-6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+          <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
         </div>
       </nav>
       <el-dialog>
-        <dialog id="mobile-menu" class="[&::backdrop]:bg-transparent lg:hidden">
+        <dialog id="mobile-menu" class="dialog-backdrop lg:hidden">
           <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-96 sm:ring-1 sm:ring-white/10">
+            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-lg sm:ring-1 sm:ring-gray-100/10">
               <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
                   <span class="sr-only">Your Company</span>
@@ -110,14 +158,14 @@
               </div>
               <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-white/10">
-                  <div class="space-y-2 py-6">
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-white hover:bg-white/5">Product</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-white hover:bg-white/5">Features</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-white hover:bg-white/5">Marketplace</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-white hover:bg-white/5">Company</a>
+                  <div class="space-y-0.5 py-6">
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Product</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Features</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Marketplace</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Company</a>
                   </div>
                   <div class="py-6">
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base leading-7 font-semibold text-white hover:bg-white/5">Log in</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5">Log in</a>
                   </div>
                 </div>
               </div>
@@ -129,11 +177,11 @@
 
     <main>
       <!-- Pricing section -->
-      <form class="group/pricing-form bg-gray-900 pt-24 sm:pt-32">
+      <form class="pricing-form bg-gray-900 pt-24 sm:pt-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-4xl text-center">
-            <h2 class="text-base leading-7 font-semibold text-indigo-400">Pricing</h2>
-            <p class="mt-2 text-5xl leading-none font-semibold tracking-tight text-balance text-white sm:text-6xl sm:leading-none">Pricing that grows with you</p>
+            <h2 class="text-base/7 font-semibold text-indigo-400">Pricing</h2>
+            <p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">Pricing that grows with you</p>
           </div>
           <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-400 sm:text-xl sm:leading-8">
             Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
@@ -141,39 +189,39 @@
           </p>
           <div class="mt-16 flex justify-center">
             <fieldset aria-label="Payment frequency">
-              <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs leading-5 font-semibold ring-inset-1 ring-inset-color-white/10">
-                <label class="group/freq-label relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-600">
+              <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-1 ring-inset ring-white/10">
+                <label class="radio-option relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
                   <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
-                  <span class="text-gray-400 [.group\/freq-label:has(:checked)_&]:text-white">Monthly</span>
+                  <span class="text-gray-400 radio-checked-text">Monthly</span>
                 </label>
-                <label class="group/freq-label relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-600">
+                <label class="radio-option relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
                   <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
-                  <span class="text-gray-400 [.group\/freq-label:has(:checked)_&]:text-white">Annually</span>
+                  <span class="text-gray-400 radio-checked-text">Annually</span>
                 </label>
               </div>
             </fieldset>
           </div>
           <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
-            <div class="group/pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
+            <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-hobby" class="text-lg leading-8 font-semibold text-white [.group\/pricing-card[data-featured]_&]:text-indigo-400">Hobby</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white hidden [.group\/pricing-card[data-featured]_&]:block">Most popular</p>
+                <h3 id="tier-hobby" class="text-lg/8 font-semibold text-white featured-text-400">Hobby</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white badge-popular">Most popular</p>
               </div>
-              <p class="mt-4 text-sm leading-6 text-gray-300">The essentials to provide your best work for clients.</p>
+              <p class="mt-4 text-sm/6 text-gray-300">The essentials to provide your best work for clients.</p>
               <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
                 <span class="text-4xl font-semibold tracking-tight text-white">$19</span>
-                <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
+                <span class="text-sm/6 font-semibold text-gray-400">/month</span>
               </p>
               <p class="mt-6 flex items-baseline gap-x-1 price-annually">
                 <span class="text-4xl font-semibold tracking-tight text-white">$199</span>
-                <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
+                <span class="text-sm/6 font-semibold text-gray-400">/year</span>
               </p>
               <a
                 aria-describedby="hobby"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset-1 ring-inset-color-white/5 [.group\/pricing-card[data-featured]_&]:bg-indigo-600 [.group\/pricing-card[data-featured]_&]:ring-inset-0 hover:bg-white/20 [.group\/pricing-card[data-featured]_&]:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 [.group\/pricing-card:not([data-featured])_&]:focus-visible:outline-white/75"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 featured-bg-500 featured-ring-none hover:bg-white/20 featured-hover-bg-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 focus-outline-white-75"
                 >Buy plan</a
               >
-              <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300">
+              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300">
                 <li class="flex gap-x-3">
                   <svg
                     viewBox="0 0 20 20"
@@ -218,26 +266,26 @@
                 </li>
               </ul>
             </div>
-            <div class="group/pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
+            <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-freelancer" class="text-lg leading-8 font-semibold text-white [.group\/pricing-card[data-featured]_&]:text-indigo-400">Freelancer</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white hidden [.group\/pricing-card[data-featured]_&]:block">Most popular</p>
+                <h3 id="tier-freelancer" class="text-lg/8 font-semibold text-white featured-text-400">Freelancer</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white badge-popular">Most popular</p>
               </div>
-              <p class="mt-4 text-sm leading-6 text-gray-300">The essentials to provide your best work for clients.</p>
+              <p class="mt-4 text-sm/6 text-gray-300">The essentials to provide your best work for clients.</p>
               <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
                 <span class="text-4xl font-semibold tracking-tight text-white">$29</span>
-                <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
+                <span class="text-sm/6 font-semibold text-gray-400">/month</span>
               </p>
               <p class="mt-6 flex items-baseline gap-x-1 price-annually">
                 <span class="text-4xl font-semibold tracking-tight text-white">$299</span>
-                <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
+                <span class="text-sm/6 font-semibold text-gray-400">/year</span>
               </p>
               <a
                 aria-describedby="freelancer"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset-1 ring-inset-color-white/5 [.group\/pricing-card[data-featured]_&]:bg-indigo-600 [.group\/pricing-card[data-featured]_&]:ring-inset-0 hover:bg-white/20 [.group\/pricing-card[data-featured]_&]:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 [.group\/pricing-card:not([data-featured])_&]:focus-visible:outline-white/75"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 featured-bg-500 featured-ring-none hover:bg-white/20 featured-hover-bg-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 focus-outline-white-75"
                 >Buy plan</a
               >
-              <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300">
+              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300">
                 <li class="flex gap-x-3">
                   <svg
                     viewBox="0 0 20 20"
@@ -296,26 +344,26 @@
                 </li>
               </ul>
             </div>
-            <div data-featured="true" class="group/pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
+            <div data-featured="true" class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-startup" class="text-lg leading-8 font-semibold text-white [.group\/pricing-card[data-featured]_&]:text-indigo-400">Startup</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white hidden [.group\/pricing-card[data-featured]_&]:block">Most popular</p>
+                <h3 id="tier-startup" class="text-lg/8 font-semibold text-white featured-text-400">Startup</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white badge-popular">Most popular</p>
               </div>
-              <p class="mt-4 text-sm leading-6 text-gray-300">A plan that scales with your rapidly growing business.</p>
+              <p class="mt-4 text-sm/6 text-gray-300">A plan that scales with your rapidly growing business.</p>
               <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
                 <span class="text-4xl font-semibold tracking-tight text-white">$59</span>
-                <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
+                <span class="text-sm/6 font-semibold text-gray-400">/month</span>
               </p>
               <p class="mt-6 flex items-baseline gap-x-1 price-annually">
                 <span class="text-4xl font-semibold tracking-tight text-white">$599</span>
-                <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
+                <span class="text-sm/6 font-semibold text-gray-400">/year</span>
               </p>
               <a
                 aria-describedby="startup"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset-1 ring-inset-color-white/5 [.group\/pricing-card[data-featured]_&]:bg-indigo-600 [.group\/pricing-card[data-featured]_&]:ring-inset-0 hover:bg-white/20 [.group\/pricing-card[data-featured]_&]:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 [.group\/pricing-card:not([data-featured])_&]:focus-visible:outline-white/75"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 featured-bg-500 featured-ring-none hover:bg-white/20 featured-hover-bg-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 focus-outline-white-75"
                 >Buy plan</a
               >
-              <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300">
+              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300">
                 <li class="flex gap-x-3">
                   <svg
                     viewBox="0 0 20 20"
@@ -388,26 +436,26 @@
                 </li>
               </ul>
             </div>
-            <div class="group/pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
+            <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-enterprise" class="text-lg leading-8 font-semibold text-white [.group\/pricing-card[data-featured]_&]:text-indigo-400">Enterprise</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white hidden [.group\/pricing-card[data-featured]_&]:block">Most popular</p>
+                <h3 id="tier-enterprise" class="text-lg/8 font-semibold text-white featured-text-400">Enterprise</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white badge-popular">Most popular</p>
               </div>
-              <p class="mt-4 text-sm leading-6 text-gray-300">Dedicated support and infrastructure for your company.</p>
+              <p class="mt-4 text-sm/6 text-gray-300">Dedicated support and infrastructure for your company.</p>
               <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
                 <span class="text-4xl font-semibold tracking-tight text-white">$99</span>
-                <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
+                <span class="text-sm/6 font-semibold text-gray-400">/month</span>
               </p>
               <p class="mt-6 flex items-baseline gap-x-1 price-annually">
                 <span class="text-4xl font-semibold tracking-tight text-white">$999</span>
-                <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
+                <span class="text-sm/6 font-semibold text-gray-400">/year</span>
               </p>
               <a
                 aria-describedby="enterprise"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset-1 ring-inset-color-white/5 [.group\/pricing-card[data-featured]_&]:bg-indigo-600 [.group\/pricing-card[data-featured]_&]:ring-inset-0 hover:bg-white/20 [.group\/pricing-card[data-featured]_&]:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 [.group\/pricing-card:not([data-featured])_&]:focus-visible:outline-white/75"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 featured-bg-500 featured-ring-none hover:bg-white/20 featured-hover-bg-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 focus-outline-white-75"
                 >Buy plan</a
               >
-              <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300">
+              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300">
                 <li class="flex gap-x-3">
                   <svg
                     viewBox="0 0 20 20"
@@ -500,7 +548,7 @@
 
       <!-- Logo cloud -->
       <div class="mx-auto mt-24 max-w-7xl px-6 sm:mt-32 lg:px-8">
-        <div class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+        <div class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-4xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
           <img
             width="158"
             height="48"
@@ -537,9 +585,9 @@
             class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1" />
         </div>
         <div class="mt-16 flex justify-center">
-          <p class="relative rounded-full bg-gray-800/75 px-4 py-1.5 text-sm leading-6 text-gray-400 ring-inset-1 ring-inset-color-white/10">
+          <p class="relative rounded-full bg-gray-800/75 px-4 py-1.5 text-sm/6 text-gray-400 ring-1 ring-inset ring-white/10">
             <span class="hidden md:inline">Transistor saves up to $40,000 per year, per employee by working with us.</span>
-            <a href="#" class="font-semibold text-indigo-400 hover:text-gray-400"
+            <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300"
               ><span aria-hidden="true" class="absolute inset-0"></span> See our case study
               <span aria-hidden="true">&rarr;</span></a
             >
@@ -549,13 +597,13 @@
 
       <!-- Testimonial section -->
       <div class="mx-auto mt-24 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden bg-black px-6 py-20 after:content-[''] after:pointer-events-none after:absolute after:inset-0 after:ring-inset-1 after:ring-inset-color-white/10 sm:rounded-3xl sm:px-10 sm:py-24 after:content-[''] sm:after:rounded-3xl md:px-12 lg:px-20">
+        <div class="relative overflow-hidden bg-black px-6 py-20 after:content-[''] after:pointer-events-none after:absolute after:inset-0 after:ring-1 after:ring-inset after:ring-white/10 sm:rounded-3xl sm:px-10 sm:py-24 sm:after:rounded-3xl md:px-12 lg:px-20">
           <img
             src="https://images.unsplash.com/photo-1601381718415-a05fb0a261f3?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8ODl8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1216&q=80"
             alt=""
             class="absolute inset-0 size-full object-cover brightness-150 saturate-0" />
           <div class="absolute inset-0 bg-gray-900/90 mix-blend-multiply"></div>
-          <div aria-hidden="true" class="absolute -top-56 -left-80 transform blur-[64px]">
+          <div aria-hidden="true" class="absolute -top-56 -left-80 isolate-auto blur-[64px]">
             <div
               style="
                 clip-path: polygon(
@@ -577,9 +625,9 @@
                   74.1% 44.1%
                 );
               "
-              class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-pink-500 to-purple-500 opacity-30"></div>
+              class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-30"></div>
           </div>
-          <div aria-hidden="true" class="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform md:blur-[64px]">
+          <div aria-hidden="true" class="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:isolate-auto md:blur-[64px]">
             <div
               style="
                 clip-path: polygon(
@@ -601,7 +649,7 @@
                   74.1% 44.1%
                 );
               "
-              class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-pink-500 to-purple-500 opacity-20"></div>
+              class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-20"></div>
           </div>
           <div class="relative mx-auto max-w-2xl lg:mx-0">
             <img
@@ -627,12 +675,12 @@
       <!-- FAQ section -->
       <div class="mx-auto mt-24 max-w-7xl px-6 sm:mt-56 lg:px-8">
         <div class="mx-auto max-w-4xl">
-          <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl sm:leading-none">Frequently asked questions</h2>
+          <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Frequently asked questions</h2>
           <dl class="mt-16 divide-y divide-white/10">
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
                 <button type="button" command="--toggle" commandfor="faq-0" class="flex w-full items-start justify-between text-left text-white">
-                  <span class="text-base leading-7 font-semibold">What&#039;s the best thing about Switzerland?</span>
+                  <span class="text-base/7 font-semibold">What&#039;s the best thing about Switzerland?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
                       viewBox="0 0 24 24"
@@ -641,7 +689,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 [[aria-expanded="true"]_&]:hidden">
+                      class="size-6 icon-plus">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -651,7 +699,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 hidden [[aria-expanded="true"]_&]:block">
+                      class="size-6 icon-minus">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -659,7 +707,7 @@
               </dt>
               <el-disclosure id="faq-0" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base leading-7 text-gray-400">
+                  <p class="text-base/7 text-gray-400">
                     I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing
                     elit. Quas cupiditate laboriosam fugiat.
                   </p>
@@ -669,7 +717,7 @@
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
                 <button type="button" command="--toggle" commandfor="faq-1" class="flex w-full items-start justify-between text-left text-white">
-                  <span class="text-base leading-7 font-semibold">How do you make holy water?</span>
+                  <span class="text-base/7 font-semibold">How do you make holy water?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
                       viewBox="0 0 24 24"
@@ -678,7 +726,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 [[aria-expanded="true"]_&]:hidden">
+                      class="size-6 icon-plus">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -688,7 +736,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 hidden [[aria-expanded="true"]_&]:block">
+                      class="size-6 icon-minus">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -696,7 +744,7 @@
               </dt>
               <el-disclosure id="faq-1" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base leading-7 text-gray-400">
+                  <p class="text-base/7 text-gray-400">
                     You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aut
                     tempora vitae odio inventore fuga aliquam nostrum quod porro. Delectus quia facere id sequi expedita
                     natus.
@@ -707,7 +755,7 @@
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
                 <button type="button" command="--toggle" commandfor="faq-2" class="flex w-full items-start justify-between text-left text-white">
-                  <span class="text-base leading-7 font-semibold">What do you call someone with no body and no nose?</span>
+                  <span class="text-base/7 font-semibold">What do you call someone with no body and no nose?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
                       viewBox="0 0 24 24"
@@ -716,7 +764,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 [[aria-expanded="true"]_&]:hidden">
+                      class="size-6 icon-plus">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -726,7 +774,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 hidden [[aria-expanded="true"]_&]:block">
+                      class="size-6 icon-minus">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -734,7 +782,7 @@
               </dt>
               <el-disclosure id="faq-2" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base leading-7 text-gray-400">
+                  <p class="text-base/7 text-gray-400">
                     Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, voluptas ipsa quia
                     excepturi, quibusdam natus exercitationem sapiente tempore labore voluptatem.
                   </p>
@@ -744,7 +792,7 @@
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
                 <button type="button" command="--toggle" commandfor="faq-3" class="flex w-full items-start justify-between text-left text-white">
-                  <span class="text-base leading-7 font-semibold">Why do you never see elephants hiding in trees?</span>
+                  <span class="text-base/7 font-semibold">Why do you never see elephants hiding in trees?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
                       viewBox="0 0 24 24"
@@ -753,7 +801,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 [[aria-expanded="true"]_&]:hidden">
+                      class="size-6 icon-plus">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -763,7 +811,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 hidden [[aria-expanded="true"]_&]:block">
+                      class="size-6 icon-minus">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -771,7 +819,7 @@
               </dt>
               <el-disclosure id="faq-3" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base leading-7 text-gray-400">
+                  <p class="text-base/7 text-gray-400">
                     Because they&#039;re so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
                     cupiditate laboriosam fugiat.
                   </p>
@@ -781,7 +829,7 @@
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
                 <button type="button" command="--toggle" commandfor="faq-4" class="flex w-full items-start justify-between text-left text-white">
-                  <span class="text-base leading-7 font-semibold">Why can&#039;t you hear a pterodactyl go to the bathroom?</span>
+                  <span class="text-base/7 font-semibold">Why can&#039;t you hear a pterodactyl go to the bathroom?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
                       viewBox="0 0 24 24"
@@ -790,7 +838,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 [[aria-expanded="true"]_&]:hidden">
+                      class="size-6 icon-plus">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -800,7 +848,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 hidden [[aria-expanded="true"]_&]:block">
+                      class="size-6 icon-minus">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -808,7 +856,7 @@
               </dt>
               <el-disclosure id="faq-4" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base leading-7 text-gray-400">
+                  <p class="text-base/7 text-gray-400">
                     Because the pee is silent. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quas
                     voluptatibus ex culpa ipsum, aspernatur blanditiis fugiat ullam magnam suscipit deserunt illum natus
                     facilis atque vero consequatur! Quisquam, debitis error.
@@ -819,7 +867,7 @@
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
                 <button type="button" command="--toggle" commandfor="faq-5" class="flex w-full items-start justify-between text-left text-white">
-                  <span class="text-base leading-7 font-semibold">Why did the invisible man turn down the job offer?</span>
+                  <span class="text-base/7 font-semibold">Why did the invisible man turn down the job offer?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
                       viewBox="0 0 24 24"
@@ -828,7 +876,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 [[aria-expanded="true"]_&]:hidden">
+                      class="size-6 icon-plus">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -838,7 +886,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 hidden [[aria-expanded="true"]_&]:block">
+                      class="size-6 icon-minus">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -846,7 +894,7 @@
               </dt>
               <el-disclosure id="faq-5" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base leading-7 text-gray-400">
+                  <p class="text-base/7 text-gray-400">
                     He couldn&#039;t see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde
                     rerum deserunt eius.
@@ -870,69 +918,69 @@
           <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div class="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 class="text-sm leading-6 font-semibold text-white">Solutions</h3>
+                <h3 class="text-sm/6 font-semibold text-white">Solutions</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Marketing</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Marketing</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Analytics</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Analytics</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Automation</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Automation</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Commerce</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Commerce</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Insights</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Insights</a>
                   </li>
                 </ul>
               </div>
               <div class="mt-10 md:mt-0">
-                <h3 class="text-sm leading-6 font-semibold text-white">Support</h3>
+                <h3 class="text-sm/6 font-semibold text-white">Support</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Submit ticket</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Submit ticket</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Documentation</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Documentation</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Guides</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Guides</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 class="text-sm leading-6 font-semibold text-white">Company</h3>
+                <h3 class="text-sm/6 font-semibold text-white">Company</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">About</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">About</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Blog</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Blog</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Jobs</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Jobs</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Press</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Press</a>
                   </li>
                 </ul>
               </div>
               <div class="mt-10 md:mt-0">
-                <h3 class="text-sm leading-6 font-semibold text-white">Legal</h3>
+                <h3 class="text-sm/6 font-semibold text-white">Legal</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Terms of service</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Terms of service</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Privacy policy</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Privacy policy</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">License</a>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">License</a>
                   </li>
                 </ul>
               </div>
@@ -944,4 +992,6 @@
   </div>
 
   <script></script>
+
 </body>
+</html>

@@ -1,172 +1,80 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      fontFamily: {
-        sans: ['InterVariable', 'system-ui', 'sans-serif'],
-      },
-    },
-  }
-</script>
-<style>
-  :root,
-  :host {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-  html, body {
-    font-family: var(--font-sans, system-ui, sans-serif);
-    font-feature-settings: var(--font-sans--font-feature-settings);
-    font-variation-settings: initial;
-  }
-
-  /* ===== Pricing Toggle Conditional Display ===== */
-  .price-annually:is(:where(.group\/pricing-form):not(:has([name='frequency'][value='annually']:checked)) *) {
-    display: none;
-  }
-  .price-monthly:is(:where(.group\/pricing-form):not(:has([name='frequency'][value='monthly']:checked)) *) {
-    display: none;
-  }
-
-  /* ===== Featured Badge - Only show on featured cards ===== */
-  .featured-badge:is(:where(.group\/pricing-card):not([data-featured]) *) {
-    display: none;
-  }
-
-  /* ===== Frequency Label - Checked State ===== */
-  .freq-label-text:is(:where(.group\/freq-label):has(:checked) *) {
-    color: #fff;
-  }
-  .freq-label-checked:has(:checked) {
-    background-color: oklch(58.5% 0.233 277.117);
-  }
-
-  /* ===== Featured Card Child Overrides ===== */
-  .featured-btn-bg:is(:where(.group\/pricing-card)[data-featured] *) {
-    background-color: oklch(58.5% 0.233 277.117);
-  }
-  .featured-cta-bg:is(:where(.group\/pricing-card)[data-featured] *) {
-    background-color: oklch(51.1% 0.262 276.966);
-  }
-  .featured-title:is(:where(.group\/pricing-card)[data-featured] *) {
-    color: oklch(67.3% 0.182 276.935);
-  }
-  .featured-subtitle:is(:where(.group\/pricing-card)[data-featured] *) {
-    color: #fff;
-  }
-  .featured-shadow:is(:where(.group\/pricing-card)[data-featured] *) {
-    --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .featured-color-white:is(:where(.group\/pricing-card)[data-featured] *) {
-    color: #fff;
-  }
-
-  /* Featured card - no inset ring on CTA buttons */
-  .featured-no-ring:is(:where(.group\/pricing-card)[data-featured] *) {
-    --tw-inset-ring-shadow: inset 0 0 0 0px var(--tw-inset-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  /* Featured card - hover states */
-  .featured-hover-bg:is(:where(.group\/pricing-card)[data-featured] *):hover {
-    background-color: oklch(67.3% 0.182 276.935);
-  }
-  .featured-cta-hover-bg:is(:where(.group\/pricing-card)[data-featured] *):hover {
-    background-color: oklch(58.5% 0.233 277.117);
-  }
-
-  /* ===== Pricing Card Ring when Featured ===== */
-  .pricing-card-ring[data-featured] {
-    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .pricing-card-ring-color[data-featured] {
-    --tw-ring-color: oklch(67.3% 0.182 276.935);
-  }
-  .pricing-card-ring-alt[data-featured] {
-    --tw-ring-color: oklch(51.1% 0.262 276.966);
-  }
-
-  /* ===== Non-Featured Card Focus Visible ===== */
-  .non-featured-focus:is(:where(.group\/pricing-card):not([data-featured]) *):focus-visible {
-    outline-color: oklab(100% 0 5.96046e-8/0.75);
-  }
-
-  /* ===== Inset Ring (ring-inset shadow system) ===== */
-  .ring-inset-custom {
-    --tw-inset-ring-shadow: inset 0 0 0 1px var(--tw-inset-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  /* ===== Placeholder Color ===== */
-  .input-placeholder::placeholder {
-    color: oklch(55.1% 0.027 264.364);
-  }
-
-  /* ===== Dialog Backdrop ===== */
-  .dialog-backdrop::backdrop {
-    background-color: transparent;
-  }
-
-  /* ===== Dark Mode Conditional Display ===== */
-  @media not all and (prefers-color-scheme: dark) {
-    .dark-only { display: none; }
-  }
-  @media (prefers-color-scheme: dark) {
-    .light-only { display: none; }
-    .dark-featured-btn-bg:is(:where(.group\/pricing-card)[data-featured] *) {
-      background-color: oklch(58.5% 0.233 277.117);
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: 'InterVariable', system-ui, sans-serif;
+      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-    .dark-featured-title:is(:where(.group\/pricing-card)[data-featured] *) {
+  </style>
+  <style>
+    /* Complex selectors that cannot be expressed as Tailwind utilities */
+    
+    /* Pricing frequency switching: show monthly price when monthly checked */
+    .bayt:is(:where(.bays):not(:has([name="frequency"][value="monthly"]:checked)) *) {
+      display: none;
+    }
+    /* Show annually price when annually checked */
+    .bayr:is(:where(.bays):not(:has([name="frequency"][value="annually"]:checked)) *) {
+      display: none;
+    }
+    /* Hide "Most popular" badge on non-featured tiers */
+    .bayu:is(:where(.bayv):not([data-featured]) *) {
+      display: none;
+    }
+    /* White text on checked radio labels */
+    .bayw:is(:where(.bayx):has(:checked) *) {
+      color: #fff;
+    }
+    /* Featured tier: heading text color */
+    .baza:is(:where(.bayv)[data-featured] *) {
       color: oklch(67.3% 0.182 276.935);
     }
-    .dark-featured-shadow:is(:where(.group\/pricing-card)[data-featured] *) {
-      --tw-shadow: 0 0 #0000;
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-    .dark-featured-hover-bg:is(:where(.group\/pricing-card)[data-featured] *):hover {
-      background-color: oklch(67.3% 0.182 276.935);
-    }
-    .dark-freq-label-checked:has(:checked) {
+    /* Featured tier: buy button background */
+    .bayy:is(:where(.bayv)[data-featured] *) {
       background-color: oklch(58.5% 0.233 277.117);
     }
-    .dark-pricing-card-ring-color[data-featured] {
-      --tw-ring-color: oklch(67.3% 0.182 276.935);
+    /* Featured tier: buy button hover background */
+    .bazs:is(:where(.bayv)[data-featured] *):hover {
+      background-color: oklch(67.3% 0.182 276.935);
     }
-    .freq-label-checked-alt:has(:checked) {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .dark-divide:where(.dark-divide > :not(:last-child)),
-    .dark-divide-color {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .dark-ring-inset {
-      --tw-inset-ring-shadow: inset 0 0 0 1px var(--tw-inset-ring-color, currentcolor);
+    /* Featured tier: buy button remove inset ring */
+    .baze:is(:where(.bayv)[data-featured] *) {
+      --tw-inset-ring-shadow: inset 0 0 0 0px var(--tw-inset-ring-color, currentcolor);
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
-    .dark-ring-color { --tw-ring-color: oklab(100% 0 5.96046e-8/0.15); }
-    .dark-ring-inset-color-1 { --tw-inset-ring-color: oklab(100% 0 5.96046e-8/0.05); }
-    .dark-ring-inset-color-2 { --tw-inset-ring-color: oklab(100% 0 5.96046e-8/0.1); }
-  }
-
-</style>
-<body>
-  <div class="bg-[oklch(21%_0.034_264.665)]">
+    /* Non-featured tier: focus-visible outline */
+    .bbad:is(:where(.bayv):not([data-featured]) *):focus-visible {
+      outline-color: oklab(100% 0 5.96046e-8/0.75);
+    }
+    /* Checked radio: background color */
+    .bbae:has(:checked) {
+      background-color: oklch(58.5% 0.233 277.117);
+    }
+    /* Featured tier card: ring */
+    .bbag[data-featured] {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+    .bbah[data-featured] {
+      --tw-ring-color: oklch(67.3% 0.182 276.935);
+    }
+    /* Dialog backdrop */
+    .bazg::backdrop {
+      background-color: #0000;
+    }
+  </style>
+</head>
+<body class="antialiased bg-gray-900">
+<div class="bg-gray-900">
     <!-- Header -->
     <header>
-      <nav aria-label="Global" class="mx-auto flex max-w-[80rem] items-center justify-between p-6 lg:px-8">
+      <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
@@ -181,7 +89,7 @@
             type="button"
             command="show-modal"
             commandfor="mobile-menu"
-            class="-m-2.5 inline-flex items-center justify-center rounded-lg p-2.5 text-[oklch(92.8%_0.006_264.531)]">
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300">
             <span class="sr-only">Open main menu</span>
             <svg
               viewBox="0 0 24 24"
@@ -206,9 +114,9 @@
         </div>
       </nav>
       <el-dialog>
-        <dialog id="mobile-menu" class="dialog-backdrop lg:hidden">
-          <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[oklch(21%_0.034_264.665)] p-6 sm:max-w-24rem sm:ring-1 sm:ring-[oklab(96.7%_-0.000285348_-0.0029864/0.1)]">
+        <dialog id="mobile-menu" class="bazg lg:hidden">
+          <div tabindex="0" class="fixed inset-0 outline-none">
+            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-3xl sm:ring-1 sm:ring-gray-100/10">
               <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
                   <span class="sr-only">Your Company</span>
@@ -217,7 +125,7 @@
                     alt=""
                     class="h-8 w-auto" />
                 </a>
-                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-lg p-2.5 text-[oklch(92.8%_0.006_264.531)]">
+                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-300">
                   <span class="sr-only">Close menu</span>
                   <svg
                     viewBox="0 0 24 24"
@@ -232,15 +140,15 @@
                 </button>
               </div>
               <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-[oklab(100%_0_5.96046e-8/0.1)]">
+                <div class="-my-6 divide-y divide-white/10">
                   <div class="space-y-2 py-6">
-                    <a href="#" class="-mx-3 block rounded-xl px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Product</a>
-                    <a href="#" class="-mx-3 block rounded-xl px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Features</a>
-                    <a href="#" class="-mx-3 block rounded-xl px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Marketplace</a>
-                    <a href="#" class="-mx-3 block rounded-xl px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Company</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Product</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Features</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Marketplace</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Company</a>
                   </div>
                   <div class="py-6">
-                    <a href="#" class="-mx-3 block rounded-xl px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5">Log in</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5">Log in</a>
                   </div>
                 </div>
               </div>
@@ -252,58 +160,58 @@
 
     <main>
       <!-- Pricing section -->
-      <form class="group/pricing-form pt-24 sm:pt-32">
-        <div class="mx-auto max-w-[80rem] px-6 lg:px-8">
-          <div class="mx-auto max-w-[56rem] text-center">
-            <h2 class="text-base/7 font-semibold text-[oklch(67.3%_0.182_276.935)]">Pricing</h2>
-            <p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">Pricing that grows with you</p>
+      <form class="bays pt-24 sm:pt-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-4xl text-center">
+            <h2 class="text-base/7 font-semibold text-indigo-400">Pricing</h2>
+            <p class="mt-2 text-5xl font-semibold -tracking-tight text-balance text-white sm:text-6xl">Pricing that grows with you</p>
           </div>
-          <p class="mx-auto mt-6 max-w-[42rem] text-center text-lg font-medium text-pretty text-[oklch(70.7%_0.022_261.325)] sm:text-xl/8">
+          <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
             Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
             loyalty, and driving sales.
           </p>
           <div class="mt-16 flex justify-center">
             <fieldset aria-label="Payment frequency">
-              <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-inset-custom ring-inset-[oklab(100%_0_5.96046e-8/0.1)]">
-                <label class="group/freq-label relative rounded-full px-2.5 py-1 freq-label-checked">
+              <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-inset ring-inset-white/10">
+                <label class="bayx relative rounded-full px-2.5 py-1 bbae">
                   <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
-                  <span class="text-[oklch(70.7%_0.022_261.325)] freq-label-text">Monthly</span>
+                  <span class="text-gray-500 bayw">Monthly</span>
                 </label>
-                <label class="group/freq-label relative rounded-full px-2.5 py-1 freq-label-checked">
+                <label class="bayx relative rounded-full px-2.5 py-1 bbae">
                   <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
-                  <span class="text-[oklch(70.7%_0.022_261.325)] freq-label-text">Annually</span>
+                  <span class="text-gray-500 bayw">Annually</span>
                 </label>
               </div>
             </fieldset>
           </div>
           <div class="isolate mx-auto mt-10 grid max-w-[28rem] grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            <div class="group/pricing-card rounded-3xl bg-[oklab(27.8%_-0.00750866_-0.0321344/0.5)] p-8 ring-1 ring-[oklab(100%_0_5.96046e-8/0.15)] pricing-card-ring pricing-card-ring-color 2xl:p-10">
+            <div class="bayv rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 bbag bbah xl:p-10">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-freelancer" class="text-lg/8 font-semibold text-white featured-title">Freelancer</h3>
-                <p class="rounded-full bg-[oklch(58.5%_0.233_277.117)] px-2.5 py-1 text-xs/5 font-semibold text-white featured-badge">Most popular</p>
+                <h3 id="tier-freelancer" class="text-lg/8 font-semibold text-white baza">Freelancer</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white bayu">Most popular</p>
               </div>
-              <p class="mt-4 text-sm/6 text-[oklch(87.2%_0.01_258.338)]">The essentials to provide your best work for clients.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
-                <span class="text-4xl font-semibold tracking-tight text-white">$19</span>
-                <span class="text-sm/6 font-semibold text-[oklch(70.7%_0.022_261.325)]">/month</span>
+              <p class="mt-4 text-sm/6 text-gray-400">The essentials to provide your best work for clients.</p>
+              <p class="mt-6 flex items-baseline gap-x-1 bayt">
+                <span class="text-4xl font-semibold -tracking-tight text-white">$19</span>
+                <span class="text-sm/6 font-semibold text-gray-500">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-annually">
-                <span class="text-4xl font-semibold tracking-tight text-white">$199</span>
-                <span class="text-sm/6 font-semibold text-[oklch(70.7%_0.022_261.325)]">/year</span>
+              <p class="mt-6 flex items-baseline gap-x-1 bayr">
+                <span class="text-4xl font-semibold -tracking-tight text-white">$199</span>
+                <span class="text-sm/6 font-semibold text-gray-500">/year</span>
               </p>
               <a
                 aria-describedby="freelancer"
-                class="mt-6 block w-full rounded-lg bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset-custom ring-inset-[oklab(100%_0_5.96046e-8/0.05)] featured-btn-bg featured-no-ring hover:bg-white/20 featured-hover-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(58.5%_0.233_277.117)] non-featured-focus"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 bayy baze hover:bg-white/20 bazs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 bbad"
                 >Buy plan</a
               >
-              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-[oklch(87.2%_0.01_258.338)] 2xl:mt-10">
+              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-400 xl:mt-10">
                 <li class="flex gap-x-3">
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -317,7 +225,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -331,7 +239,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -345,7 +253,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -355,33 +263,33 @@
                 </li>
               </ul>
             </div>
-            <div data-featured="true" class="group/pricing-card rounded-3xl bg-[oklab(27.8%_-0.00750866_-0.0321344/0.5)] p-8 ring-1 ring-[oklab(100%_0_5.96046e-8/0.15)] pricing-card-ring pricing-card-ring-color 2xl:p-10">
+            <div data-featured="true" class="bayv rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 bbag bbah xl:p-10">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-startup" class="text-lg/8 font-semibold text-white featured-title">Startup</h3>
-                <p class="rounded-full bg-[oklch(58.5%_0.233_277.117)] px-2.5 py-1 text-xs/5 font-semibold text-white featured-badge">Most popular</p>
+                <h3 id="tier-startup" class="text-lg/8 font-semibold text-white baza">Startup</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white bayu">Most popular</p>
               </div>
-              <p class="mt-4 text-sm/6 text-[oklch(87.2%_0.01_258.338)]">A plan that scales with your rapidly growing business.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
-                <span class="text-4xl font-semibold tracking-tight text-white">$29</span>
-                <span class="text-sm/6 font-semibold text-[oklch(70.7%_0.022_261.325)]">/month</span>
+              <p class="mt-4 text-sm/6 text-gray-400">A plan that scales with your rapidly growing business.</p>
+              <p class="mt-6 flex items-baseline gap-x-1 bayt">
+                <span class="text-4xl font-semibold -tracking-tight text-white">$29</span>
+                <span class="text-sm/6 font-semibold text-gray-500">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-annually">
-                <span class="text-4xl font-semibold tracking-tight text-white">$299</span>
-                <span class="text-sm/6 font-semibold text-[oklch(70.7%_0.022_261.325)]">/year</span>
+              <p class="mt-6 flex items-baseline gap-x-1 bayr">
+                <span class="text-4xl font-semibold -tracking-tight text-white">$299</span>
+                <span class="text-sm/6 font-semibold text-gray-500">/year</span>
               </p>
               <a
                 aria-describedby="startup"
-                class="mt-6 block w-full rounded-lg bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset-custom ring-inset-[oklab(100%_0_5.96046e-8/0.05)] featured-btn-bg featured-no-ring hover:bg-white/20 featured-hover-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(58.5%_0.233_277.117)] non-featured-focus"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 bayy baze hover:bg-white/20 bazs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 bbad"
                 >Buy plan</a
               >
-              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-[oklch(87.2%_0.01_258.338)] 2xl:mt-10">
+              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-400 xl:mt-10">
                 <li class="flex gap-x-3">
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -395,7 +303,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -409,7 +317,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -423,7 +331,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -437,7 +345,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -447,33 +355,33 @@
                 </li>
               </ul>
             </div>
-            <div class="group/pricing-card rounded-3xl bg-[oklab(27.8%_-0.00750866_-0.0321344/0.5)] p-8 ring-1 ring-[oklab(100%_0_5.96046e-8/0.15)] pricing-card-ring pricing-card-ring-color 2xl:p-10">
+            <div class="bayv rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 bbag bbah xl:p-10">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-enterprise" class="text-lg/8 font-semibold text-white featured-title">Enterprise</h3>
-                <p class="rounded-full bg-[oklch(58.5%_0.233_277.117)] px-2.5 py-1 text-xs/5 font-semibold text-white featured-badge">Most popular</p>
+                <h3 id="tier-enterprise" class="text-lg/8 font-semibold text-white baza">Enterprise</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white bayu">Most popular</p>
               </div>
-              <p class="mt-4 text-sm/6 text-[oklch(87.2%_0.01_258.338)]">Dedicated support and infrastructure for your company.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
-                <span class="text-4xl font-semibold tracking-tight text-white">$59</span>
-                <span class="text-sm/6 font-semibold text-[oklch(70.7%_0.022_261.325)]">/month</span>
+              <p class="mt-4 text-sm/6 text-gray-400">Dedicated support and infrastructure for your company.</p>
+              <p class="mt-6 flex items-baseline gap-x-1 bayt">
+                <span class="text-4xl font-semibold -tracking-tight text-white">$59</span>
+                <span class="text-sm/6 font-semibold text-gray-500">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-annually">
-                <span class="text-4xl font-semibold tracking-tight text-white">$599</span>
-                <span class="text-sm/6 font-semibold text-[oklch(70.7%_0.022_261.325)]">/year</span>
+              <p class="mt-6 flex items-baseline gap-x-1 bayr">
+                <span class="text-4xl font-semibold -tracking-tight text-white">$599</span>
+                <span class="text-sm/6 font-semibold text-gray-500">/year</span>
               </p>
               <a
                 aria-describedby="enterprise"
-                class="mt-6 block w-full rounded-lg bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset-custom ring-inset-[oklab(100%_0_5.96046e-8/0.05)] featured-btn-bg featured-no-ring hover:bg-white/20 featured-hover-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(58.5%_0.233_277.117)] non-featured-focus"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 bayy baze hover:bg-white/20 bazs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 bbad"
                 >Buy plan</a
               >
-              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-[oklch(87.2%_0.01_258.338)] 2xl:mt-10">
+              <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-400 xl:mt-10">
                 <li class="flex gap-x-3">
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -487,7 +395,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -501,7 +409,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -515,7 +423,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -529,7 +437,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -543,7 +451,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-6 w-5 flex-none text-[oklch(67.3%_0.182_276.935)]">
+                    class="h-6 w-5 flex-none text-indigo-400">
                     <path
                       d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                       clip-rule="evenodd"
@@ -558,12 +466,12 @@
       </form>
 
       <!-- Testimonial section -->
-      <div class="mx-auto mt-24 max-w-[80rem] px-6 sm:mt-56 lg:px-8">
-        <div class="mx-auto grid max-w-[42rem] grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div class="flex flex-col pb-10 sm:pb-16 lg:pr-8 lg:pb-0 2xl:pr-20">
+      <div class="mx-auto mt-24 max-w-7xl px-6 sm:mt-56 lg:px-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div class="flex flex-col pb-10 sm:pb-16 lg:pr-8 lg:pb-0 xl:pr-20">
             <img src="https://tailwindcss.com/plus-assets/img/logos/tuple-logo-white.svg" alt="" class="h-12 self-start" />
             <figure class="mt-10 flex flex-auto flex-col justify-between">
-              <blockquote class="text-lg/8 text-[oklch(96.7%_0.003_264.542)]">
+              <blockquote class="text-lg/8 text-gray-100">
                 <p>
                   “Amet amet eget scelerisque tellus sit neque faucibus non eleifend. Integer eu praesent at a. Ornare
                   arcu gravida natoque erat et cursus tortor consequat at. Vulputate gravida sociis enim nullam
@@ -574,18 +482,18 @@
                 <img
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="size-14 rounded-full bg-[oklch(27.8%_0.033_256.848)]" />
+                  class="size-14 rounded-full bg-gray-800" />
                 <div class="text-base">
                   <div class="font-semibold text-white">Judith Black</div>
-                  <div class="mt-1 text-[oklch(70.7%_0.022_261.325)]">CEO of Tuple</div>
+                  <div class="mt-1 text-gray-500">CEO of Tuple</div>
                 </div>
               </figcaption>
             </figure>
           </div>
-          <div class="flex flex-col border-t border-[oklab(100%_0_5.96046e-8/0.1)] pt-10 sm:pt-16 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8 2xl:pl-20">
+          <div class="flex flex-col border-t border-white/10 pt-10 sm:pt-16 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8 xl:pl-20">
             <img src="https://tailwindcss.com/plus-assets/img/logos/reform-logo-white.svg" alt="" class="h-12 self-start" />
             <figure class="mt-10 flex flex-auto flex-col justify-between">
-              <blockquote class="text-lg/8 text-[oklch(96.7%_0.003_264.542)]">
+              <blockquote class="text-lg/8 text-gray-100">
                 <p>
                   “Excepteur veniam labore ullamco eiusmod. Pariatur consequat proident duis dolore nulla veniam
                   reprehenderit nisi officia voluptate incididunt exercitation exercitation elit. Nostrud veniam sint
@@ -596,10 +504,10 @@
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                  class="size-14 rounded-full bg-[oklch(27.8%_0.033_256.848)]" />
+                  class="size-14 rounded-full bg-gray-800" />
                 <div class="text-base">
                   <div class="font-semibold text-white">Joseph Rodriguez</div>
-                  <div class="mt-1 text-[oklch(70.7%_0.022_261.325)]">CEO of Reform</div>
+                  <div class="mt-1 text-gray-500">CEO of Reform</div>
                 </div>
               </figcaption>
             </figure>
@@ -608,52 +516,52 @@
       </div>
 
       <!-- FAQ section -->
-      <div class="mx-auto mt-24 max-w-[80rem] px-6 sm:mt-56 lg:px-8">
-        <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Frequently asked questions</h2>
-        <p class="mt-6 max-w-[42rem] text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+      <div class="mx-auto mt-24 max-w-7xl px-6 sm:mt-56 lg:px-8">
+        <h2 class="text-4xl font-semibold -tracking-tight text-white sm:text-5xl">Frequently asked questions</h2>
+        <p class="mt-6 max-w-2xl text-base/7 text-gray-500">
           Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
-          <a href="#" class="font-semibold text-[oklch(67.3%_0.182_276.935)] hover:text-[oklch(78.5%_0.115_274.713)]">sending us an email</a> and we’ll get back to you as soon as we can.
+          <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">sending us an email</a> and we’ll get back to you as soon as we can.
         </p>
         <div class="mt-20">
           <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-16 lg:gap-x-10">
             <div>
               <dt class="text-base/7 font-semibold text-white">What&#039;s the best thing about Switzerland?</dt>
-              <dd class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+              <dd class="mt-2 text-base/7 text-gray-500">
                 I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quas cupiditate laboriosam fugiat.
               </dd>
             </div>
             <div>
               <dt class="text-base/7 font-semibold text-white">How do you make holy water?</dt>
-              <dd class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+              <dd class="mt-2 text-base/7 text-gray-500">
                 You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate
                 laboriosam fugiat.
               </dd>
             </div>
             <div>
               <dt class="text-base/7 font-semibold text-white">Why do you never see elephants hiding in trees?</dt>
-              <dd class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+              <dd class="mt-2 text-base/7 text-gray-500">
                 Because they&#039;re so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
                 cupiditate laboriosam fugiat.
               </dd>
             </div>
             <div>
               <dt class="text-base/7 font-semibold text-white">What do you call someone with no body and no nose?</dt>
-              <dd class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+              <dd class="mt-2 text-base/7 text-gray-500">
                 Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam
                 fugiat.
               </dd>
             </div>
             <div>
               <dt class="text-base/7 font-semibold text-white">Why can&#039;t you hear a pterodactyl go to the bathroom?</dt>
-              <dd class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+              <dd class="mt-2 text-base/7 text-gray-500">
                 Because the pee is silent. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate
                 laboriosam fugiat.
               </dd>
             </div>
             <div>
               <dt class="text-base/7 font-semibold text-white">Why did the invisible man turn down the job offer?</dt>
-              <dd class="mt-2 text-base/7 text-[oklch(70.7%_0.022_261.325)]">
+              <dd class="mt-2 text-base/7 text-gray-500">
                 He couldn&#039;t see himself doing it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
                 cupiditate laboriosam fugiat.
               </dd>
@@ -664,28 +572,28 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mx-auto max-w-[80rem] px-6 pt-24 pb-8 sm:pt-56 lg:px-8">
-      <div class="border-t border-[oklab(100%_0_5.96046e-8/0.1)] pt-24">
-        <div class="2xl:grid 2xl:grid-cols-3 2xl:gap-8">
-          <div class="grid grid-cols-2 gap-8 2xl:col-span-2">
+    <footer class="mx-auto max-w-7xl px-6 pt-24 pb-8 sm:pt-56 lg:px-8">
+      <div class="border-t border-white/10 pt-24">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="grid grid-cols-2 gap-8 xl:col-span-2">
             <div class="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 class="text-sm/6 font-semibold text-white">Solutions</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Marketing</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Marketing</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Analytics</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Analytics</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Automation</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Automation</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Commerce</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Commerce</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Insights</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Insights</a>
                   </li>
                 </ul>
               </div>
@@ -693,13 +601,13 @@
                 <h3 class="text-sm/6 font-semibold text-white">Support</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Submit ticket</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Submit ticket</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Documentation</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Documentation</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Guides</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Guides</a>
                   </li>
                 </ul>
               </div>
@@ -709,16 +617,16 @@
                 <h3 class="text-sm/6 font-semibold text-white">Company</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">About</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">About</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Blog</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Blog</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Jobs</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Jobs</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Press</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Press</a>
                   </li>
                 </ul>
               </div>
@@ -726,22 +634,22 @@
                 <h3 class="text-sm/6 font-semibold text-white">Legal</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Terms of service</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Terms of service</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">Privacy policy</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">Privacy policy</a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm/6 text-[oklch(70.7%_0.022_261.325)] hover:text-white">License</a>
+                    <a href="#" class="text-sm/6 text-gray-500 hover:text-white">License</a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="mt-10 2xl:mt-0">
+          <div class="mt-10 xl:mt-0">
             <h3 class="text-sm/6 font-semibold text-white">Subscribe to our newsletter</h3>
-            <p class="mt-2 text-sm/6 text-[oklch(70.7%_0.022_261.325)]">The latest news, articles, and resources, sent to your inbox weekly.</p>
-            <form class="mt-6 sm:flex sm:max-w-28rem">
+            <p class="mt-2 text-sm/6 text-gray-500">The latest news, articles, and resources, sent to your inbox weekly.</p>
+            <form class="mt-6 sm:flex sm:max-w-[28rem]">
               <label for="email-address" class="sr-only">Email address</label>
               <input
                 id="email-address"
@@ -750,20 +658,20 @@
                 required
                 placeholder="Enter your email"
                 autocomplete="email"
-                class="w-full min-w-0 rounded-lg bg-white/5 px-3 py-1.5 text-base text-white outline -outline-offset-1 outline-[oklch(37.3%_0.034_259.733)] input-placeholder focus:outline-2 focus:-outline-offset-2 focus:outline-[oklch(58.5%_0.233_277.117)] sm:w-64 sm:text-sm/6 2xl:w-full" />
+                class="w-full min-w-0 rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-700 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:w-64 sm:text-sm/6 xl:w-full" />
               <div class="mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
                 <button
                   type="submit"
-                  class="flex w-full items-center justify-center rounded-lg bg-[oklch(58.5%_0.233_277.117)] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[oklch(67.3%_0.182_276.935)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(58.5%_0.233_277.117)]">
+                  class="flex w-full items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                   Subscribe
                 </button>
               </div>
             </form>
           </div>
         </div>
-        <div class="mt-16 border-t border-[oklab(100%_0_5.96046e-8/0.1)] pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
+        <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
           <div class="flex gap-x-6 md:order-2">
-            <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-white">
+            <a href="#" class="text-gray-500 hover:text-white">
               <span class="sr-only">Facebook</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
                 <path
@@ -772,7 +680,7 @@
                   fill-rule="evenodd" />
               </svg>
             </a>
-            <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-white">
+            <a href="#" class="text-gray-500 hover:text-white">
               <span class="sr-only">Instagram</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
                 <path
@@ -781,14 +689,14 @@
                   fill-rule="evenodd" />
               </svg>
             </a>
-            <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-white">
+            <a href="#" class="text-gray-500 hover:text-white">
               <span class="sr-only">X</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
                 <path
                   d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
               </svg>
             </a>
-            <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-white">
+            <a href="#" class="text-gray-500 hover:text-white">
               <span class="sr-only">GitHub</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
                 <path
@@ -797,7 +705,7 @@
                   fill-rule="evenodd" />
               </svg>
             </a>
-            <a href="#" class="text-[oklch(70.7%_0.022_261.325)] hover:text-white">
+            <a href="#" class="text-gray-500 hover:text-white">
               <span class="sr-only">YouTube</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
                 <path
@@ -807,13 +715,12 @@
               </svg>
             </a>
           </div>
-          <p class="mt-8 text-sm/6 text-[oklch(70.7%_0.022_261.325)] md:order-1 md:mt-0">&copy; 2024 Your Company, Inc. All rights reserved.</p>
+          <p class="mt-8 text-sm/6 text-gray-500 md:order-1 md:mt-0">&copy; 2024 Your Company, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>
   </div>
 
   <script></script>
-
-  <script></script>
 </body>
+</html>

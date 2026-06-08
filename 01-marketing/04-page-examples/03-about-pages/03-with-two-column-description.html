@@ -1,92 +1,22 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style type="text/tailwindcss">
-@layer theme {
-  :root, :host {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.14"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+  <style type="text/tailwindcss">
+@theme {
+  --font-sans: 'InterVariable', system-ui, sans-serif;
+  --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
-</style>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['InterVariable', 'system-ui', 'sans-serif'],
-      },
-    },
-  },
-}
-</script>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: oklch(21% 0.034 264.665);
-  }
-  html {
-    font-family: var(--font-sans, system-ui, sans-serif);
-    font-feature-settings: var(--font-sans--font-feature-settings);
-    font-variation-settings: initial;
-  }
-  dialog::backdrop {
-    background-color: transparent;
-  }
-</style>
-<body>
-  <div class="bg-indigo-950">
+  </style>
+</head>
+<body class="antialiased bg-gray-900">
+  
+  <div class="bg-gray-900">
     <!-- Header -->
     <header class="absolute inset-x-0 top-0 z-50">
       <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
@@ -104,7 +34,7 @@ tailwind.config = {
             type="button"
             command="show-modal"
             commandfor="mobile-menu"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-indigo-200">
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
             <span class="sr-only">Open main menu</span>
             <svg
               viewBox="0 0 24 24"
@@ -129,9 +59,9 @@ tailwind.config = {
         </div>
       </nav>
       <el-dialog>
-        <dialog id="mobile-menu" class="lg:hidden">
+        <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
           <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-indigo-950 p-6 sm:max-w-sm sm:ring-1 sm:ring-indigo-100/10">
+            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 rounded-3xl p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-200/10">
               <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
                   <span class="sr-only">Your Company</span>
@@ -140,7 +70,7 @@ tailwind.config = {
                     alt=""
                     class="h-8 w-auto" />
                 </a>
-                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-indigo-200">
+                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
                   <span class="sr-only">Close menu</span>
                   <svg
                     viewBox="0 0 24 24"
@@ -175,7 +105,7 @@ tailwind.config = {
 
     <main class="relative isolate">
       <!-- Background -->
-      <div aria-hidden="true" class="absolute inset-x-0 top-4 -z-10 flex transform justify-center overflow-hidden blur-[64px]">
+      <div aria-hidden="true" class="absolute inset-x-0 top-4 -z-10 flex transform-gpu justify-center overflow-hidden blur-[64px]">
         <div
           style="
             clip-path: polygon(
@@ -203,8 +133,8 @@ tailwind.config = {
       <!-- Header section -->
       <div class="px-6 pt-14 lg:px-8">
         <div class="mx-auto max-w-2xl pt-24 text-center sm:pt-40">
-          <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">We love creators</h1>
-          <p class="mt-8 text-lg font-medium text-pretty text-indigo-400 sm:text-xl sm:leading-8">
+          <h1 class="text-5xl leading-none font-semibold tracking-tight text-white sm:text-7xl leading-none">We love creators</h1>
+          <p class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl leading-8">
             Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
             fugiat veniam occaecat fugiat.
           </p>
@@ -213,8 +143,8 @@ tailwind.config = {
 
       <!-- Stat section -->
       <div class="mx-auto mt-20 max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <div class="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-indigo-300 lg:max-w-none lg:grid-cols-2">
+        <div class="mx-auto max-w-2xl lg:col-span-2 lg:max-w-none">
+          <div class="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 lg:max-w-none lg:grid-cols-2">
             <div>
               <p>
                 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
@@ -243,19 +173,19 @@ tailwind.config = {
           </div>
           <dl class="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mt-28 lg:grid-cols-4">
             <div class="flex flex-col-reverse gap-y-3 border-l border-white/20 pl-6">
-              <dt class="text-base leading-7 text-indigo-300">Business was founded</dt>
+              <dt class="text-base leading-7 text-gray-300">Business was founded</dt>
               <dd class="text-3xl font-semibold tracking-tight text-white">2012</dd>
             </div>
             <div class="flex flex-col-reverse gap-y-3 border-l border-white/20 pl-6">
-              <dt class="text-base leading-7 text-indigo-300">People on the team</dt>
+              <dt class="text-base leading-7 text-gray-300">People on the team</dt>
               <dd class="text-3xl font-semibold tracking-tight text-white">120+</dd>
             </div>
             <div class="flex flex-col-reverse gap-y-3 border-l border-white/20 pl-6">
-              <dt class="text-base leading-7 text-indigo-300">Users on the platform</dt>
+              <dt class="text-base leading-7 text-gray-300">Users on the platform</dt>
               <dd class="text-3xl font-semibold tracking-tight text-white">250k</dd>
             </div>
             <div class="flex flex-col-reverse gap-y-3 border-l border-white/20 pl-6">
-              <dt class="text-base leading-7 text-indigo-300">Paid out to creators</dt>
+              <dt class="text-base leading-7 text-gray-300">Paid out to creators</dt>
               <dd class="text-3xl font-semibold tracking-tight text-white">$70M</dd>
             </div>
           </dl>
@@ -267,19 +197,19 @@ tailwind.config = {
         <img
           src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2894&q=80"
           alt=""
-          class="aspect-[9/4] w-full object-cover outline -outline-offset-1 outline-white/10 xl:rounded-3xl" />
+          class="aspect-[9/4] w-full object-cover outline outline-offset-[-1px] outline-white/10 xl:rounded-3xl" />
       </div>
 
       <!-- Feature section -->
       <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:mx-0">
-          <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Our values</h2>
-          <p class="mt-6 text-lg leading-8 text-indigo-300">
+        <div class="mx-auto max-w-2xl lg:mx-0 lg:col-span-2">
+          <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl leading-none">Our values</h2>
+          <p class="mt-6 text-lg leading-8 text-gray-300">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste
             dolor cupiditate blanditiis.
           </p>
         </div>
-        <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 text-indigo-400 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-16">
+        <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 text-gray-400 sm:grid-cols-2 lg:mx-0 lg:col-span-2 lg:max-w-none lg:grid-cols-3 lg:gap-x-16">
           <div class="relative pl-9">
             <dt class="inline font-semibold text-white">
               <svg
@@ -287,7 +217,7 @@ tailwind.config = {
                 fill="currentColor"
                 data-slot="icon"
                 aria-hidden="true"
-                class="absolute top-1 left-1 w-5 h-5 text-violet-600">
+                class="absolute top-1 left-1 w-5 h-5 text-indigo-500">
                 <path
                   d="M4.606 12.97a.75.75 0 0 1-.134 1.051 2.494 2.494 0 0 0-.93 2.437 2.494 2.494 0 0 0 2.437-.93.75.75 0 1 1 1.186.918 3.995 3.995 0 0 1-4.482 1.332.75.75 0 0 1-.461-.461 3.994 3.994 0 0 1 1.332-4.482.75.75 0 0 1 1.052.134Z"
                   clip-rule="evenodd"
@@ -308,7 +238,7 @@ tailwind.config = {
                 fill="currentColor"
                 data-slot="icon"
                 aria-hidden="true"
-                class="absolute top-1 left-1 w-5 h-5 text-violet-600">
+                class="absolute top-1 left-1 w-5 h-5 text-indigo-500">
                 <path
                   d="M11 2a1 1 0 1 0-2 0v6.5a.5.5 0 0 1-1 0V3a1 1 0 1 0-2 0v5.5a.5.5 0 0 1-1 0V5a1 1 0 1 0-2 0v7a7 7 0 1 0 14 0V8a1 1 0 1 0-2 0v3.5a.5.5 0 0 1-1 0V3a1 1 0 1 0-2 0v5.5a.5.5 0 0 1-1 0V2Z"
                   clip-rule="evenodd"
@@ -327,7 +257,7 @@ tailwind.config = {
                 fill="currentColor"
                 data-slot="icon"
                 aria-hidden="true"
-                class="absolute top-1 left-1 w-5 h-5 text-violet-600">
+                class="absolute top-1 left-1 w-5 h-5 text-indigo-500">
                 <path
                   d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM1.49 15.326a.78.78 0 0 1-.358-.442 3 3 0 0 1 4.308-3.516 6.484 6.484 0 0 0-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 0 1-2.07-.655ZM16.44 15.98a4.97 4.97 0 0 0 2.07-.654.78.78 0 0 0 .357-.442 3 3 0 0 0-4.308-3.517 6.484 6.484 0 0 1 1.907 3.96 2.32 2.32 0 0 1-.026.654ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM5.304 16.19a.844.844 0 0 1-.277-.71 5 5 0 0 1 9.947 0 .843.843 0 0 1-.277.71A6.975 6.975 0 0 1 10 18a6.974 6.974 0 0 1-4.696-1.81Z" />
               </svg>
@@ -342,7 +272,7 @@ tailwind.config = {
                 fill="currentColor"
                 data-slot="icon"
                 aria-hidden="true"
-                class="absolute top-1 left-1 w-5 h-5 text-violet-600">
+                class="absolute top-1 left-1 w-5 h-5 text-indigo-500">
                 <path
                   d="M9.664 1.319a.75.75 0 0 1 .672 0 41.059 41.059 0 0 1 8.198 5.424.75.75 0 0 1-.254 1.285 31.372 31.372 0 0 0-7.86 3.83.75.75 0 0 1-.84 0 31.508 31.508 0 0 0-2.08-1.287V9.394c0-.244.116-.463.302-.592a35.504 35.504 0 0 1 3.305-2.033.75.75 0 0 0-.714-1.319 37 37 0 0 0-3.446 2.12A2.216 2.216 0 0 0 6 9.393v.38a31.293 31.293 0 0 0-4.28-1.746.75.75 0 0 1-.254-1.285 41.059 41.059 0 0 1 8.198-5.424ZM6 11.459a29.848 29.848 0 0 0-2.455-1.158 41.029 41.029 0 0 0-.39 3.114.75.75 0 0 0 .419.74c.528.256 1.046.53 1.554.82-.21.324-.455.63-.739.914a.75.75 0 1 0 1.06 1.06c.37-.369.69-.77.96-1.193a26.61 26.61 0 0 1 3.095 2.348.75.75 0 0 0 .992 0 26.547 26.547 0 0 1 5.93-3.95.75.75 0 0 0 .42-.739 41.053 41.053 0 0 0-.39-3.114 29.925 29.925 0 0 0-5.199 2.801 2.25 2.25 0 0 1-2.514 0c-.41-.275-.826-.541-1.25-.797a6.985 6.985 0 0 1-1.084 3.45 26.503 26.503 0 0 0-1.281-.78A5.487 5.487 0 0 0 6 12v-.54Z"
                   clip-rule="evenodd"
@@ -361,7 +291,7 @@ tailwind.config = {
                 fill="currentColor"
                 data-slot="icon"
                 aria-hidden="true"
-                class="absolute top-1 left-1 w-5 h-5 text-violet-600">
+                class="absolute top-1 left-1 w-5 h-5 text-indigo-500">
                 <path
                   d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633L6.95 5.684ZM13.949 13.684a1 1 0 0 0-1.898 0l-.184.551a1 1 0 0 1-.632.633l-.551.183a1 1 0 0 0 0 1.898l.551.183a1 1 0 0 1 .633.633l.183.551a1 1 0 0 0 1.898 0l.184-.551a1 1 0 0 1 .632-.633l.551-.183a1 1 0 0 0 0-1.898l-.551-.184a1 1 0 0 1-.633-.632l-.183-.551Z" />
               </svg>
@@ -376,7 +306,7 @@ tailwind.config = {
                 fill="currentColor"
                 data-slot="icon"
                 aria-hidden="true"
-                class="absolute top-1 left-1 w-5 h-5 text-violet-600">
+                class="absolute top-1 left-1 w-5 h-5 text-indigo-500">
                 <path
                   d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
               </svg>
@@ -389,85 +319,85 @@ tailwind.config = {
 
       <!-- Team section -->
       <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:mx-0">
-          <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Our team</h2>
-          <p class="mt-6 text-lg leading-8 text-indigo-400">
+        <div class="mx-auto max-w-2xl lg:mx-0 lg:col-span-2">
+          <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl leading-none">Our team</h2>
+          <p class="mt-6 text-lg leading-8 text-gray-400">
             We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
             best results for our clients.
           </p>
         </div>
-        <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4">
+        <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:col-span-2 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4">
           <li>
             <img
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
               alt=""
-              class="aspect-[14/13] w-full rounded-2xl object-cover outline -outline-offset-1 outline-white/10" />
+              class="aspect-[14/13] w-full rounded-2xl object-cover outline outline-offset-[-1px] outline-white/10" />
             <h3 class="mt-6 text-lg leading-8 font-semibold tracking-tight text-white">Leslie Alexander</h3>
-            <p class="text-base leading-7 text-indigo-300">Co-Founder / CEO</p>
-            <p class="text-sm leading-6 text-indigo-500">Toronto, Canada</p>
+            <p class="text-base leading-7 text-gray-300">Co-Founder / CEO</p>
+            <p class="text-sm leading-6 text-gray-500">Toronto, Canada</p>
           </li>
           <li>
             <img
               src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
               alt=""
-              class="aspect-[14/13] w-full rounded-2xl object-cover outline -outline-offset-1 outline-white/10" />
+              class="aspect-[14/13] w-full rounded-2xl object-cover outline outline-offset-[-1px] outline-white/10" />
             <h3 class="mt-6 text-lg leading-8 font-semibold tracking-tight text-white">Michael Foster</h3>
-            <p class="text-base leading-7 text-indigo-300">Co-Founder / CTO</p>
-            <p class="text-sm leading-6 text-indigo-500">Glasgow, Scotland</p>
+            <p class="text-base leading-7 text-gray-300">Co-Founder / CTO</p>
+            <p class="text-sm leading-6 text-gray-500">Glasgow, Scotland</p>
           </li>
           <li>
             <img
               src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
               alt=""
-              class="aspect-[14/13] w-full rounded-2xl object-cover outline -outline-offset-1 outline-white/10" />
+              class="aspect-[14/13] w-full rounded-2xl object-cover outline outline-offset-[-1px] outline-white/10" />
             <h3 class="mt-6 text-lg leading-8 font-semibold tracking-tight text-white">Dries Vincent</h3>
-            <p class="text-base leading-7 text-indigo-300">Business Relations</p>
-            <p class="text-sm leading-6 text-indigo-500">Niagara Falls, Canada</p>
+            <p class="text-base leading-7 text-gray-300">Business Relations</p>
+            <p class="text-sm leading-6 text-gray-500">Niagara Falls, Canada</p>
           </li>
           <li>
             <img
               src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
               alt=""
-              class="aspect-[14/13] w-full rounded-2xl object-cover outline -outline-offset-1 outline-white/10" />
+              class="aspect-[14/13] w-full rounded-2xl object-cover outline outline-offset-[-1px] outline-white/10" />
             <h3 class="mt-6 text-lg leading-8 font-semibold tracking-tight text-white">Lindsay Walton</h3>
-            <p class="text-base leading-7 text-indigo-300">Front-end Developer</p>
-            <p class="text-sm leading-6 text-indigo-500">London, England</p>
+            <p class="text-base leading-7 text-gray-300">Front-end Developer</p>
+            <p class="text-sm leading-6 text-gray-500">London, England</p>
           </li>
           <li>
             <img
               src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
               alt=""
-              class="aspect-[14/13] w-full rounded-2xl object-cover outline -outline-offset-1 outline-white/10" />
+              class="aspect-[14/13] w-full rounded-2xl object-cover outline outline-offset-[-1px] outline-white/10" />
             <h3 class="mt-6 text-lg leading-8 font-semibold tracking-tight text-white">Courtney Henry</h3>
-            <p class="text-base leading-7 text-indigo-300">Designer</p>
-            <p class="text-sm leading-6 text-indigo-500">Toronto, Canada</p>
+            <p class="text-base leading-7 text-gray-300">Designer</p>
+            <p class="text-sm leading-6 text-gray-500">Toronto, Canada</p>
           </li>
           <li>
             <img
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
               alt=""
-              class="aspect-[14/13] w-full rounded-2xl object-cover outline -outline-offset-1 outline-white/10" />
+              class="aspect-[14/13] w-full rounded-2xl object-cover outline outline-offset-[-1px] outline-white/10" />
             <h3 class="mt-6 text-lg leading-8 font-semibold tracking-tight text-white">Tom Cook</h3>
-            <p class="text-base leading-7 text-indigo-300">Director of Product</p>
-            <p class="text-sm leading-6 text-indigo-500">Toronto, Canada</p>
+            <p class="text-base leading-7 text-gray-300">Director of Product</p>
+            <p class="text-sm leading-6 text-gray-500">Toronto, Canada</p>
           </li>
           <li>
             <img
               src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
               alt=""
-              class="aspect-[14/13] w-full rounded-2xl object-cover outline -outline-offset-1 outline-white/10" />
+              class="aspect-[14/13] w-full rounded-2xl object-cover outline outline-offset-[-1px] outline-white/10" />
             <h3 class="mt-6 text-lg leading-8 font-semibold tracking-tight text-white">Whitney Francis</h3>
-            <p class="text-base leading-7 text-indigo-300">Copywriter</p>
-            <p class="text-sm leading-6 text-indigo-500">Toronto, Canada</p>
+            <p class="text-base leading-7 text-gray-300">Copywriter</p>
+            <p class="text-sm leading-6 text-gray-500">Toronto, Canada</p>
           </li>
           <li>
             <img
               src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
               alt=""
-              class="aspect-[14/13] w-full rounded-2xl object-cover outline -outline-offset-1 outline-white/10" />
+              class="aspect-[14/13] w-full rounded-2xl object-cover outline outline-offset-[-1px] outline-white/10" />
             <h3 class="mt-6 text-lg leading-8 font-semibold tracking-tight text-white">Leonard Krasner</h3>
-            <p class="text-base leading-7 text-indigo-300">Senior Designer</p>
-            <p class="text-sm leading-6 text-indigo-500">Toronto, Canada</p>
+            <p class="text-base leading-7 text-gray-300">Senior Designer</p>
+            <p class="text-sm leading-6 text-gray-500">Toronto, Canada</p>
           </li>
         </ul>
       </div>
@@ -475,25 +405,25 @@ tailwind.config = {
       <!-- CTA section -->
       <div class="relative isolate -z-10 mt-32 sm:mt-40">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div class="mx-auto flex max-w-2xl flex-col gap-16 bg-white/[0.03] px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
+          <div class="mx-auto flex max-w-2xl flex-col gap-16 bg-white/3 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:col-span-2 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
             <img
               src="https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
               alt=""
-              class="h-96 w-full flex-none rounded-2xl object-cover shadow-2xl lg:aspect-square lg:h-auto lg:max-w-sm" />
+              class="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm" />
             <div class="w-full flex-auto">
-              <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Join our team</h2>
-              <p class="mt-6 text-lg leading-8 text-pretty text-indigo-400">
+              <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl leading-none">Join our team</h2>
+              <p class="mt-6 text-lg leading-8 text-pretty text-gray-400">
                 Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
                 accusamus quisquam.
               </p>
-              <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-indigo-200 sm:grid-cols-2">
+              <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-gray-200 sm:grid-cols-2">
                 <li class="flex gap-x-3">
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-7 w-5 flex-none text-indigo-200">
+                    class="h-7 w-5 flex-none text-gray-200">
                     <path
                       d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                       clip-rule="evenodd"
@@ -507,7 +437,7 @@ tailwind.config = {
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-7 w-5 flex-none text-indigo-200">
+                    class="h-7 w-5 flex-none text-gray-200">
                     <path
                       d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                       clip-rule="evenodd"
@@ -521,7 +451,7 @@ tailwind.config = {
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-7 w-5 flex-none text-indigo-200">
+                    class="h-7 w-5 flex-none text-gray-200">
                     <path
                       d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                       clip-rule="evenodd"
@@ -535,7 +465,7 @@ tailwind.config = {
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-7 w-5 flex-none text-indigo-200">
+                    class="h-7 w-5 flex-none text-gray-200">
                     <path
                       d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                       clip-rule="evenodd"
@@ -549,7 +479,7 @@ tailwind.config = {
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-7 w-5 flex-none text-indigo-200">
+                    class="h-7 w-5 flex-none text-gray-200">
                     <path
                       d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                       clip-rule="evenodd"
@@ -563,7 +493,7 @@ tailwind.config = {
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="h-7 w-5 flex-none text-indigo-200">
+                    class="h-7 w-5 flex-none text-gray-200">
                     <path
                       d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
                       clip-rule="evenodd"
@@ -573,7 +503,7 @@ tailwind.config = {
                 </li>
               </ul>
               <div class="mt-10 flex">
-                <a href="#" class="text-sm leading-6 font-semibold text-violet-500 hover:text-violet-400">
+                <a href="#" class="text-sm leading-6 font-semibold text-indigo-400 hover:text-indigo-300">
                   See our job postings
                   <span aria-hidden="true">&rarr;</span>
                 </a>
@@ -581,7 +511,7 @@ tailwind.config = {
             </div>
           </div>
         </div>
-        <div aria-hidden="true" class="absolute inset-x-0 -top-16 -z-10 flex transform justify-center overflow-hidden blur-[64px]">
+        <div aria-hidden="true" class="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-[64px]">
           <div
             style="
               clip-path: polygon(
@@ -616,9 +546,9 @@ tailwind.config = {
             src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
             alt="Company name"
             class="h-9" />
-          <p class="text-sm leading-6 text-balance text-indigo-400">Making the world a better place through constructing elegant hierarchies.</p>
+          <p class="text-sm leading-6 text-balance text-gray-400">Making the world a better place through constructing elegant hierarchies.</p>
           <div class="flex gap-x-6">
-            <a href="#" class="text-indigo-400 hover:text-indigo-300">
+            <a href="#" class="text-gray-400 hover:text-gray-300">
               <span class="sr-only">Facebook</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6">
                 <path
@@ -627,7 +557,7 @@ tailwind.config = {
                   fill-rule="evenodd" />
               </svg>
             </a>
-            <a href="#" class="text-indigo-400 hover:text-indigo-300">
+            <a href="#" class="text-gray-400 hover:text-gray-300">
               <span class="sr-only">Instagram</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6">
                 <path
@@ -636,14 +566,14 @@ tailwind.config = {
                   fill-rule="evenodd" />
               </svg>
             </a>
-            <a href="#" class="text-indigo-400 hover:text-indigo-300">
+            <a href="#" class="text-gray-400 hover:text-gray-300">
               <span class="sr-only">X</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6">
                 <path
                   d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
               </svg>
             </a>
-            <a href="#" class="text-indigo-400 hover:text-indigo-300">
+            <a href="#" class="text-gray-400 hover:text-gray-300">
               <span class="sr-only">GitHub</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6">
                 <path
@@ -652,7 +582,7 @@ tailwind.config = {
                   fill-rule="evenodd" />
               </svg>
             </a>
-            <a href="#" class="text-indigo-400 hover:text-indigo-300">
+            <a href="#" class="text-gray-400 hover:text-gray-300">
               <span class="sr-only">YouTube</span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6">
                 <path
@@ -669,19 +599,19 @@ tailwind.config = {
               <h3 class="text-sm leading-6 font-semibold text-white">Solutions</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Marketing</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Marketing</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Analytics</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Analytics</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Automation</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Automation</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Commerce</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Commerce</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Insights</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Insights</a>
                 </li>
               </ul>
             </div>
@@ -689,13 +619,13 @@ tailwind.config = {
               <h3 class="text-sm leading-6 font-semibold text-white">Support</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Submit ticket</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Submit ticket</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Documentation</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Documentation</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Guides</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Guides</a>
                 </li>
               </ul>
             </div>
@@ -705,16 +635,16 @@ tailwind.config = {
               <h3 class="text-sm leading-6 font-semibold text-white">Company</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">About</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">About</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Blog</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Blog</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Jobs</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Jobs</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Press</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Press</a>
                 </li>
               </ul>
             </div>
@@ -722,13 +652,13 @@ tailwind.config = {
               <h3 class="text-sm leading-6 font-semibold text-white">Legal</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Terms of service</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Terms of service</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">Privacy policy</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Privacy policy</a>
                 </li>
                 <li>
-                  <a href="#" class="text-sm leading-6 text-indigo-400 hover:text-indigo-300">License</a>
+                  <a href="#" class="text-sm leading-6 text-gray-400 hover:text-gray-300">License</a>
                 </li>
               </ul>
             </div>
@@ -736,10 +666,12 @@ tailwind.config = {
         </div>
       </div>
       <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-        <p class="text-sm leading-6 text-indigo-400">&copy; 2024 Your Company, Inc. All rights reserved.</p>
+        <p class="text-sm leading-6 text-gray-400">&copy; 2024 Your Company, Inc. All rights reserved.</p>
       </div>
     </footer>
   </div>
 
   <script></script>
+
 </body>
+</html>

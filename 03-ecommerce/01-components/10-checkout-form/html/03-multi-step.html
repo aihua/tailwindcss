@@ -11,16 +11,6 @@
         --font-sans: InterVariable, system-ui, sans-serif;
         --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       }
-      .check-icon,
-      .indeterminate-icon {
-        opacity: 0;
-      }
-      .group\/cb:has(:checked) .check-icon {
-        opacity: 1;
-      }
-      .group\/cb:has(:indeterminate) .indeterminate-icon {
-        opacity: 1;
-      }
     </style>
   </head>
   <body class="antialiased">
@@ -210,14 +200,14 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="check-icon"
+                        class="opacity-0 group-has-checked/cb:opacity-100"
                       ></path>
                       <path
                         d="M3 7H11"
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="indeterminate-icon"
+                        class="opacity-0 group-has-indeterminate/cb:opacity-100"
                       ></path>
                     </svg>
                   </div>

@@ -11,16 +11,6 @@
         --font-sans: InterVariable, system-ui, sans-serif;
         --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       }
-      .check-icon,
-      .indeterminate-icon {
-        opacity: 0;
-      }
-      .group\/cb:has(:checked) .check-icon {
-        opacity: 1;
-      }
-      .group\/cb:has(:indeterminate) .indeterminate-icon {
-        opacity: 1;
-      }
     </style>
   </head>
   <body class="antialiased">
@@ -32,7 +22,7 @@
         <h1 class="sr-only">Checkout</h1>
         <section
           aria-labelledby="summary-heading"
-          class="bg-indigo-900 py-12 text-indigo-400 md:px-10 lg:col-start-2 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-[32rem] lg:bg-transparent lg:px-0 lg:pt-0 lg:pb-24"
+          class="bg-indigo-900 py-12 text-indigo-300 md:px-10 lg:col-start-2 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-[32rem] lg:bg-transparent lg:px-0 lg:pt-0 lg:pb-24"
         >
           <div class="mx-auto max-w-[42rem] px-4 lg:max-w-none lg:px-0">
             <h2 id="summary-heading" class="sr-only">Order summary</h2>
@@ -258,14 +248,14 @@
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          class="check-icon"
+                          class="opacity-0 group-has-checked/cb:opacity-100"
                         ></path>
                         <path
                           d="M3 7H11"
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          class="indeterminate-icon"
+                          class="opacity-0 group-has-indeterminate/cb:opacity-100"
                         ></path>
                       </svg>
                     </div>

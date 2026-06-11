@@ -3,1577 +3,35 @@
   content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
   rel="preconnect"
   href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-rotate-x: initial;
-        --tw-rotate-y: initial;
-        --tw-rotate-z: initial;
-        --tw-skew-x: initial;
-        --tw-skew-y: initial;
-        --tw-space-y-reverse: 0;
-        --tw-space-x-reverse: 0;
-        --tw-divide-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-gradient-position: initial;
-        --tw-gradient-from: #0000;
-        --tw-gradient-via: #0000;
-        --tw-gradient-to: #0000;
-        --tw-gradient-stops: initial;
-        --tw-gradient-via-stops: initial;
-        --tw-gradient-from-position: 0%;
-        --tw-gradient-via-position: 50%;
-        --tw-gradient-to-position: 100%;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-        --tw-outline-style: solid;
-        --tw-duration: initial;
-        --tw-ease: initial;
-        --tw-translate-x: 0;
-        --tw-translate-y: 0;
-        --tw-translate-z: 0;
-      }
-    }
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: 'InterVariable', system-ui, sans-serif;
+    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
-  @layer theme {
-    :root,
-    :host {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
+
+  @custom-variant ancestor-aria-selected {
+    :where([aria-selected="true"]) & { @slot; }
   }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .baee {
-      pointer-events: none;
-    }
-    .baef {
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border-width: 0;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-    .baeg {
-      position: absolute;
-    }
-    .baeh {
-      position: fixed;
-    }
-    .baei {
-      position: relative;
-    }
-    .baej {
-      inset: -0.125rem;
-    }
-    .baek {
-      inset: 0;
-    }
-    .bael {
-      inset-inline: 0;
-    }
-    .baem {
-      top: 0;
-    }
-    .baen {
-      top: 50%;
-    }
-    .baeo {
-      bottom: -1px;
-    }
-    .baep {
-      bottom: 0;
-    }
-    .baeq {
-      z-index: 30;
-    }
-    .baer {
-      grid-column: span 1 / span 1;
-    }
-    .baes {
-      grid-column: span 2 / span 2;
-    }
-    .baet {
-      grid-column: span 6 / span 6;
-    }
-    .baeu {
-      margin: -0.5rem;
-    }
-    .baev {
-      margin-inline: auto;
-    }
-    .baew {
-      margin-top: 0.125rem;
-    }
-    .baex {
-      margin-top: 0.25rem;
-    }
-    .baey {
-      margin-top: 0.5rem;
-    }
-    .baez {
-      margin-top: 0.75rem;
-    }
-    .bafa {
-      margin-top: 1rem;
-    }
-    .bafb {
-      margin-top: 1.5rem;
-    }
-    .bafc {
-      margin-top: 2rem;
-    }
-    .bafd {
-      margin-top: 2.5rem;
-    }
-    .bafe {
-      margin-top: 3rem;
-    }
-    .baff {
-      margin-bottom: -1px;
-    }
-    .bafg {
-      margin-left: -0.5rem;
-    }
-    .bafh {
-      margin-left: 0.5rem;
-    }
-    .bafi {
-      margin-left: 0.75rem;
-    }
-    .bafj {
-      margin-left: 1rem;
-    }
-    .bafk {
-      margin-left: 1.5rem;
-    }
-    .bafl {
-      display: block;
-    }
-    .bafm {
-      display: contents;
-    }
-    .bafn {
-      display: flex;
-    }
-    .bafo {
-      display: flow-root;
-    }
-    .bafp {
-      display: grid;
-    }
-    .bafq {
-      display: none;
-    }
-    .bafr {
-      display: inline-flex;
-    }
-    .bafs {
-      display: table;
-    }
-    .baft {
-      aspect-ratio: 2;
-    }
-    .bafu {
-      aspect-ratio: 1;
-    }
-    .bafv {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-    .bafw {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .bafx {
-      width: 2rem;
-      height: 2rem;
-    }
-    .bafy {
-      width: 100%;
-      height: 100%;
-    }
-    .bafz {
-      height: 0.125rem;
-    }
-    .baga {
-      height: 2rem;
-    }
-    .bagb {
-      height: 4rem;
-    }
-    .bagc {
-      height: 6rem;
-    }
-    .bagd {
-      height: 9rem;
-    }
-    .bage {
-      height: 18rem;
-    }
-    .bagf {
-      height: auto;
-    }
-    .bagg {
-      height: 100%;
-    }
-    .bagh {
-      width: 1.25rem;
-    }
-    .bagi {
-      width: auto;
-    }
-    .bagj {
-      width: 100%;
-    }
-    .bagk {
-      max-width: 42rem;
-    }
-    .bagl {
-      max-width: 80rem;
-    }
-    .bagm {
-      max-width: 20rem;
-    }
-    .bagn {
-      flex: 1;
-    }
-    .bago {
-      flex-shrink: 0;
-    }
-    .bagp {
-      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-    }
-    .bagq {
-      cursor: pointer;
-    }
-    .bagr {
-      list-style-type: disc;
-    }
-    .bags {
-      appearance: none;
-    }
-    .bagt {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .bagu {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .bagv {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .bagw {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-    .bagx {
-      grid-template-rows: repeat(1, minmax(0, 1fr));
-    }
-    .bagy {
-      flex-direction: column;
-    }
-    .bagz {
-      flex-direction: column-reverse;
-    }
-    .baha {
-      align-items: center;
-    }
-    .bahb {
-      align-items: flex-end;
-    }
-    .bahc {
-      justify-content: space-between;
-    }
-    .bahd {
-      justify-content: center;
-    }
-    .bahe {
-      justify-content: flex-end;
-    }
-    .bahf {
-      gap: 1.5rem;
-    }
-    .bahg {
-      gap: 2rem;
-    }
-    :where(.bahh > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 1) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 1) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.bahi > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 4) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.bahj > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 6) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 6) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.bahk > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 10) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 10) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .bahl {
-      column-gap: 0.75rem;
-    }
-    .bahm {
-      column-gap: 2rem;
-    }
-    :where(.bahn > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(0.25rem * 8) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-x-reverse)));
-    }
-    .baho {
-      row-gap: 2.5rem;
-    }
-    .bahp {
-      row-gap: 3rem;
-    }
-    :where(.bahq > :not(:last-child)) {
-      --tw-divide-y-reverse: 0;
-      border-bottom-style: var(--tw-border-style);
-      border-top-style: var(--tw-border-style);
-      border-top-width: calc(1px * var(--tw-divide-y-reverse));
-      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    }
-    :where(.bahr > :not(:last-child)) {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .bahs {
-      overflow: hidden;
-    }
-    .baht {
-      overflow: visible;
-    }
-    .bahu {
-      overflow-y: auto;
-    }
-    .bahv {
-      border-radius: 3.40282e38px;
-    }
-    .bahw {
-      border-radius: 0.5rem;
-    }
-    .bahx {
-      border-radius: 0.375rem;
-    }
-    .bahy {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-    .bahz {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .baia {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 1px;
-    }
-    .baib {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 2px;
-    }
-    .baic {
-      border-color: oklch(96.7% 0.003 264.542);
-    }
-    .baid {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .baie {
-      border-color: #0000;
-    }
-    .baif {
-      background-color: oklab(0% none none/.25);
-    }
-    .baig {
-      background-color: oklch(96.7% 0.003 264.542);
-    }
-    .baih {
-      background-color: oklch(55.1% 0.027 264.364);
-    }
-    .baii {
-      background-color: oklch(37.3% 0.034 259.733);
-    }
-    .baij {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .baik {
-      background-color: #0000;
-    }
-    .bail {
-      background-color: #fff;
-    }
-    .baim {
-      background-color: oklab(100% 0 5.96046e-8/0.6);
-    }
-    .bain {
-      --tw-gradient-position: to top;
-    }
-    @supports (background-image: linear-gradient(in lab, red, red)) {
-      .bain {
-        --tw-gradient-position: to top in oklab;
-      }
-    }
-    .bain {
-      background-image: linear-gradient(var(--tw-gradient-stops));
-    }
-    .baio {
-      --tw-gradient-from: #000;
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .baip {
-      object-fit: cover;
-    }
-    .baiq {
-      padding: 0.5rem;
-    }
-    .bair {
-      padding: 1rem;
-    }
-    .bais {
-      padding-inline: 0.25rem;
-    }
-    .bait {
-      padding-inline: 0.75rem;
-    }
-    .baiu {
-      padding-inline: 1rem;
-    }
-    .baiv {
-      padding-inline: 2rem;
-    }
-    .baiw {
-      padding-block: 0.5rem;
-    }
-    .baix {
-      padding-block: 0.75rem;
-    }
-    .baiy {
-      padding-block: 1rem;
-    }
-    .baiz {
-      padding-block: 1.5rem;
-    }
-    .baja {
-      padding-block: 2.5rem;
-    }
-    .bajb {
-      padding-block: 4rem;
-    }
-    .bajc {
-      padding-block: 5rem;
-    }
-    .bajd {
-      padding-top: 1.25rem;
-    }
-    .baje {
-      padding-top: 2.5rem;
-    }
-    .bajf {
-      padding-bottom: 0.5rem;
-    }
-    .bajg {
-      padding-bottom: 1.5rem;
-    }
-    .bajh {
-      padding-bottom: 2rem;
-    }
-    .baji {
-      padding-bottom: 3rem;
-    }
-    .bajj {
-      padding-left: 0.5rem;
-    }
-    .bajk {
-      padding-left: 1.25rem;
-    }
-    .bajl {
-      text-align: center;
-    }
-    .bajm {
-      text-align: left;
-    }
-    .bajn {
-      font-size: 1.875rem;
-      line-height: var(--tw-leading, calc(2.25 / 1.875));
-    }
-    .bajo {
-      font-size: 1rem;
-      line-height: var(--tw-leading, calc(1.5 / 1));
-    }
-    .bajp {
-      font-size: 1.125rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.125));
-    }
-    .bajq {
-      font-size: 0.875rem;
-      line-height: var(--tw-leading, calc(1.25 / 0.875));
-    }
-    .bajr {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .bajs {
-      font-size: 1.25rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.25));
-    }
-    .bajt {
-      --tw-font-weight: 700;
-      font-weight: 700;
-    }
-    .baju {
-      --tw-font-weight: 500;
-      font-weight: 500;
-    }
-    .bajv {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .bajw {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .bajx {
-      white-space: nowrap;
-    }
-    .bajy {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .bajz {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .baka {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .bakb {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .bakc {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    .bakd {
-      color: oklch(21% 0.034 264.665);
-    }
-    .bake {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .bakf {
-      color: oklch(58.5% 0.233 277.117);
-    }
-    .bakg {
-      color: #fff;
-    }
-    .bakh {
-      text-transform: uppercase;
-    }
-    .baki {
-      opacity: 0.5;
-    }
-    .bakj,
-    .bakk {
-      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bakl {
-      --tw-shadow:
-        0 20px 25px -5px var(--tw-shadow-color, #0000001a), 0 8px 10px -6px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bakm {
-      --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bakn {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bako {
-      --tw-ring-color: transparent;
-    }
-    .bakp {
-      --tw-ring-offset-width: 2px;
-      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    }
-    .bakq,
-    .bakr {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-    .baks {
-      outline-offset: calc(1px * -1);
-    }
-    .bakt {
-      outline-color: oklab(0% none none/.1);
-    }
-    .baku {
-      outline-color: oklch(87.2% 0.01 258.338);
-    }
-    .bakv {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .bakw {
-      transition-property:
-        color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from,
-        --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .bakx {
-      transition-property: opacity;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .baky {
-      transition-behavior: allow-discrete;
-    }
-    .bakz {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .bala {
-      --tw-duration: 0.3s;
-      transition-duration: 0.3s;
-    }
-    .balb {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    .balc {
-      --tw-ease: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .bald {
-      --tw-ease: linear;
-      transition-timing-function: linear;
-    }
-    .bale {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .balf {
-      forced-color-adjust: none;
-    }
-    .balg {
-      --anchor-gap: 1px;
-    }
-    .balh:not(:where([aria-expanded='true']) *) {
-      display: none;
-    }
-    .bali:not(:where([aria-expanded='true']) *) {
-      color: oklch(21% 0.034 264.665);
-    }
-    .balj:is(:where(.balk):not(:has(:is([open], :popover-open, :open))) *) {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    @media (hover: hover) {
-      .ball:is(:where(.balm):hover *) {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .baln:is(:where(.balm):hover *) {
-        color: oklch(27.8% 0.033 256.848);
-      }
-      .balo:is(:where(.balm):hover *) {
-        color: oklch(58.5% 0.233 277.117);
-      }
-      .balp:is(:where(.balm):hover *) {
-        opacity: 0.75;
-      }
-    }
-    .balq:is(:where(.balk):has(:is([open], :popover-open, :open)) *) {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .balr:is(:where(.balk):has(:is([open], :popover-open, :open)) *) {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .bals:is(:where(.balt):has(:is([open], :popover-open, :open)) *) {
-      --tw-duration: 0.15s;
-      transition-duration: 0.15s;
-    }
-    .balu:is(:where(.balt):has(:is([open], :popover-open, :open)) *) {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .balv ::marker {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .balv::marker {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .balv ::-webkit-details-marker {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .balv::-webkit-details-marker {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .balw::placeholder {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .balx::backdrop {
-      background-color: #0000;
-    }
-    .baly:is([open], :popover-open, :open) {
-      display: block;
-    }
-    .balz:checked {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .bama:checked {
-      outline-offset: 2px;
-    }
-    .bamb:checked {
-      outline-color: oklch(70.7% 0.022 261.325);
-    }
-    .bamc:checked {
-      outline-color: oklch(55.1% 0.027 264.364);
-    }
-    .bamd:checked {
-      outline-color: oklch(37.3% 0.034 259.733);
-    }
-    @media (hover: hover) {
-      .bame:hover {
-        background-color: oklch(98.5% 0.002 247.839);
-      }
-      .bamf:hover {
-        background-color: oklch(96.7% 0.003 264.542);
-      }
-      .bamg:hover {
-        background-color: oklch(92.8% 0.006 264.531);
-      }
-      .bamh:hover {
-        background-color: oklch(45.7% 0.24 277.023);
-      }
-      .bami:hover {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .bamj:hover {
-        color: oklch(44.6% 0.03 256.802);
-      }
-      .bamk:hover,
-      .baml:is(:where(.balk):not(:has(:is([open], :popover-open, :open))) *):hover {
-        color: oklch(27.8% 0.033 256.848);
-      }
-    }
-    .bamm:focus {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bamn:focus {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(3px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bamo:focus {
-      --tw-ring-color: oklch(58.5% 0.233 277.117);
-    }
-    .bamp:focus {
-      --tw-ring-color: oklab(58.5% 0.0288678 -0.231205/.5);
-    }
-    .bamq:focus {
-      --tw-ring-offset-width: 2px;
-      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    }
-    .bamr:focus {
-      --tw-ring-offset-width: 4px;
-      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    }
-    .bams:focus {
-      --tw-ring-offset-color: oklch(98.5% 0.002 247.839);
-    }
-    .bamt:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    @media (forced-colors: active) {
-      .bamt:focus {
-        outline-offset: 2px;
-        outline: 2px solid #0000;
-      }
-    }
-    .bamu:focus {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .bamv:focus {
-      outline-offset: calc(2px * -1);
-    }
-    .bamw:focus {
-      outline-color: oklch(51.1% 0.262 276.966);
-    }
-    .bamx:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    .bamy:focus-visible {
-      outline-style: var(--tw-outline-style);
-      outline-width: 3px;
-    }
-    .bamz:focus-visible {
-      outline-offset: 3px;
-    }
-    :where([aria-expanded='true']) .bana {
-      display: none;
-    }
-    :where([aria-expanded='true']) .banb {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    :where([aria-selected='true']) .banc {
-      --tw-ring-color: oklch(58.5% 0.233 277.117);
-    }
-    .band[aria-selected='true'] {
-      border-color: oklch(51.1% 0.262 276.966);
-    }
-    .bane[aria-selected='true'] {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .banf[data-closed] {
-      --tw-translate-x: -100%;
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    .bang[data-closed] {
-      opacity: 0;
-    }
-    .banh[data-enter] {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .bani[data-enter] {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .banj[data-leave] {
-      --tw-duration: 0.15s;
-      transition-duration: 0.15s;
-    }
-    .bank[data-leave] {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    @media (min-width: 40rem) {
-      .banl {
-        grid-column: span 2 / span 2;
-      }
-      .banm {
-        margin-top: 0.25rem;
-      }
-      .bann {
-        margin-top: 4rem;
-      }
-      .bano {
-        display: block;
-      }
-      .banp {
-        width: 100%;
-      }
-      .banq {
-        max-width: 28rem;
-      }
-      .banr {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .bans {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .bant {
-        column-gap: 1.5rem;
-      }
-      .banu {
-        column-gap: 2rem;
-      }
-      .banv {
-        border-radius: 0.5rem;
-      }
-      .banw {
-        padding-inline: 0;
-      }
-      .banx {
-        padding-inline: 1.5rem;
-      }
-      .bany {
-        padding-top: 4rem;
-      }
-      .banz {
-        font-size: 0.875rem;
-        line-height: var(--tw-leading, calc(1.25 / 0.875));
-      }
-    }
-    @media (min-width: 48rem) {
-      .baoa {
-        grid-column: span 2 / span 2;
-      }
-      .baob {
-        grid-column: span 8 / span 8;
-      }
-      .baoc {
-        grid-column-start: 3;
-      }
-      .baod {
-        grid-row-start: 1;
-      }
-      .baoe {
-        grid-row-start: 2;
-      }
-      .baof {
-        margin-top: 0;
-      }
-      .baog {
-        grid-auto-flow: column;
-      }
-      .baoh {
-        grid-auto-rows: min-content;
-      }
-      .baoi {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-      }
-      .baoj {
-        column-gap: 2rem;
-      }
-      .baok {
-        row-gap: 4rem;
-      }
-    }
-    @media (min-width: 64rem) {
-      .baol {
-        grid-column: span 4 / span 4;
-      }
-      .baom {
-        grid-column: span 6 / span 6;
-      }
-      .baon {
-        grid-column-start: 1;
-      }
-      .baoo {
-        grid-column-start: 2;
-      }
-      .baop {
-        grid-column-start: 9;
-      }
-      .baoq {
-        grid-row-start: 1;
-      }
-      .baor {
-        margin-top: 0;
-      }
-      .baos {
-        margin-left: 1rem;
-      }
-      .baot {
-        margin-left: 1.5rem;
-      }
-      .baou {
-        display: block;
-      }
-      .baov {
-        display: flex;
-      }
-      .baow {
-        display: grid;
-      }
-      .baox {
-        display: none;
-      }
-      .baoy {
-        max-width: none;
-      }
-      .baoz {
-        flex: 1;
-      }
-      .bapa {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .bapb {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .bapc {
-        align-items: center;
-      }
-      .bapd {
-        align-items: flex-start;
-      }
-      .bape {
-        column-gap: 2rem;
-      }
-      .bapf {
-        align-self: stretch;
-      }
-      .bapg {
-        padding-inline: 2rem;
-      }
-    }
-    @media (min-width: 80rem) {
-      .baph {
-        column-gap: 2rem;
-      }
-    }
-  }
-  @property --tw-rotate-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-z {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-space-x-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-divide-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-gradient-position {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-from {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-via {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-to {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-stops {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-via-stops {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-from-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 0%;
-  }
-  @property --tw-gradient-via-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 50%;
-  }
-  @property --tw-gradient-to-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-outline-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-duration {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ease {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-translate-x {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-y {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-z {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
+
 </style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-</style>
-<body>
-  <div class="bail">
+<body class="antialiased">
+  <div class="bg-white">
     <!-- Mobile menu -->
     <el-dialog>
-      <dialog id="mobile-menu" class="balx baox">
-        <el-dialog-backdrop class="baeh baek baif bakx bala bald bang"></el-dialog-backdrop>
-        <div tabindex="0" class="baeh baek bafn bamx">
-          <el-dialog-panel class="baei bafn bagj bagm bagp bagy bahu bail baji bakl bakv bala balc banf">
-            <div class="bafn baiu bajd bajf">
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <el-dialog-backdrop class="fixed inset-0 bg-black/25 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"></el-dialog-backdrop>
+        <div tabindex="0" class="fixed inset-0 flex focus:outline-none">
+          <el-dialog-panel class="relative flex w-full max-w-xs transform flex-col overflow-y-auto bg-white pb-12 shadow-xl transition duration-300 ease-in-out data-[closed]:-translate-x-full">
+            <div class="flex px-4 pt-5 pb-2">
               <button
                 type="button"
                 command="close"
                 commandfor="mobile-menu"
-                class="baei baeu bafr baha bahd bahx baiq bajz">
-                <span class="baeg baej"></span>
-                <span class="baef">Close menu</span>
+                class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Close menu</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -1581,329 +39,329 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="bafw">
+                  class="size-6">
                   <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </button>
             </div>
 
             <!-- Links -->
-            <el-tab-group class="baey bafl">
-              <div class="baia baid">
-                <el-tab-list class="baff bafn bahn baiu">
-                  <button class="bagn baib baie bais baiy bajo baju bajx bakd band bane">Women</button>
-                  <button class="bagn baib baie bais baiy bajo baju bajx bakd band bane">Men</button>
+            <el-tab-group class="mt-2 block">
+              <div class="border-b border-gray-200">
+                <el-tab-list class="-mb-px flex space-x-8 px-4">
+                  <button class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium whitespace-nowrap text-gray-900 aria-selected:border-indigo-600 aria-selected:text-indigo-600">Women</button>
+                  <button class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium whitespace-nowrap text-gray-900 aria-selected:border-indigo-600 aria-selected:text-indigo-600">Men</button>
                 </el-tab-list>
               </div>
               <el-tab-panels>
-                <div class="bahk baiu baje bajh">
-                  <div class="bahi">
-                    <div class="balm baei bahs bahx baig bamx">
+                <div class="space-y-10 px-4 pt-10 pb-8">
+                  <div class="space-y-4">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-01.jpg"
                         alt="Models sitting back to back, wearing Basic Tee in black and bone."
-                        class="bafu bagj baip balp" />
-                      <div class="baeg baek bafn bagy bahe">
-                        <div class="baim bair bajo banz">
-                          <a href="#" class="baju bakd">
-                            <span aria-hidden="true" class="baeg baek"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             New Arrivals
                           </a>
-                          <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
-                    <div class="balm baei bahs bahx baig bamx">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-02.jpg"
                         alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
-                        class="bafu bagj baip balp" />
-                      <div class="baeg baek bafn bagy bahe">
-                        <div class="baim bair bajo banz">
-                          <a href="#" class="baju bakd">
-                            <span aria-hidden="true" class="baeg baek"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             Basic Tees
                           </a>
-                          <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
-                    <div class="balm baei bahs bahx baig bamx">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-03.jpg"
                         alt="Model wearing minimalist watch with black wristband and white watch face."
-                        class="bafu bagj baip balp" />
-                      <div class="baeg baek bafn bagy bahe">
-                        <div class="baim bair bajo banz">
-                          <a href="#" class="baju bakd">
-                            <span aria-hidden="true" class="baeg baek"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             Accessories
                           </a>
-                          <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="bahk">
+                  <div class="space-y-10">
                     <div>
-                      <p id="women-shoes-heading-mobile" class="baju bakd">Shoes &amp; Accessories</p>
-                      <ul role="list" aria-labelledby="women-shoes-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Sneakers</a>
+                      <p id="women-shoes-heading-mobile" class="font-medium text-gray-900">Shoes &amp; Accessories</p>
+                      <ul role="list" aria-labelledby="women-shoes-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sneakers</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Boots</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Boots</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Flats</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Flats</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Sandals</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sandals</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Heels</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Heels</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Socks</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Socks</a>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <p id="women-collection-heading-mobile" class="baju bakd">Shop Collection</p>
-                      <ul role="list" aria-labelledby="women-collection-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Everything</a>
+                      <p id="women-collection-heading-mobile" class="font-medium text-gray-900">Shop Collection</p>
+                      <ul role="list" aria-labelledby="women-collection-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Everything</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Core</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Core</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">New Arrivals</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">New Arrivals</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Sale</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sale</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Accessories</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="bahk">
-                    <div>
-                      <p id="women-clothing-heading-mobile" class="baju bakd">All Clothing</p>
-                      <ul role="list" aria-labelledby="women-clothing-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Basic Tees</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Artwork Tees</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Tops</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Bottoms</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Swimwear</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Underwear</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p id="women-accessories-heading-mobile" class="baju bakd">All Accessories</p>
-                      <ul role="list" aria-labelledby="women-accessories-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Watches</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Wallets</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Bags</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Sunglasses</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Hats</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Belts</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Accessories</a>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="bahk">
+                  <div class="space-y-10">
                     <div>
-                      <p id="women-brands-heading-mobile" class="baju bakd">Brands</p>
-                      <ul role="list" aria-labelledby="women-brands-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Full Nelson</a>
+                      <p id="women-clothing-heading-mobile" class="font-medium text-gray-900">All Clothing</p>
+                      <ul role="list" aria-labelledby="women-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Basic Tees</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">My Way</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Artwork Tees</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Re-Arranged</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Tops</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Counterfeit</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Bottoms</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Significant Other</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Swimwear</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Underwear</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p id="women-accessories-heading-mobile" class="font-medium text-gray-900">All Accessories</p>
+                      <ul role="list" aria-labelledby="women-accessories-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Watches</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Wallets</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Bags</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sunglasses</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Hats</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Belts</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="space-y-10">
+                    <div>
+                      <p id="women-brands-heading-mobile" class="font-medium text-gray-900">Brands</p>
+                      <ul role="list" aria-labelledby="women-brands-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Full Nelson</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">My Way</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Re-Arranged</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Counterfeit</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Significant Other</a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div hidden class="bahk baiu baje bajh">
-                  <div class="bahi">
-                    <div class="balm baei bahs bahx baig bamx">
+                <div hidden class="space-y-10 px-4 pt-10 pb-8">
+                  <div class="space-y-4">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-category-01.jpg"
                         alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
-                        class="bafu bagj baip balp" />
-                      <div class="baeg baek bafn bagy bahe">
-                        <div class="baim bair bajo banz">
-                          <a href="#" class="baju bakd">
-                            <span aria-hidden="true" class="baeg baek"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             Accessories
                           </a>
-                          <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
-                    <div class="balm baei bahs bahx baig bamx">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg"
                         alt="Drawstring top with elastic loop closure and textured interior padding."
-                        class="bafu bagj baip balp" />
-                      <div class="baeg baek bafn bagy bahe">
-                        <div class="baim bair bajo banz">
-                          <a href="#" class="baju bakd">
-                            <span aria-hidden="true" class="baeg baek"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             New Arrivals
                           </a>
-                          <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
-                    <div class="balm baei bahs bahx baig bamx">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-02-image-card-06.jpg"
                         alt="Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt."
-                        class="bafu bagj baip balp" />
-                      <div class="baeg baek bafn bagy bahe">
-                        <div class="baim bair bajo banz">
-                          <a href="#" class="baju bakd">
-                            <span aria-hidden="true" class="baeg baek"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             Artwork Tees
                           </a>
-                          <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="bahk">
+                  <div class="space-y-10">
                     <div>
-                      <p id="men-shoes-heading-mobile" class="baju bakd">Shoes &amp; Accessories</p>
-                      <ul role="list" aria-labelledby="men-shoes-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Sneakers</a>
+                      <p id="men-shoes-heading-mobile" class="font-medium text-gray-900">Shoes &amp; Accessories</p>
+                      <ul role="list" aria-labelledby="men-shoes-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sneakers</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Boots</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Boots</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Sandals</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sandals</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Socks</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Socks</a>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <p id="men-collection-heading-mobile" class="baju bakd">Shop Collection</p>
-                      <ul role="list" aria-labelledby="men-collection-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Everything</a>
+                      <p id="men-collection-heading-mobile" class="font-medium text-gray-900">Shop Collection</p>
+                      <ul role="list" aria-labelledby="men-collection-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Everything</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Core</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Core</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">New Arrivals</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">New Arrivals</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Sale</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="bahk">
-                    <div>
-                      <p id="men-clothing-heading-mobile" class="baju bakd">All Clothing</p>
-                      <ul role="list" aria-labelledby="men-clothing-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Basic Tees</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Artwork Tees</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Pants</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Hoodies</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Swimsuits</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p id="men-accessories-heading-mobile" class="baju bakd">All Accessories</p>
-                      <ul role="list" aria-labelledby="men-accessories-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Watches</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Wallets</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Bags</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Sunglasses</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Hats</a>
-                        </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Belts</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sale</a>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="bahk">
+                  <div class="space-y-10">
                     <div>
-                      <p id="men-brands-heading-mobile" class="baju bakd">Brands</p>
-                      <ul role="list" aria-labelledby="men-brands-heading-mobile" class="bafb bafn bagy bahj">
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Re-Arranged</a>
+                      <p id="men-clothing-heading-mobile" class="font-medium text-gray-900">All Clothing</p>
+                      <ul role="list" aria-labelledby="men-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Basic Tees</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Counterfeit</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Artwork Tees</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">Full Nelson</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Pants</a>
                         </li>
-                        <li class="bafo">
-                          <a href="#" class="baeu bafl baiq baka">My Way</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Hoodies</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Swimsuits</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p id="men-accessories-heading-mobile" class="font-medium text-gray-900">All Accessories</p>
+                      <ul role="list" aria-labelledby="men-accessories-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Watches</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Wallets</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Bags</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sunglasses</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Hats</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Belts</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="space-y-10">
+                    <div>
+                      <p id="men-brands-heading-mobile" class="font-medium text-gray-900">Brands</p>
+                      <ul role="list" aria-labelledby="men-brands-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Re-Arranged</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Counterfeit</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Full Nelson</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">My Way</a>
                         </li>
                       </ul>
                     </div>
@@ -1912,23 +370,23 @@
               </el-tab-panels>
             </el-tab-group>
 
-            <div class="bahj bahz baid baiu baiz">
-              <div class="bafo">
-                <a href="#" class="baeu bafl baiq baju bakd">Company</a>
+            <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Company</a>
               </div>
-              <div class="bafo">
-                <a href="#" class="baeu bafl baiq baju bakd">Stores</a>
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Stores</a>
               </div>
             </div>
 
-            <div class="bahz baid baiu baiz">
-              <a href="#" class="baeu bafn baha baiq">
+            <div class="border-t border-gray-200 px-4 py-6">
+              <a href="#" class="-m-2 flex items-center p-2">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/flags/flag-canada.svg"
                   alt=""
-                  class="bafl bagf bagh bago" />
-                <span class="bafi bafl bajo baju bakd">CAD</span>
-                <span class="baef">, change currency</span>
+                  class="block h-auto w-5 shrink-0" />
+                <span class="ml-3 block text-base font-medium text-gray-900">CAD</span>
+                <span class="sr-only">, change currency</span>
               </a>
             </div>
           </el-dialog-panel>
@@ -1936,13 +394,13 @@
       </dialog>
     </el-dialog>
 
-    <header class="baei bail">
-      <nav aria-label="Top" class="baev bagl baiu banx bapg">
-        <div class="baia baid">
-          <div class="bafn bagb baha bahc">
-            <div class="bafn bagn baha baox">
-              <button type="button" command="show-modal" commandfor="mobile-menu" class="bafg bahx bail baiq bajz">
-                <span class="baef">Open menu</span>
+    <header class="relative bg-white">
+      <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="border-b border-gray-200">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex flex-1 items-center lg:hidden">
+              <button type="button" command="show-modal" commandfor="mobile-menu" class="-ml-2 rounded-md bg-white p-2 text-gray-400">
+                <span class="sr-only">Open menu</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -1950,7 +408,7 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="bafw">
+                  class="size-6">
                   <path
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                     stroke-linecap="round"
@@ -1958,8 +416,8 @@
                 </svg>
               </button>
 
-              <a href="#" class="bafh baiq bajz bami">
-                <span class="baef">Search</span>
+              <a href="#" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Search</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -1967,7 +425,7 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="bafw">
+                  class="size-6">
                   <path
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                     stroke-linecap="round"
@@ -1977,186 +435,186 @@
             </div>
 
             <!-- Flyout menus -->
-            <el-popover-group class="balt bafq baou baoz bapf">
-              <div class="bafn bagg bahn">
-                <div class="balk bafn">
-                  <div class="baei bafn">
+            <el-popover-group class="group hidden lg:block lg:flex-1 lg:self-stretch">
+              <div class="flex h-full space-x-8">
+                <div class="group flex">
+                  <div class="relative flex">
                     <button
                       popovertarget="desktop-menu-women"
-                      class="baei bafn baha bahd bajq baju bakw bakz bale balj balr baml">
+                      class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out group-not-open:text-gray-700 group-open:text-indigo-600 group-not-open-hover:text-gray-800">
                       Women
-                      <span aria-hidden="true" class="baeg bael baeo baeq bafz baik bakz balb balq bals balu"></span>
+                      <span aria-hidden="true" class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent duration-200 ease-in group-open:bg-indigo-600 group-open:duration-150 group-open:ease-out"></span>
                     </button>
                   </div>
                   <el-popover
                     id="desktop-menu-women"
                     anchor="bottom"
                     popover
-                    class="bagj baht bail bajq baka bakv baky balg balx baly bang banh bani banj bank">
+                    class="w-full overflow-visible bg-white text-sm text-gray-500 transition transition-discrete [--anchor-gap:1px] backdrop:bg-transparent [open]:block data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in">
                     <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                    <div aria-hidden="true" class="baeg baek baen bail bakk"></div>
-                    <div class="baei bail">
-                      <div class="baev bagl baiv">
-                        <div class="bafp bagu bahm baho bajb">
-                          <div class="bafp bagu bagx bahg bajq">
-                            <div class="balm baei baes bahs bahx baig">
+                    <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow-sm"></div>
+                    <div class="relative bg-white">
+                      <div class="mx-auto max-w-7xl px-8">
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
+                          <div class="grid grid-cols-2 grid-rows-1 gap-8 text-sm">
+                            <div class="group relative col-span-2 overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-01.jpg"
                                 alt="Models sitting back to back, wearing Basic Tee in black and bone."
-                                class="baft bagj baip balp" />
-                              <div class="baeg baek bafn bagy bahe">
-                                <div class="baim bair bajq">
-                                  <a href="#" class="baju bakd">
-                                    <span aria-hidden="true" class="baeg baek"></span>
+                                class="aspect-[2] w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     New Arrivals
                                   </a>
-                                  <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
-                            <div class="balm baei bahs bahx baig">
+                            <div class="group relative overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-02.jpg"
                                 alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
-                                class="bafu bagj baip balp" />
-                              <div class="baeg baek bafn bagy bahe">
-                                <div class="baim bair bajq">
-                                  <a href="#" class="baju bakd">
-                                    <span aria-hidden="true" class="baeg baek"></span>
+                                class="aspect-square w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     Basic Tees
                                   </a>
-                                  <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
-                            <div class="balm baei bahs bahx baig">
+                            <div class="group relative overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-03.jpg"
                                 alt="Model wearing minimalist watch with black wristband and white watch face."
-                                class="bafu bagj baip balp" />
-                              <div class="baeg baek bafn bagy bahe">
-                                <div class="baim bair bajq">
-                                  <a href="#" class="baju bakd">
-                                    <span aria-hidden="true" class="baeg baek"></span>
+                                class="aspect-square w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     Accessories
                                   </a>
-                                  <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="bafp bagv bahm baho bajq baka">
-                            <div class="bahk">
+                          <div class="grid grid-cols-3 gap-x-8 gap-y-10 text-sm text-gray-500">
+                            <div class="space-y-10">
                               <div>
-                                <p id="women-shoes-heading" class="baju bakd">Shoes &amp; Accessories</p>
-                                <ul role="list" aria-labelledby="women-shoes-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Sneakers</a>
+                                <p id="women-shoes-heading" class="font-medium text-gray-900">Shoes &amp; Accessories</p>
+                                <ul role="list" aria-labelledby="women-shoes-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sneakers</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Boots</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Boots</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Flats</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Flats</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Sandals</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sandals</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Heels</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Heels</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Socks</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Socks</a>
                                   </li>
                                 </ul>
                               </div>
                               <div>
-                                <p id="women-collection-heading" class="baju bakd">Shop Collection</p>
-                                <ul role="list" aria-labelledby="women-collection-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Everything</a>
+                                <p id="women-collection-heading" class="font-medium text-gray-900">Shop Collection</p>
+                                <ul role="list" aria-labelledby="women-collection-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Everything</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Core</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Core</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">New Arrivals</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">New Arrivals</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Sale</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sale</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Accessories</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                            <div class="bahk">
-                              <div>
-                                <p id="women-clothing-heading" class="baju bakd">All Clothing</p>
-                                <ul role="list" aria-labelledby="women-clothing-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Basic Tees</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Artwork Tees</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Tops</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Bottoms</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Swimwear</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Underwear</a>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div>
-                                <p id="women-accessories-heading" class="baju bakd">All Accessories</p>
-                                <ul role="list" aria-labelledby="women-accessories-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Watches</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Wallets</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Bags</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Sunglasses</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Hats</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Belts</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Accessories</a>
                                   </li>
                                 </ul>
                               </div>
                             </div>
-                            <div class="bahk">
+                            <div class="space-y-10">
                               <div>
-                                <p id="women-brands-heading" class="baju bakd">Brands</p>
-                                <ul role="list" aria-labelledby="women-brands-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Full Nelson</a>
+                                <p id="women-clothing-heading" class="font-medium text-gray-900">All Clothing</p>
+                                <ul role="list" aria-labelledby="women-clothing-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Basic Tees</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">My Way</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Artwork Tees</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Re-Arranged</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Tops</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Counterfeit</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Bottoms</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Significant Other</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Swimwear</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Underwear</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div>
+                                <p id="women-accessories-heading" class="font-medium text-gray-900">All Accessories</p>
+                                <ul role="list" aria-labelledby="women-accessories-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Watches</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Wallets</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Bags</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sunglasses</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Hats</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Belts</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="space-y-10">
+                              <div>
+                                <p id="women-brands-heading" class="font-medium text-gray-900">Brands</p>
+                                <ul role="list" aria-labelledby="women-brands-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Full Nelson</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">My Way</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Re-Arranged</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Counterfeit</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Significant Other</a>
                                   </li>
                                 </ul>
                               </div>
@@ -2167,169 +625,169 @@
                     </div>
                   </el-popover>
                 </div>
-                <div class="balk bafn">
-                  <div class="baei bafn">
+                <div class="group flex">
+                  <div class="relative flex">
                     <button
                       popovertarget="desktop-menu-men"
-                      class="baei bafn baha bahd bajq baju bakw bakz bale balj balr baml">
+                      class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out group-not-open:text-gray-700 group-open:text-indigo-600 group-not-open-hover:text-gray-800">
                       Men
-                      <span aria-hidden="true" class="baeg bael baeo baeq bafz baik bakz balb balq bals balu"></span>
+                      <span aria-hidden="true" class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent duration-200 ease-in group-open:bg-indigo-600 group-open:duration-150 group-open:ease-out"></span>
                     </button>
                   </div>
                   <el-popover
                     id="desktop-menu-men"
                     anchor="bottom"
                     popover
-                    class="bagj baht bail bajq baka bakv baky balg balx baly bang banh bani banj bank">
+                    class="w-full overflow-visible bg-white text-sm text-gray-500 transition transition-discrete [--anchor-gap:1px] backdrop:bg-transparent [open]:block data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in">
                     <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                    <div aria-hidden="true" class="baeg baek baen bail bakk"></div>
-                    <div class="baei bail">
-                      <div class="baev bagl baiv">
-                        <div class="bafp bagu bahm baho bajb">
-                          <div class="bafp bagu bagx bahg bajq">
-                            <div class="balm baei baes bahs bahx baig">
+                    <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow-sm"></div>
+                    <div class="relative bg-white">
+                      <div class="mx-auto max-w-7xl px-8">
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
+                          <div class="grid grid-cols-2 grid-rows-1 gap-8 text-sm">
+                            <div class="group relative col-span-2 overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-category-01.jpg"
                                 alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
-                                class="baft bagj baip balp" />
-                              <div class="baeg baek bafn bagy bahe">
-                                <div class="baim bair bajq">
-                                  <a href="#" class="baju bakd">
-                                    <span aria-hidden="true" class="baeg baek"></span>
+                                class="aspect-[2] w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     Accessories
                                   </a>
-                                  <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
-                            <div class="balm baei bahs bahx baig">
+                            <div class="group relative overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg"
                                 alt="Drawstring top with elastic loop closure and textured interior padding."
-                                class="bafu bagj baip balp" />
-                              <div class="baeg baek bafn bagy bahe">
-                                <div class="baim bair bajq">
-                                  <a href="#" class="baju bakd">
-                                    <span aria-hidden="true" class="baeg baek"></span>
+                                class="aspect-square w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     New Arrivals
                                   </a>
-                                  <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
-                            <div class="balm baei bahs bahx baig">
+                            <div class="group relative overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-02-image-card-06.jpg"
                                 alt="Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt."
-                                class="bafu bagj baip balp" />
-                              <div class="baeg baek bafn bagy bahe">
-                                <div class="baim bair bajq">
-                                  <a href="#" class="baju bakd">
-                                    <span aria-hidden="true" class="baeg baek"></span>
+                                class="aspect-square w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     Artwork Tees
                                   </a>
-                                  <p aria-hidden="true" class="baew bakc banm">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="bafp bagv bahm baho bajq baka">
-                            <div class="bahk">
+                          <div class="grid grid-cols-3 gap-x-8 gap-y-10 text-sm text-gray-500">
+                            <div class="space-y-10">
                               <div>
-                                <p id="men-shoes-heading" class="baju bakd">Shoes &amp; Accessories</p>
-                                <ul role="list" aria-labelledby="men-shoes-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Sneakers</a>
+                                <p id="men-shoes-heading" class="font-medium text-gray-900">Shoes &amp; Accessories</p>
+                                <ul role="list" aria-labelledby="men-shoes-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sneakers</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Boots</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Boots</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Sandals</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sandals</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Socks</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Socks</a>
                                   </li>
                                 </ul>
                               </div>
                               <div>
-                                <p id="men-collection-heading" class="baju bakd">Shop Collection</p>
-                                <ul role="list" aria-labelledby="men-collection-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Everything</a>
+                                <p id="men-collection-heading" class="font-medium text-gray-900">Shop Collection</p>
+                                <ul role="list" aria-labelledby="men-collection-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Everything</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Core</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Core</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">New Arrivals</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">New Arrivals</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Sale</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                            <div class="bahk">
-                              <div>
-                                <p id="men-clothing-heading" class="baju bakd">All Clothing</p>
-                                <ul role="list" aria-labelledby="men-clothing-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Basic Tees</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Artwork Tees</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Pants</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Hoodies</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Swimsuits</a>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div>
-                                <p id="men-accessories-heading" class="baju bakd">All Accessories</p>
-                                <ul role="list" aria-labelledby="men-accessories-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Watches</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Wallets</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Bags</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Sunglasses</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Hats</a>
-                                  </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Belts</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sale</a>
                                   </li>
                                 </ul>
                               </div>
                             </div>
-                            <div class="bahk">
+                            <div class="space-y-10">
                               <div>
-                                <p id="men-brands-heading" class="baju bakd">Brands</p>
-                                <ul role="list" aria-labelledby="men-brands-heading" class="bafa bahi">
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Re-Arranged</a>
+                                <p id="men-clothing-heading" class="font-medium text-gray-900">All Clothing</p>
+                                <ul role="list" aria-labelledby="men-clothing-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Basic Tees</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Counterfeit</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Artwork Tees</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">Full Nelson</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Pants</a>
                                   </li>
-                                  <li class="bafn">
-                                    <a href="#" class="bamk">My Way</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Hoodies</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Swimsuits</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div>
+                                <p id="men-accessories-heading" class="font-medium text-gray-900">All Accessories</p>
+                                <ul role="list" aria-labelledby="men-accessories-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Watches</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Wallets</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Bags</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sunglasses</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Hats</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Belts</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="space-y-10">
+                              <div>
+                                <p id="men-brands-heading" class="font-medium text-gray-900">Brands</p>
+                                <ul role="list" aria-labelledby="men-brands-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Re-Arranged</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Counterfeit</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Full Nelson</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">My Way</a>
                                   </li>
                                 </ul>
                               </div>
@@ -2341,33 +799,33 @@
                   </el-popover>
                 </div>
 
-                <a href="#" class="bafn baha bajq baju bakc bamk">Company</a>
-                <a href="#" class="bafn baha bajq baju bakc bamk">Stores</a>
+                <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
+                <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
               </div>
             </el-popover-group>
 
             <!-- Logo -->
-            <a href="#" class="bafn">
-              <span class="baef">Your Company</span>
+            <a href="#" class="flex">
+              <span class="sr-only">Your Company</span>
               <img
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""
-                class="baga bagi" />
+                class="h-8 w-auto" />
             </a>
 
-            <div class="bafn bagn baha bahe">
-              <a href="#" class="bafq bakc bamk baov bapc">
+            <div class="flex flex-1 items-center justify-end">
+              <a href="#" class="hidden text-gray-700 hover:text-gray-800 lg:flex lg:items-center">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/flags/flag-canada.svg"
                   alt=""
-                  class="bafl bagf bagh bago" />
-                <span class="bafi bafl bajq baju">CAD</span>
-                <span class="baef">, change currency</span>
+                  class="block h-auto w-5 shrink-0" />
+                <span class="ml-3 block text-sm font-medium">CAD</span>
+                <span class="sr-only">, change currency</span>
               </a>
 
               <!-- Search -->
-              <a href="#" class="bafk bafq baiq bajz bami baou">
-                <span class="baef">Search</span>
+              <a href="#" class="ml-6 hidden p-2 text-gray-400 hover:text-gray-500 lg:block">
+                <span class="sr-only">Search</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -2375,7 +833,7 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="bafw">
+                  class="size-6">
                   <path
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                     stroke-linecap="round"
@@ -2384,8 +842,8 @@
               </a>
 
               <!-- Account -->
-              <a href="#" class="baiq bajz bami baos">
-                <span class="baef">Account</span>
+              <a href="#" class="p-2 text-gray-400 hover:text-gray-500 lg:ml-4">
+                <span class="sr-only">Account</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -2393,7 +851,7 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="bafw">
+                  class="size-6">
                   <path
                     d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     stroke-linecap="round"
@@ -2402,8 +860,8 @@
               </a>
 
               <!-- Cart -->
-              <div class="bafj bafo baot">
-                <a href="#" class="balm baeu bafn baha baiq">
+              <div class="ml-4 flow-root lg:ml-6">
+                <a href="#" class="group -m-2 flex items-center p-2">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -2411,14 +869,14 @@
                     stroke-width="1.5"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="bafw bago bajz ball">
+                    class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500">
                     <path
                       d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                       stroke-linecap="round"
                       stroke-linejoin="round" />
                   </svg>
-                  <span class="bafh bajq baju bakc baln">0</span>
-                  <span class="baef">items in cart, view bag</span>
+                  <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-400">0</span>
+                  <span class="sr-only">items in cart, view bag</span>
                 </a>
               </div>
             </div>
@@ -2427,54 +885,54 @@
       </nav>
     </header>
 
-    <main class="baev bagl banx bany bapg">
-      <div class="baev bagk baoy">
+    <main class="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:max-w-none">
         <!-- Product -->
-        <div class="baow bapa bapd bape">
+        <div class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
           <!-- Image gallery -->
-          <el-tab-group class="bafn bagz">
+          <el-tab-group class="flex flex-col-reverse">
             <!-- Image selector -->
-            <div class="baev bafb bafq bagj bagk bano baoy">
-              <el-tab-list class="bafp bagw bahf">
-                <button class="baei bafn bagc bagq baha bahd bahx bail bajq baju bakd bakh bame bamn bamp bamr bamt">
-                  <span class="baef">Angled view</span>
-                  <span class="baeg baek bahs bahx">
+            <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
+              <el-tab-list class="grid grid-cols-4 gap-6">
+                <button class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium text-gray-900 uppercase hover:text-gray-500 focus:ring-3 focus:ring-indigo-500/50 focus:ring-offset-4 focus:outline-none">
+                  <span class="sr-only">Angled view</span>
+                  <span class="absolute inset-0 overflow-hidden rounded-md">
                     <img
                       src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-01.jpg"
                       alt=""
-                      class="bafy baip" />
+                      class="size-full object-cover" />
                   </span>
-                  <span aria-hidden="true" class="baee baeg baek bahx bakn bako bakp banc"></span>
+                  <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 ancestor-aria-selected:ring-indigo-500"></span>
                 </button>
-                <button class="baei bafn bagc bagq baha bahd bahx bail bajq baju bakd bakh bame bamn bamp bamr bamt">
-                  <span class="baef">Front view</span>
-                  <span class="baeg baek bahs bahx">
+                <button class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium text-gray-900 uppercase hover:text-gray-500 focus:ring-3 focus:ring-indigo-500/50 focus:ring-offset-4 focus:outline-none">
+                  <span class="sr-only">Front view</span>
+                  <span class="absolute inset-0 overflow-hidden rounded-md">
                     <img
                       src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg"
                       alt=""
-                      class="bafy baip" />
+                      class="size-full object-cover" />
                   </span>
-                  <span aria-hidden="true" class="baee baeg baek bahx bakn bako bakp banc"></span>
+                  <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 ancestor-aria-selected:ring-indigo-500"></span>
                 </button>
-                <button class="baei bafn bagc bagq baha bahd bahx bail bajq baju bakd bakh bame bamn bamp bamr bamt">
-                  <span class="baef">Back view</span>
-                  <span class="baeg baek bahs bahx">
+                <button class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium text-gray-900 uppercase hover:text-gray-500 focus:ring-3 focus:ring-indigo-500/50 focus:ring-offset-4 focus:outline-none">
+                  <span class="sr-only">Back view</span>
+                  <span class="absolute inset-0 overflow-hidden rounded-md">
                     <img
                       src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg"
                       alt=""
-                      class="bafy baip" />
+                      class="size-full object-cover" />
                   </span>
-                  <span aria-hidden="true" class="baee baeg baek bahx bakn bako bakp banc"></span>
+                  <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 ancestor-aria-selected:ring-indigo-500"></span>
                 </button>
-                <button class="baei bafn bagc bagq baha bahd bahx bail bajq baju bakd bakh bame bamn bamp bamr bamt">
-                  <span class="baef">Back angle open view</span>
-                  <span class="baeg baek bahs bahx">
+                <button class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium text-gray-900 uppercase hover:text-gray-500 focus:ring-3 focus:ring-indigo-500/50 focus:ring-offset-4 focus:outline-none">
+                  <span class="sr-only">Back angle open view</span>
+                  <span class="absolute inset-0 overflow-hidden rounded-md">
                     <img
                       src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg"
                       alt=""
-                      class="bafy baip" />
+                      class="size-full object-cover" />
                   </span>
-                  <span aria-hidden="true" class="baee baeg baek bahx bakn bako bakp banc"></span>
+                  <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 ancestor-aria-selected:ring-indigo-500"></span>
                 </button>
               </el-tab-list>
             </div>
@@ -2484,50 +942,50 @@
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-01.jpg"
                   alt="Angled front view with bag zipped and handles upright."
-                  class="bafu bagj baip banv" />
+                  class="aspect-square w-full object-cover sm:rounded-lg" />
               </div>
               <div hidden>
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg"
                   alt="Front view with bag zipped and handles upright."
-                  class="bafu bagj baip banv" />
+                  class="aspect-square w-full object-cover sm:rounded-lg" />
               </div>
               <div hidden>
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg"
                   alt="Back view with bag zipped and straps hanging down."
-                  class="bafu bagj baip banv" />
+                  class="aspect-square w-full object-cover sm:rounded-lg" />
               </div>
               <div hidden>
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg"
                   alt="Back angled view with bag open and handles to the side."
-                  class="bafu bagj baip banv" />
+                  class="aspect-square w-full object-cover sm:rounded-lg" />
               </div>
             </el-tab-panels>
           </el-tab-group>
 
           <!-- Product info -->
-          <div class="bafd baiu bann banw baor">
-            <h1 class="bajn bajt bajw bakd">Zip Tote Basket</h1>
+          <div class="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900">Zip Tote Basket</h1>
 
-            <div class="baez">
-              <h2 class="baef">Product information</h2>
-              <p class="bajn bajw bakd">$140</p>
+            <div class="mt-3">
+              <h2 class="sr-only">Product information</h2>
+              <p class="text-3xl tracking-tight text-gray-900">$140</p>
             </div>
 
             <!-- Reviews -->
-            <div class="baez">
-              <h3 class="baef">Reviews</h3>
-              <div class="bafn baha">
-                <div class="bafn baha">
+            <div class="mt-3">
+              <h3 class="sr-only">Reviews</h3>
+              <div class="flex items-center">
+                <div class="flex items-center">
                   <!-- Active: "text-indigo-500", Inactive: "text-gray-300" -->
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="bafv bago bakf">
+                    class="size-5 shrink-0 text-indigo-500">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2538,7 +996,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="bafv bago bakf">
+                    class="size-5 shrink-0 text-indigo-500">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2549,7 +1007,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="bafv bago bakf">
+                    class="size-5 shrink-0 text-indigo-500">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2560,7 +1018,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="bafv bago bakf">
+                    class="size-5 shrink-0 text-indigo-500">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2571,21 +1029,21 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="bafv bago bajy">
+                    class="size-5 shrink-0 text-gray-300">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
                       fill-rule="evenodd" />
                   </svg>
                 </div>
-                <p class="baef">4 out of 5 stars</p>
+                <p class="sr-only">4 out of 5 stars</p>
               </div>
             </div>
 
-            <div class="bafb">
-              <h3 class="baef">Description</h3>
+            <div class="mt-6">
+              <h3 class="sr-only">Description</h3>
 
-              <div class="bahj bajo bakc">
+              <div class="space-y-6 text-base text-gray-700">
                 <p>
                   The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible
                   straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top
@@ -2594,50 +1052,50 @@
               </div>
             </div>
 
-            <form class="bafb">
+            <form class="mt-6">
               <!-- Colors -->
               <div>
-                <h3 class="bajq bakb">Color</h3>
+                <h3 class="text-sm text-gray-600">Color</h3>
 
-                <fieldset aria-label="Choose a color" class="baey">
-                  <div class="bafn baha bahl">
-                    <div class="bafn bahv bakq baks bakt">
+                <fieldset aria-label="Choose a color" class="mt-2">
+                  <div class="flex items-center gap-x-3">
+                    <div class="flex rounded-full outline -outline-offset-1 outline-black/10">
                       <input
                         type="radio"
                         name="color"
                         value="washed-black"
                         checked
                         aria-label="Washed Black"
-                        class="bafx bags bahv baii balf balz bama bamd bamy bamz" />
+                        class="size-8 appearance-none rounded-full bg-gray-700 forced-color-adjust-none checked:outline checked:outline-offset-2 checked:outline-gray-700 focus-visible:outline-3 focus-visible:outline-offset-3" />
                     </div>
-                    <div class="bafn bahv bakq baks bakt">
+                    <div class="flex rounded-full outline -outline-offset-1 outline-black/10">
                       <input
                         type="radio"
                         name="color"
                         value="white"
                         aria-label="White"
-                        class="bafx bags bahv bail balf balz bama bamb bamy bamz" />
+                        class="size-8 appearance-none rounded-full bg-white forced-color-adjust-none checked:outline checked:outline-offset-2 checked:outline-gray-400 focus-visible:outline-3 focus-visible:outline-offset-3" />
                     </div>
-                    <div class="bafn bahv bakq baks bakt">
+                    <div class="flex rounded-full outline -outline-offset-1 outline-black/10">
                       <input
                         type="radio"
                         name="color"
                         value="washed-gray"
                         aria-label="Washed Gray"
-                        class="bafx bags bahv baih balf balz bama bamc bamy bamz" />
+                        class="size-8 appearance-none rounded-full bg-gray-500 forced-color-adjust-none checked:outline checked:outline-offset-2 checked:outline-gray-500 focus-visible:outline-3 focus-visible:outline-offset-3" />
                     </div>
                   </div>
                 </fieldset>
               </div>
 
-              <div class="bafd bafn">
+              <div class="mt-10 flex">
                 <button
                   type="submit"
-                  class="bafn bagm bagn baha bahd bahx bahy baie baij baiv baix bajo baju bakg bamh bamm bamo bamq bams bamt banp">
+                  class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 focus:outline-none sm:w-full">
                   Add to bag
                 </button>
 
-                <button type="button" class="bafj bafn baha bahd bahx bait baix bajz bamf bami">
+                <button type="button" class="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -2645,30 +1103,30 @@
                     stroke-width="1.5"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="bafw bago">
+                    class="size-6 shrink-0">
                     <path
                       d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
                       stroke-linecap="round"
                       stroke-linejoin="round" />
                   </svg>
-                  <span class="baef">Add to favorites</span>
+                  <span class="sr-only">Add to favorites</span>
                 </button>
               </div>
             </form>
 
-            <section aria-labelledby="details-heading" class="bafe">
-              <h2 id="details-heading" class="baef">Additional details</h2>
+            <section aria-labelledby="details-heading" class="mt-12">
+              <h2 id="details-heading" class="sr-only">Additional details</h2>
 
-              <div class="bahq bahr bahz baid">
+              <div class="divide-y divide-gray-200 border-t border-gray-200">
                 <div>
                   <h3>
                     <button
                       type="button"
                       command="--toggle"
                       commandfor="features-details"
-                      class="balm baei bafn bagj baha bahc baiz bajm">
-                      <span class="bajq baju bali banb">Features</span>
-                      <span class="bafk bafn baha">
+                      class="group relative flex w-full items-center justify-between py-6 text-left">
+                      <span class="text-sm font-medium not-group-aria-expanded:text-gray-900 group-aria-expanded:text-indigo-600">Features</span>
+                      <span class="ml-6 flex items-center">
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
@@ -2676,7 +1134,7 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bafw bajz ball bana">
+                          class="size-6 text-gray-400 group-hover:text-gray-500 group-aria-expanded:hidden">
                           <path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg
@@ -2686,22 +1144,22 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bafw bake balh balo">
+                          class="size-6 text-indigo-400 not-group-aria-expanded:hidden group-hover:text-indigo-500">
                           <path d="M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                       </span>
                     </button>
                   </h3>
-                  <el-disclosure id="features-details" open class="bafm">
-                    <div class="bajg">
-                      <ul role="list" class="bagr bahh bajk bajr bakc balv">
-                        <li class="bajj">Multiple strap configurations</li>
-                        <li class="bajj">Spacious interior with top zip</li>
-                        <li class="bajj">Leather handle and tabs</li>
-                        <li class="bajj">Interior dividers</li>
-                        <li class="bajj">Stainless strap loops</li>
-                        <li class="bajj">Double stitched construction</li>
-                        <li class="bajj">Water-resistant</li>
+                  <el-disclosure id="features-details" open class="contents">
+                    <div class="pb-6">
+                      <ul role="list" class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 [&_::marker]:text-gray-300">
+                        <li class="pl-2">Multiple strap configurations</li>
+                        <li class="pl-2">Spacious interior with top zip</li>
+                        <li class="pl-2">Leather handle and tabs</li>
+                        <li class="pl-2">Interior dividers</li>
+                        <li class="pl-2">Stainless strap loops</li>
+                        <li class="pl-2">Double stitched construction</li>
+                        <li class="pl-2">Water-resistant</li>
                       </ul>
                     </div>
                   </el-disclosure>
@@ -2712,9 +1170,9 @@
                       type="button"
                       command="--toggle"
                       commandfor="care-details"
-                      class="balm baei bafn bagj baha bahc baiz bajm">
-                      <span class="bajq baju bali banb">Care</span>
-                      <span class="bafk bafn baha">
+                      class="group relative flex w-full items-center justify-between py-6 text-left">
+                      <span class="text-sm font-medium not-group-aria-expanded:text-gray-900 group-aria-expanded:text-indigo-600">Care</span>
+                      <span class="ml-6 flex items-center">
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
@@ -2722,7 +1180,7 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bafw bajz ball bana">
+                          class="size-6 text-gray-400 group-hover:text-gray-500 group-aria-expanded:hidden">
                           <path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg
@@ -2732,19 +1190,19 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bafw bake balh balo">
+                          class="size-6 text-indigo-400 not-group-aria-expanded:hidden group-hover:text-indigo-500">
                           <path d="M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                       </span>
                     </button>
                   </h3>
-                  <el-disclosure id="care-details" hidden class="bafm">
-                    <div class="bajg">
-                      <ul role="list" class="bagr bahh bajk bajr bakc balv">
-                        <li class="bajj">Spot clean as needed</li>
-                        <li class="bajj">Hand wash with mild soap</li>
-                        <li class="bajj">Machine wash interior dividers</li>
-                        <li class="bajj">Treat handle and tabs with leather conditioner</li>
+                  <el-disclosure id="care-details" hidden class="contents">
+                    <div class="pb-6">
+                      <ul role="list" class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 [&_::marker]:text-gray-300">
+                        <li class="pl-2">Spot clean as needed</li>
+                        <li class="pl-2">Hand wash with mild soap</li>
+                        <li class="pl-2">Machine wash interior dividers</li>
+                        <li class="pl-2">Treat handle and tabs with leather conditioner</li>
                       </ul>
                     </div>
                   </el-disclosure>
@@ -2755,9 +1213,9 @@
                       type="button"
                       command="--toggle"
                       commandfor="shipping-details"
-                      class="balm baei bafn bagj baha bahc baiz bajm">
-                      <span class="bajq baju bali banb">Shipping</span>
-                      <span class="bafk bafn baha">
+                      class="group relative flex w-full items-center justify-between py-6 text-left">
+                      <span class="text-sm font-medium not-group-aria-expanded:text-gray-900 group-aria-expanded:text-indigo-600">Shipping</span>
+                      <span class="ml-6 flex items-center">
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
@@ -2765,7 +1223,7 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bafw bajz ball bana">
+                          class="size-6 text-gray-400 group-hover:text-gray-500 group-aria-expanded:hidden">
                           <path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg
@@ -2775,19 +1233,19 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bafw bake balh balo">
+                          class="size-6 text-indigo-400 not-group-aria-expanded:hidden group-hover:text-indigo-500">
                           <path d="M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                       </span>
                     </button>
                   </h3>
-                  <el-disclosure id="shipping-details" hidden class="bafm">
-                    <div class="bajg">
-                      <ul role="list" class="bagr bahh bajk bajr bakc balv">
-                        <li class="bajj">Free shipping on orders over $300</li>
-                        <li class="bajj">International shipping available</li>
-                        <li class="bajj">Expedited shipping options</li>
-                        <li class="bajj">Signature required upon delivery</li>
+                  <el-disclosure id="shipping-details" hidden class="contents">
+                    <div class="pb-6">
+                      <ul role="list" class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 [&_::marker]:text-gray-300">
+                        <li class="pl-2">Free shipping on orders over $300</li>
+                        <li class="pl-2">International shipping available</li>
+                        <li class="pl-2">Expedited shipping options</li>
+                        <li class="pl-2">Signature required upon delivery</li>
                       </ul>
                     </div>
                   </el-disclosure>
@@ -2798,9 +1256,9 @@
                       type="button"
                       command="--toggle"
                       commandfor="returns-details"
-                      class="balm baei bafn bagj baha bahc baiz bajm">
-                      <span class="bajq baju bali banb">Returns</span>
-                      <span class="bafk bafn baha">
+                      class="group relative flex w-full items-center justify-between py-6 text-left">
+                      <span class="text-sm font-medium not-group-aria-expanded:text-gray-900 group-aria-expanded:text-indigo-600">Returns</span>
+                      <span class="ml-6 flex items-center">
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
@@ -2808,7 +1266,7 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bafw bajz ball bana">
+                          class="size-6 text-gray-400 group-hover:text-gray-500 group-aria-expanded:hidden">
                           <path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <svg
@@ -2818,19 +1276,19 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bafw bake balh balo">
+                          class="size-6 text-indigo-400 not-group-aria-expanded:hidden group-hover:text-indigo-500">
                           <path d="M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                       </span>
                     </button>
                   </h3>
-                  <el-disclosure id="returns-details" hidden class="bafm">
-                    <div class="bajg">
-                      <ul role="list" class="bagr bahh bajk bajr bakc balv">
-                        <li class="bajj">Easy return requests</li>
-                        <li class="bajj">Pre-paid shipping label included</li>
-                        <li class="bajj">10% restocking fee for returns</li>
-                        <li class="bajj">60 day return window</li>
+                  <el-disclosure id="returns-details" hidden class="contents">
+                    <div class="pb-6">
+                      <ul role="list" class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 [&_::marker]:text-gray-300">
+                        <li class="pl-2">Easy return requests</li>
+                        <li class="pl-2">Pre-paid shipping label included</li>
+                        <li class="pl-2">10% restocking fee for returns</li>
+                        <li class="pl-2">60 day return window</li>
                       </ul>
                     </div>
                   </el-disclosure>
@@ -2840,99 +1298,99 @@
           </div>
         </div>
 
-        <section aria-labelledby="related-heading" class="bafd bahz baid baiu bajb banw">
-          <h2 id="related-heading" class="bajs bajt bakd">Customers also bought</h2>
+        <section aria-labelledby="related-heading" class="mt-10 border-t border-gray-200 px-4 py-16 sm:px-0">
+          <h2 id="related-heading" class="text-xl font-bold text-gray-900">Customers also bought</h2>
 
-          <div class="bafc bafp bagt bahp banr bant bapb baph">
+          <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
             <div>
-              <div class="baei">
-                <div class="baei bage bagj bahs bahw">
+              <div class="relative">
+                <div class="relative h-72 w-full overflow-hidden rounded-lg">
                   <img
                     src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-related-product-01.jpg"
                     alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
-                    class="bafy baip" />
+                    class="size-full object-cover" />
                 </div>
-                <div class="baei bafa">
-                  <h3 class="bajq baju bakd">Zip Tote Basket</h3>
-                  <p class="baex bajq baka">White and black</p>
+                <div class="relative mt-4">
+                  <h3 class="text-sm font-medium text-gray-900">Zip Tote Basket</h3>
+                  <p class="mt-1 text-sm text-gray-500">White and black</p>
                 </div>
-                <div class="baeg bael baem bafn bage bahb bahe bahs bahw bair">
-                  <div aria-hidden="true" class="baeg bael baep bagd bain baio baki"></div>
-                  <p class="baei bajp bajv bakg">$140</p>
+                <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                  <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
+                  <p class="relative text-lg font-semibold text-white">$140</p>
                 </div>
               </div>
-              <div class="bafb">
-                <a href="#" class="baei bafn baha bahd bahx bahy baie baig baiv baiw bajq baju bakd bamg"
-                  >Add to bag<span class="baef">, Zip Tote Basket</span></a
+              <div class="mt-6">
+                <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                  >Add to bag<span class="sr-only">, Zip Tote Basket</span></a
                 >
               </div>
             </div>
             <div>
-              <div class="baei">
-                <div class="baei bage bagj bahs bahw">
+              <div class="relative">
+                <div class="relative h-72 w-full overflow-hidden rounded-lg">
                   <img
                     src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-related-product-02.jpg"
                     alt="Front of zip tote bag with white canvas, blue canvas straps and handle, and front zipper pocket."
-                    class="bafy baip" />
+                    class="size-full object-cover" />
                 </div>
-                <div class="baei bafa">
-                  <h3 class="bajq baju bakd">Zip High Wall Tote</h3>
-                  <p class="baex bajq baka">White and blue</p>
+                <div class="relative mt-4">
+                  <h3 class="text-sm font-medium text-gray-900">Zip High Wall Tote</h3>
+                  <p class="mt-1 text-sm text-gray-500">White and blue</p>
                 </div>
-                <div class="baeg bael baem bafn bage bahb bahe bahs bahw bair">
-                  <div aria-hidden="true" class="baeg bael baep bagd bain baio baki"></div>
-                  <p class="baei bajp bajv bakg">$150</p>
+                <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                  <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
+                  <p class="relative text-lg font-semibold text-white">$150</p>
                 </div>
               </div>
-              <div class="bafb">
-                <a href="#" class="baei bafn baha bahd bahx bahy baie baig baiv baiw bajq baju bakd bamg"
-                  >Add to bag<span class="baef">, Zip High Wall Tote</span></a
+              <div class="mt-6">
+                <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                  >Add to bag<span class="sr-only">, Zip High Wall Tote</span></a
                 >
               </div>
             </div>
             <div>
-              <div class="baei">
-                <div class="baei bage bagj bahs bahw">
+              <div class="relative">
+                <div class="relative h-72 w-full overflow-hidden rounded-lg">
                   <img
                     src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-related-product-03.jpg"
                     alt="Front of tote with monochrome natural canvas body, straps, roll top, and handles."
-                    class="bafy baip" />
+                    class="size-full object-cover" />
                 </div>
-                <div class="baei bafa">
-                  <h3 class="bajq baju bakd">Halfsize Tote</h3>
-                  <p class="baex bajq baka">Clay</p>
+                <div class="relative mt-4">
+                  <h3 class="text-sm font-medium text-gray-900">Halfsize Tote</h3>
+                  <p class="mt-1 text-sm text-gray-500">Clay</p>
                 </div>
-                <div class="baeg bael baem bafn bage bahb bahe bahs bahw bair">
-                  <div aria-hidden="true" class="baeg bael baep bagd bain baio baki"></div>
-                  <p class="baei bajp bajv bakg">$210</p>
+                <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                  <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
+                  <p class="relative text-lg font-semibold text-white">$210</p>
                 </div>
               </div>
-              <div class="bafb">
-                <a href="#" class="baei bafn baha bahd bahx bahy baie baig baiv baiw bajq baju bakd bamg"
-                  >Add to bag<span class="baef">, Halfsize Tote</span></a
+              <div class="mt-6">
+                <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                  >Add to bag<span class="sr-only">, Halfsize Tote</span></a
                 >
               </div>
             </div>
             <div>
-              <div class="baei">
-                <div class="baei bage bagj bahs bahw">
+              <div class="relative">
+                <div class="relative h-72 w-full overflow-hidden rounded-lg">
                   <img
                     src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-related-product-04.jpg"
                     alt="Front of zip tote bag with black canvas, black handles, and orange drawstring top."
-                    class="bafy baip" />
+                    class="size-full object-cover" />
                 </div>
-                <div class="baei bafa">
-                  <h3 class="bajq baju bakd">High Wall Tote</h3>
-                  <p class="baex bajq baka">Black and orange</p>
+                <div class="relative mt-4">
+                  <h3 class="text-sm font-medium text-gray-900">High Wall Tote</h3>
+                  <p class="mt-1 text-sm text-gray-500">Black and orange</p>
                 </div>
-                <div class="baeg bael baem bafn bage bahb bahe bahs bahw bair">
-                  <div aria-hidden="true" class="baeg bael baep bagd bain baio baki"></div>
-                  <p class="baei bajp bajv bakg">$210</p>
+                <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                  <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
+                  <p class="relative text-lg font-semibold text-white">$210</p>
                 </div>
               </div>
-              <div class="bafb">
-                <a href="#" class="baei bafn baha bahd bahx bahy baie baig baiv baiw bajq baju bakd bamg"
-                  >Add to bag<span class="baef">, High Wall Tote</span></a
+              <div class="mt-6">
+                <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                  >Add to bag<span class="sr-only">, High Wall Tote</span></a
                 >
               </div>
             </div>
@@ -2941,110 +1399,110 @@
       </div>
     </main>
 
-    <footer aria-labelledby="footer-heading" class="bail">
-      <h2 id="footer-heading" class="baef">Footer</h2>
-      <div class="baev bagl baiu banx bapg">
-        <div class="bahz baid bajc">
-          <div class="bafp bagt baog baoh baoi baoj baok">
+    <footer aria-labelledby="footer-heading" class="bg-white">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="border-t border-gray-200 py-20">
+          <div class="grid grid-cols-1 md:auto-flow-col md:auto-rows-min md:grid-cols-12 md:gap-x-8 md:gap-y-16">
             <!-- Image section -->
-            <div class="baer baoa baon baoq">
+            <div class="col-span-1 md:col-span-2 lg:col-start-1 lg:row-start-1">
               <img
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""
-                class="baga bagi" />
+                class="h-8 w-auto" />
             </div>
 
             <!-- Sitemap sections -->
-            <div class="baet bafd bafp bagu bahg bans baob baoc baod baof baom baoo">
-              <div class="bafp bagt bahp banl banr banu">
+            <div class="col-span-6 mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-8 md:col-start-3 md:row-start-1 md:mt-0 lg:col-span-6 lg:col-start-2">
+              <div class="grid grid-cols-1 gap-y-12 sm:col-span-2 sm:grid-cols-2 sm:gap-x-8">
                 <div>
-                  <h3 class="bajq baju bakd">Products</h3>
-                  <ul role="list" class="bafb bahj">
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Bags</a>
+                  <h3 class="text-sm font-medium text-gray-900">Products</h3>
+                  <ul role="list" class="mt-6 space-y-6">
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Bags</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Tees</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Tees</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Objects</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Objects</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Home Goods</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Home Goods</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Accessories</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Accessories</a>
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <h3 class="bajq baju bakd">Company</h3>
-                  <ul role="list" class="bafb bahj">
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Who we are</a>
+                  <h3 class="text-sm font-medium text-gray-900">Company</h3>
+                  <ul role="list" class="mt-6 space-y-6">
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Who we are</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Sustainability</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Sustainability</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Press</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Press</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Careers</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Careers</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Terms &amp; Conditions</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Terms &amp; Conditions</a>
                     </li>
-                    <li class="bajq">
-                      <a href="#" class="baka bamj">Privacy</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Privacy</a>
                     </li>
                   </ul>
                 </div>
               </div>
               <div>
-                <h3 class="bajq baju bakd">Customer Service</h3>
-                <ul role="list" class="bafb bahj">
-                  <li class="bajq">
-                    <a href="#" class="baka bamj">Contact</a>
+                <h3 class="text-sm font-medium text-gray-900">Customer Service</h3>
+                <ul role="list" class="mt-6 space-y-6">
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Contact</a>
                   </li>
-                  <li class="bajq">
-                    <a href="#" class="baka bamj">Shipping</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Shipping</a>
                   </li>
-                  <li class="bajq">
-                    <a href="#" class="baka bamj">Returns</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Returns</a>
                   </li>
-                  <li class="bajq">
-                    <a href="#" class="baka bamj">Warranty</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Warranty</a>
                   </li>
-                  <li class="bajq">
-                    <a href="#" class="baka bamj">Secure Payments</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Secure Payments</a>
                   </li>
-                  <li class="bajq">
-                    <a href="#" class="baka bamj">FAQ</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">FAQ</a>
                   </li>
-                  <li class="bajq">
-                    <a href="#" class="baka bamj">Find a store</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Find a store</a>
                   </li>
                 </ul>
               </div>
             </div>
 
             <!-- Newsletter section -->
-            <div class="bafe baob baoc baoe baof baol baop baoq">
-              <h3 class="bajq baju bakd">Sign up for our newsletter</h3>
-              <p class="bafb bajq baka">The latest deals and savings, sent to your inbox weekly.</p>
-              <form class="baey bafn banq">
+            <div class="mt-12 md:col-span-8 md:col-start-3 md:row-start-2 md:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1">
+              <h3 class="text-sm font-medium text-gray-900">Sign up for our newsletter</h3>
+              <p class="mt-6 text-sm text-gray-500">The latest deals and savings, sent to your inbox weekly.</p>
+              <form class="mt-2 flex sm:max-w-md">
                 <input
                   id="email-address"
                   type="text"
                   required
                   autocomplete="email"
                   aria-label="Email address"
-                  class="bafl bagj bahx bail baiu baiw bajo bakd bakr baks baku balw bamu bamv bamw" />
-                <div class="bafj bago">
+                  class="block w-full rounded-md bg-white px-4 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+                <div class="ml-4 shrink-0">
                   <button
                     type="submit"
-                    class="bafn bagj baha bahd bahx bahy baie baij baiu baiw bajo baju bakg bakm bamh bamm bamo bamq bamt">
+                    class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-xs hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
                     Sign up
                   </button>
                 </div>
@@ -3053,12 +1511,29 @@
           </div>
         </div>
 
-        <div class="bahz baic baja bajl">
-          <p class="bajq baka">&copy; 2021 Your Company, Inc. All rights reserved.</p>
+        <div class="border-t border-gray-100 py-10 text-center">
+          <p class="text-sm text-gray-500">&copy; 2021 Your Company, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>
   </div>
 
-  <script></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sync el-popover open state to the nearest div.group ancestor so group-open: variants work
+      document.querySelectorAll('el-popover-group el-popover[id]').forEach(popover => {
+        const btn = document.querySelector(`[popovertarget="${popover.id}"]`);
+        if (!btn) return;
+        const groupDiv = btn.closest('div.group');
+        if (!groupDiv) return;
+        popover.addEventListener('toggle', (e) => {
+          if (e.newState === 'open') {
+            groupDiv.setAttribute('open', '');
+          } else {
+            groupDiv.removeAttribute('open');
+          }
+        });
+      });
+    });
+  </script>
 </body>

@@ -3,1530 +3,31 @@
   content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
   rel="preconnect"
   href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-rotate-x: initial;
-        --tw-rotate-y: initial;
-        --tw-rotate-z: initial;
-        --tw-skew-x: initial;
-        --tw-skew-y: initial;
-        --tw-space-y-reverse: 0;
-        --tw-space-x-reverse: 0;
-        --tw-divide-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-font-weight: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-        --tw-outline-style: solid;
-        --tw-duration: initial;
-        --tw-ease: initial;
-        --tw-translate-x: 0;
-        --tw-translate-y: 0;
-        --tw-translate-z: 0;
-      }
-    }
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: 'InterVariable', system-ui, sans-serif;
+    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
-  @layer theme {
-    :root,
-    :host {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .ayyb {
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border-width: 0;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-    .ayyc {
-      position: absolute;
-    }
-    .ayyd {
-      position: fixed;
-    }
-    .ayye {
-      position: relative;
-    }
-    .ayyf {
-      inset: -0.125rem;
-    }
-    .ayyg {
-      inset: 0;
-    }
-    .ayyh {
-      inset-inline: 0;
-    }
-    .ayyi {
-      top: 50%;
-    }
-    .ayyj {
-      bottom: -1px;
-    }
-    .ayyk {
-      z-index: 30;
-    }
-    .ayyl {
-      grid-column: span 1 / span 1;
-    }
-    .ayym {
-      grid-column: span 2 / span 2;
-    }
-    .ayyn {
-      grid-column: span 6 / span 6;
-    }
-    .ayyo {
-      margin: -0.5rem;
-    }
-    .ayyp {
-      margin-inline: auto;
-    }
-    .ayyq {
-      margin-top: 0.125rem;
-    }
-    .ayyr {
-      margin-top: 0.25rem;
-    }
-    .ayys {
-      margin-top: 0.5rem;
-    }
-    .ayyt {
-      margin-top: 0.75rem;
-    }
-    .ayyu {
-      margin-top: 1rem;
-    }
-    .ayyv {
-      margin-top: 1.5rem;
-    }
-    .ayyw {
-      margin-top: 2rem;
-    }
-    .ayyx {
-      margin-top: 2.5rem;
-    }
-    .ayyy {
-      margin-top: 3rem;
-    }
-    .ayyz {
-      margin-top: 4rem;
-    }
-    .ayza {
-      margin-bottom: -1px;
-    }
-    .ayzb {
-      margin-left: -0.5rem;
-    }
-    .ayzc {
-      margin-left: 0.25rem;
-    }
-    .ayzd {
-      margin-left: 0.5rem;
-    }
-    .ayze {
-      margin-left: 0.75rem;
-    }
-    .ayzf {
-      margin-left: 1rem;
-    }
-    .ayzg {
-      margin-left: 1.5rem;
-    }
-    .ayzh {
-      display: block;
-    }
-    .ayzi {
-      display: flex;
-    }
-    .ayzj {
-      display: flow-root;
-    }
-    .ayzk {
-      display: grid;
-    }
-    .ayzl {
-      display: none;
-    }
-    .ayzm {
-      display: inline-flex;
-    }
-    .ayzn {
-      display: table;
-    }
-    .ayzo {
-      aspect-ratio: 2;
-    }
-    .ayzp {
-      aspect-ratio: 1;
-    }
-    .ayzq {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-    .ayzr {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .ayzs {
-      width: 2rem;
-      height: 2rem;
-    }
-    .ayzt {
-      height: 0.125rem;
-    }
-    .ayzu {
-      height: 2rem;
-    }
-    .ayzv {
-      height: 4rem;
-    }
-    .ayzw {
-      height: auto;
-    }
-    .ayzx {
-      height: 100%;
-    }
-    .ayzy {
-      width: 1.25rem;
-    }
-    .ayzz {
-      width: auto;
-    }
-    .azaa {
-      width: 100%;
-    }
-    .azab {
-      max-width: 42rem;
-    }
-    .azac {
-      max-width: 80rem;
-    }
-    .azad {
-      max-width: 20rem;
-    }
-    .azae {
-      flex: 1;
-    }
-    .azaf {
-      flex-shrink: 0;
-    }
-    .azag {
-      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-    }
-    .azah {
-      list-style-type: disc;
-    }
-    .azai {
-      appearance: none;
-    }
-    .azaj {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .azak {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .azal {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .azam {
-      grid-template-rows: repeat(1, minmax(0, 1fr));
-    }
-    .azan {
-      flex-direction: column;
-    }
-    .azao {
-      align-items: center;
-    }
-    .azap {
-      justify-content: space-between;
-    }
-    .azaq {
-      justify-content: center;
-    }
-    .azar {
-      justify-content: flex-end;
-    }
-    .azas {
-      gap: 0.75rem;
-    }
-    .azat {
-      gap: 1.5rem;
-    }
-    .azau {
-      gap: 2rem;
-    }
-    :where(.azav > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 1) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 1) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.azaw > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 4) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.azax > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 6) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 6) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.azay > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 10) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 10) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .azaz {
-      column-gap: 0.75rem;
-    }
-    .azba {
-      column-gap: 1.5rem;
-    }
-    .azbb {
-      column-gap: 2rem;
-    }
-    :where(.azbc > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(0.25rem * 8) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-x-reverse)));
-    }
-    .azbd {
-      row-gap: 2.5rem;
-    }
-    .azbe {
-      row-gap: 3rem;
-    }
-    :where(.azbf > :not(:last-child)) {
-      --tw-divide-y-reverse: 0;
-      border-bottom-style: var(--tw-border-style);
-      border-top-style: var(--tw-border-style);
-      border-top-width: calc(1px * var(--tw-divide-y-reverse));
-      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    }
-    :where(.azbg > :not(:last-child)) {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .azbh {
-      overflow: hidden;
-    }
-    .azbi {
-      overflow: visible;
-    }
-    .azbj {
-      overflow-y: auto;
-    }
-    .azbk {
-      border-radius: 3.40282e38px;
-    }
-    .azbl {
-      border-radius: 0.5rem;
-    }
-    .azbm {
-      border-radius: 0.375rem;
-    }
-    .azbn {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-    .azbo {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .azbp {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 1px;
-    }
-    .azbq {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 2px;
-    }
-    .azbr {
-      border-left-style: var(--tw-border-style);
-      border-left-width: 1px;
-    }
-    .azbs {
-      border-color: oklch(96.7% 0.003 264.542);
-    }
-    .azbt {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .azbu {
-      border-color: oklch(87.2% 0.01 258.338);
-    }
-    .azbv {
-      border-color: #0000;
-    }
-    .azbw {
-      background-color: oklab(0% none none/.25);
-    }
-    .azbx {
-      background-color: oklch(98.5% 0.002 247.839);
-    }
-    .azby {
-      background-color: oklch(96.7% 0.003 264.542);
-    }
-    .azbz {
-      background-color: oklch(70.7% 0.022 261.325);
-    }
-    .azca {
-      background-color: oklch(21% 0.034 264.665);
-    }
-    .azcb {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .azcc {
-      background-color: #0000;
-    }
-    .azcd {
-      background-color: #fff;
-    }
-    .azce {
-      background-color: oklab(100% 0 5.96046e-8/0.6);
-    }
-    .azcf {
-      object-fit: cover;
-    }
-    .azcg {
-      padding: 0.5rem;
-    }
-    .azch {
-      padding: 0.75rem;
-    }
-    .azci {
-      padding: 1rem;
-    }
-    .azcj {
-      padding: 1.5rem;
-    }
-    .azck {
-      padding-inline: 0.25rem;
-    }
-    .azcl {
-      padding-inline: 1rem;
-    }
-    .azcm {
-      padding-inline: 2rem;
-    }
-    .azcn {
-      padding-block: 0.5rem;
-    }
-    .azco {
-      padding-block: 0.75rem;
-    }
-    .azcp {
-      padding-block: 1rem;
-    }
-    .azcq {
-      padding-block: 1.5rem;
-    }
-    .azcr {
-      padding-block: 2.5rem;
-    }
-    .azcs {
-      padding-block: 4rem;
-    }
-    .azct {
-      padding-block: 5rem;
-    }
-    .azcu {
-      padding-top: 1.25rem;
-    }
-    .azcv {
-      padding-top: 2rem;
-    }
-    .azcw {
-      padding-top: 2.5rem;
-    }
-    .azcx {
-      padding-bottom: 0.5rem;
-    }
-    .azcy {
-      padding-bottom: 2rem;
-    }
-    .azcz {
-      padding-bottom: 3rem;
-    }
-    .azda {
-      padding-bottom: 4rem;
-    }
-    .azdb {
-      padding-left: 0.5rem;
-    }
-    .azdc {
-      padding-left: 1rem;
-    }
-    .azdd {
-      padding-left: 1.25rem;
-    }
-    .azde {
-      text-align: center;
-    }
-    .azdf {
-      font-size: 1rem;
-      line-height: var(--tw-leading, calc(1.5 / 1));
-    }
-    .azdg {
-      font-size: 1.125rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.125));
-    }
-    .azdh {
-      font-size: 0.875rem;
-      line-height: var(--tw-leading, calc(1.25 / 0.875));
-    }
-    .azdi {
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-    .azdj {
-      font-size: 1.25rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.25));
-    }
-    .azdk {
-      --tw-font-weight: 500;
-      font-weight: 500;
-    }
-    .azdl {
-      white-space: nowrap;
-    }
-    .azdm {
-      color: oklch(92.8% 0.006 264.531);
-    }
-    .azdn {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .azdo {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .azdp {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .azdq {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    .azdr {
-      color: oklch(21% 0.034 264.665);
-    }
-    .azds {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .azdt {
-      color: #fff;
-    }
-    .azdu {
-      color: oklch(85.2% 0.199 91.936);
-    }
-    .azdv {
-      text-transform: uppercase;
-    }
-    .azdw,
-    .azdx {
-      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .azdy {
-      --tw-shadow:
-        0 20px 25px -5px var(--tw-shadow-color, #0000001a), 0 8px 10px -6px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .azdz {
-      --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .azea,
-    .azeb {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-    .azec {
-      outline-offset: calc(1px * -1);
-    }
-    .azed {
-      outline-color: oklab(0% none none/.1);
-    }
-    .azee {
-      outline-color: oklch(87.2% 0.01 258.338);
-    }
-    .azef {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .azeg {
-      transition-property:
-        color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from,
-        --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .azeh {
-      transition-property: opacity;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .azei {
-      transition-behavior: allow-discrete;
-    }
-    .azej {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .azek {
-      --tw-duration: 0.3s;
-      transition-duration: 0.3s;
-    }
-    .azel {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    .azem {
-      --tw-ease: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .azen {
-      --tw-ease: linear;
-      transition-timing-function: linear;
-    }
-    .azeo {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .azep {
-      forced-color-adjust: none;
-    }
-    .azeq {
-      --anchor-gap: 1px;
-    }
-    .azer:is(:where(.azes):not(:has(:is([open], :popover-open, :open))) *) {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    @media (hover: hover) {
-      .azet:is(:where(.azeu):hover *) {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .azev:is(:where(.azeu):hover *) {
-        color: oklch(27.8% 0.033 256.848);
-      }
-      .azew:is(:where(.azeu):hover *) {
-        opacity: 0.75;
-      }
-    }
-    .azex:is(:where(.azes):has(:is([open], :popover-open, :open)) *) {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .azey:is(:where(.azes):has(:is([open], :popover-open, :open)) *) {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .azez:is(:where(.azfa):has(:is([open], :popover-open, :open)) *) {
-      --tw-duration: 0.15s;
-      transition-duration: 0.15s;
-    }
-    .azfb:is(:where(.azfa):has(:is([open], :popover-open, :open)) *) {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .azfc:is(:where(.azeu):has(:checked) *) {
-      color: #fff;
-    }
-    .azfd ::marker {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .azfd::marker {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .azfd ::-webkit-details-marker {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .azfd::-webkit-details-marker {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .azfe::placeholder {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .azff::backdrop {
-      background-color: #0000;
-    }
-    .azfg:is([open], :popover-open, :open) {
-      display: block;
-    }
-    .azfh:checked {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .azfi:checked {
-      outline-offset: 2px;
-    }
-    .azfj:checked {
-      outline-color: oklch(70.7% 0.022 261.325);
-    }
-    .azfk:checked {
-      outline-color: oklch(21% 0.034 264.665);
-    }
-    @media (hover: hover) {
-      .azfl:hover {
-        background-color: oklch(45.7% 0.24 277.023);
-      }
-      .azfm:hover {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .azfn:hover {
-        color: oklch(44.6% 0.03 256.802);
-      }
-      .azfo:hover {
-        color: oklch(27.8% 0.033 256.848);
-      }
-      .azfp:hover {
-        color: oklch(58.5% 0.233 277.117);
-      }
-      .azfq:is(:where(.azes):not(:has(:is([open], :popover-open, :open))) *):hover {
-        color: oklch(27.8% 0.033 256.848);
-      }
-    }
-    .azfr:focus {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .azfs:focus {
-      --tw-ring-color: oklch(58.5% 0.233 277.117);
-    }
-    .azft:focus {
-      --tw-ring-offset-width: 2px;
-      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    }
-    .azfu:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    @media (forced-colors: active) {
-      .azfu:focus {
-        outline-offset: 2px;
-        outline: 2px solid #0000;
-      }
-    }
-    .azfv:focus {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .azfw:focus {
-      outline-offset: calc(2px * -1);
-    }
-    .azfx:focus {
-      outline-color: oklch(51.1% 0.262 276.966);
-    }
-    .azfy:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    .azfz:focus-visible {
-      outline-style: var(--tw-outline-style);
-      outline-width: 3px;
-    }
-    .azga:focus-visible {
-      outline-offset: 3px;
-    }
-    .azgb:disabled {
-      cursor: not-allowed;
-    }
-    .azgc:has(:checked) {
-      border-color: oklch(51.1% 0.262 276.966);
-    }
-    .azgd:has(:checked) {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .azge:has(:focus-visible) {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .azgf:has(:focus-visible) {
-      outline-offset: 2px;
-    }
-    .azgg:has(:focus-visible) {
-      outline-color: oklch(51.1% 0.262 276.966);
-    }
-    .azgh:has(:disabled) {
-      border-color: oklch(70.7% 0.022 261.325);
-    }
-    .azgi:has(:disabled) {
-      background-color: oklch(92.8% 0.006 264.531);
-    }
-    .azgj:has(:disabled) {
-      opacity: 0.25;
-    }
-    .azgk[aria-selected='true'] {
-      border-color: oklch(51.1% 0.262 276.966);
-    }
-    .azgl[aria-selected='true'] {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .azgm[data-closed] {
-      --tw-translate-x: -100%;
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    .azgn[data-closed] {
-      opacity: 0;
-    }
-    .azgo[data-enter] {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .azgp[data-enter] {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .azgq[data-leave] {
-      --tw-duration: 0.15s;
-      transition-duration: 0.15s;
-    }
-    .azgr[data-leave] {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    @media (min-width: 40rem) {
-      .azgs {
-        grid-column: span 2 / span 2;
-      }
-      .azgt {
-        margin-top: 0.25rem;
-      }
-      .azgu {
-        margin-top: 6rem;
-      }
-      .azgv {
-        max-width: 28rem;
-      }
-      .azgw {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .azgx {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .azgy {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-      }
-      .azgz {
-        column-gap: 2rem;
-      }
-      .azha {
-        padding-inline: 1.5rem;
-      }
-      .azhb {
-        padding-bottom: 6rem;
-      }
-      .azhc {
-        font-size: 0.875rem;
-        line-height: var(--tw-leading, calc(1.25 / 0.875));
-      }
-    }
-    @media (min-width: 48rem) {
-      .azhd {
-        grid-column: span 2 / span 2;
-      }
-      .azhe {
-        grid-column: span 8 / span 8;
-      }
-      .azhf {
-        grid-column-start: 3;
-      }
-      .azhg {
-        grid-row-start: 1;
-      }
-      .azhh {
-        grid-row-start: 2;
-      }
-      .azhi {
-        margin-top: 0;
-      }
-      .azhj {
-        grid-auto-flow: column;
-      }
-      .azhk {
-        grid-auto-rows: min-content;
-      }
-      .azhl {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-      }
-      .azhm {
-        column-gap: 2rem;
-      }
-      .azhn {
-        row-gap: 4rem;
-      }
-    }
-    @media (min-width: 64rem) {
-      .azho {
-        grid-column: span 2 / span 2;
-      }
-      .azhp {
-        grid-column: span 4 / span 4;
-      }
-      .azhq {
-        grid-column: span 5 / span 5;
-      }
-      .azhr {
-        grid-column: span 6 / span 6;
-      }
-      .azhs {
-        grid-column: span 7 / span 7;
-      }
-      .azht {
-        grid-column: span 8 / span 8;
-      }
-      .azhu {
-        grid-column-start: 1;
-      }
-      .azhv {
-        grid-column-start: 2;
-      }
-      .azhw {
-        grid-column-start: 5;
-      }
-      .azhx {
-        grid-column-start: 8;
-      }
-      .azhy {
-        grid-column-start: 9;
-      }
-      .azhz {
-        grid-row: span 2 / span 2;
-      }
-      .azia {
-        grid-row: span 3 / span 3;
-      }
-      .azib {
-        grid-row-start: 1;
-      }
-      .azic {
-        margin-top: 0;
-      }
-      .azid {
-        margin-top: 0.5rem;
-      }
-      .azie {
-        margin-top: 1.5rem;
-      }
-      .azif {
-        margin-left: 0;
-      }
-      .azig {
-        margin-left: 1rem;
-      }
-      .azih {
-        margin-left: 1.5rem;
-      }
-      .azii {
-        display: block;
-      }
-      .azij {
-        display: flex;
-      }
-      .azik {
-        display: grid;
-      }
-      .azil {
-        display: none;
-      }
-      .azim {
-        aspect-ratio: auto;
-      }
-      .azin {
-        height: 20rem;
-      }
-      .azio {
-        max-width: 80rem;
-      }
-      .azip {
-        flex: 1;
-      }
-      .aziq {
-        grid-auto-rows: min-content;
-      }
-      .azir {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-      }
-      .azis {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .azit {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .aziu {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-      }
-      .aziv {
-        grid-template-rows: repeat(3, minmax(0, 1fr));
-      }
-      .aziw {
-        flex-direction: column;
-      }
-      .azix {
-        align-items: center;
-      }
-      .aziy {
-        align-items: flex-start;
-      }
-      .aziz {
-        gap: 2rem;
-      }
-      .azja {
-        column-gap: 2rem;
-      }
-      .azjb {
-        align-self: stretch;
-      }
-      .azjc {
-        border-style: var(--tw-border-style);
-        border-width: 0;
-      }
-      .azjd {
-        padding-inline: 2rem;
-      }
-      .azje {
-        padding-left: 0;
-      }
-    }
-    @media (min-width: 80rem) {
-      .azjf {
-        grid-column: span 1 / span 1;
-      }
-      .azjg {
-        grid-column: span 2 / span 2;
-      }
-      .azjh {
-        grid-column: span 3 / span 3;
-      }
-      .azji {
-        grid-column: span 9 / span 9;
-      }
-      .azjj {
-        grid-column-start: 4;
-      }
-      .azjk {
-        margin-top: 0;
-      }
-      .azjl {
-        display: grid;
-      }
-      .azjm {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .azjn {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .azjo {
-        align-items: flex-start;
-      }
-      .azjp {
-        column-gap: 2rem;
-      }
-    }
-  }
-  @property --tw-rotate-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-z {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-space-x-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-divide-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-outline-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-duration {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ease {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-translate-x {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-y {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-z {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
+
 </style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-</style>
-<body>
-  <div class="azcd">
+<body class="antialiased">
+  <div class="bg-white">
     <!-- Mobile menu -->
     <el-dialog>
-      <dialog id="mobile-menu" class="azff azil">
-        <el-dialog-backdrop class="ayyd ayyg azbw azeh azek azen azgn"></el-dialog-backdrop>
-        <div tabindex="0" class="ayyd ayyg ayzi azfy">
-          <el-dialog-panel class="ayye ayzi azaa azad azag azan azbj azcd azcz azdy azef azek azem azgm">
-            <div class="ayzi azcl azcu azcx">
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <el-dialog-backdrop class="fixed inset-0 bg-black/25 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"></el-dialog-backdrop>
+        <div tabindex="0" class="fixed inset-0 flex focus:outline-none">
+          <el-dialog-panel class="relative flex w-full max-w-xs transform flex-col overflow-y-auto bg-white pb-12 shadow-xl transition duration-300 ease-in-out data-[closed]:-translate-x-full">
+            <div class="flex px-4 pt-5 pb-2">
               <button
                 type="button"
                 command="close"
                 commandfor="mobile-menu"
-                class="ayye ayyo ayzm azao azaq azbm azcg azdo">
-                <span class="ayyc ayyf"></span>
-                <span class="ayyb">Close menu</span>
+                class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Close menu</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -1534,329 +35,329 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="ayzr">
+                  class="size-6">
                   <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </button>
             </div>
 
             <!-- Links -->
-            <el-tab-group class="ayys ayzh">
-              <div class="azbp azbt">
-                <el-tab-list class="ayza ayzi azbc azcl">
-                  <button class="azae azbq azbv azck azcp azdf azdk azdl azdr azgk azgl">Women</button>
-                  <button class="azae azbq azbv azck azcp azdf azdk azdl azdr azgk azgl">Men</button>
+            <el-tab-group class="mt-2 block">
+              <div class="border-b border-gray-200">
+                <el-tab-list class="-mb-px flex space-x-8 px-4">
+                  <button class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium whitespace-nowrap text-gray-900 aria-selected:border-indigo-600 aria-selected:text-indigo-600">Women</button>
+                  <button class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium whitespace-nowrap text-gray-900 aria-selected:border-indigo-600 aria-selected:text-indigo-600">Men</button>
                 </el-tab-list>
               </div>
               <el-tab-panels>
-                <div class="azay azcl azcw azcy">
-                  <div class="azaw">
-                    <div class="azeu ayye azbh azbm azby azfy">
+                <div class="space-y-10 px-4 pt-10 pb-8">
+                  <div class="space-y-4">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-01.jpg"
                         alt="Models sitting back to back, wearing Basic Tee in black and bone."
-                        class="ayzp azaa azcf azew" />
-                      <div class="ayyc ayyg ayzi azan azar">
-                        <div class="azce azci azdf azhc">
-                          <a href="#" class="azdk azdr">
-                            <span aria-hidden="true" class="ayyc ayyg"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             New Arrivals
                           </a>
-                          <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
-                    <div class="azeu ayye azbh azbm azby azfy">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-02.jpg"
                         alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
-                        class="ayzp azaa azcf azew" />
-                      <div class="ayyc ayyg ayzi azan azar">
-                        <div class="azce azci azdf azhc">
-                          <a href="#" class="azdk azdr">
-                            <span aria-hidden="true" class="ayyc ayyg"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             Basic Tees
                           </a>
-                          <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
-                    <div class="azeu ayye azbh azbm azby azfy">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-03.jpg"
                         alt="Model wearing minimalist watch with black wristband and white watch face."
-                        class="ayzp azaa azcf azew" />
-                      <div class="ayyc ayyg ayzi azan azar">
-                        <div class="azce azci azdf azhc">
-                          <a href="#" class="azdk azdr">
-                            <span aria-hidden="true" class="ayyc ayyg"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             Accessories
                           </a>
-                          <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="azay">
+                  <div class="space-y-10">
                     <div>
-                      <p id="women-shoes-heading-mobile" class="azdk azdr">Shoes &amp; Accessories</p>
-                      <ul role="list" aria-labelledby="women-shoes-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Sneakers</a>
+                      <p id="women-shoes-heading-mobile" class="font-medium text-gray-900">Shoes &amp; Accessories</p>
+                      <ul role="list" aria-labelledby="women-shoes-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sneakers</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Boots</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Boots</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Flats</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Flats</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Sandals</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sandals</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Heels</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Heels</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Socks</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Socks</a>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <p id="women-collection-heading-mobile" class="azdk azdr">Shop Collection</p>
-                      <ul role="list" aria-labelledby="women-collection-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Everything</a>
+                      <p id="women-collection-heading-mobile" class="font-medium text-gray-900">Shop Collection</p>
+                      <ul role="list" aria-labelledby="women-collection-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Everything</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Core</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Core</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">New Arrivals</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">New Arrivals</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Sale</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sale</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Accessories</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="azay">
-                    <div>
-                      <p id="women-clothing-heading-mobile" class="azdk azdr">All Clothing</p>
-                      <ul role="list" aria-labelledby="women-clothing-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Basic Tees</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Artwork Tees</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Tops</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Bottoms</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Swimwear</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Underwear</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p id="women-accessories-heading-mobile" class="azdk azdr">All Accessories</p>
-                      <ul role="list" aria-labelledby="women-accessories-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Watches</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Wallets</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Bags</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Sunglasses</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Hats</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Belts</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Accessories</a>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="azay">
+                  <div class="space-y-10">
                     <div>
-                      <p id="women-brands-heading-mobile" class="azdk azdr">Brands</p>
-                      <ul role="list" aria-labelledby="women-brands-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Full Nelson</a>
+                      <p id="women-clothing-heading-mobile" class="font-medium text-gray-900">All Clothing</p>
+                      <ul role="list" aria-labelledby="women-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Basic Tees</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">My Way</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Artwork Tees</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Re-Arranged</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Tops</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Counterfeit</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Bottoms</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Significant Other</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Swimwear</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Underwear</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p id="women-accessories-heading-mobile" class="font-medium text-gray-900">All Accessories</p>
+                      <ul role="list" aria-labelledby="women-accessories-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Watches</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Wallets</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Bags</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sunglasses</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Hats</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Belts</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="space-y-10">
+                    <div>
+                      <p id="women-brands-heading-mobile" class="font-medium text-gray-900">Brands</p>
+                      <ul role="list" aria-labelledby="women-brands-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Full Nelson</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">My Way</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Re-Arranged</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Counterfeit</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Significant Other</a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div hidden class="azay azcl azcw azcy">
-                  <div class="azaw">
-                    <div class="azeu ayye azbh azbm azby azfy">
+                <div hidden class="space-y-10 px-4 pt-10 pb-8">
+                  <div class="space-y-4">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-category-01.jpg"
                         alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
-                        class="ayzp azaa azcf azew" />
-                      <div class="ayyc ayyg ayzi azan azar">
-                        <div class="azce azci azdf azhc">
-                          <a href="#" class="azdk azdr">
-                            <span aria-hidden="true" class="ayyc ayyg"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             Accessories
                           </a>
-                          <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
-                    <div class="azeu ayye azbh azbm azby azfy">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg"
                         alt="Drawstring top with elastic loop closure and textured interior padding."
-                        class="ayzp azaa azcf azew" />
-                      <div class="ayyc ayyg ayzi azan azar">
-                        <div class="azce azci azdf azhc">
-                          <a href="#" class="azdk azdr">
-                            <span aria-hidden="true" class="ayyc ayyg"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             New Arrivals
                           </a>
-                          <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
-                    <div class="azeu ayye azbh azbm azby azfy">
+                    <div class="group relative overflow-hidden rounded-md bg-gray-100 focus:outline-none">
                       <img
                         src="https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-02-image-card-06.jpg"
                         alt="Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt."
-                        class="ayzp azaa azcf azew" />
-                      <div class="ayyc ayyg ayzi azan azar">
-                        <div class="azce azci azdf azhc">
-                          <a href="#" class="azdk azdr">
-                            <span aria-hidden="true" class="ayyc ayyg"></span>
+                        class="aspect-square w-full object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex flex-col justify-end">
+                        <div class="bg-white/60 p-4 text-base sm:text-sm">
+                          <a href="#" class="font-medium text-gray-900">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
                             Artwork Tees
                           </a>
-                          <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                          <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="azay">
+                  <div class="space-y-10">
                     <div>
-                      <p id="men-shoes-heading-mobile" class="azdk azdr">Shoes &amp; Accessories</p>
-                      <ul role="list" aria-labelledby="men-shoes-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Sneakers</a>
+                      <p id="men-shoes-heading-mobile" class="font-medium text-gray-900">Shoes &amp; Accessories</p>
+                      <ul role="list" aria-labelledby="men-shoes-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sneakers</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Boots</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Boots</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Sandals</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sandals</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Socks</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Socks</a>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <p id="men-collection-heading-mobile" class="azdk azdr">Shop Collection</p>
-                      <ul role="list" aria-labelledby="men-collection-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Everything</a>
+                      <p id="men-collection-heading-mobile" class="font-medium text-gray-900">Shop Collection</p>
+                      <ul role="list" aria-labelledby="men-collection-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Everything</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Core</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Core</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">New Arrivals</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">New Arrivals</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Sale</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="azay">
-                    <div>
-                      <p id="men-clothing-heading-mobile" class="azdk azdr">All Clothing</p>
-                      <ul role="list" aria-labelledby="men-clothing-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Basic Tees</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Artwork Tees</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Pants</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Hoodies</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Swimsuits</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p id="men-accessories-heading-mobile" class="azdk azdr">All Accessories</p>
-                      <ul role="list" aria-labelledby="men-accessories-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Watches</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Wallets</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Bags</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Sunglasses</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Hats</a>
-                        </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Belts</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sale</a>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="azay">
+                  <div class="space-y-10">
                     <div>
-                      <p id="men-brands-heading-mobile" class="azdk azdr">Brands</p>
-                      <ul role="list" aria-labelledby="men-brands-heading-mobile" class="ayyv ayzi azan azax">
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Re-Arranged</a>
+                      <p id="men-clothing-heading-mobile" class="font-medium text-gray-900">All Clothing</p>
+                      <ul role="list" aria-labelledby="men-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Basic Tees</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Counterfeit</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Artwork Tees</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">Full Nelson</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Pants</a>
                         </li>
-                        <li class="ayzj">
-                          <a href="#" class="ayyo ayzh azcg azdp">My Way</a>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Hoodies</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Swimsuits</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p id="men-accessories-heading-mobile" class="font-medium text-gray-900">All Accessories</p>
+                      <ul role="list" aria-labelledby="men-accessories-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Watches</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Wallets</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Bags</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Sunglasses</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Hats</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Belts</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="space-y-10">
+                    <div>
+                      <p id="men-brands-heading-mobile" class="font-medium text-gray-900">Brands</p>
+                      <ul role="list" aria-labelledby="men-brands-heading-mobile" class="mt-6 flex flex-col space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Re-Arranged</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Counterfeit</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">Full Nelson</a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-2 block p-2 text-gray-500">My Way</a>
                         </li>
                       </ul>
                     </div>
@@ -1865,23 +366,23 @@
               </el-tab-panels>
             </el-tab-group>
 
-            <div class="azax azbo azbt azcl azcq">
-              <div class="ayzj">
-                <a href="#" class="ayyo ayzh azcg azdk azdr">Company</a>
+            <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Company</a>
               </div>
-              <div class="ayzj">
-                <a href="#" class="ayyo ayzh azcg azdk azdr">Stores</a>
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Stores</a>
               </div>
             </div>
 
-            <div class="azbo azbt azcl azcq">
-              <a href="#" class="ayyo ayzi azao azcg">
+            <div class="border-t border-gray-200 px-4 py-6">
+              <a href="#" class="-m-2 flex items-center p-2">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/flags/flag-canada.svg"
                   alt=""
-                  class="ayzh ayzw ayzy azaf" />
-                <span class="ayze ayzh azdf azdk azdr">CAD</span>
-                <span class="ayyb">, change currency</span>
+                  class="block h-auto w-5 shrink-0" />
+                <span class="ml-3 block text-base font-medium text-gray-900">CAD</span>
+                <span class="sr-only">, change currency</span>
               </a>
             </div>
           </el-dialog-panel>
@@ -1889,13 +390,13 @@
       </dialog>
     </el-dialog>
 
-    <header class="ayye azcd">
-      <nav aria-label="Top" class="ayyp azac azcl azha azjd">
-        <div class="azbp azbt">
-          <div class="ayzi ayzv azao azap">
-            <div class="ayzi azae azao azil">
-              <button type="button" command="show-modal" commandfor="mobile-menu" class="ayzb azbm azcd azcg azdo">
-                <span class="ayyb">Open menu</span>
+    <header class="relative bg-white">
+      <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="border-b border-gray-200">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex flex-1 items-center lg:hidden">
+              <button type="button" command="show-modal" commandfor="mobile-menu" class="-ml-2 rounded-md bg-white p-2 text-gray-400">
+                <span class="sr-only">Open menu</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -1903,7 +404,7 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="ayzr">
+                  class="size-6">
                   <path
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                     stroke-linecap="round"
@@ -1911,8 +412,8 @@
                 </svg>
               </button>
 
-              <a href="#" class="ayzd azcg azdo azfm">
-                <span class="ayyb">Search</span>
+              <a href="#" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Search</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -1920,7 +421,7 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="ayzr">
+                  class="size-6">
                   <path
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                     stroke-linecap="round"
@@ -1930,186 +431,186 @@
             </div>
 
             <!-- Flyout menus -->
-            <el-popover-group class="azfa ayzl azii azip azjb">
-              <div class="ayzi ayzx azbc">
-                <div class="azes ayzi">
-                  <div class="ayye ayzi">
+            <el-popover-group class="group hidden lg:block lg:flex-1 lg:self-stretch">
+              <div class="flex h-full space-x-8">
+                <div class="group flex">
+                  <div class="relative flex">
                     <button
                       popovertarget="desktop-menu-women"
-                      class="ayye ayzi azao azaq azdh azdk azeg azej azeo azer azey azfq">
+                      class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out group-not-open:text-gray-700 group-open:text-indigo-600 group-not-open-hover:text-gray-800">
                       Women
-                      <span aria-hidden="true" class="ayyc ayyh ayyj ayyk ayzt azcc azej azel azex azez azfb"></span>
+                      <span aria-hidden="true" class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent duration-200 ease-in group-open:bg-indigo-600 group-open:duration-150 group-open:ease-out"></span>
                     </button>
                   </div>
                   <el-popover
                     id="desktop-menu-women"
                     anchor="bottom"
                     popover
-                    class="azaa azbi azcd azdh azdp azef azei azeq azff azfg azgn azgo azgp azgq azgr">
+                    class="w-full overflow-visible bg-white text-sm text-gray-500 transition transition-discrete [--anchor-gap:1px] backdrop:bg-transparent [open]:block data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in">
                     <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                    <div aria-hidden="true" class="ayyc ayyg ayyi azcd azdx"></div>
-                    <div class="ayye azcd">
-                      <div class="ayyp azac azcm">
-                        <div class="ayzk azak azbb azbd azcs">
-                          <div class="ayzk azak azam azau azdh">
-                            <div class="azeu ayye ayym azbh azbm azby">
+                    <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow-sm"></div>
+                    <div class="relative bg-white">
+                      <div class="mx-auto max-w-7xl px-8">
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
+                          <div class="grid grid-cols-2 grid-rows-1 gap-8 text-sm">
+                            <div class="group relative col-span-2 overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-01.jpg"
                                 alt="Models sitting back to back, wearing Basic Tee in black and bone."
-                                class="ayzo azaa azcf azew" />
-                              <div class="ayyc ayyg ayzi azan azar">
-                                <div class="azce azci azdh">
-                                  <a href="#" class="azdk azdr">
-                                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                                class="aspect-[2] w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     New Arrivals
                                   </a>
-                                  <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
-                            <div class="azeu ayye azbh azbm azby">
+                            <div class="group relative overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-02.jpg"
                                 alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
-                                class="ayzp azaa azcf azew" />
-                              <div class="ayyc ayyg ayzi azan azar">
-                                <div class="azce azci azdh">
-                                  <a href="#" class="azdk azdr">
-                                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                                class="aspect-square w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     Basic Tees
                                   </a>
-                                  <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
-                            <div class="azeu ayye azbh azbm azby">
+                            <div class="group relative overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-03.jpg"
                                 alt="Model wearing minimalist watch with black wristband and white watch face."
-                                class="ayzp azaa azcf azew" />
-                              <div class="ayyc ayyg ayzi azan azar">
-                                <div class="azce azci azdh">
-                                  <a href="#" class="azdk azdr">
-                                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                                class="aspect-square w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     Accessories
                                   </a>
-                                  <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="ayzk azal azbb azbd azdh azdp">
-                            <div class="azay">
+                          <div class="grid grid-cols-3 gap-x-8 gap-y-10 text-sm text-gray-500">
+                            <div class="space-y-10">
                               <div>
-                                <p id="women-shoes-heading" class="azdk azdr">Shoes &amp; Accessories</p>
-                                <ul role="list" aria-labelledby="women-shoes-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Sneakers</a>
+                                <p id="women-shoes-heading" class="font-medium text-gray-900">Shoes &amp; Accessories</p>
+                                <ul role="list" aria-labelledby="women-shoes-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sneakers</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Boots</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Boots</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Flats</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Flats</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Sandals</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sandals</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Heels</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Heels</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Socks</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Socks</a>
                                   </li>
                                 </ul>
                               </div>
                               <div>
-                                <p id="women-collection-heading" class="azdk azdr">Shop Collection</p>
-                                <ul role="list" aria-labelledby="women-collection-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Everything</a>
+                                <p id="women-collection-heading" class="font-medium text-gray-900">Shop Collection</p>
+                                <ul role="list" aria-labelledby="women-collection-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Everything</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Core</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Core</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">New Arrivals</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">New Arrivals</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Sale</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sale</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Accessories</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                            <div class="azay">
-                              <div>
-                                <p id="women-clothing-heading" class="azdk azdr">All Clothing</p>
-                                <ul role="list" aria-labelledby="women-clothing-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Basic Tees</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Artwork Tees</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Tops</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Bottoms</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Swimwear</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Underwear</a>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div>
-                                <p id="women-accessories-heading" class="azdk azdr">All Accessories</p>
-                                <ul role="list" aria-labelledby="women-accessories-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Watches</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Wallets</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Bags</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Sunglasses</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Hats</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Belts</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Accessories</a>
                                   </li>
                                 </ul>
                               </div>
                             </div>
-                            <div class="azay">
+                            <div class="space-y-10">
                               <div>
-                                <p id="women-brands-heading" class="azdk azdr">Brands</p>
-                                <ul role="list" aria-labelledby="women-brands-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Full Nelson</a>
+                                <p id="women-clothing-heading" class="font-medium text-gray-900">All Clothing</p>
+                                <ul role="list" aria-labelledby="women-clothing-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Basic Tees</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">My Way</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Artwork Tees</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Re-Arranged</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Tops</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Counterfeit</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Bottoms</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Significant Other</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Swimwear</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Underwear</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div>
+                                <p id="women-accessories-heading" class="font-medium text-gray-900">All Accessories</p>
+                                <ul role="list" aria-labelledby="women-accessories-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Watches</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Wallets</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Bags</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sunglasses</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Hats</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Belts</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="space-y-10">
+                              <div>
+                                <p id="women-brands-heading" class="font-medium text-gray-900">Brands</p>
+                                <ul role="list" aria-labelledby="women-brands-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Full Nelson</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">My Way</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Re-Arranged</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Counterfeit</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Significant Other</a>
                                   </li>
                                 </ul>
                               </div>
@@ -2120,169 +621,169 @@
                     </div>
                   </el-popover>
                 </div>
-                <div class="azes ayzi">
-                  <div class="ayye ayzi">
+                <div class="group flex">
+                  <div class="relative flex">
                     <button
                       popovertarget="desktop-menu-men"
-                      class="ayye ayzi azao azaq azdh azdk azeg azej azeo azer azey azfq">
+                      class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out group-not-open:text-gray-700 group-open:text-indigo-600 group-not-open-hover:text-gray-800">
                       Men
-                      <span aria-hidden="true" class="ayyc ayyh ayyj ayyk ayzt azcc azej azel azex azez azfb"></span>
+                      <span aria-hidden="true" class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent duration-200 ease-in group-open:bg-indigo-600 group-open:duration-150 group-open:ease-out"></span>
                     </button>
                   </div>
                   <el-popover
                     id="desktop-menu-men"
                     anchor="bottom"
                     popover
-                    class="azaa azbi azcd azdh azdp azef azei azeq azff azfg azgn azgo azgp azgq azgr">
+                    class="w-full overflow-visible bg-white text-sm text-gray-500 transition transition-discrete [--anchor-gap:1px] backdrop:bg-transparent [open]:block data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-150 data-[leave]:ease-in">
                     <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                    <div aria-hidden="true" class="ayyc ayyg ayyi azcd azdx"></div>
-                    <div class="ayye azcd">
-                      <div class="ayyp azac azcm">
-                        <div class="ayzk azak azbb azbd azcs">
-                          <div class="ayzk azak azam azau azdh">
-                            <div class="azeu ayye ayym azbh azbm azby">
+                    <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow-sm"></div>
+                    <div class="relative bg-white">
+                      <div class="mx-auto max-w-7xl px-8">
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
+                          <div class="grid grid-cols-2 grid-rows-1 gap-8 text-sm">
+                            <div class="group relative col-span-2 overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-category-01.jpg"
                                 alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
-                                class="ayzo azaa azcf azew" />
-                              <div class="ayyc ayyg ayzi azan azar">
-                                <div class="azce azci azdh">
-                                  <a href="#" class="azdk azdr">
-                                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                                class="aspect-[2] w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     Accessories
                                   </a>
-                                  <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
-                            <div class="azeu ayye azbh azbm azby">
+                            <div class="group relative overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg"
                                 alt="Drawstring top with elastic loop closure and textured interior padding."
-                                class="ayzp azaa azcf azew" />
-                              <div class="ayyc ayyg ayzi azan azar">
-                                <div class="azce azci azdh">
-                                  <a href="#" class="azdk azdr">
-                                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                                class="aspect-square w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     New Arrivals
                                   </a>
-                                  <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
-                            <div class="azeu ayye azbh azbm azby">
+                            <div class="group relative overflow-hidden rounded-md bg-gray-100">
                               <img
                                 src="https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-02-image-card-06.jpg"
                                 alt="Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt."
-                                class="ayzp azaa azcf azew" />
-                              <div class="ayyc ayyg ayzi azan azar">
-                                <div class="azce azci azdh">
-                                  <a href="#" class="azdk azdr">
-                                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                                class="aspect-square w-full object-cover group-hover:opacity-75" />
+                              <div class="absolute inset-0 flex flex-col justify-end">
+                                <div class="bg-white/60 p-4 text-sm">
+                                  <a href="#" class="font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
                                     Artwork Tees
                                   </a>
-                                  <p aria-hidden="true" class="ayyq azdq azgt">Shop now</p>
+                                  <p aria-hidden="true" class="mt-0.5 text-gray-700 sm:mt-1">Shop now</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="ayzk azal azbb azbd azdh azdp">
-                            <div class="azay">
+                          <div class="grid grid-cols-3 gap-x-8 gap-y-10 text-sm text-gray-500">
+                            <div class="space-y-10">
                               <div>
-                                <p id="men-shoes-heading" class="azdk azdr">Shoes &amp; Accessories</p>
-                                <ul role="list" aria-labelledby="men-shoes-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Sneakers</a>
+                                <p id="men-shoes-heading" class="font-medium text-gray-900">Shoes &amp; Accessories</p>
+                                <ul role="list" aria-labelledby="men-shoes-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sneakers</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Boots</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Boots</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Sandals</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sandals</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Socks</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Socks</a>
                                   </li>
                                 </ul>
                               </div>
                               <div>
-                                <p id="men-collection-heading" class="azdk azdr">Shop Collection</p>
-                                <ul role="list" aria-labelledby="men-collection-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Everything</a>
+                                <p id="men-collection-heading" class="font-medium text-gray-900">Shop Collection</p>
+                                <ul role="list" aria-labelledby="men-collection-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Everything</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Core</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Core</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">New Arrivals</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">New Arrivals</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Sale</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                            <div class="azay">
-                              <div>
-                                <p id="men-clothing-heading" class="azdk azdr">All Clothing</p>
-                                <ul role="list" aria-labelledby="men-clothing-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Basic Tees</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Artwork Tees</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Pants</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Hoodies</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Swimsuits</a>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div>
-                                <p id="men-accessories-heading" class="azdk azdr">All Accessories</p>
-                                <ul role="list" aria-labelledby="men-accessories-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Watches</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Wallets</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Bags</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Sunglasses</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Hats</a>
-                                  </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Belts</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sale</a>
                                   </li>
                                 </ul>
                               </div>
                             </div>
-                            <div class="azay">
+                            <div class="space-y-10">
                               <div>
-                                <p id="men-brands-heading" class="azdk azdr">Brands</p>
-                                <ul role="list" aria-labelledby="men-brands-heading" class="ayyu azaw">
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Re-Arranged</a>
+                                <p id="men-clothing-heading" class="font-medium text-gray-900">All Clothing</p>
+                                <ul role="list" aria-labelledby="men-clothing-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Basic Tees</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Counterfeit</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Artwork Tees</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">Full Nelson</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Pants</a>
                                   </li>
-                                  <li class="ayzi">
-                                    <a href="#" class="azfo">My Way</a>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Hoodies</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Swimsuits</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div>
+                                <p id="men-accessories-heading" class="font-medium text-gray-900">All Accessories</p>
+                                <ul role="list" aria-labelledby="men-accessories-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Watches</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Wallets</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Bags</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Sunglasses</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Hats</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Belts</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="space-y-10">
+                              <div>
+                                <p id="men-brands-heading" class="font-medium text-gray-900">Brands</p>
+                                <ul role="list" aria-labelledby="men-brands-heading" class="mt-4 space-y-4">
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Re-Arranged</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Counterfeit</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">Full Nelson</a>
+                                  </li>
+                                  <li class="flex">
+                                    <a href="#" class="hover:text-gray-800">My Way</a>
                                   </li>
                                 </ul>
                               </div>
@@ -2294,33 +795,33 @@
                   </el-popover>
                 </div>
 
-                <a href="#" class="ayzi azao azdh azdk azdq azfo">Company</a>
-                <a href="#" class="ayzi azao azdh azdk azdq azfo">Stores</a>
+                <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
+                <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
               </div>
             </el-popover-group>
 
             <!-- Logo -->
-            <a href="#" class="ayzi">
-              <span class="ayyb">Your Company</span>
+            <a href="#" class="flex">
+              <span class="sr-only">Your Company</span>
               <img
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""
-                class="ayzu ayzz" />
+                class="h-8 w-auto" />
             </a>
 
-            <div class="ayzi azae azao azar">
-              <a href="#" class="ayzl azdq azfo azij azix">
+            <div class="flex flex-1 items-center justify-end">
+              <a href="#" class="hidden text-gray-700 hover:text-gray-800 lg:flex lg:items-center">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/flags/flag-canada.svg"
                   alt=""
-                  class="ayzh ayzw ayzy azaf" />
-                <span class="ayze ayzh azdh azdk">CAD</span>
-                <span class="ayyb">, change currency</span>
+                  class="block h-auto w-5 shrink-0" />
+                <span class="ml-3 block text-sm font-medium">CAD</span>
+                <span class="sr-only">, change currency</span>
               </a>
 
               <!-- Search -->
-              <a href="#" class="ayzg ayzl azcg azdo azfm azii">
-                <span class="ayyb">Search</span>
+              <a href="#" class="ml-6 hidden p-2 text-gray-400 hover:text-gray-500 lg:block">
+                <span class="sr-only">Search</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -2328,7 +829,7 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="ayzr">
+                  class="size-6">
                   <path
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                     stroke-linecap="round"
@@ -2337,8 +838,8 @@
               </a>
 
               <!-- Account -->
-              <a href="#" class="azcg azdo azfm azig">
-                <span class="ayyb">Account</span>
+              <a href="#" class="p-2 text-gray-400 hover:text-gray-500 lg:ml-4">
+                <span class="sr-only">Account</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -2346,7 +847,7 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="ayzr">
+                  class="size-6">
                   <path
                     d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     stroke-linecap="round"
@@ -2355,8 +856,8 @@
               </a>
 
               <!-- Cart -->
-              <div class="ayzf ayzj azih">
-                <a href="#" class="azeu ayyo ayzi azao azcg">
+              <div class="ml-4 flow-root lg:ml-6">
+                <a href="#" class="group -m-2 flex items-center p-2">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -2364,14 +865,14 @@
                     stroke-width="1.5"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzr azaf azdo azet">
+                    class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500">
                     <path
                       d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                       stroke-linecap="round"
                       stroke-linejoin="round" />
                   </svg>
-                  <span class="ayzd azdh azdk azdq azev">0</span>
-                  <span class="ayyb">items in cart, view bag</span>
+                  <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                  <span class="sr-only">items in cart, view bag</span>
                 </a>
               </div>
             </div>
@@ -2380,155 +881,155 @@
       </nav>
     </header>
 
-    <main class="ayyp ayyw azab azcl azda azha azhb azio azjd">
-      <div class="azik aziq aziu azja">
-        <div class="azhq azhx">
-          <div class="ayzi azap">
-            <h1 class="azdj azdk azdr">Basic Tee</h1>
-            <p class="azdj azdk azdr">$35</p>
+    <main class="mx-auto mt-8 max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
+      <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
+        <div class="lg:col-span-5 lg:col-start-8">
+          <div class="flex justify-between">
+            <h1 class="text-xl font-medium text-gray-900">Basic Tee</h1>
+            <p class="text-xl font-medium text-gray-900">$35</p>
           </div>
           <!-- Reviews -->
-          <div class="ayyu">
-            <h2 class="ayyb">Reviews</h2>
-            <div class="ayzi azao">
-              <p class="azdh azdq">
+          <div class="mt-4">
+            <h2 class="sr-only">Reviews</h2>
+            <div class="flex items-center">
+              <p class="text-sm text-gray-700">
                 3.9
-                <span class="ayyb"> out of 5 stars</span>
+                <span class="sr-only"> out of 5 stars</span>
               </p>
-              <div class="ayzc ayzi azao">
+              <div class="ml-1 flex items-center">
                 <!-- Active: "text-yellow-400", Inactive: "text-gray-200" -->
-                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="ayzq azaf azdu">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 text-yellow-400">
                   <path
                     d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                     clip-rule="evenodd"
                     fill-rule="evenodd" />
                 </svg>
-                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="ayzq azaf azdu">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 text-yellow-400">
                   <path
                     d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                     clip-rule="evenodd"
                     fill-rule="evenodd" />
                 </svg>
-                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="ayzq azaf azdu">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 text-yellow-400">
                   <path
                     d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                     clip-rule="evenodd"
                     fill-rule="evenodd" />
                 </svg>
-                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="ayzq azaf azdu">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 text-yellow-400">
                   <path
                     d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                     clip-rule="evenodd"
                     fill-rule="evenodd" />
                 </svg>
-                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="ayzq azaf azdm">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 text-gray-200">
                   <path
                     d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                     clip-rule="evenodd"
                     fill-rule="evenodd" />
                 </svg>
               </div>
-              <div aria-hidden="true" class="ayzf azdh azdn">·</div>
-              <div class="ayzf ayzi">
-                <a href="#" class="azdh azdk azds azfp">See all 512 reviews</a>
+              <div aria-hidden="true" class="ml-4 text-sm text-gray-300">·</div>
+              <div class="ml-4 flex">
+                <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">See all 512 reviews</a>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Image gallery -->
-        <div class="ayyw azhs azhu azia azib azic">
-          <h2 class="ayyb">Images</h2>
+        <div class="mt-8 lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0">
+          <h2 class="sr-only">Images</h2>
 
-          <div class="ayzk azaj azis aziv aziz">
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-featured-product-shot.jpg"
               alt="Back of women&#039;s Basic Tee in black."
-              class="azbl azho azhz" />
+              class="rounded-lg lg:col-span-2 lg:row-span-2" />
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-product-shot-01.jpg"
               alt="Side profile of women&#039;s Basic Tee in black."
-              class="ayzl azbl azii" />
+              class="hidden rounded-lg lg:block" />
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-product-shot-02.jpg"
               alt="Front of women&#039;s Basic Tee in black."
-              class="ayzl azbl azii" />
+              class="hidden rounded-lg lg:block" />
           </div>
         </div>
 
-        <div class="ayyw azhq">
+        <div class="mt-8 lg:col-span-5">
           <form>
             <!-- Color picker -->
             <div>
-              <h2 class="azdh azdk azdr">Color</h2>
+              <h2 class="text-sm font-medium text-gray-900">Color</h2>
 
-              <fieldset aria-label="Choose a color" class="ayys">
-                <div class="ayzi azao azaz">
-                  <div class="ayzi azbk azea azec azed">
+              <fieldset aria-label="Choose a color" class="mt-2">
+                <div class="flex items-center gap-x-3">
+                  <div class="flex rounded-full outline -outline-offset-1 outline-black/10">
                     <input
                       type="radio"
                       name="color"
                       value="black"
                       checked
                       aria-label="Black"
-                      class="ayzs azai azbk azca azep azfh azfi azfk azfz azga" />
+                      class="size-8 appearance-none rounded-full bg-gray-900 forced-color-adjust-none checked:outline-2 checked:outline-offset-2 checked:outline-gray-900 focus-visible:outline-3 focus-visible:outline-offset-3" />
                   </div>
-                  <div class="ayzi azbk azea azec azed">
+                  <div class="flex rounded-full outline -outline-offset-1 outline-black/10">
                     <input
                       type="radio"
                       name="color"
                       value="heather-grey"
                       aria-label="Heather Grey"
-                      class="ayzs azai azbk azbz azep azfh azfi azfj azfz azga" />
+                      class="size-8 appearance-none rounded-full bg-gray-400 forced-color-adjust-none checked:outline-2 checked:outline-offset-2 checked:outline-gray-400 focus-visible:outline-3 focus-visible:outline-offset-3" />
                   </div>
                 </div>
               </fieldset>
             </div>
 
             <!-- Size picker -->
-            <div class="ayyw">
-              <div class="ayzi azao azap">
-                <h2 class="azdh azdk azdr">Size</h2>
-                <a href="#" class="azdh azdk azds azfp">See sizing chart</a>
+            <div class="mt-8">
+              <div class="flex items-center justify-between">
+                <h2 class="text-sm font-medium text-gray-900">Size</h2>
+                <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">See sizing chart</a>
               </div>
 
-              <fieldset aria-label="Choose a size" class="ayys">
-                <div class="ayzk azal azas azgy">
+              <fieldset aria-label="Choose a size" class="mt-2">
+                <div class="grid grid-cols-3 gap-3 sm:grid-cols-6">
                   <label
                     aria-label="XXS"
-                    class="azeu ayye ayzi azao azaq azbm azbn azbu azcd azch azgc azgd azge azgf azgg azgh azgi azgj">
-                    <input type="radio" name="size" value="xxs" class="ayyc ayyg azai azfy azgb" />
-                    <span class="azdh azdk azdr azdv azfc">XXS</span>
+                    class="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-600 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-indigo-600 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
+                    <input type="radio" name="size" value="xxs" class="absolute inset-0 appearance-none focus:outline-none disabled:cursor-not-allowed" />
+                    <span class="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white">XXS</span>
                   </label>
                   <label
                     aria-label="XS"
-                    class="azeu ayye ayzi azao azaq azbm azbn azbu azcd azch azgc azgd azge azgf azgg azgh azgi azgj">
-                    <input type="radio" name="size" value="xs" class="ayyc ayyg azai azfy azgb" />
-                    <span class="azdh azdk azdr azdv azfc">XS</span>
+                    class="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-600 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-indigo-600 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
+                    <input type="radio" name="size" value="xs" class="absolute inset-0 appearance-none focus:outline-none disabled:cursor-not-allowed" />
+                    <span class="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white">XS</span>
                   </label>
                   <label
                     aria-label="S"
-                    class="azeu ayye ayzi azao azaq azbm azbn azbu azcd azch azgc azgd azge azgf azgg azgh azgi azgj">
-                    <input type="radio" name="size" value="s" checked class="ayyc ayyg azai azfy azgb" />
-                    <span class="azdh azdk azdr azdv azfc">S</span>
+                    class="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-600 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-indigo-600 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
+                    <input type="radio" name="size" value="s" checked class="absolute inset-0 appearance-none focus:outline-none disabled:cursor-not-allowed" />
+                    <span class="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white">S</span>
                   </label>
                   <label
                     aria-label="M"
-                    class="azeu ayye ayzi azao azaq azbm azbn azbu azcd azch azgc azgd azge azgf azgg azgh azgi azgj">
-                    <input type="radio" name="size" value="m" class="ayyc ayyg azai azfy azgb" />
-                    <span class="azdh azdk azdr azdv azfc">M</span>
+                    class="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-600 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-indigo-600 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
+                    <input type="radio" name="size" value="m" class="absolute inset-0 appearance-none focus:outline-none disabled:cursor-not-allowed" />
+                    <span class="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white">M</span>
                   </label>
                   <label
                     aria-label="L"
-                    class="azeu ayye ayzi azao azaq azbm azbn azbu azcd azch azgc azgd azge azgf azgg azgh azgi azgj">
-                    <input type="radio" name="size" value="l" class="ayyc ayyg azai azfy azgb" />
-                    <span class="azdh azdk azdr azdv azfc">L</span>
+                    class="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-600 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-indigo-600 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
+                    <input type="radio" name="size" value="l" class="absolute inset-0 appearance-none focus:outline-none disabled:cursor-not-allowed" />
+                    <span class="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white">L</span>
                   </label>
                   <label
                     aria-label="XL"
-                    class="azeu ayye ayzi azao azaq azbm azbn azbu azcd azch azgc azgd azge azgf azgg azgh azgi azgj">
-                    <input type="radio" name="size" value="xl" disabled class="ayyc ayyg azai azfy azgb" />
-                    <span class="azdh azdk azdr azdv azfc">XL</span>
+                    class="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-600 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-indigo-600 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
+                    <input type="radio" name="size" value="xl" disabled class="absolute inset-0 appearance-none focus:outline-none disabled:cursor-not-allowed" />
+                    <span class="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white">XL</span>
                   </label>
                 </div>
               </fieldset>
@@ -2536,16 +1037,16 @@
 
             <button
               type="submit"
-              class="ayyw ayzi azaa azao azaq azbm azbn azbv azcb azcm azco azdf azdk azdt azfl azfr azfs azft azfu">
+              class="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
               Add to cart
             </button>
           </form>
 
           <!-- Product details -->
-          <div class="ayyx">
-            <h2 class="azdh azdk azdr">Description</h2>
+          <div class="mt-10">
+            <h2 class="text-sm font-medium text-gray-900">Description</h2>
 
-            <div class="ayyu azaw azdi azdp">
+            <div class="mt-4 space-y-4 text-sm leading-6 text-gray-500">
               <p>
                 The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true
                 comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that
@@ -2555,25 +1056,25 @@
             </div>
           </div>
 
-          <div class="ayyw azbo azbt azcv">
-            <h2 class="azdh azdk azdr">Fabric &amp; Care</h2>
+          <div class="mt-8 border-t border-gray-200 pt-8">
+            <h2 class="text-sm font-medium text-gray-900">Fabric &amp; Care</h2>
 
-            <div class="ayyu">
-              <ul role="list" class="azah azav azdd azdi azdp azfd">
-                <li class="azdb">Only the best materials</li>
-                <li class="azdb">Ethically and locally made</li>
-                <li class="azdb">Pre-washed and pre-shrunk</li>
-                <li class="azdb">Machine wash cold with similar colors</li>
+            <div class="mt-4">
+              <ul role="list" class="list-disc space-y-1 pl-5 text-sm leading-6 text-gray-500 marker:text-gray-300">
+                <li class="pl-2">Only the best materials</li>
+                <li class="pl-2">Ethically and locally made</li>
+                <li class="pl-2">Pre-washed and pre-shrunk</li>
+                <li class="pl-2">Machine wash cold with similar colors</li>
               </ul>
             </div>
           </div>
 
           <!-- Policies -->
-          <section aria-labelledby="policies-heading" class="ayyx">
-            <h2 id="policies-heading" class="ayyb">Our Policies</h2>
+          <section aria-labelledby="policies-heading" class="mt-10">
+            <h2 id="policies-heading" class="sr-only">Our Policies</h2>
 
-            <dl class="ayzk azaj azat azgw azir azjm">
-              <div class="azbl azbn azbt azbx azcj azde">
+            <dl class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
                 <dt>
                   <svg
                     viewBox="0 0 24 24"
@@ -2582,17 +1083,17 @@
                     stroke-width="1.5"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayyp ayzr azaf azdo">
+                    class="mx-auto size-6 shrink-0 text-gray-400">
                     <path
                       d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64"
                       stroke-linecap="round"
                       stroke-linejoin="round" />
                   </svg>
-                  <span class="ayyu azdh azdk azdr">International delivery</span>
+                  <span class="mt-4 text-sm font-medium text-gray-900">International delivery</span>
                 </dt>
-                <dd class="ayyr azdh azdp">Get your order in 2 years</dd>
+                <dd class="mt-1 text-sm text-gray-500">Get your order in 2 years</dd>
               </div>
-              <div class="azbl azbn azbt azbx azcj azde">
+              <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
                 <dt>
                   <svg
                     viewBox="0 0 24 24"
@@ -2601,15 +1102,15 @@
                     stroke-width="1.5"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayyp ayzr azaf azdo">
+                    class="mx-auto size-6 shrink-0 text-gray-400">
                     <path
                       d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                       stroke-linecap="round"
                       stroke-linejoin="round" />
                   </svg>
-                  <span class="ayyu azdh azdk azdr">Loyalty rewards</span>
+                  <span class="mt-4 text-sm font-medium text-gray-900">Loyalty rewards</span>
                 </dt>
-                <dd class="ayyr azdh azdp">Don&#039;t look at other tees</dd>
+                <dd class="mt-1 text-sm text-gray-500">Don&#039;t look at other tees</dd>
               </div>
             </dl>
           </section>
@@ -2617,21 +1118,21 @@
       </div>
 
       <!-- Reviews -->
-      <section aria-labelledby="reviews-heading" class="ayyz azgu">
-        <h2 id="reviews-heading" class="azdg azdk azdr">Recent reviews</h2>
+      <section aria-labelledby="reviews-heading" class="mt-16 sm:mt-24">
+        <h2 id="reviews-heading" class="text-lg font-medium text-gray-900">Recent reviews</h2>
 
-        <div class="ayyv azbf azbg azbo azbp azbt">
-          <div class="azcr azik aziu azja">
-            <div class="azht azhw azji azjj azjl azjn azjo azjp">
-              <div class="ayzi azao azjf">
-                <div class="ayzi azao">
+        <div class="mt-6 divide-y divide-gray-200 border-t border-b border-gray-200">
+          <div class="py-10 lg:grid lg:grid-cols-12 lg:gap-x-8">
+            <div class="lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 xl:grid xl:grid-cols-3 xl:items-start xl:gap-x-8">
+              <div class="flex items-center xl:col-span-1">
+                <div class="flex items-center">
                   <!-- Active: "text-yellow-400", Inactive: "text-gray-200" -->
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2642,7 +1143,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2653,7 +1154,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2664,7 +1165,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2675,20 +1176,20 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
                       fill-rule="evenodd" />
                   </svg>
                 </div>
-                <p class="ayze azdh azdq">5<span class="ayyb"> out of 5 stars</span></p>
+                <p class="ml-3 text-sm text-gray-700">5<span class="sr-only"> out of 5 stars</span></p>
               </div>
 
-              <div class="ayyu azie azjg azjk">
-                <h3 class="azdh azdk azdr">Can&#039;t say enough good things</h3>
+              <div class="mt-4 lg:mt-6 xl:col-span-2 xl:mt-0">
+                <h3 class="text-sm font-medium text-gray-900">Can&#039;t say enough good things</h3>
 
-                <div class="ayyt azax azdh azdp">
+                <div class="mt-3 space-y-6 text-sm text-gray-500">
                   <p>
                     I was really pleased with the overall shopping experience. My order even included a little personal,
                     handwritten note, which delighted me!
@@ -2702,22 +1203,22 @@
               </div>
             </div>
 
-            <div class="ayyv ayzi azao azdh azhp azhu azib azic aziw aziy azjh">
-              <p class="azdk azdr">Risako M</p>
-              <time datetime="2021-01-06" class="ayzf azbr azbt azdc azdp azid azif azjc azje">May 16, 2021</time>
+            <div class="mt-6 flex items-center text-sm lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:flex-col lg:items-start xl:col-span-3">
+              <p class="font-medium text-gray-900">Risako M</p>
+              <time datetime="2021-01-06" class="ml-4 border-l border-gray-200 pl-4 text-gray-500 lg:mt-2 lg:ml-0 lg:border-0 lg:pl-0">May 16, 2021</time>
             </div>
           </div>
-          <div class="azcr azik aziu azja">
-            <div class="azht azhw azji azjj azjl azjn azjo azjp">
-              <div class="ayzi azao azjf">
-                <div class="ayzi azao">
+          <div class="py-10 lg:grid lg:grid-cols-12 lg:gap-x-8">
+            <div class="lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 xl:grid xl:grid-cols-3 xl:items-start xl:gap-x-8">
+              <div class="flex items-center xl:col-span-1">
+                <div class="flex items-center">
                   <!-- Active: "text-yellow-400", Inactive: "text-gray-200" -->
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2728,7 +1229,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2739,7 +1240,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2750,7 +1251,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2761,20 +1262,20 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
                       fill-rule="evenodd" />
                   </svg>
                 </div>
-                <p class="ayze azdh azdq">5<span class="ayyb"> out of 5 stars</span></p>
+                <p class="ml-3 text-sm text-gray-700">5<span class="sr-only"> out of 5 stars</span></p>
               </div>
 
-              <div class="ayyu azie azjg azjk">
-                <h3 class="azdh azdk azdr">Very comfy and looks the part</h3>
+              <div class="mt-4 lg:mt-6 xl:col-span-2 xl:mt-0">
+                <h3 class="text-sm font-medium text-gray-900">Very comfy and looks the part</h3>
 
-                <div class="ayyt azax azdh azdp">
+                <div class="mt-3 space-y-6 text-sm text-gray-500">
                   <p>
                     After a quick chat with customer support, I had a good feeling about this shirt and ordered three of
                     them.
@@ -2788,22 +1289,22 @@
               </div>
             </div>
 
-            <div class="ayyv ayzi azao azdh azhp azhu azib azic aziw aziy azjh">
-              <p class="azdk azdr">Jackie H</p>
-              <time datetime="2021-01-06" class="ayzf azbr azbt azdc azdp azid azif azjc azje">April 6, 2021</time>
+            <div class="mt-6 flex items-center text-sm lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:flex-col lg:items-start xl:col-span-3">
+              <p class="font-medium text-gray-900">Jackie H</p>
+              <time datetime="2021-01-06" class="ml-4 border-l border-gray-200 pl-4 text-gray-500 lg:mt-2 lg:ml-0 lg:border-0 lg:pl-0">April 6, 2021</time>
             </div>
           </div>
-          <div class="azcr azik aziu azja">
-            <div class="azht azhw azji azjj azjl azjn azjo azjp">
-              <div class="ayzi azao azjf">
-                <div class="ayzi azao">
+          <div class="py-10 lg:grid lg:grid-cols-12 lg:gap-x-8">
+            <div class="lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 xl:grid xl:grid-cols-3 xl:items-start xl:gap-x-8">
+              <div class="flex items-center xl:col-span-1">
+                <div class="flex items-center">
                   <!-- Active: "text-yellow-400", Inactive: "text-gray-200" -->
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2814,7 +1315,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2825,7 +1326,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2836,7 +1337,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdu">
+                    class="size-5 shrink-0 text-yellow-400">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
@@ -2847,20 +1348,20 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="ayzq azaf azdm">
+                    class="size-5 shrink-0 text-gray-200">
                     <path
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
                       clip-rule="evenodd"
                       fill-rule="evenodd" />
                   </svg>
                 </div>
-                <p class="ayze azdh azdq">4<span class="ayyb"> out of 5 stars</span></p>
+                <p class="ml-3 text-sm text-gray-700">4<span class="sr-only"> out of 5 stars</span></p>
               </div>
 
-              <div class="ayyu azie azjg azjk">
-                <h3 class="azdh azdk azdr">The last shirts I may ever need</h3>
+              <div class="mt-4 lg:mt-6 xl:col-span-2 xl:mt-0">
+                <h3 class="text-sm font-medium text-gray-900">The last shirts I may ever need</h3>
 
-                <div class="ayyt azax azdh azdp">
+                <div class="mt-3 space-y-6 text-sm text-gray-500">
                   <p>
                     I bought two of those comfy cotton shirts, and let me tell you: they're amazing! I have been wearing
                     them almost every day. Even after a dozen of washes, that still looks and feel good as new. Will
@@ -2870,89 +1371,89 @@
               </div>
             </div>
 
-            <div class="ayyv ayzi azao azdh azhp azhu azib azic aziw aziy azjh">
-              <p class="azdk azdr">Laura G</p>
-              <time datetime="2021-01-06" class="ayzf azbr azbt azdc azdp azid azif azjc azje">February 24, 2021</time>
+            <div class="mt-6 flex items-center text-sm lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:flex-col lg:items-start xl:col-span-3">
+              <p class="font-medium text-gray-900">Laura G</p>
+              <time datetime="2021-01-06" class="ml-4 border-l border-gray-200 pl-4 text-gray-500 lg:mt-2 lg:ml-0 lg:border-0 lg:pl-0">February 24, 2021</time>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Related products -->
-      <section aria-labelledby="related-heading" class="ayyz azgu">
-        <h2 id="related-heading" class="azdg azdk azdr">Customers also purchased</h2>
+      <section aria-labelledby="related-heading" class="mt-16 sm:mt-24">
+        <h2 id="related-heading" class="text-lg font-medium text-gray-900">Customers also purchased</h2>
 
-        <div class="ayyv ayzk azaj azba azbd azgw azit azjp">
-          <div class="azeu ayye">
+        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div class="group relative">
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-02.jpg"
               alt="Front of men&#039;s Basic Tee in white."
-              class="ayzp azaa azbm azcf azew azim azin" />
-            <div class="ayyu ayzi azap">
+              class="aspect-square w-full rounded-md object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80" />
+            <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="azdh azdq">
+                <h3 class="text-sm text-gray-700">
                   <a href="#">
-                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                    <span aria-hidden="true" class="absolute inset-0"></span>
                     Basic Tee
                   </a>
                 </h3>
-                <p class="ayyr azdh azdp">Aspen White</p>
+                <p class="mt-1 text-sm text-gray-500">Aspen White</p>
               </div>
-              <p class="azdh azdk azdr">$35</p>
+              <p class="text-sm font-medium text-gray-900">$35</p>
             </div>
           </div>
-          <div class="azeu ayye">
+          <div class="group relative">
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-03.jpg"
               alt="Front of men&#039;s Basic Tee in dark gray."
-              class="ayzp azaa azbm azcf azew azim azin" />
-            <div class="ayyu ayzi azap">
+              class="aspect-square w-full rounded-md object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80" />
+            <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="azdh azdq">
+                <h3 class="text-sm text-gray-700">
                   <a href="#">
-                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                    <span aria-hidden="true" class="absolute inset-0"></span>
                     Basic Tee
                   </a>
                 </h3>
-                <p class="ayyr azdh azdp">Charcoal</p>
+                <p class="mt-1 text-sm text-gray-500">Charcoal</p>
               </div>
-              <p class="azdh azdk azdr">$35</p>
+              <p class="text-sm font-medium text-gray-900">$35</p>
             </div>
           </div>
-          <div class="azeu ayye">
+          <div class="group relative">
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-04.jpg"
               alt="Front of men&#039;s Artwork Tee in peach with white and brown dots forming an isometric cube."
-              class="ayzp azaa azbm azcf azew azim azin" />
-            <div class="ayyu ayzi azap">
+              class="aspect-square w-full rounded-md object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80" />
+            <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="azdh azdq">
+                <h3 class="text-sm text-gray-700">
                   <a href="#">
-                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                    <span aria-hidden="true" class="absolute inset-0"></span>
                     Artwork Tee
                   </a>
                 </h3>
-                <p class="ayyr azdh azdp">Iso Dots</p>
+                <p class="mt-1 text-sm text-gray-500">Iso Dots</p>
               </div>
-              <p class="azdh azdk azdr">$35</p>
+              <p class="text-sm font-medium text-gray-900">$35</p>
             </div>
           </div>
-          <div class="azeu ayye">
+          <div class="group relative">
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg"
               alt="Front of men&#039;s Basic Tee in black."
-              class="ayzp azaa azbm azcf azew azim azin" />
-            <div class="ayyu ayzi azap">
+              class="aspect-square w-full rounded-md object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80" />
+            <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="azdh azdq">
+                <h3 class="text-sm text-gray-700">
                   <a href="#">
-                    <span aria-hidden="true" class="ayyc ayyg"></span>
+                    <span aria-hidden="true" class="absolute inset-0"></span>
                     Basic Tee
                   </a>
                 </h3>
-                <p class="ayyr azdh azdp">Black</p>
+                <p class="mt-1 text-sm text-gray-500">Black</p>
               </div>
-              <p class="azdh azdk azdr">$35</p>
+              <p class="text-sm font-medium text-gray-900">$35</p>
             </div>
           </div>
         </div>
@@ -2960,109 +1461,109 @@
     </main>
 
     <footer aria-labelledby="footer-heading">
-      <h2 id="footer-heading" class="ayyb">Footer</h2>
-      <div class="ayyp azac azcl azha azjd">
-        <div class="azbo azbt azct">
-          <div class="ayzk azaj azhj azhk azhl azhm azhn">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="border-t border-gray-200 py-20">
+          <div class="grid grid-cols-1 md:auto-flow-col md:auto-rows-min md:grid-cols-12 md:gap-x-8 md:gap-y-16">
             <!-- Image section -->
-            <div class="ayyl azhd azhu azib">
+            <div class="col-span-1 md:col-span-2 lg:col-start-1 lg:row-start-1">
               <img
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""
-                class="ayzu ayzz" />
+                class="h-8 w-auto" />
             </div>
 
             <!-- Sitemap sections -->
-            <div class="ayyn ayyx ayzk azak azau azgx azhe azhf azhg azhi azhr azhv">
-              <div class="ayzk azaj azbe azgs azgw azgz">
+            <div class="col-span-6 mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-8 md:col-start-3 md:row-start-1 md:mt-0 lg:col-span-6 lg:col-start-2">
+              <div class="grid grid-cols-1 gap-y-12 sm:col-span-2 sm:grid-cols-2 sm:gap-x-8">
                 <div>
-                  <h3 class="azdh azdk azdr">Products</h3>
-                  <ul role="list" class="ayyv azax">
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Bags</a>
+                  <h3 class="text-sm font-medium text-gray-900">Products</h3>
+                  <ul role="list" class="mt-6 space-y-6">
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Bags</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Tees</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Tees</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Objects</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Objects</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Home Goods</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Home Goods</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Accessories</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Accessories</a>
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <h3 class="azdh azdk azdr">Company</h3>
-                  <ul role="list" class="ayyv azax">
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Who we are</a>
+                  <h3 class="text-sm font-medium text-gray-900">Company</h3>
+                  <ul role="list" class="mt-6 space-y-6">
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Who we are</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Sustainability</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Sustainability</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Press</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Press</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Careers</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Careers</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Terms &amp; Conditions</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Terms &amp; Conditions</a>
                     </li>
-                    <li class="azdh">
-                      <a href="#" class="azdp azfn">Privacy</a>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Privacy</a>
                     </li>
                   </ul>
                 </div>
               </div>
               <div>
-                <h3 class="azdh azdk azdr">Customer Service</h3>
-                <ul role="list" class="ayyv azax">
-                  <li class="azdh">
-                    <a href="#" class="azdp azfn">Contact</a>
+                <h3 class="text-sm font-medium text-gray-900">Customer Service</h3>
+                <ul role="list" class="mt-6 space-y-6">
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Contact</a>
                   </li>
-                  <li class="azdh">
-                    <a href="#" class="azdp azfn">Shipping</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Shipping</a>
                   </li>
-                  <li class="azdh">
-                    <a href="#" class="azdp azfn">Returns</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Returns</a>
                   </li>
-                  <li class="azdh">
-                    <a href="#" class="azdp azfn">Warranty</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Warranty</a>
                   </li>
-                  <li class="azdh">
-                    <a href="#" class="azdp azfn">Secure Payments</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Secure Payments</a>
                   </li>
-                  <li class="azdh">
-                    <a href="#" class="azdp azfn">FAQ</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">FAQ</a>
                   </li>
-                  <li class="azdh">
-                    <a href="#" class="azdp azfn">Find a store</a>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Find a store</a>
                   </li>
                 </ul>
               </div>
             </div>
 
             <!-- Newsletter section -->
-            <div class="ayyy azhe azhf azhh azhi azhp azhy azib">
-              <h3 class="azdh azdk azdr">Sign up for our newsletter</h3>
-              <p class="ayyv azdh azdp">The latest deals and savings, sent to your inbox weekly.</p>
-              <form class="ayys ayzi azgv">
+            <div class="mt-12 md:col-span-8 md:col-start-3 md:row-start-2 md:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1">
+              <h3 class="text-sm font-medium text-gray-900">Sign up for our newsletter</h3>
+              <p class="mt-6 text-sm text-gray-500">The latest deals and savings, sent to your inbox weekly.</p>
+              <form class="mt-2 flex sm:max-w-xl">
                 <input
                   id="email-address"
                   type="text"
                   required
                   autocomplete="email"
                   aria-label="Email address"
-                  class="ayzh azaa azbm azcd azcl azcn azdf azdr azeb azec azee azfe azfv azfw azfx" />
-                <div class="ayzf azaf">
+                  class="block w-full rounded-md bg-white px-4 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+                <div class="ml-4 shrink-0">
                   <button
                     type="submit"
-                    class="ayzi azaa azao azaq azbm azbn azbv azcb azcl azcn azdf azdk azdt azdz azfl azfr azfs azft azfu">
+                    class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
                     Sign up
                   </button>
                 </div>
@@ -3071,12 +1572,29 @@
           </div>
         </div>
 
-        <div class="azbo azbs azcr azde">
-          <p class="azdh azdp">&copy; 2021 Your Company, Inc. All rights reserved.</p>
+        <div class="border-t border-gray-100 py-10 text-center">
+          <p class="text-sm text-gray-500">&copy; 2021 Your Company, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>
   </div>
 
-  <script></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sync el-popover open state to the nearest div.group ancestor so group-open: variants work
+      document.querySelectorAll('el-popover-group el-popover[id]').forEach(popover => {
+        const btn = document.querySelector(`[popovertarget="${popover.id}"]`);
+        if (!btn) return;
+        const groupDiv = btn.closest('div.group');
+        if (!groupDiv) return;
+        popover.addEventListener('toggle', (e) => {
+          if (e.newState === 'open') {
+            groupDiv.setAttribute('open', '');
+          } else {
+            groupDiv.removeAttribute('open');
+          }
+        });
+      });
+    });
+  </script>
 </body>

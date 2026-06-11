@@ -1,1752 +1,34 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-rotate-x: initial;
-        --tw-rotate-y: initial;
-        --tw-rotate-z: initial;
-        --tw-skew-x: initial;
-        --tw-skew-y: initial;
-        --tw-space-y-reverse: 0;
-        --tw-space-x-reverse: 0;
-        --tw-divide-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-gradient-position: initial;
-        --tw-gradient-from: #0000;
-        --tw-gradient-via: #0000;
-        --tw-gradient-to: #0000;
-        --tw-gradient-stops: initial;
-        --tw-gradient-via-stops: initial;
-        --tw-gradient-from-position: 0%;
-        --tw-gradient-via-position: 50%;
-        --tw-gradient-to-position: 100%;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-        --tw-outline-style: solid;
-        --tw-blur: initial;
-        --tw-brightness: initial;
-        --tw-contrast: initial;
-        --tw-grayscale: initial;
-        --tw-hue-rotate: initial;
-        --tw-invert: initial;
-        --tw-opacity: initial;
-        --tw-saturate: initial;
-        --tw-sepia: initial;
-        --tw-drop-shadow: initial;
-        --tw-drop-shadow-color: initial;
-        --tw-drop-shadow-alpha: 100%;
-        --tw-drop-shadow-size: initial;
-        --tw-duration: initial;
-        --tw-ease: initial;
-        --tw-translate-x: 0;
-        --tw-translate-y: 0;
-        --tw-translate-z: 0;
-        --tw-divide-x-reverse: 0;
-      }
-    }
-  }
-  @layer theme {
-    :root,
-    :host {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .bgwf {
-      pointer-events: none;
-    }
-    .bgwg {
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border-width: 0;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-    .bgwh {
-      position: absolute;
-    }
-    .bgwi {
-      position: fixed;
-    }
-    .bgwj {
-      position: relative;
-    }
-    .bgwk {
-      inset: -0.125rem;
-    }
-    .bgwl {
-      inset: 0;
-    }
-    .bgwm {
-      inset-inline: 0;
-    }
-    .bgwn {
-      top: 50%;
-    }
-    .bgwo {
-      bottom: -1px;
-    }
-    .bgwp {
-      z-index: 10;
-    }
-    .bgwq {
-      z-index: 30;
-    }
-    .bgwr {
-      order: 9999;
-    }
-    .bgws {
-      grid-column-start: 1;
-    }
-    .bgwt {
-      grid-row-start: 1;
-    }
-    .bgwu {
-      margin: -0.5rem;
-    }
-    .bgwv {
-      margin-inline: 1rem;
-    }
-    .bgww {
-      margin-inline: auto;
-    }
-    .bgwx {
-      margin-top: 0.25rem;
-    }
-    .bgwy {
-      margin-top: 0.5rem;
-    }
-    .bgwz {
-      margin-top: 0.75rem;
-    }
-    .bgxa {
-      margin-top: 1rem;
-    }
-    .bgxb {
-      margin-top: 1.5rem;
-    }
-    .bgxc {
-      margin-top: 2rem;
-    }
-    .bgxd {
-      margin-top: 3rem;
-    }
-    .bgxe {
-      margin-top: 4rem;
-    }
-    .bgxf {
-      margin-top: auto;
-    }
-    .bgxg {
-      margin-right: 0.25rem;
-    }
-    .bgxh {
-      margin-bottom: -1px;
-    }
-    .bgxi {
-      margin-left: -0.5rem;
-    }
-    .bgxj {
-      margin-left: 0.5rem;
-    }
-    .bgxk {
-      margin-left: 0.75rem;
-    }
-    .bgxl {
-      margin-left: 1.5rem;
-    }
-    .bgxm {
-      display: block;
-    }
-    .bgxn {
-      display: flex;
-    }
-    .bgxo {
-      display: flow-root;
-    }
-    .bgxp {
-      display: grid;
-    }
-    .bgxq {
-      display: none;
-    }
-    .bgxr {
-      display: inline-block;
-    }
-    .bgxs {
-      display: inline-flex;
-    }
-    .bgxt {
-      display: inline-grid;
-    }
-    .bgxu {
-      display: table;
-    }
-    .bgxv {
-      aspect-ratio: 1;
-    }
-    .bgxw {
-      width: 1rem;
-      height: 1rem;
-    }
-    .bgxx {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-    .bgxy {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .bgxz {
-      width: 100%;
-      height: 100%;
-    }
-    .bgya {
-      height: 0.125rem;
-    }
-    .bgyb {
-      height: 1.5rem;
-    }
-    .bgyc {
-      height: 2rem;
-    }
-    .bgyd {
-      height: 2.5rem;
-    }
-    .bgye {
-      height: 4rem;
-    }
-    .bgyf {
-      height: 12rem;
-    }
-    .bgyg {
-      height: auto;
-    }
-    .bgyh {
-      height: 100%;
-    }
-    .bgyi {
-      width: 50%;
-    }
-    .bgyj {
-      width: 1.25rem;
-    }
-    .bgyk {
-      width: 16rem;
-    }
-    .bgyl {
-      width: auto;
-    }
-    .bgym {
-      width: 100%;
-    }
-    .bgyn {
-      width: 1px;
-    }
-    .bgyo {
-      max-width: 42rem;
-    }
-    .bgyp {
-      max-width: 64rem;
-    }
-    .bgyq {
-      max-width: 80rem;
-    }
-    .bgyr {
-      max-width: 24rem;
-    }
-    .bgys {
-      max-width: 36rem;
-    }
-    .bgyt {
-      max-width: 20rem;
-    }
-    .bgyu {
-      flex: 1;
-    }
-    .bgyv {
-      flex-shrink: 0;
-    }
-    .bgyw {
-      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-    }
-    .bgyx {
-      appearance: none;
-    }
-    .bgyy {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .bgyz {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .bgza {
-      flex-direction: column;
-    }
-    .bgzb {
-      align-items: center;
-    }
-    .bgzc {
-      align-items: flex-start;
-    }
-    .bgzd {
-      justify-content: space-between;
-    }
-    .bgze {
-      justify-content: center;
-    }
-    .bgzf {
-      justify-content: flex-end;
-    }
-    .bgzg {
-      gap: 2rem;
-    }
-    :where(.bgzh > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 6) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 6) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.bgzi > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 12) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 12) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.bgzj > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 16) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 16) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .bgzk {
-      column-gap: 1.5rem;
-    }
-    .bgzl {
-      column-gap: 2rem;
-    }
-    :where(.bgzm > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(0.25rem * 3) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(0.25rem * 3) * calc(1 - var(--tw-space-x-reverse)));
-    }
-    :where(.bgzn > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(0.25rem * 8) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-x-reverse)));
-    }
-    .bgzo {
-      row-gap: 2.5rem;
-    }
-    :where(.bgzp > :not(:last-child)) {
-      --tw-divide-y-reverse: 0;
-      border-bottom-style: var(--tw-border-style);
-      border-top-style: var(--tw-border-style);
-      border-top-width: calc(1px * var(--tw-divide-y-reverse));
-      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    }
-    :where(.bgzq > :not(:last-child)) {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .bgzr {
-      align-self: center;
-    }
-    .bgzs {
-      justify-self: flex-end;
-    }
-    .bgzt {
-      overflow: hidden;
-    }
-    .bgzu {
-      overflow: visible;
-    }
-    .bgzv {
-      overflow-x: auto;
-    }
-    .bgzw {
-      overflow-y: auto;
-    }
-    .bgzx {
-      border-radius: 3.40282e38px;
-    }
-    .bgzy {
-      border-radius: 0.5rem;
-    }
-    .bgzz {
-      border-radius: 0.375rem;
-    }
-    .bhaa {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-    .bhab {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .bhac {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 1px;
-    }
-    .bhad {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 2px;
-    }
-    .bhae {
-      border-left-style: var(--tw-border-style);
-      border-left-width: 1px;
-    }
-    .bhaf {
-      border-color: oklab(0% none none/.1) oklab(0% none none/.1) oklab(0% none none/.1) oklab(0% none none/.1);
-    }
-    .bhag {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .bhah {
-      border-color: #0000;
-    }
-    .bhai {
-      background-color: oklab(0% none none/.25);
-    }
-    .bhaj {
-      background-color: oklch(96.7% 0.003 264.542);
-    }
-    .bhak {
-      background-color: oklch(92.8% 0.006 264.531);
-    }
-    .bhal {
-      background-color: oklch(44.6% 0.03 256.802);
-    }
-    .bham {
-      background-color: oklch(21% 0.034 264.665);
-    }
-    .bhan {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .bhao {
-      background-color: oklab(51.1% 0.0317755 -0.260066/.9);
-    }
-    .bhap {
-      background-color: #0000;
-    }
-    .bhaq {
-      background-color: #fff;
-    }
-    .bhar {
-      background-color: oklab(100% 0 5.96046e-8/0.75);
-    }
-    .bhas {
-      --tw-gradient-position: to top;
-    }
-    @supports (background-image: linear-gradient(in lab, red, red)) {
-      .bhas {
-        --tw-gradient-position: to top in oklab;
-      }
-    }
-    .bhas {
-      background-image: linear-gradient(var(--tw-gradient-stops));
-    }
-    .bhat {
-      --tw-gradient-from: #fff;
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .bhau {
-      --tw-gradient-via: #fff;
-      --tw-gradient-via-stops:
-        var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
-    }
-    .bhav {
-      fill: oklch(87.2% 0.01 258.338);
-    }
-    .bhaw {
-      fill: oklch(55.1% 0.027 264.364);
-    }
-    .bhax {
-      object-fit: cover;
-    }
-    .bhay {
-      padding: 0.5rem;
-    }
-    .bhaz {
-      padding: 1.5rem;
-    }
-    .bhba {
-      padding-inline: 0.25rem;
-    }
-    .bhbb {
-      padding-inline: 1rem;
-    }
-    .bhbc {
-      padding-inline: 1.5rem;
-    }
-    .bhbd {
-      padding-inline: 2rem;
-    }
-    .bhbe {
-      padding-block: 0.125rem;
-    }
-    .bhbf {
-      padding-block: 0.5rem;
-    }
-    .bhbg {
-      padding-block: 0.75rem;
-    }
-    .bhbh {
-      padding-block: 1rem;
-    }
-    .bhbi {
-      padding-block: 1.5rem;
-    }
-    .bhbj {
-      padding-block: 2.5rem;
-    }
-    .bhbk {
-      padding-block: 3rem;
-    }
-    .bhbl {
-      padding-block: 4rem;
-    }
-    .bhbm {
-      padding-block: 6rem;
-    }
-    .bhbn {
-      padding-top: 1.25rem;
-    }
-    .bhbo {
-      padding-top: 1.5rem;
-    }
-    .bhbp {
-      padding-top: 2.5rem;
-    }
-    .bhbq {
-      padding-top: 4rem;
-    }
-    .bhbr {
-      padding-top: 8rem;
-    }
-    .bhbs {
-      padding-right: 1.75rem;
-    }
-    .bhbt {
-      padding-bottom: 0.5rem;
-    }
-    .bhbu {
-      padding-bottom: 1.5rem;
-    }
-    .bhbv {
-      padding-bottom: 3rem;
-    }
-    .bhbw {
-      padding-bottom: 5rem;
-    }
-    .bhbx {
-      padding-left: 0.5rem;
-    }
-    .bhby {
-      padding-left: 1.5rem;
-    }
-    .bhbz {
-      text-align: center;
-    }
-    .bhca {
-      text-align: left;
-    }
-    .bhcb {
-      font-size: 1.5rem;
-      line-height: var(--tw-leading, calc(2 / 1.5));
-    }
-    .bhcc {
-      font-size: 2.25rem;
-      line-height: var(--tw-leading, calc(2.5 / 2.25));
-    }
-    .bhcd {
-      font-size: 1rem;
-      line-height: var(--tw-leading, calc(1.5 / 1));
-    }
-    .bhce {
-      font-size: 1.125rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.125));
-    }
-    .bhcf {
-      font-size: 0.875rem;
-      line-height: var(--tw-leading, calc(1.25 / 0.875));
-    }
-    .bhcg {
-      font-size: 1.25rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.25));
-    }
-    .bhch {
-      --tw-font-weight: 700;
-      font-weight: 700;
-    }
-    .bhci {
-      --tw-font-weight: 500;
-      font-weight: 500;
-    }
-    .bhcj {
-      --tw-font-weight: 600;
-      font-weight: 600;
-    }
-    .bhck {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .bhcl {
-      white-space: nowrap;
-    }
-    .bhcm {
-      color: oklch(92.8% 0.006 264.531);
-    }
-    .bhcn {
-      color: oklch(87.2% 0.01 258.338);
-    }
-    .bhco {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .bhcp {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .bhcq {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .bhcr {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    .bhcs {
-      color: oklch(21% 0.034 264.665);
-    }
-    .bhct {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .bhcu {
-      color: #fff;
-    }
-    .bhcv {
-      font-style: normal;
-    }
-    .bhcw,
-    .bhcx {
-      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bhcy {
-      --tw-shadow:
-        0 20px 25px -5px var(--tw-shadow-color, #0000001a), 0 8px 10px -6px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bhcz {
-      --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bhda {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-    .bhdb {
-      outline-offset: calc(1px * -1);
-    }
-    .bhdc {
-      outline-color: oklch(87.2% 0.01 258.338);
-    }
-    .bhdd {
-      --tw-saturate: saturate(0%);
-      filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,)
-        var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-    }
-    .bhde {
-      filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,)
-        var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-    }
-    .bhdf {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .bhdg {
-      transition-property:
-        color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from,
-        --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .bhdh {
-      transition-property: opacity;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .bhdi {
-      transition-behavior: allow-discrete;
-    }
-    .bhdj {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .bhdk {
-      --tw-duration: 0.3s;
-      transition-duration: 0.3s;
-    }
-    .bhdl {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    .bhdm {
-      --tw-ease: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .bhdn {
-      --tw-ease: linear;
-      transition-timing-function: linear;
-    }
-    .bhdo {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .bhdp {
-      --anchor-gap: 1px;
-    }
-    .bhdq:is(:where(.bhdr):not(:has(:is([open], :popover-open, :open))) *) {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    @media (hover: hover) {
-      .bhds:is(:where(.bhdt):hover *) {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .bhdu:is(:where(.bhdt):hover *) {
-        color: oklch(27.8% 0.033 256.848);
-      }
-      .bhdv:is(:where(.bhdt):hover *) {
-        opacity: 0.75;
-      }
-    }
-    .bhdw:is(:where(.bhdr):has(:is([open], :popover-open, :open)) *) {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .bhdx:is(:where(.bhdr):has(:is([open], :popover-open, :open)) *) {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .bhdy:is(:where(.bhdz):has(:is([open], :popover-open, :open)) *) {
-      --tw-duration: 0.15s;
-      transition-duration: 0.15s;
-    }
-    .bhea:is(:where(.bhdz):has(:is([open], :popover-open, :open)) *) {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .bheb::placeholder {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .bhec::backdrop {
-      background-color: #0000;
-    }
-    .bhed:is([open], :popover-open, :open) {
-      display: block;
-    }
-    @media (hover: hover) {
-      .bhee:hover {
-        background-color: oklch(27.8% 0.033 256.848);
-      }
-      .bhef:hover {
-        background-color: oklch(45.7% 0.24 277.023);
-      }
-      .bheg:hover {
-        color: oklch(96.7% 0.003 264.542);
-      }
-      .bheh:hover {
-        color: oklch(92.8% 0.006 264.531);
-      }
-      .bhei:hover {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .bhej:hover {
-        color: oklch(44.6% 0.03 256.802);
-      }
-      .bhek:hover {
-        color: oklch(27.8% 0.033 256.848);
-      }
-      .bhel:hover {
-        color: oklch(58.5% 0.233 277.117);
-      }
-      .bhem:is(:where(.bhdr):not(:has(:is([open], :popover-open, :open))) *):hover {
-        color: oklch(27.8% 0.033 256.848);
-      }
-    }
-    .bhen:focus {
-      z-index: 10;
-    }
-    .bheo:focus {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .bhep:focus {
-      --tw-ring-color: oklch(58.5% 0.233 277.117);
-    }
-    .bheq:focus {
-      --tw-ring-offset-width: 2px;
-      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    }
-    .bher:focus {
-      --tw-ring-offset-color: #fff;
-    }
-    .bhes:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    @media (forced-colors: active) {
-      .bhes:focus {
-        outline-offset: 2px;
-        outline: 2px solid #0000;
-      }
-    }
-    .bhet:focus {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .bheu:focus {
-      outline-offset: calc(1px * -1);
-    }
-    .bhev:focus {
-      outline-offset: calc(2px * -1);
-    }
-    .bhew:focus {
-      outline-color: oklch(51.1% 0.262 276.966);
-    }
-    .bhex:focus {
-      outline-color: #fff;
-    }
-    .bhey:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    .bhez[aria-selected='true'] {
-      border-color: oklch(51.1% 0.262 276.966);
-    }
-    .bhfa[aria-selected='true'] {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .bhfb[data-closed] {
-      --tw-translate-x: -100%;
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    .bhfc[data-closed] {
-      opacity: 0;
-    }
-    .bhfd[data-enter] {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .bhfe[data-enter] {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .bhff[data-leave] {
-      --tw-duration: 0.15s;
-      transition-duration: 0.15s;
-    }
-    .bhfg[data-leave] {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    @media not all and (min-width: 40rem) {
-      .bhfh {
-        height: 20rem;
-      }
-    }
-    @media (min-width: 40rem) {
-      .bhfi {
-        margin-inline: 1.5rem;
-      }
-      .bhfj {
-        margin-top: 0;
-      }
-      .bhfk {
-        margin-top: 1rem;
-      }
-      .bhfl {
-        margin-top: 1.5rem;
-      }
-      .bhfm {
-        margin-left: 1rem;
-      }
-      .bhfn {
-        margin-left: 1.5rem;
-      }
-      .bhfo {
-        display: block;
-      }
-      .bhfp {
-        display: flex;
-      }
-      .bhfq {
-        display: none;
-      }
-      .bhfr {
-        aspect-ratio: 2;
-      }
-      .bhfs {
-        height: 16rem;
-      }
-      .bhft {
-        width: auto;
-      }
-      .bhfu {
-        flex-shrink: 0;
-      }
-      :where(.bhfv > :not(:last-child)) {
-        --tw-space-y-reverse: 0;
-        margin-block-start: calc(calc(0.25rem * 4) * var(--tw-space-y-reverse));
-        margin-block-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-y-reverse)));
-      }
-      .bhfw {
-        padding: 2.5rem;
-      }
-      .bhfx {
-        padding-inline: 1.5rem;
-      }
-      .bhfy {
-        padding-inline: 2.5rem;
-      }
-      .bhfz {
-        padding-block: 4rem;
-      }
-      .bhga {
-        padding-block: 6rem;
-      }
-      .bhgb {
-        font-size: 3rem;
-        line-height: var(--tw-leading, 1);
-      }
-      .bhgc {
-        font-size: 0.875rem;
-        line-height: 1.5rem;
-      }
-    }
-    @media (min-width: 48rem) {
-      .bhgd {
-        margin-top: 0;
-      }
-      .bhge {
-        display: flex;
-      }
-      .bhgf {
-        display: grid;
-      }
-      .bhgg {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .bhgh {
-        align-items: center;
-      }
-      .bhgi {
-        justify-content: space-between;
-      }
-      .bhgj {
-        justify-content: center;
-      }
-      .bhgk {
-        gap: 2rem;
-      }
-      :where(.bhgl > :not(:last-child)) {
-        --tw-space-y-reverse: 0;
-        margin-block-start: calc(calc(0.25rem * 0) * var(--tw-space-y-reverse));
-        margin-block-end: calc(calc(0.25rem * 0) * calc(1 - var(--tw-space-y-reverse)));
-      }
-      .bhgm {
-        text-align: left;
-      }
-    }
-    @media (min-width: 64rem) {
-      .bhgn {
-        position: absolute;
-      }
-      .bhgo {
-        top: 0;
-      }
-      .bhgp {
-        right: 0;
-      }
-      .bhgq {
-        order: -9999;
-      }
-      .bhgr {
-        margin-inline: 0;
-      }
-      .bhgs {
-        margin-inline: 1.5rem;
-      }
-      .bhgt {
-        margin-inline: auto;
-      }
-      .bhgu {
-        margin-top: 0;
-      }
-      .bhgv {
-        margin-top: 2.5rem;
-      }
-      .bhgw {
-        margin-left: 0;
-      }
-      .bhgx {
-        margin-left: 2rem;
-      }
-      .bhgy {
-        display: block;
-      }
-      .bhgz {
-        display: flex;
-      }
-      .bhha {
-        display: grid;
-      }
-      .bhhb {
-        display: none;
-      }
-      .bhhc {
-        aspect-ratio: 1;
-      }
-      .bhhd {
-        height: 100%;
-      }
-      .bhhe {
-        width: 50%;
-      }
-      .bhhf {
-        width: auto;
-      }
-      .bhhg {
-        max-width: 80rem;
-      }
-      .bhhh {
-        max-width: none;
-      }
-      .bhhi {
-        flex: 1;
-      }
-      .bhhj {
-        flex: none;
-      }
-      .bhhk {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .bhhl {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .bhhm {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .bhhn {
-        align-items: center;
-      }
-      .bhho {
-        justify-content: flex-end;
-      }
-      :where(.bhhp > :not(:last-child)) {
-        --tw-space-y-reverse: 0;
-        margin-block-start: calc(calc(0.25rem * 0) * var(--tw-space-y-reverse));
-        margin-block-end: calc(calc(0.25rem * 0) * calc(1 - var(--tw-space-y-reverse)));
-      }
-      .bhhq {
-        column-gap: 1.5rem;
-      }
-      .bhhr {
-        column-gap: 2rem;
-      }
-      :where(.bhhs > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(0.25rem * 0) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(0.25rem * 0) * calc(1 - var(--tw-space-x-reverse)));
-      }
-      :where(.bhht > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(0.25rem * 6) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(0.25rem * 6) * calc(1 - var(--tw-space-x-reverse)));
-      }
-      :where(.bhhu > :not(:last-child)) {
-        --tw-divide-x-reverse: 0;
-        border-inline-style: var(--tw-border-style);
-        border-inline-start-width: calc(1px * var(--tw-divide-x-reverse));
-        border-inline-end-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
-      }
-      :where(.bhhv > :not(:last-child)) {
-        --tw-divide-y-reverse: 0;
-        border-bottom-style: var(--tw-border-style);
-        border-top-style: var(--tw-border-style);
-        border-top-width: calc(0px * var(--tw-divide-y-reverse));
-        border-bottom-width: calc(0px * calc(1 - var(--tw-divide-y-reverse)));
-      }
-      .bhhw {
-        align-self: stretch;
-      }
-      .bhhx {
-        border-style: var(--tw-border-style);
-        border-width: 0;
-      }
-      .bhhy {
-        background-color: #0000;
-      }
-      .bhhz {
-        padding-inline: 0;
-      }
-      .bhia {
-        padding-inline: 2rem;
-      }
-      .bhib {
-        padding-block: 8rem;
-      }
-      .bhic {
-        padding-block: 16rem;
-      }
-      .bhid {
-        padding-right: 4rem;
-      }
-      .bhie {
-        font-size: 3.75rem;
-        line-height: var(--tw-leading, 1);
-      }
-    }
-    @media (min-width: 80rem) {
-      .bhif {
-        grid-column: span 2 / span 2;
-      }
-      .bhig {
-        display: grid;
-      }
-      .bhih {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .bhii {
-        gap: 2rem;
-      }
-      .bhij {
-        column-gap: 2rem;
-      }
-      .bhik {
-        padding-inline: 2rem;
-      }
-      .bhil {
-        font-size: 3.75rem;
-        line-height: var(--tw-leading, 1);
-      }
-    }
-  }
-  @property --tw-rotate-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-z {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-space-x-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-divide-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-gradient-position {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-from {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-via {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-to {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #0000;
-  }
-  @property --tw-gradient-stops {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-via-stops {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-gradient-from-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 0%;
-  }
-  @property --tw-gradient-via-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 50%;
-  }
-  @property --tw-gradient-to-position {
-    syntax: '<length-percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-outline-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-blur {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-brightness {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-contrast {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-grayscale {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-hue-rotate {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-invert {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-opacity {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-saturate {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-sepia {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-drop-shadow {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-drop-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-drop-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-drop-shadow-size {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-duration {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ease {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-translate-x {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-y {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-z {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-divide-x-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: InterVariable, system-ui, sans-serif;
+    --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 </style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-</style>
-<body>
-  <div class="bhaq">
+<body class="antialiased">
+  <div class="bg-white">
     <!-- Mobile menu -->
     <el-dialog>
-      <dialog id="mobile-menu" class="bhec bhhb">
-        <el-dialog-backdrop class="bgwi bgwl bhai bhdh bhdk bhdn bhfc"></el-dialog-backdrop>
-        <div tabindex="0" class="bgwi bgwl bgxn bhey">
-          <el-dialog-panel class="bgwj bgxn bgym bgyt bgyw bgza bgzw bhaq bhbv bhcy bhdf bhdk bhdm bhfb">
-            <div class="bgxn bhbb bhbn bhbt">
+      <dialog id="mobile-menu" class="[&::backdrop]:bg-transparent lg:hidden">
+        <el-dialog-backdrop
+          class="fixed inset-0 bg-black/25 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"></el-dialog-backdrop>
+        <div tabindex="0" class="fixed inset-0 flex focus:outline-hidden">
+          <el-dialog-panel
+            class="relative flex w-full max-w-xs transform flex-col overflow-y-auto bg-white pb-12 shadow-xl transition duration-300 data-[closed]:-translate-x-full">
+            <div class="flex px-4 pt-5 pb-2">
               <button
                 type="button"
                 command="close"
                 commandfor="mobile-menu"
-                class="bgwj bgwu bgxs bgzb bgze bgzz bhay bhco">
-                <span class="bgwh bgwk"></span>
-                <span class="bgwg">Close menu</span>
+                class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Close menu</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -1754,175 +36,181 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="bgxy">
+                  class="size-6">
                   <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </button>
             </div>
 
             <!-- Links -->
-            <el-tab-group class="bgwy bgxm">
-              <div class="bhac bhag">
-                <el-tab-list class="bgxh bgxn bgzn bhbb">
-                  <button class="bgyu bhad bhah bhba bhbh bhcd bhci bhcl bhcs bhez bhfa">Women</button>
-                  <button class="bgyu bhad bhah bhba bhbh bhcd bhci bhcl bhcs bhez bhfa">Men</button>
+            <el-tab-group class="mt-2 block">
+              <div class="border-b border-gray-200">
+                <el-tab-list class="-mb-px flex space-x-8 px-4">
+                  <button
+                    class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium whitespace-nowrap text-gray-900 [aria-selected=true]:border-indigo-600 [aria-selected=true]:text-indigo-600">
+                    Women
+                  </button>
+                  <button
+                    class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium whitespace-nowrap text-gray-900 [aria-selected=true]:border-indigo-600 [aria-selected=true]:text-indigo-600">
+                    Men
+                  </button>
                 </el-tab-list>
               </div>
               <el-tab-panels>
-                <div class="bgzi bhbb bhbp bhbu">
-                  <div class="bgxp bgyy bgzc bgzk bgzo">
-                    <div class="bgxp bgyy bgzk bgzo">
+                <div class="space-y-12 px-4 pt-10 pb-6">
+                  <div class="grid grid-cols-1 items-start gap-x-6 gap-y-10">
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-10">
                       <div>
-                        <p id="mobile-featured-heading-0" class="bhci bhcs">Featured</p>
-                        <ul role="list" aria-labelledby="mobile-featured-heading-0" class="bgxb bgzh">
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Sleep</a>
+                        <p id="mobile-featured-heading-0" class="font-medium text-gray-900">Featured</p>
+                        <ul role="list" aria-labelledby="mobile-featured-heading-0" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Sleep</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Swimwear</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Swimwear</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Underwear</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Underwear</a>
                           </li>
                         </ul>
                       </div>
                       <div>
-                        <p id="mobile-categories-heading" class="bhci bhcs">Categories</p>
-                        <ul role="list" aria-labelledby="mobile-categories-heading" class="bgxb bgzh">
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Basic Tees</a>
+                        <p id="mobile-categories-heading" class="font-medium text-gray-900">Categories</p>
+                        <ul role="list" aria-labelledby="mobile-categories-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Basic Tees</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Artwork Tees</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Artwork Tees</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Bottoms</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Bottoms</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Underwear</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Underwear</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Accessories</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Accessories</a>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="bgxp bgyy bgzk bgzo">
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-10">
                       <div>
-                        <p id="mobile-collection-heading" class="bhci bhcs">Collection</p>
-                        <ul role="list" aria-labelledby="mobile-collection-heading" class="bgxb bgzh">
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Everything</a>
+                        <p id="mobile-collection-heading" class="font-medium text-gray-900">Collection</p>
+                        <ul role="list" aria-labelledby="mobile-collection-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Everything</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Core</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Core</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">New Arrivals</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">New Arrivals</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Sale</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Sale</a>
                           </li>
                         </ul>
                       </div>
 
                       <div>
-                        <p id="mobile-brand-heading" class="bhci bhcs">Brands</p>
-                        <ul role="list" aria-labelledby="mobile-brand-heading" class="bgxb bgzh">
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Full Nelson</a>
+                        <p id="mobile-brand-heading" class="font-medium text-gray-900">Brands</p>
+                        <ul role="list" aria-labelledby="mobile-brand-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Full Nelson</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">My Way</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">My Way</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Re-Arranged</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Re-Arranged</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Counterfeit</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Counterfeit</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Significant Other</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Significant Other</a>
                           </li>
                         </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div hidden class="bgzi bhbb bhbp bhbu">
-                  <div class="bgxp bgyy bgzc bgzk bgzo">
-                    <div class="bgxp bgyy bgzk bgzo">
+                <div hidden class="space-y-12 px-4 pt-10 pb-6">
+                  <div class="grid grid-cols-1 items-start gap-x-6 gap-y-10">
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-10">
                       <div>
-                        <p id="mobile-featured-heading-1" class="bhci bhcs">Featured</p>
-                        <ul role="list" aria-labelledby="mobile-featured-heading-1" class="bgxb bgzh">
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Casual</a>
+                        <p id="mobile-featured-heading-1" class="font-medium text-gray-900">Featured</p>
+                        <ul role="list" aria-labelledby="mobile-featured-heading-1" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Casual</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Boxers</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Boxers</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Outdoor</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Outdoor</a>
                           </li>
                         </ul>
                       </div>
                       <div>
-                        <p id="mobile-categories-heading" class="bhci bhcs">Categories</p>
-                        <ul role="list" aria-labelledby="mobile-categories-heading" class="bgxb bgzh">
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Artwork Tees</a>
+                        <p id="mobile-categories-heading" class="font-medium text-gray-900">Categories</p>
+                        <ul role="list" aria-labelledby="mobile-categories-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Artwork Tees</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Pants</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Pants</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Accessories</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Accessories</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Boxers</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Boxers</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Basic Tees</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Basic Tees</a>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="bgxp bgyy bgzk bgzo">
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-10">
                       <div>
-                        <p id="mobile-collection-heading" class="bhci bhcs">Collection</p>
-                        <ul role="list" aria-labelledby="mobile-collection-heading" class="bgxb bgzh">
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Everything</a>
+                        <p id="mobile-collection-heading" class="font-medium text-gray-900">Collection</p>
+                        <ul role="list" aria-labelledby="mobile-collection-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Everything</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Core</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Core</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">New Arrivals</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">New Arrivals</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Sale</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Sale</a>
                           </li>
                         </ul>
                       </div>
 
                       <div>
-                        <p id="mobile-brand-heading" class="bhci bhcs">Brands</p>
-                        <ul role="list" aria-labelledby="mobile-brand-heading" class="bgxb bgzh">
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Significant Other</a>
+                        <p id="mobile-brand-heading" class="font-medium text-gray-900">Brands</p>
+                        <ul role="list" aria-labelledby="mobile-brand-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Significant Other</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">My Way</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">My Way</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Counterfeit</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Counterfeit</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Re-Arranged</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Re-Arranged</a>
                           </li>
-                          <li class="bgxn">
-                            <a href="#" class="bhcp">Full Nelson</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Full Nelson</a>
                           </li>
                         </ul>
                       </div>
@@ -1932,33 +220,33 @@
               </el-tab-panels>
             </el-tab-group>
 
-            <div class="bgzh bhab bhag bhbb bhbi">
-              <div class="bgxo">
-                <a href="#" class="bgwu bgxm bhay bhci bhcs">Company</a>
+            <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Company</a>
               </div>
-              <div class="bgxo">
-                <a href="#" class="bgwu bgxm bhay bhci bhcs">Stores</a>
-              </div>
-            </div>
-
-            <div class="bgzh bhab bhag bhbb bhbi">
-              <div class="bgxo">
-                <a href="#" class="bgwu bgxm bhay bhci bhcs">Create an account</a>
-              </div>
-              <div class="bgxo">
-                <a href="#" class="bgwu bgxm bhay bhci bhcs">Sign in</a>
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Stores</a>
               </div>
             </div>
 
-            <div class="bgzh bhab bhag bhbb bhbi">
+            <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Create an account</a>
+              </div>
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
+              </div>
+            </div>
+
+            <div class="space-y-6 border-t border-gray-200 px-4 py-6">
               <!-- Currency selector -->
               <form>
-                <div class="bgxi bgxt bgyy">
+                <div class="-ml-2 inline-grid grid-cols-1">
                   <select
                     id="mobile-currency"
                     name="currency"
                     aria-label="Currency"
-                    class="bgws bgwt bgym bgyx bgzz bhaq bhbe bhbs bhbx bhcd bhci bhcr bhdu bhet bhgc">
+                    class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-0.5 pr-7 pl-2 text-base font-medium text-gray-700 group-hover/hover:text-gray-800 focus:outline sm:text-sm">
                     <option>CAD</option>
                     <option>USD</option>
                     <option>AUD</option>
@@ -1970,7 +258,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="bgwf bgws bgwt bgxg bgxx bgzr bgzs bhaw">
+                    class="pointer-events-none col-start-1 row-start-1 mr-1 size-5 self-center justify-self-end fill-indigo-500">
                     <path
                       d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
                       clip-rule="evenodd"
@@ -1984,19 +272,19 @@
       </dialog>
     </el-dialog>
 
-    <header class="bgwj bgwp">
+    <header class="relative z-10">
       <nav aria-label="Top">
         <!-- Top navigation -->
-        <div class="bham">
-          <div class="bgww bgxn bgyd bgyq bgzb bgzd bhbb bhfx bhia">
+        <div class="bg-gray-900">
+          <div class="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <!-- Currency selector -->
-            <form class="bgxq bhgy bhhi">
-              <div class="bgxi bgxt bgyy">
+            <form class="hidden lg:block lg:flex-1">
+              <div class="-ml-2 inline-grid grid-cols-1">
                 <select
                   id="desktop-currency"
                   name="currency"
                   aria-label="Currency"
-                  class="bgws bgwt bgym bgyx bgzz bham bhbe bhbs bhbx bhca bhcd bhci bhcu bhet bheu bhex bhgc">
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-900 py-0.5 pr-7 pl-2 text-left text-base font-medium text-white focus:outline focus:-outline-offset-1 focus:outline-white sm:text-sm">
                   <option>CAD</option>
                   <option>USD</option>
                   <option>AUD</option>
@@ -2008,7 +296,7 @@
                   fill="currentColor"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="bgwf bgws bgwt bgxg bgxx bgzr bgzs bhav">
+                  class="pointer-events-none col-start-1 row-start-1 mr-1 size-5 self-center justify-self-end fill-indigo-200">
                   <path
                     d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
                     clip-rule="evenodd"
@@ -2017,138 +305,143 @@
               </div>
             </form>
 
-            <p class="bgyu bhbz bhcf bhci bhcu bhhj">Get free delivery on orders over $100</p>
+            <p class="flex-1 text-center text-sm font-medium text-white lg:flex-none">
+              Get free delivery on orders over $100
+            </p>
 
-            <div class="bgxq bhgz bhhi bhhn bhho bhht">
-              <a href="#" class="bhcf bhci bhcu bheg">Create an account</a>
-              <span aria-hidden="true" class="bgyb bgyn bhal"></span>
-              <a href="#" class="bhcf bhci bhcu bheg">Sign in</a>
+            <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+              <a href="#" class="text-sm font-medium text-white hover:text-gray-50">Create an account</a>
+              <span aria-hidden="true" class="h-6 w-px bg-indigo-800"></span>
+              <a href="#" class="text-sm font-medium text-white hover:text-gray-50">Sign in</a>
             </div>
           </div>
         </div>
 
         <!-- Secondary navigation -->
-        <div class="bhaq">
-          <div class="bhac bhag">
-            <div class="bgww bgyq bhbb bhfx bhia">
-              <div class="bgxn bgye bgzb bgzd">
+        <div class="bg-white">
+          <div class="border-b border-gray-200">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="flex h-16 items-center justify-between">
                 <!-- Logo (lg+) -->
-                <div class="bgxq bhgz bhhn">
+                <div class="hidden lg:flex lg:items-center">
                   <a href="#">
-                    <span class="bgwg">Your Company</span>
+                    <span class="sr-only">Your Company</span>
                     <img
                       src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                       alt=""
-                      class="bgyc bgyl" />
+                      class="h-8 w-auto" />
                   </a>
                 </div>
 
-                <div class="bgxq bgyh bhgz">
+                <div class="hidden h-full lg:flex">
                   <!-- Flyout menus -->
-                  <el-popover-group class="bhdz bgxq bhgx bhgy bhhw">
-                    <div class="bgxn bgyh bgzn">
-                      <div class="bhdr bgxn">
-                        <div class="bgwj bgxn">
+                  <el-popover-group class="group/transition hidden lg:ml-8 lg:block lg:self-stretch">
+                    <div class="flex h-full space-x-8">
+                      <div class="group/menu flex">
+                        <div class="relative flex">
                           <button
                             popovertarget="desktop-menu-women"
-                            class="bgwj bgxn bgzb bgze bhcf bhci bhdg bhdj bhdo bhdq bhdx bhem">
+                            class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-[cubic-bezier(0,0,0.2,1)] group-not-has-open/menu:text-gray-700 group-has-open/menu:text-indigo-600 group-not-has-open/menu:hover:text-gray-800">
                             Women
                             <span
                               aria-hidden="true"
-                              class="bgwh bgwm bgwo bgwq bgya bhap bhdj bhdl bhdw bhdy bhea"></span>
+                              class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent duration-200 ease-[cubic-bezier(0.4,0,1,1)] group-has-open/menu:bg-indigo-600 group-has-open/transition:duration-150 group-has-open/transition:ease-[cubic-bezier(0,0,0.2,1)]"></span>
                           </button>
                         </div>
                         <el-popover
                           id="desktop-menu-women"
                           anchor="bottom"
                           popover
-                          class="bgym bgzu bhaq bhcf bhcp bhdf bhdi bhdp bhec bhed bhfc bhfd bhfe bhff bhfg">
+                          class="w-full overflow-visible bg-white text-sm text-gray-500 transition transition-discrete [--anchor-gap:1px] [&::backdrop]:bg-transparent open:block data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-[cubic-bezier(0,0,0.2,1)] data-[leave]:duration-150 data-[leave]:ease-[cubic-bezier(0.4,0,1,1)]">
                           <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                          <div aria-hidden="true" class="bgwh bgwl bgwn bhaq bhcx"></div>
-                          <div class="bgwj bhaq">
-                            <div class="bgww bgyq bhbb bhfx bhia">
-                              <div class="bgxp bgyz bgzc bgzl bgzo bhbp bhbv">
-                                <div class="bgxp bgyz bgzl bgzo">
+                          <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow-sm/5"></div>
+                          <div class="relative bg-white">
+                            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                              <div class="grid grid-cols-2 items-start gap-x-8 gap-y-10 pt-10 pb-12">
+                                <div class="grid grid-cols-2 gap-x-8 gap-y-10">
                                   <div>
-                                    <p id="desktop-featured-heading-0" class="bhci bhcs">Featured</p>
+                                    <p id="desktop-featured-heading-0" class="font-medium text-gray-900">Featured</p>
                                     <ul
                                       role="list"
                                       aria-labelledby="desktop-featured-heading-0"
-                                      class="bgxb bgzh bhfk bhfv">
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Sleep</a>
+                                      class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Sleep</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Swimwear</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Swimwear</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Underwear</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Underwear</a>
                                       </li>
                                     </ul>
                                   </div>
                                   <div>
-                                    <p id="desktop-categories-heading" class="bhci bhcs">Categories</p>
+                                    <p id="desktop-categories-heading" class="font-medium text-gray-900">Categories</p>
                                     <ul
                                       role="list"
                                       aria-labelledby="desktop-categories-heading"
-                                      class="bgxb bgzh bhfk bhfv">
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Basic Tees</a>
+                                      class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Basic Tees</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Artwork Tees</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Artwork Tees</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Bottoms</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Bottoms</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Underwear</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Underwear</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Accessories</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Accessories</a>
                                       </li>
                                     </ul>
                                   </div>
                                 </div>
-                                <div class="bgxp bgyz bgzl bgzo">
+                                <div class="grid grid-cols-2 gap-x-8 gap-y-10">
                                   <div>
-                                    <p id="desktop-collection-heading" class="bhci bhcs">Collection</p>
+                                    <p id="desktop-collection-heading" class="font-medium text-gray-900">Collection</p>
                                     <ul
                                       role="list"
                                       aria-labelledby="desktop-collection-heading"
-                                      class="bgxb bgzh bhfk bhfv">
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Everything</a>
+                                      class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Everything</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Core</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Core</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">New Arrivals</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">New Arrivals</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Sale</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Sale</a>
                                       </li>
                                     </ul>
                                   </div>
 
                                   <div>
-                                    <p id="desktop-brand-heading" class="bhci bhcs">Brands</p>
-                                    <ul role="list" aria-labelledby="desktop-brand-heading" class="bgxb bgzh bhfk bhfv">
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Full Nelson</a>
+                                    <p id="desktop-brand-heading" class="font-medium text-gray-900">Brands</p>
+                                    <ul
+                                      role="list"
+                                      aria-labelledby="desktop-brand-heading"
+                                      class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Full Nelson</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">My Way</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">My Way</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Re-Arranged</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Re-Arranged</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Counterfeit</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Counterfeit</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Significant Other</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Significant Other</a>
                                       </li>
                                     </ul>
                                   </div>
@@ -2158,108 +451,111 @@
                           </div>
                         </el-popover>
                       </div>
-                      <div class="bhdr bgxn">
-                        <div class="bgwj bgxn">
+                      <div class="group/menu flex">
+                        <div class="relative flex">
                           <button
                             popovertarget="desktop-menu-men"
-                            class="bgwj bgxn bgzb bgze bhcf bhci bhdg bhdj bhdo bhdq bhdx bhem">
+                            class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-[cubic-bezier(0,0,0.2,1)] group-not-has-open/menu:text-gray-700 group-has-open/menu:text-indigo-600 group-not-has-open/menu:hover:text-gray-800">
                             Men
                             <span
                               aria-hidden="true"
-                              class="bgwh bgwm bgwo bgwq bgya bhap bhdj bhdl bhdw bhdy bhea"></span>
+                              class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent duration-200 ease-[cubic-bezier(0.4,0,1,1)] group-has-open/menu:bg-indigo-600 group-has-open/transition:duration-150 group-has-open/transition:ease-[cubic-bezier(0,0,0.2,1)]"></span>
                           </button>
                         </div>
                         <el-popover
                           id="desktop-menu-men"
                           anchor="bottom"
                           popover
-                          class="bgym bgzu bhaq bhcf bhcp bhdf bhdi bhdp bhec bhed bhfc bhfd bhfe bhff bhfg">
+                          class="w-full overflow-visible bg-white text-sm text-gray-500 transition transition-discrete [--anchor-gap:1px] [&::backdrop]:bg-transparent open:block data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-[cubic-bezier(0,0,0.2,1)] data-[leave]:duration-150 data-[leave]:ease-[cubic-bezier(0.4,0,1,1)]">
                           <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                          <div aria-hidden="true" class="bgwh bgwl bgwn bhaq bhcx"></div>
-                          <div class="bgwj bhaq">
-                            <div class="bgww bgyq bhbb bhfx bhia">
-                              <div class="bgxp bgyz bgzc bgzl bgzo bhbp bhbv">
-                                <div class="bgxp bgyz bgzl bgzo">
+                          <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow-sm/5"></div>
+                          <div class="relative bg-white">
+                            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                              <div class="grid grid-cols-2 items-start gap-x-8 gap-y-10 pt-10 pb-12">
+                                <div class="grid grid-cols-2 gap-x-8 gap-y-10">
                                   <div>
-                                    <p id="desktop-featured-heading-1" class="bhci bhcs">Featured</p>
+                                    <p id="desktop-featured-heading-1" class="font-medium text-gray-900">Featured</p>
                                     <ul
                                       role="list"
                                       aria-labelledby="desktop-featured-heading-1"
-                                      class="bgxb bgzh bhfk bhfv">
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Casual</a>
+                                      class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Casual</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Boxers</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Boxers</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Outdoor</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Outdoor</a>
                                       </li>
                                     </ul>
                                   </div>
                                   <div>
-                                    <p id="desktop-categories-heading" class="bhci bhcs">Categories</p>
+                                    <p id="desktop-categories-heading" class="font-medium text-gray-900">Categories</p>
                                     <ul
                                       role="list"
                                       aria-labelledby="desktop-categories-heading"
-                                      class="bgxb bgzh bhfk bhfv">
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Artwork Tees</a>
+                                      class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Artwork Tees</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Pants</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Pants</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Accessories</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Accessories</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Boxers</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Boxers</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Basic Tees</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Basic Tees</a>
                                       </li>
                                     </ul>
                                   </div>
                                 </div>
-                                <div class="bgxp bgyz bgzl bgzo">
+                                <div class="grid grid-cols-2 gap-x-8 gap-y-10">
                                   <div>
-                                    <p id="desktop-collection-heading" class="bhci bhcs">Collection</p>
+                                    <p id="desktop-collection-heading" class="font-medium text-gray-900">Collection</p>
                                     <ul
                                       role="list"
                                       aria-labelledby="desktop-collection-heading"
-                                      class="bgxb bgzh bhfk bhfv">
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Everything</a>
+                                      class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Everything</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Core</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Core</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">New Arrivals</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">New Arrivals</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Sale</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Sale</a>
                                       </li>
                                     </ul>
                                   </div>
 
                                   <div>
-                                    <p id="desktop-brand-heading" class="bhci bhcs">Brands</p>
-                                    <ul role="list" aria-labelledby="desktop-brand-heading" class="bgxb bgzh bhfk bhfv">
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Significant Other</a>
+                                    <p id="desktop-brand-heading" class="font-medium text-gray-900">Brands</p>
+                                    <ul
+                                      role="list"
+                                      aria-labelledby="desktop-brand-heading"
+                                      class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Significant Other</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">My Way</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">My Way</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Counterfeit</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Counterfeit</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Re-Arranged</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Re-Arranged</a>
                                       </li>
-                                      <li class="bgxn">
-                                        <a href="#" class="bhek">Full Nelson</a>
+                                      <li class="flex">
+                                        <a href="#" class="hover:text-gray-800">Full Nelson</a>
                                       </li>
                                     </ul>
                                   </div>
@@ -2270,16 +566,24 @@
                         </el-popover>
                       </div>
 
-                      <a href="#" class="bgxn bgzb bhcf bhci bhcr bhek">Company</a>
-                      <a href="#" class="bgxn bgzb bhcf bhci bhcr bhek">Stores</a>
+                      <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                        >Company</a
+                      >
+                      <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                        >Stores</a
+                      >
                     </div>
                   </el-popover-group>
                 </div>
 
                 <!-- Mobile menu and search (lg-) -->
-                <div class="bgxn bgyu bgzb bhhb">
-                  <button type="button" command="show-modal" commandfor="mobile-menu" class="bgxi bgzz bhaq bhay bhco">
-                    <span class="bgwg">Open menu</span>
+                <div class="flex flex-1 items-center lg:hidden">
+                  <button
+                    type="button"
+                    command="show-modal"
+                    commandfor="mobile-menu"
+                    class="-ml-2 rounded-md bg-white p-2 text-gray-400">
+                    <span class="sr-only">Open menu</span>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -2287,7 +591,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="bgxy">
+                      class="size-6">
                       <path
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                         stroke-linecap="round"
@@ -2296,8 +600,8 @@
                   </button>
 
                   <!-- Search -->
-                  <a href="#" class="bgxj bhay bhco bhei">
-                    <span class="bgwg">Search</span>
+                  <a href="#" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Search</span>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -2305,7 +609,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="bgxy">
+                      class="size-6">
                       <path
                         d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                         stroke-linecap="round"
@@ -2315,20 +619,20 @@
                 </div>
 
                 <!-- Logo (lg-) -->
-                <a href="#" class="bhhb">
-                  <span class="bgwg">Your Company</span>
+                <a href="#" class="lg:hidden">
+                  <span class="sr-only">Your Company</span>
                   <img
                     src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                     alt=""
-                    class="bgyc bgyl" />
+                    class="h-8 w-auto" />
                 </a>
 
-                <div class="bgxn bgyu bgzb bgzf">
-                  <div class="bgxn bgzb bhgx">
-                    <div class="bgxn bgzn">
-                      <div class="bgxq bhgz">
-                        <a href="#" class="bgwu bhay bhco bhei">
-                          <span class="bgwg">Search</span>
+                <div class="flex flex-1 items-center justify-end">
+                  <div class="flex items-center lg:ml-8">
+                    <div class="flex space-x-8">
+                      <div class="hidden lg:flex">
+                        <a href="#" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                          <span class="sr-only">Search</span>
                           <svg
                             viewBox="0 0 24 24"
                             fill="none"
@@ -2336,7 +640,7 @@
                             stroke-width="1.5"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="bgxy">
+                            class="size-6">
                             <path
                               d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                               stroke-linecap="round"
@@ -2345,9 +649,9 @@
                         </a>
                       </div>
 
-                      <div class="bgxn">
-                        <a href="#" class="bgwu bhay bhco bhei">
-                          <span class="bgwg">Account</span>
+                      <div class="flex">
+                        <a href="#" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                          <span class="sr-only">Account</span>
                           <svg
                             viewBox="0 0 24 24"
                             fill="none"
@@ -2355,7 +659,7 @@
                             stroke-width="1.5"
                             data-slot="icon"
                             aria-hidden="true"
-                            class="bgxy">
+                            class="size-6">
                             <path
                               d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                               stroke-linecap="round"
@@ -2365,10 +669,10 @@
                       </div>
                     </div>
 
-                    <span aria-hidden="true" class="bgwv bgyb bgyn bhak bhgs"></span>
+                    <span aria-hidden="true" class="mx-4 h-6 w-px bg-gray-200 lg:mx-6"></span>
 
-                    <div class="bgxo">
-                      <a href="#" class="bhdt bgwu bgxn bgzb bhay">
+                    <div class="flow-root">
+                      <a href="#" class="group/hover -m-2 flex items-center p-2">
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
@@ -2376,14 +680,14 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="bgxy bgyv bhco bhds">
+                          class="size-6 shrink-0 text-gray-400 group-hover/hover:text-gray-500">
                           <path
                             d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                             stroke-linecap="round"
                             stroke-linejoin="round" />
                         </svg>
-                        <span class="bgxj bhcf bhci bhcr bhdu">0</span>
-                        <span class="bgwg">items in cart, view bag</span>
+                        <span class="ml-2 text-sm font-medium text-gray-700 group-hover/hover:text-gray-800">0</span>
+                        <span class="sr-only">items in cart, view bag</span>
                       </a>
                     </div>
                   </div>
@@ -2397,191 +701,205 @@
 
     <main>
       <!-- Hero -->
-      <div class="bgxn bgza bhac bhag bhhx">
-        <nav aria-label="Offers" class="bgwr bhgq">
-          <div class="bgww bgyq bhia">
-            <ul role="list" class="bgxp bgyy bgzp bgzq bhhl bhhu bhhv">
-              <li class="bgxn bgza">
-                <a href="#" class="bgwj bgxn bgyu bgza bgze bhaq bhbb bhbi bhbz bhen">
-                  <p class="bhcf bhcp">Download the app</p>
-                  <p class="bhcj bhcs">Get an exclusive $5 off code</p>
+      <div class="flex flex-col border-b border-gray-200 lg:border-0">
+        <nav aria-label="Offers" class="order-last lg:order-first">
+          <div class="mx-auto max-w-7xl lg:px-8">
+            <ul role="list" class="grid grid-cols-1 divide-y divide-gray-200 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+              <li class="flex flex-col">
+                <a
+                  href="#"
+                  class="relative flex flex-1 flex-col justify-center bg-white px-4 py-6 text-center focus:z-10">
+                  <p class="text-sm text-gray-500">Download the app</p>
+                  <p class="font-semibold text-gray-900">Get an exclusive $5 off code</p>
                 </a>
               </li>
-              <li class="bgxn bgza">
-                <a href="#" class="bgwj bgxn bgyu bgza bgze bhaq bhbb bhbi bhbz bhen">
-                  <p class="bhcf bhcp">Return when you&#039;re ready</p>
-                  <p class="bhcj bhcs">60 days of free returns</p>
+              <li class="flex flex-col">
+                <a
+                  href="#"
+                  class="relative flex flex-1 flex-col justify-center bg-white px-4 py-6 text-center focus:z-10">
+                  <p class="text-sm text-gray-500">Return when you&#039;re ready</p>
+                  <p class="font-semibold text-gray-900">60 days of free returns</p>
                 </a>
               </li>
-              <li class="bgxn bgza">
-                <a href="#" class="bgwj bgxn bgyu bgza bgze bhaq bhbb bhbi bhbz bhen">
-                  <p class="bhcf bhcp">Sign up for our newsletter</p>
-                  <p class="bhcj bhcs">15% off your first order</p>
+              <li class="flex flex-col">
+                <a
+                  href="#"
+                  class="relative flex flex-1 flex-col justify-center bg-white px-4 py-6 text-center focus:z-10">
+                  <p class="text-sm text-gray-500">Sign up for our newsletter</p>
+                  <p class="font-semibold text-gray-900">15% off your first order</p>
                 </a>
               </li>
             </ul>
           </div>
         </nav>
 
-        <div class="bgwj">
-          <div aria-hidden="true" class="bgwh bgxq bgyh bgyi bhaj bhgy"></div>
-          <div class="bgwj bhaj bhhy">
-            <div class="bgww bgyq bhbb bhfx bhha bhhk bhia">
-              <div class="bgww bgyo bhbm bhhh bhic">
-                <div class="bhid">
-                  <h1 class="bhcc bhch bhck bhcs bhgb bhil">Focus on what matters</h1>
-                  <p class="bgxa bhcg bhcq">
+        <div class="relative">
+          <div aria-hidden="true" class="absolute hidden h-full w-1/2 bg-gray-100 lg:block"></div>
+          <div class="relative bg-gray-100 lg:bg-transparent">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8">
+              <div class="mx-auto max-w-2xl py-24 lg:max-w-none lg:py-64">
+                <div class="lg:pr-16">
+                  <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl">
+                    Focus on what matters
+                  </h1>
+                  <p class="mt-4 text-xl text-indigo-800">
                     All the charts, datepickers, and notifications in the world can't beat checking off some items on a
                     paper card.
                   </p>
-                  <div class="bgxb">
-                    <a href="#" class="bgxr bgzz bhaa bhah bhan bhbd bhbg bhci bhcu bhef">Shop Productivity</a>
+                  <div class="mt-6">
+                    <a
+                      href="#"
+                      class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 font-medium text-white hover:bg-indigo-500"
+                      >Shop Productivity</a
+                    >
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="bgyf bgym bhfs bhgn bhgo bhgp bhhd bhhe">
+          <div class="h-48 w-full sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:h-full lg:w-1/2">
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-hero-half-width.jpg"
               alt=""
-              class="bgxz bhax" />
+              class="size-full object-cover" />
           </div>
         </div>
       </div>
 
       <!-- Trending products -->
-      <section aria-labelledby="trending-heading" class="bhaq">
-        <div class="bhbl bhga bhgt bhhg bhia bhib">
-          <div class="bgxn bgzb bgzd bhbb bhfx bhhz">
-            <h2 id="trending-heading" class="bhcb bhch bhck bhcs">Trending products</h2>
-            <a href="#" class="bgxq bhcf bhcj bhct bhel bhfo">
+      <section aria-labelledby="trending-heading" class="bg-white">
+        <div class="py-16 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8 lg:py-32">
+          <div class="flex items-center justify-between px-4 sm:px-6 lg:px-0">
+            <h2 id="trending-heading" class="text-2xl font-bold tracking-tight text-gray-900">Trending products</h2>
+            <a href="#" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
               See everything
               <span aria-hidden="true"> &rarr;</span>
             </a>
           </div>
 
-          <div class="bgwj bgxc">
-            <div class="bgwj bgym bgzv">
-              <ul role="list" class="bgwv bgxs bgzn bhfi bhgr bhha bhhm bhhr bhhs">
-                <li class="bgxs bgyk bgza bhbz bhhf">
-                  <div class="bhdt bgwj">
+          <div class="relative mt-8">
+            <div class="relative w-full overflow-x-auto">
+              <ul
+                role="list"
+                class="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0">
+                <li class="inline-flex w-64 flex-col text-center lg:w-auto">
+                  <div class="group/hover relative">
                     <img
                       src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-product-01.jpg"
                       alt="Black machined steel pen with hexagonal grip and small white logo at top."
-                      class="bgxv bgym bgzz bhak bhax bhdv" />
-                    <div class="bgxb">
-                      <p class="bhcf bhcp">Black</p>
-                      <h3 class="bgwx bhcj bhcs">
+                      class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover/hover:opacity-75" />
+                    <div class="mt-6">
+                      <p class="text-sm text-gray-500">Black</p>
+                      <h3 class="mt-1 font-semibold text-gray-900">
                         <a href="#">
-                          <span class="bgwh bgwl"></span>
+                          <span class="absolute inset-0"></span>
                           Machined Pen
                         </a>
                       </h3>
-                      <p class="bgwx bhcs">$35</p>
+                      <p class="mt-1 text-gray-900">$35</p>
                     </div>
                   </div>
 
-                  <h4 class="bgwg">Available colors</h4>
-                  <ul role="list" class="bgxf bgxn bgzb bgze bgzm bhbo">
-                    <li style="background-color: #111827" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Black</span>
+                  <h4 class="sr-only">Available colors</h4>
+                  <ul role="list" class="mt-auto flex items-center justify-center space-x-3 pt-6">
+                    <li style="background-color: #111827" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Black</span>
                     </li>
-                    <li style="background-color: #fde68a" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Brass</span>
+                    <li style="background-color: #fde68a" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Brass</span>
                     </li>
-                    <li style="background-color: #e5e7eb" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Chrome</span>
+                    <li style="background-color: #e5e7eb" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Chrome</span>
                     </li>
                   </ul>
                 </li>
-                <li class="bgxs bgyk bgza bhbz bhhf">
-                  <div class="bhdt bgwj">
+                <li class="inline-flex w-64 flex-col text-center lg:w-auto">
+                  <div class="group/hover relative">
                     <img
                       src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-product-02.jpg"
                       alt="Black porcelain mug with modern square handle and natural clay accents on rim and bottom."
-                      class="bgxv bgym bgzz bhak bhax bhdv" />
-                    <div class="bgxb">
-                      <p class="bhcf bhcp">Matte Black</p>
-                      <h3 class="bgwx bhcj bhcs">
+                      class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover/hover:opacity-75" />
+                    <div class="mt-6">
+                      <p class="text-sm text-gray-500">Matte Black</p>
+                      <h3 class="mt-1 font-semibold text-gray-900">
                         <a href="#">
-                          <span class="bgwh bgwl"></span>
+                          <span class="absolute inset-0"></span>
                           Earthen Mug
                         </a>
                       </h3>
-                      <p class="bgwx bhcs">$28</p>
+                      <p class="mt-1 text-gray-900">$28</p>
                     </div>
                   </div>
 
-                  <h4 class="bgwg">Available colors</h4>
-                  <ul role="list" class="bgxf bgxn bgzb bgze bgzm bhbo">
-                    <li style="background-color: #4b5563" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Matte Black</span>
+                  <h4 class="sr-only">Available colors</h4>
+                  <ul role="list" class="mt-auto flex items-center justify-center space-x-3 pt-6">
+                    <li style="background-color: #4b5563" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Matte Black</span>
                     </li>
-                    <li style="background-color: #fef3c7" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Natural</span>
+                    <li style="background-color: #fef3c7" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Natural</span>
                     </li>
                   </ul>
                 </li>
-                <li class="bgxs bgyk bgza bhbz bhhf">
-                  <div class="bhdt bgwj">
+                <li class="inline-flex w-64 flex-col text-center lg:w-auto">
+                  <div class="group/hover relative">
                     <img
                       src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-product-03.jpg"
                       alt="Natural leather journal with brass disc binding and three paper refill sets."
-                      class="bgxv bgym bgzz bhak bhax bhdv" />
-                    <div class="bgxb">
-                      <p class="bhcf bhcp">Natural</p>
-                      <h3 class="bgwx bhcj bhcs">
+                      class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover/hover:opacity-75" />
+                    <div class="mt-6">
+                      <p class="text-sm text-gray-500">Natural</p>
+                      <h3 class="mt-1 font-semibold text-gray-900">
                         <a href="#">
-                          <span class="bgwh bgwl"></span>
+                          <span class="absolute inset-0"></span>
                           Leatherbound Daily Journal Set
                         </a>
                       </h3>
-                      <p class="bgwx bhcs">$50</p>
+                      <p class="mt-1 text-gray-900">$50</p>
                     </div>
                   </div>
 
-                  <h4 class="bgwg">Available colors</h4>
-                  <ul role="list" class="bgxf bgxn bgzb bgze bgzm bhbo">
-                    <li style="background-color: #fef3c7" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Natural</span>
+                  <h4 class="sr-only">Available colors</h4>
+                  <ul role="list" class="mt-auto flex items-center justify-center space-x-3 pt-6">
+                    <li style="background-color: #fef3c7" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Natural</span>
                     </li>
-                    <li style="background-color: #1f2937" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Black</span>
+                    <li style="background-color: #1f2937" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Black</span>
                     </li>
-                    <li style="background-color: #7c2d12" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Brown</span>
+                    <li style="background-color: #7c2d12" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Brown</span>
                     </li>
                   </ul>
                 </li>
-                <li class="bgxs bgyk bgza bhbz bhhf">
-                  <div class="bhdt bgwj">
+                <li class="inline-flex w-64 flex-col text-center lg:w-auto">
+                  <div class="group/hover relative">
                     <img
                       src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-product-04.jpg"
                       alt="Black leather journal with brass disc binding."
-                      class="bgxv bgym bgzz bhak bhax bhdv" />
-                    <div class="bgxb">
-                      <p class="bhcf bhcp">Black</p>
-                      <h3 class="bgwx bhcj bhcs">
+                      class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover/hover:opacity-75" />
+                    <div class="mt-6">
+                      <p class="text-sm text-gray-500">Black</p>
+                      <h3 class="mt-1 font-semibold text-gray-900">
                         <a href="#">
-                          <span class="bgwh bgwl"></span>
+                          <span class="absolute inset-0"></span>
                           Leatherbound Daily Journal
                         </a>
                       </h3>
-                      <p class="bgwx bhcs">$50</p>
+                      <p class="mt-1 text-gray-900">$50</p>
                     </div>
                   </div>
 
-                  <h4 class="bgwg">Available colors</h4>
-                  <ul role="list" class="bgxf bgxn bgzb bgze bgzm bhbo">
-                    <li style="background-color: #111827" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Black</span>
+                  <h4 class="sr-only">Available colors</h4>
+                  <ul role="list" class="mt-auto flex items-center justify-center space-x-3 pt-6">
+                    <li style="background-color: #111827" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Black</span>
                     </li>
-                    <li style="background-color: #7c2d12" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Brown</span>
+                    <li style="background-color: #7c2d12" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Brown</span>
                     </li>
-                    <li style="background-color: #fef3c7" class="bgxw bgzx bhaa bhaf">
-                      <span class="bgwg">Natural</span>
+                    <li style="background-color: #fef3c7" class="size-4 rounded-full border border-black/10">
+                      <span class="sr-only">Natural</span>
                     </li>
                   </ul>
                 </li>
@@ -2589,8 +907,8 @@
             </div>
           </div>
 
-          <div class="bgxd bhbb bhfq">
-            <a href="#" class="bhcf bhcj bhct bhel">
+          <div class="mt-12 px-4 sm:hidden">
+            <a href="#" class="text-sm font-semibold text-indigo-600 hover:text-indigo-500">
               See everything
               <span aria-hidden="true"> &rarr;</span>
             </a>
@@ -2599,50 +917,50 @@
       </section>
 
       <!-- Collections -->
-      <section aria-labelledby="collections-heading" class="bhaj">
-        <div class="bgww bgyq bhbb bhfx bhia">
-          <div class="bgww bgyo bhbl bhga bhhh bhib">
-            <h2 id="collections-heading" class="bhcb bhch bhcs">Collections</h2>
+      <section aria-labelledby="collections-heading" class="bg-gray-100">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
+            <h2 id="collections-heading" class="text-2xl font-bold text-gray-900">Collections</h2>
 
-            <div class="bgxb bgzi bhha bhhl bhhp bhhq">
-              <div class="bhdt bgwj">
+            <div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-6">
+              <div class="group/hover relative">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
                   alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                  class="bgym bgzy bhaq bhax bhdv bhfh bhfr bhhc" />
-                <h3 class="bgxb bhcf bhcp">
+                  class="w-full rounded-lg bg-white object-cover group-hover/hover:opacity-75 max-sm:h-80 sm:aspect-2 lg:aspect-square" />
+                <h3 class="mt-6 text-sm text-gray-500">
                   <a href="#">
-                    <span class="bgwh bgwl"></span>
+                    <span class="absolute inset-0"></span>
                     Desk and Office
                   </a>
                 </h3>
-                <p class="bhcd bhcj bhcs">Work from home accessories</p>
+                <p class="text-base font-semibold text-gray-900">Work from home accessories</p>
               </div>
-              <div class="bhdt bgwj">
+              <div class="group/hover relative">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-02.jpg"
                   alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
-                  class="bgym bgzy bhaq bhax bhdv bhfh bhfr bhhc" />
-                <h3 class="bgxb bhcf bhcp">
+                  class="w-full rounded-lg bg-white object-cover group-hover/hover:opacity-75 max-sm:h-80 sm:aspect-2 lg:aspect-square" />
+                <h3 class="mt-6 text-sm text-gray-500">
                   <a href="#">
-                    <span class="bgwh bgwl"></span>
+                    <span class="absolute inset-0"></span>
                     Self-Improvement
                   </a>
                 </h3>
-                <p class="bhcd bhcj bhcs">Journals and note-taking</p>
+                <p class="text-base font-semibold text-gray-900">Journals and note-taking</p>
               </div>
-              <div class="bhdt bgwj">
+              <div class="group/hover relative">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-03.jpg"
                   alt="Collection of four insulated travel bottles on wooden shelf."
-                  class="bgym bgzy bhaq bhax bhdv bhfh bhfr bhhc" />
-                <h3 class="bgxb bhcf bhcp">
+                  class="w-full rounded-lg bg-white object-cover group-hover/hover:opacity-75 max-sm:h-80 sm:aspect-2 lg:aspect-square" />
+                <h3 class="mt-6 text-sm text-gray-500">
                   <a href="#">
-                    <span class="bgwh bgwl"></span>
+                    <span class="absolute inset-0"></span>
                     Travel
                   </a>
                 </h3>
-                <p class="bhcd bhcj bhcs">Daily commute essentials</p>
+                <p class="text-base font-semibold text-gray-900">Daily commute essentials</p>
               </div>
             </div>
           </div>
@@ -2650,79 +968,89 @@
       </section>
 
       <!-- Sale and testimonials -->
-      <div class="bgwj bgzt">
+      <div class="relative overflow-hidden">
         <!-- Decorative background image and gradient -->
-        <div aria-hidden="true" class="bgwh bgwl">
-          <div class="bgwh bgwl bgww bgyq bgzt bhik">
+        <div aria-hidden="true" class="absolute inset-0">
+          <div class="absolute inset-0 mx-auto max-w-7xl overflow-hidden xl:px-8">
             <img
               src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-sale-full-width.jpg"
               alt=""
-              class="bgxz bhax" />
+              class="size-full object-cover" />
           </div>
-          <div class="bgwh bgwl bhar"></div>
-          <div class="bgwh bgwl bhas bhat bhau"></div>
+          <div class="absolute inset-0 bg-white/75"></div>
+          <div class="absolute inset-0 bg-linear-to-t from-white via-white"></div>
         </div>
 
         <!-- Sale -->
-        <section aria-labelledby="sale-heading" class="bgwj bgww bgxn bgyq bgza bgzb bhbb bhbr bhbz bhfx bhia">
-          <div class="bgww bgyo bhhh">
-            <h2 id="sale-heading" class="bhcc bhch bhck bhcs bhgb bhie">Get 25% off during our one-time sale</h2>
-            <p class="bgww bgxa bgys bhcg bhcq">
+        <section
+          aria-labelledby="sale-heading"
+          class="relative mx-auto flex max-w-7xl flex-col items-center px-4 pt-32 text-center sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:max-w-none">
+            <h2 id="sale-heading" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+              Get 25% off during our one-time sale
+            </h2>
+            <p class="mx-auto mt-4 max-w-xl text-xl text-indigo-800">
               Most of our products are limited releases that won't come back. Get your favorite items while they're in
               stock.
             </p>
-            <a href="#" class="bgxb bgxr bgym bgzz bhaa bhah bham bhbd bhbg bhci bhcu bhee bhft"
+            <a
+              href="#"
+              class="mt-6 inline-block w-full rounded-md border border-transparent bg-gray-900 px-8 py-3 font-medium text-white hover:bg-indigo-900 sm:w-auto"
               >Get access to our one-time sale</a
             >
           </div>
         </section>
 
         <!-- Testimonials -->
-        <section aria-labelledby="testimonial-heading" class="bgwj bgww bgyq bhbb bhbm bhfx bhia bhib">
-          <div class="bgww bgyo bhhh">
-            <h2 id="testimonial-heading" class="bhcb bhch bhck bhcs">What are people saying?</h2>
+        <section
+          aria-labelledby="testimonial-heading"
+          class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+          <div class="mx-auto max-w-2xl lg:max-w-none">
+            <h2 id="testimonial-heading" class="text-2xl font-bold tracking-tight text-gray-900">
+              What are people saying?
+            </h2>
 
-            <div class="bgxe bgzj bhha bhhl bhhp bhhr">
-              <blockquote class="bhfp bhgy">
-                <svg viewBox="0 0 24 18" width="24" height="18" aria-hidden="true" class="bgyv bhcn">
+            <div class="mt-16 space-y-16 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-8">
+              <blockquote class="sm:flex lg:block">
+                <svg viewBox="0 0 24 18" width="24" height="18" aria-hidden="true" class="shrink-0 text-indigo-200">
                   <path
                     d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
                     fill="currentColor" />
                 </svg>
-                <div class="bgxc bhfj bhfn bhgv bhgw">
-                  <p class="bhce bhcq">
+                <div class="mt-8 sm:mt-0 sm:ml-6 lg:mt-10 lg:ml-0">
+                  <p class="text-lg text-indigo-800">
                     My order arrived super quickly. The product is even better than I hoped it would be. Very happy
                     customer over here!
                   </p>
-                  <cite class="bgxa bgxm bhcj bhcs bhcv">Sarah Peters, New Orleans</cite>
+                  <cite class="mt-4 block font-semibold text-gray-900 not-italic">Sarah Peters, New Orleans</cite>
                 </div>
               </blockquote>
-              <blockquote class="bhfp bhgy">
-                <svg viewBox="0 0 24 18" width="24" height="18" aria-hidden="true" class="bgyv bhcn">
+              <blockquote class="sm:flex lg:block">
+                <svg viewBox="0 0 24 18" width="24" height="18" aria-hidden="true" class="shrink-0 text-indigo-200">
                   <path
                     d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
                     fill="currentColor" />
                 </svg>
-                <div class="bgxc bhfj bhfn bhgv bhgw">
-                  <p class="bhce bhcq">
+                <div class="mt-8 sm:mt-0 sm:ml-6 lg:mt-10 lg:ml-0">
+                  <p class="text-lg text-indigo-800">
                     I had to return a purchase that didn’t fit. The whole process was so simple that I ended up ordering
                     two new items!
                   </p>
-                  <cite class="bgxa bgxm bhcj bhcs bhcv">Kelly McPherson, Chicago</cite>
+                  <cite class="mt-4 block font-semibold text-gray-900 not-italic">Kelly McPherson, Chicago</cite>
                 </div>
               </blockquote>
-              <blockquote class="bhfp bhgy">
-                <svg viewBox="0 0 24 18" width="24" height="18" aria-hidden="true" class="bgyv bhcn">
+              <blockquote class="sm:flex lg:block">
+                <svg viewBox="0 0 24 18" width="24" height="18" aria-hidden="true" class="shrink-0 text-indigo-200">
                   <path
                     d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
                     fill="currentColor" />
                 </svg>
-                <div class="bgxc bhfj bhfn bhgv bhgw">
-                  <p class="bhce bhcq">
+                <div class="mt-8 sm:mt-0 sm:ml-6 lg:mt-10 lg:ml-0">
+                  <p class="text-lg text-indigo-800">
                     Now that I’m on holiday for the summer, I’ll probably order a few more shirts. It’s just so
                     convenient, and I know the quality will always be there.
                   </p>
-                  <cite class="bgxa bgxm bhcj bhcs bhcv">Chris Paul, Phoenix</cite>
+                  <cite class="mt-4 block font-semibold text-gray-900 not-italic">Chris Paul, Phoenix</cite>
                 </div>
               </blockquote>
             </div>
@@ -2731,105 +1059,105 @@
       </div>
     </main>
 
-    <footer aria-labelledby="footer-heading" class="bhaq">
-      <h2 id="footer-heading" class="bgwg">Footer</h2>
-      <div class="bgww bgyq bhbb bhfx bhia">
-        <div class="bhab bhag">
-          <div class="bhbq bhbw">
-            <div class="bhge bhgj">
+    <footer aria-labelledby="footer-heading" class="bg-white">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="border-t border-gray-200">
+          <div class="pt-16 pb-20">
+            <div class="md:flex md:justify-center">
               <img
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""
-                class="bgyc bgyl" />
+                class="h-8 w-auto" />
             </div>
-            <div class="bgww bgxe bgyp bhig bhih bhii">
-              <div class="bgxp bgyz bgzg bhif">
-                <div class="bgzi bhgf bhgg bhgk bhgl">
+            <div class="mx-auto mt-16 max-w-5xl xl:grid xl:grid-cols-2 xl:gap-8">
+              <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+                <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
                   <div>
-                    <h3 class="bhcf bhci bhcs">Products</h3>
-                    <ul role="list" class="bgxb bgzh">
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Bags</a>
+                    <h3 class="text-sm font-medium text-gray-900">Products</h3>
+                    <ul role="list" class="mt-6 space-y-6">
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Bags</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Tees</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Tees</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Objects</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Objects</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Home Goods</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Home Goods</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Accessories</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Accessories</a>
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <h3 class="bhcf bhci bhcs">Customer Service</h3>
-                    <ul role="list" class="bgxb bgzh">
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Contact</a>
+                    <h3 class="text-sm font-medium text-gray-900">Customer Service</h3>
+                    <ul role="list" class="mt-6 space-y-6">
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Contact</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Shipping</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Shipping</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Returns</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Returns</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Warranty</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Warranty</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Secure Payments</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Secure Payments</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">FAQ</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">FAQ</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Find a store</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Find a store</a>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class="bgzi bhgf bhgg bhgk bhgl">
+                <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
                   <div>
-                    <h3 class="bhcf bhci bhcs">Company</h3>
-                    <ul role="list" class="bgxb bgzh">
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Who we are</a>
+                    <h3 class="text-sm font-medium text-gray-900">Company</h3>
+                    <ul role="list" class="mt-6 space-y-6">
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Who we are</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Sustainability</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Sustainability</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Press</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Press</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Careers</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Careers</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Terms &amp; Conditions</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Terms &amp; Conditions</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Privacy</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Privacy</a>
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <h3 class="bhcf bhci bhcs">Legal</h3>
-                    <ul role="list" class="bgxb bgzh">
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Terms of Service</a>
+                    <h3 class="text-sm font-medium text-gray-900">Legal</h3>
+                    <ul role="list" class="mt-6 space-y-6">
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Terms of Service</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Return Policy</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Return Policy</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Privacy Policy</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Privacy Policy</a>
                       </li>
-                      <li class="bhcf">
-                        <a href="#" class="bhcp bhej">Shipping Policy</a>
+                      <li class="text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-600">Shipping Policy</a>
                       </li>
                     </ul>
                   </div>
@@ -2838,23 +1166,25 @@
             </div>
           </div>
 
-          <div class="bhha bhhk bhhq bhij">
-            <div class="bgxn bgzb bgzy bhaj bhaz bhfw">
-              <div class="bgww bgyr">
-                <h3 class="bhcj bhcs">Sign up for our newsletter</h3>
-                <p class="bgwy bhcf bhcp">The latest news, articles, and resources, sent to your inbox weekly.</p>
-                <form class="bgxa bhfl bhfp">
+          <div class="lg:grid lg:grid-cols-2 lg:gap-x-6 xl:gap-x-8">
+            <div class="flex items-center rounded-lg bg-gray-100 p-6 sm:p-10">
+              <div class="mx-auto max-w-sm">
+                <h3 class="font-semibold text-gray-900">Sign up for our newsletter</h3>
+                <p class="mt-2 text-sm text-gray-500">
+                  The latest news, articles, and resources, sent to your inbox weekly.
+                </p>
+                <form class="mt-4 sm:mt-6 sm:flex">
                   <input
                     id="email-address"
                     type="text"
                     required
                     autocomplete="email"
                     aria-label="Email address"
-                    class="bgxm bgym bgzz bhaq bhbb bhbf bhcd bhcs bhda bhdb bhdc bheb bhet bhev bhew" />
-                  <div class="bgwz bhfj bhfm bhfu">
+                    class="block w-full rounded-md bg-white px-4 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-indigo-300 focus:outline focus:-outline-offset-2 focus:outline-indigo-600" />
+                  <div class="mt-3 sm:mt-0 sm:ml-4 sm:shrink-0">
                     <button
                       type="submit"
-                      class="bgxn bgym bgzb bgze bgzz bhaa bhah bhan bhbb bhbf bhcd bhci bhcu bhcz bhef bheo bhep bheq bher bhes">
+                      class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm/5 hover:bg-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white focus:outline-hidden">
                       Sign up
                     </button>
                   </div>
@@ -2862,45 +1192,47 @@
               </div>
             </div>
 
-            <div class="bgwj bgxb bgxn bgzb bhbc bhbk bhfy bhfz bhgu">
-              <div class="bgwh bgwl bgzt bgzy">
+            <div class="relative mt-6 flex items-center px-6 py-12 sm:px-10 sm:py-16 lg:mt-0">
+              <div class="absolute inset-0 overflow-hidden rounded-lg">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/footer-02-exclusive-sale.jpg"
                   alt=""
-                  class="bgxz bhax bhdd bhde" />
-                <div class="bgwh bgwl bhao"></div>
+                  class="size-full object-cover grayscale" />
+                <div class="absolute inset-0 bg-indigo-600/90"></div>
               </div>
-              <div class="bgwj bgww bgyr bhbz">
-                <h3 class="bhcb bhch bhck bhcu">Get early access</h3>
-                <p class="bgwy bhcm">
+              <div class="relative mx-auto max-w-sm text-center">
+                <h3 class="text-2xl font-bold tracking-tight text-white">Get early access</h3>
+                <p class="mt-2 text-gray-200">
                   Did you sign up to the newsletter? If so, use the keyword we sent you to get access.
-                  <a href="#" class="bhch bhcl bhcu bheh">Go now<span aria-hidden="true"> &rarr;</span></a>
+                  <a href="#" class="font-bold whitespace-nowrap text-white hover:text-gray-200"
+                    >Go now<span aria-hidden="true"> &rarr;</span></a
+                  >
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="bhbj bhge bhgh bhgi">
-          <div class="bhbz bhgm">
-            <p class="bhcf bhcp">&copy; 2021 All Rights Reserved</p>
+        <div class="py-10 md:flex md:items-center md:justify-between">
+          <div class="text-center md:text-left">
+            <p class="text-sm text-gray-500">&copy; 2021 All Rights Reserved</p>
           </div>
 
-          <div class="bgxa bgxn bgzb bgze bhgd">
-            <div class="bgxn bgzn">
-              <a href="#" class="bhcf bhcp bhej">Accessibility</a>
-              <a href="#" class="bhcf bhcp bhej">Privacy</a>
-              <a href="#" class="bhcf bhcp bhej">Terms</a>
+          <div class="mt-4 flex items-center justify-center md:mt-0">
+            <div class="flex space-x-8">
+              <a href="#" class="text-sm text-gray-500 hover:text-gray-600">Accessibility</a>
+              <a href="#" class="text-sm text-gray-500 hover:text-gray-600">Privacy</a>
+              <a href="#" class="text-sm text-gray-500 hover:text-gray-600">Terms</a>
             </div>
 
-            <div class="bgxl bhae bhag bhby">
-              <a href="#" class="bgxn bgzb bhcp bhej">
+            <div class="ml-6 border-l border-gray-200 pl-6">
+              <a href="#" class="flex items-center text-gray-500 hover:text-gray-600">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/flags/flag-canada.svg"
                   alt=""
-                  class="bgyg bgyj bgyv" />
-                <span class="bgxk bhcf">Change</span>
-                <span class="bgwg">location and currency</span>
+                  class="h-auto w-5 shrink-0" />
+                <span class="ml-3 text-sm">Change</span>
+                <span class="sr-only">location and currency</span>
               </a>
             </div>
           </div>
@@ -2908,6 +1240,4 @@
       </div>
     </footer>
   </div>
-
-  <script></script>
 </body>

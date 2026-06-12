@@ -12,63 +12,6 @@
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
   </style>
-  <style>
-    /* Complex selectors that cannot be expressed as Tailwind utilities */
-    
-    /* Pricing frequency switching: show monthly price when monthly checked */
-    .bayt:is(:where(.bays):not(:has([name="frequency"][value="monthly"]:checked)) *) {
-      display: none;
-    }
-    /* Show annually price when annually checked */
-    .bayr:is(:where(.bays):not(:has([name="frequency"][value="annually"]:checked)) *) {
-      display: none;
-    }
-    /* Hide "Most popular" badge on non-featured tiers */
-    .bayu:is(:where(.bayv):not([data-featured]) *) {
-      display: none;
-    }
-    /* White text on checked radio labels */
-    .bayw:is(:where(.bayx):has(:checked) *) {
-      color: #fff;
-    }
-    /* Featured tier: heading text color */
-    .baza:is(:where(.bayv)[data-featured] *) {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    /* Featured tier: buy button background */
-    .bayy:is(:where(.bayv)[data-featured] *) {
-      background-color: oklch(58.5% 0.233 277.117);
-    }
-    /* Featured tier: buy button hover background */
-    .bazs:is(:where(.bayv)[data-featured] *):hover {
-      background-color: oklch(67.3% 0.182 276.935);
-    }
-    /* Featured tier: buy button remove inset ring */
-    .baze:is(:where(.bayv)[data-featured] *) {
-      --tw-inset-ring-shadow: inset 0 0 0 0px var(--tw-inset-ring-color, currentcolor);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-    /* Non-featured tier: focus-visible outline */
-    .bbad:is(:where(.bayv):not([data-featured]) *):focus-visible {
-      outline-color: oklab(100% 0 5.96046e-8/0.75);
-    }
-    /* Checked radio: background color */
-    .bbae:has(:checked) {
-      background-color: oklch(58.5% 0.233 277.117);
-    }
-    /* Featured tier card: ring */
-    .bbag[data-featured] {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-    .bbah[data-featured] {
-      --tw-ring-color: oklch(67.3% 0.182 276.935);
-    }
-    /* Dialog backdrop */
-    .bazg::backdrop {
-      background-color: #0000;
-    }
-  </style>
 </head>
 <body class="antialiased bg-gray-900">
 <div class="bg-gray-900">
@@ -114,7 +57,7 @@
         </div>
       </nav>
       <el-dialog>
-        <dialog id="mobile-menu" class="bazg lg:hidden">
+        <dialog id="mobile-menu" class="[&::backdrop]:bg-transparent lg:hidden">
           <div tabindex="0" class="fixed inset-0 outline-none">
             <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-3xl sm:ring-1 sm:ring-gray-100/10">
               <div class="flex items-center justify-between">
@@ -160,7 +103,7 @@
 
     <main>
       <!-- Pricing section -->
-      <form class="bays pt-24 sm:pt-32">
+      <form class="group/freq pt-24 sm:pt-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-4xl text-center">
             <h2 class="text-base/7 font-semibold text-indigo-400">Pricing</h2>
@@ -173,35 +116,35 @@
           <div class="mt-16 flex justify-center">
             <fieldset aria-label="Payment frequency">
               <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-inset ring-inset-white/10">
-                <label class="bayx relative rounded-full px-2.5 py-1 bbae">
+                <label class="group/label relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
                   <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
-                  <span class="text-gray-500 bayw">Monthly</span>
+                  <span class="text-gray-500 group-has-[:checked]/label:text-white">Monthly</span>
                 </label>
-                <label class="bayx relative rounded-full px-2.5 py-1 bbae">
+                <label class="group/label relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
                   <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
-                  <span class="text-gray-500 bayw">Annually</span>
+                  <span class="text-gray-500 group-has-[:checked]/label:text-white">Annually</span>
                 </label>
               </div>
             </fieldset>
           </div>
           <div class="isolate mx-auto mt-10 grid max-w-[28rem] grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            <div class="bayv rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 bbag bbah xl:p-10">
+            <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400 xl:p-10">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-freelancer" class="text-lg/8 font-semibold text-white baza">Freelancer</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white bayu">Most popular</p>
+                <h3 id="tier-freelancer" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Freelancer</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white hidden group-data-[featured]/card:block">Most popular</p>
               </div>
               <p class="mt-4 text-sm/6 text-gray-400">The essentials to provide your best work for clients.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 bayt">
+              <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='monthly']:checked]/freq:block">
                 <span class="text-4xl font-semibold -tracking-tight text-white">$19</span>
                 <span class="text-sm/6 font-semibold text-gray-500">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 bayr">
+              <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='annually']:checked]/freq:block">
                 <span class="text-4xl font-semibold -tracking-tight text-white">$199</span>
                 <span class="text-sm/6 font-semibold text-gray-500">/year</span>
               </p>
               <a
                 aria-describedby="freelancer"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 bayy baze hover:bg-white/20 bazs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 bbad"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 group-data-[featured]/card:bg-indigo-500 group-data-[featured]/card:[--tw-inset-ring-shadow:inset_0_0_0_0px_transparent] hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 group-not-data-[featured]/card:focus-visible:outline-white/75"
                 >Buy plan</a
               >
               <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-400 xl:mt-10">
@@ -263,23 +206,23 @@
                 </li>
               </ul>
             </div>
-            <div data-featured="true" class="bayv rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 bbag bbah xl:p-10">
+            <div data-featured="true" class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400 xl:p-10">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-startup" class="text-lg/8 font-semibold text-white baza">Startup</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white bayu">Most popular</p>
+                <h3 id="tier-startup" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Startup</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white hidden group-data-[featured]/card:block">Most popular</p>
               </div>
               <p class="mt-4 text-sm/6 text-gray-400">A plan that scales with your rapidly growing business.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 bayt">
+              <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='monthly']:checked]/freq:block">
                 <span class="text-4xl font-semibold -tracking-tight text-white">$29</span>
                 <span class="text-sm/6 font-semibold text-gray-500">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 bayr">
+              <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='annually']:checked]/freq:block">
                 <span class="text-4xl font-semibold -tracking-tight text-white">$299</span>
                 <span class="text-sm/6 font-semibold text-gray-500">/year</span>
               </p>
               <a
                 aria-describedby="startup"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 bayy baze hover:bg-white/20 bazs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 bbad"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 group-data-[featured]/card:bg-indigo-500 group-data-[featured]/card:[--tw-inset-ring-shadow:inset_0_0_0_0px_transparent] hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 group-not-data-[featured]/card:focus-visible:outline-white/75"
                 >Buy plan</a
               >
               <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-400 xl:mt-10">
@@ -355,23 +298,23 @@
                 </li>
               </ul>
             </div>
-            <div class="bayv rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 bbag bbah xl:p-10">
+            <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400 xl:p-10">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-enterprise" class="text-lg/8 font-semibold text-white baza">Enterprise</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white bayu">Most popular</p>
+                <h3 id="tier-enterprise" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Enterprise</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white hidden group-data-[featured]/card:block">Most popular</p>
               </div>
               <p class="mt-4 text-sm/6 text-gray-400">Dedicated support and infrastructure for your company.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 bayt">
+              <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='monthly']:checked]/freq:block">
                 <span class="text-4xl font-semibold -tracking-tight text-white">$59</span>
                 <span class="text-sm/6 font-semibold text-gray-500">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 bayr">
+              <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='annually']:checked]/freq:block">
                 <span class="text-4xl font-semibold -tracking-tight text-white">$599</span>
                 <span class="text-sm/6 font-semibold text-gray-500">/year</span>
               </p>
               <a
                 aria-describedby="enterprise"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 bayy baze hover:bg-white/20 bazs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 bbad"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-inset ring-inset-white/5 group-data-[featured]/card:bg-indigo-500 group-data-[featured]/card:[--tw-inset-ring-shadow:inset_0_0_0_0px_transparent] hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 group-not-data-[featured]/card:focus-visible:outline-white/75"
                 >Buy plan</a
               >
               <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-400 xl:mt-10">

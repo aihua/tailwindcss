@@ -13,79 +13,6 @@
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
   </style>
-  <style>
-    /* Pricing form: toggle monthly/annual pricing based on radio selection */
-    .pricing-form:not(:has([name='frequency'][value='annually']:checked)) .price-annually {
-      display: none;
-    }
-    .pricing-form:not(:has([name='frequency'][value='monthly']:checked)) .price-monthly {
-      display: none;
-    }
-
-    /* Pricing card: featured card conditional styles */
-    .pricing-card:not([data-featured]) .badge-popular {
-      display: none;
-    }
-
-    /* Radio option: white text when checked */
-    .radio-option:has(:checked) .radio-checked-text {
-      color: #fff;
-    }
-
-    /* Pricing card [data-featured] child styles */
-    .pricing-card[data-featured] .featured-bg-500 {
-      background-color: oklch(58.5% 0.233 277.117);
-    }
-    .pricing-card[data-featured] .featured-bg-600 {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .pricing-card[data-featured] .featured-text-400 {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .pricing-card[data-featured] .featured-text-600 {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .pricing-card[data-featured] .featured-text-white {
-      color: #fff;
-    }
-    .pricing-card[data-featured] .featured-shadow-xs {
-      --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-    .pricing-card[data-featured] .featured-ring-none {
-      --tw-inset-ring-shadow: inset 0 0 0 0px transparent;
-      --tw-ring-shadow: 0 0 #0000;
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-
-    /* Pricing card featured hover states */
-    .pricing-card[data-featured]:hover .featured-hover-bg-400 {
-      background-color: oklch(67.3% 0.182 276.935);
-    }
-    .pricing-card[data-featured]:hover .featured-hover-bg-500 {
-      background-color: oklch(58.5% 0.233 277.117);
-    }
-
-    /* Non-featured card focus-visible outline */
-    .pricing-card:not([data-featured]) .focus-outline-white-75:focus-visible {
-      outline-color: oklab(100% 0 5.96046e-8 / 0.75);
-    }
-
-    /* Dialog backdrop */
-    .dialog-backdrop::backdrop {
-      background-color: transparent;
-    }
-
-    /* FAQ icon toggle: minus icon hidden when not expanded */
-    .icon-minus:not(:where([aria-expanded='true']) *) {
-      display: none;
-    }
-
-    /* FAQ icon toggle: plus icon hidden when expanded */
-    :where([aria-expanded='true']) .icon-plus {
-      display: none;
-    }
-  </style>
 </head>
 <body class="antialiased bg-gray-900">
 
@@ -131,7 +58,7 @@
         </div>
       </nav>
       <el-dialog>
-        <dialog id="mobile-menu" class="dialog-backdrop lg:hidden">
+        <dialog id="mobile-menu" class="[&::backdrop]:bg-transparent lg:hidden">
           <div tabindex="0" class="fixed inset-0 focus:outline-none">
             <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-lg sm:ring-1 sm:ring-gray-100/10">
               <div class="flex items-center justify-between">
@@ -177,7 +104,7 @@
 
     <main>
       <!-- Pricing section -->
-      <form class="pricing-form bg-gray-900 pt-24 sm:pt-32">
+      <form class="group/pricing bg-gray-900 pt-24 sm:pt-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-4xl text-center">
             <h2 class="text-base/7 font-semibold text-indigo-400">Pricing</h2>
@@ -190,35 +117,35 @@
           <div class="mt-16 flex justify-center">
             <fieldset aria-label="Payment frequency">
               <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-1 ring-inset ring-white/10">
-                <label class="radio-option relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
+                <label class="group/radio relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
                   <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
-                  <span class="text-gray-400 radio-checked-text">Monthly</span>
+                  <span class="text-gray-400 group-has-[:checked]/radio:text-white">Monthly</span>
                 </label>
-                <label class="radio-option relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
+                <label class="group/radio relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
                   <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
-                  <span class="text-gray-400 radio-checked-text">Annually</span>
+                  <span class="text-gray-400 group-has-[:checked]/radio:text-white">Annually</span>
                 </label>
               </div>
             </fieldset>
           </div>
           <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
-            <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
+            <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-hobby" class="text-lg/8 font-semibold text-white featured-text-400">Hobby</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white badge-popular">Most popular</p>
+                <h3 id="tier-hobby" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Hobby</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white hidden group-data-[featured]/card:block">Most popular</p>
               </div>
               <p class="mt-4 text-sm/6 text-gray-300">The essentials to provide your best work for clients.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
+              <p class="mt-6 flex items-baseline gap-x-1 group-has-[input[value='annually']:checked]/pricing:hidden">
                 <span class="text-4xl font-semibold tracking-tight text-white">$19</span>
                 <span class="text-sm/6 font-semibold text-gray-400">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-annually">
+              <p class="mt-6 flex items-baseline gap-x-1 group-has-[input[value='monthly']:checked]/pricing:hidden">
                 <span class="text-4xl font-semibold tracking-tight text-white">$199</span>
                 <span class="text-sm/6 font-semibold text-gray-400">/year</span>
               </p>
               <a
                 aria-describedby="hobby"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 featured-bg-500 featured-ring-none hover:bg-white/20 featured-hover-bg-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 focus-outline-white-75"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 group-data-[featured]/card:bg-indigo-500 group-data-[featured]/card:ring-0 hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-[featured]/card:focus-visible:outline-indigo-500"
                 >Buy plan</a
               >
               <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300">
@@ -266,23 +193,23 @@
                 </li>
               </ul>
             </div>
-            <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
+            <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-freelancer" class="text-lg/8 font-semibold text-white featured-text-400">Freelancer</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white badge-popular">Most popular</p>
+                <h3 id="tier-freelancer" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Freelancer</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white hidden group-data-[featured]/card:block">Most popular</p>
               </div>
               <p class="mt-4 text-sm/6 text-gray-300">The essentials to provide your best work for clients.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
+              <p class="mt-6 flex items-baseline gap-x-1 group-has-[input[value='annually']:checked]/pricing:hidden">
                 <span class="text-4xl font-semibold tracking-tight text-white">$29</span>
                 <span class="text-sm/6 font-semibold text-gray-400">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-annually">
+              <p class="mt-6 flex items-baseline gap-x-1 group-has-[input[value='monthly']:checked]/pricing:hidden">
                 <span class="text-4xl font-semibold tracking-tight text-white">$299</span>
                 <span class="text-sm/6 font-semibold text-gray-400">/year</span>
               </p>
               <a
                 aria-describedby="freelancer"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 featured-bg-500 featured-ring-none hover:bg-white/20 featured-hover-bg-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 focus-outline-white-75"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 group-data-[featured]/card:bg-indigo-500 group-data-[featured]/card:ring-0 hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-[featured]/card:focus-visible:outline-indigo-500"
                 >Buy plan</a
               >
               <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300">
@@ -344,23 +271,23 @@
                 </li>
               </ul>
             </div>
-            <div data-featured="true" class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
+            <div data-featured="true" class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-startup" class="text-lg/8 font-semibold text-white featured-text-400">Startup</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white badge-popular">Most popular</p>
+                <h3 id="tier-startup" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Startup</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white hidden group-data-[featured]/card:block">Most popular</p>
               </div>
               <p class="mt-4 text-sm/6 text-gray-300">A plan that scales with your rapidly growing business.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
+              <p class="mt-6 flex items-baseline gap-x-1 group-has-[input[value='annually']:checked]/pricing:hidden">
                 <span class="text-4xl font-semibold tracking-tight text-white">$59</span>
                 <span class="text-sm/6 font-semibold text-gray-400">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-annually">
+              <p class="mt-6 flex items-baseline gap-x-1 group-has-[input[value='monthly']:checked]/pricing:hidden">
                 <span class="text-4xl font-semibold tracking-tight text-white">$599</span>
                 <span class="text-sm/6 font-semibold text-gray-400">/year</span>
               </p>
               <a
                 aria-describedby="startup"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 featured-bg-500 featured-ring-none hover:bg-white/20 featured-hover-bg-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 focus-outline-white-75"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 group-data-[featured]/card:bg-indigo-500 group-data-[featured]/card:ring-0 hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-[featured]/card:focus-visible:outline-indigo-500"
                 >Buy plan</a
               >
               <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300">
@@ -436,23 +363,23 @@
                 </li>
               </ul>
             </div>
-            <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
+            <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 data-[featured]:ring-2 data-[featured]:ring-indigo-400">
               <div class="flex items-center justify-between gap-x-4">
-                <h3 id="tier-enterprise" class="text-lg/8 font-semibold text-white featured-text-400">Enterprise</h3>
-                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white badge-popular">Most popular</p>
+                <h3 id="tier-enterprise" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Enterprise</h3>
+                <p class="rounded-full bg-indigo-500 px-2.5 py-1 text-xs/5 font-semibold text-white hidden group-data-[featured]/card:block">Most popular</p>
               </div>
               <p class="mt-4 text-sm/6 text-gray-300">Dedicated support and infrastructure for your company.</p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-monthly">
+              <p class="mt-6 flex items-baseline gap-x-1 group-has-[input[value='annually']:checked]/pricing:hidden">
                 <span class="text-4xl font-semibold tracking-tight text-white">$99</span>
                 <span class="text-sm/6 font-semibold text-gray-400">/month</span>
               </p>
-              <p class="mt-6 flex items-baseline gap-x-1 price-annually">
+              <p class="mt-6 flex items-baseline gap-x-1 group-has-[input[value='monthly']:checked]/pricing:hidden">
                 <span class="text-4xl font-semibold tracking-tight text-white">$999</span>
                 <span class="text-sm/6 font-semibold text-gray-400">/year</span>
               </p>
               <a
                 aria-describedby="enterprise"
-                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 featured-bg-500 featured-ring-none hover:bg-white/20 featured-hover-bg-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 focus-outline-white-75"
+                class="mt-6 block w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white ring-1 ring-inset ring-white/5 group-data-[featured]/card:bg-indigo-500 group-data-[featured]/card:ring-0 hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-[featured]/card:focus-visible:outline-indigo-500"
                 >Buy plan</a
               >
               <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300">
@@ -679,7 +606,7 @@
           <dl class="mt-16 divide-y divide-white/10">
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-0" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-0" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">What&#039;s the best thing about Switzerland?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -689,7 +616,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -699,7 +626,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -716,7 +643,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-1" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-1" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">How do you make holy water?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -726,7 +653,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -736,7 +663,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -754,7 +681,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-2" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-2" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">What do you call someone with no body and no nose?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -764,7 +691,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -774,7 +701,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -791,7 +718,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-3" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-3" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">Why do you never see elephants hiding in trees?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -801,7 +728,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -811,7 +738,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -828,7 +755,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-4" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-4" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">Why can&#039;t you hear a pterodactyl go to the bathroom?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -838,7 +765,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -848,7 +775,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -866,7 +793,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-5" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-5" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">Why did the invisible man turn down the job offer?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -876,7 +803,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -886,7 +813,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>

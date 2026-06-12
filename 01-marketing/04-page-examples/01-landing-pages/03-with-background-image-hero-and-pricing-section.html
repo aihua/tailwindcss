@@ -13,15 +13,6 @@
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
   </style>
-  <style>
-    /* FAQ icon show/hide based on aria-expanded */
-    .faq-icon-minus:not(:where([aria-expanded='true']) *) {
-      display: none;
-    }
-    :where([aria-expanded='true']) .faq-icon-plus {
-      display: none;
-    }
-  </style>
 </head>
 <body class="antialiased bg-gray-900">
 
@@ -649,7 +640,7 @@
           <dl class="mt-16 divide-y divide-white/10">
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-0" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-0" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">What&#039;s the best thing about Switzerland?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -659,7 +650,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -669,7 +660,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -686,7 +677,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-1" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-1" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">How do you make holy water?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -696,7 +687,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -706,7 +697,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -724,7 +715,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-2" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-2" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">What do you call someone with no body and no nose?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -734,7 +725,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -744,7 +735,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -761,7 +752,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-3" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-3" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">Why do you never see elephants hiding in trees?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -771,7 +762,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -781,7 +772,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -798,7 +789,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-4" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-4" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">Why can&#039;t you hear a pterodactyl go to the bathroom?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -808,7 +799,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -818,7 +809,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
@@ -836,7 +827,7 @@
             </div>
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
-                <button type="button" command="--toggle" commandfor="faq-5" class="flex w-full items-start justify-between text-left text-white">
+                <button type="button" command="--toggle" commandfor="faq-5" class="group/faq flex w-full items-start justify-between text-left text-white">
                   <span class="text-base/7 font-semibold">Why did the invisible man turn down the job offer?</span>
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -846,7 +837,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-plus">
+                      class="size-6 group-aria-[expanded=true]/faq:hidden">
                       <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg
@@ -856,7 +847,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6 faq-icon-minus">
+                      class="size-6 hidden group-aria-[expanded=true]/faq:block">
                       <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>

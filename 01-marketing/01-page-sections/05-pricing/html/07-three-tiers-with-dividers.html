@@ -8,30 +8,9 @@
 @theme inline {
   --font-sans: 'InterVariable', system-ui, sans-serif;
   --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  --color-indigo-200: oklch(0.872 0.01 258.338);
-  --color-indigo-300: oklch(0.707 0.022 261.325);
-  --color-indigo-500: oklch(0.511 0.262 276.966);
-  --color-indigo-600: oklch(0.585 0.233 277.117);
-  --color-indigo-900: oklch(0.373 0.034 259.733);
 }
 </style>
-<style>
-  /* Pricing grid dividers: divide-y on mobile, divide-x on lg+ */
-  .pricing-grid > :not(:last-child) {
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-top-style: solid;
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-  @media (min-width: 64rem) {
-    .pricing-grid > :not(:last-child) {
-      border-bottom-width: 0;
-      border-top-width: 0;
-      border-inline-end-width: 1px;
-      border-inline-end-style: solid;
-    }
-  }
-</style>
+
 <body class="antialiased bg-gray-900">
   <div class="bg-gray-900 py-24 md:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -39,20 +18,20 @@
         <h2 class="text-base/7 font-semibold text-indigo-400">Pricing</h2>
         <p class="mt-2 text-5xl font-semibold tracking-tight text-pretty text-white md:text-6xl md:[text-wrap:balance]">Pricing that grows with you</p>
       </div>
-      <p class="mx-auto mt-6 max-w-[42rem] text-lg font-medium text-pretty text-indigo-300 md:text-center md:text-xl/8">
+      <p class="mx-auto mt-6 max-w-168 text-lg font-medium text-pretty text-gray-400 md:text-center md:text-xl/8">
         Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
         loyalty, and driving sales.
       </p>
       <div class="mt-20 flow-root">
-        <div class="pricing-grid isolate -mt-16 grid max-w-[24rem] grid-cols-1 gap-y-16 md:mx-auto lg:-mx-8 lg:mt-0 lg:max-w-none lg:grid-cols-3 xl:-mx-4">
+        <div class="pricing-grid isolate -mt-16 grid max-w-[24rem] grid-cols-1 divide-y divide-white/10 gap-y-16 md:mx-auto lg:-mx-8 lg:mt-0 lg:max-w-none lg:grid-cols-3 lg:divide-x lg:divide-y-0 xl:-mx-4">
           <div class="pt-16 lg:px-8 lg:pt-0 xl:px-14">
             <h3 id="tier-basic" class="text-base/7 font-semibold text-white">Basic</h3>
             <p class="mt-6 flex items-baseline gap-x-1">
               <span class="text-5xl font-semibold tracking-tight text-white">$19</span>
-              <span class="text-sm/6 font-semibold text-indigo-300">/month</span>
+              <span class="text-sm/6 font-semibold text-gray-400">/month</span>
             </p>
-            <p class="mt-3 text-sm/6 text-indigo-300">$15 per month if paid annually</p>
-            <a href="#" aria-describedby="tier-basic" class="mt-10 block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            <p class="mt-3 text-sm/6 text-gray-400">$15 per month if paid annually</p>
+            <a href="#" aria-describedby="tier-basic" class="mt-10 block rounded-md bg-indigo-500 px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >Buy plan</a
             >
             <p class="mt-10 text-sm/6 font-semibold text-white">Everything necessary to get started.</p>
@@ -119,13 +98,13 @@
             <h3 id="tier-essential" class="text-base/7 font-semibold text-white">Essential</h3>
             <p class="mt-6 flex items-baseline gap-x-1">
               <span class="text-5xl font-semibold tracking-tight text-white">$49</span>
-              <span class="text-sm/6 font-semibold text-indigo-300">/month</span>
+              <span class="text-sm/6 font-semibold text-gray-400">/month</span>
             </p>
-            <p class="mt-3 text-sm/6 text-indigo-300">$39 per month if paid annually</p>
+            <p class="mt-3 text-sm/6 text-gray-400">$39 per month if paid annually</p>
             <a
               href="#"
               aria-describedby="tier-essential"
-              class="mt-10 block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+              class="mt-10 block rounded-md bg-indigo-500 px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >Buy plan</a
             >
             <p class="mt-10 text-sm/6 font-semibold text-white">Everything in Basic, plus essential tools for growing your business.</p>
@@ -206,10 +185,10 @@
             <h3 id="tier-growth" class="text-base/7 font-semibold text-white">Growth</h3>
             <p class="mt-6 flex items-baseline gap-x-1">
               <span class="text-5xl font-semibold tracking-tight text-white">$99</span>
-              <span class="text-sm/6 font-semibold text-indigo-300">/month</span>
+              <span class="text-sm/6 font-semibold text-gray-400">/month</span>
             </p>
-            <p class="mt-3 text-sm/6 text-indigo-300">$79 per month if paid annually</p>
-            <a href="#" aria-describedby="tier-growth" class="mt-10 block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            <p class="mt-3 text-sm/6 text-gray-400">$79 per month if paid annually</p>
+            <a href="#" aria-describedby="tier-growth" class="mt-10 block rounded-md bg-indigo-500 px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >Buy plan</a
             >
             <p class="mt-10 text-sm/6 font-semibold text-white">Everything in Essential, plus collaboration tools and deeper insights.</p>

@@ -12,18 +12,10 @@
       --font-sans: 'InterVariable', system-ui, sans-serif;
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
-    /* Pricing toggle - show annually prices when annually selected, hide monthly prices */
-    .pricing-form:not(:has([name='frequency'][value='annually']:checked)) .prices-annually { display: none; }
-    .pricing-form:not(:has([name='frequency'][value='monthly']:checked)) .prices-monthly { display: none; }
-    /* Hide "Most popular" badge on non-featured cards */
-    .pricing-card:not([data-featured]) .badge-popular { display: none; }
-    /* Radio button checked state */
-    .radio-group:has(:checked) .radio-label-text { color: white; }
-    .radio-option:has(:checked) { background-color: oklch(58.5% 0.233 277.117); }
   </style>
 </head>
 <body class="antialiased bg-gray-900">
-  <form class="pricing-form bg-gray-900 py-24 sm:py-32">
+  <form class="pricing-form group/freq bg-gray-900 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
         <h2 class="text-base leading-7 font-semibold text-indigo-400">Pricing</h2>
@@ -36,30 +28,30 @@
       <div class="mt-16 flex justify-center">
         <fieldset aria-label="Payment frequency">
           <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs leading-5 font-semibold ring-1 ring-inset ring-white/10">
-            <label class="radio-group relative rounded-full px-2.5 py-1 radio-option">
+            <label class="group/label relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
               <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
-              <span class="text-gray-400 radio-label-text">Monthly</span>
+              <span class="text-gray-400 group-has-[:checked]/label:text-white">Monthly</span>
             </label>
-            <label class="radio-group relative rounded-full px-2.5 py-1 radio-option">
+            <label class="group/label relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
               <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
-              <span class="text-gray-400 radio-label-text">Annually</span>
+              <span class="text-gray-400 group-has-[:checked]/label:text-white">Annually</span>
             </label>
           </div>
         </fieldset>
       </div>
       <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <!-- Freelancer (non-featured) -->
-        <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 xl:p-10">
+        <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 xl:p-10">
           <div class="flex items-center justify-between gap-x-4">
             <h3 id="tier-tier-freelancer" class="text-lg leading-8 font-semibold text-white">Freelancer</h3>
-            <p class="badge-popular rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
+            <p class="hidden group-data-[featured]/card:block rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
           </div>
           <p class="mt-4 text-sm leading-6 text-gray-300">The essentials to provide your best work for clients.</p>
-          <p class="prices-monthly mt-6 flex items-baseline gap-x-1">
+          <p class="hidden group-has-[input[value='monthly']:checked]/freq:block mt-6 flex items-baseline gap-x-1">
             <span class="text-4xl font-semibold tracking-tight text-white">$19</span>
             <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
           </p>
-          <p class="prices-annually mt-6 flex items-baseline gap-x-1">
+          <p class="hidden group-has-[input[value='annually']:checked]/freq:block mt-6 flex items-baseline gap-x-1">
             <span class="text-4xl font-semibold tracking-tight text-white">$199</span>
             <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
           </p>
@@ -129,17 +121,17 @@
           </ul>
         </div>
         <!-- Startup (featured) -->
-        <div data-featured="true" class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-2 ring-indigo-400 xl:p-10">
+        <div data-featured="true" class="group/card rounded-3xl bg-gray-800/50 p-8 ring-2 ring-indigo-400 xl:p-10">
           <div class="flex items-center justify-between gap-x-4">
             <h3 id="tier-tier-startup" class="text-lg leading-8 font-semibold text-indigo-400">Startup</h3>
-            <p class="badge-popular rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
+            <p class="hidden group-data-[featured]/card:block rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
           </div>
           <p class="mt-4 text-sm leading-6 text-gray-300">A plan that scales with your rapidly growing business.</p>
-          <p class="prices-monthly mt-6 flex items-baseline gap-x-1">
+          <p class="hidden group-has-[input[value='monthly']:checked]/freq:block mt-6 flex items-baseline gap-x-1">
             <span class="text-4xl font-semibold tracking-tight text-white">$29</span>
             <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
           </p>
-          <p class="prices-annually mt-6 flex items-baseline gap-x-1">
+          <p class="hidden group-has-[input[value='annually']:checked]/freq:block mt-6 flex items-baseline gap-x-1">
             <span class="text-4xl font-semibold tracking-tight text-white">$299</span>
             <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
           </p>
@@ -223,17 +215,17 @@
           </ul>
         </div>
         <!-- Enterprise (non-featured) -->
-        <div class="pricing-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 xl:p-10">
+        <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/15 xl:p-10">
           <div class="flex items-center justify-between gap-x-4">
             <h3 id="tier-tier-enterprise" class="text-lg leading-8 font-semibold text-white">Enterprise</h3>
-            <p class="badge-popular rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
+            <p class="hidden group-data-[featured]/card:block rounded-full bg-indigo-500 px-2.5 py-1 text-xs leading-5 font-semibold text-white">Most popular</p>
           </div>
           <p class="mt-4 text-sm leading-6 text-gray-300">Dedicated support and infrastructure for your company.</p>
-          <p class="prices-monthly mt-6 flex items-baseline gap-x-1">
+          <p class="hidden group-has-[input[value='monthly']:checked]/freq:block mt-6 flex items-baseline gap-x-1">
             <span class="text-4xl font-semibold tracking-tight text-white">$59</span>
             <span class="text-sm leading-6 font-semibold text-gray-400">/month</span>
           </p>
-          <p class="prices-annually mt-6 flex items-baseline gap-x-1">
+          <p class="hidden group-has-[input[value='annually']:checked]/freq:block mt-6 flex items-baseline gap-x-1">
             <span class="text-4xl font-semibold tracking-tight text-white">$599</span>
             <span class="text-sm leading-6 font-semibold text-gray-400">/year</span>
           </p>

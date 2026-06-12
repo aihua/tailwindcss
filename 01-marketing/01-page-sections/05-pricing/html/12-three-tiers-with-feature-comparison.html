@@ -13,125 +13,9 @@
       --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     }
   </style>
-  <style>
-    /* Complex conditional selectors that cannot be expressed as utility classes */
-
-    /* Ring inset on all cards (original selector uses no-op :not condition) */
-    .ring-inset {
-      --tw-inset-ring-shadow: inset 0 0 0 1px var(--tw-inset-ring-color, currentcolor);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-    .ring-inset-white-5 {
-      --tw-inset-ring-color: oklab(100% 0 5.96046e-8/0.05);
-    }
-
-    /* Monthly/annually toggle: hide opposite pricing */
-    .pricing-monthly:not(:has([name='frequency'][value='annually']:checked)) .pricing-annually,
-    .pricing-annually:not(:has([name='frequency'][value='monthly']:checked)) .pricing-monthly {
-      display: none;
-    }
-
-    /* Featured card conditional styles */
-    :where(.divide-featured-dark:is(:where(.group)[data-featured] *) > :not(:last-child)) {
-      border-color: oklab(21% -0.00316127 -0.0338527/.05);
-    }
-    :where(.divide-featured-light:is(:where(.group)[data-featured] *) > :not(:last-child)) {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .border-featured-dark:is(:where(.group)[data-featured] *) {
-      border-color: oklab(21% -0.00316127 -0.0338527/.05);
-    }
-    .border-featured-light:is(:where(.group)[data-featured] *) {
-      border-color: oklab(100% 0 5.96046e-8/0.1);
-    }
-    .bg-featured-indigo-500:is([data-featured] *) {
-      background-color: oklch(58.5% 0.233 277.117);
-    }
-    .bg-featured-indigo-600:is([data-featured] *) {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .text-featured-gray-500:is([data-featured] *) {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .text-featured-gray-600:is([data-featured] *) {
-      color: oklch(44.6% 0.03 256.802);
-    }
-    .text-featured-gray-900:is([data-featured] *) {
-      color: oklch(21% 0.034 264.665);
-    }
-    .text-featured-indigo-400:is([data-featured] *) {
-      color: oklch(67.3% 0.182 276.935);
-    }
-    .text-featured-indigo-600:is([data-featured] *) {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .shadow-featured-sm:is([data-featured] *) {
-      --tw-shadow: 0 1px 2px 0 oklch(0% 0 0/0.05);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-
-    /* Grid gap via ::before */
-    .grid-gap::before {
-      content: '';
-      display: block;
-    }
-
-    /* Hover/focus conditional styles */
-    @media (hover: hover) {
-      .hover-featured-indigo-400:is([data-featured] *):hover {
-        background-color: oklch(67.3% 0.182 276.935);
-      }
-      .hover-featured-indigo-500:is([data-featured] *):hover {
-        background-color: oklch(58.5% 0.233 277.117);
-      }
-    }
-    .focus-featured-indigo-500:is([data-featured] *):focus-visible {
-      outline-color: oklch(58.5% 0.233 277.117);
-    }
-    .focus-featured-indigo-600:is([data-featured] *):focus-visible {
-      outline-color: oklch(51.1% 0.262 276.966);
-    }
-
-    /* Radio checked state */
-    .radio-checked-indigo:has(:checked) {
-      background-color: oklch(58.5% 0.233 277.117);
-    }
-
-    /* Custom backgrounds: Tailwind Elements blocks bg-gray-800/50 and bg-gray-800/80 */
-    /* These explicit CSS rules replicate oklab(27.8% .../opacity) from original compiled CSS */
-    .card-bg-800-80 {
-      background-color: oklab(27.8% -0.00750866 -0.0321344 / 0.8);
-    }
-    @media (min-width: 64rem) {
-      .card-bg-800-80 { background-color: transparent; }
-    }
-    .deco-bg-800-80 {
-      background-color: oklab(27.8% -0.00750866 -0.0321344 / 0.8);
-    }
-    .fake-bg-800-50 {
-      background-color: oklab(27.8% -0.00750866 -0.0321344 / 0.5);
-    }
-    @media (min-width: 40rem) {
-      .sm\:bg-clear { background-color: transparent; }
-    }
-
-    /* SVG glow translate: Tailwind CDN translate-x and translate-y override each other,
-       so we use CSS variables to compose them like the original compiled CSS */
-    .glow-translate {
-      --tw-translate-x: calc(calc(1/2 * 100%) * -1);
-      --tw-translate-y: calc(1/2 * 100%);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    @media (min-width: 64rem) {
-      .glow-translate {
-        --tw-translate-y: calc(0.25rem * 0);
-        translate: var(--tw-translate-x) var(--tw-translate-y);
-      }
-    }
-  </style>
 </head>
 <body class="antialiased bg-gray-900">
-  <form class="pricing-monthly pricing-annually isolate overflow-hidden bg-gray-900">
+  <form class="group/freq isolate overflow-hidden bg-gray-900">
     <div class="flow-root border-b border-b-white/5 bg-gray-800/25 pt-24 pb-16 sm:pt-32 pb-0 lg:pb-0">
       <div class="mx-auto max-w-[80rem] px-6 lg:px-8">
         <div class="relative z-10">
@@ -143,11 +27,11 @@
           <div class="mt-16 flex justify-center">
             <fieldset aria-label="Payment frequency">
               <div class="grid grid-cols-2 gap-x-1 rounded-full bg-white/5 p-1 text-center text-xs leading-5 font-semibold text-white">
-                <label class="relative rounded-full px-2.5 py-1 radio-checked-indigo">
+                <label class="relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
                   <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
                   <span class="text-white">Monthly</span>
                 </label>
-                <label class="relative rounded-full px-2.5 py-1 radio-checked-indigo">
+                <label class="relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
                   <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
                   <span class="text-white">Annually</span>
                 </label>
@@ -156,7 +40,7 @@
           </div>
         </div>
         <div class="relative mx-auto mt-10 grid max-w-[28rem] grid-cols-1 gap-y-8 lg:mx-0 lg:-mb-14 lg:max-w-none lg:grid-cols-3">
-          <svg viewBox="0 0 1208 1024" aria-hidden="true" class="absolute -bottom-48 left-1/2 h-[64rem] glow-translate mask-[radial-gradient(closest-side,#fff,transparent)] lg:-top-48 lg:bottom-auto">
+          <svg viewBox="0 0 1208 1024" aria-hidden="true" class="absolute -bottom-48 left-1/2 h-[64rem] -translate-x-1/2 translate-y-1/2 lg:translate-y-0 mask-[radial-gradient(closest-side,#fff,transparent)] lg:-top-48 lg:bottom-auto">
             <ellipse cx="604" cy="512" rx="604" ry="512" fill="url(#d25c25d4-6d43-4bf9-b9ac-1842a30a4867)" />
             <defs>
               <radialGradient id="d25c25d4-6d43-4bf9-b9ac-1842a30a4867">
@@ -165,18 +49,18 @@
               </radialGradient>
             </defs>
           </svg>
-          <div aria-hidden="true" class="hidden lg:absolute lg:inset-x-[1px] lg:top-4 lg:bottom-0 lg:block lg:rounded-t-2xl deco-bg-800-80 lg:ring-1 lg:ring-white/10"></div>
-          <div class="group relative rounded-2xl card-bg-800-80 outline-1 -outline-offset-1 outline-white/10 lg:pb-14 lg:outline-0">
+          <div aria-hidden="true" class="hidden lg:absolute lg:inset-x-[1px] lg:top-4 lg:bottom-0 lg:block lg:rounded-t-2xl bg-gray-800/80 lg:ring-1 lg:ring-white/10"></div>
+          <div class="group/card relative rounded-2xl bg-gray-800/80 lg:bg-transparent outline-1 -outline-offset-1 outline-white/10 lg:pb-14 lg:outline-0">
             <div class="p-8 lg:pt-12 xl:p-10 xl:pt-14">
               <h3 id="tier-tier-starter" class="text-sm leading-6 font-semibold text-white">Starter</h3>
               <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:flex-col lg:justify-center lg:items-stretch">
                 <div class="mt-2 flex items-center gap-x-4">
-                  <p class="pricing-monthly text-4xl font-semibold tracking-tight text-white">$19</p>
-                  <p class="pricing-annually text-4xl font-semibold tracking-tight text-white">$199</p>
+                  <p class="hidden group-has-[input[value='monthly']:checked]/freq:block text-4xl font-semibold tracking-tight text-white">$19</p>
+                  <p class="hidden group-has-[input[value='annually']:checked]/freq:block text-4xl font-semibold tracking-tight text-white">$199</p>
                   <div class="text-sm">
                     <p class="text-white">USD</p>
-                    <p class="pricing-monthly text-gray-400">Billed monthly</p>
-                    <p class="pricing-annually text-gray-400">Billed annually</p>
+                    <p class="hidden group-has-[input[value='monthly']:checked]/freq:block text-gray-400">Billed monthly</p>
+                    <p class="hidden group-has-[input[value='annually']:checked]/freq:block text-gray-400">Billed annually</p>
                   </div>
                 </div>
                 <button
@@ -184,19 +68,19 @@
                   name="tier"
                   value="tier-starter"
                   aria-describedby="tier-tier-starter"
-                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset ring-inset-white-5 bg-featured-indigo-500 hover:bg-white/20 hover-featured-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 focus-featured-indigo-500">
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset ring-white/5 group-data-[featured]/card:bg-indigo-500 hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-[featured]/card:focus-visible:outline-indigo-500">
                   Buy this plan
                 </button>
               </div>
               <div class="mt-8 flow-root sm:mt-10">
-                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white divide-featured-dark border-featured-dark lg:border-t-0">
+                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white lg:border-t-0">
                   <li class="flex gap-x-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -210,7 +94,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -224,7 +108,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -236,17 +120,17 @@
               </div>
             </div>
           </div>
-          <div data-featured="true" class="group relative z-10 rounded-2xl bg-gray-800 outline-1 -outline-offset-1 outline-white/10">
+          <div data-featured="true" class="group/card relative z-10 rounded-2xl bg-gray-800 outline-1 -outline-offset-1 outline-white/10">
             <div class="p-8 lg:pt-12 xl:p-10 xl:pt-14">
               <h3 id="tier-tier-scale" class="text-sm leading-6 font-semibold text-white">Scale</h3>
               <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:flex-col lg:justify-center lg:items-stretch">
                 <div class="mt-2 flex items-center gap-x-4">
-                  <p class="pricing-monthly text-4xl font-semibold tracking-tight text-white">$99</p>
-                  <p class="pricing-annually text-4xl font-semibold tracking-tight text-white">$999</p>
+                  <p class="hidden group-has-[input[value='monthly']:checked]/freq:block text-4xl font-semibold tracking-tight text-white">$99</p>
+                  <p class="hidden group-has-[input[value='annually']:checked]/freq:block text-4xl font-semibold tracking-tight text-white">$999</p>
                   <div class="text-sm">
                     <p class="text-white">USD</p>
-                    <p class="pricing-monthly text-gray-400">Billed monthly</p>
-                    <p class="pricing-annually text-gray-400">Billed annually</p>
+                    <p class="hidden group-has-[input[value='monthly']:checked]/freq:block text-gray-400">Billed monthly</p>
+                    <p class="hidden group-has-[input[value='annually']:checked]/freq:block text-gray-400">Billed annually</p>
                   </div>
                 </div>
                 <button
@@ -254,19 +138,19 @@
                   name="tier"
                   value="tier-scale"
                   aria-describedby="tier-tier-scale"
-                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset ring-inset-white-5 bg-featured-indigo-500 hover:bg-white/20 hover-featured-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 focus-featured-indigo-500">
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset ring-white/5 group-data-[featured]/card:bg-indigo-500 hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-[featured]/card:focus-visible:outline-indigo-500">
                   Buy this plan
                 </button>
               </div>
               <div class="mt-8 flow-root sm:mt-10">
-                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white divide-featured-light border-featured-light lg:border-t-0">
+                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white lg:border-t-0">
                   <li class="flex gap-x-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -280,7 +164,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -294,7 +178,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -308,7 +192,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -322,7 +206,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -336,7 +220,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -348,17 +232,17 @@
               </div>
             </div>
           </div>
-          <div class="group relative rounded-2xl card-bg-800-80 outline-1 -outline-offset-1 outline-white/10 lg:pb-14 lg:outline-0">
+          <div class="group/card relative rounded-2xl bg-gray-800/80 lg:bg-transparent outline-1 -outline-offset-1 outline-white/10 lg:pb-14 lg:outline-0">
             <div class="p-8 lg:pt-12 xl:p-10 xl:pt-14">
               <h3 id="tier-tier-growth" class="text-sm leading-6 font-semibold text-white">Growth</h3>
               <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:flex-col lg:justify-center lg:items-stretch">
                 <div class="mt-2 flex items-center gap-x-4">
-                  <p class="pricing-monthly text-4xl font-semibold tracking-tight text-white">$49</p>
-                  <p class="pricing-annually text-4xl font-semibold tracking-tight text-white">$499</p>
+                  <p class="hidden group-has-[input[value='monthly']:checked]/freq:block text-4xl font-semibold tracking-tight text-white">$49</p>
+                  <p class="hidden group-has-[input[value='annually']:checked]/freq:block text-4xl font-semibold tracking-tight text-white">$499</p>
                   <div class="text-sm">
                     <p class="text-white">USD</p>
-                    <p class="pricing-monthly text-gray-400">Billed monthly</p>
-                    <p class="pricing-annually text-gray-400">Billed annually</p>
+                    <p class="hidden group-has-[input[value='monthly']:checked]/freq:block text-gray-400">Billed monthly</p>
+                    <p class="hidden group-has-[input[value='annually']:checked]/freq:block text-gray-400">Billed annually</p>
                   </div>
                 </div>
                 <button
@@ -366,19 +250,19 @@
                   name="tier"
                   value="tier-growth"
                   aria-describedby="tier-tier-growth"
-                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset ring-inset-white-5 bg-featured-indigo-500 hover:bg-white/20 hover-featured-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 focus-featured-indigo-500">
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm leading-6 font-semibold text-white ring-inset ring-white/5 group-data-[featured]/card:bg-indigo-500 hover:bg-white/20 group-data-[featured]/card:hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-[featured]/card:focus-visible:outline-indigo-500">
                   Buy this plan
                 </button>
               </div>
               <div class="mt-8 flow-root sm:mt-10">
-                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white divide-featured-dark border-featured-dark lg:border-t-0">
+                <ul role="list" class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm leading-6 text-white lg:border-t-0">
                   <li class="flex gap-x-3 py-2">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -392,7 +276,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -406,7 +290,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -420,7 +304,7 @@
                       fill="currentColor"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="h-6 w-5 flex-none text-gray-500 text-featured-indigo-400">
+                      class="h-6 w-5 flex-none text-gray-500 group-data-[featured]/card:text-indigo-400">
                       <path
                         d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                         clip-rule="evenodd"
@@ -453,9 +337,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Features</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-1 ring-white/10 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-1 ring-white/10 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">Edge content delivery</dt>
@@ -512,9 +396,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Reporting</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-1 ring-white/10 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-1 ring-white/10 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">Advanced analytics</dt>
@@ -589,9 +473,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Support</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-1 ring-white/10 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-1 ring-white/10 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">24/7 online support</dt>
@@ -675,9 +559,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Features</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-2 ring-indigo-500 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-2 ring-indigo-500 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">Edge content delivery</dt>
@@ -736,9 +620,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Reporting</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-2 ring-indigo-500 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-2 ring-indigo-500 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">Advanced analytics</dt>
@@ -819,9 +703,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Support</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-2 ring-indigo-500 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-2 ring-indigo-500 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">24/7 online support</dt>
@@ -911,9 +795,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Features</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-1 ring-white/10 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-1 ring-white/10 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">Edge content delivery</dt>
@@ -970,9 +854,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Reporting</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-1 ring-white/10 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-1 ring-white/10 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">Advanced analytics</dt>
@@ -1049,9 +933,9 @@
                   <h4 class="text-sm leading-6 font-semibold text-white">Support</h4>
                   <div class="relative mt-6">
                     <!-- Fake card background -->
-                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg fake-bg-800-50 sm:block"></div>
+                    <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-gray-800/50 sm:block"></div>
 
-                    <div class="relative rounded-lg fake-bg-800-50 ring-1 ring-white/10 sm:rounded-none sm:bg-clear sm:ring-0">
+                    <div class="relative rounded-lg bg-gray-800/50 ring-1 ring-white/10 sm:rounded-none sm:bg-transparent sm:ring-0">
                       <dl class="divide-y divide-white/10 text-sm leading-6">
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-400">24/7 online support</dt>
@@ -1133,7 +1017,7 @@
         <section aria-labelledby="comparison-heading" class="hidden lg:block">
           <h2 id="comparison-heading" class="sr-only">Feature comparison</h2>
 
-          <div class="grid grid-cols-4 gap-x-8 border-t border-white/10 grid-gap">
+          <div class="grid grid-cols-4 gap-x-8 border-t border-white/10 before:block before:content-['']">
             <div aria-hidden="true" class="-mt-px">
               <div class="border-t-2 border-transparent pt-10">
                 <p class="text-sm leading-6 font-semibold text-white">Starter</p>
@@ -1159,10 +1043,10 @@
               <h3 class="text-sm leading-6 font-semibold text-white">Features</h3>
               <div class="relative -mx-8 mt-10">
                 <!-- Fake card backgrounds -->
-                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 grid-gap">
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block before:content-['']">
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
                 </div>
 
                 <table class="relative w-full border-separate border-spacing-x-8">
@@ -1330,7 +1214,7 @@
                 </table>
 
                 <!-- Fake card borders -->
-                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 grid-gap">
+                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block before:content-['']">
                   <div class="rounded-lg ring-1 ring-white/10"></div>
                   <div class="rounded-lg ring-2 ring-indigo-500"></div>
                   <div class="rounded-lg ring-1 ring-white/10"></div>
@@ -1341,10 +1225,10 @@
               <h3 class="text-sm leading-6 font-semibold text-white">Reporting</h3>
               <div class="relative -mx-8 mt-10">
                 <!-- Fake card backgrounds -->
-                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 grid-gap">
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block before:content-['']">
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
                 </div>
 
                 <table class="relative w-full border-separate border-spacing-x-8">
@@ -1572,7 +1456,7 @@
                 </table>
 
                 <!-- Fake card borders -->
-                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 grid-gap">
+                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block before:content-['']">
                   <div class="rounded-lg ring-1 ring-white/10"></div>
                   <div class="rounded-lg ring-2 ring-indigo-500"></div>
                   <div class="rounded-lg ring-1 ring-white/10"></div>
@@ -1583,10 +1467,10 @@
               <h3 class="text-sm leading-6 font-semibold text-white">Support</h3>
               <div class="relative -mx-8 mt-10">
                 <!-- Fake card backgrounds -->
-                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 grid-gap">
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
-                  <div class="w-full h-full rounded-lg fake-bg-800-50"></div>
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block before:content-['']">
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
+                  <div class="w-full h-full rounded-lg bg-gray-800/50"></div>
                 </div>
 
                 <table class="relative w-full border-separate border-spacing-x-8">
@@ -1814,7 +1698,7 @@
                 </table>
 
                 <!-- Fake card borders -->
-                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 grid-gap">
+                <div aria-hidden="true" class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block before:content-['']">
                   <div class="rounded-lg ring-1 ring-white/10"></div>
                   <div class="rounded-lg ring-2 ring-indigo-500"></div>
                   <div class="rounded-lg ring-1 ring-white/10"></div>

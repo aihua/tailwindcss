@@ -8,130 +8,55 @@
 @theme inline {
   --font-sans: 'InterVariable', system-ui, sans-serif;
   --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  --color-indigo-200: oklch(0.872 0.01 258.338);
-  --color-indigo-300: oklch(0.707 0.022 261.325);
-  --color-indigo-500: oklch(0.511 0.262 276.966);
-  --color-indigo-600: oklch(0.585 0.233 277.117);
-  --color-indigo-900: oklch(0.373 0.034 259.733);
-}
-</style>
-<style>
-/* Price toggle: hide/show based on selected radio */
-.show-monthly:is(:where(.pricing-form):not(:has([name='frequency'][value='monthly']:checked)) *) {
-  display: none;
-}
-.show-annually:is(:where(.pricing-form):not(:has([name='frequency'][value='annually']:checked)) *) {
-  display: none;
-}
-
-/* Toggle label text: white when radio is checked */
-.toggle-text:is(:where(.toggle-label):has(:checked) *) {
-  color: #fff;
-}
-
-/* Toggle label background when checked */
-.toggle-checked:has(:checked) {
-  background-color: oklch(58.5% 0.233 277.117);
-}
-
-/* Featured tier card: ring-2 indigo-500 overrides ring-1 */
-.tier-card[data-featured] {
-  --tw-ring-shadow: 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-  --tw-ring-color: oklch(58.5% 0.233 277.117);
-}
-
-/* Featured: button bg becomes white/10 */
-.btn-featured:is(:where(.tier-card)[data-featured] *) {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Featured: button inset ring white/5 */
-.ring-featured:is(:where(.tier-card)[data-featured] *) {
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-}
-
-/* Featured: subtle text becomes indigo-200 */
-.text-featured-subtle:is(:where(.tier-card)[data-featured] *) {
-  color: oklch(87.2% 0.01 258.338);
-}
-
-/* Featured: heading text becomes indigo-400 */
-.text-featured:is(:where(.tier-card)[data-featured] *) {
-  color: oklch(67.3% 0.182 276.935);
-}
-
-/* Button hover styles */
-@media (hover: hover) {
-  .hover-featured-btn:hover {
-    background-color: oklch(67.3% 0.182 276.935);
-  }
-  .hover-featured-secondary:is(:where(.tier-card)[data-featured] *):hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-}
-
-/* Focus styles */
-.focus-outline:focus-visible {
-  outline-style: solid;
-  outline-width: 2px;
-}
-.focus-offset:focus-visible {
-  outline-offset: 2px;
-}
-.focus-color:focus-visible {
-  outline-color: oklch(58.5% 0.233 277.117);
-}
-.focus-color-featured:is(:where(.tier-card)[data-featured] *):focus-visible {
-  outline-color: rgba(255, 255, 255, 0.75);
 }
 </style>
 <body class="antialiased bg-gray-900">
-  <form class="pricing-form bg-gray-900 py-24 md:py-32">
+  <form class="pricing-form group/freq bg-gray-900 py-24 md:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-[56rem] text-center">
         <h2 class="text-base/7 font-semibold text-indigo-400">Pricing</h2>
         <p class="mt-2 text-5xl font-semibold tracking-tight [text-wrap:balance] text-white md:text-6xl">Pricing that grows with you</p>
       </div>
-      <p class="mx-auto mt-6 max-w-[42rem] text-center text-lg font-medium [text-wrap:pretty] text-indigo-300 md:text-xl/8">
+      <p class="mx-auto mt-6 max-w-[42rem] text-center text-lg font-medium [text-wrap:pretty] text-gray-400 md:text-xl/8">
         Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
         loyalty, and driving sales.
       </p>
       <div class="mt-16 flex justify-center">
         <fieldset aria-label="Payment frequency">
           <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-1 ring-inset ring-white/10">
-            <label class="toggle-label relative rounded-full px-2.5 py-1 toggle-checked">
+            <label class="group/label relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
               <input type="radio" name="frequency" value="monthly" checked class="absolute inset-0 appearance-none rounded-full" />
-              <span class="text-indigo-300 toggle-text">Monthly</span>
+              <span class="text-gray-400 group-has-[:checked]/label:text-white">Monthly</span>
             </label>
-            <label class="toggle-label relative rounded-full px-2.5 py-1 toggle-checked">
+            <label class="group/label relative rounded-full px-2.5 py-1 has-[:checked]:bg-indigo-500">
               <input type="radio" name="frequency" value="annually" class="absolute inset-0 appearance-none rounded-full" />
-              <span class="text-indigo-300 toggle-text">Annually</span>
+              <span class="text-gray-400 group-has-[:checked]/label:text-white">Annually</span>
             </label>
           </div>
         </fieldset>
       </div>
       <div class="isolate mx-auto mt-10 grid max-w-[28rem] grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <!-- Freelancer -->
-        <div class="tier-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/10 xl:p-10">
-          <h3 id="tier-tier-freelancer" class="text-lg/8 font-semibold text-white text-featured">Freelancer</h3>
-          <p class="mt-4 text-sm/6 text-indigo-200">The essentials to provide your best work for clients.</p>
-          <p class="mt-6 flex items-baseline gap-x-1 show-monthly">
+        <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/10 xl:p-10">
+          <h3 id="tier-tier-freelancer" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Freelancer</h3>
+          <p class="mt-4 text-sm/6 text-gray-300">The essentials to provide your best work for clients.</p>
+          <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='monthly']:checked]/freq:block">
             <span class="text-4xl font-semibold tracking-tight text-white">$19</span>
-            <span class="text-sm/6 font-semibold text-indigo-300 text-featured-subtle">/month</span>
+            <span class="text-sm/6 font-semibold text-gray-400 group-data-[featured]/card:text-gray-300">/month</span>
           </p>
-          <p class="mt-6 flex items-baseline gap-x-1 show-annually">
+          <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='annually']:checked]/freq:block">
             <span class="text-4xl font-semibold tracking-tight text-white">$199</span>
-            <span class="text-sm/6 font-semibold text-indigo-300 text-featured-subtle">/year</span>
+            <span class="text-sm/6 font-semibold text-gray-400 group-data-[featured]/card:text-gray-300">/year</span>
           </p>
           <button
             type="submit"
             name="tier"
             value="tier-freelancer"
             aria-describedby="tier-tier-freelancer"
-            class="mt-6 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white btn-featured ring-featured hover-featured-btn hover-featured-secondary focus-outline focus-offset focus-color focus-color-featured">
+            class="mt-6 block w-full rounded-md bg-indigo-500 px-3 py-2 text-center text-sm/6 font-semibold text-white group-data-[featured]/card:bg-white/10 group-data-[featured]/card:ring-inset group-data-[featured]/card:ring-white/5 hover:bg-indigo-400 group-data-[featured]/card:hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 group-data-[featured]/card:focus-visible:outline-white/75">
             Buy plan
           </button>
-          <ul role="list" class="mt-8 space-y-3 text-sm/6 text-indigo-200 xl:mt-10">
+          <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 xl:mt-10">
             <li class="flex gap-x-3">
               <svg
                 viewBox="0 0 20 20"
@@ -191,26 +116,26 @@
           </ul>
         </div>
         <!-- Startup -->
-        <div class="tier-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/10 xl:p-10">
-          <h3 id="tier-tier-startup" class="text-lg/8 font-semibold text-white text-featured">Startup</h3>
-          <p class="mt-4 text-sm/6 text-indigo-200">A plan that scales with your rapidly growing business.</p>
-          <p class="mt-6 flex items-baseline gap-x-1 show-monthly">
+        <div class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/10 xl:p-10">
+          <h3 id="tier-tier-startup" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Startup</h3>
+          <p class="mt-4 text-sm/6 text-gray-300">A plan that scales with your rapidly growing business.</p>
+          <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='monthly']:checked]/freq:block">
             <span class="text-4xl font-semibold tracking-tight text-white">$29</span>
-            <span class="text-sm/6 font-semibold text-indigo-300 text-featured-subtle">/month</span>
+            <span class="text-sm/6 font-semibold text-gray-400 group-data-[featured]/card:text-gray-300">/month</span>
           </p>
-          <p class="mt-6 flex items-baseline gap-x-1 show-annually">
+          <p class="mt-6 flex items-baseline gap-x-1 hidden group-has-[input[value='annually']:checked]/freq:block">
             <span class="text-4xl font-semibold tracking-tight text-white">$299</span>
-            <span class="text-sm/6 font-semibold text-indigo-300 text-featured-subtle">/year</span>
+            <span class="text-sm/6 font-semibold text-gray-400 group-data-[featured]/card:text-gray-300">/year</span>
           </p>
           <button
             type="submit"
             name="tier"
             value="tier-startup"
             aria-describedby="tier-tier-startup"
-            class="mt-6 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white btn-featured ring-featured hover-featured-btn hover-featured-secondary focus-outline focus-offset focus-color focus-color-featured">
+            class="mt-6 block w-full rounded-md bg-indigo-500 px-3 py-2 text-center text-sm/6 font-semibold text-white group-data-[featured]/card:bg-white/10 group-data-[featured]/card:ring-inset group-data-[featured]/card:ring-white/5 hover:bg-indigo-400 group-data-[featured]/card:hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 group-data-[featured]/card:focus-visible:outline-white/75">
             Buy plan
           </button>
-          <ul role="list" class="mt-8 space-y-3 text-sm/6 text-indigo-200 xl:mt-10">
+          <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 xl:mt-10">
             <li class="flex gap-x-3">
               <svg
                 viewBox="0 0 20 20"
@@ -284,19 +209,19 @@
           </ul>
         </div>
         <!-- Enterprise (featured) -->
-        <div data-featured="true" class="tier-card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/10 xl:p-10">
-          <h3 id="tier-tier-enterprise" class="text-lg/8 font-semibold text-white text-featured">Enterprise</h3>
-          <p class="mt-4 text-sm/6 text-indigo-200">Dedicated support and infrastructure for your company.</p>
+        <div data-featured="true" class="group/card rounded-3xl bg-gray-800/50 p-8 ring-1 ring-white/10 data-[featured]:ring-2 data-[featured]:ring-indigo-500 xl:p-10">
+          <h3 id="tier-tier-enterprise" class="text-lg/8 font-semibold text-white group-data-[featured]/card:text-indigo-400">Enterprise</h3>
+          <p class="mt-4 text-sm/6 text-gray-300">Dedicated support and infrastructure for your company.</p>
           <p class="mt-6 text-4xl font-semibold tracking-tight text-white">Custom</p>
           <button
             type="submit"
             name="tier"
             value="tier-enterprise"
             aria-describedby="tier-tier-enterprise"
-            class="mt-6 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white btn-featured ring-featured hover-featured-btn hover-featured-secondary focus-outline focus-offset focus-color focus-color-featured">
+            class="mt-6 block w-full rounded-md bg-indigo-500 px-3 py-2 text-center text-sm/6 font-semibold text-white group-data-[featured]/card:bg-white/10 group-data-[featured]/card:ring-inset group-data-[featured]/card:ring-white/5 hover:bg-indigo-400 group-data-[featured]/card:hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 group-data-[featured]/card:focus-visible:outline-white/75">
             Contact sales
           </button>
-          <ul role="list" class="mt-8 space-y-3 text-sm/6 text-indigo-200 xl:mt-10">
+          <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 xl:mt-10">
             <li class="flex gap-x-3">
               <svg
                 viewBox="0 0 20 20"

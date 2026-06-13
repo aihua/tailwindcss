@@ -3,1368 +3,31 @@
   content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
   rel="preconnect"
   href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style>
-  /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-  @layer properties {
-    @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-      ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-      *,
-      :before,
-      :after,
-      ::backdrop {
-        --tw-rotate-x: initial;
-        --tw-rotate-y: initial;
-        --tw-rotate-z: initial;
-        --tw-skew-x: initial;
-        --tw-skew-y: initial;
-        --tw-space-y-reverse: 0;
-        --tw-space-x-reverse: 0;
-        --tw-divide-y-reverse: 0;
-        --tw-border-style: solid;
-        --tw-font-weight: initial;
-        --tw-tracking: initial;
-        --tw-shadow: 0 0 #0000;
-        --tw-shadow-color: initial;
-        --tw-shadow-alpha: 100%;
-        --tw-inset-shadow: 0 0 #0000;
-        --tw-inset-shadow-color: initial;
-        --tw-inset-shadow-alpha: 100%;
-        --tw-ring-color: initial;
-        --tw-ring-shadow: 0 0 #0000;
-        --tw-inset-ring-color: initial;
-        --tw-inset-ring-shadow: 0 0 #0000;
-        --tw-ring-inset: initial;
-        --tw-ring-offset-width: 0px;
-        --tw-ring-offset-color: #fff;
-        --tw-ring-offset-shadow: 0 0 #0000;
-        --tw-duration: initial;
-        --tw-ease: initial;
-        --tw-outline-style: solid;
-        --tw-translate-x: 0;
-        --tw-translate-y: 0;
-        --tw-translate-z: 0;
-      }
-    }
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: 'InterVariable', system-ui, sans-serif;
+    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
-  @layer theme {
-    :root,
-    :host {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  }
-  @layer base {
-    *,
-    :after,
-    :before,
-    ::backdrop {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    ::file-selector-button {
-      box-sizing: border-box;
-      border: 0 solid;
-      margin: 0;
-      padding: 0;
-    }
-    html,
-    :host {
-      -webkit-text-size-adjust: 100%;
-      tab-size: 4;
-      line-height: 1.5;
-      font-family: var(
-        --font-sans,
-        ui-sans-serif,
-        system-ui,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      );
-      font-feature-settings: var(--font-sans--font-feature-settings);
-      font-variation-settings: initial;
-      -webkit-tap-highlight-color: transparent;
-    }
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px;
-    }
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      -webkit-text-decoration: inherit;
-      text-decoration: inherit;
-    }
-    b,
-    strong {
-      font-weight: bolder;
-    }
-    code,
-    kbd,
-    samp,
-    pre {
-      font-feature-settings: initial;
-      font-variation-settings: initial;
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        Liberation Mono,
-        Courier New,
-        monospace;
-      font-size: 1em;
-    }
-    small {
-      font-size: 80%;
-    }
-    sub,
-    sup {
-      vertical-align: baseline;
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-    }
-    sub {
-      bottom: -0.25em;
-    }
-    sup {
-      top: -0.5em;
-    }
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse;
-    }
-    :-moz-focusring {
-      outline: auto;
-    }
-    progress {
-      vertical-align: baseline;
-    }
-    summary {
-      display: list-item;
-    }
-    ol,
-    ul,
-    menu {
-      list-style: none;
-    }
-    img,
-    svg,
-    video,
-    canvas,
-    audio,
-    iframe,
-    embed,
-    object {
-      vertical-align: middle;
-      display: block;
-    }
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    ::file-selector-button {
-      font: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      opacity: 1;
-      background-color: #0000;
-      border-radius: 0;
-    }
-    :where(select:is([multiple], [size])) optgroup {
-      font-weight: bolder;
-    }
-    :where(select:is([multiple], [size])) optgroup option {
-      padding-inline-start: 20px;
-    }
-    ::file-selector-button {
-      margin-inline-end: 4px;
-    }
-    ::placeholder {
-      opacity: 1;
-    }
-    @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
-      ::placeholder {
-        color: currentColor;
-      }
-      @supports (color: color-mix(in lab, red, red)) {
-        ::placeholder {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
-      }
-    }
-    textarea {
-      resize: vertical;
-    }
-    ::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-    ::-webkit-date-and-time-value {
-      min-height: 1lh;
-      text-align: inherit;
-    }
-    ::-webkit-datetime-edit {
-      display: inline-flex;
-    }
-    ::-webkit-datetime-edit-fields-wrapper {
-      padding: 0;
-    }
-    ::-webkit-datetime-edit {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-year-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-month-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-day-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-hour-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-minute-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-second-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-millisecond-field {
-      padding-block: 0;
-    }
-    ::-webkit-datetime-edit-meridiem-field {
-      padding-block: 0;
-    }
-    ::-webkit-calendar-picker-indicator {
-      line-height: 1;
-    }
-    :-moz-ui-invalid {
-      box-shadow: none;
-    }
-    button,
-    input:where([type='button'], [type='reset'], [type='submit']) {
-      appearance: button;
-    }
-    ::file-selector-button {
-      appearance: button;
-    }
-    ::-webkit-inner-spin-button {
-      height: auto;
-    }
-    ::-webkit-outer-spin-button {
-      height: auto;
-    }
-    [hidden]:where(:not([hidden='until-found'])) {
-      display: none !important;
-    }
-  }
-  @layer components;
-  @layer utilities {
-    .atoy {
-      pointer-events: none;
-    }
-    .atoz {
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border-width: 0;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-    .atpa {
-      position: absolute;
-    }
-    .atpb {
-      position: fixed;
-    }
-    .atpc {
-      position: relative;
-    }
-    .atpd {
-      inset: -0.125rem;
-    }
-    .atpe {
-      inset: 0;
-    }
-    .atpf {
-      inset-inline: 0;
-    }
-    .atpg {
-      top: 50%;
-    }
-    .atph {
-      bottom: -1px;
-    }
-    .atpi {
-      z-index: 30;
-    }
-    .atpj {
-      grid-column-start: 1;
-    }
-    .atpk {
-      grid-row-start: 1;
-    }
-    .atpl {
-      margin: -0.5rem;
-    }
-    .atpm {
-      margin-inline: 0.25rem;
-    }
-    .atpn {
-      margin-inline: 1rem;
-    }
-    .atpo {
-      margin-inline: auto;
-    }
-    .atpp {
-      margin-top: 0.25rem;
-    }
-    .atpq {
-      margin-top: 0.5rem;
-    }
-    .atpr {
-      margin-top: 1.5rem;
-    }
-    .atps {
-      margin-top: 3rem;
-    }
-    .atpt {
-      margin-right: 0.25rem;
-    }
-    .atpu {
-      margin-bottom: -1.5rem;
-    }
-    .atpv {
-      margin-bottom: -1px;
-    }
-    .atpw {
-      margin-left: -0.5rem;
-    }
-    .atpx {
-      margin-left: 0.5rem;
-    }
-    .atpy {
-      margin-left: 0.75rem;
-    }
-    .atpz {
-      margin-left: 1rem;
-    }
-    .atqa {
-      display: block;
-    }
-    .atqb {
-      display: flex;
-    }
-    .atqc {
-      display: flow-root;
-    }
-    .atqd {
-      display: grid;
-    }
-    .atqe {
-      display: none;
-    }
-    .atqf {
-      display: inline-flex;
-    }
-    .atqg {
-      display: inline-grid;
-    }
-    .atqh {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-    .atqi {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .atqj {
-      width: 5rem;
-      height: 5rem;
-    }
-    .atqk {
-      height: 0.125rem;
-    }
-    .atql {
-      height: 1.5rem;
-    }
-    .atqm {
-      height: 2rem;
-    }
-    .atqn {
-      height: 2.5rem;
-    }
-    .atqo {
-      height: 4rem;
-    }
-    .atqp {
-      height: 100%;
-    }
-    .atqq {
-      width: auto;
-    }
-    .atqr {
-      width: 100%;
-    }
-    .atqs {
-      width: 1px;
-    }
-    .atqt {
-      max-width: 48rem;
-    }
-    .atqu {
-      max-width: 80rem;
-    }
-    .atqv {
-      max-width: 36rem;
-    }
-    .atqw {
-      max-width: 20rem;
-    }
-    .atqx {
-      min-width: 0;
-    }
-    .atqy {
-      flex: 1;
-    }
-    .atqz {
-      flex: none;
-    }
-    .atra {
-      flex-shrink: 0;
-    }
-    .atrb {
-      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-    }
-    .atrc {
-      appearance: none;
-    }
-    .atrd {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .atre {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .atrf {
-      flex-direction: column;
-    }
-    .atrg {
-      align-items: center;
-    }
-    .atrh {
-      align-items: flex-start;
-    }
-    .atri {
-      justify-content: space-between;
-    }
-    .atrj {
-      justify-content: center;
-    }
-    .atrk {
-      justify-content: flex-end;
-    }
-    .atrl {
-      gap: 2rem;
-    }
-    :where(.atrm > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 1) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 1) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.atrn > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 4) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.atro > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.atrp > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 6) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 6) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.atrq > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 12) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 12) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    :where(.atrr > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(0.25rem * 16) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(0.25rem * 16) * calc(1 - var(--tw-space-y-reverse)));
-    }
-    .atrs {
-      column-gap: 1.5rem;
-    }
-    .atrt {
-      column-gap: 2rem;
-    }
-    :where(.atru > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(0.25rem * 4) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-x-reverse)));
-    }
-    :where(.atrv > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(0.25rem * 8) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-x-reverse)));
-    }
-    .atrw {
-      row-gap: 2.5rem;
-    }
-    :where(.atrx > :not(:last-child)) {
-      --tw-divide-y-reverse: 0;
-      border-bottom-style: var(--tw-border-style);
-      border-top-style: var(--tw-border-style);
-      border-top-width: calc(1px * var(--tw-divide-y-reverse));
-      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    }
-    :where(.atry > :not(:last-child)) {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .atrz {
-      align-self: center;
-    }
-    .atsa {
-      justify-self: flex-end;
-    }
-    .atsb {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .atsc {
-      overflow: visible;
-    }
-    .atsd {
-      overflow-y: auto;
-    }
-    .atse {
-      border-radius: 0.25rem;
-    }
-    .atsf {
-      border-radius: 0.375rem;
-    }
-    .atsg {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-    .atsh {
-      border-top-style: var(--tw-border-style);
-      border-top-width: 1px;
-    }
-    .atsi {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 1px;
-    }
-    .atsj {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 2px;
-    }
-    .atsk {
-      border-left-style: var(--tw-border-style);
-      border-left-width: 1px;
-    }
-    .atsl {
-      border-color: oklch(96.7% 0.003 264.542);
-    }
-    .atsm {
-      border-color: oklch(92.8% 0.006 264.531);
-    }
-    .atsn {
-      border-color: oklch(87.2% 0.01 258.338);
-    }
-    .atso {
-      border-color: #0000;
-    }
-    .atsp {
-      background-color: oklab(0% none none/.25);
-    }
-    .atsq {
-      background-color: oklch(92.8% 0.006 264.531);
-    }
-    .atsr {
-      background-color: oklch(44.6% 0.03 256.802);
-    }
-    .atss {
-      background-color: oklch(21% 0.034 264.665);
-    }
-    .atst {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .atsu {
-      background-color: #0000;
-    }
-    .atsv {
-      background-color: #fff;
-    }
-    .atsw {
-      fill: oklch(87.2% 0.01 258.338);
-    }
-    .atsx {
-      fill: oklch(55.1% 0.027 264.364);
-    }
-    .atsy {
-      object-fit: cover;
-    }
-    .atsz {
-      padding: 0.5rem;
-    }
-    .atta {
-      padding-inline: 0.25rem;
-    }
-    .attb {
-      padding-inline: 0.625rem;
-    }
-    .attc {
-      padding-inline: 1rem;
-    }
-    .attd {
-      padding-block: 0.125rem;
-    }
-    .atte {
-      padding-block: 0.5rem;
-    }
-    .attf {
-      padding-block: 1rem;
-    }
-    .attg {
-      padding-block: 1.5rem;
-    }
-    .atth {
-      padding-block: 2.5rem;
-    }
-    .atti {
-      padding-block: 4rem;
-    }
-    .attj {
-      padding-block: 5rem;
-    }
-    .attk {
-      padding-top: 0.375rem;
-    }
-    .attl {
-      padding-top: 1.25rem;
-    }
-    .attm {
-      padding-top: 2.5rem;
-    }
-    .attn {
-      padding-right: 1.75rem;
-    }
-    .atto {
-      padding-bottom: 0.5rem;
-    }
-    .attp {
-      padding-bottom: 1.5rem;
-    }
-    .attq {
-      padding-bottom: 3rem;
-    }
-    .attr {
-      padding-left: 0.5rem;
-    }
-    .atts {
-      padding-left: 0.75rem;
-    }
-    .attt {
-      padding-left: 1rem;
-    }
-    .attu {
-      text-align: center;
-    }
-    .attv {
-      text-align: left;
-    }
-    .attw {
-      font-size: 1.875rem;
-      line-height: var(--tw-leading, calc(2.25 / 1.875));
-    }
-    .attx {
-      font-size: 1rem;
-      line-height: var(--tw-leading, calc(1.5 / 1));
-    }
-    .atty {
-      font-size: 1.125rem;
-      line-height: var(--tw-leading, calc(1.75 / 1.125));
-    }
-    .attz {
-      font-size: 0.875rem;
-      line-height: var(--tw-leading, calc(1.25 / 0.875));
-    }
-    .atua {
-      --tw-font-weight: 700;
-      font-weight: 700;
-    }
-    .atub {
-      --tw-font-weight: 500;
-      font-weight: 500;
-    }
-    .atuc {
-      --tw-tracking: -0.025em;
-      letter-spacing: -0.025em;
-    }
-    .atud {
-      white-space: nowrap;
-    }
-    .atue {
-      color: oklch(70.7% 0.022 261.325);
-    }
-    .atuf {
-      color: oklch(55.1% 0.027 264.364);
-    }
-    .atug {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    .atuh {
-      color: oklch(21% 0.034 264.665);
-    }
-    .atui {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .atuj {
-      color: #fff;
-    }
-    .atuk,
-    .atul {
-      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .atum {
-      --tw-shadow:
-        0 20px 25px -5px var(--tw-shadow-color, #0000001a), 0 8px 10px -6px var(--tw-shadow-color, #0000001a);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .atun {
-      --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .atuo {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .atup {
-      transition-property:
-        color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from,
-        --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .atuq {
-      transition-property: opacity;
-      transition-timing-function: var(--tw-ease, cubic-bezier(0.4, 0, 0.2, 1));
-      transition-duration: var(--tw-duration, 0.15s);
-    }
-    .atur {
-      transition-behavior: allow-discrete;
-    }
-    .atus {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .atut {
-      --tw-duration: 0.3s;
-      transition-duration: 0.3s;
-    }
-    .atuu {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    .atuv {
-      --tw-ease: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .atuw {
-      --tw-ease: linear;
-      transition-timing-function: linear;
-    }
-    .atux {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .atuy {
-      --anchor-gap: 1px;
-    }
-    .atuz:is(:where(.atva):not(:has(:is([open], :popover-open, :open))) *) {
-      color: oklch(37.3% 0.034 259.733);
-    }
-    @media (hover: hover) {
-      .atvb:is(:where(.atvc):hover *) {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .atvd:is(:where(.atvc):hover *) {
-        color: oklch(27.8% 0.033 256.848);
-      }
-    }
-    .atve:is(:where(.atva):has(:is([open], :popover-open, :open)) *) {
-      background-color: oklch(51.1% 0.262 276.966);
-    }
-    .atvf:is(:where(.atva):has(:is([open], :popover-open, :open)) *) {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .atvg:is(:where(.atvh):has(:is([open], :popover-open, :open)) *) {
-      --tw-duration: 0.15s;
-      transition-duration: 0.15s;
-    }
-    .atvi:is(:where(.atvh):has(:is([open], :popover-open, :open)) *) {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .atvj::backdrop {
-      background-color: #0000;
-    }
-    .atvk:is([open], :popover-open, :open) {
-      display: block;
-    }
-    @media (hover: hover) {
-      .atvl:hover {
-        background-color: oklch(98.5% 0.002 247.839);
-      }
-      .atvm:hover {
-        background-color: oklch(45.7% 0.24 277.023);
-      }
-      .atvn:hover {
-        color: oklch(96.7% 0.003 264.542);
-      }
-      .atvo:hover {
-        color: oklch(55.1% 0.027 264.364);
-      }
-      .atvp:hover {
-        color: oklch(44.6% 0.03 256.802);
-      }
-      .atvq:hover {
-        color: oklch(27.8% 0.033 256.848);
-      }
-      .atvr:hover {
-        color: oklch(58.5% 0.233 277.117);
-      }
-      .atvs:is(:where(.atva):not(:has(:is([open], :popover-open, :open))) *):hover {
-        color: oklch(27.8% 0.033 256.848);
-      }
-    }
-    .atvt:focus {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width))
-        var(--tw-ring-color, currentcolor);
-      box-shadow:
-        var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-        var(--tw-shadow);
-    }
-    .atvu:focus {
-      --tw-ring-color: oklch(58.5% 0.233 277.117);
-    }
-    .atvv:focus {
-      --tw-ring-offset-width: 2px;
-      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    }
-    .atvw:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    @media (forced-colors: active) {
-      .atvw:focus {
-        outline-offset: 2px;
-        outline: 2px solid #0000;
-      }
-    }
-    .atvx:focus {
-      outline-style: var(--tw-outline-style);
-      outline-width: 2px;
-    }
-    .atvy:focus {
-      outline-offset: calc(1px * -1);
-    }
-    .atvz:focus {
-      outline-color: #fff;
-    }
-    .atwa:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-    .atwb[aria-selected='true'] {
-      border-color: oklch(51.1% 0.262 276.966);
-    }
-    .atwc[aria-selected='true'] {
-      color: oklch(51.1% 0.262 276.966);
-    }
-    .atwd[data-closed] {
-      --tw-translate-x: -100%;
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    .atwe[data-closed] {
-      opacity: 0;
-    }
-    .atwf[data-enter] {
-      --tw-duration: 0.2s;
-      transition-duration: 0.2s;
-    }
-    .atwg[data-enter] {
-      --tw-ease: cubic-bezier(0, 0, 0.2, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .atwh[data-leave] {
-      --tw-duration: 0.15s;
-      transition-duration: 0.15s;
-    }
-    .atwi[data-leave] {
-      --tw-ease: cubic-bezier(0.4, 0, 1, 1);
-      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    }
-    @media (min-width: 40rem) {
-      .atwj {
-        margin-top: 0;
-      }
-      .atwk {
-        margin-top: 1rem;
-      }
-      .atwl {
-        margin-top: 4rem;
-      }
-      .atwm {
-        margin-left: 1.5rem;
-      }
-      .atwn {
-        display: flex;
-      }
-      .atwo {
-        width: 12rem;
-        height: 12rem;
-      }
-      .atwp {
-        width: 10rem;
-      }
-      .atwq {
-        min-width: 0;
-      }
-      .atwr {
-        flex: 1;
-      }
-      .atws {
-        flex: none;
-      }
-      .atwt {
-        flex-grow: 0;
-      }
-      .atwu {
-        align-items: baseline;
-      }
-      .atwv {
-        align-items: center;
-      }
-      .atww {
-        justify-content: space-between;
-      }
-      :where(.atwx > :not(:last-child)) {
-        --tw-space-y-reverse: 0;
-        margin-block-start: calc(calc(0.25rem * 0) * var(--tw-space-y-reverse));
-        margin-block-end: calc(calc(0.25rem * 0) * calc(1 - var(--tw-space-y-reverse)));
-      }
-      :where(.atwy > :not(:last-child)) {
-        --tw-space-y-reverse: 0;
-        margin-block-start: calc(calc(0.25rem * 4) * var(--tw-space-y-reverse));
-        margin-block-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-y-reverse)));
-      }
-      :where(.atwz > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(0.25rem * 6) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(0.25rem * 6) * calc(1 - var(--tw-space-x-reverse)));
-      }
-      .atxa {
-        row-gap: 0;
-      }
-      .atxb {
-        padding-inline: 1.5rem;
-      }
-      .atxc {
-        padding-top: 0;
-      }
-      .atxd {
-        padding-top: 6rem;
-      }
-      .atxe {
-        padding-bottom: 8rem;
-      }
-      .atxf {
-        padding-left: 1.5rem;
-      }
-      .atxg {
-        font-size: 0.875rem;
-        line-height: 1.5rem;
-      }
-    }
-    @media (min-width: 48rem) {
-      .atxh {
-        display: flex;
-      }
-      .atxi {
-        min-width: 0;
-      }
-      .atxj {
-        flex: 1;
-      }
-      .atxk {
-        flex-shrink: 0;
-      }
-      .atxl {
-        align-items: baseline;
-      }
-      :where(.atxm > :not(:last-child)) {
-        --tw-space-y-reverse: 0;
-        margin-block-start: calc(calc(0.25rem * 0) * var(--tw-space-y-reverse));
-        margin-block-end: calc(calc(0.25rem * 0) * calc(1 - var(--tw-space-y-reverse)));
-      }
-      :where(.atxn > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(0.25rem * 4) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(0.25rem * 4) * calc(1 - var(--tw-space-x-reverse)));
-      }
-    }
-    @media (min-width: 64rem) {
-      .atxo {
-        grid-column: span 2 / span 2;
-      }
-      .atxp {
-        margin-inline: 1.5rem;
-      }
-      .atxq {
-        margin-left: 2rem;
-      }
-      .atxr {
-        display: block;
-      }
-      .atxs {
-        display: flex;
-      }
-      .atxt {
-        display: none;
-      }
-      .atxu {
-        flex: 1;
-      }
-      .atxv {
-        flex: none;
-      }
-      .atxw {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .atxx {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .atxy {
-        align-items: center;
-      }
-      .atxz {
-        justify-content: flex-end;
-      }
-      .atya {
-        column-gap: 2rem;
-      }
-      :where(.atyb > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(0.25rem * 6) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(0.25rem * 6) * calc(1 - var(--tw-space-x-reverse)));
-      }
-      :where(.atyc > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(0.25rem * 8) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(0.25rem * 8) * calc(1 - var(--tw-space-x-reverse)));
-      }
-      .atyd {
-        row-gap: 0;
-      }
-      .atye {
-        align-self: stretch;
-      }
-      .atyf {
-        padding-inline: 2rem;
-      }
-    }
-  }
-  @property --tw-rotate-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-rotate-z {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-x {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-skew-y {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-space-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-space-x-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-divide-y-reverse {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-border-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-font-weight {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-tracking {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-inset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-shadow-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-shadow-alpha {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 100%;
-  }
-  @property --tw-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-inset-ring-color {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-inset-ring-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-ring-inset {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ring-offset-width {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-ring-offset-color {
-    syntax: '*';
-    inherits: false;
-    initial-value: #fff;
-  }
-  @property --tw-ring-offset-shadow {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-  @property --tw-duration {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-ease {
-    syntax: '*';
-    inherits: false;
-  }
-  @property --tw-outline-style {
-    syntax: '*';
-    inherits: false;
-    initial-value: solid;
-  }
-  @property --tw-translate-x {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-y {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
-  @property --tw-translate-z {
-    syntax: '*';
-    inherits: false;
-    initial-value: 0;
-  }
+
 </style>
-<script src="/plus-assets/build/iframe/components.js?hash=25df7d34d043de1c316a31211aa744b1"></script>
-<link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js" />
-<script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-<script>
-  window.addEventListener('load', () =>
-    window.setTimeout(() => {
-      const makeLink = asset => {
-        const link = document.createElement('link');
-
-        Object.keys(asset).forEach(attribute => {
-          link.setAttribute(attribute, asset[attribute]);
-        });
-
-        return link;
-      };
-
-      const loadNext = (assets, count) =>
-        window.setTimeout(() => {
-          if (count > assets.length) {
-            count = assets.length;
-
-            if (count === 0) {
-              return;
-            }
-          }
-
-          const fragment = new DocumentFragment();
-
-          while (count > 0) {
-            const link = makeLink(assets.shift());
-            fragment.append(link);
-            count--;
-
-            if (assets.length) {
-              link.onload = () => loadNext(assets, 1);
-              link.onerror = () => loadNext(assets, 1);
-            }
-          }
-
-          document.head.append(fragment);
-        });
-
-      loadNext([], 3);
-    })
-  );
-</script>
-<style>
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-</style>
-<body>
-  <div class="atsv">
+<body class="antialiased">
+  <div class="bg-white">
     <!-- Mobile menu -->
     <el-dialog>
-      <dialog id="mobile-menu" class="atvj atxt">
-        <el-dialog-backdrop class="atpb atpe atsp atuq atut atuw atwe"></el-dialog-backdrop>
-        <div tabindex="0" class="atpb atpe atqb atwa">
-          <el-dialog-panel class="atpc atqb atqr atqw atrb atrf atsd atsv attq atum atuo atut atuv atwd">
-            <div class="atqb attc attl atto">
+      <dialog id="mobile-menu" class="[&::backdrop]:bg-transparent lg:hidden">
+        <el-dialog-backdrop class="fixed inset-0 bg-black/25 transition-opacity duration-300 ease-linear [data-closed]:opacity-0"></el-dialog-backdrop>
+        <div tabindex="0" class="fixed inset-0 flex focus:outline-none">
+          <el-dialog-panel class="relative flex w-full max-w-xs transform flex-col overflow-y-auto bg-white pb-12 shadow-xl transition-all duration-300 [data-closed]:-translate-x-full">
+            <div class="flex px-4 pt-5 pb-2">
               <button
                 type="button"
                 command="close"
                 commandfor="mobile-menu"
-                class="atpc atpl atqf atrg atrj atsf atsz atue">
-                <span class="atpa atpd"></span>
-                <span class="atoz">Close menu</span>
+                class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Close menu</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -1372,175 +35,175 @@
                   stroke-width="1.5"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="atqi">
+                  class="w-6 h-6">
                   <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </button>
             </div>
 
             <!-- Links -->
-            <el-tab-group class="atpq atqa">
-              <div class="atsi atsm">
-                <el-tab-list class="atpv atqb atrv attc">
-                  <button class="atqy atsj atso atta attf attx atub atud atuh atwb atwc">Women</button>
-                  <button class="atqy atsj atso atta attf attx atub atud atuh atwb atwc">Men</button>
+            <el-tab-group class="mt-2 block">
+              <div class="border-b border-gray-200">
+                <el-tab-list class="-mb-px flex space-x-8 px-4">
+                  <button class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium whitespace-nowrap text-gray-900 [aria-selected=true]:border-indigo-600 [aria-selected=true]:text-indigo-600">Women</button>
+                  <button class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium whitespace-nowrap text-gray-900 [aria-selected=true]:border-indigo-600 [aria-selected=true]:text-indigo-600">Men</button>
                 </el-tab-list>
               </div>
               <el-tab-panels>
-                <div class="atrq attc attm attp">
-                  <div class="atqd atrd atrh atrs atrw">
-                    <div class="atqd atrd atrs atrw">
+                <div class="space-y-12 px-4 pt-10 pb-6">
+                  <div class="grid grid-cols-1 items-start gap-x-6 gap-y-10">
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-10">
                       <div>
-                        <p id="mobile-featured-heading-0" class="atub atuh">Featured</p>
-                        <ul role="list" aria-labelledby="mobile-featured-heading-0" class="atpr atrp">
-                          <li class="atqb">
-                            <a href="#" class="atuf">Sleep</a>
+                        <p id="mobile-featured-heading-0" class="font-medium text-gray-900">Featured</p>
+                        <ul role="list" aria-labelledby="mobile-featured-heading-0" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Sleep</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Swimwear</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Swimwear</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Underwear</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Underwear</a>
                           </li>
                         </ul>
                       </div>
                       <div>
-                        <p id="mobile-categories-heading" class="atub atuh">Categories</p>
-                        <ul role="list" aria-labelledby="mobile-categories-heading" class="atpr atrp">
-                          <li class="atqb">
-                            <a href="#" class="atuf">Basic Tees</a>
+                        <p id="mobile-categories-heading" class="font-medium text-gray-900">Categories</p>
+                        <ul role="list" aria-labelledby="mobile-categories-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Basic Tees</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Artwork Tees</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Artwork Tees</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Bottoms</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Bottoms</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Underwear</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Underwear</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Accessories</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Accessories</a>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="atqd atrd atrs atrw">
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-10">
                       <div>
-                        <p id="mobile-collection-heading" class="atub atuh">Collection</p>
-                        <ul role="list" aria-labelledby="mobile-collection-heading" class="atpr atrp">
-                          <li class="atqb">
-                            <a href="#" class="atuf">Everything</a>
+                        <p id="mobile-collection-heading" class="font-medium text-gray-900">Collection</p>
+                        <ul role="list" aria-labelledby="mobile-collection-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Everything</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Core</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Core</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">New Arrivals</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">New Arrivals</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Sale</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Sale</a>
                           </li>
                         </ul>
                       </div>
 
                       <div>
-                        <p id="mobile-brand-heading" class="atub atuh">Brands</p>
-                        <ul role="list" aria-labelledby="mobile-brand-heading" class="atpr atrp">
-                          <li class="atqb">
-                            <a href="#" class="atuf">Full Nelson</a>
+                        <p id="mobile-brand-heading" class="font-medium text-gray-900">Brands</p>
+                        <ul role="list" aria-labelledby="mobile-brand-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Full Nelson</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">My Way</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">My Way</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Re-Arranged</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Re-Arranged</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Counterfeit</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Counterfeit</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Significant Other</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Significant Other</a>
                           </li>
                         </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div hidden class="atrq attc attm attp">
-                  <div class="atqd atrd atrh atrs atrw">
-                    <div class="atqd atrd atrs atrw">
+                <div hidden class="space-y-12 px-4 pt-10 pb-6">
+                  <div class="grid grid-cols-1 items-start gap-x-6 gap-y-10">
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-10">
                       <div>
-                        <p id="mobile-featured-heading-1" class="atub atuh">Featured</p>
-                        <ul role="list" aria-labelledby="mobile-featured-heading-1" class="atpr atrp">
-                          <li class="atqb">
-                            <a href="#" class="atuf">Casual</a>
+                        <p id="mobile-featured-heading-1" class="font-medium text-gray-900">Featured</p>
+                        <ul role="list" aria-labelledby="mobile-featured-heading-1" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Casual</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Boxers</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Boxers</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Outdoor</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Outdoor</a>
                           </li>
                         </ul>
                       </div>
                       <div>
-                        <p id="mobile-categories-heading" class="atub atuh">Categories</p>
-                        <ul role="list" aria-labelledby="mobile-categories-heading" class="atpr atrp">
-                          <li class="atqb">
-                            <a href="#" class="atuf">Artwork Tees</a>
+                        <p id="mobile-categories-heading" class="font-medium text-gray-900">Categories</p>
+                        <ul role="list" aria-labelledby="mobile-categories-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Artwork Tees</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Pants</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Pants</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Accessories</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Accessories</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Boxers</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Boxers</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Basic Tees</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Basic Tees</a>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="atqd atrd atrs atrw">
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-10">
                       <div>
-                        <p id="mobile-collection-heading" class="atub atuh">Collection</p>
-                        <ul role="list" aria-labelledby="mobile-collection-heading" class="atpr atrp">
-                          <li class="atqb">
-                            <a href="#" class="atuf">Everything</a>
+                        <p id="mobile-collection-heading" class="font-medium text-gray-900">Collection</p>
+                        <ul role="list" aria-labelledby="mobile-collection-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Everything</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Core</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Core</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">New Arrivals</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">New Arrivals</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Sale</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Sale</a>
                           </li>
                         </ul>
                       </div>
 
                       <div>
-                        <p id="mobile-brand-heading" class="atub atuh">Brands</p>
-                        <ul role="list" aria-labelledby="mobile-brand-heading" class="atpr atrp">
-                          <li class="atqb">
-                            <a href="#" class="atuf">Significant Other</a>
+                        <p id="mobile-brand-heading" class="font-medium text-gray-900">Brands</p>
+                        <ul role="list" aria-labelledby="mobile-brand-heading" class="mt-6 space-y-6">
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Significant Other</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">My Way</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">My Way</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Counterfeit</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Counterfeit</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Re-Arranged</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Re-Arranged</a>
                           </li>
-                          <li class="atqb">
-                            <a href="#" class="atuf">Full Nelson</a>
+                          <li class="flex">
+                            <a href="#" class="text-gray-500">Full Nelson</a>
                           </li>
                         </ul>
                       </div>
@@ -1550,33 +213,33 @@
               </el-tab-panels>
             </el-tab-group>
 
-            <div class="atrp atsh atsm attc attg">
-              <div class="atqc">
-                <a href="#" class="atpl atqa atsz atub atuh">Company</a>
+            <div class="space-y-6 border-t border-gray-200 px-4 items-center">
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Company</a>
               </div>
-              <div class="atqc">
-                <a href="#" class="atpl atqa atsz atub atuh">Stores</a>
-              </div>
-            </div>
-
-            <div class="atrp atsh atsm attc attg">
-              <div class="atqc">
-                <a href="#" class="atpl atqa atsz atub atuh">Create an account</a>
-              </div>
-              <div class="atqc">
-                <a href="#" class="atpl atqa atsz atub atuh">Sign in</a>
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Stores</a>
               </div>
             </div>
 
-            <div class="atrp atsh atsm attc attg">
+            <div class="space-y-6 border-t border-gray-200 px-4 items-center">
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Create an account</a>
+              </div>
+              <div class="flow-root">
+                <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
+              </div>
+            </div>
+
+            <div class="space-y-6 border-t border-gray-200 px-4 items-center">
               <!-- Currency selector -->
               <form>
-                <div class="atpw atqg atrd">
+                <div class="-ml-2 inline-grid grid-cols-1">
                   <select
                     id="mobile-currency"
                     name="currency"
                     aria-label="Currency"
-                    class="atpj atpk atqr atrc atsf atsv attd attn attr attx atub atug atvd atvx atxg">
+                    class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-0.5 pr-7 pl-2 text-base font-medium text-gray-700 group-hover:text-gray-800 focus:outline-2 sm:text-sm">
                     <option>CAD</option>
                     <option>USD</option>
                     <option>AUD</option>
@@ -1588,7 +251,7 @@
                     fill="currentColor"
                     data-slot="icon"
                     aria-hidden="true"
-                    class="atoy atpj atpk atpt atqh atrz atsa atsx">
+                    class="pointer-events-none col-start-1 row-start-1 mr-1 w-5 h-5 self-center justify-self-end fill-gray-500">
                     <path
                       d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
                       clip-rule="evenodd"
@@ -1602,19 +265,19 @@
       </dialog>
     </el-dialog>
 
-    <header class="atpc">
+    <header class="relative">
       <nav aria-label="Top">
         <!-- Top navigation -->
-        <div class="atss">
-          <div class="atpo atqb atqn atqu atrg atri attc atxb atyf">
+        <div class="bg-gray-900">
+          <div class="mx-auto flex h-10 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <!-- Currency selector -->
-            <form class="atqe atxr atxu">
-              <div class="atpw atqg atrd">
+            <form class="hidden lg:block lg:flex-1">
+              <div class="-ml-2 inline-grid grid-cols-1">
                 <select
                   id="desktop-currency"
                   name="currency"
                   aria-label="Currency"
-                  class="atpj atpk atqr atrc atsf atss attd attn attr attv attx atub atuj atvx atvy atvz atxg">
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-900 py-0.5 pr-7 pl-2 text-left text-base font-medium text-white group-hover:text-gray-800 focus:outline-2 focus:-outline-offset-1 focus:outline-white sm:text-sm">
                   <option>CAD</option>
                   <option>USD</option>
                   <option>AUD</option>
@@ -1626,7 +289,7 @@
                   fill="currentColor"
                   data-slot="icon"
                   aria-hidden="true"
-                  class="atoy atpj atpk atpt atqh atrz atsa atsw">
+                  class="pointer-events-none col-start-1 row-start-1 mr-1 w-5 h-5 self-center justify-self-end fill-gray-300">
                   <path
                     d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
                     clip-rule="evenodd"
@@ -1635,358 +298,320 @@
               </div>
             </form>
 
-            <p class="atqy attu attz atub atuj atxv">Get free delivery on orders over $100</p>
+            <p class="flex-1 text-center text-sm font-medium text-white lg:flex-none">Get free delivery on orders over $100</p>
 
-            <div class="atqe atxs atxu atxy atxz atyb">
-              <a href="#" class="attz atub atuj atvn">Create an account</a>
-              <span aria-hidden="true" class="atql atqs atsr"></span>
-              <a href="#" class="attz atub atuj atvn">Sign in</a>
+            <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+              <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Create an account</a>
+              <span aria-hidden="true" class="h-6 w-px bg-[oklch(44.6%_0.03_256.802)]"></span>
+              <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Sign in</a>
             </div>
           </div>
         </div>
 
         <!-- Secondary navigation -->
-        <div class="atsv">
-          <div class="atpo atqu attc atxb atyf">
-            <div class="atsi atsm">
-              <div class="atqb atqo atrg atri">
-                <!-- Logo (lg+) -->
-                <div class="atqe atxs atxy">
-                  <a href="#">
-                    <span class="atoz">Your Company</span>
-                    <img
-                      src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                      alt=""
-                      class="atqm atqq" />
-                  </a>
-                </div>
-
-                <div class="atqe atqp atxs">
-                  <!-- Mega menus -->
-                  <el-popover-group class="atvh atqe atxq atxr atye">
-                    <div class="atqb atqp atrv">
-                      <div class="atva atqb">
-                        <div class="atpc atqb">
-                          <button
-                            popovertarget="desktop-menu-women"
-                            class="atpc atqb atrg atrj attz atub atup atus atux atuz atvf atvs">
-                            Women
-                            <span
-                              aria-hidden="true"
-                              class="atpa atpf atph atpi atqk atsu atus atuu atve atvg atvi"></span>
-                          </button>
-                        </div>
-                        <el-popover
-                          id="desktop-menu-women"
-                          anchor="bottom"
-                          popover
-                          class="atqr atsc atsv attz atuf atuo atur atuy atvj atvk atwe atwf atwg atwh atwi">
-                          <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                          <div aria-hidden="true" class="atpa atpe atpg atsv atul"></div>
-                          <div class="atpc atsv">
-                            <div class="atpo atqu attc atxb atyf">
-                              <div class="atqd atre atrh atrt atrw attm attq">
-                                <div class="atqd atre atrt atrw">
-                                  <div>
-                                    <p id="desktop-featured-heading-0" class="atub atuh">Featured</p>
-                                    <ul
-                                      role="list"
-                                      aria-labelledby="desktop-featured-heading-0"
-                                      class="atpr atrp atwk atwy">
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Sleep</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Swimwear</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Underwear</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div>
-                                    <p id="desktop-categories-heading" class="atub atuh">Categories</p>
-                                    <ul
-                                      role="list"
-                                      aria-labelledby="desktop-categories-heading"
-                                      class="atpr atrp atwk atwy">
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Basic Tees</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Artwork Tees</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Bottoms</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Underwear</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Accessories</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="atqd atre atrt atrw">
-                                  <div>
-                                    <p id="desktop-collection-heading" class="atub atuh">Collection</p>
-                                    <ul
-                                      role="list"
-                                      aria-labelledby="desktop-collection-heading"
-                                      class="atpr atrp atwk atwy">
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Everything</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Core</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">New Arrivals</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Sale</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-
-                                  <div>
-                                    <p id="desktop-brand-heading" class="atub atuh">Brands</p>
-                                    <ul role="list" aria-labelledby="desktop-brand-heading" class="atpr atrp atwk atwy">
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Full Nelson</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">My Way</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Re-Arranged</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Counterfeit</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Significant Other</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </el-popover>
-                      </div>
-                      <div class="atva atqb">
-                        <div class="atpc atqb">
-                          <button
-                            popovertarget="desktop-menu-men"
-                            class="atpc atqb atrg atrj attz atub atup atus atux atuz atvf atvs">
-                            Men
-                            <span
-                              aria-hidden="true"
-                              class="atpa atpf atph atpi atqk atsu atus atuu atve atvg atvi"></span>
-                          </button>
-                        </div>
-                        <el-popover
-                          id="desktop-menu-men"
-                          anchor="bottom"
-                          popover
-                          class="atqr atsc atsv attz atuf atuo atur atuy atvj atvk atwe atwf atwg atwh atwi">
-                          <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                          <div aria-hidden="true" class="atpa atpe atpg atsv atul"></div>
-                          <div class="atpc atsv">
-                            <div class="atpo atqu attc atxb atyf">
-                              <div class="atqd atre atrh atrt atrw attm attq">
-                                <div class="atqd atre atrt atrw">
-                                  <div>
-                                    <p id="desktop-featured-heading-1" class="atub atuh">Featured</p>
-                                    <ul
-                                      role="list"
-                                      aria-labelledby="desktop-featured-heading-1"
-                                      class="atpr atrp atwk atwy">
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Casual</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Boxers</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Outdoor</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div>
-                                    <p id="desktop-categories-heading" class="atub atuh">Categories</p>
-                                    <ul
-                                      role="list"
-                                      aria-labelledby="desktop-categories-heading"
-                                      class="atpr atrp atwk atwy">
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Artwork Tees</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Pants</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Accessories</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Boxers</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Basic Tees</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="atqd atre atrt atrw">
-                                  <div>
-                                    <p id="desktop-collection-heading" class="atub atuh">Collection</p>
-                                    <ul
-                                      role="list"
-                                      aria-labelledby="desktop-collection-heading"
-                                      class="atpr atrp atwk atwy">
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Everything</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Core</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">New Arrivals</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Sale</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-
-                                  <div>
-                                    <p id="desktop-brand-heading" class="atub atuh">Brands</p>
-                                    <ul role="list" aria-labelledby="desktop-brand-heading" class="atpr atrp atwk atwy">
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Significant Other</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">My Way</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Counterfeit</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Re-Arranged</a>
-                                      </li>
-                                      <li class="atqb">
-                                        <a href="#" class="atvq">Full Nelson</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </el-popover>
-                      </div>
-
-                      <a href="#" class="atqb atrg attz atub atug atvq">Company</a>
-                      <a href="#" class="atqb atrg attz atub atug atvq">Stores</a>
-                    </div>
-                  </el-popover-group>
-                </div>
-
-                <!-- Mobile menu and search (lg-) -->
-                <div class="atqb atqy atrg atxt">
-                  <button type="button" command="show-modal" commandfor="mobile-menu" class="atpw atsf atsv atsz atue">
-                    <span class="atoz">Open menu</span>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="atqi">
-                      <path
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </button>
-
-                  <!-- Search -->
-                  <a href="#" class="atpx atsz atue atvo">
-                    <span class="atoz">Search</span>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="atqi">
-                      <path
-                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-
-                <!-- Logo (lg-) -->
-                <a href="#" class="atxt">
-                  <span class="atoz">Your Company</span>
+        <div class="bg-white">
+          <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="border-b border-gray-200">
+              <div class="flex h-16 items-center justify-between">
+              <!-- Logo (lg+) -->
+              <div class="hidden lg:flex lg:items-center">
+                <a href="#">
+                  <span class="sr-only">Your Company</span>
                   <img
                     src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                     alt=""
-                    class="atqm atqq" />
+                    class="h-8 w-auto" />
                 </a>
+              </div>
 
-                <div class="atqb atqy atrg atrk">
-                  <div class="atqb atrg atxq">
-                    <div class="atqb atrv">
-                      <div class="atqe atxs">
-                        <a href="#" class="atpl atsz atue atvo">
-                          <span class="atoz">Search</span>
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            data-slot="icon"
+              <div class="hidden h-full lg:flex">
+                <!-- Mega menus -->
+                <el-popover-group class="hidden lg:ml-8 lg:block lg:self-stretch">
+                  <div class="flex h-full space-x-8">
+                    <div class="group flex">
+                      <div class="relative flex">
+                        <button
+                          popovertarget="desktop-menu-women"
+                          class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out group-not-has-[:is([open],:popover-open,:open)]:text-gray-700 group-has-[:is([open],:popover-open,:open)]:text-indigo-600 group-not-has-[:is([open],:popover-open,:open)]:hover:text-gray-800">
+                          Women
+                          <span
                             aria-hidden="true"
-                            class="atqi">
-                            <path
-                              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                              stroke-linecap="round"
-                              stroke-linejoin="round" />
-                          </svg>
-                        </a>
+                            class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent transition-all duration-200 ease-in group-has-[:is([open],:popover-open,:open)]:bg-indigo-600 group-has-[:is([open],:popover-open,:open)]:duration-150 group-has-[:is([open],:popover-open,:open)]:ease-out"></span>
+                        </button>
                       </div>
+                      <el-popover
+                        id="desktop-menu-women"
+                        anchor="bottom"
+                        popover
+                        style="--anchor-gap: 1px"
+                        class="w-full overflow-visible bg-white text-sm text-gray-500 transition-all transition-discrete [&::backdrop]:bg-transparent [&[open]]:block [data-closed]:opacity-0 [data-enter]:duration-200 [data-enter]:ease-out [data-leave]:duration-150 [data-leave]:ease-in">
+                        <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+                        <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow-sm"></div>
+                        <div class="relative bg-white">
+                          <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-2 items-start gap-x-8 gap-y-10 pt-10 pb-12">
+                              <div class="grid grid-cols-2 gap-x-8 gap-y-10">
+                                <div>
+                                  <p id="desktop-featured-heading-0" class="font-medium text-gray-900">Featured</p>
+                                  <ul
+                                    role="list"
+                                    aria-labelledby="desktop-featured-heading-0"
+                                    class="mt-6 space-y-4 sm:mt-4">
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Sleep</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Swimwear</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Underwear</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div>
+                                  <p id="desktop-categories-heading" class="font-medium text-gray-900">Categories</p>
+                                  <ul
+                                    role="list"
+                                    aria-labelledby="desktop-categories-heading"
+                                    class="mt-6 space-y-4 sm:mt-4">
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Basic Tees</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Artwork Tees</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Bottoms</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Underwear</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Accessories</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="grid grid-cols-2 gap-x-8 gap-y-10">
+                                <div>
+                                  <p id="desktop-collection-heading" class="font-medium text-gray-900">Collection</p>
+                                  <ul
+                                    role="list"
+                                    aria-labelledby="desktop-collection-heading"
+                                    class="mt-6 space-y-4 sm:mt-4">
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Everything</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Core</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">New Arrivals</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Sale</a>
+                                    </li>
+                                  </ul>
+                                </div>
 
-                      <div class="atqb">
-                        <a href="#" class="atpl atsz atue atvo">
-                          <span class="atoz">Account</span>
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            data-slot="icon"
+                                <div>
+                                  <p id="desktop-brand-heading" class="font-medium text-gray-900">Brands</p>
+                                  <ul role="list" aria-labelledby="desktop-brand-heading" class="mt-6 space-y-4 sm:mt-4">
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Full Nelson</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">My Way</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Re-Arranged</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Counterfeit</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Significant Other</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </el-popover>
+                    </div>
+                    <div class="group flex">
+                      <div class="relative flex">
+                        <button
+                          popovertarget="desktop-menu-men"
+                          class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out group-not-has-[:is([open],:popover-open,:open)]:text-gray-700 group-has-[:is([open],:popover-open,:open)]:text-indigo-600 group-not-has-[:is([open],:popover-open,:open)]:hover:text-gray-800">
+                          Men
+                          <span
                             aria-hidden="true"
-                            class="atqi">
-                            <path
-                              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                              stroke-linecap="round"
-                              stroke-linejoin="round" />
-                          </svg>
-                        </a>
+                            class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent transition-all duration-200 ease-in group-has-[:is([open],:popover-open,:open)]:bg-indigo-600 group-has-[:is([open],:popover-open,:open)]:duration-150 group-has-[:is([open],:popover-open,:open)]:ease-out"></span>
+                        </button>
                       </div>
+                      <el-popover
+                        id="desktop-menu-men"
+                        anchor="bottom"
+                        popover
+                        style="--anchor-gap: 1px"
+                        class="w-full overflow-visible bg-white text-sm text-gray-500 transition-all transition-discrete [&::backdrop]:bg-transparent [&[open]]:block [data-closed]:opacity-0 [data-enter]:duration-200 [data-enter]:ease-out [data-leave]:duration-150 [data-leave]:ease-in">
+                        <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+                        <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow-sm"></div>
+                        <div class="relative bg-white">
+                          <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-2 items-start gap-x-8 gap-y-10 pt-10 pb-12">
+                              <div class="grid grid-cols-2 gap-x-8 gap-y-10">
+                                <div>
+                                  <p id="desktop-featured-heading-1" class="font-medium text-gray-900">Featured</p>
+                                  <ul
+                                    role="list"
+                                    aria-labelledby="desktop-featured-heading-1"
+                                    class="mt-6 space-y-4 sm:mt-4">
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Casual</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Boxers</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Outdoor</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div>
+                                  <p id="desktop-categories-heading" class="font-medium text-gray-900">Categories</p>
+                                  <ul
+                                    role="list"
+                                    aria-labelledby="desktop-categories-heading"
+                                    class="mt-6 space-y-4 sm:mt-4">
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Artwork Tees</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Pants</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Accessories</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Boxers</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Basic Tees</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="grid grid-cols-2 gap-x-8 gap-y-10">
+                                <div>
+                                  <p id="desktop-collection-heading" class="font-medium text-gray-900">Collection</p>
+                                  <ul
+                                    role="list"
+                                    aria-labelledby="desktop-collection-heading"
+                                    class="mt-6 space-y-4 sm:mt-4">
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Everything</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Core</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">New Arrivals</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Sale</a>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                                <div>
+                                  <p id="desktop-brand-heading" class="font-medium text-gray-900">Brands</p>
+                                  <ul role="list" aria-labelledby="desktop-brand-heading" class="mt-6 space-y-4 sm:mt-4">
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Significant Other</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">My Way</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Counterfeit</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Re-Arranged</a>
+                                    </li>
+                                    <li class="flex">
+                                      <a href="#" class="hover:text-gray-800">Full Nelson</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </el-popover>
                     </div>
 
-                    <span aria-hidden="true" class="atpn atql atqs atsq atxp"></span>
+                    <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
+                    <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
+                  </div>
+                </el-popover-group>
+              </div>
 
-                    <div class="atqc">
-                      <a href="#" class="atvc atpl atqb atrg atsz">
+              <!-- Mobile menu and search (lg-) -->
+              <div class="flex flex-1 items-center lg:hidden">
+                <button type="button" command="show-modal" commandfor="mobile-menu" class="-ml-2 rounded-md bg-white p-2 text-gray-400">
+                  <span class="sr-only">Open menu</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="w-6 h-6">
+                    <path
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+
+                <!-- Search -->
+                <a href="#" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">Search</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="w-6 h-6">
+                    <path
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Logo (lg-) -->
+              <a href="#" class="lg:hidden">
+                <span class="sr-only">Your Company</span>
+                <img
+                  src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                  alt=""
+                  class="h-8 w-auto" />
+              </a>
+
+              <div class="flex flex-1 items-center justify-end">
+                <div class="flex items-center lg:ml-8">
+                  <div class="flex space-x-8">
+                    <div class="hidden lg:flex">
+                      <a href="#" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Search</span>
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
@@ -1994,16 +619,55 @@
                           stroke-width="1.5"
                           data-slot="icon"
                           aria-hidden="true"
-                          class="atqi atra atue atvb">
+                          class="w-6 h-6">
                           <path
-                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                             stroke-linecap="round"
                             stroke-linejoin="round" />
                         </svg>
-                        <span class="atpx attz atub atug atvd">0</span>
-                        <span class="atoz">items in cart, view bag</span>
                       </a>
                     </div>
+
+                    <div class="flex">
+                      <a href="#" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Account</span>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          data-slot="icon"
+                          aria-hidden="true"
+                          class="w-6 h-6">
+                          <path
+                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                            stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <span aria-hidden="true" class="mx-4 h-6 w-px bg-gray-200 lg:mx-6"></span>
+
+                  <div class="flow-root">
+                    <a href="#" class="group -m-2 flex items-center p-2">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        data-slot="icon"
+                        aria-hidden="true"
+                        class="w-6 h-6 shrink-0 text-gray-400 group-hover:text-gray-500">
+                        <path
+                          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                      <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                      <span class="sr-only">items in cart, view bag</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -2013,117 +677,117 @@
       </nav>
     </header>
 
-    <main class="atpo atqt attc atti atxb atxd atxe atyf">
-      <div class="atqv">
-        <h1 class="attw atua atuc atuh">Your Orders</h1>
-        <p class="atpq attz atuf">Check the status of recent orders, manage returns, and discover similar products.</p>
+    <main class="mx-auto max-w-3xl px-4 sm:px-6 sm:pt-24 sm:pb-32 lg:px-8">
+      <div class="max-w-xl">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Your Orders</h1>
+        <p class="mt-2 text-sm text-gray-500">Check the status of recent orders, manage returns, and discover similar products.</p>
       </div>
 
-      <div class="atps atrr atwl">
+      <div class="mt-12 space-y-16 sm:mt-16">
         <section aria-labelledby="4376-heading">
-          <div class="atrm atxh atxl atxm atxn">
-            <h2 id="4376-heading" class="atty atub atuh atxk">Order #4376</h2>
-            <div class="atro atwn atwu atww atwx atxi atxj">
-              <p class="attz atub atuf">Delivered on January 22, 2021</p>
-              <div class="atqb attz atub">
-                <a href="#" class="atui atvr">Manage order</a>
-                <div class="atpz atsk atsm attt atwm atxf">
-                  <a href="#" class="atui atvr">View Invoice</a>
+          <div class="space-y-1 md:flex md:items-baseline md:space-y-0 md:space-x-4">
+            <h2 id="4376-heading" class="text-lg font-medium text-gray-900 md:shrink-0">Order #4376</h2>
+            <div class="space-y-5 sm:flex sm:items-baseline sm:justify-between sm:space-y-0 md:min-w-0 md:flex-1">
+              <p class="text-sm font-medium text-gray-500">Delivered on January 22, 2021</p>
+              <div class="flex text-sm font-medium">
+                <a href="#" class="text-indigo-600 hover:text-indigo-500">Manage order</a>
+                <div class="ml-4 border-l border-gray-200 pl-4 sm:ml-6 sm:pl-6">
+                  <a href="#" class="text-indigo-600 hover:text-indigo-500">View Invoice</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="atpr atpu atqc atrx atry atsh atsm">
-            <div class="attg atwn">
-              <div class="atqb atru atwq atwr atwz atyc">
+          <div class="mt-6 -mb-6 flow-root divide-y divide-gray-200 border-t border-gray-200">
+            <div class="py-6 sm:flex">
+              <div class="flex space-x-4 min-w-0 flex-1 sm:min-w-0 sm:flex-1 sm:space-x-6 lg:space-x-8">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/order-history-page-07-product-01.jpg"
                   alt="Brass puzzle in the shape of a jack with overlapping rounded posts."
-                  class="atqj atqz atsf atsy atwo" />
-                <div class="atqx atqy attk atxc">
-                  <h3 class="attz atub atuh">
+                  class="w-20 h-20 flex-none rounded-md sm:w-48 sm:h-48" />
+                <div class="min-w-0 flex-1 pt-1.5 sm:pt-0">
+                  <h3 class="text-sm font-medium text-gray-900">
                     <a href="#">Machined Brass Puzzle</a>
                   </h3>
-                  <p class="atsb attz atuf">
+                  <p class="truncate text-sm text-gray-500">
                     <span>Brass</span>
-                    <span aria-hidden="true" class="atpm atue">&middot;</span>
+                    <span aria-hidden="true" class="mx-1 text-gray-400">&middot;</span>
                     <span>3&quot; x 3&quot; x 3&quot;</span>
                   </p>
-                  <p class="atpp atub atuh">$95.00</p>
+                  <p class="mt-1 font-medium text-gray-900">$95.00</p>
                 </div>
               </div>
-              <div class="atpr atrn atwj atwm atwp atws">
+              <div class="mt-6 space-y-4 sm:mt-0 sm:ml-6 sm:w-40 sm:flex-none">
                 <button
                   type="button"
-                  class="atqb atqr atrg atrj atsf atsg atso atst attb atte attz atub atuj atun atvm atvt atvu atvv atvw atwt">
+                  class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-2.5 py-2 text-sm font-medium text-white shadow-[0_1px_2px_0_#0000000d] hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
                   Buy again
                 </button>
                 <button
                   type="button"
-                  class="atqb atqr atrg atrj atsf atsg atsn atsv attb atte attz atub atug atun atvl atvt atvu atvv atvw atwt">
+                  class="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-2.5 py-2 text-sm font-medium text-gray-700 shadow-xs hover:bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:flex-grow-0">
                   Shop similar
                 </button>
               </div>
             </div>
-            <div class="attg atwn">
-              <div class="atqb atru atwq atwr atwz atyc">
+            <div class="py-6 sm:flex">
+              <div class="flex space-x-4 min-w-0 flex-1 sm:min-w-0 sm:flex-1 sm:space-x-6 lg:space-x-8">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/order-history-page-07-product-02.jpg"
                   alt="Large cylindrical planter with textured natural porcelain color and separate drainage base."
-                  class="atqj atqz atsf atsy atwo" />
-                <div class="atqx atqy attk atxc">
-                  <h3 class="attz atub atuh">
+                  class="w-20 h-20 flex-none rounded-md sm:w-48 sm:h-48" />
+                <div class="min-w-0 flex-1 pt-1.5 sm:pt-0">
+                  <h3 class="text-sm font-medium text-gray-900">
                     <a href="#">Earthen Planter</a>
                   </h3>
-                  <p class="atsb attz atuf">
+                  <p class="truncate text-sm text-gray-500">
                     <span>Natural</span>
-                    <span aria-hidden="true" class="atpm atue">&middot;</span>
+                    <span aria-hidden="true" class="mx-1 text-gray-400">&middot;</span>
                     <span>Large</span>
                   </p>
-                  <p class="atpp atub atuh">$62.00</p>
+                  <p class="mt-1 font-medium text-gray-900">$62.00</p>
                 </div>
               </div>
-              <div class="atpr atrn atwj atwm atwp atws">
+              <div class="mt-6 space-y-4 sm:mt-0 sm:ml-6 sm:w-40 sm:flex-none">
                 <button
                   type="button"
-                  class="atqb atqr atrg atrj atsf atsg atso atst attb atte attz atub atuj atun atvm atvt atvu atvv atvw atwt">
+                  class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-2.5 py-2 text-sm font-medium text-white shadow-[0_1px_2px_0_#0000000d] hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
                   Buy again
                 </button>
                 <button
                   type="button"
-                  class="atqb atqr atrg atrj atsf atsg atsn atsv attb atte attz atub atug atun atvl atvt atvu atvv atvw atwt">
+                  class="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-2.5 py-2 text-sm font-medium text-gray-700 shadow-xs hover:bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:flex-grow-0">
                   Shop similar
                 </button>
               </div>
             </div>
-            <div class="attg atwn">
-              <div class="atqb atru atwq atwr atwz atyc">
+            <div class="py-6 sm:flex">
+              <div class="flex space-x-4 min-w-0 flex-1 sm:min-w-0 sm:flex-1 sm:space-x-6 lg:space-x-8">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/order-history-page-07-product-03.jpg"
                   alt="Olive green leather card-sized wallet with matching hand stitched and embossed logo on lower right."
-                  class="atqj atqz atsf atsy atwo" />
-                <div class="atqx atqy attk atxc">
-                  <h3 class="attz atub atuh">
+                  class="w-20 h-20 flex-none rounded-md sm:w-48 sm:h-48" />
+                <div class="min-w-0 flex-1 pt-1.5 sm:pt-0">
+                  <h3 class="text-sm font-medium text-gray-900">
                     <a href="#">Minimalist Leather Wallet</a>
                   </h3>
-                  <p class="atsb attz atuf">
+                  <p class="truncate text-sm text-gray-500">
                     <span>Olive</span>
-                    <span aria-hidden="true" class="atpm atue">&middot;</span>
+                    <span aria-hidden="true" class="mx-1 text-gray-400">&middot;</span>
                     <span>4&quot; L x 2.75&quot; W</span>
                   </p>
-                  <p class="atpp atub atuh">$640.00</p>
+                  <p class="mt-1 font-medium text-gray-900">$640.00</p>
                 </div>
               </div>
-              <div class="atpr atrn atwj atwm atwp atws">
+              <div class="mt-6 space-y-4 sm:mt-0 sm:ml-6 sm:w-40 sm:flex-none">
                 <button
                   type="button"
-                  class="atqb atqr atrg atrj atsf atsg atso atst attb atte attz atub atuj atun atvm atvt atvu atvv atvw atwt">
+                  class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-2.5 py-2 text-sm font-medium text-white shadow-[0_1px_2px_0_#0000000d] hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
                   Buy again
                 </button>
                 <button
                   type="button"
-                  class="atqb atqr atrg atrj atsf atsg atsn atsv attb atte attz atub atug atun atvl atvt atvu atvv atvw atwt">
+                  class="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-2.5 py-2 text-sm font-medium text-gray-700 shadow-xs hover:bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:flex-grow-0">
                   Shop similar
                 </button>
               </div>
@@ -2131,47 +795,47 @@
           </div>
         </section>
         <section aria-labelledby="4134-heading">
-          <div class="atrm atxh atxl atxm atxn">
-            <h2 id="4134-heading" class="atty atub atuh atxk">Order #4134</h2>
-            <div class="atro atwn atwu atww atwx atxi atxj">
-              <p class="attz atub atuf">Delivered on January 5, 2021</p>
-              <div class="atqb attz atub">
-                <a href="#" class="atui atvr">Manage order</a>
-                <div class="atpz atsk atsm attt atwm atxf">
-                  <a href="#" class="atui atvr">View Invoice</a>
+          <div class="space-y-1 md:flex md:items-baseline md:space-y-0 md:space-x-4">
+            <h2 id="4134-heading" class="text-lg font-medium text-gray-900 md:shrink-0">Order #4134</h2>
+            <div class="space-y-5 sm:flex sm:items-baseline sm:justify-between sm:space-y-0 md:min-w-0 md:flex-1">
+              <p class="text-sm font-medium text-gray-500">Delivered on January 5, 2021</p>
+              <div class="flex text-sm font-medium">
+                <a href="#" class="text-indigo-600 hover:text-indigo-500">Manage order</a>
+                <div class="ml-4 border-l border-gray-200 pl-4 sm:ml-6 sm:pl-6">
+                  <a href="#" class="text-indigo-600 hover:text-indigo-500">View Invoice</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="atpr atpu atqc atrx atry atsh atsm">
-            <div class="attg atwn">
-              <div class="atqb atru atwq atwr atwz atyc">
+          <div class="mt-6 -mb-6 flow-root divide-y divide-gray-200 border-t border-gray-200">
+            <div class="py-6 sm:flex">
+              <div class="flex space-x-4 min-w-0 flex-1 sm:min-w-0 sm:flex-1 sm:space-x-6 lg:space-x-8">
                 <img
                   src="https://tailwindcss.com/plus-assets/img/ecommerce-images/order-history-page-07-product-04.jpg"
                   alt="Black powder coated steel bookends with bent rod l-shape."
-                  class="atqj atqz atsf atsy atwo" />
-                <div class="atqx atqy attk atxc">
-                  <h3 class="attz atub atuh">
+                  class="w-20 h-20 flex-none rounded-md sm:w-48 sm:h-48" />
+                <div class="min-w-0 flex-1 pt-1.5 sm:pt-0">
+                  <h3 class="text-sm font-medium text-gray-900">
                     <a href="#">Machined Steel Bookends</a>
                   </h3>
-                  <p class="atsb attz atuf">
+                  <p class="truncate text-sm text-gray-500">
                     <span>Black</span>
-                    <span aria-hidden="true" class="atpm atue">&middot;</span>
+                    <span aria-hidden="true" class="mx-1 text-gray-400">&middot;</span>
                     <span>7.75&quot; H x 6&quot; W x 4.5&quot; D</span>
                   </p>
-                  <p class="atpp atub atuh">$95.00</p>
+                  <p class="mt-1 font-medium text-gray-900">$95.00</p>
                 </div>
               </div>
-              <div class="atpr atrn atwj atwm atwp atws">
+              <div class="mt-6 space-y-4 sm:mt-0 sm:ml-6 sm:w-40 sm:flex-none">
                 <button
                   type="button"
-                  class="atqb atqr atrg atrj atsf atsg atso atst attb atte attz atub atuj atun atvm atvt atvu atvv atvw atwt">
+                  class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-2.5 py-2 text-sm font-medium text-white shadow-[0_1px_2px_0_#0000000d] hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
                   Buy again
                 </button>
                 <button
                   type="button"
-                  class="atqb atqr atrg atrj atsf atsg atsn atsv attb atte attz atub atug atun atvl atvt atvu atvv atvw atwt">
+                  class="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-2.5 py-2 text-sm font-medium text-gray-700 shadow-xs hover:bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:flex-grow-0">
                   Shop similar
                 </button>
               </div>
@@ -2181,93 +845,93 @@
       </div>
     </main>
 
-    <footer aria-labelledby="footer-heading" class="atsh atsm atsv">
-      <h2 id="footer-heading" class="atoz">Footer</h2>
-      <div class="atpo atqu attc atxb atyf">
-        <div class="atqd atre atrl attj atxa atxx">
-          <div class="atqd atrd atrw atxo atxw atya atyd">
+    <footer aria-labelledby="footer-heading" class="border-t border-gray-200 bg-white">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 gap-8 py-20 sm:gap-y-0 lg:grid-cols-4">
+          <div class="grid grid-cols-1 gap-y-10 lg:col-span-2 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-0">
             <div>
-              <h3 class="attz atub atuh">Account</h3>
-              <ul role="list" class="atpr atrp">
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Manage Account</a>
+              <h3 class="text-sm font-medium text-gray-900">Account</h3>
+              <ul role="list" class="mt-6 space-y-6">
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Manage Account</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Saved Items</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Saved Items</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Orders</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Orders</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Redeem Gift card</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Redeem Gift card</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 class="attz atub atuh">Service</h3>
-              <ul role="list" class="atpr atrp">
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Shipping &amp; Returns</a>
+              <h3 class="text-sm font-medium text-gray-900">Service</h3>
+              <ul role="list" class="mt-6 space-y-6">
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Shipping &amp; Returns</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Warranty</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Warranty</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">FAQ</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">FAQ</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Find a store</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Find a store</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Get in touch</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Get in touch</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="atqd atrd atrw atxo atxw atya atyd">
+          <div class="grid grid-cols-1 gap-y-10 lg:col-span-2 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-0">
             <div>
-              <h3 class="attz atub atuh">Company</h3>
-              <ul role="list" class="atpr atrp">
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Who we are</a>
+              <h3 class="text-sm font-medium text-gray-900">Company</h3>
+              <ul role="list" class="mt-6 space-y-6">
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Who we are</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Press</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Press</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Careers</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Careers</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Terms &amp; Conditions</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Terms &amp; Conditions</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Privacy</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Privacy</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 class="attz atub atuh">Connect</h3>
-              <ul role="list" class="atpr atrp">
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Facebook</a>
+              <h3 class="text-sm font-medium text-gray-900">Connect</h3>
+              <ul role="list" class="mt-6 space-y-6">
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Facebook</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Instagram</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Instagram</a>
                 </li>
-                <li class="attz">
-                  <a href="#" class="atuf atvp">Pinterest</a>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-500 hover:text-gray-900">Pinterest</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="atsh atsl atth atwn atwv atww">
-          <div class="atqb atrg atrj attz atuf">
+        <div class="border-t border-gray-100 py-10 sm:flex sm:items-center sm:justify-between">
+          <div class="flex items-center justify-center text-sm text-gray-500">
             <p>Shipping to Canada ($CAD)</p>
-            <p class="atpy atsk atsm atts">English</p>
+            <p class="ml-3 border-l border-gray-200 pl-3">English</p>
           </div>
-          <p class="atpr attu attz atuf atwj">&copy; 2021 Your Company, Inc.</p>
+          <p class="mt-6 text-center text-sm text-gray-500 sm:mt-0">&copy; 2021 Your Company, Inc.</p>
         </div>
       </div>
     </footer>

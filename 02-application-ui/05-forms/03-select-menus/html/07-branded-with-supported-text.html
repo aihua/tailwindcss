@@ -1,133 +1,95 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-@theme {
-  --font-sans: InterVariable, system-ui, sans-serif;
-  --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-}
-</style>
-<style>
-/* el-select branded compound selectors */
-  .check-hide:is(el-option:not([aria-selected="true"]) *) { display: none; }
-  .focus-secondary:is(el-option:focus *) { color: oklch(93% 0.034 272.788); }
-  .focus-tertiary:is(el-option:focus *) { color: oklch(87% 0.065 274.039); }
-  .focus-name-white:is(el-option:focus *) { color: #fff; }
-  .selected-semibold:is(el-option[aria-selected="true"] *) { font-weight: 600; }
-  @media (hover: hover) {
-    el-option:hover { background-color: oklch(67.3% 0.182 276.935); }
-    el-option:hover { background-color: oklch(45.7% 0.24 277.023); }
-  }
-  @media (forced-colors: active) {
-    el-option:focus { outline-offset: 2px; outline: 2px solid transparent; }
-    .forced-highlight { color: highlight; }
-  }
-  .selectedcontent-check-hide:is(:where(el-selectedcontent) *) { display: none; }
-  .selectedcontent-semibold:is(:where(el-selectedcontent) *) { font-weight: 600; }
-  @media (prefers-color-scheme: dark) {
-    .dark:focus-secondary:is(el-option:focus *) { color: oklch(93% 0.034 272.788); }
-    el-option:hover { background-color: oklch(67.3% 0.182 276.935); }
-  }
-  .data-leave-transition[data-leave] {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 0.15s;
-  }
-  .data-leave-discrete[data-leave] { transition-behavior: allow-discrete; }
-  .data-leave-fast[data-leave] { transition-duration: 0.1s; }
-  .data-leave-ease[data-leave] { transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }
-  .data-leave-closed[data-closed][data-leave] { opacity: 0; }
-  .anchor-gap { --anchor-gap: calc(0.25rem * 2); }
-</style>
-
-
-
-
-
-
-<body class="antialiased bg-gray-900">
-  <div class="flex h-[22rem] justify-center bg-gray-900 p-8 dark">
-    <div class="mx-auto flex w-full max-w-80 justify-end">
-      <el-select name="selected" value="published" data-default-open>
-        <div class="inline-flex divide-x divide-purple-600 rounded-md outline-none">
-          <div class="inline-flex items-center gap-1.5 rounded-l-md bg-violet-500 px-3 py-2 text-white">
-            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="-ml-0.5 w-5 h-5">
-              <path
-                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                clip-rule="evenodd"
-                fill-rule="evenodd" />
-            </svg>
-            <el-selectedcontent class="text-sm font-semibold">Published</el-selectedcontent>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+      @custom-variant group-aria-selected (.group[aria-selected="true"] &);
+      @custom-variant in-sc (:where(:is(el-selectedcontent)) &);
+      @custom-variant fc {
+        @media (forced-colors: active) {
+          @slot;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+    <div class="flex h-[22rem] justify-center bg-gray-900 p-8 [color-scheme:dark]">
+      <div class="mx-auto flex w-full max-w-80 justify-end">
+        <el-select name="selected" value="published" data-default-open>
+          <div class="inline-flex divide-x divide-indigo-600 rounded-md outline-none">
+            <div class="inline-flex items-center gap-x-1.5 rounded-l-md bg-indigo-500 px-3 py-2 text-white">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="-ml-0.5 size-5">
+                <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+              <el-selectedcontent class="text-sm font-semibold">Published</el-selectedcontent>
+            </div>
+            <button type="button" aria-label="Change published status" class="inline-flex items-center rounded-l-none rounded-r-md bg-indigo-500 p-2 hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-indigo-400">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-white fc:[color:highlight]">
+                <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+            </button>
           </div>
-          <button type="button" aria-label="Change published status" class="inline-flex items-center rounded-l-none rounded-r-md bg-violet-500 p-2 hover:bg-purple-400 focus-visible:outline-2 focus-visible:outline-purple-400">
-            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-white forced-highlight">
-              <path
-                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                clip-rule="evenodd"
-                fill-rule="evenodd" />
-            </svg>
-          </button>
-        </div>
 
-        <el-options anchor="bottom end" popover class="w-72 origin-top-right divide-y divide-white/10 overflow-hidden rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 anchor-gap data-leave-transition data-leave-discrete data-leave-fast data-leave-ease data-leave-closed">
-          <el-option value="published" class="option-base block cursor-default p-4 text-sm text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex flex-col">
-              <div class="flex justify-between">
-                <p class="font-normal selected-semibold selectedcontent-semibold">Published</p>
-                <span class="text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-                  <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                    <path
-                      d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                      clip-rule="evenodd"
-                      fill-rule="evenodd" />
-                  </svg>
-                </span>
+          <el-options anchor="bottom end" popover class="w-72 origin-top-right divide-y divide-white/10 overflow-hidden rounded-md bg-gray-800 outline -outline-offset-1 outline-white/10 [--anchor-gap:0.5rem] data-leave:transition-all data-leave:[transition-behavior:allow-discrete] data-leave:duration-100 data-leave:ease-[cubic-bezier(0.4,0,1,1)] data-leave:data-closed:opacity-0">
+            <el-option value="published" class="group block flex-col cursor-default p-4 text-sm text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+              <div class="flex flex-col">
+                <div class="flex justify-between">
+                  <p class="font-normal group-aria-selected:font-semibold in-sc:font-semibold">Published</p>
+                  <span class="text-indigo-400 hidden group-aria-selected:inline group-focus-within:text-white in-sc:hidden">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                      <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+                <p class="mt-2 text-gray-400 group-focus-within:text-indigo-100 in-sc:hidden">This job posting can be viewed by anyone who has the link.</p>
               </div>
-              <p class="mt-2 text-violet-400 focus-secondary selectedcontent-check-hide">This job posting can be viewed by anyone who has the link.</p>
-            </div>
-          </el-option>
-          <el-option value="draft" class="option-base block cursor-default p-4 text-sm text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex flex-col">
-              <div class="flex justify-between">
-                <p class="font-normal selected-semibold selectedcontent-semibold">Draft</p>
-                <span class="text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-                  <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                    <path
-                      d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                      clip-rule="evenodd"
-                      fill-rule="evenodd" />
-                  </svg>
-                </span>
+            </el-option>
+            <el-option value="draft" class="group block flex-col cursor-default p-4 text-sm text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+              <div class="flex flex-col">
+                <div class="flex justify-between">
+                  <p class="font-normal group-aria-selected:font-semibold in-sc:font-semibold">Draft</p>
+                  <span class="text-indigo-400 hidden group-aria-selected:inline group-focus-within:text-white in-sc:hidden">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                      <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+                <p class="mt-2 text-gray-400 group-focus-within:text-indigo-100 in-sc:hidden">This job posting will no longer be publicly accessible.</p>
               </div>
-              <p class="mt-2 text-violet-400 focus-secondary selectedcontent-check-hide">This job posting will no longer be publicly accessible.</p>
-            </div>
-          </el-option>
-        </el-options>
-      </el-select>
+            </el-option>
+          </el-options>
+        </el-select>
+      </div>
     </div>
-  </div>
-  <script>
-    {
-      function onReady() {
-        let options = document.querySelectorAll('el-select[data-default-open] el-options');
-        options.forEach(options => {
-          // Ignore next scrollIntoView call
-          let originalScrollIntoView = Element.prototype.scrollIntoView;
-          Element.prototype.scrollIntoView = () => {
-            Element.prototype.scrollIntoView = originalScrollIntoView;
-          };
-          options.showPopover();
-        });
+
+    <script>
+      {
+        function onReady() {
+          let options = document.querySelectorAll('el-select[data-default-open] el-options')
+          options.forEach((options) => {
+            // Ignore next scrollIntoView call
+            let originalScrollIntoView = Element.prototype.scrollIntoView
+            Element.prototype.scrollIntoView = () => {
+              Element.prototype.scrollIntoView = originalScrollIntoView
+            }
+            options.showPopover()
+          })
+        }
+        if (customElements.get('el-select')) {
+          onReady()
+        } else {
+          window.addEventListener('elements:ready', onReady)
+        }
       }
-      if (customElements.get('el-select')) {
-        onReady();
-      } else {
-        window.addEventListener('elements:ready', onReady);
-      }
-    }
-  </script>
-</body>
+    </script>
+  </body>
+</html>

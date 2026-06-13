@@ -1,262 +1,199 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link
-  rel="preconnect"
-  href="https://rsms.me/" /><link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-@theme {
-  --font-sans: InterVariable, system-ui, sans-serif;
-  --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-}
-</style>
-<style>
-/* el-select status indicator compound selectors */
-  .check-hide:is(el-option:not([aria-selected="true"]) *) { display: none; }
-  .focus-name-white:is(el-option:focus *) { color: #fff; }
-  .selected-semibold:is(el-option[aria-selected="true"] *) { font-weight: 600; }
-  @media (forced-colors: active) {
-    el-option:focus { outline-offset: 2px; outline: 2px solid transparent; }
-    .forced-highlight { background-color: highlight; }
-  }
-  .selectedcontent-check-hide:is(:where(el-selectedcontent) *) { display: none; }
-  .data-leave-transition[data-leave] {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 0.15s;
-  }
-  .data-leave-discrete[data-leave] { transition-behavior: allow-discrete; }
-  .data-leave-fast[data-leave] { transition-duration: 0.1s; }
-  .data-leave-ease[data-leave] { transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }
-  .data-leave-closed[data-closed][data-leave] { opacity: 0; }
-  .anchor-gap { --anchor-gap: calc(0.25rem * 1); }
-</style>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+      @custom-variant group-aria-selected (.group[aria-selected="true"] &);
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+<div class="flex h-[28rem] justify-center bg-gray-900 p-8 [color-scheme:dark]">
+  <div class="mx-auto w-full max-w-xs">
+    <label for="select" class="block text-sm/6 font-medium text-white">Assigned to</label>
+    <el-select id="select" name="selected" value="4" data-default-open class="mt-2 block">
+      <button type="button" class="grid w-full cursor-default grid-cols-1 rounded-md bg-white/5 py-1.5 pr-2 pl-3 text-left text-white outline -outline-offset-1 outline-white/10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-500 sm:text-sm/6">
+        <el-selectedcontent class="col-start-1 row-start-1 flex items-center gap-3 pr-6">
+          <span aria-label="Online" class="inline-block size-2 shrink-0 rounded-full border border-transparent"></span>
+          <span class="block truncate">Tom Cook</span>
+        </el-selectedcontent>
+        <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="col-start-1 row-start-1 size-5 self-center justify-self-end text-gray-400 sm:size-4">
+          <path d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06ZM10.78 5.78a.75.75 0 0 1-1.06 0L8 4.06 6.28 5.78a.75.75 0 0 1-1.06-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+        </svg>
+      </button>
 
-
-
-
-
-
-<body class="antialiased bg-gray-900">
-  <div class="flex h-[28rem] justify-center bg-gray-900 p-8 dark">
-    <div class="mx-auto w-full max-w-80">
-      <label for="select" class="block text-sm leading-6 font-medium text-white">Assigned to</label>
-      <el-select id="select" name="selected" value="4" data-default-open class="mt-2 block">
-        <button type="button" class="grid w-full cursor-default grid-cols-1 rounded-md bg-white/5 py-1.5 pr-2 pl-3 text-left text-white outline-1 -outline-offset-1 outline-white/10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-violet-500 sm:text-sm sm:leading-6">
-          <el-selectedcontent class="col-start-1 row-start-1 flex items-center gap-3 pr-6">
-            <span aria-label="Online" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent"></span>
-            <span class="block truncate">Tom Cook</span>
-          </el-selectedcontent>
-          <svg
-            viewBox="0 0 16 16"
-            fill="currentColor"
-            data-slot="icon"
-            aria-hidden="true"
-            class="col-start-1 row-start-1 w-5 h-5 self-center justify-self-end text-violet-400 sm:w-4 sm:h-4">
-            <path
-              d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06ZM10.78 5.78a.75.75 0 0 1-1.06 0L8 4.06 6.28 5.78a.75.75 0 0 1-1.06-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06Z"
-              clip-rule="evenodd"
-              fill-rule="evenodd" />
-          </svg>
-        </button>
-
-        <el-options
-          anchor="bottom start"
-          popover
-          class="max-h-60 w-[var(--button-width)] overflow-auto rounded-md bg-gray-800 py-1 text-base outline-1 -outline-offset-1 outline-white/10 anchor-gap data-leave-transition data-leave-discrete data-leave-fast data-leave-ease data-leave-closed sm:text-sm">
-          <el-option value="1" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-emerald-500 forced-highlight"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Wade Cooper
-                <span class="sr-only"> is online</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+      <el-options anchor="bottom start" popover class="max-h-60 w-[var(--button-width)] overflow-auto rounded-md bg-gray-800 py-1 text-base outline -outline-offset-1 outline-white/10 [--anchor-gap:0.25rem] data-leave:transition-all data-leave:transition-discrete data-leave:duration-100 data-leave:ease-[cubic-bezier(0.4,0,1,1)] data-[closed]:data-leave:opacity-0 sm:text-sm">
+        <el-option value="1" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-green-400 forced:bg-highlight"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Wade Cooper
+              <span class="sr-only"> is online</span>
             </span>
-          </el-option>
-          <el-option value="2" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Arlene Mccoy
-                <span class="sr-only"> is offline</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="2" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Arlene Mccoy
+              <span class="sr-only"> is offline</span>
             </span>
-          </el-option>
-          <el-option value="3" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Devon Webb
-                <span class="sr-only"> is offline</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="3" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Devon Webb
+              <span class="sr-only"> is offline</span>
             </span>
-          </el-option>
-          <el-option value="4" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-emerald-500 forced-highlight"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Tom Cook
-                <span class="sr-only"> is online</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="4" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-green-400 forced:bg-highlight"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Tom Cook
+              <span class="sr-only"> is online</span>
             </span>
-          </el-option>
-          <el-option value="5" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Tanya Fox
-                <span class="sr-only"> is offline</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="5" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Tanya Fox
+              <span class="sr-only"> is offline</span>
             </span>
-          </el-option>
-          <el-option value="6" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-emerald-500 forced-highlight"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Hellen Schmidt
-                <span class="sr-only"> is online</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="6" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-green-400 forced:bg-highlight"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Hellen Schmidt
+              <span class="sr-only"> is online</span>
             </span>
-          </el-option>
-          <el-option value="7" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-emerald-500 forced-highlight"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Caroline Schultz
-                <span class="sr-only"> is online</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="7" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-green-400 forced:bg-highlight"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Caroline Schultz
+              <span class="sr-only"> is online</span>
             </span>
-          </el-option>
-          <el-option value="8" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Mason Heaney
-                <span class="sr-only"> is offline</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="8" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Mason Heaney
+              <span class="sr-only"> is offline</span>
             </span>
-          </el-option>
-          <el-option value="9" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-emerald-500 forced-highlight"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Claudie Smitham
-                <span class="sr-only"> is online</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="9" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-green-400 forced:bg-highlight"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Claudie Smitham
+              <span class="sr-only"> is online</span>
             </span>
-          </el-option>
-          <el-option value="10" class="option-base relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-violet-500 focus:text-white focus:outline-none">
-            <div class="flex items-center">
-              <span aria-hidden="true" class="inline-block w-2 h-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
-              <span class="ml-3 block truncate font-normal selected-semibold">
-                Emil Schaefer
-                <span class="sr-only"> is offline</span>
-              </span>
-            </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-purple-400 check-hide focus-name-white selectedcontent-check-hide">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                <path
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd" />
-              </svg>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+        <el-option value="10" class="group relative block cursor-default py-2 pr-9 pl-3 text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
+          <div class="flex items-center">
+            <span aria-hidden="true" class="inline-block size-2 shrink-0 rounded-full border border-transparent bg-white/25"></span>
+            <span class="ml-3 block truncate font-normal group-aria-selected:font-semibold">
+              Emil Schaefer
+              <span class="sr-only"> is offline</span>
             </span>
-          </el-option>
-        </el-options>
-      </el-select>
-    </div>
+          </div>
+          <span class="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-400 group-aria-selected:flex group-focus:text-white">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </span>
+        </el-option>
+      </el-options>
+    </el-select>
   </div>
-  <script>
-    {
-      function onReady() {
-        let options = document.querySelectorAll('el-select[data-default-open] el-options');
-        options.forEach(options => {
-          // Ignore next scrollIntoView call
-          let originalScrollIntoView = Element.prototype.scrollIntoView;
-          Element.prototype.scrollIntoView = () => {
-            Element.prototype.scrollIntoView = originalScrollIntoView;
-          };
-          options.showPopover();
-        });
-      }
-      if (customElements.get('el-select')) {
-        onReady();
-      } else {
-        window.addEventListener('elements:ready', onReady);
-      }
+</div>
+<script>
+  {
+    function onReady() {
+      let options = document.querySelectorAll('el-select[data-default-open] el-options')
+      options.forEach((options) => {
+        // Ignore next scrollIntoView call
+        let originalScrollIntoView = Element.prototype.scrollIntoView
+        Element.prototype.scrollIntoView = () => {
+          Element.prototype.scrollIntoView = originalScrollIntoView
+        }
+        options.showPopover()
+      })
     }
-  </script>
+    if (customElements.get('el-select')) {
+      onReady()
+    } else {
+      window.addEventListener('elements:ready', onReady)
+    }
+  }
+</script>
 </body>
+</html>

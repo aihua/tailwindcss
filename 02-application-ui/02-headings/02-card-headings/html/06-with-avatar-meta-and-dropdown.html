@@ -1,115 +1,80 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-</head>
-<body class="antialiased" style="background-color: oklch(21% 0.034 264.665)">
-  <div class="bg-gray-900 dark" style="color-scheme: dark">
-    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-none">
-        <div class="overflow-hidden bg-gray-800/50 shadow-none outline outline-1 outline-white/10 sm:rounded-lg sm:shadow sm:-outline-offset-1">
-          <div class="px-4 py-5 sm:px-6">
-            <div class="flex space-x-3">
-              <div class="shrink-0">
-                <img
-                  src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                  class="w-10 h-10 rounded-full bg-gray-800 outline outline-1 -outline-offset-1 outline-white/10" />
-              </div>
-              <div class="min-w-0 flex-1">
-                <p class="text-sm font-semibold text-white">
-                  <a href="#" class="hover:underline">Chelsea Hagon</a>
-                </p>
-                <p class="text-sm text-gray-400">
-                  <a href="#" class="hover:underline">December 9 at 11:43 AM</a>
-                </p>
-              </div>
-              <div class="flex shrink-0 self-center">
-                <el-dropdown class="relative inline-block text-left">
-                  <button class="relative flex items-center rounded-full text-gray-400 outline-offset-6 hover:text-white">
-                    <span class="absolute inset-[-0.5rem]"></span>
-                    <span class="sr-only">Open options</span>
-                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5">
-                      <path
-                        d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                    </svg>
-                  </button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "InterVariable", system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+<div class="bg-gray-900 scheme-dark">
+  <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-none">
+      <div class="overflow-hidden bg-gray-800/50 shadow-none outline outline-white/10 sm:rounded-lg sm:shadow-sm sm:-outline-offset-1">
+        <div class="px-4 py-5 sm:px-6">
+          <div class="flex space-x-3">
+            <div class="shrink-0">
+              <img src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-10 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <p class="text-sm font-semibold text-white">
+                <a href="#" class="hover:underline">Chelsea Hagon</a>
+              </p>
+              <p class="text-sm text-gray-400">
+                <a href="#" class="hover:underline">December 9 at 11:43 AM</a>
+              </p>
+            </div>
+            <div class="flex shrink-0 self-center">
+              <el-dropdown class="relative inline-block text-left">
+                <button class="relative flex items-center rounded-full text-gray-400 outline-offset-[6px] hover:text-white">
+                  <span class="absolute inset-[-0.5rem]"></span>
+                  <span class="sr-only">Open options</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                    <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                  </svg>
+                </button>
 
-                  <el-menu
-                    anchor="bottom end"
-                    popover
-                    class="w-56 origin-top-right rounded-md bg-gray-800 shadow-lg outline outline-1 -outline-offset-1 outline-white/10 transition [transition-behavior:allow-discrete] [--anchor-gap:0.5rem] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[enter]:ease-out data-[leave]:duration-75 data-[leave]:ease-in">
-                    <div class="py-1">
-                      <a href="#" class="flex px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">
-                        <svg
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          data-slot="icon"
-                          aria-hidden="true"
-                          class="mr-3 w-5 h-5 text-gray-400">
-                          <path
-                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
-                            clip-rule="evenodd"
-                            fill-rule="evenodd" />
-                        </svg>
-                        <span>Add to favorites</span>
-                      </a>
-                      <a href="#" class="flex px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">
-                        <svg
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          data-slot="icon"
-                          aria-hidden="true"
-                          class="mr-3 w-5 h-5 text-gray-400">
-                          <path
-                            d="M6.28 5.22a.75.75 0 0 1 0 1.06L2.56 10l3.72 3.72a.75.75 0 0 1-1.06 1.06L.97 10.53a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Zm7.44 0a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 0 1 0-1.06ZM11.377 2.011a.75.75 0 0 1 .612.867l-2.5 14.5a.75.75 0 0 1-1.478-.255l2.5-14.5a.75.75 0 0 1 .866-.612Z"
-                            clip-rule="evenodd"
-                            fill-rule="evenodd" />
-                        </svg>
-                        <span>Embed</span>
-                      </a>
-                      <a href="#" class="flex px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">
-                        <svg
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          data-slot="icon"
-                          aria-hidden="true"
-                          class="mr-3 w-5 h-5 text-gray-400">
-                          <path
-                            d="M3.5 2.75a.75.75 0 0 0-1.5 0v14.5a.75.75 0 0 0 1.5 0v-4.392l1.657-.348a6.449 6.449 0 0 1 4.271.572 7.948 7.948 0 0 0 5.965.524l2.078-.64A.75.75 0 0 0 18 12.25v-8.5a.75.75 0 0 0-.904-.734l-2.38.501a7.25 7.25 0 0 1-4.186-.363l-.502-.2a8.75 8.75 0 0 0-5.053-.439l-1.475.31V2.75Z" />
-                        </svg>
-                        <span>Report content</span>
-                      </a>
-                    </div>
-                  </el-menu>
-                </el-dropdown>
-              </div>
+                <el-menu anchor="bottom end" popover class="w-56 origin-top-right rounded-md bg-gray-800 shadow-lg outline -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.5rem] data-[closed]:scale-95 data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 data-[enter]:duration-100 data-[enter]:ease-out data-[leave]:duration-75 data-[leave]:ease-in">
+                  <div class="py-1">
+                    <a href="#" class="flex px-4 py-2 text-sm text-gray-200 focus:bg-white/5 focus:text-white focus:outline-none">
+                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mr-3 size-5 text-gray-400">
+                        <path d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" fill-rule="evenodd" />
+                      </svg>
+                      <span>Add to favorites</span>
+                    </a>
+                    <a href="#" class="flex px-4 py-2 text-sm text-gray-200 focus:bg-white/5 focus:text-white focus:outline-none">
+                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mr-3 size-5 text-gray-400">
+                        <path d="M6.28 5.22a.75.75 0 0 1 0 1.06L2.56 10l3.72 3.72a.75.75 0 0 1-1.06 1.06L.97 10.53a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Zm7.44 0a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 0 1 0-1.06ZM11.377 2.011a.75.75 0 0 1 .612.867l-2.5 14.5a.75.75 0 0 1-1.478-.255l2.5-14.5a.75.75 0 0 1 .866-.612Z" clip-rule="evenodd" fill-rule="evenodd" />
+                      </svg>
+                      <span>Embed</span>
+                    </a>
+                    <a href="#" class="flex px-4 py-2 text-sm text-gray-200 focus:bg-white/5 focus:text-white focus:outline-none">
+                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mr-3 size-5 text-gray-400">
+                        <path d="M3.5 2.75a.75.75 0 0 0-1.5 0v14.5a.75.75 0 0 0 1.5 0v-4.392l1.657-.348a6.449 6.449 0 0 1 4.271.572 7.948 7.948 0 0 0 5.965.524l2.078-.64A.75.75 0 0 0 18 12.25v-8.5a.75.75 0 0 0-.904-.734l-2.38.501a7.25 7.25 0 0 1-4.186-.363l-.502-.2a8.75 8.75 0 0 0-5.053-.439l-1.475.31V2.75Z" />
+                      </svg>
+                      <span>Report content</span>
+                    </a>
+                  </div>
+                </el-menu>
+              </el-dropdown>
             </div>
           </div>
+        </div>
 
-          <div class="px-4 pb-5 text-white opacity-25 sm:p-6 sm:pt-0">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo impedit sapiente recusandae iusto officiis
-              dolor? Laborum quibusdam quam, quidem vel assumenda repellat inventore sint nesciunt, ullam asperiores
-              magnam placeat eveniet. Aliquam voluptatibus assumenda distinctio veniam quam tempora modi aperiam nemo
-              voluptate reprehenderit quidem, nisi vero est.
-            </p>
-          </div>
+        <div class="px-4 pb-5 text-white opacity-25 sm:p-6 sm:pt-0">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo impedit sapiente recusandae iusto officiis dolor? Laborum quibusdam quam, quidem vel assumenda repellat inventore sint nesciunt, ullam asperiores magnam placeat eveniet. Aliquam voluptatibus assumenda distinctio veniam quam tempora modi aperiam nemo voluptate reprehenderit quidem, nisi vero est.</p>
         </div>
       </div>
     </div>
   </div>
-  <script></script>
-</body>
+</div>
+  </body>
 </html>

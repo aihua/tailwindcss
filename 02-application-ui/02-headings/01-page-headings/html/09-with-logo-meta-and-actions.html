@@ -1,54 +1,54 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-</head>
-<body class="antialiased" style="background-color: oklch(21% 0.034 264.665)">
-  <div class="bg-gray-900 py-8 dark" style="color-scheme: dark">
-    <div class="mx-auto max-w-7xl">
-      <div class="px-4 py-10 sm:px-6 lg:mx-0 lg:px-8">
-        <div class="mx-auto flex items-center justify-between gap-x-8 lg:mx-0">
-          <div class="flex items-center gap-x-6">
-            <img src="https://tailwindcss.com/plus-assets/img/logos/48x48/tuple.svg" alt="" class="w-16 h-16 flex-none rounded-full outline outline-1 outline-white/10" />
-            <h1>
-              <div class="text-sm leading-6 text-gray-500">Invoice <span class="text-gray-400">#00011</span></div>
-              <div class="mt-1 text-base font-semibold text-white">Tuple, Inc</div>
-            </h1>
-          </div>
-          <div class="flex items-center gap-x-4 sm:gap-x-6">
-            <button type="button" class="hidden text-sm leading-6 font-semibold text-white sm:block">Copy URL</button>
-            <a href="#" class="hidden text-sm leading-6 font-semibold text-white sm:block">Edit</a>
-            <a href="#" class="rounded-md bg-violet-600 px-3 py-2 text-sm font-semibold text-white hover:bg-violet-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">Send</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+    <div class="bg-gray-900 py-8 [color-scheme:dark]">
+      <div class="mx-auto max-w-7xl">
+        <div class="px-4 py-10 sm:px-6 lg:px-8">
+          <div class="mx-auto flex items-center justify-between gap-x-8 lg:mx-0">
+            <div class="flex items-center gap-x-6">
+              <img src="https://tailwindcss.com/plus-assets/img/logos/48x48/tuple.svg" alt="" class="size-16 flex-none rounded-full outline outline-white/10" />
+              <h1>
+                <div class="text-sm leading-6 text-gray-400">Invoice <span class="text-gray-300">#00011</span></div>
+                <div class="mt-1 text-base font-semibold text-white">Tuple, Inc</div>
+              </h1>
+            </div>
+            <div class="flex items-center gap-x-4 sm:gap-x-6">
+              <button type="button" class="hidden text-sm leading-6 font-semibold text-white sm:block">Copy URL</button>
+              <a href="#" class="hidden text-sm leading-6 font-semibold text-white sm:block">Edit</a>
+              <a href="#" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Send</a>
 
-            <el-dropdown class="relative sm:hidden">
-              <button class="relative block">
-                <span class="absolute inset--3"></span>
-                <span class="sr-only">More</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-500">
-                  <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                </svg>
-              </button>
+              <el-dropdown class="relative sm:hidden">
+                <button class="relative block">
+                  <span class="absolute -inset-3"></span>
+                  <span class="sr-only">More</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-gray-400">
+                    <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                  </svg>
+                </button>
 
-              <el-menu anchor="bottom end" popover class="w-32 origin-top-right rounded-md bg-gray-800 py-2 outline outline-1 -outline-offset-1 outline-white/10 transition [transition-behavior:allow-discrete] [--anchor-gap:0.125rem] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[enter]:ease-out data-[leave]:duration-75 data-[leave]:ease-in">
-                <button type="button" class="block w-full px-3 py-1 text-left text-sm leading-6 text-white focus:bg-white/5 focus:outline-none">Copy URL</button>
-                <a href="#" class="block px-3 py-1 text-sm leading-6 text-white focus:bg-white/5 focus:outline-none">Edit</a>
-              </el-menu>
-            </el-dropdown>
+                <el-menu anchor="bottom end" popover class="w-32 origin-top-right rounded-md bg-gray-800 py-2 outline -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:calc(.25rem*.5)] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[enter]:ease-in data-[leave]:duration-75 data-[leave]:ease-out">
+                  <button type="button" class="block w-full px-3 py-1 text-left text-sm leading-6 text-white focus:bg-white/5 focus:outline-none">Copy URL</button>
+                  <a href="#" class="block px-3 py-1 text-sm leading-6 text-white focus:bg-white/5 focus:outline-none">Edit</a>
+                </el-menu>
+              </el-dropdown>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script></script>
-</body>
+  </body>
 </html>

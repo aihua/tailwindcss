@@ -12,17 +12,10 @@
         --font-sans: InterVariable, system-ui, sans-serif;
         --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       }
-      @custom-variant group-aria-selected (.group[aria-selected="true"] &);
-      @custom-variant in-sc (:where(:is(el-selectedcontent)) &);
-      @custom-variant fc {
-        @media (forced-colors: active) {
-          @slot;
-        }
-      }
     </style>
   </head>
   <body class="bg-gray-900 antialiased">
-    <div class="flex h-[22rem] justify-center bg-gray-900 p-8 [color-scheme:dark]">
+    <div class="flex h-88 justify-center bg-gray-900 p-8 [color-scheme:dark]">
       <div class="mx-auto flex w-full max-w-80 justify-end">
         <el-select name="selected" value="published" data-default-open>
           <div class="inline-flex divide-x divide-indigo-600 rounded-md outline-none">
@@ -33,39 +26,49 @@
               <el-selectedcontent class="text-sm font-semibold">Published</el-selectedcontent>
             </div>
             <button type="button" aria-label="Change published status" class="inline-flex items-center rounded-l-none rounded-r-md bg-indigo-500 p-2 hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-indigo-400">
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-white fc:[color:highlight]">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-white forced-colors:text-[highlight]">
                 <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
               </svg>
             </button>
           </div>
 
-          <el-options anchor="bottom end" popover class="w-72 origin-top-right divide-y divide-white/10 overflow-hidden rounded-md bg-gray-800 outline -outline-offset-1 outline-white/10 [--anchor-gap:0.5rem] data-leave:transition-all data-leave:[transition-behavior:allow-discrete] data-leave:duration-100 data-leave:ease-[cubic-bezier(0.4,0,1,1)] data-leave:data-closed:opacity-0">
-            <el-option value="published" class="group block flex-col cursor-default p-4 text-sm text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
-              <div class="flex flex-col">
-                <div class="flex justify-between">
-                  <p class="font-normal group-aria-selected:font-semibold in-sc:font-semibold">Published</p>
-                  <span class="text-indigo-400 hidden group-aria-selected:inline group-focus-within:text-white in-sc:hidden">
-                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
-                      <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
-                    </svg>
-                  </span>
-                </div>
-                <p class="mt-2 text-gray-400 group-focus-within:text-indigo-100 in-sc:hidden">This job posting can be viewed by anyone who has the link.</p>
+          <el-options
+            anchor="bottom end"
+            popover
+            class="w-72 origin-top-right divide-y divide-[oklab(100%_0_5.96046e-8/.1)] overflow-hidden rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-[oklab(100%_0_5.96046e-8/.1)] [--anchor-gap:0.5rem] data-[leave]:transition data-[leave]:transition-discrete data-[leave]:duration-100 data-[leave]:ease-in data-[closed]:data-[leave]:opacity-0"
+          >
+          <el-option
+            value="published"
+            class="group block cursor-default p-4 text-sm text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none"
+          >
+            <div class="flex flex-col">
+              <div class="flex justify-between">
+                <p class="font-normal group-aria-selected:font-semibold [el-selectedcontent_&]:font-semibold">Published</p>
+                <span class="text-indigo-400 group-[&:not([aria-selected=true])]:hidden group-focus:text-white [el-selectedcontent_&]:hidden">
+                  <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                </span>
               </div>
-            </el-option>
-            <el-option value="draft" class="group block flex-col cursor-default p-4 text-sm text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none">
-              <div class="flex flex-col">
-                <div class="flex justify-between">
-                  <p class="font-normal group-aria-selected:font-semibold in-sc:font-semibold">Draft</p>
-                  <span class="text-indigo-400 hidden group-aria-selected:inline group-focus-within:text-white in-sc:hidden">
-                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
-                      <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
-                    </svg>
-                  </span>
-                </div>
-                <p class="mt-2 text-gray-400 group-focus-within:text-indigo-100 in-sc:hidden">This job posting will no longer be publicly accessible.</p>
+              <p class="mt-2 text-gray-400 group-focus:text-indigo-100 [el-selectedcontent_&]:hidden">This job posting can be viewed by anyone who has the link.</p>
+            </div>
+          </el-option>
+          <el-option
+            value="draft"
+            class="group block cursor-default p-4 text-sm text-white select-none focus:bg-indigo-500 focus:text-white focus:outline-none"
+          >
+            <div class="flex flex-col">
+              <div class="flex justify-between">
+                <p class="font-normal group-aria-selected:font-semibold [el-selectedcontent_&]:font-semibold">Draft</p>
+                <span class="text-indigo-400 group-[&:not([aria-selected=true])]:hidden group-focus:text-white [el-selectedcontent_&]:hidden">
+                  <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                </span>
               </div>
-            </el-option>
+              <p class="mt-2 text-gray-400 group-focus:text-indigo-100 [el-selectedcontent_&]:hidden">This job posting will no longer be publicly accessible.</p>
+            </div>
+          </el-option>
           </el-options>
         </el-select>
       </div>

@@ -1,200 +1,157 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: 'InterVariable', system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-  <link rel="modulepreload" href="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js">
-  <script type="module" src="https://tailwindcss.com/plus-assets/build/assets/iframe-BUCe_xEG.js"></script>
-  <script>
-    window.addEventListener('load', () =>
-      window.setTimeout(() => {
-        const makeLink = asset => {
-          const link = document.createElement('link');
-
-          Object.keys(asset).forEach(attribute => {
-            link.setAttribute(attribute, asset[attribute]);
-          });
-
-          return link;
-        };
-
-        const loadNext = (assets, count) =>
-          window.setTimeout(() => {
-            if (count > assets.length) {
-              count = assets.length;
-
-              if (count === 0) {
-                return;
-              }
-            }
-
-            const fragment = new DocumentFragment();
-
-            while (count > 0) {
-              const link = makeLink(assets.shift());
-              fragment.append(link);
-              count--;
-
-              if (assets.length) {
-                link.onload = () => loadNext(assets, 1);
-                link.onerror = () => loadNext(assets, 1);
-              }
-            }
-
-            document.head.append(fragment);
-          });
-
-        loadNext([], 3);
-      })
-    );
-  </script>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="bg-gray-900 py-10 dark">
-    <div class="mx-auto max-w-7xl">
-      <div class="px-4 sm:px-6 lg:px-8">
-        <div class="sm:flex sm:items-center">
-          <div class="sm:flex-auto">
-            <h1 class="text-base font-semibold text-white">Transactions</h1>
-            <p class="mt-2 text-sm text-gray-200">A table of placeholder stock market data that does not make any sense.</p>
-          </div>
-          <div class="mt-4 text-right align-middle sm:flex-none">
-            <button type="button" class="block rounded-md bg-indigo-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Export</button>
-          </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+<div class="bg-gray-900 py-10 scheme-dark">
+  <div class="mx-auto max-w-7xl">
+    <div class="px-4 px-6 sm:px-6 px-8 lg:px-8">
+      <div class="flex sm:flex items-center sm:items-center">
+        <div class="flex-auto sm:flex-auto">
+          <h1 class="text-base font-semibold text-white">Transactions</h1>
+          <p class="mt-2 text-sm text-gray-300">A table of placeholder stock market data that does not make any sense.</p>
         </div>
-        <div class="mt-8 flow-root">
-          <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-              <table class="relative min-w-full divide-y divide-white/15">
-                <thead>
-                  <tr>
-                    <th scope="col" class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold whitespace-nowrap text-white sm:pl-0">Transaction ID</th>
-                    <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Company</th>
-                    <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Share</th>
-                    <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Commision</th>
-                    <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Price</th>
-                    <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Quantity</th>
-                    <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Net amount</th>
-                    <th scope="col" class="py-3.5 pr-4 pl-3 whitespace-nowrap sm:pr-0">
-                      <span class="sr-only">Edit</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-white/10 bg-gray-900">
-                  <tr>
-                    <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 sm:pl-0">AAPS0L</td>
-                    <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Chase &amp; Co.</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-white">CAC</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$4.37</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,509.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">12.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$4,397.00</td>
-                    <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                      <a href="#" class="text-purple-500 hover:text-purple-400">Edit<span class="sr-only">, AAPS0L</span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 sm:pl-0">O2KMND</td>
-                    <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Amazon.com Inc.</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-white">AMZN</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$5.92</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$2,900.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">8.80</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,509.00</td>
-                    <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                      <a href="#" class="text-purple-500 hover:text-purple-400">Edit<span class="sr-only">, O2KMND</span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 sm:pl-0">1LP2P4</td>
-                    <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Procter &amp; Gamble</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-white">PG</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">-$5.65</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$7,978.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">2.30</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$2,652.00</td>
-                    <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                      <a href="#" class="text-purple-500 hover:text-purple-400">Edit<span class="sr-only">, 1LP2P4</span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 sm:pl-0">PS9FJGL</td>
-                    <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Berkshire Hathaway</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-white">BRK</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$4.37</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,116.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">48.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$6,055.00</td>
-                    <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                      <a href="#" class="text-purple-500 hover:text-purple-400">Edit<span class="sr-only">, PS9FJGL</span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 sm:pl-0">QYR135</td>
-                    <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Apple Inc.</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-white">AAPL</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$38.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$8,508.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">36.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,496.00</td>
-                    <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                      <a href="#" class="text-purple-500 hover:text-purple-400">Edit<span class="sr-only">, QYR135</span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 sm:pl-0">99SLSM</td>
-                    <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">NVIDIA Corporation</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-white">NVDA</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$1,427.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$4,425.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">18.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$2,109.00</td>
-                    <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                      <a href="#" class="text-purple-500 hover:text-purple-400">Edit<span class="sr-only">, 99SLSM</span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 sm:pl-0">OSDJLS</td>
-                    <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Johnson &amp; Johnson</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-white">JNJ</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$1,937.23</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$4,038.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">32.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$7,210.00</td>
-                    <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                      <a href="#" class="text-purple-500 hover:text-purple-400">Edit<span class="sr-only">, OSDJLS</span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 sm:pl-0">4HJK3N</td>
-                    <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">JPMorgan</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-white">JPM</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">-$3.67</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,966.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">80.00</td>
-                    <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$6,432.00</td>
-                    <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                      <a href="#" class="text-purple-500 hover:text-purple-400">Edit<span class="sr-only">, 4HJK3N</span></a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <div class="twq mt-0 sm:mt-0 ml-16 sm:ml-16 flex-none sm:flex-none">
+          <button type="button" class="block rounded-md bg-indigo-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Export</button>
+        </div>
+      </div>
+      <div class="mt-8 flow-root">
+        <div class="-mx-4 -my-2 overflow-x-auto -mx-6 sm:-mx-6 -mx-8 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 align-middle px-6 sm:px-6 px-8 lg:px-8">
+            <table class="relative min-w-full divide-y divide-white/15">
+              <thead>
+                <tr>
+                  <th scope="col" class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold whitespace-nowrap text-white pl-0 sm:pl-0">Transaction ID</th>
+                  <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Company</th>
+                  <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Share</th>
+                  <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Commision</th>
+                  <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Price</th>
+                  <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Quantity</th>
+                  <th scope="col" class="px-2 py-3.5 text-left text-sm font-semibold whitespace-nowrap text-white">Net amount</th>
+                  <th scope="col" class="py-3.5 pr-4 pl-3 whitespace-nowrap pr-0 sm:pr-0">
+                    <span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">Edit</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10 bg-gray-900">
+                <tr>
+                  <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 pl-0 sm:pl-0">AAPS0L</td>
+                  <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Chase &amp; Co.</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-white">CAC</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$4.37</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,509.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">12.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$4,397.00</td>
+                  <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap pr-0 sm:pr-0">
+                    <a href="#" class="text-indigo-400 tyo">Edit<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, AAPS0L</span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 pl-0 sm:pl-0">O2KMND</td>
+                  <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Amazon.com Inc.</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-white">AMZN</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$5.92</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$2,900.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">8.80</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,509.00</td>
+                  <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap pr-0 sm:pr-0">
+                    <a href="#" class="text-indigo-400 tyo">Edit<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, O2KMND</span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 pl-0 sm:pl-0">1LP2P4</td>
+                  <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Procter &amp; Gamble</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-white">PG</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">-$5.65</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$7,978.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">2.30</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$2,652.00</td>
+                  <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap pr-0 sm:pr-0">
+                    <a href="#" class="text-indigo-400 tyo">Edit<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, 1LP2P4</span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 pl-0 sm:pl-0">PS9FJGL</td>
+                  <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Berkshire Hathaway</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-white">BRK</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$4.37</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,116.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">48.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$6,055.00</td>
+                  <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap pr-0 sm:pr-0">
+                    <a href="#" class="text-indigo-400 tyo">Edit<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, PS9FJGL</span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 pl-0 sm:pl-0">QYR135</td>
+                  <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Apple Inc.</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-white">AAPL</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$38.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$8,508.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">36.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,496.00</td>
+                  <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap pr-0 sm:pr-0">
+                    <a href="#" class="text-indigo-400 tyo">Edit<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, QYR135</span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 pl-0 sm:pl-0">99SLSM</td>
+                  <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">NVIDIA Corporation</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-white">NVDA</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$1,427.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$4,425.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">18.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$2,109.00</td>
+                  <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap pr-0 sm:pr-0">
+                    <a href="#" class="text-indigo-400 tyo">Edit<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, 99SLSM</span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 pl-0 sm:pl-0">OSDJLS</td>
+                  <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">Johnson &amp; Johnson</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-white">JNJ</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">+$1,937.23</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$4,038.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">32.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$7,210.00</td>
+                  <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap pr-0 sm:pr-0">
+                    <a href="#" class="text-indigo-400 tyo">Edit<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, OSDJLS</span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-400 pl-0 sm:pl-0">4HJK3N</td>
+                  <td class="px-2 py-2 text-sm font-medium whitespace-nowrap text-white">JPMorgan</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-white">JPM</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">-$3.67</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$3,966.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">80.00</td>
+                  <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">$6,432.00</td>
+                  <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap pr-0 sm:pr-0">
+                    <a href="#" class="text-indigo-400 tyo">Edit<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, 4HJK3N</span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script></script>
-</body>
+</div>
+
+
+    <script></script>
+  </body>
 </html>

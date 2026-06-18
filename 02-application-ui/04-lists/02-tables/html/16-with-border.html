@@ -1,154 +1,144 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Plans</title>
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="bg-gray-900 py-10 dark">
-    <div class="mx-auto max-w-7xl">
-      <div class="px-4 sm:px-6 lg:px-8">
-      <div class="sm:flex sm:items-center">
-        <div class="sm:flex-auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+<div class="bg-gray-900 py-10 scheme-dark">
+  <div class="mx-auto max-w-7xl">
+    <div class="px-4 px-6 sm:px-6 px-8 lg:px-8">
+      <div class="flex sm:flex items-center sm:items-center">
+        <div class="flex-auto sm:flex-auto">
           <h1 class="text-base font-semibold text-white">Plans</h1>
-          <p class="mt-2 text-sm text-gray-200">
-            Your team is on the <strong class="font-semibold text-white">Startup</strong> plan. The next payment of $80 will be due on
-            August 4, 2022.
-          </p>
+          <p class="mt-2 text-sm text-gray-300">Your team is on the <strong class="font-semibold text-white">Startup</strong> plan. The next payment of $80 will be due on August 4, 2022.</p>
         </div>
-        <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-          <button type="button" class="block rounded-md bg-indigo-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-            Update credit card
-          </button>
+        <div class="ymf mt-0 sm:mt-0 ml-16 sm:ml-16 flex-none sm:flex-none">
+          <button type="button" class="block rounded-md bg-indigo-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs yop focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Update credit card</button>
         </div>
       </div>
-      <div class="-mx-4 mt-10 ring-1 ring-white/15 sm:mx-0 sm:rounded-lg">
+      <div class="-mx-4 mt-10 ring-1 ring-white/15 mx-0 sm:mx-0 rounded-lg sm:rounded-lg">
         <table class="relative min-w-full divide-y divide-white/15">
           <thead>
             <tr>
-              <th scope="col" class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-white sm:pl-6">Plan</th>
-              <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-white lg:table-cell">Memory</th>
-              <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-white lg:table-cell">CPU</th>
-              <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-white lg:table-cell">Storage</th>
+              <th scope="col" class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-white pl-6 sm:pl-6">Plan</th>
+              <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-white table-cell lg:table-cell">Memory</th>
+              <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-white table-cell lg:table-cell">CPU</th>
+              <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-white table-cell lg:table-cell">Storage</th>
               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-white">Price</th>
-              <th scope="col" class="py-3.5 pr-4 pl-3 sm:pr-6">
-                <span class="sr-only">Select</span>
+              <th scope="col" class="py-3.5 pr-4 pl-3 pr-6 sm:pr-6">
+                <span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">Select</span>
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="relative py-4 pr-3 pl-4 text-sm sm:pl-6">
+              <td class="relative py-4 pr-3 pl-4 text-sm pl-6 sm:pl-6">
                 <div class="font-medium text-white">Hobby</div>
-                <div class="mt-1 flex flex-col text-gray-400 sm:block lg:hidden">
+                <div class="mt-1 flex flex-col text-gray-400 block sm:block hidden lg:hidden">
                   <span>4 GB RAM / 4 CPUs</span>
-                  <span class="hidden sm:inline">·</span>
+                  <span class="hidden inline sm:inline">·</span>
                   <span>128 GB SSD disk</span>
                 </div>
               </td>
-              <td class="hidden px-3 py-3.5 text-sm text-gray-400 lg:table-cell">4 GB RAM</td>
-              <td class="hidden px-3 py-3.5 text-sm text-gray-400 lg:table-cell">4 CPUs</td>
-              <td class="hidden px-3 py-3.5 text-sm text-gray-400 lg:table-cell">128 GB SSD disk</td>
+              <td class="hidden px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">4 GB RAM</td>
+              <td class="hidden px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">4 CPUs</td>
+              <td class="hidden px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">128 GB SSD disk</td>
               <td class="px-3 py-3.5 text-sm text-gray-400">
-                <div class="sm:hidden">$40/mo</div>
-                <div class="hidden sm:block">$40/month</div>
+                <div class="hidden sm:hidden">$40/mo</div>
+                <div class="hidden block sm:block">$40/month</div>
               </td>
-              <td class="relative py-3.5 pr-4 pl-3 text-right text-sm font-medium sm:pr-6">
-                <button type="button" class="inline-flex items-center rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/10 hover:bg-white/15 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white/10">
-                  Select<span class="sr-only">, Hobby</span>
-                </button>
+              <td class="relative py-3.5 pr-4 pl-3 text-right text-sm font-medium pr-6 sm:pr-6">
+                <button type="button" class="inline-flex items-center rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-xs inset-ring-1 inset-ring-white/10 yor disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white/10">Select<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, Hobby</span></button>
               </td>
             </tr>
             <tr>
-              <td class="relative border-t border-transparent py-4 pr-3 pl-4 text-sm sm:pl-6">
+              <td class="relative border-t border-transparent py-4 pr-3 pl-4 text-sm pl-6 sm:pl-6">
                 <div class="font-medium text-white">
                   Startup
-                  <span class="ml-1 text-purple-500">(Current Plan)</span>
+                  <span class="ml-1 text-indigo-400">(Current Plan)</span>
                 </div>
-                <div class="mt-1 flex flex-col text-gray-400 sm:block lg:hidden">
+                <div class="mt-1 flex flex-col text-gray-400 block sm:block hidden lg:hidden">
                   <span>8 GB RAM / 6 CPUs</span>
-                  <span class="hidden sm:inline">·</span>
+                  <span class="hidden inline sm:inline">·</span>
                   <span>256 GB SSD disk</span>
                 </div>
                 <div class="absolute -top-px right-0 left-6 h-px bg-white/10"></div>
               </td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">8 GB RAM</td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">6 CPUs</td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">256 GB SSD disk</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">8 GB RAM</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">6 CPUs</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">256 GB SSD disk</td>
               <td class="border-t border-white/10 px-3 py-3.5 text-sm text-gray-400">
-                <div class="sm:hidden">$80/mo</div>
-                <div class="hidden sm:block">$80/month</div>
+                <div class="hidden sm:hidden">$80/mo</div>
+                <div class="hidden block sm:block">$80/month</div>
               </td>
-              <td class="relative border-t border-transparent py-3.5 pr-4 pl-3 text-right text-sm font-medium sm:pr-6">
-                <button type="button" disabled class="inline-flex items-center rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/10 hover:bg-white/15 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white/10">
-                  Select<span class="sr-only">, Startup</span>
-                </button>
+              <td class="relative border-t border-transparent py-3.5 pr-4 pl-3 text-right text-sm font-medium pr-6 sm:pr-6">
+                <button type="button" disabled class="inline-flex items-center rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-xs inset-ring-1 inset-ring-white/10 yor disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white/10">Select<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, Startup</span></button>
                 <div class="absolute -top-px right-6 left-0 h-px bg-white/10"></div>
               </td>
             </tr>
             <tr>
-              <td class="relative border-t border-transparent py-4 pr-3 pl-4 text-sm sm:pl-6">
+              <td class="relative border-t border-transparent py-4 pr-3 pl-4 text-sm pl-6 sm:pl-6">
                 <div class="font-medium text-white">Business</div>
-                <div class="mt-1 flex flex-col text-gray-400 sm:block lg:hidden">
+                <div class="mt-1 flex flex-col text-gray-400 block sm:block hidden lg:hidden">
                   <span>16 GB RAM / 8 CPUs</span>
-                  <span class="hidden sm:inline">·</span>
+                  <span class="hidden inline sm:inline">·</span>
                   <span>512 GB SSD disk</span>
                 </div>
                 <div class="absolute -top-px right-0 left-6 h-px bg-white/10"></div>
               </td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">16 GB RAM</td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">8 CPUs</td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">512 GB SSD disk</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">16 GB RAM</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">8 CPUs</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">512 GB SSD disk</td>
               <td class="border-t border-white/10 px-3 py-3.5 text-sm text-gray-400">
-                <div class="sm:hidden">$160/mo</div>
-                <div class="hidden sm:block">$160/month</div>
+                <div class="hidden sm:hidden">$160/mo</div>
+                <div class="hidden block sm:block">$160/month</div>
               </td>
-              <td class="relative border-t border-transparent py-3.5 pr-4 pl-3 text-right text-sm font-medium sm:pr-6">
-                <button type="button" class="inline-flex items-center rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/10 hover:bg-white/15 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white/10">
-                  Select<span class="sr-only">, Business</span>
-                </button>
+              <td class="relative border-t border-transparent py-3.5 pr-4 pl-3 text-right text-sm font-medium pr-6 sm:pr-6">
+                <button type="button" class="inline-flex items-center rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-xs inset-ring-1 inset-ring-white/10 yor disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white/10">Select<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, Business</span></button>
                 <div class="absolute -top-px right-6 left-0 h-px bg-white/10"></div>
               </td>
             </tr>
             <tr>
-              <td class="relative border-t border-transparent py-4 pr-3 pl-4 text-sm sm:pl-6">
+              <td class="relative border-t border-transparent py-4 pr-3 pl-4 text-sm pl-6 sm:pl-6">
                 <div class="font-medium text-white">Enterprise</div>
-                <div class="mt-1 flex flex-col text-gray-400 sm:block lg:hidden">
+                <div class="mt-1 flex flex-col text-gray-400 block sm:block hidden lg:hidden">
                   <span>1024 GB RAM / 12 CPUs</span>
-                  <span class="hidden sm:inline">·</span>
+                  <span class="hidden inline sm:inline">·</span>
                   <span>128 GB SSD disk</span>
                 </div>
                 <div class="absolute -top-px right-0 left-6 h-px bg-white/10"></div>
               </td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">1024 GB RAM</td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">12 CPUs</td>
-              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 lg:table-cell">128 GB SSD disk</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">1024 GB RAM</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">12 CPUs</td>
+              <td class="hidden border-t border-white/10 px-3 py-3.5 text-sm text-gray-400 table-cell lg:table-cell">128 GB SSD disk</td>
               <td class="border-t border-white/10 px-3 py-3.5 text-sm text-gray-400">
-                <div class="sm:hidden">$240/mo</div>
-                <div class="hidden sm:block">$240/month</div>
+                <div class="hidden sm:hidden">$240/mo</div>
+                <div class="hidden block sm:block">$240/month</div>
               </td>
-              <td class="relative border-t border-transparent py-3.5 pr-4 pl-3 text-right text-sm font-medium sm:pr-6">
-                <button type="button" class="inline-flex items-center rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/10 hover:bg-white/15 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white/10">
-                  Select<span class="sr-only">, Enterprise</span>
-                </button>
+              <td class="relative border-t border-transparent py-3.5 pr-4 pl-3 text-right text-sm font-medium pr-6 sm:pr-6">
+                <button type="button" class="inline-flex items-center rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-xs inset-ring-1 inset-ring-white/10 yor disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white/10">Select<span class="sr-only whitespace-nowrap h-px absolute overflow-hidden">, Enterprise</span></button>
                 <div class="absolute -top-px right-6 left-0 h-px bg-white/10"></div>
               </td>
             </tr>
           </tbody>
         </table>
-        </div>
       </div>
     </div>
   </div>
-</body>
+</div>
+
+
+    <script></script>
+  </body>
 </html>

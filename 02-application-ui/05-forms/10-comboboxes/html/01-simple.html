@@ -1,83 +1,96 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="flex justify-center bg-gray-900 p-8 dark min-h-[450px]">
-    <div class="mx-auto w-full max-w-80">
-      <label for="autocomplete" class="block text-sm leading-6 font-medium text-white">Assigned to</label>
-      <el-autocomplete class="relative mt-2 block">
-        <input
-          id="autocomplete"
-          type="text"
-          class="block w-full rounded-md bg-white/5 py-1.5 pr-12 pl-3 text-base text-white outline outline-1 -outline-offset-1 outline-white/10 placeholder-gray-600 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm sm:leading-6" />
-        <button type="button" class="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-gray-400">
-            <path
-              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-              clip-rule="evenodd"
-              fill-rule="evenodd" />
-          </svg>
-        </button>
-        <el-options
-          anchor="bottom end"
-          popover
-          data-initial-popover-open
-          class="max-h-60 w-[var(--input-width)] overflow-auto rounded-md bg-gray-800 py-1 text-base outline outline-1 -outline-offset-1 outline-white/10 [--anchor-gap:0.25rem] [data-leave]:transition-all [data-leave]:duration-100 [data-leave]:ease-out [data-closed][data-leave]:opacity-0 sm:text-sm">
-          <el-option value="Leslie Alexander" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Leslie Alexander</el-option>
-          <el-option value="Michael Foster" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Michael Foster</el-option>
-          <el-option value="Dries Vincent" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Dries Vincent</el-option>
-          <el-option value="Lindsay Walton" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Lindsay Walton</el-option>
-          <el-option value="Courtney Henry" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Courtney Henry</el-option>
-          <el-option value="Tom Cook" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Tom Cook</el-option>
-          <el-option value="Whitney Francis" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Whitney Francis</el-option>
-          <el-option value="Leonard Krasner" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Leonard Krasner</el-option>
-          <el-option value="Floyd Miles" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Floyd Miles</el-option>
-          <el-option value="Emily Selman" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Emily Selman</el-option>
-          <el-option value="Kristin Watson" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Kristin Watson</el-option>
-          <el-option value="Emma Dorsey" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Emma Dorsey</el-option>
-          <el-option value="Alicia Bell" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Alicia Bell</el-option>
-          <el-option value="Jenny Wilson" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Jenny Wilson</el-option>
-          <el-option value="Anna Roberts" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Anna Roberts</el-option>
-          <el-option value="Benjamin Russel" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Benjamin Russel</el-option>
-          <el-option value="Jeffrey Webb" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Jeffrey Webb</el-option>
-          <el-option value="Kathryn Murphy" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Kathryn Murphy</el-option>
-          <el-option value="Lawrence Hunter" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Lawrence Hunter</el-option>
-          <el-option value="Yvette Armstrong" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Yvette Armstrong</el-option>
-          <el-option value="Angela Fisher" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Angela Fisher</el-option>
-          <el-option value="Blake Reid" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Blake Reid</el-option>
-          <el-option value="Hector Gibbons" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Hector Gibbons</el-option>
-          <el-option value="Fabricio Mendes" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Fabricio Mendes</el-option>
-          <el-option value="Jillian Steward" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Jillian Steward</el-option>
-          <el-option value="Chelsea Hagon" class="block truncate px-3 py-2 text-gray-400 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Chelsea Hagon</el-option>
-        </el-options>
-      </el-autocomplete>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "InterVariable", system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+    <div style="min-height: 450px" class="flex justify-center bg-gray-900 p-8 scheme-dark">
+      <div class="mx-auto w-full max-w-xs">
+        <label for="autocomplete" class="block text-sm leading-6 font-medium text-white">Assigned to</label>
+        <el-autocomplete class="relative mt-2 block">
+          <input
+            id="autocomplete"
+            type="text"
+            class="block w-full rounded-md bg-white/5 py-1.5 pr-12 pl-3 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm sm:leading-6"
+          />
+          <button
+            type="button"
+            class="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2"
+          >
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="size-5 text-gray-400"
+            >
+              <path
+                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <el-options
+            anchor="bottom end"
+            popover
+            data-initial-popover-open
+            class="max-h-60 w-(--input-width) overflow-auto rounded-md bg-gray-800 py-1 text-base outline-1 -outline-offset-1 outline-white/10 transition-discrete [--anchor-gap:0.25rem] data-[leave]:transition data-[leave]:duration-100 data-[leave]:ease-in data-[closed]:data-[leave]:opacity-0 sm:text-sm"
+          >
+            <el-option value="Leslie Alexander" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Leslie Alexander</el-option>
+            <el-option value="Michael Foster" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Michael Foster</el-option>
+            <el-option value="Dries Vincent" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Dries Vincent</el-option>
+            <el-option value="Lindsay Walton" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Lindsay Walton</el-option>
+            <el-option value="Courtney Henry" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Courtney Henry</el-option>
+            <el-option value="Tom Cook" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Tom Cook</el-option>
+            <el-option value="Whitney Francis" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Whitney Francis</el-option>
+            <el-option value="Leonard Krasner" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Leonard Krasner</el-option>
+            <el-option value="Floyd Miles" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Floyd Miles</el-option>
+            <el-option value="Emily Selman" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Emily Selman</el-option>
+            <el-option value="Kristin Watson" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Kristin Watson</el-option>
+            <el-option value="Emma Dorsey" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Emma Dorsey</el-option>
+            <el-option value="Alicia Bell" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Alicia Bell</el-option>
+            <el-option value="Jenny Wilson" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Jenny Wilson</el-option>
+            <el-option value="Anna Roberts" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Anna Roberts</el-option>
+            <el-option value="Benjamin Russel" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Benjamin Russel</el-option>
+            <el-option value="Jeffrey Webb" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Jeffrey Webb</el-option>
+            <el-option value="Kathryn Murphy" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Kathryn Murphy</el-option>
+            <el-option value="Lawrence Hunter" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Lawrence Hunter</el-option>
+            <el-option value="Yvette Armstrong" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Yvette Armstrong</el-option>
+            <el-option value="Angela Fisher" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Angela Fisher</el-option>
+            <el-option value="Blake Reid" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Blake Reid</el-option>
+            <el-option value="Hector Gibbons" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Hector Gibbons</el-option>
+            <el-option value="Fabricio Mendes" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Fabricio Mendes</el-option>
+            <el-option value="Jillian Steward" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Jillian Steward</el-option>
+            <el-option value="Chelsea Hagon" class="block truncate px-3 py-2 text-gray-300 select-none aria-selected:bg-indigo-500 aria-selected:text-white">Chelsea Hagon</el-option>
+          </el-options>
+        </el-autocomplete>
+      </div>
     </div>
-  </div>
-  <script>
-    {
-      function onReady() {
-        let popovers = document.querySelectorAll('[popover][data-initial-popover-open]');
-        popovers.forEach(popover => popover.showPopover());
+    <script>
+      {
+        function onReady() {
+          let popovers = document.querySelectorAll('[popover][data-initial-popover-open]')
+          popovers.forEach((popover) => popover.showPopover())
+        }
+        if (customElements.get('el-popover')) {
+          onReady()
+        } else {
+          window.addEventListener('elements:ready', () => onReady())
+        }
       }
-      if (customElements.get('el-popover')) {
-        onReady();
-      } else {
-        window.addEventListener('elements:ready', () => onReady());
-      }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

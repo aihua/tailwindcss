@@ -1,34 +1,35 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="flex items-center justify-center bg-gray-900 p-8 dark">
-    <div class="mx-auto w-full max-w-xs">
-      <div>
-        <label for="search" class="block text-sm font-medium text-white">Quick search</label>
-        <div class="mt-2">
-          <div class="flex rounded-lg bg-white/5 outline outline-solid -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:outline-solid focus-within:-outline-offset-2 focus-within:outline-violet-400">
-            <input id="search" type="text" name="search" class="block min-w-0 grow bg-transparent px-3 py-1.5 text-white placeholder-gray-500 focus:outline-none sm:text-sm" />
-            <div class="flex py-1.5 pr-1.5">
-              <kbd class="inline-flex items-center rounded-sm border border-solid border-white/10 px-1 text-xs text-zinc-400 font-sans">⌘K</kbd>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+    <div class="flex items-center justify-center bg-gray-900 p-8 [color-scheme:dark]">
+      <div class="mx-auto w-full max-w-xs">
+        <div>
+          <label for="search" class="block text-sm/6 font-medium text-white">Quick search</label>
+          <div class="mt-2">
+            <div class="flex rounded-md bg-white/5 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
+              <input id="search" type="text" name="search" class="block min-w-0 grow bg-transparent px-3 py-1.5 text-base text-white placeholder-gray-500 focus:outline-none sm:text-sm/6" />
+              <div class="flex py-1.5 pr-1.5">
+                <kbd class="inline-flex items-center rounded-sm border border-white/10 px-1 font-sans text-xs text-gray-400">⌘K</kbd>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script></script>
-</body>
+    <script></script>
+  </body>
 </html>

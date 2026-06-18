@@ -1,32 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="flex items-center justify-center bg-gray-900 p-8 dark">
-    <div class="mx-auto w-full max-w-80">
-      <div>
-        <label for="company-website" class="block text-sm font-medium text-white">Company website</label>
-        <div class="mt-2">
-          <div class="flex items-center rounded-lg bg-white/5 pl-3 outline outline-solid -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:outline-solid focus-within:-outline-offset-2 focus-within:outline-violet-400">
-            <div class="shrink-0 text-base text-zinc-400 select-none sm:text-sm">https://</div>
-            <input id="company-website" type="text" name="company-website" placeholder="www.example.com" class="block min-w-0 grow bg-white/5 py-1.5 pr-3 pl-1 text-base text-white placeholder-gray-500 focus:outline-none sm:text-sm" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+    <div class="flex items-center justify-center bg-gray-900 p-8 [color-scheme:dark]">
+      <div class="mx-auto w-full max-w-xs">
+        <div>
+          <label for="company-website" class="block text-sm/6 font-medium text-white">Company website</label>
+          <div class="mt-2">
+            <div class="flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
+              <div class="shrink-0 text-base text-gray-400 select-none sm:text-sm/6">https://</div>
+              <input id="company-website" type="text" name="company-website" placeholder="www.example.com" class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-white placeholder-gray-500 focus:outline-none sm:text-sm/6" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script></script>
-</body>
+    <script></script>
+  </body>
 </html>

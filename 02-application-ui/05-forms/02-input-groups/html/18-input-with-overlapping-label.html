@@ -1,27 +1,28 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="flex items-center justify-center bg-gray-900 p-8 dark">
-    <div class="mx-auto w-full max-w-xs">
-      <div class="relative">
-        <label for="name" class="absolute -top-2 left-2 inline-block rounded-[0.5rem] bg-gray-900 px-1 text-xs font-medium text-white">Name</label>
-        <input id="name" type="text" name="name" placeholder="Jane Smith" class="block w-full rounded-lg bg-gray-900 px-3 py-1.5 text-base text-white outline outline-solid -outline-offset-1 outline-gray-600 placeholder-gray-500 focus:outline-2 focus:outline-solid focus:-outline-offset-2 focus:outline-violet-400 sm:text-sm" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+    <div class="flex items-center justify-center bg-gray-900 p-8 [color-scheme:dark]">
+      <div class="mx-auto w-full max-w-xs">
+        <div class="relative">
+          <label for="name" class="absolute -top-2 left-2 inline-block rounded-lg bg-gray-900 px-1 text-xs font-medium text-white">Name</label>
+          <input id="name" type="text" name="name" placeholder="Jane Smith" class="block w-full rounded-md bg-gray-900 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-600 placeholder-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+        </div>
       </div>
     </div>
-  </div>
-  <script></script>
-</body>
+    <script></script>
+  </body>
 </html>

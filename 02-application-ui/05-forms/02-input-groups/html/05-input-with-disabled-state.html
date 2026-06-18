@@ -1,35 +1,30 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-  <style>
-    body {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-  </style>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="flex items-center justify-center bg-gray-900 p-8 dark">
-    <div class="mx-auto w-full max-w-80">
-      <div>
-        <label for="email" class="block text-sm font-medium text-white">Email</label>
-        <div class="mt-2">
-          <input id="email" type="email" name="email" value="you@example.com" disabled placeholder="you@example.com" class="block w-full rounded-lg bg-white/5 px-3 py-1.5 text-sm text-zinc-300 outline outline-solid -outline-offset-1 outline-white/10 placeholder-gray-500 focus:outline-2 focus:outline-solid focus:-outline-offset-2 focus:outline-violet-400 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-gray-500 disabled:outline-white/5 sm:text-sm" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+    <div class="flex items-center justify-center bg-gray-900 p-8 [color-scheme:dark]">
+      <div class="mx-auto w-full max-w-xs">
+        <div>
+          <label for="email" class="block text-sm/6 font-medium text-white">Email</label>
+          <div class="mt-2">
+            <input id="email" type="email" name="email" value="you@example.com" disabled placeholder="you@example.com" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-gray-300 outline-1 -outline-offset-1 outline-white/10 placeholder-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-gray-500 disabled:outline-white/5 sm:text-sm/6" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script></script>
-</body>
+    <script></script>
+  </body>
 </html>

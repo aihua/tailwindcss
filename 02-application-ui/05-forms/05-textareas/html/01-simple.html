@@ -1,36 +1,29 @@
 <!doctype html>
-<html>
-<head>
- <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
- <link rel="preconnect" href="https://rsms.me/" />
- <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-</head>
-<body class="antialiased bg-gray-900">
-
- <div class="bg-gray-900 p-8 dark">
- <div class="mx-auto w-full max-w-xl">
- <div>
- <label for="comment" class="block text-sm/6 font-medium text-white">Add your comment</label>
- <div class="mt-2">
- <textarea
- id="comment"
- name="comment"
- rows="4"
- class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-violet-600 sm:text-sm/6"></textarea>
- </div>
- </div>
- </div>
- </div>
- <script></script>
-
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+    <div class="bg-gray-900 p-8 [color-scheme:dark]">
+      <div class="mx-auto w-full max-w-md">
+        <div>
+          <label for="comment" class="block text-sm/6 font-medium text-white">Add your comment</label>
+          <div class="mt-2">
+            <textarea id="comment" name="comment" rows="4" class="block w-full rounded-md bg-[oklab(100%_0_5.96046e-8/.05)] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-[oklab(100%_0_5.96046e-8/.1)] placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

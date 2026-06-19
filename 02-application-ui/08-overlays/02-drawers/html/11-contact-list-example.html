@@ -1,942 +1,731 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-    :where(:has(:is([open], :popover-open, :open))) .hide-when-open {
-      opacity: 0;
-    }
-    dialog::backdrop {
-      background-color: transparent;
-    }
-    /* Popover enter/leave animations */
-    [popover] {
-      transition: scale 0.1s cubic-bezier(0, 0, 0.2, 1), opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
-    }
-    [popover]:not(:popover-open) {
-      scale: 95%;
-      opacity: 0;
-      transition: scale 75ms cubic-bezier(0.4, 0, 1, 1), opacity 75ms cubic-bezier(0.4, 0, 1, 1);
-    }
-    @starting-style {
-      [popover]:popover-open {
-        scale: 95%;
-        opacity: 0;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "InterVariable", system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+<div class="grid min-h-[768px] place-content-center bg-gray-900 scheme-dark">
+  <button command="show-modal" commandfor="drawer" class="rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 transition-all duration-300 hover:hover:bg-white/20 [:has([open])_&]:opacity-0">Open drawer</button>
+  <el-dialog>
+    <dialog id="drawer" aria-labelledby="drawer-title" class="fixed inset-0 w-auto h-auto max-h-none max-w-none overflow-hidden bg-transparent [&::backdrop]:bg-transparent">
+      <div tabindex="0" class="absolute inset-0 pl-10 focus:outline-none sm:pl-16">
+        <el-dialog-panel class="group/dialog-panel ml-auto block w-full h-full max-w-md [transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] transition duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:duration-700">
+          <div class="relative flex h-full flex-col overflow-y-auto bg-gray-800 shadow-xl after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10 focus:outline-none">
+            <div class="p-[1.5rem]">
+              <div class="flex items-start justify-between">
+                <h2 id="drawer-title" class="text-base font-semibold text-white">Team</h2>
+                <div class="ml-3 flex h-7 items-center">
+                  <button type="button" command="close" commandfor="drawer" class="relative rounded-md text-gray-400 hover:hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                    <span class="absolute -inset-2.5"></span>
+                    <span class="sr-only">Close panel</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6">
+                      <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="border-b border-white/10">
+              <div class="px-6">
+                <!-- Tab component -->
+                <nav class="-mb-px flex space-x-6">
+                  <!-- Current: "border-indigo-500 text-indigo-400", Default: "border-transparent text-gray-400 hover:border-white/20 hover:text-white" -->
+                  <a href="#" class="border-b-2 border-indigo-500 px-[.25rem] pb-4 text-sm font-medium whitespace-nowrap text-indigo-400">All</a>
+                  <a href="#" class="border-b-2 border-transparent px-[.25rem] pb-4 text-sm font-medium whitespace-nowrap text-gray-400 hover:hover:border-white/20 hover:hover:text-white">Online</a>
+                  <a href="#" class="border-b-2 border-transparent px-[.25rem] pb-4 text-sm font-medium whitespace-nowrap text-gray-400 hover:hover:border-white/20 hover:hover:text-white">Offline</a>
+                </nav>
+              </div>
+            </div>
+            <ul role="list" class="flex-1 divide-y divide-white/10 overflow-y-auto">
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Leslie Alexander</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@lesliealexander</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Michael Foster</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@michaelfoster</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Dries Vincent</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@driesvincent</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Lindsay Walton</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@lindsaywalton</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Courtney Henry</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@courtneyhenry</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Tom Cook</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@tomcook</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Whitney Francis</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@whitneyfrancis</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Leonard Krasner</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@leonardkrasner</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Floyd Miles</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@floydmiles</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Emily Selman</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@emilyselman</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Kristin Watson</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@kristinwatson</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Emma Dorsey</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@emmadorsey</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Alicia Bell</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@aliciabell</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Jenny Wilson</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@jennywilson</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Anna Roberts</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@annaroberts</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-green-400 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Benjamin Russel</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@benjaminrussel</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Jeffrey Webb</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@jeffreywebb</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+              <li>
+                <div class="group relative flex items-center px-[1.25rem] py-6">
+                  <a href="#" class="-m-1 block flex-1 p-1">
+                    <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/3"></div>
+                    <div class="relative flex min-w-0 flex-1 items-center">
+                      <span class="relative inline-block shrink-0">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="w-10 h-10 rounded-full bg-gray-800 outline-1 -outline-offset-1 outline-white/10" />
+                        <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
+                        <span aria-hidden="true" class="absolute top-0 right-0 block w-[.625rem] h-[.625rem] rounded-full bg-gray-500 ring-2 ring-gray-800"></span>
+                      </span>
+                      <div class="ml-4 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm font-medium text-white">Kathryn Murphy</p>
+                        <p class="text-ellipsis whitespace-nowrap overflow-hidden text-sm text-gray-400">@kathrynmurphy</p>
+                      </div>
+                    </div>
+                  </a>
+                  <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
+                    <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                      <span class="absolute inset-[-.375rem]"></span>
+                      <span class="sr-only">Open options menu</span>
+                      <span class="flex w-full h-full items-center justify-center rounded-full">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
+                          <path d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <el-menu anchor="left start" popover class="w-[12rem] rounded-md bg-gray-800 shadow-lg outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:0.25rem] data-[closed]:[transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] data-[closed]:opacity-0 anca ancb ancc ancd">
+                      <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">View profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none forced-colors:focus:outline-offset-2">Send message</a>
+                      </div>
+                    </el-menu>
+                  </el-dropdown>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+</div>
+<script>
+  {
+    function onReady() {
+      for (let elDialog of document.querySelectorAll('el-dialog')) {
+        let dialog = elDialog.querySelector('dialog')
+
+        // Mark dialog as inert to prevent focus from moving inside
+        dialog.inert = true
+
+        dialog.addEventListener(
+          'beforetoggle',
+          (evt) => {
+            if (evt.newState !== 'open') return
+
+            // Fire normal events for initial value on focus if any
+            for (let element of dialog.querySelectorAll('[data-initial-value-on-focus]')) {
+              let value = element.getAttribute('data-initial-value-on-focus')
+              element.removeAttribute('data-initial-value-on-focus')
+              element.value = value
+              element.dispatchEvent(new Event('input'))
+            }
+
+            // Then, after all events have been processed, allow focusing
+            setTimeout(() => {
+              dialog.inert = false
+            }, 0)
+          },
+          { once: true },
+        )
+
+        // Now we can open the dialog
+        elDialog.open = true
       }
     }
-  </style>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="grid min-h-[768px] place-content-center bg-gray-900 [color-scheme:dark]">
-    <button
-      command="show-modal"
-      commandfor="drawer"
-      class="rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white inset-ring-1 ring-white/5 transition-all duration-300 hover:bg-white/20 hide-when-open">
-      Open drawer
-    </button>
-    <el-dialog>
-      <dialog id="drawer" aria-labelledby="drawer-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-hidden bg-transparent">
-        <div tabindex="0" class="absolute inset-0 pl-10 focus:outline-none sm:pl-16">
-          <el-dialog-panel class="group/dialog-panel ml-auto block size-full max-w-112 [transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700">
-            <div class="relative flex h-full flex-col overflow-y-auto bg-gray-800 shadow-xl after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10 focus:outline-none">
-              <div class="p-6">
-                <div class="flex items-start justify-between">
-                  <h2 id="drawer-title" class="text-base font-semibold text-white">Team</h2>
-                  <div class="ml-3 flex h-7 items-center">
-                    <button
-                      type="button"
-                      command="close"
-                      commandfor="drawer"
-                      class="relative rounded-md text-gray-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                      <span class="absolute -inset-2.5"></span>
-                      <span class="sr-only">Close panel</span>
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        class="w-6 h-6">
-                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="border-b border-white/10">
-                <div class="px-6">
-                  <!-- Tab component -->
-                  <nav class="-mb-px flex gap-x-6">
-                    <!-- Current: "border-indigo-500 text-indigo-400", Default: "border-transparent text-gray-400 hover:border-white/20 hover:text-white" -->
-                    <a href="#" class="border-b-2 border-indigo-500 px-1 pb-4 text-sm font-medium whitespace-nowrap text-indigo-400">All</a>
-                    <a href="#" class="border-b-2 border-transparent px-1 pb-4 text-sm font-medium whitespace-nowrap text-gray-400 hover:border-white/20 hover:text-white">Online</a>
-                    <a href="#" class="border-b-2 border-transparent px-1 pb-4 text-sm font-medium whitespace-nowrap text-gray-400 hover:border-white/20 hover:text-white">Offline</a>
-                  </nav>
-                </div>
-              </div>
-              <ul role="list" class="flex-1 divide-y divide-white/10 overflow-y-auto">
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Leslie Alexander</p>
-                          <p class="truncate text-sm text-gray-400">@lesliealexander</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Michael Foster</p>
-                          <p class="truncate text-sm text-gray-400">@michaelfoster</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Dries Vincent</p>
-                          <p class="truncate text-sm text-gray-400">@driesvincent</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Lindsay Walton</p>
-                          <p class="truncate text-sm text-gray-400">@lindsaywalton</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Courtney Henry</p>
-                          <p class="truncate text-sm text-gray-400">@courtneyhenry</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Tom Cook</p>
-                          <p class="truncate text-sm text-gray-400">@tomcook</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Whitney Francis</p>
-                          <p class="truncate text-sm text-gray-400">@whitneyfrancis</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Leonard Krasner</p>
-                          <p class="truncate text-sm text-gray-400">@leonardkrasner</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Floyd Miles</p>
-                          <p class="truncate text-sm text-gray-400">@floydmiles</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Emily Selman</p>
-                          <p class="truncate text-sm text-gray-400">@emilyselman</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Kristin Watson</p>
-                          <p class="truncate text-sm text-gray-400">@kristinwatson</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Emma Dorsey</p>
-                          <p class="truncate text-sm text-gray-400">@emmadorsey</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Alicia Bell</p>
-                          <p class="truncate text-sm text-gray-400">@aliciabell</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Jenny Wilson</p>
-                          <p class="truncate text-sm text-gray-400">@jennywilson</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Anna Roberts</p>
-                          <p class="truncate text-sm text-gray-400">@annaroberts</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Benjamin Russel</p>
-                          <p class="truncate text-sm text-gray-400">@benjaminrussel</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Jeffrey Webb</p>
-                          <p class="truncate text-sm text-gray-400">@jeffreywebb</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-                <li>
-                  <div class="group relative flex items-center px-5 py-6">
-                    <a href="#" class="-m-1 block flex-1 p-1">
-                      <div aria-hidden="true" class="absolute inset-0 group-hover:bg-white/[0.025]"></div>
-                      <div class="relative flex min-w-0 flex-1 items-center">
-                        <span class="relative inline-block shrink-0">
-                          <img
-                            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                            class="w-10 h-10 rounded-full bg-gray-700 outline outline-1 -outline-offset-1 outline-white/10" />
-                          <!-- Online: "bg-green-400", Offline: "bg-gray-500" -->
-                          <span aria-hidden="true" class="absolute top-0 right-0 block w-2.5 h-2.5 rounded-full bg-gray-500 ring-2 ring-gray-700"></span>
-                        </span>
-                        <div class="ml-4 truncate">
-                          <p class="truncate text-sm font-medium text-white">Kathryn Murphy</p>
-                          <p class="truncate text-sm text-gray-400">@kathrynmurphy</p>
-                        </div>
-                      </div>
-                    </a>
-                    <el-dropdown class="relative ml-2 inline-block shrink-0 text-left">
-                      <button class="group relative inline-flex w-8 h-8 items-center justify-center rounded-full bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open options menu</span>
-                        <span class="flex size-full items-center justify-center rounded-full">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            data-slot="icon"
-                            aria-hidden="true"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-300">
-                            <path
-                              d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                          </svg>
-                        </span>
-                      </button>
-                      <el-menu
-                        anchor="left start"
-                        popover
-                        class="w-48 origin-top-right rounded-md bg-gray-700 shadow-md outline outline-1 -outline-offset-1 outline-white/10 --anchor-gap:0.25rem">
-                        <div class="py-1">
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">View profile</a>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-none">Send message</a>
-                        </div>
-                      </el-menu>
-                    </el-dropdown>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </el-dialog-panel>
-        </div>
-      </dialog>
-    </el-dialog>
-  </div>
-</body>
+    if (customElements.get('el-dialog')) {
+      onReady()
+    } else {
+      window.addEventListener('elements:ready', onReady)
+    }
+  }
+</script>
+
+  </body>
 </html>

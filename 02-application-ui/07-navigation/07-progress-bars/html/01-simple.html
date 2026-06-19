@@ -1,44 +1,48 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-  @theme {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-</style>
-<body class="antialiased bg-gray-900">
-  <div class="bg-gray-900 dark">
-    <div class="mx-auto max-w-7xl p-6">
-      <nav aria-label="Progress">
-        <ol role="list" class="space-y-4 lg:flex lg:space-y-0 lg:space-x-8">
-          <li class="lg:flex-1">
-            <!-- Completed Step -->
-            <a href="#" class="group flex flex-col border-l-4 border-indigo-500 py-2 pl-4 hover:border-indigo-400 lg:border-t-4 lg:border-l-0 lg:pt-4 lg:pb-0 lg:pl-0">
-              <span class="text-sm font-medium text-indigo-400 group-hover:text-indigo-300">Step 1</span>
-              <span class="text-sm font-medium text-white">Job details</span>
-            </a>
-          </li>
-          <li class="lg:flex-1">
-            <!-- Current Step -->
-            <a href="#" aria-current="step" class="flex flex-col border-l-4 border-indigo-500 py-2 pl-4 lg:border-t-4 lg:border-l-0 lg:pt-4 lg:pb-0 lg:pl-0">
-              <span class="text-sm font-medium text-indigo-400">Step 2</span>
-              <span class="text-sm font-medium text-white">Application form</span>
-            </a>
-          </li>
-          <li class="lg:flex-1">
-            <!-- Upcoming Step -->
-            <a href="#" class="group flex flex-col border-l-4 border-white/10 py-2 pl-4 hover:border-white/20 lg:border-t-4 lg:border-l-0 lg:pt-4 lg:pb-0 lg:pl-0">
-              <span class="text-sm font-medium text-gray-400 group-hover:text-gray-300">Step 3</span>
-              <span class="text-sm font-medium text-white">Preview</span>
-            </a>
-          </li>
-        </ol>
-      </nav>
-    </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "InterVariable", system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+<body class="bg-gray-900 antialiased"><div class="bg-gray-900 scheme-dark">
+  <div class="mx-auto max-w-7xl p-6">
+    <nav aria-label="Progress">
+      <ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+        <li class="md:flex-1">
+          <!-- Completed Step -->
+          <a href="#" class="ost flex flex-col border-l-4 border-indigo-500 py-2 pl-4 hover:border-indigo-400 md:border-t-4 md:border-l-0 md:pt-4 md:pb-0 md:pl-0">
+            <span class="text-sm font-medium text-indigo-400 osv">Step 1</span>
+            <span class="text-sm font-medium text-white">Job details</span>
+          </a>
+        </li>
+        <li class="md:flex-1">
+          <!-- Current Step -->
+          <a href="#" aria-current="step" class="flex flex-col border-l-4 border-indigo-500 py-2 pl-4 md:border-t-4 md:border-l-0 md:pt-4 md:pb-0 md:pl-0">
+            <span class="text-sm font-medium text-indigo-400">Step 2</span>
+            <span class="text-sm font-medium text-white">Application form</span>
+          </a>
+        </li>
+        <li class="md:flex-1">
+          <!-- Upcoming Step -->
+          <a href="#" class="ost flex flex-col border-l-4 border-white/10 py-2 pl-4 hover:border-white/20 md:border-t-4 md:border-l-0 md:pt-4 md:pb-0 md:pl-0">
+            <span class="text-sm font-medium text-gray-400 oss">Step 3</span>
+            <span class="text-sm font-medium text-white">Preview</span>
+          </a>
+        </li>
+      </ol>
+    </nav>
   </div>
-  <script></script>
+</div>
+<script></script>
 </body>
+</html>

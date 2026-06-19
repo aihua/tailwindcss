@@ -1,71 +1,72 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-  @theme {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-</style>
-<body class="antialiased bg-gray-900">
-  <div class="bg-gray-900 dark">
-    <div class="px-4 py-12 md:px-6 xl:px-8">
-      <nav aria-label="Progress" class="flex justify-center">
-        <ol role="list" class="space-y-6">
-          <li>
-            <!-- Complete Step -->
-            <a href="#" class="group">
-              <span class="flex items-start">
-                <span class="relative flex w-5 h-5 shrink-0 items-center justify-center">
-                  <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-full h-full text-indigo-400 group-hover:text-indigo-300">
-                    <path
-                      d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
-                      clip-rule="evenodd"
-                      fill-rule="evenodd" />
-                  </svg>
-                </span>
-                <span class="ml-3 text-sm font-medium text-gray-400 group-hover:text-white">Create account</span>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "InterVariable", system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+<body class="bg-gray-900 antialiased"><div class="bg-gray-900 scheme-dark">
+  <div class="px-4 py-12 sm:px-6 lg:px-8">
+    <nav aria-label="Progress" class="flex justify-center">
+      <ol role="list" class="space-y-6">
+        <li>
+          <!-- Complete Step -->
+          <a href="#" class="group">
+            <span class="flex items-start">
+              <span class="relative flex size-5 shrink-0 items-center justify-center">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-full text-indigo-400 group-hover:text-indigo-300">
+                  <path d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
               </span>
-            </a>
-          </li>
-          <li>
-            <!-- Current Step -->
-            <a href="#" aria-current="step" class="flex items-start">
-              <span aria-hidden="true" class="relative flex w-5 h-5 shrink-0 items-center justify-center">
-                <span class="absolute w-4 h-4 rounded-full bg-purple-700"></span>
-                <span class="relative block w-2 h-2 rounded-full bg-indigo-400"></span>
-              </span>
-              <span class="ml-3 text-sm font-medium text-indigo-400">Profile information</span>
-            </a>
-          </li>
-          <li>
-            <!-- Upcoming Step -->
-            <a href="#" class="group">
-              <div class="flex items-start">
-                <div aria-hidden="true" class="relative flex w-5 h-5 shrink-0 items-center justify-center">
-                  <div class="w-2 h-2 rounded-full bg-white/15 group-hover:bg-white/25"></div>
-                </div>
-                <p class="ml-3 text-sm font-medium text-gray-400 group-hover:text-white">Theme</p>
+              <span class="ml-3 text-sm font-medium text-gray-400 group-hover:text-white">Create account</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <!-- Current Step -->
+          <a href="#" aria-current="step" class="flex items-start">
+            <span aria-hidden="true" class="relative flex size-5 shrink-0 items-center justify-center">
+              <span class="absolute size-4 rounded-full bg-indigo-900"></span>
+              <span class="relative block size-2 rounded-full bg-indigo-400"></span>
+            </span>
+            <span class="ml-3 text-sm font-medium text-indigo-400">Profile information</span>
+          </a>
+        </li>
+        <li>
+          <!-- Upcoming Step -->
+          <a href="#" class="group">
+            <div class="flex items-start">
+              <div aria-hidden="true" class="relative flex size-5 shrink-0 items-center justify-center">
+                <div class="size-2 rounded-full bg-white/15 group-hover:bg-white/25"></div>
               </div>
-            </a>
-          </li>
-          <li>
-            <!-- Upcoming Step -->
-            <a href="#" class="group">
-              <div class="flex items-start">
-                <div aria-hidden="true" class="relative flex w-5 h-5 shrink-0 items-center justify-center">
-                  <div class="w-2 h-2 rounded-full bg-white/15 group-hover:bg-white/25"></div>
-                </div>
-                <p class="ml-3 text-sm font-medium text-gray-400 group-hover:text-white">Preview</p>
+              <p class="ml-3 text-sm font-medium text-gray-400 group-hover:text-white">Theme</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <!-- Upcoming Step -->
+          <a href="#" class="group">
+            <div class="flex items-start">
+              <div aria-hidden="true" class="relative flex size-5 shrink-0 items-center justify-center">
+                <div class="size-2 rounded-full bg-white/15 group-hover:bg-white/25"></div>
               </div>
-            </a>
-          </li>
-        </ol>
-      </nav>
-    </div>
+              <p class="ml-3 text-sm font-medium text-gray-400 group-hover:text-white">Preview</p>
+            </div>
+          </a>
+        </li>
+      </ol>
+    </nav>
   </div>
-  <script></script>
+</div>
+<script></script>
 </body>
+</html>

@@ -1,104 +1,105 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-  @theme {
-    --font-sans: InterVariable, system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-</style>
-<body class="antialiased bg-gray-900">
-  <div class="bg-gray-900 dark">
-    <div class="flex justify-center px-4 py-12 sm:px-6 lg:px-8">
-      <div class="min-w-0">
-        <nav aria-label="Progress">
-          <ol role="list" class="overflow-hidden">
-            <li class="relative pb-10">
-              <div aria-hidden="true" class="absolute top-4 left-4 mt-0.5 -ml-px h-full w-0.5 bg-indigo-500"></div>
-              <!-- Complete Step -->
-              <a href="#" class="group relative flex items-start">
-                <span class="flex h-9 items-center">
-                  <span class="relative z-10 flex w-8 h-8 items-center justify-center rounded-full bg-indigo-500 group-hover:bg-indigo-600">
-                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="w-5 h-5 text-white">
-                      <path
-                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                        clip-rule="evenodd"
-                        fill-rule="evenodd" />
-                    </svg>
-                  </span>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "InterVariable", system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+<body class="bg-gray-900 antialiased"><div class="bg-gray-900 scheme-dark">
+  <div class="flex justify-center px-4 py-12 sm:px-6 lg:px-8">
+    <div class="min-w-0">
+      <nav aria-label="Progress">
+        <ol role="list" class="olw">
+          <li class="relative pb-10">
+            <div aria-hidden="true" class="absolute top-4 left-4 mt-0.5 -ml-px h-full w-0.5 bg-indigo-500"></div>
+            <!-- Complete Step -->
+            <a href="#" class="group relative flex items-start">
+              <span class="flex h-9 items-center">
+                <span class="relative olg flex size-8 items-center justify-center rounded-full bg-indigo-500 group-hover:bg-indigo-600">
+                  <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-white">
+                    <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                  </svg>
                 </span>
-                <span class="ml-4 flex min-w-0 flex-col">
-                  <span class="text-sm font-medium text-white">Create account</span>
-                  <span class="text-sm text-gray-400">Vitae sed mi luctus laoreet.</span>
+              </span>
+              <span class="ml-4 flex min-w-0 flex-col">
+                <span class="text-sm font-medium text-white">Create account</span>
+                <span class="text-sm text-gray-400">Vitae sed mi luctus laoreet.</span>
+              </span>
+            </a>
+          </li>
+          <li class="relative pb-10">
+            <div aria-hidden="true" class="absolute top-4 left-4 mt-0.5 -ml-px h-full w-0.5 bg-gray-700"></div>
+            <!-- Current Step -->
+            <a href="#" aria-current="step" class="group relative flex items-start">
+              <span aria-hidden="true" class="flex h-9 items-center">
+                <span class="relative olg flex size-8 items-center justify-center rounded-full border-2 border-indigo-500 bg-gray-900">
+                  <span class="size-2.5 rounded-full bg-indigo-500"></span>
                 </span>
-              </a>
-            </li>
-            <li class="relative pb-10">
-              <div aria-hidden="true" class="absolute top-4 left-4 mt-0.5 -ml-px h-full w-0.5 bg-gray-700"></div>
-              <!-- Current Step -->
-              <a href="#" aria-current="step" class="group relative flex items-start">
-                <span aria-hidden="true" class="flex h-9 items-center">
-                  <span class="relative z-10 flex w-8 h-8 items-center justify-center rounded-full border-2 border-indigo-500 bg-gray-900">
-                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
-                  </span>
+              </span>
+              <span class="ml-4 flex min-w-0 flex-col">
+                <span class="text-sm font-medium text-indigo-400">Profile information</span>
+                <span class="text-sm text-gray-400">Cursus semper viverra facilisis et et some more.</span>
+              </span>
+            </a>
+          </li>
+          <li class="relative pb-10">
+            <div aria-hidden="true" class="absolute top-4 left-4 mt-0.5 -ml-px h-full w-0.5 bg-white/15"></div>
+            <!-- Upcoming Step -->
+            <a href="#" class="group relative flex items-start">
+              <span aria-hidden="true" class="flex h-9 items-center">
+                <span class="relative olg flex size-8 items-center justify-center rounded-full border-2 border-white/15 bg-gray-900 group-hover:border-white/25">
+                  <span class="size-2.5 rounded-full bg-transparent group-hover:bg-white/15"></span>
                 </span>
-                <span class="ml-4 flex min-w-0 flex-col">
-                  <span class="text-sm font-medium text-indigo-400">Profile information</span>
-                  <span class="text-sm text-gray-400">Cursus semper viverra facilisis et et some more.</span>
+              </span>
+              <span class="ml-4 flex min-w-0 flex-col">
+                <span class="text-sm font-medium text-gray-400">Business information</span>
+                <span class="text-sm text-gray-400">Penatibus eu quis ante.</span>
+              </span>
+            </a>
+          </li>
+          <li class="relative pb-10">
+            <div aria-hidden="true" class="absolute top-4 left-4 mt-0.5 -ml-px h-full w-0.5 bg-white/15"></div>
+            <!-- Upcoming Step -->
+            <a href="#" class="group relative flex items-start">
+              <span aria-hidden="true" class="flex h-9 items-center">
+                <span class="relative olg flex size-8 items-center justify-center rounded-full border-2 border-white/15 bg-gray-900 group-hover:border-white/25">
+                  <span class="size-2.5 rounded-full bg-transparent group-hover:bg-white/15"></span>
                 </span>
-              </a>
-            </li>
-            <li class="relative pb-10">
-              <div aria-hidden="true" class="absolute top-4 left-4 mt-0.5 -ml-px h-full w-0.5 bg-white/15"></div>
-              <!-- Upcoming Step -->
-              <a href="#" class="group relative flex items-start">
-                <span aria-hidden="true" class="flex h-9 items-center">
-                  <span class="relative z-10 flex w-8 h-8 items-center justify-center rounded-full border-2 border-white/15 bg-gray-900 group-hover:border-white/25">
-                    <span class="w-2.5 h-2.5 rounded-full bg-transparent group-hover:bg-white/15"></span>
-                  </span>
+              </span>
+              <span class="ml-4 flex min-w-0 flex-col">
+                <span class="text-sm font-medium text-gray-400">Theme</span>
+                <span class="text-sm text-gray-400">Faucibus nec enim leo et.</span>
+              </span>
+            </a>
+          </li>
+          <li class="relative">
+            <!-- Upcoming Step -->
+            <a href="#" class="group relative flex items-start">
+              <span aria-hidden="true" class="flex h-9 items-center">
+                <span class="relative olg flex size-8 items-center justify-center rounded-full border-2 border-white/15 bg-gray-900 group-hover:border-white/25">
+                  <span class="size-2.5 rounded-full bg-transparent group-hover:bg-white/15"></span>
                 </span>
-                <span class="ml-4 flex min-w-0 flex-col">
-                  <span class="text-sm font-medium text-gray-400">Business information</span>
-                  <span class="text-sm text-gray-400">Penatibus eu quis ante.</span>
-                </span>
-              </a>
-            </li>
-            <li class="relative pb-10">
-              <div aria-hidden="true" class="absolute top-4 left-4 mt-0.5 -ml-px h-full w-0.5 bg-white/15"></div>
-              <!-- Upcoming Step -->
-              <a href="#" class="group relative flex items-start">
-                <span aria-hidden="true" class="flex h-9 items-center">
-                  <span class="relative z-10 flex w-8 h-8 items-center justify-center rounded-full border-2 border-white/15 bg-gray-900 group-hover:border-white/25">
-                    <span class="w-2.5 h-2.5 rounded-full bg-transparent group-hover:bg-white/15"></span>
-                  </span>
-                </span>
-                <span class="ml-4 flex min-w-0 flex-col">
-                  <span class="text-sm font-medium text-gray-400">Theme</span>
-                  <span class="text-sm text-gray-400">Faucibus nec enim leo et.</span>
-                </span>
-              </a>
-            </li>
-            <li class="relative">
-              <!-- Upcoming Step -->
-              <a href="#" class="group relative flex items-start">
-                <span aria-hidden="true" class="flex h-9 items-center">
-                  <span class="relative z-10 flex w-8 h-8 items-center justify-center rounded-full border-2 border-white/15 bg-gray-900 group-hover:border-white/25">
-                    <span class="w-2.5 h-2.5 rounded-full bg-transparent group-hover:bg-white/15"></span>
-                  </span>
-                </span>
-                <span class="ml-4 flex min-w-0 flex-col">
-                  <span class="text-sm font-medium text-gray-400">Preview</span>
-                  <span class="text-sm text-gray-400">Iusto et officia maiores porro ad non quas.</span>
-                </span>
-              </a>
-            </li>
-          </ol>
-        </nav>
-      </div>
+              </span>
+              <span class="ml-4 flex min-w-0 flex-col">
+                <span class="text-sm font-medium text-gray-400">Preview</span>
+                <span class="text-sm text-gray-400">Iusto et officia maiores porro ad non quas.</span>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </nav>
     </div>
   </div>
+</div>
 <script></script>
 </body>
+</html>

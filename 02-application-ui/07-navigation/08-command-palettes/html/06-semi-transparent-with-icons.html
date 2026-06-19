@@ -1,40 +1,21 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style type="text/tailwindcss">
-  @theme {
-    --font-sans: 'InterVariable', system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-</style>
-<style>
-  #dialog el-command-list a[aria-selected="true"] {
-    background-color: oklab(21% -.00316127 -.0338527/.05);
-    color: #fff;
-  }
-  #dialog el-command-list a[aria-selected="true"] svg {
-    color: #fff;
-  }
-  @media (forced-colors: active) {
-    #dialog el-command-list a[aria-selected="true"] svg {
-      color: highlight;
-    }
-  }
-  #dialog el-command-list a[aria-selected="true"] .jump-text {
-    display: inline;
-  }
-  @media (prefers-color-scheme: dark) {
-    #dialog el-command-list a[aria-selected="true"] {
-      background-color: oklab(100% 0 5.96046e-8/.05);
-    }
-  }
-</style>
-<body class="antialiased bg-gray-900">
-<div class="group grid min-h-150 place-content-center bg-gray-800 bg-[url('https://images.unsplash.com/photo-1604051189201-700f955d1cf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3000&h=2000&q=90')] bg-cover bg-center">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+  <div class="group grid min-h-[600px] place-content-center bg-gray-800 bg-[url(https://images.unsplash.com/photo-1604051189201-700f955d1cf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3000&h=2000&q=90)] bg-cover bg-center">
   <script type="module">
     let links = document.querySelectorAll('#dialog el-command-list a')
     let elDialog = document.querySelector('#dialog').parentElement
@@ -47,63 +28,63 @@
     })
   </script>
 
-  <button command="show-modal" commandfor="dialog" class="rounded-md bg-gray-800/80 px-2.5 py-1.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-gray-700/90 group-has-[[open]]:opacity-0">Open command palette</button>
+  <button command="show-modal" commandfor="dialog" class="rounded-md bg-gray-800/80 px-2.5 py-1.5 text-sm/5 font-semibold text-white transition-all duration-300 hover:bg-gray-700/90 group-has-[[open]]:opacity-0">Open command palette</button>
 
   <el-dialog>
-    <dialog id="dialog" class="backdrop:bg-transparent">
+    <dialog id="dialog" class="[&::backdrop]:bg-transparent">
       <el-dialog-backdrop class="fixed inset-0 bg-gray-900/50 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in"></el-dialog-backdrop>
 
       <div tabindex="0" class="fixed inset-0 w-screen overflow-y-auto p-4 focus:outline-none sm:p-6 md:p-20">
-        <el-dialog-panel class="mx-auto block max-w-2xl overflow-hidden rounded-xl bg-gray-900/80 shadow-2xl outline -outline-offset-1 outline-white/10 backdrop-blur transition-all data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in">
+        <el-dialog-panel class="mx-auto block max-w-2xl [transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] overflow-hidden rounded-xl bg-gray-900/80 shadow-2xl outline-1 -outline-offset-1 outline-white/10 backdrop-blur transition-all data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in">
           <el-command-palette>
             <div class="grid grid-cols-1 border-b border-white/10">
-              <input type="text" autofocus placeholder="Search..." class="col-start-1 row-start-1 h-12 w-full bg-transparent pr-4 pl-11 text-base text-white outline-none placeholder:text-gray-400 sm:text-sm" />
+              <input type="text" autofocus placeholder="Search..." class="col-start-1 row-start-1 h-12 w-full bg-transparent pr-4 pl-11 text-base text-white outline-none placeholder:text-gray-400 sm:text-sm/5" />
               <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 ml-4 w-5 h-5 self-center text-gray-500">
                 <path d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" fill-rule="evenodd" />
               </svg>
             </div>
 
-            <el-command-list class="block max-h-80 scroll-pt-2 scroll-pb-2 overflow-y-auto">
+            <el-command-list class="block max-h-80 scroll-py-2 overflow-y-auto">
               <el-defaults class="block divide-y divide-white/10">
                 <div class="p-2">
                   <h2 class="mt-4 mb-2 px-3 text-xs font-semibold text-gray-200">Recent searches</h2>
-                  <div class="text-sm text-gray-300">
-                    <a href="#" class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                  <div class="text-sm/5 text-gray-300">
+                    <a href="#" class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                         <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                       <span class="ml-3 flex-auto truncate">Workflow Inc. / Website Redesign</span>
-                      <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                      <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                     </a>
                   </div>
                 </div>
 
                 <div class="p-2">
                   <h2 class="sr-only">Quick actions</h2>
-                  <div class="text-sm text-gray-300">
-                    <a href="#" class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                  <div class="text-sm/5 text-gray-300">
+                    <a href="#" class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                         <path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                       <span class="ml-3 flex-auto truncate">Add new file...</span>
                       <span aria-hidden="true" class="ml-3 flex-none text-xs font-semibold text-gray-400"> <kbd class="font-sans">⌘</kbd><kbd class="font-sans">N</kbd> </span>
                     </a>
-                    <a href="#" class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                    <a href="#" class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                         <path d="M12 10.5v6m3-3H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                       <span class="ml-3 flex-auto truncate">Add new folder...</span>
                       <span aria-hidden="true" class="ml-3 flex-none text-xs font-semibold text-gray-400"> <kbd class="font-sans">⌘</kbd><kbd class="font-sans">F</kbd> </span>
                     </a>
-                    <a href="#" class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                    <a href="#" class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                         <path d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5-3.9 19.5m-2.1-19.5-3.9 19.5" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                       <span class="ml-3 flex-auto truncate">Add hashtag...</span>
                       <span aria-hidden="true" class="ml-3 flex-none text-xs font-semibold text-gray-400"> <kbd class="font-sans">⌘</kbd><kbd class="font-sans">H</kbd> </span>
                     </a>
-                    <a href="#" class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                    <a href="#" class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                         <path d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M6 6h.008v.008H6V6Z" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
@@ -114,111 +95,111 @@
                 </div>
               </el-defaults>
 
-              <el-command-group hidden class="block p-2 text-sm text-gray-300">
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+              <el-command-group hidden class="block p-2 text-sm/5 text-gray-300">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Workflow Inc. / Website Redesign</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Workflow Inc. / Open Graph Image</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Workflow Inc. / Logo Design</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Workflow Inc. / Advertising Campaign</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Conglomerate Inc. / TV Ad Campaign</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Conglomerate Inc. / Mobile App</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Conglomerate Inc. / Product Design</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Conglomerate Inc. / Intranet</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Conglomerate Inc. / Custom Programming</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Multinational LLC / Creative Writing</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Multinational LLC / Animation</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Multinational LLC / Product Illustration</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Products Inc. / Video Production</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Products Inc. / Print Brochure</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
-                <a href="#" hidden class="flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500">
+                <a href="#" hidden class="group flex cursor-default items-center rounded-md px-3 py-2 select-none focus:outline-none aria-selected:bg-white/5 aria-selected:text-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="w-6 h-6 flex-none text-gray-500 group-aria-selected:text-white">
                     <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   <span class="ml-3 flex-auto truncate">Products Inc. / Documentation</span>
-                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 jump-text">Jump to...</span>
+                  <span aria-hidden="true" class="ml-3 hidden flex-none text-gray-400 group-aria-selected:inline">Jump to...</span>
                 </a>
               </el-command-group>
             </el-command-list>
@@ -227,7 +208,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="mx-auto w-6 h-6 text-gray-500">
                 <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <p class="mt-4 text-sm text-gray-200">We couldn’t find any projects with that term. Please try again.</p>
+              <p class="mt-4 text-sm/5 text-gray-200">We couldn’t find any projects with that term. Please try again.</p>
             </el-no-results>
           </el-command-palette>
         </el-dialog-panel>
@@ -276,4 +257,6 @@
     }
   }
 </script>
-</body>
+
+  </body>
+</html>

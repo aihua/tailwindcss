@@ -1,329 +1,211 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
-<style type="text/tailwindcss">
-@theme {
-  --font-sans: 'InterVariable', system-ui, sans-serif;
-  --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-}
-</style>
-</head>
-<body class="antialiased"><div class="flex min-h-175">
-    <div style="height: 700px" class="flex w-full items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
-      <div class="w-72">
-        <div>
-          <div class="group relative flex flex-col-reverse">
-            <div class="mt-4 flex items-center justify-between space-x-8 text-base font-medium text-gray-900">
-              <h3>
-                <a href="#">Everyday Ruck Snack</a>
-              </h3>
-              <p>$220</p>
-            </div>
-            <div class="relative">
-              <img
-                src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-quick-preview-03-preview.jpg"
-                alt="Light green canvas bag with black straps, handle, front zipper pouch, and drawstring top."
-                class="aspect-[4/3] w-full rounded-lg bg-gray-100 object-cover" />
-              <div class="absolute inset-0 flex items-end p-4">
-                <button
-                  type="button"
-                  command="show-modal"
-                  commandfor="dialog-1"
-                  class="relative z-10 w-full rounded-md bg-white/75 px-4 py-2 text-sm text-gray-900 opacity-0 group-hover:opacity-100 focus:opacity-100">
-                  Quick View<span class="sr-only">, Everyday Ruck Snack</span>
-                </button>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "InterVariable", system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div class="flex min-h-[700px]">
+      <div style="height: 700px" class="flex w-full items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
+        <div class="w-72">
+          <div>
+            <div class="group relative flex flex-col-reverse">
+              <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
+                <h3>
+                  <a href="#">Everyday Ruck Snack</a>
+                </h3>
+                <p>$220</p>
               </div>
-            </div>
-          </div>
-
-          <el-dialog>
-            <dialog id="dialog-1" class="relative z-10 [&::backdrop]:bg-transparent">
-              <el-dialog-backdrop class="fixed inset-0 hidden bg-gray-500/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in md:block"></el-dialog-backdrop>
-
-              <div tabindex="0" class="fixed inset-0 z-10 w-screen overflow-y-auto focus:outline-none">
-                <div class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
-                  <!-- Modal panel, show/hide based on modal state. -->
-                  <el-dialog-panel
-                    class="flex w-full transform text-left text-base transition data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[enter]:ease-out data-[leave]:duration-200 data-[leave]:ease-in md:my-8 md:max-w-[42rem] md:px-4 md:data-[closed]:translate-y-0 md:data-[closed]:scale-95 lg:max-w-[56rem]">
-                    <div class="relative flex w-full items-center overflow-hidden bg-white px-4 pt-14 pb-8 shadow-xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
-                      <button
-                        type="button"
-                        command="close"
-                        commandfor="dialog-1"
-                        class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8">
-                        <span class="sr-only">Close</span>
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          data-slot="icon"
-                          aria-hidden="true"
-                          class="size-6">
-                          <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                      </button>
-
-                      <div class="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8">
-                        <div class="sm:col-span-4 lg:col-span-5">
-                          <img
-                            src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-quick-preview-03-detail.jpg"
-                            alt="Interior of light green canvas bag with padded laptop sleeve and internal organization pouch."
-                            class="aspect-square w-full rounded-lg bg-gray-100 object-cover" />
-                          <p class="absolute top-4 left-4 text-center sm:static sm:mt-6">
-                            <a href="#" class="font-medium text-violet-600 hover:text-violet-500">View full details</a>
-                          </p>
-                        </div>
-                        <div class="sm:col-span-8 lg:col-span-7">
-                          <h2 class="text-2xl font-bold text-gray-900 sm:pr-12">Everyday Ruck Snack</h2>
-
-                          <section aria-labelledby="information-heading" class="mt-4">
-                            <h3 id="information-heading" class="sr-only">Product information</h3>
-
-                            <div class="flex items-center">
-                              <p class="text-lg text-gray-900 sm:text-xl">$220</p>
-
-                              <div class="ml-4 border-l border-gray-300 pl-4">
-                                <h4 class="sr-only">Reviews</h4>
-                                <div class="flex items-center">
-                                  <div class="flex items-center">
-                                    <!-- Active: "text-yellow-400", Default: "text-gray-300" -->
-                                    <svg
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                      data-slot="icon"
-                                      aria-hidden="true"
-                                      class="size-5 shrink-0 text-amber-400">
-                                      <path
-                                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
-                                        clip-rule="evenodd"
-                                        fill-rule="evenodd" />
-                                    </svg>
-                                    <svg
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                      data-slot="icon"
-                                      aria-hidden="true"
-                                      class="size-5 shrink-0 text-amber-400">
-                                      <path
-                                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
-                                        clip-rule="evenodd"
-                                        fill-rule="evenodd" />
-                                    </svg>
-                                    <svg
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                      data-slot="icon"
-                                      aria-hidden="true"
-                                      class="size-5 shrink-0 text-amber-400">
-                                      <path
-                                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
-                                        clip-rule="evenodd"
-                                        fill-rule="evenodd" />
-                                    </svg>
-                                    <svg
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                      data-slot="icon"
-                                      aria-hidden="true"
-                                      class="size-5 shrink-0 text-amber-400">
-                                      <path
-                                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
-                                        clip-rule="evenodd"
-                                        fill-rule="evenodd" />
-                                    </svg>
-                                    <svg
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                      data-slot="icon"
-                                      aria-hidden="true"
-                                      class="size-5 shrink-0 text-gray-300">
-                                      <path
-                                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
-                                        clip-rule="evenodd"
-                                        fill-rule="evenodd" />
-                                    </svg>
-                                  </div>
-                                  <p class="sr-only">3.9 out of 5 stars</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="mt-6 flex items-center">
-                              <svg
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                data-slot="icon"
-                                aria-hidden="true"
-                                class="size-5 shrink-0 text-green-500">
-                                <path
-                                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                                  clip-rule="evenodd"
-                                  fill-rule="evenodd" />
-                              </svg>
-                              <p class="ml-2 font-medium text-gray-500">In stock and ready to ship</p>
-                            </div>
-                          </section>
-
-                          <section aria-labelledby="options-heading" class="mt-6">
-                            <h3 id="options-heading" class="sr-only">Product options</h3>
-
-                            <form>
-                              <div class="sm:flex sm:justify-between">
-                                <!-- Size selector -->
-                                <fieldset>
-                                  <legend class="block text-sm font-medium text-gray-700">Size</legend>
-                                  <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                    <label
-                                      aria-label="18L"
-                                      aria-description="Perfect for a reasonable amount of snacks."
-                                      class="group relative flex rounded-lg border border-gray-300 bg-white p-4 has-[:checked]:outline-2 has-[:checked]:-outline-offset-2 has-[:checked]:outline-violet-600 has-[:focus-visible]:outline-3 has-[:focus-visible]:-outline-offset-1 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
-                                      <input type="radio" name="size" value="18L" checked class="absolute inset-0 appearance-none focus:outline-none" />
-                                      <div class="flex-1">
-                                        <span class="block text-base font-medium text-gray-900">18L</span>
-                                        <span class="mt-1 block text-sm text-gray-500"
-                                          >Perfect for a reasonable amount of snacks.</span
-                                        >
-                                      </div>
-                                      <svg
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                        data-slot="icon"
-                                        aria-hidden="true"
-                                        class="invisible size-5 text-violet-600 group-has-[:checked]:visible">
-                                        <path
-                                          d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
-                                          clip-rule="evenodd"
-                                          fill-rule="evenodd" />
-                                      </svg>
-                                    </label>
-
-                                    <label
-                                      aria-label="20L"
-                                      aria-description="Enough room for a large amount of snacks."
-                                      class="group relative flex rounded-lg border border-gray-300 bg-white p-4 has-[:checked]:outline-2 has-[:checked]:-outline-offset-2 has-[:checked]:outline-violet-600 has-[:focus-visible]:outline-3 has-[:focus-visible]:-outline-offset-1 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
-                                      <input type="radio" name="size" value="20L" class="absolute inset-0 appearance-none focus:outline-none" />
-                                      <div class="flex-1">
-                                        <span class="block text-base font-medium text-gray-900">20L</span>
-                                        <span class="mt-1 block text-sm text-gray-500"
-                                          >Enough room for a large amount of snacks.</span
-                                        >
-                                      </div>
-                                      <svg
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                        data-slot="icon"
-                                        aria-hidden="true"
-                                        class="invisible size-5 text-violet-600 group-has-[:checked]:visible">
-                                        <path
-                                          d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
-                                          clip-rule="evenodd"
-                                          fill-rule="evenodd" />
-                                      </svg>
-                                    </label>
-                                  </div>
-                                </fieldset>
-                              </div>
-                              <div class="mt-4 flex">
-                                <a href="#" class="group flex text-sm text-gray-500 hover:text-gray-700">
-                                  <span>What size should I buy?</span>
-                                  <svg
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                    data-slot="icon"
-                                    aria-hidden="true"
-                                    class="ml-2 size-5 shrink-0 text-gray-400 group-hover:text-gray-500">
-                                    <path
-                                      d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
-                                      clip-rule="evenodd"
-                                      fill-rule="evenodd" />
-                                  </svg>
-                                </a>
-                              </div>
-                              <div class="mt-6">
-                                <button
-                                  type="submit"
-                                  class="flex w-full items-center justify-center rounded-md border border-transparent bg-violet-600 px-8 py-3 text-base font-medium text-white hover:bg-violet-700 focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-gray-50 focus:outline-none">
-                                  Add to bag
-                                </button>
-                              </div>
-                              <div class="mt-6 text-center">
-                                <a href="#" class="group inline-flex text-base font-medium">
-                                  <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    data-slot="icon"
-                                    aria-hidden="true"
-                                    class="mr-2 size-6 shrink-0 text-gray-400 group-hover:text-gray-500">
-                                    <path
-                                      d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round" />
-                                  </svg>
-                                  <span class="text-gray-500 group-hover:text-gray-700">Lifetime Guarantee</span>
-                                </a>
-                              </div>
-                            </form>
-                          </section>
-                        </div>
-                      </div>
-                    </div>
-                  </el-dialog-panel>
+              <div class="relative">
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-quick-preview-03-preview.jpg" alt="Light green canvas bag with black straps, handle, front zipper pouch, and drawstring top." class="aspect-[4/3] w-full rounded-lg bg-gray-100 object-cover" />
+                <div class="absolute inset-0 flex items-end p-4">
+                  <button type="button" command="show-modal" commandfor="dialog-1" class="relative z-10 w-full rounded-md bg-white/75 px-4 py-2 text-sm text-gray-900 opacity-0 group-hover:opacity-100 focus:opacity-100">Quick View<span class="sr-only">, Everyday Ruck Snack</span></button>
                 </div>
               </div>
-            </dialog>
-          </el-dialog>
+            </div>
+
+            <el-dialog>
+              <dialog id="dialog-1" class="relative z-10 [&::backdrop]:bg-transparent">
+                <el-dialog-backdrop class="fixed inset-0 block bg-gray-500/75 transition-opacity data-[closed]:opacity-0 data-enter:duration-300 data-enter:ease-[cubic-bezier(0,0,0.2,1)] data-leave:duration-200 data-leave:ease-[cubic-bezier(0.4,0,1,1)] sm:block"></el-dialog-backdrop>
+
+                <div tabindex="0" class="fixed inset-0 z-10 w-screen overflow-y-auto focus:outline-none">
+                  <div class="flex min-h-full items-stretch justify-center text-center sm:items-center sm:px-2 lg:px-4">
+                    <!-- Modal panel, show/hide based on modal state. -->
+                    <el-dialog-panel class="flex w-full [transform:var(--tw-rotate-x,)_var(--tw-rotate-y,)_var(--tw-rotate-z,)_var(--tw-skew-x,)_var(--tw-skew-y,)] text-left text-base transition data-[closed]:translate-y-4 data-[closed]:opacity-0 data-enter:duration-300 data-enter:ease-[cubic-bezier(0,0,0.2,1)] data-leave:duration-200 data-leave:ease-[cubic-bezier(0.4,0,1,1)] sm:my-8 sm:max-w-2xl sm:px-4 sm:data-[closed]:translate-y-0 sm:data-[closed]:scale-95 lg:max-w-4xl">
+                      <div class="relative flex w-full items-center overflow-hidden bg-white px-4 pt-14 pb-8 shadow-2xl sm:px-6 sm:pt-8 sm:p-6 lg:p-8">
+                        <button type="button" command="close" commandfor="dialog-1" class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 lg:top-8 lg:right-8">
+                          <span class="sr-only">Close</span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="h-6 w-6">
+                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+
+                        <div class="grid w-full grid-cols-1 items-start gap-y-8 gap-x-6 sm:grid-cols-12 sm:gap-x-8 lg:items-start lg:gap-x-8">
+                          <div class="sm:col-span-5 lg:col-span-5">
+                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-quick-preview-03-detail.jpg" alt="Interior of light green canvas bag with padded laptop sleeve and internal organization pouch." class="aspect-square w-full rounded-lg bg-gray-100 object-cover" />
+                            <p class="absolute top-4 left-4 text-center sm:static sm:mt-6">
+                              <a href="#" class="text-base font-medium text-indigo-600 hover:text-indigo-500">View full details</a>
+                            </p>
+                          </div>
+                          <div class="sm:col-span-7 lg:col-span-7">
+                            <h2 class="text-2xl font-bold text-gray-900 sm:pr-12">Everyday Ruck Snack</h2>
+
+                            <section aria-labelledby="information-heading" class="mt-4">
+                              <h3 id="information-heading" class="sr-only">Product information</h3>
+
+                              <div class="flex items-center">
+                                <p class="text-lg text-gray-900 md:text-xl">$220</p>
+
+                                <div class="ml-4 flex items-center border-l border-gray-300 pl-4">
+                                  <h4 class="sr-only">Reviews</h4>
+                                  <div class="flex items-center">
+                                    <div class="flex items-center">
+                                      <!-- Active: "text-yellow-400", Default: "text-gray-300" -->
+                                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-5 w-5 shrink-0 text-yellow-400">
+                                        <path d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                      </svg>
+                                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-5 w-5 shrink-0 text-yellow-400">
+                                        <path d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                      </svg>
+                                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-5 w-5 shrink-0 text-yellow-400">
+                                        <path d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                      </svg>
+                                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-5 w-5 shrink-0 text-yellow-400">
+                                        <path d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                      </svg>
+                                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-5 w-5 shrink-0 text-gray-300">
+                                        <path d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                      </svg>
+                                    </div>
+                                    <p class="sr-only">3.9 out of 5 stars</p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="mt-6 flex items-center">
+                                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-5 w-5 shrink-0 text-green-500">
+                                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                </svg>
+                                <p class="ml-2 font-medium text-gray-500">In stock and ready to ship</p>
+                              </div>
+                            </section>
+
+                            <section aria-labelledby="options-heading" class="mt-6">
+                              <h3 id="options-heading" class="sr-only">Product options</h3>
+
+                              <form>
+                                <div class="flex justify-between">
+                                  <!-- Size selector -->
+                                  <fieldset>
+                                    <legend class="text-sm font-medium text-gray-700">Size</legend>
+                                    <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                      <label aria-label="18L" aria-description="Perfect for a reasonable amount of snacks." class="group relative flex w-full rounded-lg border border-gray-300 bg-white p-4 has-[:checked]:outline-2 has-[:checked]:-outline-offset-2 has-[:checked]:outline-indigo-600 has-[:focus-visible]:outline-3 has-[:focus-visible]:-outline-offset-1 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
+                                        <input type="radio" name="size" value="18L" checked class="absolute inset-0 appearance-none focus:outline-none" />
+                                        <div class="flex-1">
+                                          <span class="block text-base font-medium text-gray-900">18L</span>
+                                          <span class="mt-1 block text-sm text-gray-500">Perfect for a reasonable amount of snacks.</span>
+                                        </div>
+                                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="invisible h-5 w-5 text-indigo-600 group-has-[:checked]:visible">
+                                          <path d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                        </svg>
+                                      </label>
+
+                                      <label aria-label="20L" aria-description="Enough room for a large amount of snacks." class="group relative flex w-full rounded-lg border border-gray-300 bg-white p-4 has-[:checked]:outline-2 has-[:checked]:-outline-offset-2 has-[:checked]:outline-indigo-600 has-[:focus-visible]:outline-3 has-[:focus-visible]:-outline-offset-1 has-[:disabled]:border-gray-400 has-[:disabled]:bg-gray-200 has-[:disabled]:opacity-25">
+                                        <input type="radio" name="size" value="20L" class="absolute inset-0 appearance-none focus:outline-none" />
+                                        <div class="flex-1">
+                                          <span class="block text-base font-medium text-gray-900">20L</span>
+                                          <span class="mt-1 block text-sm text-gray-500">Enough room for a large amount of snacks.</span>
+                                        </div>
+                                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="invisible h-5 w-5 text-indigo-600 group-has-[:checked]:visible">
+                                          <path d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                        </svg>
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                                </div>
+                                <div class="mt-4 flex">
+                                  <a href="#" class="group flex text-sm text-gray-500">
+                                    <span>What size should I buy?</span>
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="ml-2 h-5 w-5 shrink-0 text-gray-400 group-hover:text-gray-500">
+                                      <path d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                  </a>
+                                </div>
+                                <div class="mt-6">
+                                  <button type="submit" class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 focus:outline-none">Add to bag</button>
+                                </div>
+                                <div class="mt-6 text-center">
+                                  <a href="#" class="group inline-flex text-base font-medium">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="mr-2 h-6 w-6 shrink-0 text-gray-400 group-hover:text-gray-500">
+                                      <path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="text-gray-500 group-hover:text-gray-700">Lifetime Guarantee</span>
+                                  </a>
+                                </div>
+                              </form>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </el-dialog-panel>
+                  </div>
+                </div>
+              </dialog>
+            </el-dialog>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script>
-    {
-      function onReady() {
-        for (let elDialog of document.querySelectorAll('el-dialog')) {
-          let dialog = elDialog.querySelector('dialog');
+    <script>
+      {
+        function onReady() {
+          for (let elDialog of document.querySelectorAll('el-dialog')) {
+            let dialog = elDialog.querySelector('dialog')
 
-          // Mark dialog as inert to prevent focus from moving inside
-          dialog.inert = true;
+            // Mark dialog as inert to prevent focus from moving inside
+            dialog.inert = true
 
-          dialog.addEventListener(
-            'beforetoggle',
-            evt => {
-              if (evt.newState !== 'open') return;
+            dialog.addEventListener(
+              'beforetoggle',
+              (evt) => {
+                if (evt.newState !== 'open') return
 
-              // Fire normal events for initial value on focus if any
-              for (let element of dialog.querySelectorAll('[data-initial-value-on-focus]')) {
-                let value = element.getAttribute('data-initial-value-on-focus');
-                element.removeAttribute('data-initial-value-on-focus');
-                element.value = value;
-                element.dispatchEvent(new Event('input'));
-              }
+                // Fire normal events for initial value on focus if any
+                for (let element of dialog.querySelectorAll('[data-initial-value-on-focus]')) {
+                  let value = element.getAttribute('data-initial-value-on-focus')
+                  element.removeAttribute('data-initial-value-on-focus')
+                  element.value = value
+                  element.dispatchEvent(new Event('input'))
+                }
 
-              // Then, after all events have been processed, allow focusing
-              setTimeout(() => {
-                dialog.inert = false;
-              }, 0);
-            },
-            {once: true}
-          );
+                // Then, after all events have been processed, allow focusing
+                setTimeout(() => {
+                  dialog.inert = false
+                }, 0)
+              },
+              { once: true },
+            )
 
-          // Now we can open the dialog
-          elDialog.open = true;
+            // Now we can open the dialog
+            elDialog.open = true
+          }
+        }
+        if (customElements.get('el-dialog')) {
+          onReady()
+        } else {
+          window.addEventListener('elements:ready', onReady)
         }
       }
-      if (customElements.get('el-dialog')) {
-        onReady();
-      } else {
-        window.addEventListener('elements:ready', onReady);
-      }
-    }
-  </script>
-</body>
+    </script>
+  </body>
+</html>

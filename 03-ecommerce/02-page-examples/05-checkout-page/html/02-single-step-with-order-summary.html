@@ -15,13 +15,6 @@
 
     
     
-      @layer utilities {
-        .group:has(> el-popover[open]) > div > button { color: oklch(51.1% .262 276.966); }
-        .group:not(:has(> el-popover[open])) > div > button { color: oklch(37.3% .034 259.733); }
-        .group:not(:has(> el-popover[open])) > div > button:hover { color: oklch(27.8% .033 256.848); }
-        .group:has(> el-popover[open]) > div > button > span { background-color: oklch(51.1% .262 276.966); transition-duration: .15s; }
-        el-popover-group:has(el-popover[open]) > div:first-child { opacity: 1; transition-duration: .15s; }
-      }
     </style>
   </head>
   <body class="antialiased">
@@ -208,7 +201,7 @@
 
             <div class="hidden h-full lg:flex">
               <!-- Flyout menus -->
-              <el-popover-group class="group inset-x-0 bottom-0 px-4">
+              <el-popover-group class="group/popover inset-x-0 bottom-0 px-4 [&:has([open])>div:first-child]:opacity-100 [&:has([open])>div:first-child]:duration-150">
                 <!-- Presentational element to emulate a border that sits on top of the popover -->
                 <div class="absolute inset-x-0 bottom-[-1px] h-px w-full bg-white opacity-0 transition-opacity duration-200 ease-[cubic-bezier(.4,0,1,1)]">
                   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -218,9 +211,9 @@
                 <div class="flex h-full justify-center space-x-8">
                   <div class="group flex">
                     <div class="relative flex">
-                      <button popovertarget="desktop-menu-women" class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-[cubic-bezier(0,0,.2,1)] ">
+                      <button popovertarget="desktop-menu-women" class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-[cubic-bezier(0,0,.2,1)] group-has-[[open]]:text-indigo-600 group-[:not(:has([open]))]:text-gray-700 group-[:not(:has([open]))]:hover:text-gray-800">
                         Women
-                        <span aria-hidden="true" class="absolute inset-x-0 bottom-[-1px] z-30 h-[.125rem] bg-transparent duration-200 ease-[cubic-bezier(.4,0,1,1)]"></span>
+                        <span aria-hidden="true" class="absolute inset-x-0 bottom-[-1px] z-30 h-[.125rem] bg-transparent duration-200 ease-[cubic-bezier(.4,0,1,1)] group-has-[[open]]:bg-indigo-600 group-has-[[open]]:duration-150"></span>
                       </button>
                     </div>
                     <el-popover id="desktop-menu-women" anchor="bottom" popover class="w-full overflow-visible bg-white text-sm text-gray-500 transition transition-discrete [--anchor-gap:1px] [&::backdrop]:bg-transparent awtt data-[closed]:opacity-0 awvf awvg awvh awvi">
@@ -268,9 +261,9 @@
                   </div>
                   <div class="group flex">
                     <div class="relative flex">
-                      <button popovertarget="desktop-menu-men" class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-[cubic-bezier(0,0,.2,1)] ">
+                      <button popovertarget="desktop-menu-men" class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-[cubic-bezier(0,0,.2,1)] group-has-[[open]]:text-indigo-600 group-[:not(:has([open]))]:text-gray-700 group-[:not(:has([open]))]:hover:text-gray-800">
                         Men
-                        <span aria-hidden="true" class="absolute inset-x-0 bottom-[-1px] z-30 h-[.125rem] bg-transparent duration-200 ease-[cubic-bezier(.4,0,1,1)]"></span>
+                        <span aria-hidden="true" class="absolute inset-x-0 bottom-[-1px] z-30 h-[.125rem] bg-transparent duration-200 ease-[cubic-bezier(.4,0,1,1)] group-has-[[open]]:bg-indigo-600 group-has-[[open]]:duration-150"></span>
                       </button>
                     </div>
                     <el-popover id="desktop-menu-men" anchor="bottom" popover class="w-full overflow-visible bg-white text-sm text-gray-500 transition transition-discrete [--anchor-gap:1px] [&::backdrop]:bg-transparent awtt data-[closed]:opacity-0 awvf awvg awvh awvi">

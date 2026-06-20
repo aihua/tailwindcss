@@ -12,10 +12,6 @@
         --font-sans: "InterVariable", system-ui, sans-serif;
         --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       }
-      @layer utilities {
-        .acit:not(:where([aria-expanded=true]) *){display:none}
-        :where([aria-expanded=true]) .acjw{display:none}
-      }
     </style>
   </head>
   <body class="antialiased">
@@ -45,9 +41,9 @@
       <div class="mx-auto max-w-lg">
         <div class="flex items-center justify-between">
           <h2 id="order-heading" class="text-lg font-medium text-gray-900">Your Order</h2>
-          <button type="button" command="--toggle" commandfor="order-summary" class="font-medium text-indigo-600 hover:text-indigo-500">
-            <span class="acit">Hide full summary</span>
-            <span class="acjw">Show full summary</span>
+          <button type="button" command="--toggle" commandfor="order-summary" class="group font-medium text-indigo-600 hover:text-indigo-500">
+            <span class="hidden group-aria-expanded:block">Hide full summary</span>
+            <span class="group-aria-expanded:hidden">Show full summary</span>
           </button>
         </div>
 

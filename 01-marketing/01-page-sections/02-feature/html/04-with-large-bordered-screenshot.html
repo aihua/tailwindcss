@@ -1,30 +1,28 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --font-sans: InterVariable, system-ui, sans-serif;
-      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    }
-  </style>
-</head>
-<body class="antialiased bg-gray-900">
-  <div class="overflow-hidden bg-gray-900 py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <p class="max-w-2xl text-5xl leading-none font-semibold tracking-tight text-white text-wrap:pretty sm:text-6xl sm:text-balance">Everything you need to deploy your app</p>
-      <div class="relative mt-16 aspect-[2432/1442] h-[36rem] sm:h-auto sm:w-[76rem]">
-        <div class="absolute -inset-2 rounded-[1.25rem] bg-white/[0.025] shadow-xs ring-1 ring-white/10"></div>
-        <img
-          src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-          alt=""
-          class="h-full rounded-xl shadow-2xl ring-1 ring-white/10" />
-      </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+<div class="overflow-hidden bg-gray-900 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <p class="max-w-2xl text-5xl font-semibold tracking-tight text-pretty text-white sm:text-6xl sm:text-balance">Everything you need to deploy your app</p>
+    <div class="relative mt-16 aspect-[2432/1442] h-144 sm:h-auto sm:w-[calc(var(--container-7xl)-4rem)]">
+      <div class="absolute -inset-2 rounded-[1.25rem] bg-white/[2.5%] shadow-xs ring-1 ring-white/10"></div>
+      <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png" alt="" class="h-full rounded-xl shadow-2xl ring-1 ring-white/10" />
     </div>
   </div>
-</body>
+</div>
+  </body>
 </html>

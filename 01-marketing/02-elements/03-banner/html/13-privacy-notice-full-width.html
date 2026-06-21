@@ -1,27 +1,28 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-  @theme {
-    --font-sans: 'InterVariable', system-ui, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-</style>
-<body class="antialiased bg-gray-900">
-  <div style="min-height: 25rem" class="bg-gray-900 dark">
-    <div class="fixed inset-x-0 bottom-0 flex flex-col justify-between gap-x-8 gap-y-4 border-t border-white/10 bg-gray-800 p-6 md:flex-row md:items-center lg:px-8">
-      <p class="max-w-[56rem] text-sm leading-6 text-white">
-        This website uses cookies to supplement a balanced diet and provide a much deserved reward to the senses after
-        consuming bland but nutritious meals. Accepting our cookies is optional but recommended, as they are
-        delicious. See our <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">cookie policy</a>.
-      </p>
-      <div class="flex flex-none items-center gap-x-5">
-        <button type="button" class="rounded-md bg-gray-700 px-3 py-2 text-sm/5 font-semibold text-white shadow-xs ring-1 ring-inset ring-white/10 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Accept all</button>
-        <button type="button" class="text-sm leading-6 font-semibold text-gray-300 hover:text-white">Reject all</button>
-      </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@insiders" type="module"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: InterVariable, system-ui, sans-serif;
+        --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 antialiased">
+<div style="min-height: 25rem" class="bg-gray-900 scheme-dark">
+  <div class="fixed inset-x-0 bottom-0 flex flex-col justify-between gap-x-8 gap-y-4 border-t border-white/10 bg-gray-800 p-6 md:flex-row md:items-center lg:px-8">
+    <p class="max-w-4xl text-sm/6 text-white">This website uses cookies to supplement a balanced diet and provide a much deserved reward to the senses after consuming bland but nutritious meals. Accepting our cookies is optional but recommended, as they are delicious. See our <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">cookie policy</a>.</p>
+    <div class="flex flex-none items-center gap-x-5">
+      <button type="button" class="rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-xs inset-ring-1 inset-ring-white/10 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-[2px] focus-visible:outline-white">Accept all</button>
+      <button type="button" class="text-sm/6 font-semibold text-gray-300 hover:text-white">Reject all</button>
     </div>
   </div>
-</body>
+</div>
+  </body>
+</html>
